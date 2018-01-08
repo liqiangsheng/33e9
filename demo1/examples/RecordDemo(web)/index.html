@@ -25,7 +25,7 @@
 	<div class="full_page_div" id="full_page_div">
 		<div class="full_page_header">
 			<span class="name_label" style="font-size: 14px;color: #fff;">上传面板</span>
-			<span class="name_del1" onclick="cancle_upload(g_record)" style="color: #fff;"><img src="image/closepage.png"/></span>
+			<span class="name_del1"  style="color: #fff;"><img src="image/closepage.png"/></span>
 		</div>
 		<div class="full_page_msg">
 			<span class="msg_label">文件名称：</span>
@@ -45,7 +45,7 @@
 			<span class="name_label_detail"  id="upload_status">准备上传</span>
 		</div>
 		<div class="full_page_button">
-			<button class="full_page_cancle" onclick="cancle_upload(g_record)">取消</button>
+			<button class="full_page_cancle">取消</button>
 			<a class="full_page_submit" style="display: none;" id="catSerRecBtn" target="_blank">查看服务端录像</a>
 		</div>
 	</div>
@@ -54,13 +54,13 @@
 	<div class="full_page_div2" id="full_page_div2">
 		<div class="full_page_header2">
 			<span class="name_label2" style="color: #fff;">设置</span>
-			<span class="name_min2" onclick="setCancle()" style="color: #fff;"><img src="image/closepage.png"/></span>
-			<span class="name_del2" onclick="setCancle()" style="color: #fff;"><img src="image/minpage.png"/></span>
+			<span class="name_min2" style="color: #fff;"><img src="image/closepage.png"/></span>
+			<span class="name_del2" style="color: #fff;"><img src="image/minpage.png"/></span>
 		</div>
 		<div class="full_page_tab">
 			<!--<span class="ontab" onclick="changeTab(1)" id="tab1" style="margin-left: 20px;">视频</span>-->
-			<span id="tab1" onclick="changeTab(1)" class="ontab">录制设置</span>
-			<span id="tab2" onclick="changeTab(2)">视频设置</span>
+			<span id="tab1"  class="ontab">录制设置</span>
+			<span id="tab2" >视频设置</span>
 		</div>
 		<div class="full_page_div4" id="full_page_div4">
 			<div class="full_page_msg3">
@@ -126,16 +126,16 @@
 			</div>
 			<div id="meet_reset_video_yx" class="meet_video_reset">
 				<p class="radio_contain">
-					<input onclick="choseMeetYx(0)" class="radio_label" type="radio" name="meet_yx" checked="checked" value="0" />
+					<input class="radio_label" type="radio" name="meet_yx" checked="checked" value="0" />
 					<span class="fs14_col48_verm_disib">视频质量优先</span>
-					<input onclick="choseMeetYx(1)" class="radio_label" type="radio" name="meet_yx" value="1"/>
+					<input class="radio_label" type="radio" name="meet_yx" value="1"/>
 					<span class="fs14_col48_verm_disib">视频流畅优先</span>
 				</p>
 			</div>
 		</div>
 		<div class="full_page_button" style="display: block;">
-			<button class="full_page_submit2" onclick="setSubmit()">确定</button>
-			<button class="full_page_cancle2" onclick="setCancle()">取消</button>
+			<button class="full_page_submit2">确定</button>
+			<button class="full_page_cancle2">取消</button>
 		</div>
 	</div>
 	<!--视频录制参数设置弹层  结束-->
@@ -170,13 +170,13 @@
 	<div class="alert_palyer" id="alert_palyer" style="display: none;">
 		<div class="alert_page_header">
 			<span class="alert_name_label" style="font-size: 20px;color: #fff;">提示</span>
-			<span class="alert_name_del" onclick="closeAlert()" style="color: #fff;"><img src="image/closepage.png"/></span>
+			<span class="alert_name_del" style="color: #fff;"><img src="image/closepage.png"/></span>
 		</div>
 		<div class="alert_page_msg" id="alert_page_msg">
 			<p class="alert_label_detail"></p>
 		</div>
 		<div class="alert_page_button">
-			<button class="alertr_page_commit" onclick="closeAlert()">确定</button>
+			<button class="alertr_page_commit">确定</button>
 		</div>
 	</div>
 	<!--alert 弹出层样式 结束-->
@@ -184,7 +184,7 @@
 	<div class="list_container" id="list_container" style="display: none;">
 		<div class="list_page_header">
 			<span class="list_name_label">录制文件管理</span>
-			<span class="list_name_del" onclick="closelistPage()"><img src="image/closepage.png"/></span>
+			<span class="list_name_del"><img src="image/closepage.png"/></span>
 		</div>
 		<div class="table_list">
 			<table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_list_container">
@@ -420,30 +420,30 @@
 						</div>
 						<ul id="startRecordCon" class="detail_right_tab">
 							<li class="on_tab2">
-								<button onclick="openSetVideoPanel()">设置</button>
+								<button id="openSetVideoPanel">设置</button>
 							</li>
 							<li class="on_tab2">
-								<button onclick="startRecord()">开始录制</button>
+								<button id="startRecord">开始录制</button>
 							</li>
 							<li>
-								<button id="playbackBtn" onclick="playbackRecord(g_record)">回放</button>
+								<button id="playbackBtn">回放</button>
 							</li>
 							<li>
-								<button onclick="upload(g_record)">上传</button>
+								<button id="upload">上传</button>
 							</li>
 							<li class="show_all_video_files" style="width: 110px;">
-								<button onclick="showAllList()">录制文件管理</button>
+								<button id="showAllList">录制文件管理</button>
 							</li>
 							<li class="show_all_video_files">
-								<button onclick="changeSingle()">单摄像头</button>
+								<button id="changeSingle">单摄像头</button>
 							</li>
 							<li class="show_all_video_files">
-								<button onclick="changeDouble()">双摄像头</button>
+								<button id="changeDouble">双摄像头</button>
 							</li>
 						</ul>
 						<ul id="stopRecordCon" style="display:none" class="detail_right_tab">
 							<li class="on_tab2">
-								<button onclick="stopRecord()">停止录制</button>
+								<button id="stopRecord">停止录制</button>
 							</li>
 						</ul>
 					</div>
@@ -494,8 +494,8 @@
 	<script type="text/javascript" src="js/md5.js"></script>
 	<!-- <script type="text/javascript" src="js/css3-mediaqueries.js"></script> -->
 	<script type="text/javascript" src="js/html5.js"></script> 
-	<script type="text/javascript" src="js/cookie.js"></script> 
 	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
 	<script type="text/javascript" src="js/uuid.js"></script>
 	<script type="text/javascript" src="../../js/CloudroomVideoSDK.js"></script>
 	<script type="text/javascript">

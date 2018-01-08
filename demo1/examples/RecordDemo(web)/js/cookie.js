@@ -1,4 +1,5 @@
 
+function cookie(){
 
 
 //cookie操作： 添加，修改， 查询， 删除 （增删改查）
@@ -36,41 +37,42 @@ function removeCookie(name){
 	document.cookie = encodeURIComponent(name) + "=; expires=" + d;
 }
 
-// 弹出层封装
-function alertLayer(msg){
-	$(".alert_label_detail").text(msg);
-	$(".full_page").css("display","block");
-	$(".alert_palyer").css("display","block");
-	$(".detail_right_video").css('display','none');
-}
+// // 弹出层封装
+// function alertLayer(msg){
+// 	$(".alert_label_detail").text(msg);
+// 	$(".full_page").css("display","block");
+// 	$(".alert_palyer").css("display","block");
+// 	$(".detail_right_video").css('display','none');
+// }
 
 
-// 关闭alert弹层
-function closeAlert(){
-    $(".alert_label_detail").text(" ");
-    $(".full_page").css("display","none");
-    $(".alert_palyer").css("display","none");
-    if($(".list_container").css("display") == "block" || $(".full_page_div2").css("display") == "block" || $(".warning_palyer").css("display") == "block" || $(".full_page_div").css("display") == "block"){
+// // 关闭alert弹层
+// function closeAlert(){
+//     $(".alert_label_detail").text(" ");
+//     $(".full_page").css("display","none");
+//     $(".alert_palyer").css("display","none");
+//     if($(".list_container").css("display") == "block" || $(".full_page_div2").css("display") == "block" || $(".warning_palyer").css("display") == "block" || $(".full_page_div").css("display") == "block"){
 
-    }else{
-        $(".detail_right_video").css('display','block');
-        updateVideo();
-    }
-}
+//     }else{
+//         $(".detail_right_video").css('display','block');
+//         updateVideo();
+//     }
+// }
 
-function choseMeetYx(num){
-    if(num == "0"){
-        $("input[name='meet_yx']").eq(1).attr("checked",false);
-        $("input[name='meet_yx']").eq(0).attr("checked",true);
-    }else if(num == "1"){
-        $("input[name='meet_yx']").eq(0).attr("checked",false);
-        $("input[name='meet_yx']").eq(1).attr("checked",true);
-    }
-    //alert($("input[name='meet_yx']:checked").val())
-}
+// function choseMeetYx(num){
+//     if(num == "0"){
+//         $("input[name='meet_yx']").eq(1).attr("checked",false);
+//         $("input[name='meet_yx']").eq(0).attr("checked",true);
+//     }else if(num == "1"){
+//         $("input[name='meet_yx']").eq(0).attr("checked",false);
+//         $("input[name='meet_yx']").eq(1).attr("checked",true);
+//     }
+//     //alert($("input[name='meet_yx']:checked").val())
+// }
 
 
-$(function(){
+
+
 	$(".menu_left_ul li").click(function(){
 		$(this).addClass("onmenu");
 		$(this).siblings().removeClass("onmenu");
@@ -165,7 +167,9 @@ $(function(){
 		$(this).siblings("input[name='recUpType']").attr("checked",false);
 		$(this).attr("checked",true);
 	});
-})
+
+
+
 function fullPageSub(){
 	if(0){
 		$(".full_page").css({"display":"none"});
@@ -192,6 +196,12 @@ function minPage2(){
 	$(".full_page_div4").css({"display":"none"});
 	$(".full_page_msg2").css('display','block');
 }
+//点击录像设置  视频设置
+$(".full_page_tab span").map(function(index){
+	$(this).click(function(){
+		changeTab(index+1)
+	})
+})
 function changeTab(index){
 	if(index == 1){
 		$("#full_page_msg2").css("display","none");
@@ -217,6 +227,8 @@ function closePlayer(){
 			updateVideo();
 		}
 	}
+}
+
 }
 
 
