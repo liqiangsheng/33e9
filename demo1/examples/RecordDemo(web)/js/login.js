@@ -1,4 +1,5 @@
 $(function(){
+   
       //调用cookie()
       cookie()
     //点击下拉 设置登录名
@@ -110,7 +111,7 @@ $(function(){
     });
     function login(){
         //初始化
-        console.log(1111)
+        // console.log(1111)
         var init = CRVideo_Init("CLOUDROOM", g_location_dir);
         //确定初始化
         g_init=true;
@@ -128,11 +129,11 @@ $(function(){
         }
        //登陆状态
         if(g_logining == false){
-            console.log(222)
+            // console.log(222)
             var g_serverName = $("#server_name").val()
            
             if(g_serverName && g_serverName != ""){
-               console.log(444)
+            //    console.log(444)
                 cr_account= $("#login_cpyname").val() ||"demo@cloudroom.com";
                 //md5加密
                 cr_psw = md5($("#login_psd").val()) || "e10adc3949ba59abbe56e057f20f883e";
@@ -146,10 +147,10 @@ $(function(){
                 CRVideo_Login(cr_account, cr_psw, g_nickname, g_userID, "")
                 //修改登录状态
                 g_logining = true;
-                console.log(333)
+                // console.log(333)
             }else{
              
-                console.log("服务器地址不能为空");
+                // console.log("服务器地址不能为空");
 
                 $("#login_bnt").attr({"disabled":false}).css({background:"#eb5405"})
             }
@@ -158,8 +159,8 @@ $(function(){
     }
         //登陆成功
         CRVideo_LoginSuccess.callback = function(userID,cookie){
-            console.log(userID)//FBB9A453BAA78E8F2A10CE00ABE553D2
-            console.log(cookie)
+            // console.log(userID)//FBB9A453BAA78E8F2A10CE00ABE553D2
+            // console.log(cookie)
             $("#login_bnt").attr({"disabled":"disabled"}).css({background:"#ccc"})
             g_userID = userID;
             createMeet();
@@ -167,11 +168,11 @@ $(function(){
         //登录失败
         CRVideo_LoginFail.callback = function(sdkErr,cookie){
             
-            console.log(sdkErr)//202 服务器没有响应
-            console.log(cookie)//
+            // console.log(sdkErr)//202 服务器没有响应
+            // console.log(cookie)//
             $("#login_bnt").attr({"disabled":false}).css({background:"#eb5405"})
             g_logining = false;
-            console.log("登录失败 错误码:"+sdkErr)
+            // console.log("登录失败 错误码:"+sdkErr)
         }
 
         /*
@@ -192,12 +193,12 @@ $(function(){
         function createMeet(){
             //创建会议
             CRVideo_CreateMeeting("财富宝货币市场基金 00034")
-            console.log(5555)
+            // console.log(5555)
         }
 
         //创建会议成功
         CRVideo_CreateMeetingSuccess.callback=function(meetObj,cookie){
-            console.log(meetObj)
+            // console.log(meetObj)
             g_meetingId=meetObj.ID;
             g_meetingPsw=meetObj.pswd;
             enterMeet();
@@ -297,7 +298,7 @@ $(function(){
          */
         function enterMeet(){
             CRVideo_EnterMeeting(g_meetingId,g_meetingPsw,g_userID,g_nickname)
-            console.log(6666)
+            // console.log(6666)
         }
         CRVideo_EnterMeetingRslt.callback=function(sdkErr){
             // CRVideo_NOERR==没有错误 成功
@@ -429,7 +430,7 @@ $(function(){
         // 布局A，单摄像头显示一个，A;双摄像头显示两个AB
         function layoutA(){
             g_layout = "layoutA";
-            console.log(g_videoAObj)
+            // console.log(g_videoAObj)
             //隐藏主播放页面
             $("#mediaContainer").css({display:"none"});
             if(g_single_video){
@@ -724,21 +725,29 @@ $(function(){
        */
        //有差异 待问try{}catch(e){}
        function updateVideo(){
-           console.log(g_mediaObj)
+        //    console.log(g_mediaObj)
             //获取用户所有摄像头信息 还会列表
             var devices = CRVideo_GetAllVideoInfo(g_userID);
-            console.log(devices)//[Object]
-            if(g_videoAObj && devices.length > 0){
-                //g_videoAObj里面的内置方法setVideo（usrID,videoID）,setVisibleNickName(value);
-                g_videoAObj.setVideo(g_userID,devices[0]["videoID"]);
-                g_videoAObj.setVisibleNickName(false);
-            }
-            if(g_videoBObj && devices.length > 1){
-                //g_videoBObj里面的内置方法setVideo（usrID,videoID）,setVisibleNickName(value);
-                g_videoBObj.setVideo(g_userID,devices[1]["videoID"]);
-                g_videoBObj.setVisibleNickName(false);
-            }
-       }
+            // console.log(devices);//[Object];
+            try{
+
+                if(g_videoAObj && devices.length > 0){
+                    //g_videoAObj里面的内置方法setVideo（usrID,videoID）,setVisibleNickName(value);
+                    // console.log(g_videoAObj)
+                    // console.log(g_userID)
+                    // console.log(devices[0]["videoID"])
+                    g_videoAObj.setVideo(g_userID,devices[0]["videoID"]);
+                    g_videoAObj.setVisibleNickName(false);
+                }
+                if(g_videoBObj && devices.length > 1){
+                    //g_videoBObj里面的内置方法setVideo（usrID,videoID）,setVisibleNickName(value);
+                    g_videoBObj.setVideo(g_userID,devices[1]["videoID"]);
+                    g_videoBObj.setVisibleNickName(false);
+                }
+
+            }catch(e){ }
+           
+       };
     
        //摄像头状态改变
        //   1会话中设备的所有者ID 2旧状态 3新状态
@@ -781,6 +790,7 @@ $(function(){
     var g_playbacking = false;  // 是否回放状态
     var g_uploading = false; // 视频是否正在上传
     function video_play(videoName,num){
+        // console.log(videoName)
         //如果播放的文件不等于false
        if(g_nowTime_play_num != -1){
             // 如果现在没有播放，则开始播放点击的影音
@@ -793,7 +803,7 @@ $(function(){
             //
         if(g_layout != 'layoutA'){
                 // 如果不是A布局则停止播放
-                    CRVideo_StopPlayMedia();
+                CRVideo_StopPlayMedia();
         }
         g_playbacking = false;
         $('#playbackBtn').html("回放")
@@ -803,6 +813,7 @@ $(function(){
 
         // 调用布局B
         $(".detail_right_video").css('display','none');
+
         layoutB();
         //视频是否正在上传
         if(g_uploading == false){
@@ -901,8 +912,8 @@ $(function(){
         var hour = date.getHours();
         var minute = date.getMinutes();
         var second = date.getSeconds();
-        g_record = year+'-'+mouth+'-'+day+'-'+hour+':'+minute+':'+second+'.mp4';
-        // 开始录制           录像存储的路径             录制音频类型./**录制所有*/ ,帧率，建议不要太高；(取值1~24)视频宽度,视频高度,录制的最高码率,目标质量(推荐:36, 中:28,  高:22),录制内容类型,录制内容类型,是否录制的同时上传
+        g_record = year+'-'+mouth+'-'+day+'-'+hour+'-'+minute+'-'+second+'.mp4';
+        // 开始录制           录像存储的路径             录制音频类型./**录制所有*/ ,帧率，建议不要太高；(取值1~24)视频宽度,视频高度,录制的最高码率,目标质量(推荐:36, 中:28,  高:22),录制内容类型,0是否录制的同时上传
         CRVideo_StartRecordIng(g_location_dir+g_record,CRVideo_RECORD_AUDIO_TYPE.REC_AUDIO_TYPE_ALL,g_frameRate,g_recordWidth,g_recordHeight,g_bitRate,22,g_recDataType,g_isUploadOnRecording);
         //回放状态
         g_startRecord = true;
@@ -973,7 +984,8 @@ $(function(){
     */
     //点击了上传
     $("#upload").click(function(){
-        upload(g_record)
+        // console.log(g_record)
+        upload(g_record);
     })
     //上传
     function upload(fileName){
@@ -995,7 +1007,7 @@ $(function(){
         $(".full_page").css('display','block');
         $(".full_page_div").css('display','block');
         // /上传文件 filename - 文件名，全路径
-        CRVideo_UploadRecordFile(fileName)
+        CRVideo_UploadRecordFile(fileName);
 
     }
     //点击了上传里面的取消
@@ -1226,27 +1238,64 @@ $(function(){
         if(list && list != "" && list != null){
             var listLength = list.length;
             var str = "";
+            var listI;
+            
             for(var i=0;i< listLength; i++){
                 var listname = list[i].split("Media/")[1];
+                listI = list[i];
+            //     console.log(list)
+            //    console.log(list[i])
+            //    console.log(i)
                 str += "<li id='videoList"+ i +"'>"
                     +	"<span class='detail_right_voice1_item_name'>" + listname +"</span>"
                     +	"<span class='detail_right_voice1_item_img'>"
                     +		"<div class='voice1_item_play'>"
-                    +			"<img src='image/icon_04.png' onclick='video_play(\""+list[i]+"\","+i+")'/>"
+                    +		"<img src='image/icon_04.png' />"
+                //  +    "<img src='image/icon_04.png' onclick='video_play(\""+list[i]+"\","+i+")'/>"
                     +		"</div>"
                     +		"<div class='voice1_item_stop' style='display:none'>"
-                    +			"<img src='image/icon_02.png' onclick='video_pause_true("+ i +")'/>"
-                    +			"<img src='image/icon_03.png' onclick='video_stop("+ i +")'/>"
+                    +			"<img src='image/icon_02.png' id='video_pause_true'/>"
+                    +			"<img src='image/icon_03.png' id='video_stop'/>"
                     +		"</div>"
                     +		"<div class='voice1_item_pause' style='display:none'>"
-                    +			"<img src='image/icon_04.png' onclick='video_pause_false("+ i +")'/>"
-                    +			"<img src='image/icon_03.png' onclick='video_stop("+ i +")'/>"
+                    +			"<img src='image/icon_04.png' id='video_pause_false'/>"
+                    +			"<img src='image/icon_03.png' id='video_stop'/>"
                     +		"</div>"
                     +	"</span>"
                     +"</li>"
+               
             }
             str += "<div style='height:0;clear:both;'></div>"
             $("#detail_video_lists").append(str);
+            // 点击风险告知与提醒 里面的播放 暂停 再次开始
+            $(".voice1_item_play img").map(function(index,item){
+                $(this).click(function(){
+                    // console.log(index)//0
+                    // console.log(listI)//C:/Users/admin/Desktop/git/demo1/examples/RecordDemo(web)/home/Media/风险提示1.mp4
+                    video_play(listI,index)
+                })
+            });
+           
+            $(".voice1_item_stop #video_pause_true").map(function(index){
+                $(this).click(function(){
+                    video_pause_true(index)
+                })
+            });
+            $(".voice1_item_stop #video_stop").map(function(index){
+                $(this).click(function(){
+                    video_stop(index)
+                })
+            });
+            $(".voice1_item_pause #video_pause_false").map(function(index){
+                $(this).click(function(){
+                    video_pause_false(index)
+                })
+            });
+            $(".voice1_item_pause #video_stop").map(function(index){
+                $(this).click(function(){
+                    video_stop(index)
+                })
+            });
         }
     }
     // 回放list table中的视频
@@ -1305,7 +1354,7 @@ $(function(){
 
        // 点击显示列表
         function showAllList(){
-            
+            //显示所有的播放文件 还回数组
             g_getAll_videfile_list = CRVideo_GetAllRecordFiles();
             
             getAllVideoList(g_getAll_videfile_list);
@@ -1362,25 +1411,25 @@ $(function(){
                 $("#table_list_container").append(str);
                 //点击了本地删除
                 $("#table_list_container #deleteFile").map(function(index){
-                    console.log(777)
+                    // console.log(777)
                     $(this).click(function(){
-                        console.log(index)
+                        // console.log(index)
                         deleteFile(index);
                     })
                 })
                 //点击了上传
                 $("#table_list_container #uploadFile").map(function(index){
-                    console.log(888)
+                    // console.log(888)
                     $(this).click(function(){
-                        console.log(index)
+                        // console.log(index)
                         uploadFile(index);
                     })
                 })
                  //点击了回放
                  $("#table_list_container #playbackList").map(function(index){
-                    console.log(999)
+                    // console.log(999)
                     $(this).click(function(){
-                        console.log(index)
+                        // console.log(index)
                         playbackList(index);
                     })
                 })
@@ -1469,7 +1518,10 @@ $(function(){
 		}
 		micArrOptionsStr = "<option value=\"\" >默认设备</option>" + micArrOptionsStr
 		$(micArrOptionsStr).appendTo("#mic_select");
-	}
+    }
+    // 获取系统上的扬声器设备列表
+    // * @access public
+    // * @returns {string[]} 返回扬声器设备列表
 	
 	var spkerArr =CRVideo_GetAudioSpkNames();
 	var spkerArrOptionsStr = "";
@@ -1504,15 +1556,21 @@ $(function(){
     }
     
 	$("#video_operate_btn").click(function(){
+        // * 获取用户的摄像头状态
+        // * @access public
+        // * @param {string} userID - 用户ID
+        // * @returns {CRVideo_VSTATUS} 麦克风摄像头状态
 		var vStatus = CRVideo_GetVideoStatus(g_userID);
 		if(vStatus == 0){
 			this.popup("没有可打开的视频设备")
 
 		}else if(vStatus ==  2){
+            //打开用户的摄像头，以便本地、远端显示视频图像
 			CRVideo_OpenVideo(g_userID);
 			$("#video_operate_btn").text("关闭");
 			videoOperateBtn = "关闭";
 		}else {
+            // 关闭用户的摄像头
 			CRVideo_CloseVideo(g_userID);
 			$("#video_operate_btn").text("打开");
 			videoOperateBtn = "打开";
@@ -1520,16 +1578,21 @@ $(function(){
 	})
 
 	$("#mic_operate_btn").click(function(){
+        // * 获取用户的麦状态
 		var aStatus = CRVideo_GetAudioStatus(g_userID);
 		if(aStatus == 0){
 			this.popup("没有可打开的音频设备")
 
 
 		}else if(aStatus ==  2){
+            // * 打开自己的麦克风
+            // * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
 			CRVideo_OpenMic(g_userID);
 			$("#mic_operate_btn").text("关闭");
 			micOperateBtn = "关闭";
 		}else{
+            // 关闭自己的麦克风
+            // * 关麦操作是立即生效的，本地会立即停止采集；
 			CRVideo_CloseMic(g_userID);
 			$("#mic_operate_btn").text("打开");
 			micOperateBtn = "打开";
@@ -1538,6 +1601,10 @@ $(function(){
     })
     
 	$("#video_select").change(function(){
+        // 设置默认的摄像头
+        // * @access public
+        // * @param {string} userID - 用户ID
+        // * @param {number} videoID - 摄像头ID
 		CRVideo_SetDefaultVideo(g_userID,$("#video_select").val());
 	});
 	$("#spker_select").change(function(){
@@ -1545,7 +1612,8 @@ $(function(){
 		cfg.micName = $("#mic_select").val();
 		cfg.speakerName = $("#spker_select").val();
 		cfg.privAgc = 0;
-		cfg.privEC = 0;
+        cfg.privEC = 0;
+        // 系统音频参数设置
 		CRVideo_SetAudioCfg(cfg);
 	});
 	$("#mic_select").change(function(){
@@ -1553,7 +1621,8 @@ $(function(){
 		cfg.micName = $("#mic_select").val();
 		cfg.speakerName = $("#spker_select").val();
 		cfg.privAgc = 0;
-		cfg.privEC = 0;
+        cfg.privEC = 0;
+        //系统音频参数设置
 		CRVideo_SetAudioCfg(cfg);
 	});
 	g_first_set_video_and_med = false;
