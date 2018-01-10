@@ -43,9 +43,9 @@ $(function(){
     var g_layout; // 视频和摄像头A 布局 两个视频播放布局
 
 
-    var g_logo_id = "6cb4d64a-5647-11e7-bbc9-989096d01cf2"
-    var end = g_location_dir.lastIndexOf('/')
-    var start = g_location_dir.indexOf('file:///')
+    var g_logo_id = "6cb4d64a-5647-11e7-bbc9-989096d01cf2";
+    var end = g_location_dir.lastIndexOf('/');
+    var start = g_location_dir.indexOf('file:///');
     if(start > -1)
     {
         start = 8
@@ -55,12 +55,14 @@ $(function(){
     }
     g_location_dir = g_location_dir.slice(start,end)+"/home/";
     g_location_dir = decodeURIComponent(g_location_dir);
-
+   //即将离开当前页面触发的事件
     window.onbeforeunload = function() { 
         if(g_logining){
+            //注销本次登陆
             CRVideo_Logout();
         }
         if(g_init){
+            //反初始化
             CRVideo_Uninit();
         }
         if(g_residual_timer != -1){
@@ -71,6 +73,7 @@ $(function(){
             $(".detail_box").css('display','none');
         }
     }
+    //按下键盘的事件
     document.onkeydown = function (e) {
         var ev = window.event || e;
         var code = ev.keyCode || ev.which;
@@ -305,8 +308,11 @@ $(function(){
            if(sdkErr == CRVideo_NOERR){
             // * 暂未定义  1* @param {string} picID -  2 * @param {object} jsonval - 
             CRVideo_SetPicResource(g_logo_id,{
-                //不明白 (需要问)
+                //资源格式，可取值："yuv420p"，"rgb32"，"picfile"，"picdat"
                 "fmt":"picdat",
+                // fmt为"yuv420p"时： dat存放的是base64(yuv420p数据)；
+                // fmt为"rgb32"时： dat存放的是base64(rgb32数据)；
+                // fmt为"picfile"时： dat存放的是“本地文件名”；
 				"dat":"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"
 					
             });
@@ -389,7 +395,7 @@ $(function(){
             $(".menu_box").css({display:"none"});
             $(".detail_box").css({display:"block"});
 
-            //创建Medio对象
+            //创建Medio对象 主
             g_mediaObj = CRVideo_CreatMediaObj();
             g_mediaObj.id("mediaObj");
             //媒体容器  插入到
@@ -433,6 +439,7 @@ $(function(){
             // console.log(g_videoAObj)
             //隐藏主播放页面
             $("#mediaContainer").css({display:"none"});
+            //是否单摄像头
             if(g_single_video){
                 //隐藏主播放页面
                 $("#mediaContainer").css({display:"none"});
@@ -521,7 +528,7 @@ $(function(){
                     recContents.push(videoBlogoContent);
                     // B视频内容的邮票
                     //时间戳水印
-                    videoBStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;//==4
+                    videoBStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;//==4
                     videoBStampContent["left"] = videoBContent["left"] +35;
                     videoBStampContent["top"] = videoBContent["top"] +3;
                     videoBStampContent["width"] = 175;
