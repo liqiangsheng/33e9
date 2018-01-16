@@ -3,7 +3,7 @@
 >CloudroomMeeting是核心控件，实现登录、队列、呼叫、通话建立、音频采集播入、视频采集编解码、屏幕共享、录制、影音播放等；
 
 <!--  -->
-## <font color="#f77a0b">获取sdk的版本信息</font>
+## <font color="#0099cc">获取sdk的版本信息</font>
 
 <p style="background:#f7f7f7;color:#718c00">string Version</p>
 
@@ -16,7 +16,7 @@
 >可读
 
 <!--  -->
-## <font color="#f77a0b">SDK初始化</font>
+## <font color="#0099cc">SDK初始化</font>
 
 <p style="background:#f7f7f7;color:#718c00">SDK初始化</p>
 
