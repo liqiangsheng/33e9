@@ -55,3 +55,7 @@
 #### <font color="#0099cc">安装插件</font>
 
 - 首先要安装开发插件，CloudroomVideo SDK for Web 提供的所有 JavaScript 接口都是基于这个插件实现，进行web开发之前需要确保插件已经安装成功，双击SDK目录下的开发环境下进行编写的。
+
+ ![CloudroomVideoSDK.exe](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/1.png)
+
+ 选择安装
