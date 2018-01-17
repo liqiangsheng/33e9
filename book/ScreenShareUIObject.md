@@ -27,3 +27,33 @@
 - **返回值**:<font face="微软雅黑">0:成功； 非0：保存遇到的错误码；</font>
 
 - **参数**:无
+
+<!-- 3 -->
+### <font color="#0099cc">检查图像是否为空</font>
+
+<p style="background:#f7f7f7;color:#718c00">属性isPicEmpty</p>
+
+>long isPicEmpty
+
+- **功能**:检查图像是否为空
+
+- **返回值**:无
+
+- **参数**:无
+
+>可读.<font face="微软雅黑">0: 有图像, 1:无图像</font>
+
+<!-- 4 -->
+### <font color="#0099cc">控制功能是否开启</font>
+
+<p style="background:#f7f7f7;color:#718c00">属性ctrlOpen</p>
+
+>bool ctrlOpen
+
+- **功能**:控制功能是否开启
+
+- **返回值**:无
+
+- **参数**:无
+
+>可读、可写.<font face="微软雅黑">true: 开启， false:关闭</font>
