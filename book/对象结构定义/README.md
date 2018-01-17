@@ -389,7 +389,7 @@ size         |  在服务器上的大小
 orgSize         |  原始文件大小
 status         |  文件状态
 
-##<font color="#0099cc">网盘文件对象</font>
+##<font color="#0099cc">网盘文件对象列表</font>
 
 >NetFileObjs
 

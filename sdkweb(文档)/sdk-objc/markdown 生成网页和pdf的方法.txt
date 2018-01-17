@@ -1,0 +1,12 @@
+1. ssh远程进入10.8.8.220, 账户:root 密码:cloudroom
+
+2. 上传markdown文件到/var/lib/tomcat7/webapps/ROOT/page/gitbook/sdk-objc下
+
+3. cd进入/var/lib/tomcat7/webapps/ROOT/page/gitbook/分别执行以下命令：
+rm -rf /var/lib/tomcat7/webapps/ROOT/page/docshow/sdk-objc
+gitbook build sdk-objc /var/lib/tomcat7/webapps/ROOT/page/docshow/sdk-objc
+
+4.在浏览器内输入http://10.8.8.220/crdoc/sdk-objc/，回车即可打开网页
+
+5. 生成pdf执行以下命令：
+gitbook pdf ./sdk-objc ./sdk-objc/sdk_reference.pdf
