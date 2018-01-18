@@ -60,7 +60,7 @@
 
 - **参数**:无
 
-><font face="微软雅黑">可读、可写.支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080;183.60.47.52:8080;）</font>
+>可读、可写.支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080;183.60.47.52:8080;）
 
 <!-- 5 -->
 ### <font color="#0099cc">登陆服务器</font>
@@ -158,7 +158,7 @@
 
 - **功能**:判断某个用户是否在会话中
 
-- **返回值**:<font face="微软雅黑">1：在，0：不在</font>
+- **返回值**:1：在，0：不在
 
 - **参数**:
   + userID ------ 用户的id
@@ -212,7 +212,7 @@
 
 json串中含单个成员信息，如
 
-<p style="background:#f7f7f7;color:#8959A8"><font face="微软雅黑">{"userID":"222","nickName":"bbb","audioStatus":"1","videoStatus":"1"}</font></p>
+<p style="background:#f7f7f7;color:#8959A8">{"userID":"222","nickName":"bbb","audioStatus":"1","videoStatus":"1"}</p>
 
 - userID ------ 用户ID
 
@@ -237,8 +237,7 @@ json串中含单个成员信息，如
 
 json串中含单个成员信息，如:
 
-<p style="background:#f7f7f7;color:#8959A8">[{<font face="微软雅黑">"userID":"111","nickName":"aaa","audioStatus":"1","videoStatus":"1"</font>}
-{<font face="微软雅黑">"userID":"222","nickName":"bbb","audioStatus":"1","videoStatus":"1"</font>}]</p>
+<p style="background:#f7f7f7;color:#8959A8">["userID":"111","nickName":"aaa","audioStatus":"1","videoStatus":"1"}{"userID":"222","nickName":"bbb","audioStatus":"1","videoStatus":"1"}]</p>
 
 - userID ------ 用户ID
 
@@ -306,8 +305,8 @@ json格式说明:
 
 - "micName": "aaa" ------- 麦克风设备名称
 - "speakerName": "aaa" ------- 扬声器名称
-- <font face="微软雅黑">"privEC": "0" ------- 是否开启云屋私有回声消息0：不开启；1：开启</font>
-- <font face="微软雅黑">"privAgc": "0" ------- 是否开启云屋私有语音自动增益0：不开启；1：开启</font>
+- "privEC": "0" ------- 是否开启云屋私有回声消息0：不开启；1：开启
+- "privAgc": "0" ------- 是否开启云屋私有语音自动增益0：不开启；1：开启
 
 <!-- 19 -->
 ### <font color="#0099cc">设置音频参数</font>
@@ -327,8 +326,8 @@ json格式说明:
 
 - "micName": "aaa" ------- 麦克风设备名称
 - "speakerName": "aaa" ------- 扬声器名称
-- <font face="微软雅黑">"privEC": "0" ------- 是否开启云屋私有回声消息0：不开启；1：开启</font>
-- <font face="微软雅黑">"privAgc": "0" ------- 是否开启云屋私有语音自动增益0：不开启；1：开启</font>
+- "privEC": "0" ------- 是否开启云屋私有回声消息0：不开启；1：开启
+- "privAgc": "0" ------- 是否开启云屋私有语音自动增益0：不开启；1：开启
 
 <!-- 20 -->
 ### <font color="#0099cc">设置、获取麦克风音量大小</font>
@@ -433,7 +432,7 @@ json格式说明:
 
 - **参数**:无
 
->可读、可写.取值范围：<font face="微软雅黑">5-30</font>
+>可读、可写.取值范围：5-30
 
 
 <!-- 27 -->
@@ -460,7 +459,7 @@ json格式说明:
 
 - **功能**:获取指定视频尺寸的码率
 
-- **返回值**:kbps 比特率；<font face="微软雅黑">（-1代表使用sdk内部默认值）</font>
+- **返回值**:kbps 比特率；（-1代表使用sdk内部默认值）
 
 - **参数**:
  + videoSizeType ----- 视频尺寸，请参见VIDEO_SHOW_SIZE定义
@@ -476,7 +475,7 @@ json格式说明:
 
 - **参数**:
  + videoSizeType ------ 视频尺寸，请参见VIDEO_SHOW_SIZE定义
- + kbps ------ 比特率；<font face="微软雅黑">（-1代表使用sdk内部默认值）</font>
+ + kbps ------ 比特率；（-1代表使用sdk内部默认值）
 
  <!-- 30 -->
 ### <font color="#0099cc">获取用户的摄像头状态</font>
@@ -579,7 +578,7 @@ json串中含有多个设备列表：
 
 获取到的图像帧可能比通知的图像帧更新（界面消息机制引起）；如果通知的frmTime比显示的帧要更小，那就没必要再去获取图像并进行显示了。：
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑">"format": 1, "dat":"FKLEOFJXKFD…","width":1024, "height":768,"frameTime":3213123123123</font>}</p> 
+<p style="background:#f7f7f7;color:#8959A8">{"format": 1, "dat":"FKLEOFJXKFD…","width":1024, "height":768,"frameTime":3213123123123}</p> 
 
 - format ------ 图像格式,数值参考视频图像格式VIDEO_FORMAT
 - dat ------ 图像数据 
@@ -668,8 +667,8 @@ json串中含有多个设备列表：
 json格式的字符串,详见说明：
 
 <p style="background:#f7f7f7;color:#8959A8">[
-{<font face="微软雅黑">"userID":"111","videoID":1,"videoName":"camera1"</font>},
-{<font face="微软雅黑">"userID":"111","videoID":2,"videoName":"camera2"</font>},
+{"userID":"111","videoID":1,"videoName":"camera1"},
+{"userID":"111","videoID":2,"videoName":"camera2"},
 ...
 ]</p>
 
@@ -693,8 +692,8 @@ json格式的字符串,详见说明：
 json格式的字符串,详见说明：
 
 <p style="background:#f7f7f7;color:#8959A8">[
-{<font face="微软雅黑">"userID":"111","videoID":1</font>},
-{<font face="微软雅黑">"userID":"222","videoID":2</font>},
+{"userID":"111","videoID":1},
+{"userID":"222","videoID":2},
 ...
 ]</p>
 
@@ -716,13 +715,13 @@ json格式的字符串,详见说明：
 
 json格式的字符串,详见说明：
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑"> "encodeType":0, "catchRect":{"left":10,"top":10,"right":100,"bottom":100}, "catchWnd":1234, "maxFPS":8, "maxKbps":800000 </font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"encodeType":0, "catchRect":{"left":10,"top":10,"right":100,"bottom":100}, "catchWnd":1234, "maxFPS":8, "maxKbps":800000 }</p>
 
 - encodeType ------ 编码类型,详见屏幕共享的编码类型ENCODE_TYPE
 - catchRect ------ 共享区域,可存放多个区域
 - catchWnd ------ 共享的窗口的窗口句柄
-- maxFPS ------ 最大帧率 缺省为<font face="微软雅黑">8</font>
-- maxKbps ------ 最大码率，缺省<font face="微软雅黑">800kbps</font>
+- maxFPS ------ 最大帧率 缺省为8
+- maxKbps ------ 最大码率，缺省800kbps
 
   <!-- 43 -->
 ### <font color="#0099cc">设置当前屏幕共享配置</font>
@@ -739,13 +738,13 @@ json格式的字符串,详见说明：
 
 json格式的字符串,详见说明：
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑"> "encodeType":0, "catchRect":{"left":10,"top":10,"right":100,"bottom":100}, "catchWnd":1234, "maxFPS":8, "maxKbps":800000 </font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"encodeType":0, "catchRect":{"left":10,"top":10,"right":100,"bottom":100}, "catchWnd":1234, "maxFPS":8, "maxKbps":800000 }</p>
 
 - encodeType ------ 编码类型,详见屏幕共享的编码类型ENCODE_TYPE
 - catchRect ------ 共享区域,可存放多个区域
 - catchWnd ------ 共享的窗口的窗口句柄
-- maxFPS ------ 最大帧率 缺省为<font face="微软雅黑">8</font>
-- maxKbps ------ 最大码率，缺省<font face="微软雅黑">800kbps</font>
+- maxFPS ------ 最大帧率 缺省为8
+- maxKbps ------ 最大码率，缺省800kbps
 
   <!-- 44 -->
 ### <font color="#0099cc">检查屏幕共享是否已开启</font>
@@ -837,13 +836,13 @@ json格式的字符串,详见说明：
 
 json格式的字符串,详见说明：
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑"> "format": 1, "dat":"FKLEOFJXKFD…","width":1024, "height":768, "frameTime":3213123123123 </font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"format": 1, "dat":"FKLEOFJXKFD…","width":1024, "height":768, "frameTime":3213123123123 }</p>
 
 - format ------ 图像格式,数值参考视频图像格式VIDEO_FORMAT
 - dat ------ 图像数据 
 - width ------ 图像宽度
 - height ------ 图像高度
-- frameTime ------ <font face="微软雅黑">图像产生的时间，从1970-01-01 00:00:00到现在为止，过去的毫秒时间</font>
+- frameTime ------ 图像产生的时间，从1970-01-01 00:00:00到现在为止，过去的毫秒时间
 
 <!-- 50 -->
 ### <font color="#0099cc">设置、获取自定义抓屏功能</font>
@@ -858,7 +857,7 @@ json格式的字符串,详见说明：
 
 - **参数**:无
 
-><font face="微软雅黑">可读、可写.0：默认抓屏处理；1：自定议抓屏设置自定义抓屏后，sdk需要图像时将产生notiyCatchScreen事件，使用者再通过setCustomizeScreenImg接口送入图像</font>
+>可读、可写.0：默认抓屏处理；1：自定议抓屏设置自定义抓屏后，sdk需要图像时将产生notiyCatchScreen事件，使用者再通过setCustomizeScreenImg接口送入图像
 
 <!-- 51 -->
 ### <font color="#0099cc">设置自定义的抓屏图像数据</font>
@@ -878,7 +877,7 @@ json格式的字符串,详见说明：
  + height ------ 图像的高度；
  + dat ------ SafeArray对象，承载argb数据；
 
-><font face="微软雅黑">当前只支持VFMT_ARGB32格式；如果在收到notiyCatchScreen事件时，暂当前无图像可送时，可送空数据进去(width=0, height=0, dat为空)</font>
+>当前只支持VFMT_ARGB32格式；如果在收到notiyCatchScreen事件时，暂当前无图像可送时，可送空数据进去(width=0, height=0, dat为空)
 
 <!-- 52 -->
 ### <font color="#0099cc">设置要录制的视频</font>
@@ -904,25 +903,25 @@ json格式的字符串,详见说明：
 
 - **功能**:开启录制
 
-- **返回值**:<font face="微软雅黑">0：开启失败； 1：开启成功</font>
+- **返回值**:0：开启失败； 1：开启成功
 
 - **参数**:json 录制参数,json格式的字符串,详见下列详解
 
 json详解：
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑">"filePathName": "D:\\1.mp4" "audioType":"FKLEOFJXKFD…","recordWidth":640, "recordHeight":320,"frameRate":8, "bitRate":500000, 
-"defaultQP":28, "recDataType":1</font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"filePathName": "D:\\1.mp4" "audioType":"FKLEOFJXKFD…","recordWidth":640, "recordHeight":320,"frameRate":8, "bitRate":500000, 
+"defaultQP":28, "recDataType":1}</p>
 
 - filePathName ------ 录像存储的路径文件名,使用完整路径
 - audioType ------ 录制语音类型，详见定义RECORD_AUDIO_TYPE 
 - recordWidth ------ 录制结果中视频尺寸宽度
 - recordHeight ------ 录制结果中视频尺寸宽度
 - frameRate ------ 录制的帧率
-- bitRate ------ 录制的最高码率<font color="red" face="微软雅黑">(当图像变化小时，实际码率会低于此值。建议：
+- bitRate ------ 录制的最高码率<font color="red">(当图像变化小时，实际码率会低于此值。建议：
 640*360: 500000; (500kbps)
 1280*720：1000000; (1mbps)
 1920*1080: 2000000; (2mbps)) </font>
-- defaultQP ------ -录制的缺省质量<font color="red" face="微软雅黑">(缺省值：28
+- defaultQP ------ -录制的缺省质量<font color="red">(缺省值：28
 取值范围：0~51;  (0完全无损, 51质量非常差)
 推荐：高质量取值18, 中质量28， 低质量38)</font>
 - recDataType ------ 录制内容类型（视频+音频），值参考定义REC_DATATYPE
@@ -981,11 +980,11 @@ json详解：
 
 json串中包含多个录制文件信息：
 
-<p style="background:#f7f7f7;color:#8959A8">[{<font face="微软雅黑">"fileName":"D:\\1.mp4","state":1,"uploadPercent":100</font>}{<font face="微软雅黑">"fileName":"D:\\2.mp4","state":2,"uploadPercent":80</font>}...]</p>
+<p style="background:#f7f7f7;color:#8959A8">[{"fileName":"D:\\1.mp4","state":1,"uploadPercent":100}{"fileName":"D:\\2.mp4","state":2,"uploadPercent":80}...]</p>
 
 - fileName ------ 录像存储的路径文件名,使用完整路径
-- state ------ <font face="微软雅黑">录制语音类型，详见定义RECORD_AUDIO_TYPE </font>
-- uploadPercent ------ <font face="微软雅黑">录制结果中视频尺寸宽度 </font>
+- state ------ 录制语音类型，详见定义RECORD_AUDIO_TYPE
+- uploadPercent ------ 录制结果中视频尺寸宽度 
 
 <!-- 58 -->
 ### <font color="#0099cc">删除本地的录制文件，上传中的文件会被取消上传</font>
@@ -1227,7 +1226,7 @@ json串中包含多个录制文件信息：
 
 jsonSubPage格式说明:
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑">"userID": 1, "boardID":1</font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"userID": 1, "boardID":1}</p>
 
 - userID ------ 用户id
 - boardID ------ 白板id
@@ -1260,7 +1259,7 @@ jsonSubPage格式说明:
 
 jsonSubPage格式说明:
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑">"userID": 1, "boardID":1</font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"userID": 1, "boardID":1}</p>
 
 - userID ------ 用户id
 - boardID ------ 白板id
@@ -1314,7 +1313,7 @@ jsonSubPage格式说明:
 
 json格式说明:
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑">"userID": 1, "boardID":1</font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"userID": 1, "boardID":1}</p>
 
 - userID ------ 用户id
 - boardID ------ 白板id
@@ -1334,7 +1333,7 @@ json格式说明:
 
 json格式说明:
 
-<p style="background:#f7f7f7;color:#8959A8">{<font face="微软雅黑">"userID": 1, "boardID":1</font>}</p>
+<p style="background:#f7f7f7;color:#8959A8">{"userID": 1, "boardID":1}</p>
 
 - userID ------ 用户id
 - boardID ------ 白板id
@@ -1398,7 +1397,7 @@ json格式说明:
 
 - **参数**:无
 
->可读、可写. 音量等级<font face="微软雅黑">（0-255）</font>
+>可读、可写. 音量等级（0-255）
 
 <!-- 83 -->
 ### <font color="#0099cc">影音播放的音量</font>
@@ -1413,7 +1412,7 @@ json格式说明:
 
 - **参数**:无
 
->可读、可写. 音量等级<font face="微软雅黑">（0-255）</font>
+>可读、可写. 音量等级（0-255）
 
 <!-- 84 -->
 ### <font color="#0099cc">登录成功响应</font>
@@ -1585,7 +1584,7 @@ json格式说明:
 - **功能**:SDK通知我的网络变化
 
 - **参数**:
- + level ------ <font face="微软雅黑">网络状况等级(0~10，10分为最佳网络)</font>
+ + level ------ 网络状况等级(0~10，10分为最佳网络)
 
 <!-- 98 -->
 ### <font color="#0099cc">SDK通知用户的说话声音强度更新</font>
@@ -1598,8 +1597,8 @@ json格式说明:
 
 - **参数**:
  + userID ------ 用户标识ID
- + oldLevel ------ <font face="微软雅黑">原来的说话声音强度(0~10)</font>
- + newLevel ------ <font face="微软雅黑">现在的说话声音强度(0~10)</font>
+ + oldLevel ------ 原来的说话声音强度(0~10)
+ + newLevel ------ 现在的说话声音强度(0~10)
 
 <!-- 99 -->
 ### <font color="#0099cc">SDK通知本地音频设备有变化</font>

@@ -1,6 +1,6 @@
 # <font color="#2674ba">云屋视频SDK参考</font>
 
-<p style="background:#f7f7f7;font-size:14px;height:50px;line-height:50px;"><font face="微软雅黑">此版本适合v3.1版本的SDK</font></p>
+<p style="background:#f7f7f7;font-size:14px;height:50px;line-height:50px;">此版本适合V3.6版本的SDK</p>
 
 <p style="width:100%;height:4px;background:#f7f7f7;"></p>
 
@@ -270,3 +270,195 @@ C.离开会议是没有响应消息的（在网络不通时离开会议也不会
 &emsp;&emsp;更多的功能接口，请参考SDK目录的doc文件夹。如图所示，打开doc文件夹下的index.html。
 
 ![其他接口](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/qt1.png)
+
+### 主要组件 {#mainClass}
+
+> SDK是由众多的DLL组件组合而成的，对外提供以下几个组件：
+
+* [基础组件 CloudroomVideoSDK](#CloudroomVideoSDK)
+* [管理组件 CloudroomVideoMgr](#CloudroomVideoMgr)
+* [队列组件 CloudroomQueue](#CloudroomQueue)
+* [Http文件管理组件 CloudroomHttpFileMgr](#CloudroomHttpFileMgr)
+* [视频会议组件 CloudroomVideoMeeting](#CloudroomVideoMeeting)
+  * [视频显示组件 CloudroomVideoUI](#CloudroomVideoUI)
+  * [屏幕共享画面显示组件 CloudroomScreenShareUI](#CloudroomScreenShareUI)
+  * [影音显示组件 CloudroomMediaUI](#CloudroomMediaUI)
+
+#### 基础组件CloudroomVideoSDK {#CloudroomVideoSDK}
+
+    CLSID: {07EFD662-A1BB-4d8d-9BEE-F7E43E5FEBF5}
+    ProgID: npCloudroomVideoSDK.CloudroomVideoSDK
+    MIME TYPE: application/x-cloudroom-videosdk
+
+CloudroomVideoSDK是基础组件，是整个SDK使用的基础。
+
+该组件一个进程内只能创建一个实例，直到应用退出时才反初始化并销毁。
+
+组件使用过程主要包括：
+
+    1. 创建组件实例
+    2. 执行初始化
+    3. 程序退出时执行反初始化
+
+#### 管理组件CloudroomVideoMgr {#CloudroomVideoMgr}
+
+    CLSID: {120AD2B0-68F2-46c6-88D8-52173F501C0F}
+    ProgID: npCloudroomVideoSDK.CloudroomVideoMgr
+    MIME TYPE: application/x-cloudroom-videomgr
+
+CloudroomVideoMgr是登录、呼叫、会议创建管理和透明传输类。
+
+该组件一个进程内只能创建一个实例，实现了入会前的相关功能。
+
+组件使用过程主要包括：
+
+    1. 创建组件实例
+    2. 登录
+    3. 创建会议
+
+注意: 只有在CloudroomVideoSDK Init初始化成功后接口才可用。
+
+#### 队列组件CloudroomQueue {#CloudroomQueue}
+
+    CLSID: {9AAD199D-A02F-4513-875D-AA81091E44B9}
+    ProgID: npCloudroomVideoSDK.CloudroomQueue
+    MIME TYPE: application/x-cloudroom-queue
+
+CloudroomQueue是队列组件，它实现队列功能。
+
+该组件一个进程内只能创建一个实例，是可选组件，用于用户分发，您可以使用它，也可以自已另外实现，这并不影响视频呼叫、音视频通话功能。
+
+组件使用过程主要包括：
+
+    1. 创建组件实例，执行初始化
+    2. 队列获取，客户排队/座席服务
+
+注意：只有在CloudroomVideoMgr登录成功后接口才可用。
+
+#### Http文件管理组件CloudroomHttpFileMgr {#CloudroomHttpFileMgr}
+
+    CLSID: {7E44F8C9-7C8D-4004-8F45-D9819D78663C}
+    ProgID: npCloudroomVideoSDK.CloudroomHttpFileMgr
+    MIME: application/x-cloudroom-httpfilemgr
+
+CloudroomHttpFileMgr是Http文件上传下载及文件管理类。
+
+该组件一个进程内只能创建一个实例，主要应用于单方文件归档，单方文件下载，支持非云屋http服务器对接。
+
+如果会议内临时文件共享，请使用CloudroomVideoMeeting中的会议网盘功能。
+
+下载支持断点续传，上传暂不支持断点机制。
+
+注意：只有在CloudroomVideoSDK初始化后接口才可用。
+
+#### 视频会议组件CloudroomVideoMeeting {#CloudroomVideoMeeting}
+
+    CLSID: {9E9DD983-A9F8-4dff-B694-B1AE1C708B1E}
+    ProgID: npCloudroomVideoSDK.CloudroomVideoMeeting
+    MIME TYPE: application/x-cloudroom-videomeeting
+
+CloudroomVideoMeeting是视频会议类。
+
+该组件一个进程内只能创建一个实例，包含了视频会话相关的全部功能。
+
+组件使用过程主要包括：
+
+    1. 创建组件实例
+    2. 进入会议
+    3. 会议内的各功能处理
+    4. 退出会议
+
+注意：只有在CloudroomVideoSDK Init初始化成功后接口才可用。
+
+进入视频会议可用以下组件：
+
+##### 视频显示组件CloudroomVideoUI {#CloudroomVideoUI}
+
+    CLSID: {8A6BBBDC-C6BE-4a47-92F3-F9581C3FB95E}
+    ProgID: npCloudroomVideoSDK.CloudroomVideoUI
+    MIME: application/x-cloudroom-videoui
+
+CloudroomVideoUI是视频显示组件，它显示设定的用户的视频。
+
+该组件可以创建多个实例，然后分别配置大小、位置并设置要显示的用户ID和摄像头ID即可。
+
+注意：只有在CloudroomVideoMeeting入会成功后才能正常工作。
+
+##### 屏幕共享画面显示组件CloudroomScreenShareUI {#CloudroomScreenShareUI}
+
+    CLSID: {6FF142C5-8A36-49d7-B627-D60B803550FC}
+    ProgID: npCloudroomVideoSDK.CloudroomScreenShareUI
+    MIME: application/x-cloudroom-screenshareui
+
+  CloudroomScreenShareUI是屏幕共享显示组件，它用于显示会议内对方共享的屏幕图像。
+
+  该组件一个进程内只能创建一个实例，整个程序只能创建一个CloudroomScreenShareUI对象，用来接受显示他人开启共享后传过来的画面, 开启共享的接口是CloudroomVideoMeeting中的接口[startScreenShare](meeting.md#startScreenShare)。
+
+  注意：只有在CloudroomVideoMeeting入会成功后才能正常工作。
+
+##### 影音显示组件CloudroomMediaUI {#CloudroomMediaUI}
+
+    CLSID: {93A618D5-2535-42d0-B72B-95705263F398}
+    ProgID: npCloudroomVideoSDK.CloudroomMediaUI
+    MIME: application/x-cloudroom-mediaui
+
+CloudroomMediaUI是影音显示组件，它用于显示自己或者对方会议内播放的影音图像和声音。
+
+该组件一个进程内只能创建一个实例，整个程序只能创建一个CloudroomMediaUI对象，影音控制接口由CloudroomVideoMeeting统一提供。
+
+注意：只有在CloudroomVideoMeeting入会成功后才能正常工作。
+
+# <font color="#2674ba">会议CloudroomMeetingSDK(V3.1)</font>
+
+>CloudroomMeetingSDK是由众多的DLL组合而成，对外提供有四个控件：
+
+   &emsp;&emsp;a.[<font color="#718c00">云屋会议控件CloudroomMeeting</font>](#CloudroomMeeting)
+
+   &emsp;&emsp;b.[<font color="#718c00">视频界面控件VideoUI</font>](#VideoUI)
+
+   &emsp;&emsp;c.[<font color="#718c00">屏幕共享界面控件ScreenShareUI</font>](#ScreenShareUI)
+
+   &emsp;&emsp;d.[<font color="#718c00">媒体界面控件MediaUI</font>](#MediaUI)
+    
+### <a id="CloudroomMeeting"><font color="#0099cc">CloudroomMeeting</font></a>
+
+>- <p>CLSID:<font face="微软雅黑"> {BDEB623E-D629-49d5-AE39-5B43E7572A62}</font>;</p>
+-  <p>ProgID: npCloudroomMeetingSDK.ScreenShareUI;</p>
+-  <p>MIME TYPE: application/x-cloudroom-meetingsdk;</p>
+-  <p>CloudroomMeeting是核心控件，它实现会议的基础功能;</p>
+-  <p>一个进程内只能创建一个实例，直到应用退出时才反初始化并销毁;</p>
+
+   + CloudroomMeeting控件使用过程主要包括:
+
+    a.创建控件实例，执行初始化;
+
+    b.登录;
+
+    c.通话;
+
+### <a id="VideoUI"><font color="#0099cc">VideoUI</font></a>
+
+>- <p>CLSID: {5872A9E0-2401-4abb-B75A-D6F361099C81};</p>
+-  <p>ProgID: npCloudroomMeetingSDK.VideoUI;</p>
+-  <p>MIME TYPE: application/x-cloudroom-videoui;</p>
+-  <p>VideoUI是视频显示控件，它显示设定的用户的视频;</p>
+-  <p>VideoUI可以创建多个实例，然后分别配置大小、位置并设置要显示的用户ID即可;</p>
+-  <p>也可以不使用VideoUI控件，而是接收CloudroomMeeting的notifyVideoData事件，然后使用CloudroomMeeting的getVideoImg接口来获取图像，自已实现显示功能;</p>
+<font color="red">&emsp;&emsp;注意：CloudroomMeetingSDK视频统一采用16:9的尺寸编码，为了保证显示的图像不变形，请尽量保证VideoUI的宽高比为16:9。</font>
+
+### <a id="ScreenShareUI"><font color="#0099cc">ScreenShareUI</font></a>
+
+>- <p>CLSID: {CLSID: {11A191A8-4E28-4952-99F6-D5CBC862FEB4};</p>
+-  <p>ProgID: ProgID: npCloudroomMeetingSDK.ScreenShareUI;</p>
+-  <p>MIME TYPE: application/x-cloudroom-screenshareui;</p>
+-  <p>ScreenShareUI是屏幕共享显示控件，它用于显示对方共享的屏幕图像；</p>
+-  <p>也可以不使用ScreenShareUI控件，而是接收CloudroomMeeting的notifyScreenShareData事件，然后使用CloudroomMeetig的getShareScreenDecodeImg接口来获取图像，自已实现显示功能;</p>
+
+### <a id="MediaUI"><font color="#0099cc">MediaUI</font></a>
+
+>- <p>CLSID: {8344A9F9-EBC1-4A27-B20D-A100D68ACC7B};</p>
+-  <p>ProgID: npCloudroomMeetingSDK.MediaUI;</p>
+-  <p>MIME TYPE: application/x-cloudroom-mediaui;</p>
+-  <p>MediaUI是影音显示控件，它用于显示自己或者对方播放的影音图像;</p>
+-  <p>可以创建多个影音控件，但显示的都是当前播放的影音内容，影音控制接口由CloudroomMeetig统一提供</p>
+
