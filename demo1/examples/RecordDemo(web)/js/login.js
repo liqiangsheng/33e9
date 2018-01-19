@@ -300,9 +300,11 @@ $(function(){
          * 
          */
         function enterMeet(){
+        	//进入会议
             CRVideo_EnterMeeting(g_meetingId,g_meetingPsw,g_userID,g_nickname)
             // console.log(6666)
         }
+        //进入会议完成响应
         CRVideo_EnterMeetingRslt.callback=function(sdkErr){
             // CRVideo_NOERR==没有错误 成功
            if(sdkErr == CRVideo_NOERR){

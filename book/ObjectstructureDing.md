@@ -74,7 +74,7 @@ videoStatus     |  视频状态,数值参考视频状态定义VSTATUS
 
 ## <font color="#0099cc">音频配置</font>
 
->AudioCfgObj
+>AudioCfgObj {#AudioCfgObj}
 
 <p style="background:#f7f7f7;color:#718c00">
 {"micName": <font color="#ef8020">"aaa"</font>, 
@@ -138,7 +138,7 @@ frameTime     |  图像的时戳
 
 ##<font color="#0099cc">用户视频信息 </font>
 
->VideoInfoObj
+>VideoInfoObj {#VideoInfoObj}
 
 <p style="background:#f7f7f7;color:#718c00">
 {"userID":<font color="#ef8020" >"111"</font>,
@@ -154,7 +154,7 @@ videoName     |  设备名称
 
 ##<font color="#0099cc">用户视频信息列表</font>
 
->VideoInfosObj
+>VideoInfosObj {#VideoInfosObj}
 
 <p style="background:#f7f7f7;color:#718c00">
 [
@@ -183,7 +183,7 @@ videoName     |  设备名称
 userID          |  用户id
 videoID       |  设备id
 
-##<font color="#0099cc">屏幕共享配置</font>
+##<font color="#0099cc">屏幕共享配置</font> {#ScreenShareCfgObj}
 
 >ScreenShareCfgObj
 
@@ -201,7 +201,7 @@ catchWnd       |  共享窗口的窗口句柄，用于实现窗口共享
 maxFPS       |  最大帧率, 缺省为8 (当网络发不动时，帧率会自动下降)
 maxKbps       | 最大帧率, 缺省为8 (当网络发不动时，帧率会自动下降)
 
-##<font color="#0099cc">录制视频对象列表</font>
+##<font color="#0099cc">录制视频对象列表</font> {#RecordVideosObj}
 
 >RecordVideosObj
 
@@ -225,9 +225,9 @@ type         |  录制类型REC_VCONTENT_TYPE说明:<p>当type=RECVTP_VIDEO时�
 keepAspectRatio         |  内容保持原始比例；（0：不保持；1：保持）
 param         |  具体值与type相关；
 
-##<font color="#0099cc">录制文件配置 </font>
+##<font color="#0099cc">录制文件配置 </font> {#RecordCfgObj}
 
->RecordCfgObj
+>RecordCfgObj 
 
 <p style="background:#f7f7f7;color:#718c00">
 {"filePathName":<font color="#ef8020">"D:\\1.mp4"</font>,
@@ -253,7 +253,7 @@ isUploadOnRecording       | 是否边录边上传，0：手动上传；1：边�
 
 ##<font color="#0099cc">录制文件列表 </font>
 
->RecordFilesObj
+>RecordFilesObj {#RecordFilesObj}
 
 <p style="background:#f7f7f7;color:#718c00">
 [
@@ -271,7 +271,7 @@ size       |  文件大小
 state       |  0:没有上传，1:上传中，2:上传完毕
 uploadPercent       |  录制结果中视频尺寸高度上传进度，state为1时此字段有效
 
-##<font color="#0099cc">影音文件</font>
+##<font color="#0099cc">影音文件</font> {#MediaInfoObj}
 
 >MediaInfoObj
 
@@ -361,7 +361,7 @@ left、top     |  图元在页内的左上角位置
 …    |  可自由扩展
 说明：    | <p>1.elementID必须调用createElementID（）获取, 即使是曾经调此接口创建的然后存入了磁盘文件，再次读入会议时，所有elementID也需要重新生重。</p><p>2.如果要和云屋产品互通，那就需要按云屋的定义取值，可以联系云屋获取相关文档</p>
 
-##<font color="#0099cc">网盘文件对象</font>
+##<font color="#0099cc">网盘文件对象</font> {#NetFileObj}
 
 >NetFileObj
 
@@ -389,7 +389,7 @@ size         |  在服务器上的大小
 orgSize         |  原始文件大小
 status         |  文件状态
 
-##<font color="#0099cc">网盘文件对象列表</font>
+##<font color="#0099cc">网盘文件对象列表</font> {#NetFileObjs}
 
 >NetFileObjs
 

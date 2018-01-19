@@ -1,10 +1,10 @@
 <!-- 基础接口 -->
-# <font color="#2674ba">CloudroomVideoSDK对象</font>
+# <font color="#2674ba">CloudroomVideoSDK对象</font> {#BaseInterface}
 
 >CloudroomVideoSDK是基础控件，负责SDK的初始化和反初始化操作
 
 <!-- 1 -->
-### <font color="#0099cc">获取sdk的版本信息</font>
+### <font color="#0099cc">获取sdk的版本信息</font> {#Version}
 
 <p style="background:#f7f7f7;color:#718c00">属性 Version</p>
 
@@ -19,7 +19,7 @@
 >可读。这个接口在init之前可用
 
 <!-- 2 -->
-### <font color="#0099cc">获取sdk所在的目录</font>
+### <font color="#0099cc">获取sdk所在的目录</font> {#sdkPath}
 
 <p style="background:#f7f7f7;color:#718c00">属性sdkPath</p>
 
@@ -34,7 +34,7 @@
 >可读。这个接口在init之前可用
 
 <!-- 3 -->
-### <font color="#0099cc">设置SDK参数</font>
+### <font color="#0099cc">设置SDK参数</font> {#setSDKParams}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setSDKParams ()</p>
 
@@ -56,7 +56,7 @@
 >这个接口在init之前调用有效
 
 <!-- 4 -->
-### <font color="#0099cc">设置是否开启日志</font>
+### <font color="#0099cc">设置是否开启日志</font> {#enableLog2File}
 
 <p style="background:#f7f7f7;color:#718c00">方法 enableLog2File ()</p>
 
@@ -72,7 +72,7 @@
 > SDK中日志功能默认是打开的这个接口在init之前或者之后均可调用
 
 <!-- 5 -->
-### <font color="#0099cc">SDK初始化</font>
+### <font color="#0099cc">SDK初始化</font> {#init}
 
 <p style="background:#f7f7f7;color:#718c00">方法 init  ()</p>
 
@@ -89,7 +89,7 @@
 >每次init后，都应对一次uninit
 
 <!-- 6 -->
-### <font color="#0099cc">SDK反初始化</font>
+### <font color="#0099cc">SDK反初始化</font> {#uninit}
 
 <p style="background:#f7f7f7;color:#718c00">方法 uninit ()</p>
 
@@ -102,7 +102,7 @@
 - **参数**:无
 
 <!-- 7 -->
-### <font color="#0099cc"> 设置和获取服务器地址</font>
+### <font color="#0099cc"> 设置和获取服务器地址</font> {#serverAddr}
 
 <p style="background:#f7f7f7;color:#718c00">属性serverAddr</p>
 
@@ -117,7 +117,7 @@
 >可读、可写。支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080;183.60.47.52:8080;）
 
 <!-- 8 -->
-### <font color="#0099cc">文件上传的流量控制</font>
+### <font color="#0099cc">文件上传的流量控制</font> {#setFileUploadRate}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setFileUploadRate ()</p>
 
@@ -133,7 +133,7 @@
 > SDK默认不开启流控。目前对文件上传控制的功能有：CloudroomVideoMeeting录制文件上传、CloudroomVideoMeeting网盘文件、CloudroomHttpFileMgr文件传输。
 
 <!-- 9 -->
-### <font color="#0099cc">文件下载的流量控制</font>
+### <font color="#0099cc">文件下载的流量控制</font> {#setFileDownloadRate}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setFileDownloadRate  ()</p>
 

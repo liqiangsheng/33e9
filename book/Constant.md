@@ -3,7 +3,7 @@
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
 
-##错误代码含义
+##错误代码含义 {#CRVIDEOSDK_ERR_DEF}
 
 >CRVIDEOSDK_ERR_DEF
 
@@ -58,7 +58,7 @@
 | CRVIDEOSDK_RECORDFILE_STATE_ERR | 1200 | 状态错误不可上传/取消上传    | 
 | CRVIDEOSDK_RECORDFILE_NOT_EXIST | 1201 | 录制文件不存在    | 
 
-##麦克风状态
+##麦克风状态 {#ASTATUS}
 >ASTATUS
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -71,7 +71,7 @@
 |AOPEN	   |3	|麦克风处于打开状态（软开关）	|   
 |AOPENING  |4	|向服务器发送打开消息中	| 
 
-##视频尺寸定义
+##视频尺寸定义 {#VIDEO_SHOW_SIZE}
 >VIDEO_SHOW_SIZE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -115,7 +115,7 @@
 | VFMT_YUV420P|0	|yuv420p	   |
 | VFMT_ARGB32	|1 |32-bit ARGB format (0xAARRGGBB)	 |
 
-##录制内容类型
+##录制内容类型 {#REC_VCONTENT_TYPE}
 >REC_VCONTENT_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -127,6 +127,19 @@
 | RECVTP_SCREEN|	2|	屏幕	   |
 | RECVTP_MEDIA|	3	|影音共享	|   
 | RECVTP_TIMESTAMP	|4|时间戳	 |
+
+##录制的状态 {#RECORD_STATE}
+>RECORD_STATE
+
+<p style="width:100%;height:4px;background:#f7f7f7"></p>
+
+| 代码     | 数值        |   分辨率和码率 |
+|:-------- |:-----------|:----------|
+| NO_RECORD|0	|录制未启动	   |
+| STARTING	|1|	录制正在开启	|   
+| RECORDING|	2|	正在录制	   |
+| PAUSED|	3	|录制已暂停	|   
+| STOPPING	|4|录制正在结束	 |
 
 ##录制语音类型
 >RECORD_AUDIO_TYPE

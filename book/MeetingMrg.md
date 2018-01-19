@@ -4,7 +4,7 @@
 >登录、呼叫、会议创建管理类，还负责实现呼叫功能
 
 <!-- 1 -->
-### <font color="#0099cc">登陆服务器</font>
+### <font color="#0099cc">登陆服务器</font> {#login}
 
 <p style="background:#f7f7f7;color:#718c00">方法 login （）</p>
 
@@ -25,7 +25,7 @@
 >成功事件loginSuccess.失败事件loginFail
 
 <!-- 2 -->
-### <font color="#0099cc">注销本次登陆</font>
+### <font color="#0099cc">注销本次登陆</font> {#logout}
 
 <p style="background:#f7f7f7;color:#718c00">方法 logout ()</p>
 
@@ -40,7 +40,7 @@
 >无事件
 
 <!-- 3 -->
-### <font color="#0099cc">设置免打扰状态</font>
+### <font color="#0099cc">设置免打扰状态</font> {#setDNDStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setDNDStatus ()</p>
 
@@ -57,7 +57,7 @@
 >成功事件setDNDStatusSuccess.失败事件setDNDStatusFail
 
 <!-- 4 -->
-### <font color="#0099cc">获取用户在线状态</font>
+### <font color="#0099cc">获取用户在线状态</font> {#getUserStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getUserStatus ()</p>
 
@@ -73,7 +73,7 @@
 >将获取企业下所有用户在线状态（包括呼叫会议状态、免打扰状态）.成功事件getUserStatusSuccess.失败事件getUserStatusFail
 
 <!-- 5 -->
-### <font color="#0099cc">开启用户的状态推送</font>
+### <font color="#0099cc">开启用户的状态推送</font> {#startUserStatusNotify}
 
 <p style="background:#f7f7f7;color:#718c00">方法 startUserStatusNotify ()</p>
 
@@ -89,7 +89,7 @@
 >开启后，企业下所有用户状态有变化时(包括呼叫会议状态、免打扰状态)，都会收到通知。开启后，用户量越大消息量越大，所以请按需开启；在startUserStatusNotify前，应该先通过getUserStatus获取所有用户状态
 
 <!-- 6 -->
-### <font color="#0099cc">关闭用户的状态推送</font>
+### <font color="#0099cc">关闭用户的状态推送</font> {#stopUserStatusNotify}
 
 <p style="background:#f7f7f7;color:#718c00">方法 stopUserStatusNotify ()</p>
 
@@ -103,7 +103,7 @@
  + cookie ------ 自定义数据(在回调时，回传给调用者)，不需要时传空字符串
 
 <!-- 7 -->
-### <font color="#0099cc">创建会议</font>
+### <font color="#0099cc">创建会议</font> {#createMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 createMeeting ()</p>
 
@@ -121,7 +121,7 @@
 >成功事件createMeetingSuccess.失败事件createMeetingFail
 
 <!-- 8 -->
-### <font color="#0099cc">消毁会议</font>
+### <font color="#0099cc">消毁会议</font> {#destroyMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 destroyMeeting ()</p>
 

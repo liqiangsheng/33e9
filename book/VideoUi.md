@@ -1,5 +1,5 @@
 <!-- 视频显示 -->
-# <font color="#2674ba">CloudroomVideoUI对象</font>
+# <font color="#2674ba">CloudroomVideoUI对象</font> {#videoui}
 
 >CloudroomVideoUI是视频显示控件，它显示设定的用户的视频
 

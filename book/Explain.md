@@ -4,7 +4,7 @@
 
 <p style="width:100%;height:4px;background:#f7f7f7;"></p>
 
-## <font color="#0099cc">说明</font>
+## <font color="#0099cc">说明</font> {#runEvn}
 
 >会议SDK结构、SDK开发流程、SDK浏览器开发环境。CloudroomVideo SDK for Web支持的浏览器有：IE8,IE9,IE10,IE11，chrome44及以下(包含chrome44)。
 
@@ -52,7 +52,7 @@
 
 <p style="width:100%;background:#f7f7f7;">JavaScript 的开发工具有很多，开发者可根据自己的喜好进行选择。在此，我们推荐开发者使用<font color="#718c00"> dreamwaver</font> 作为自己的开发工具，本套开发指南也是针对<font color="#718c00"> dreamwaver </font>开发环境下进行编写的。</p>
 
-#### <font color="#0099cc">安装插件</font>
+#### <font color="#0099cc">安装插件</font> {#install}
 
 - 首先要安装开发插件，CloudroomVideo SDK for Web 提供的所有 JavaScript 接口都是基于这个插件实现，进行web开发之前需要确保插件已经安装成功，双击SDK目录下的开发环境下进行编写的。
 
@@ -70,7 +70,7 @@
 
  ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/4.png)
 
-#### <font color="#0099cc">导入SDK文件</font>
+#### <font color="#0099cc">导入SDK文件</font> {#developEvn}
 
 - 将SDK包js子目录下的CloudroomVideoSDK.js和CloudroomVideoSDK_iePatch.js文件拷贝到自己的web开发环境当中
  
