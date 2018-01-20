@@ -154,7 +154,7 @@
 >结果请见getMeetingsSuccess
 
 <!-- 10 -->
-### <font color="#0099cc">发起呼叫，邀请用户参加视频会话</font>
+### <font color="#0099cc">发起呼叫，邀请用户参加视频会话</font> {#call}
 
 <p style="background:#f7f7f7;color:#718c00">方法 call ()</p>
 
@@ -173,7 +173,7 @@
 >成功事件callSuccess，失败事件callFail,呼叫时，对方迟迟不响应，30秒后系统自动结束呼叫
 
 <!-- 11 -->
-### <font color="#0099cc">接受对方发起的视频请求，开始进入视频会话</font>
+### <font color="#0099cc">接受对方发起的视频请求，开始进入视频会话</font> {#acceptCall}
 
 <p style="background:#f7f7f7;color:#718c00">方法 acceptCall ()</p>
 
@@ -211,7 +211,7 @@
 >成功事件rejectCallSuccess.失败事件rejectCallFail
 
 <!-- 13 -->
-### <font color="#0099cc">挂断正在进行的视频呼叫或视频通话</font>
+### <font color="#0099cc">挂断正在进行的视频呼叫或视频通话</font> {#hungupCall}
 
 <p style="background:#f7f7f7;color:#718c00">方法 hungupCall ()</p>
 
@@ -229,7 +229,7 @@
 >成功事件hungupCallSuccess.失败事件hungupCallFail
 
 <!-- 14 -->
-### <font color="#0099cc">发送小块数据（50K以内）</font>
+### <font color="#0099cc">发送小块数据（50K以内）</font> {#sendCmd}
 
 <p style="background:#f7f7f7;color:#718c00">方法 sendCmd ()</p>
 
@@ -280,7 +280,7 @@
 >分块发送，进度通知事件sendProgress.发送结果事件 sendFileRlst.取消发送 cancelSend
 
 <!-- 17 -->
-### <font color="#0099cc">取消数据发送</font>
+### <font color="#0099cc">取消数据发送</font> {#cancelSend}
 
 <p style="background:#f7f7f7;color:#718c00">方法 cancelSend ()</p>
 
@@ -491,7 +491,7 @@
  + cookie ------ 自定义用户数据
 
 <!-- 33 -->
-### <font color="#0099cc">呼叫他人操作成功响应</font>
+### <font color="#0099cc">呼叫他人操作成功响应</font> {#callSuccess}
 
 <p style="background:#f7f7f7;color:#718c00">事件callSuccess</p>
 
@@ -518,7 +518,7 @@
  + cookie ------ 自定义用户数据
 
 <!-- 35 -->
-### <font color="#0099cc">接受他人呼叫操作成功响应</font>
+### <font color="#0099cc">接受他人呼叫操作成功响应</font> {#acceptCallSuccess}
 
 <p style="background:#f7f7f7;color:#718c00">事件acceptCallSuccess</p>
 
@@ -572,7 +572,7 @@
  + cookie ------ 自定义用户数据
 
 <!-- 39 -->
-### <font color="#0099cc">设置用户是否启用多摄像头</font>
+### <font color="#0099cc">设置用户是否启用多摄像头</font> {#hungupCallSuccess}
 
 <p style="background:#f7f7f7;color:#718c00">事件hungupCallSuccess</p>
 
@@ -599,7 +599,7 @@
  + cookie ------ 自定义用户数据
 
 <!-- 41 -->
-### <font color="#0099cc">SDK通知自己被呼叫</font>
+### <font color="#0099cc">SDK通知自己被呼叫</font> {#notifyCallIn}
 
 <p style="background:#f7f7f7;color:#718c00">事件notifyCallIn</p>
 
@@ -615,7 +615,7 @@
 
 
 <!-- 42 -->
-### <font color="#0099cc">SDK通知自己视频呼叫被对方接受</font>
+### <font color="#0099cc">SDK通知自己视频呼叫被对方接受</font> {#notifyCallAccepted}
 
 <p style="background:#f7f7f7;color:#718c00">事件notifyCallAccepted</p>
 
@@ -656,7 +656,7 @@
  + usrExtDat ------ 自定义扩展参数
 
 <!-- 45 -->
-### <font color="#0099cc">发送数据时，SDK通知发送结果</font>
+### <font color="#0099cc">发送数据时，SDK通知发送结果</font> {#sendCmdRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件sendCmdRlst</p>
 
@@ -699,7 +699,7 @@
  + cookie ------ 用户自定义数据
 
 <!-- 48 -->
-### <font color="#0099cc">发送数据时，SDK通知发送进度</font>
+### <font color="#0099cc">发送数据时，SDK通知发送进度</font> {#sendProgress}
 
 <p style="background:#f7f7f7;color:#718c00">事件sendProgress</p>
 
@@ -714,7 +714,7 @@
  + cookie ------ 用户自定义数据
 
 <!-- 49 -->
-### <font color="#0099cc">取消发送</font>
+### <font color="#0099cc">取消发送</font> {#cancelSendRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件cancelSendRlst</p>
 
@@ -728,7 +728,7 @@
  + cookie ------ 用户自定义数据
 
 <!-- 50 -->
-### <font color="#0099cc">SDK通知收到小块数据</font>
+### <font color="#0099cc">SDK通知收到小块数据</font> {#notifyCmdData}
 
 <p style="background:#f7f7f7;color:#718c00">事件notifyCmdData</p>
 

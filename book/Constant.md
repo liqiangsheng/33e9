@@ -92,7 +92,7 @@
 |VSIZE_SZ_720	|12|1280*720,  最大码率：1mbps	|   
 |VSIZE_SZ_1080	|13|1920*1080, 最大码率：2mbps	|
 
-##视频状态定义
+##视频状态定义 {#VSTATUS}
 >VSTATUS
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -105,7 +105,7 @@
 | VOPEN	|3|	视频处于打开状态（软开关）|	   
 | VOPENING|	4	|向服务器发送打开消息中	 |
 
-##视频图像格式
+##视频图像格式 {#VIDEO_FORMAT}
 >VIDEO_FORMAT
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -221,7 +221,7 @@
 | KEYT_DWON|	0|	键值按下|	   
 | KEYT_UP	|1	|键值弹起| 
 
-##功能类型
+##功能类型  {#MAIN_PAGE_TYPE}
 >MAIN_PAGE_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>

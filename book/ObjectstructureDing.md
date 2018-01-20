@@ -1,6 +1,6 @@
 # <font color="#2674ba">对象结构定义</font> 
 
-## <font color="#0099cc">会议对象</font>
+## <font color="#0099cc">会议对象</font> {#MeetInfoObj}
 
 >MeetInfoObj
 
@@ -22,7 +22,7 @@ pubMeetUrl  |  会议公共链接
 creator     |  会议创建者
 memberCount |  会议内人数
 
-## <font color="#0099cc">会议对象列表</font>
+## <font color="#0099cc">会议对象列表</font> {#MeetInfoObjs}
 
 >MeetInfoObjs
 
@@ -42,7 +42,7 @@ memberCount |  会议内人数
 "memberCount":<font color="#ef8020">4</font>},... </p>]
 </div>
 
-## <font color="#0099cc">成员对象</font>
+## <font color="#0099cc">成员对象</font> {#MemberObj}
 
 >MemberObj
 
@@ -60,7 +60,7 @@ nickName        |  用户昵称
 audioStatus     |  音频状态,数值参考麦克风状态ASTATUS
 videoStatus     |  视频状态,数值参考视频状态定义VSTATUS
 
-## <font color="#0099cc">成员对象列表</font>
+## <font color="#0099cc">成员对象列表</font>  {#MembersObj}
 
 >MembersObj
 
@@ -72,9 +72,9 @@ videoStatus     |  视频状态,数值参考视频状态定义VSTATUS
 
 </p>
 
-## <font color="#0099cc">音频配置</font>
+## <font color="#0099cc">音频配置</font>  {#AudioCfgObj}
 
->AudioCfgObj {#AudioCfgObj}
+>AudioCfgObj
 
 <p style="background:#f7f7f7;color:#718c00">
 {"micName": <font color="#ef8020">"aaa"</font>, 
@@ -90,7 +90,7 @@ speakerName        |  扬声器名称(空代表系统默认设备)
 privEC     |  是否开启云屋私有回声消息0：不开启；1：开启(缺省建议不开启)
 privAgc     |  是否开启云屋私有语音自动增益0：不开启；1：开启(缺省建议不开启)
 
-## <font color="#0099cc">视频配置</font>
+## <font color="#0099cc">视频配置</font> {#VideoCfgObj}
 
 >VideoCfgObj
 
@@ -114,7 +114,7 @@ wh_rate    | 视频宽高比,取值如下:<font color="#ef8020"> 0 为16:9(未�
 >- maxbps码率控制，是为了确保结果一定不大于“目标码率”（体积受控）；
 >- 当要超出码率控制时，自动降低质量；当质量达到目标时，自动减少码率甚至无码率输出。
 
-## <font color="#0099cc">视频帧图像 </font>
+## <font color="#0099cc">视频帧图像 </font> {#VideoImgObj}
 
 >VideoImgObj
 
@@ -136,9 +136,9 @@ width     |  图像宽度
 height     |  图像高度
 frameTime     |  图像的时戳
 
-##<font color="#0099cc">用户视频信息 </font>
+##<font color="#0099cc">用户视频信息 </font> {#VideoInfoObj}
 
->VideoInfoObj {#VideoInfoObj}
+>VideoInfoObj 
 
 <p style="background:#f7f7f7;color:#718c00">
 {"userID":<font color="#ef8020" >"111"</font>,
@@ -165,7 +165,7 @@ videoName     |  设备名称
 ]
 </p>
 
-##<font color="#0099cc">用户视频列表</font>
+##<font color="#0099cc">用户视频列表</font> {#VideoIDObjs}
 
 >VideoIDObjs
 
@@ -251,9 +251,9 @@ defaultQP       |  <p>录制的缺省质量，缺省值：28</p><p>取值范围�
 recDataType       |  录制内容类型，值参考定义REC_DATATYPE
 isUploadOnRecording       | 是否边录边上传，0：手动上传；1：边录制边上传；
 
-##<font color="#0099cc">录制文件列表 </font>
+##<font color="#0099cc">录制文件列表 </font> {#RecordFilesObj}
 
->RecordFilesObj {#RecordFilesObj}
+>RecordFilesObj 
 
 <p style="background:#f7f7f7;color:#718c00">
 [
@@ -285,7 +285,7 @@ userID          |  用户id径
 state       |   播放状态 0:播放 1:暂停 2:未播放
 mediaName       |  影音文件名
 
-##<font color="#0099cc">图片资源</font>
+##<font color="#0099cc">图片资源</font> {#PicResourceObj}
 
 >PicResourceObj
 
@@ -300,7 +300,7 @@ dat       |   <p>资源数据，不同格式时，要提供的数据各不一样
 width          |  图像宽度(像素), 在fmt为"yuv420p"，"rgb32"时，需要此参数
 height          |  图像高度(像素), 在fmt为"yuv420p"，"rgb32"时，需要此参数
 
-##<font color="#0099cc">白板信息列表</font>
+##<font color="#0099cc">白板信息列表</font> {#BoardObjs}
 
 >BoardObjs
 
@@ -312,7 +312,7 @@ height          |  图像高度(像素), 在fmt为"yuv420p"，"rgb32"时，需�
 ]
 </div>
 
-##<font color="#0099cc">白板配置对象</font>
+##<font color="#0099cc">白板配置对象</font> {#BoardObj}
 
 >BoardObj
 
@@ -331,7 +331,7 @@ title      |   白板的名字
 width、height      |  白板的宽、高
 pageCount    |  页数(建议白板是一页，文档是实际页面数)
 
-##<font color="#0099cc">白板图元列表</font>
+##<font color="#0099cc">白板图元列表</font> {#BoardElementObjs}
 
 >BoardElementObjs
 
@@ -342,7 +342,7 @@ pageCount    |  页数(建议白板是一页，文档是实际页面数)
 ]
 </p>
 
-##<font color="#0099cc">白板图元</font>
+##<font color="#0099cc">白板图元</font> {#BoardElementObj}
 
 >BoardElementObj
 

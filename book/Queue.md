@@ -1,10 +1,10 @@
 <!-- 队列管理 -->
-# <font color="#2674ba">CloudroomQueue对象</font>
+# <font color="#2674ba">CloudroomQueue对象</font> {#initQueueDat}
 
 >CloudroomQueue是队列控件，实现队列功能
 
 <!-- 1 -->
-### <font color="#0099cc">初始化用户队列功能数据</font>
+### <font color="#0099cc">初始化用户队列功能数据</font> {#initQueueDat}
 
 <p style="background:#f7f7f7;color:#718c00">方法 initQueueDat （）</p>
 
@@ -20,7 +20,7 @@
 >响应事件initQueueDatRslt初始化成功后，才可获取队列队列相关信息；成功事件loginSuccess.失败事件loginFail
 
 <!-- 2 -->
-### <font color="#0099cc">刷新所有队列状态信息</font>
+### <font color="#0099cc">刷新所有队列状态信息</font> {#refreshAllQueueStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法 refreshAllQueueStatus ()</p>
 
@@ -35,7 +35,7 @@
 >响应事件queueStatusChanged(当前排队的队列或服务的队列，sdk自动有状态变化回调；其它队列则需要此函数来查询)
 
 <!-- 3 -->
-### <font color="#0099cc">获取队列信息</font>
+### <font color="#0099cc">获取队列信息</font> {#getAllQueueInfo}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAllQueueInfo ()</p>
 
@@ -57,7 +57,7 @@ desc |队列描述
 prio |优先级，值越小优先级越高
 
 <!-- 4 -->
-### <font color="#0099cc">获指定取队列状态</font>
+### <font color="#0099cc">获指定取队列状态</font> {#getQueueStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getQueueStatus ()</p>
 
@@ -80,7 +80,7 @@ wait_num |坐席数量
 srv_num |正在服务的客户数量
 
 <!-- 5 -->
-### <font color="#0099cc">获取我的排队信息</font>
+### <font color="#0099cc">获取我的排队信息</font> {#getQueuingInfo}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getQueuingInfo ()</p>
 
@@ -102,7 +102,7 @@ queuingTime |我排队的时长(单位s)
 
 
 <!-- 6 -->
-### <font color="#0099cc">获取我服务的所有队列</font>
+### <font color="#0099cc">获取我服务的所有队列</font> {#getServiceQueues}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getServiceQueues ()</p>
 
@@ -115,7 +115,7 @@ queuingTime |我排队的时长(单位s)
 - **参数**:无
 
 <!-- 7 -->
-### <font color="#0099cc">获取我的会话信息</font>
+### <font color="#0099cc">获取我的会话信息</font> {#getSessionInfo}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getSessionInfo ()</p>
 
@@ -141,7 +141,7 @@ meetingPswd |会议密码
 duration |会议密码
 
 <!-- 8 -->
-### <font color="#0099cc">客户开始排队</font>
+### <font color="#0099cc">客户开始排队</font> {#startQueuing}
 
 <p style="background:#f7f7f7;color:#718c00">方法 startQueuing ()</p>
 
@@ -158,7 +158,7 @@ duration |会议密码
 >响应事件startQueuingRslt
 
 <!-- 9 -->
-### <font color="#0099cc">客户停止排队</font>
+### <font color="#0099cc">客户停止排队</font> {#stopQueuing}
 
 <p style="background:#f7f7f7;color:#718c00">方法 stopQueuing  ()</p>
 
@@ -174,7 +174,7 @@ duration |会议密码
 >响应事件stopQueuingRslt
 
 <!-- 10 -->
-### <font color="#0099cc">开始服务某个队列(可以多次调用，开启对多个队列的服务) </font>
+### <font color="#0099cc">开始服务某个队列(可以多次调用，开启对多个队列的服务) </font> {#startService}
 
 <p style="background:#f7f7f7;color:#718c00">方法 startService ()</p>
 
@@ -191,7 +191,7 @@ duration |会议密码
 >响应事件startServiceRslt开启成功后：<p>a. 如果没有开启免打扰，那么系统会自动分配客户：将收到事件autoAssignUser；</p><p>b. 如果开启免打扰，系统就不会分配客户，如需服务客户可调用：reqAssignUser</p>
 
 <!-- 11 -->
-### <font color="#0099cc">停止服务某个队列</font>
+### <font color="#0099cc">停止服务某个队列</font> {#stopService}
 
 <p style="background:#f7f7f7;color:#718c00">方法 stopService ()</p>
 
@@ -208,7 +208,7 @@ duration |会议密码
 >响应事件stopServiceRslt
 
 <!-- 12 -->
-### <font color="#0099cc">接受系统安排的客户</font>
+### <font color="#0099cc">接受系统安排的客户</font> {#acceptAssignUser}
 
 <p style="background:#f7f7f7;color:#718c00">方法 acceptAssignUser ()</p>
 
@@ -224,7 +224,7 @@ duration |会议密码
   + cookie ------ 用户自定义数据(在回调时，回传给调用者)
 
 <!-- 13 -->
-### <font color="#0099cc">拒绝系统安排的客户</font>
+### <font color="#0099cc">拒绝系统安排的客户</font> {#rejectAssignUser}
 
 <p style="background:#f7f7f7;color:#718c00">方法 rejectAssignUser ()</p>
 
@@ -242,7 +242,7 @@ duration |会议密码
 >被拒绝的客户将重新回到队列的最前端
 
 <!-- 14 -->
-### <font color="#0099cc">请求分配一个客户</font>
+### <font color="#0099cc">请求分配一个客户</font> {#rejectAssignUser}
 
 <p style="background:#f7f7f7;color:#718c00">方法 reqAssignUser ()</p>
 
@@ -258,7 +258,7 @@ duration |会议密码
 >响应事件reqAssignUserRslt<p>当关闭免打扰时，系统将自动分配客户，无需调用此函数；</p><p>当开启免打扰时，系统不再自动分配客户，座席如需服务客户可使用此函数分配</p>
 
 <!-- 15 -->
-### <font color="#0099cc">队列初始化操作结果</font>
+### <font color="#0099cc">队列初始化操作结果</font> {#initQueueDatRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件initQueueDatRslt</p>
 
@@ -273,7 +273,7 @@ duration |会议密码
 >分块发送，进度通知事件sendProgress.发送结果事件 sendBufferRlst.取消发送 cancelSend
 
 <!-- 16 -->
-### <font color="#0099cc">队列状态变化通知</font>
+### <font color="#0099cc">队列状态变化通知</font> {#queueStatusChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件queueStatusChanged</p>
 
@@ -298,7 +298,7 @@ srv_num: |正在服务的客户数量
 
 
 <!-- 17 -->
-### <font color="#0099cc">排队信息变化通知</font>
+### <font color="#0099cc">排队信息变化通知</font> {#queuingInfoChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件queuingInfoChanged</p>
 
@@ -319,7 +319,7 @@ desc |队列描述
 prio: |优先级，值越小优先级越高
 
 <!-- 18 -->
-### <font color="#0099cc">开始排队操作结果</font>
+### <font color="#0099cc">开始排队操作结果</font> {#startQueuingRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件startQueuingRslt</p>
 
@@ -332,7 +332,7 @@ prio: |优先级，值越小优先级越高
  + cookie ------ 自定义用户数据
 
 <!-- 19 -->
-### <font color="#0099cc">停止排队操作结果</font>
+### <font color="#0099cc">停止排队操作结果</font> {#stopQueuingRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件stopQueuingRslt</p>
 
@@ -345,7 +345,7 @@ prio: |优先级，值越小优先级越高
   + cookie ------ 自定义用户数据
 
 <!-- 20 -->
-### <font color="#0099cc">开始服务队列操作结果</font>
+### <font color="#0099cc">开始服务队列操作结果</font> {#startServiceRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件startServiceRslt</p>
 
@@ -359,7 +359,7 @@ prio: |优先级，值越小优先级越高
   + sdkErr ------ 自定义用户数据
 
 <!-- 21 -->
-### <font color="#0099cc">停止服务队列操作结果</font>
+### <font color="#0099cc">停止服务队列操作结果</font> {#stopServiceRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件stopServiceRslt</p>
 
@@ -373,7 +373,7 @@ prio: |优先级，值越小优先级越高
   + sdkErr ------ 自定义用户数据
 
 <!-- 22 -->
-### <font color="#0099cc">系统自动安排客户</font>
+### <font color="#0099cc">系统自动安排客户</font> {#autoAssignUser}
 
 <p style="background:#f7f7f7;color:#718c00">事件autoAssignUser</p>
 
@@ -396,7 +396,7 @@ queuingTime: |已排队时长(秒)
 如果想停止系统的自动分配，请通setDNDStatus设置免打扰功能
 
 <!-- 23 -->
-### <font color="#0099cc">系统取消已经安排的客户</font>
+### <font color="#0099cc">系统取消已经安排的客户</font> {#cancelAssignUser}
 
 <p style="background:#f7f7f7;color:#718c00">cancelAssignUser</p>
 
@@ -409,7 +409,7 @@ queuingTime: |已排队时长(秒)
  + usrID ------ 用户id
 
 <!-- 24 -->
-### <font color="#0099cc">请求分配客户操作结果</font>
+### <font color="#0099cc">请求分配客户操作结果</font> {#reqAssignUserRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件reqAssignUserRslt</p>
 

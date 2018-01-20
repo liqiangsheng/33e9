@@ -1192,112 +1192,68 @@ int vol = 24;
         }
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### 参会成员管理 {#members}
 
 > 获取会话内人员及相关信息，得到成员的userID后可以对其进行相关的远程音视频操作
 
-* 相关API请参考 [会议成员列表](meeting.md#getAllMembers)，[会议成员信息](meeting.md#getMemberInfo)  
-* 相关结构定义请参考 [会议成员](json.md#MemberObj)
+* 相关API请参考 [会议成员列表](VideoMeeting.md#getAllMembers)，[会议成员信息](VideoMeeting.md#getMemberInfo)  
+* 相关结构定义请参考 [会议成员](ObjectstructureDing.md#MemberObj)
 
 ```cs
-//获取所有参会人
-List<MemberInfo> allMembers = JsonConvert.DeserializeObject<List<MemberInfo>>(Login.Instance.CRVideo.Meeting.getAllMembers());
+    
+    /**
+        * 获取所有用户的信息  //获取所有参会人
+        * @access public
+        * @return {CRVideo_MemberInfo[]} 返回含多个成员信息
+        */	
+	    var GetAllMembers = CRVideo_GetAllMembers()
 ```
 
 ```cs
-//获取某个参会人的信息
-MemberInfo memInfo = JsonConvert.DeserializeObject<MemberInfo>(Login.Instance.CRVideo.Meeting.getMemberInfo("user_00005"));
+    
+    /**
+        * 获取指定用户的信息 //获取某个参会人的信息
+        * @access public
+        * @param {string} userID - 用户ID
+        * @return {CRVideo_MemberInfo} info - 返回用户userID的成员信息
+
+        */	
+	    var GetMemberInfo = CRVideo_GetMemberInfo(userID)
 ```
 
 ### 功能页同步 {#page}
 
 > 用户会话内同步所有人的功能，包括视频墙、影音共享、屏幕共享、电子白板
 
-* 相关API请参考 [设置/获取会话内主功能页](meeting.md#switchToPage)，[会话内主功能页切换通知](meeting.md#notifySwitchToPage)  
-* 相关结构定义请参考 [主功能类型](constant.md#MAIN_PAGE_TYPE)
+* 相关API请参考 [设置/获取会话内主功能页](VideoMeeting.md#switchToPage)，[会话内主功能页切换通知](VideoMeeting.md#notifySwitchToPage)  
+* 相关结构定义请参考 [主功能类型](Constant.md#MAIN_PAGE_TYPE)
 
 ```cs
-//视频墙、共享、白板、影音共享
-enum MAIN_PAGE_TYPE { MAINPAGE_VIDEOWALL, MAINPAGE_SHARE, MAINPAGE_WHITEBOARD, MAINPAGE_MEDIASHARE};
+    /**
+        * 功能切换
+        * @access public
+        * @param {number} mainPage -功能类型
+        * @param {string} pageID - 子页面标识（如创建白板时返回的boardID）
+        */
+        CRVideo_Switchtopage(mainPage,pageID)
 ```
-
 ```cs
-//切换功能页
-MAIN_PAGE_TYPE mainPage = MAINPAGE_VIDEOWALL;
-Login.Instance.CRVideo.Meeting.switchToPage((int)mainPage, "");
-```
 
-```cs
-//关联相关委托
-Login.Instance.CRVideo.Meeting.notifySwitchToPage += new ICloudroomVideoMeetingEvents_notifySwitchToPageEventHandler(notifySwitchToPage);
-```
+    /* SDK通知功能切换 //当他人切换功能页时，收到通知消息
+        * @callback CRVideo.CbProxy~CRVideo_NotifySwitchToPage
+        * @param {CRVideo_MAIN_PAGE_TYPE} mainPage  - 功能类型
+        * @param {string} pageID - 子页面标识
+        */
+        CRVideo_NotifySwitchToPage.callback = function(mainPage,pageID){
 
-```cs
-//当他人切换功能页时，收到通知消息
-private void notifySwitchToPage(object sender, ICloudroomVideoMeetingEvents_notifySwitchToPageEvent e)
-{
-    switch (e.p_mainPage)
-    {
-        case (int)MAIN_PAGE_TYPE.MAINPAGE_VIDEOWALL:
-            //...
-            break;
-        case (int)MAIN_PAGE_TYPE.MAINPAGE_SHARE:
-            //...
-            break;
-        case (int)MAIN_PAGE_TYPE.MAINPAGE_WHITEBOARD:
-           //...
-           //p_subPageID 大功能内部的小功能页
-            break;
-        case (int)MAIN_PAGE_TYPE.MAINPAGE_MEDIASHARE:
-           //...
-            break;
-        default:
-            // 错误的功能页
-            break;
-    }
-}
+        }
 ```
 
 ### 队列管理 {#queue}
 
 > 利用队列功能，实现用户分配。使用队列时通常会有两种角色，坐席和客户，队列模块把排队的客户分配给某个服务队列的坐席。
 >
-> 组件介绍请参考 [队列管理组件](queue.md#initQueueDat)
+> 组件介绍请参考 [队列管理组件](Queue.md#initQueueDat)
 >
 > 1. [初始化队列，获取队列数据](#initQueue)
 > 1. [坐席队列操作](#servicesOpr)
@@ -1309,257 +1265,293 @@ private void notifySwitchToPage(object sender, ICloudroomVideoMeetingEvents_noti
 
     在登录成功后初始化队列数据
 
-* 相关API请参考 [初始化队列](queue.md#initQueueDat)，[初始化队列结果](queue.md#initQueueDatRslt)，[查询所有队列](queue.md#getAllQueueInfo)  
-* 相关结构定义请参考 [会话信息](json.md#SesssionObj)，[队列信息](json.md#QueueObj)
+* 相关API请参考 [初始化队列](Queue.md#initQueueDat)，[初始化队列结果](Queue.md#initQueueDatRslt)，[查询所有队列](Queue.md#getAllQueueInfo)  
+* 相关结构定义请参考 [会话信息](ObjectstructureDing.md#SesssionObj)，[队列信息](ObjectstructureDing.md#QueueObj)
 
 ```cs
-//关联队列初始化结果委托
-CRVideo.Queue.initQueueDatRslt += new ICloudroomQueueEvents_initQueueDatRsltEventHandler(initQueueDatRslt);
+    
+    /**
+        * 初始化用户队列功能数据。//可在登录成功后初始化队列数据
+        * 操作完成回调CRVideo_InitQueueDatRslt，初始化成功后才可获取队列队列相关信息。
+        * @access public
+        * @param {string} cookie -自定义数据 (在回调时，回传给调用者)
+        */
+        CRVideo_InitQueueDat(cookie)
 ```
 
 ```cs
-//可在登录成功后初始化队列数据
-private void loginSuccess(object sender, ICloudroomVideoMgrEvents_loginSuccessEvent e)
-{
-    CRVideo.Queue.initQueueDat("");  //初始化专家坐席用户队列
-}
-```
+    /**
+        * 队列初始化操作结果
+        * @callback CRVideo.CbProxy~CRVideo_InitQueueDatRslt
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+        CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 
-```cs
-//队列初始化响应
-private void initQueueDatRslt(object sender, ICloudroomQueueEvents_initQueueDatRsltEvent e)
-{
-    if (e.p_sdkErr != 0)
-    {
-        // "队列初始化出错，请重新登录"
-        return;
-    }
-    //队列初始化成功后获取上一次意外结束的视频会话信息，如果存在，则可以选择恢复会话
-    VideoSessionInfo sessionInfo = JsonConvert.DeserializeObject<VideoSessionInfo>(CRVideo.Queue.getSessionInfo());
-    if (sessionInfo.callID != "" && sessionInfo.duration > 0)
-    {
-        if (MessageBox.Show("是否恢复意外关闭的视频会话？", "提示", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-        {
-            //进入之前的会话
-        }
-        else
-        {
-            //结束上次的会话，准备新的会话
-        }
-    }
-    //取到所有的队列信息
-    List<QueueInfo> queues = JsonConvert.DeserializeObject<List<QueueInfo>>(CRVideo.Queue.getAllQueueInfo());
-    //选择坐席加载队列信息还是客户加载信息
-    //ServicesShow(queues);
-    // or
-    //ClientsShow(queues);
-}
+            /**
+            * @typedef {object} CRVideo_QueStatus - 队列状态
+            * @property {number} queID - 队列id
+            * @property {number} agent_num - 坐席数量
+            * @property {number} wait_num - 排队客户数量
+            * @property {number} srv_num - 正在服务的客户数量
+
+        };
+        
 ```
 
 #### 2.坐席队列操作 {#servicesOpr}
 
     坐席角色开始和停止服务队列，以及操作后队列状态的变化
 
-* 相关API请参考 [开始/停止服务队列](queue.md#startService)，[开始/停止队列服务结果](queue.md#startServiceRslt)  
-* 相关结构定义请参考 [队列状态](json.md#QueueStatusObj)
+* 相关API请参考 [开始/停止服务队列](Queue.md#startService)，[开始/停止队列服务结果](Queue.md#startServiceRslt)  
+* 相关结构定义请参考 [队列状态](ObjectstructureDing.md#QueueStatusObj)
 
 ```cs
-//开始服务队列
-Login.Instance.CRVideo.Queue.startService(queID, "");
+    
+    /**
+        * 开始服务某个队列(可以多次调用，开启对多个队列的服务) //开始服务队列
+        * 操作回调CRVideo_StartServiceRslt
+        * 开启成功后：
+        * a. 如果没有开启免打挽，那么系统会自动分配客户：VideoCall_Queue_CallBack::autoAssignUser；
+        * b. 如果开启免打挽，系统就不会分配客户，如需服务客户可调用：reqAssignUser。
+        * @access public
+        * @param {string} queID  - 队列ID
+        * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+        */
+        CRVideo_StartService(queID,cookie)
 ```
 
 ```cs
-//停止服务队列
-Login.Instance.CRVideo.Queue.stopService(queID, "");
+    
+    /**
+        * 停止服务某个队列 //停止服务队列
+        * 操作完成回调CRVideo_StopServiceRslt
+        * @access public
+        * @param {string} queID  - queID 队列ID
+        * @param {string} cookie - cookie自定义数据 (在回调时，回传给调用者)
+        */
+	    CRVideo_StopService(queID,cookie)
 ```
 
 ```cs
-//获取服务的所有队列
-string[] queIDs = Login.Instance.CRVideo.Queue.getServingQueues().Split('\n');
+    /**
+        * 获取我服务的所有队列
+        * @access public
+        * @returns {string[]} 返回我服务的队列列表
+        */
+        var GetServingQueues = CRVideo_GetServingQueues()
+```
+```cs
+    /* 开始服务队列操作结果
+        * @callback CRVideo.CbProxy~CRVideo_StartServiceRslt
+        * @param {number} queID  - 服务的队列ID
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数
+        */
+        CRVideo_StartServiceRslt.callback = function(queID,sdkErr,cookie){
+
+        }
+
 ```
 
 ```cs
-//关联相关委托
-Login.Instance.CRVideo.Queue.startServiceRslt += new ICloudroomQueueEvents_startServiceRsltEventHandler(startServiceRslt);
-Login.Instance.CRVideo.Queue.stopServiceRslt += new ICloudroomQueueEvents_stopServiceRsltEventHandler(stopServiceRslt);
+    /**
+        * 停止服务队列操作结果
+        * @callback CRVideo.CbProxy~CRVideo_StopServiceRslt
+        * @param {number} queID  - 服务的队列ID
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数
+        */
+        CRVideo_StopServiceRslt.callback = function(queID,sdkErr,cookie){
 
-Login.Instance.CRVideo.Queue.queueStatusChanged += new ICloudroomQueueEvents_queueStatusChangedEventHandler(queueStatusChanged);
+        }
+
 ```
 
 ```cs
-//开始队列服务结果
-public void startServiceRslt(object sender, ICloudroomQueueEvents_startServiceRsltEvent e)
-{
-    //
-}
-```
-
-```cs
-//通知队列服务结果
-public void stopServiceRslt(object sender, ICloudroomQueueEvents_stopServiceRsltEvent e)
-{
-    //
-}
-```
-
-```cs
-//队列状态变化通知
-public void queueStatusChanged(object sender, ICloudroomQueueEvents_queueStatusChangedEvent e)
-{
-    QueueStatus state = JsonConvert.DeserializeObject<QueueStatus>(e.p_jsonQueStatus);
-}
+    
+    /**
+        * 队列状态变化通知
+        * @callback CRVideo.CbProxy~CRVideo_QueueStatusChanged
+        * @param {CRVideo_QueStatus} queStatus  -队列状态
+        */
+         CRVideo_QueueStatusChanged.callback=function(queStatus){
+           /**
+            * @typedef {object} CRVideo_QueInfo - 队列信息
+            * @property {number} queID - 队列id
+            * @property {number} name - 队列名称
+            * @property {string} desc - 队列描述
+            * @property {number} prio - 优先级，值越小优先级越高
+            */
+        }
 ```
 
 #### 3.坐席请求用户 {#reqAssignUser}
 
     在设置DND免打扰状下态，系统不再自动分配，需要手动申请用户
 
-* 相关API请参考 [免打扰](meetingMgr.md#setDNDStatus)，[设置免打扰结果](meetingMgr.md#setDNDStatusSuccess)，[请求分配用户](queue.md#reqAssignUser)，[请求分配用户结果](queue.md#reqAssignUserRslt)
+* 相关API请参考 [免打扰](MeetingMrg.md#setDNDStatus)，[设置免打扰结果](MeetingMrg.md#setDNDStatusSuccess)，[请求分配用户](Queue.md#reqAssignUser)，[请求分配用户结果](Queue.md#reqAssignUserRslt)
 
 ```cs
-Login.Instance.CRVideo.Queue.reqAssignUserRslt += new ICloudroomQueueEvents_reqAssignUserRsltEventHandler(reqAssignUserRslt);
+    /**
+        * 设置免打扰状态。
+        * 操作成功则回调CRVideo_SetDNDStatusSuccess,失败则回调CRVideo_SetDNDStatusFail。
+        * @access public
+        * @param {number} DNDStatus - 0代表关闭免打扰， 其它值代表开启免打扰，含义自由定义
+        * @param {string} cookie -  自定义数据 (在回调时，回传给调用者)
+        */
+        CRVideo_SetDNDStatus(DNDStatus,cookie)
 ```
 
 ```cs
-//设置免打扰状态，关掉系统自动推送
-Login.Instance.CRVideo.Mgr.setDNDStatus(1, "");
+    /**
+        * 请求分配一个客户
+        * 当关闭免打扰时，系统将自动分配客户，无需调用此函数；
+        * 当开启免打扰时，系统不再自动分配客户，座席如需服务客户可使用此函数分配；
+        * @access public
+        * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+        */
+        CRVideo_ReqAssignUser(cookie)
 ```
 
 ```cs
-//手动请求一个用户
-Login.Instance.CRVideo.Queue.reqAssignUser("");
-```
+    /**
+        * 请求分配客户操作结果
+        * @callback CRVideo.CbProxy~CRVideo_ReqAssignUserRslt
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {CRVideo_QueUser} user  - 队列用户信息
+        * @param {string} cookie - 自定义用户数
+        */
+        CRVideo_ReqAssignUserRslt.callback = function(sdkErr,user,cookie){
 
-```cs
-//请求用户的结果
-public void reqAssignUserRslt(object sender, ICloudroomQueueEvents_reqAssignUserRsltEvent e)
-{
-    if (e.p_sdkErr == (int)VCALLSDK_ERR_DEF.VCALLSDK_NOERR)
-    {
-        UserInfo user = JsonConvert.DeserializeObject<UserInfo>(e.p_jsonUsr);
-        // 请求用户成功
-    }
-    else if(e.p_sdkErr == (int)VCALLSDK_ERR_DEF.VCALLSDK_QUE_NOUSER)
-    {
-        // 队列中没有排队人员
-    }
-    else
-    {
-       // 手动请求用户失败，代码：e.p_sdkErr
-    }
-}
-```
-
-```cs
-//取消免打扰，开启系统自动推送
-Login.Instance.CRVideo.Mgr.setDNDStatus(0, "");
+        }
 ```
 
 #### 4.系统自动给坐席分配用户 {#autoAssignUser}
 
     系统自动分配的用户在坐席还未选择接受或拒绝时，系统可以撤回分配
 
-* 相关API请参考 [自动分配用户通知](queue.md#autoAssignUser)，[接受/拒绝分配的用户](queue.md#acceptAssignUser)，[自动分配用户被取消](queue.md#cancelAssignUser)
+* 相关API请参考 [自动分配用户通知](Queue.md#autoAssignUser)，[接受/拒绝分配的用户](Queue.md#acceptAssignUser)，[自动分配用户被取消](Queue.md#cancelAssignUser)
 
 ```cs
-Login.Instance.CRVideo.Queue.autoAssignUser += new ICloudroomQueueEvents_autoAssignUserEventHandler(autoAssignUser);
-Login.Instance.CRVideo.Queue.cancelAssignUser += new ICloudroomQueueEvents_cancelAssignUserEventHandler(cancelAssignUser);
-Login.Instance.CRVideo.Queue.responseAssignUserRslt += new ICloudroomQueueEvents_responseAssignUserRsltEventHandler(responseAssignUserRslt);
+    /* 系统自动安排客户
+        * @callback CRVideo.CbProxy~CRVideo_AutoAssignUser
+        * @param {CRVideo_QueUser} user - 队列用户信息
+        * 如果想停止系统的自动分配，请通setDNDStatus设置免打扰功能
+        */
+        CRVideo_AutoAssignUser.callback = function(user){
+
+        }
+        
 ```
 
 ```cs
-//系统自动分配用户通知
-public void autoAssignUser(object sender, ICloudroomQueueEvents_autoAssignUserEvent e)
-{
-    UserInfo user = JsonConvert.DeserializeObject<UserInfo>(e.p_jsonUsr);
-    if(MessageBox.Show("是否接受系统分配的用户:" + user.name +" ?", "提示", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-    {
-        Login.Instance.CRVideo.Queue.acceptAssignUser(user.queID, user.userID, "");
-        // do something with this user...
-    }
-    else
-    {
-        Login.Instance.CRVideo.Queue.rejectAssignUser(user.queID, user.usrID, "");
-    }
-}
+    /**
+        * 响应分配客户操作结果
+        * @callback CRVideo.CbProxy~CRVideo_ResponseAssignUserRslt
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数
+        */
+        CRVideo_ResponseAssignUserRslt.callback = function(sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//接受或拒绝分配的用户操作响应
-public void responseAssignUserRslt(object sender, ICloudroomQueueEvents_responseAssignUserRsltEvent e)
-{
-    //
-}
-```
+    /**
+        * 系统取消已经安排的客户
+        * @callback CRVideo.CbProxy~CRVideo_CancelAssignUser
+        * @param {string} queID - 服务的队列
+        * @param {string} userid - 用户id
+        */
+        CRVideo_CancelAssignUser.callback = function(queID,userid){
 
-```cs
-//系统撤回分配此用户通知
-public void cancelAssignUser(object sender, ICloudroomQueueEvents_cancelAssignUserEvent e)
-{
-    //取消分配用户的弹框
-}
+        }
 ```
 
 #### 5.客户排队操作 {#clientQueue}
 
     客户选择一个队列进行排队，每次只能排一个队列
 
-* 相关API请参考 [开始/停止排队](queue.md#startQueuing)，[开始/停止排队操作结果](queue.md#startQueuingRslt)，[队列状态变化](queue.md#queueStatusChanged)，[排队信息变化](queue.md#queuingInfoChanged)  
-* 相关结构定义请参考 [队列状态](json.md#QueueStatusObj)，[排队信息](json.md#QueuingObj)
+* 相关API请参考 [开始/停止排队](Queue.md#startQueuing)，[开始/停止排队操作结果](Queue.md#startQueuingRslt)，[队列状态变化](Queue.md#queueStatusChanged)，[排队信息变化](Queue.md#queuingInfoChanged)  
+* 相关结构定义请参考 [队列状态](ObjectstructureDing.md#,  )，[排队信息](ObjectstructureDing.md#QueuingObj)
 
 ```cs
-//关联相关委托
-Login.Instance.CRVideo.Queue.startQueuingRslt += new ICloudroomQueueEvents_startQueuingRsltEventHandler(startQueuingRslt);
-Login.Instance.CRVideo.Queue.stopQueuingRslt += new ICloudroomQueueEvents_stopQueuingRsltEventHandler(stopQueuingRslt);
-
-Login.Instance.CRVideo.Queue.queueStatusChanged += new ICloudroomQueueEvents_queueStatusChangedEventHandler(queueStatusChanged);
-Login.Instance.CRVideo.Queue.queuingInfoChanged += new ICloudroomQueueEvents_queuingInfoChangedEventHandler(queuingInfoChanged);
+    /**
+        * 客户开始排队
+        * 操作完成回调CRVideo_StartQueuingRslt
+        * @access public
+        * @param {string} queID  - queID 队列ID
+        * @param {string} cookie - cookie自定义数据 (在回调时，回传给调用者)
+        */
+        CRVideo_StartQueuing(queID,cookie)
 ```
 
 ```cs
-//开始排队
-int queID = 1;
-Login.Instance.CRVideo.Queue.startQueuing(queID, "");
+    /**
+        * 客户停止排队
+        * 操作完成回调CRVideo_StopQueuingRslt
+        * @access public
+        * @param {string} cookie - cookie自定义数据 (在回调时，回传给调用者)
+        */
+        CRVideo_StopQueuing(cookie)
 ```
 
 ```cs
-//停止排队
-Login.Instance.CRVideo.Queue.stopQueuing("");
+    /**
+        * 开始排队操作结果
+        * @callback CRVideo.CbProxy~CRVideo_StartQueuingRslt
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+        CRVideo_StartQueuingRslt.callback = function(sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//开始排队结果
-public void startQueuingRslt(object sender, ICloudroomQueueEvents_startQueuingRsltEvent e)
-{
-    if (e.p_sdkErr != 0) //开始排队失败
-    {
-        // ....
-    }
-}
+    /**
+        * 停止排队操作结果
+        * @callback CRVideo.CbProxy~CRVideo_StopQueuingRslt
+        * @param {number} sdkErr - 操作结果代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数
+        */
+        CRVideo_StopQueuingRslt.callback = function(sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//停止排队结果
-public void stopQueuingRslt(object sender, ICloudroomQueueEvents_stopQueuingRsltEvent e)
-{
-    //……
-}
+    /**
+        * 队列状态变化通知
+        * @callback CRVideo.CbProxy~CRVideo_QueueStatusChanged
+        * @param {CRVideo_QueStatus} queStatus  -队列状态
+        */
+        CRVideo_QueueStatusChanged.callback = function(queStatus){
+             /**
+            * @typedef {object} CRVideo_QueInfo - 队列信息
+            * @property {number} queID - 队列id
+            * @property {number} name - 队列名称
+            * @property {string} desc - 队列描述
+            * @property {number} prio - 优先级，值越小优先级越高
+            */
+        }
 ```
 
 ```cs
-//队列状态变化通知
-public void queueStatusChanged(object sender, ICloudroomQueueEvents_queueStatusChangedEvent e)
-{
-    QueueStatus state = JsonConvert.DeserializeObject<QueueStatus>(e.p_jsonQueStatus);
-}
-```
-
-```cs
-//排队信息更新
-public void queuingInfoChanged(object sender, ICloudroomQueueEvents_queuingInfoChangedEvent e)
-{
-    QueuingInfo queuingInfo = JsonConvert.DeserializeObject<QueuingInfo>(e.p_queuingInfo);
-}
+    /**
+        * 排队信息变化通知
+        * @callback CRVideo.CbProxy~CRVideo_QueuingInfoChanged
+        * @param {CRVideo_QueInfo} queuingInfo - 队列信息
+        */
+        CRVideo_QueuingInfoChanged.callback = function(queuingInfo){
+            /**
+            * 开始排队操作结果
+            * @callback CRVideo.CbProxy~CRVideo_StartQueuingRslt
+            * @param {number} sdkErr - 操作结果代码,定义见cr/error
+            * @param {string} cookie - 自定义用户数据
+            */
+        }
 ```
 
 ### 呼叫他人 {#call}
@@ -1573,86 +1565,102 @@ public void queuingInfoChanged(object sender, ICloudroomQueueEvents_queuingInfoC
 
     呼叫发起方
 
-* 相关API请参考 [开始呼叫](meetingMgr.md#call)，[挂断呼叫](meetingMgr.md#hungupCall)，[开始呼叫结果](meetingMgr.md#callSuccess)，[挂断呼叫结果](meetingMgr.md#hungupCallSuccess)，[通知呼叫被对方接受/拒绝](meetingMgr.md#notifyCallAccepted)
+* 相关API请参考 [开始呼叫](MeetingMrg.md#call)，[挂断呼叫](MeetingMrg.md#hungupCall)，[开始呼叫结果](MeetingMrg.md#callSuccess)，[挂断呼叫结果](MeetingMrg.md#hungupCallSuccess)，[通知呼叫被对方接受/拒绝](MeetingMrg.md#notifyCallAccepted)
 
 ```cs
-//关联相关委托
-Login.Instance.CRVideo.Mgr.callSuccess += new ICloudroomVideoMgrEvents_callSuccessEventHandler(callSuccess);
-Login.Instance.CRVideo.Mgr.callFail += new ICloudroomVideoMgrEvents_callFailEventHandler(callFailed);
-
-Login.Instance.CRVideo.Mgr.notifyCallAccepted += new ICloudroomVideoMgrEvents_notifyCallAcceptedEventHandler(notifyCallAccepted);
-Login.Instance.CRVideo.Mgr.notifyCallRejected += new ICloudroomVideoMgrEvents_notifyCallRejectedEventHandler(notifyCallRejected);
+    /**
+        * 发起呼叫，邀请用户参加视频会话。
+        * 操作成功则回调CRVideo_CallSuccess,失败则回调CRVideo_CallFail。
+        * 呼叫时，对方迟迟不响应，30秒后系统自动结束呼叫。
+        * @access public
+        * @param {string} calledUserID -  被叫用户的账户ID
+        * @param {CRVideo_MeetInfoObj} meetObj - 会议信息
+        * @param {string} usrExtDat - 自定义扩展参数
+        * @param {string} cookie - 自定义数据(在回调时，回传给调用者)
+        * @returns {string} 返回本次呼叫标识码（呼叫ID）
+        */	
+        var callID =CRVideo_Call(calledUserID,meetObj,usrExtDat,cookie)
 ```
 
 ```cs
-//开始呼叫，meetObj为之前创建的会议对象字符串
-string userID = "user_000007";
-string callID = Login.Instance.CRVideo.Mgr.call(userID, meetObj, "", "");
+    /**
+        * 挂断正在进行的视频呼叫或视频通话
+        * 操作成功则回调CRVideo_HangupCallSuccess,失败则回调CRVideo_HangupCallFail。
+        * @access public
+        * @param {string} callID  - 呼叫ID
+        * @param {string} usrExtDat - 自定义扩展参数
+        * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+        */	
+        CRVideo_HungupCall(callID,usrExtDat,cookie)
 ```
 
 ```cs
-//挂断呼叫
-Login.Instance.CRVideo.Mgr.hungupCall(callID, "", "");
+    /**
+        * 呼叫他人操作成功响应
+        * @callback CRVideo.CbProxy~CRVideo_CallSuccess
+        * @param {string} callID - 呼叫全局标识 
+        * @param {string} cookie - 自定义用户数据
+        */
+        CRVideo_CallSuccess.callback = function(callID,callback){
+
+        }
 ```
 
 ```cs
-//呼叫成功发出，等待对方响应
-public void callSuccess(object sender, ICloudroomVideoMgrEvents_callSuccessEvent e)
-{
-   //
-}
+    /**
+        * 呼叫他人操作失败响应
+        * @callback CRVideo.CbProxy~CRVideo_CallFail
+        * @param {string} callID - 呼叫全局标识 
+        * @param {number} sdkErr - 操作失败代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+        CRVideo_CallFail.callback = function(callID,sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//呼叫发出失败
-public void callFailed(object sender, ICloudroomVideoMgrEvents_callFailEvent e)
-{
-    // 呼叫失败，代码： e.p_sdkErr
-}
-```
+    /**
+        * SDK通知自己视频呼叫被对方接受
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCallAccepted
+        * @param {string} callID - 呼叫全局标识 
+        * @param {CRVideo_MeetInfoObj} meetObj - 会议信息
+        * @param {string} usrExtDat - 自定义扩展参数
+        */
+        CRVideo_NotifyCallAccepted = function(callID,meetObj,usrExtDat){
 
-```cs
-//我的呼叫被对方接受，得到会议对象，可以进入会议
-public void notifyCallAccepted(object sender, ICloudroomVideoMgrEvents_notifyCallAcceptedEvent e)
-{
-    MeetObj meet = JsonConvert.DeserializeObject<MeetObj>(e.p_meetObj);
-    Login.Instance.CRVideo.Meeting.enterMeeting(meet.ID, meet.pswd, MyUserId, MyNickname, "");
-    //打开会话界面……
-}
-//我的呼叫被对方拒绝
-public void notifyCallRejected(object sender, ICloudroomVideoMgrEvents_notifyCallRejectedEvent e)
-{
-    //被拒绝了 o.o ……
-}
+        }
+
+    /**
+        * SDK通知自己呼叫被对方拒绝
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCallRejected
+        * @param {string} callID - 呼叫全局标识 
+        * @param {number} sdkErr - 呼叫被对方拒绝的原因代码,定义见cr/error
+        * @param {string} usrExtDat - 自定义扩展参数
+        */
+         CRVideo_NotifyCallRejected = function(callID,sdkErr,usrExtDat){
+
+        }
 ```
 
 #### 2.被叫 {#called}
 
     被呼叫方
 
-* 相关API请参考 [通知有人呼入](meetingMgr.md#notifyCallIn)，[接受/拒绝他人的呼叫](meetingMgr.md#acceptCall)，[接受/拒绝他人呼叫结果](meetingMgr.md#acceptCallSuccess)
+* 相关API请参考 [通知有人呼入](MeetingMrg.md#notifyCallIn)，[接受/拒绝他人的呼叫](MeetingMrg.md#acceptCall)，[接受/拒绝他人呼叫结果](MeetingMrg.md#acceptCallSuccess)
 
 ```cs
-//关联委托
-Login.Instance.CRVideo.Mgr.notifyCallIn += new ICloudroomVideoMgrEvents_notifyCallInEventHandler(notifyCallIn);
-```
+    /**
+        * SDK通知自己被呼叫
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCallIn
+        * @param {string} callID - 呼叫全局标识 
+        * @param {CRVideo_MeetInfoObj} meetObj - 会议信息
+        * @param {string} callerID - 呼叫人员的标识ID
+        * @param {string} usrExtDat - 自定义扩展参数
+        */
+        CRVideo_NotifyCallIn.callback = function(callID,meetObj,callerID,usrExtDat){
 
-```cs
-//有呼叫进入
-public void notifyCallIn(object sender, ICloudroomVideoMgrEvents_notifyCallInEvent e)
-{
-    if(/*接受呼叫， 进入会议*/)
-    {
-        Login.Instance.CRVideo.Mgr.acceptCall(e.p_callID, e.p_meetObj, "", "");
-        MeetObj meet = JsonConvert.DeserializeObject<MeetObj>(e.p_meetObj);
-        Login.Instance.CRVideo.Meeting.enterMeeting(meet.ID, meet.pswd, MyUserId, MyNickname, "");
-        //打开会话界面……
-    }
-    else //拒绝对方的呼叫
-    {
-        Login.Instance.CRVideo.Mgr.rejectCall(e.p_callID, "", "", "");
-    }
-}
+        }
 ```
 
 ### 透明传输 {#datatransfer}
@@ -1666,148 +1674,159 @@ public void notifyCallIn(object sender, ICloudroomVideoMgrEvents_notifyCallInEve
 
     小数据走命令接口，大数据走文本接口，命令的发送不可以被取消，也没有进度通知
 
-* 相关API请参考 [发送命令/数据/文件](meetingMgr.md#sendCmd)，[取消发送](meetingMgr.md#cancelSend)，[发送命令/数据/文件结果](meetingMgr.md#sendCmdRlst)，[发送进度](meetingMgr.md#sendProgress)，[取消发送结果](meetingMgr.md#cancelSendRlst)
+* 相关API请参考 [发送命令/数据/文件](MeetingMrg.md#sendCmd)，[取消发送](MeetingMrg.md#cancelSend)，[发送命令/数据/文件结果](MeetingMrg.md#sendCmdRlst)，[发送进度](MeetingMrg.md#sendProgress)，[取消发送结果](MeetingMrg.md#cancelSendRlst)
 
 ```cs
-//发送命令和数据
-private void btnSendCmd_Click(object sender, RoutedEventArgs e)
-{
-    string userID = "user_000008";
-    byte[] cmdBytes = Encoding.Default.GetBytes(txtCmdData.Text.Trim());
-    //小数据走sendcmd接口，大数据走sendbuffer接口
-    if (0 < cmdBytes.Length < 50000)
-    {
-        Login.Instance.CRVideo.Mgr.sendCmd(userID, Convert.ToBase64String(cmdBytes));
-    }
-    else
-    {
-        Login.Instance.CRVideo.Mgr.sendBuffer(userID, Convert.ToBase64String(cmdBytes));
-    }
+    /**
+        * 发送小块数据(一次性发送不会有进度通知,发送结果事件CRVideo_SendCmdRlst,CRVideo_SendCmd不能被CRVideo_CancelSend)
+        * @access public
+        * @param {string} targetUserId  - 目标用户ID
+        * @param {string} data - 发送的数据
+        * @returns {string} 分配的任务ID
+        */	
+        var sendCmdID = CRVideo_SendCmd(targetUserId,data);
+
+	/**
+        * 发送大块数据(分块发送，进度通知事件CRVideo_SendProgress,发送结果事件CRVideo_SendBufferRlst,取消发送CRVideo_CancelSend)
+        * @access public
+        * @param {string} targetUserId  - 目标用户ID
+        * @param {string} data - 发送的数据
+        * @returns {string} 分配的任务ID
+        */	
+        var sendBufferID = CRVideo_SendBuffer(targetUserId,data)
+    
 }
 ```
 
 ```cs
-//发送文件
-private void sendFile()
-{
-    using (FileStream stream = new FileInfo(mSelectedFile).OpenRead())
-    {
-        label_sendBuffer_desc.Text = "文件大小：" + stream.Length / 1024 + "KB";
-    }
-    string userID = "user_000022";
-    mFileTaskID = (string)Login.Instance.CRVideo.Mgr.sendFile(userID, mSelectedFile);
-}
+    /**
+        * 发送文件(分块发送，进度通知事件CRVideo_SendProgress,发送结果事件CRVideo_SendFileRlst,取消发送CRVideo_CancelSend)
+        * @access public
+        * @param {string} targetUserId  - 目标用户ID
+        * @param {string} fileName - 需要发送的文件名 
+        * @returns {string} 分配的任务ID
+        */	
+        var sendvFileID = CRVideo_SendFile(targetUserId,data)
 ```
 
 ```cs
-//取消发送
-Login.Instance.CRVideo.Mgr.cancelSend(mFileTaskID);
+    /**
+        * 取消数据发送
+        * 操作完成则回调CRVideo_CancelSendRlst。
+        * @access public
+        * @param {string} taskID - 任务ID
+        */
+        CRVideo_CancelSend(taskID)
 ```
 
 ```cs
-//关联相关事件委托
-Login.Instance.CRVideo.Mgr.sendCmdRlst += new ICloudroomVideoMgrEvents_sendCmdRlstEventHandler(sendCmdRlst);
-Login.Instance.CRVideo.Mgr.sendBufferRlst += new ICloudroomVideoMgrEvents_sendBufferRlstEventHandler(sendBufferRlst);
-Login.Instance.CRVideo.Mgr.sendFileRlst += new ICloudroomVideoMgrEvents_sendFileRlstEventHandler(sendFileRlst);
+    /**
+        * 发送数据时，SDK通知发送进度
+        * @callback CRVideo.CbProxy~CRVideo_SendProgress
+        * @param {string} taskID - 发送任务id
+        * @param {number} sendedLen  - 已发送的数据长度
+        * @param {number} totalLen   - 需要发送的总长度
+        * @param {string} cookie - 自定义用户数据
+        */
+        CRVideo_SendProgress.callback = function(taskID,sendedLen,totalLen,cookie){
 
-Login.Instance.CRVideo.Mgr.cancelSendRlst += new ICloudroomVideoMgrEvents_cancelSendRlstEventHandler(cancelSendRlst);
-Login.Instance.CRVideo.Mgr.sendProgress += new ICloudroomVideoMgrEvents_sendProgressEventHandler(sendProgress);
+        }
 ```
 
 ```cs
-//发送大数据和文件的进入通知
-private void sendProgress(object sender, ICloudroomVideoMgrEvents_sendProgressEvent e)
-{
-    string text = "总大小：" + e.p_totalLen + ", 已发送" + e.p_sendedLen;
-    //发完了
-    if (e.p_sendedLen == e.p_totalLen)
-    {
-        //发送成功
-    }
-}
+    /**
+        * 发送数据时，SDK通知发送结果
+        * @callback CRVideo.CbProxy~CRVideo_SendCmdRlst
+        * @param {string} taskID - 发送任务id
+        * @param {number} sdkErr - 操作失败代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+        CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//发送命令结果
-private void sendCmdRlst(object sender, ICloudroomVideoMgrEvents_sendCmdRlstEvent e)
-{
-    if (e.p_sdkErr != 0)
-    {
-        //发送命令数据失败：e.p_sdkErr
-    }
-}
+    /**
+        * 发送数据时，SDK通知发送结果
+        * @callback CRVideo.CbProxy~CRVideo_SendBufferRlst
+        * @param {string} taskID - 发送任务id
+        * @param {number} sdkErr - 操作失败代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+         CRVideo_SendBufferRlst.callback = function(taskID,sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//发送数据结果
-private void sendBufferRlst(object sender, ICloudroomVideoMgrEvents_sendBufferRlstEvent e)
-{
-    if (e.p_sdkErr != 0)
-    {
-        //发送失败: e.p_sdkErr
-    }
-}
+    /**
+        * 发送文件时，SDK通知发送结果
+        * @callback CRVideo.CbProxy~CRVideo_SendFileRlst
+        * @param {string} taskID - 发送任务id
+        * @param {number} fileName - 文件名
+        * @param {number} sdkErr - 操作失败代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+         CRVideo_SendFileRlst.callback = function(taskID,fileName,sdkErr,cookie){
+
+        }
 ```
 
 ```cs
-//发送文件结果
-private void sendFileRlst(object sender, ICloudroomVideoMgrEvents_sendFileRlstEvent e)
-{
-    if (e.p_sdkErr != 0)
-    {
-        mBufferTaskID = "";
-        //发送失败: e.p_sdkErr
-    }
-}
-```
+    /**
+        * 取消发送响应
+        * @callback CRVideo.CbProxy~CRVideo_CancelSendRlst
+        * @param {string} taskID - 发送任务id
+        * @param {number} sdkErr - 操作失败代码,定义见cr/error
+        * @param {string} cookie - 自定义用户数据
+        */
+         CRVideo_CancelSendRlst.callback = function(taskID,sdkErr,cookie){
 
-```cs
-//取消发送的结果
-private void cancelSendRlst(object sender, ICloudroomVideoMgrEvents_cancelSendRlstEvent e)
-{
-    if (e.p_sdkErr != 0)
-    {
-       //取消发送失败"
-    }
-}
+        }
 ```
 
 #### 2.收到命令、数据、文件 {#receive}
 
     收到别人发送数据的通知
 
-* 相关API请参考 [通知有命令/数据/文件发来](meetingMgr.md#notifyCmdData)
+* 相关API请参考 [通知有命令/数据/文件发来](MeetingMrg.md#notifyCmdData)
 
 ```cs
-Login.Instance.CRVideo.Mgr.notifyCmdData += new ICloudroomVideoMgrEvents_notifyCmdDataEventHandler(notifyCmdData);
-Login.Instance.CRVideo.Mgr.notifyBufferData += new ICloudroomVideoMgrEvents_notifyBufferDataEventHandler(notifyBufferData);
-Login.Instance.CRVideo.Mgr.notifyFileData += new ICloudroomVideoMgrEvents_notifyFileDataEventHandler(notifyFileData);
+    /**
+        * SDK通知收到小块数据
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCmdData
+        * @param {string} sourceUserId - 数据来源
+        * @param {string} data - 数据
+        */
+        CRVideo_NotifyCmdData.callback = function(sourceUserId,data){
+
+        }
 ```
 
 ```cs
-//收到命令
-private void notifyCmdData(object sender, ICloudroomVideoMgrEvents_notifyCmdDataEvent e)
-{
-    byte[] cmdBytes = Convert.FromBase64String(e.p_data);
-    string text = "来自[" + e.p_sourceUserId + "]的命令:" + Encoding.Default.GetString(cmdBytes);
-}
+    /**
+        * SDK通知收到大块数据
+        * @callback CRVideo.CbProxy~CRVideo_NotifyBufferData
+        * @param {string} sourceUserId - 数据来源
+        * @param {string} data - 数据
+        */
+        CRVideo_NotifyBufferData.callback = function(sourceUserId,data){
+
+        }
 ```
 
 ```cs
-//收到大数据
-private void notifyBufferData(object sender, ICloudroomVideoMgrEvents_notifyBufferDataEvent e)
-{
-    byte[] byteArray = Convert.FromBase64String(e.p_data);
-    string text = "来自[" + e.p_sourceUserId + "]的数据" + Encoding.Default.GetString(byteArray);
-}
-```
+    /**
+        * SDK通知收到文件数据（收到的文件生成在系统临时目录下，请尽快移走对应文件）
+        * @callback CRVideo.CbProxy~CRVideo_NotifyFileData
+        * @param {string} sourceUserId - 数据来源
+        * @param {string} tmpFile - 临时文件，不需要时，请移除或删除对应文件
+        * @param {string} orgFileName  - 源始文件名 
+        */
+        CRVideo_NotifyFileData.callback = function(sourceUserId,tmpFile,orgFileName){
 
-```cs
-//收到文件
-private void notifyFileData(object sender, ICloudroomVideoMgrEvents_notifyFileDataEvent e)
-{
-    string text = "收到" + e.p_sourceUserId + "发来的文件：" + e.p_orgFileName + "，临时存放位置：" + e.p_tmpFile;
-}
+        }
 ```
 
 

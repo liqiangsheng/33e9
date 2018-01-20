@@ -1829,61 +1829,57 @@ CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
 <p>&#x83B7;&#x53D6;&#x4F1A;&#x8BDD;&#x5185;&#x4EBA;&#x5458;&#x53CA;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x5F97;&#x5230;&#x6210;&#x5458;&#x7684;userID&#x540E;&#x53EF;&#x4EE5;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x76F8;&#x5173;&#x7684;&#x8FDC;&#x7A0B;&#x97F3;&#x89C6;&#x9891;&#x64CD;&#x4F5C;</p>
 </blockquote>
 <ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meeting.md#getAllMembers">&#x4F1A;&#x8BAE;&#x6210;&#x5458;&#x5217;&#x8868;</a>&#xFF0C;<a href="meeting.md#getMemberInfo">&#x4F1A;&#x8BAE;&#x6210;&#x5458;&#x4FE1;&#x606F;</a>  </li>
-<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="json.md#MemberObj">&#x4F1A;&#x8BAE;&#x6210;&#x5458;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="VideoMeeting.html#getAllMembers">&#x4F1A;&#x8BAE;&#x6210;&#x5458;&#x5217;&#x8868;</a>&#xFF0C;<a href="VideoMeeting.html#getMemberInfo">&#x4F1A;&#x8BAE;&#x6210;&#x5458;&#x4FE1;&#x606F;</a>  </li>
+<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="ObjectstructureDing.html#MemberObj">&#x4F1A;&#x8BAE;&#x6210;&#x5458;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x83B7;&#x53D6;&#x6240;&#x6709;&#x53C2;&#x4F1A;&#x4EBA;</span>
-List&lt;MemberInfo&gt; allMembers = JsonConvert.DeserializeObject&lt;List&lt;MemberInfo&gt;&gt;(Login.Instance.CRVideo.Meeting.getAllMembers());
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/**
+        * &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;  //&#x83B7;&#x53D6;&#x6240;&#x6709;&#x53C2;&#x4F1A;&#x4EBA;
+        * @access public
+        * @return {CRVideo_MemberInfo[]} &#x8FD4;&#x56DE;&#x542B;&#x591A;&#x4E2A;&#x6210;&#x5458;&#x4FE1;&#x606F;
+        */</span>    
+        <span class="hljs-keyword">var</span> GetAllMembers = CRVideo_GetAllMembers()
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x53C2;&#x4F1A;&#x4EBA;&#x7684;&#x4FE1;&#x606F;</span>
-MemberInfo memInfo = JsonConvert.DeserializeObject&lt;MemberInfo&gt;(Login.Instance.CRVideo.Meeting.getMemberInfo(<span class="hljs-string">&quot;user_00005&quot;</span>));
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/**
+        * &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F; //&#x83B7;&#x53D6;&#x67D0;&#x4E2A;&#x53C2;&#x4F1A;&#x4EBA;&#x7684;&#x4FE1;&#x606F;
+        * @access public
+        * @param {string} userID - &#x7528;&#x6237;ID
+        * @return {CRVideo_MemberInfo} info - &#x8FD4;&#x56DE;&#x7528;&#x6237;userID&#x7684;&#x6210;&#x5458;&#x4FE1;&#x606F;
+
+        */</span>    
+        <span class="hljs-keyword">var</span> GetMemberInfo = CRVideo_GetMemberInfo(userID)
 </code></pre>
 <h3 id="page">&#x529F;&#x80FD;&#x9875;&#x540C;&#x6B65; </h3>
 <blockquote>
 <p>&#x7528;&#x6237;&#x4F1A;&#x8BDD;&#x5185;&#x540C;&#x6B65;&#x6240;&#x6709;&#x4EBA;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x5305;&#x62EC;&#x89C6;&#x9891;&#x5899;&#x3001;&#x5F71;&#x97F3;&#x5171;&#x4EAB;&#x3001;&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x3001;&#x7535;&#x5B50;&#x767D;&#x677F;</p>
 </blockquote>
 <ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meeting.md#switchToPage">&#x8BBE;&#x7F6E;/&#x83B7;&#x53D6;&#x4F1A;&#x8BDD;&#x5185;&#x4E3B;&#x529F;&#x80FD;&#x9875;</a>&#xFF0C;<a href="meeting.md#notifySwitchToPage">&#x4F1A;&#x8BDD;&#x5185;&#x4E3B;&#x529F;&#x80FD;&#x9875;&#x5207;&#x6362;&#x901A;&#x77E5;</a>  </li>
-<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="constant.md#MAIN_PAGE_TYPE">&#x4E3B;&#x529F;&#x80FD;&#x7C7B;&#x578B;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="VideoMeeting.html#switchToPage">&#x8BBE;&#x7F6E;/&#x83B7;&#x53D6;&#x4F1A;&#x8BDD;&#x5185;&#x4E3B;&#x529F;&#x80FD;&#x9875;</a>&#xFF0C;<a href="VideoMeeting.html#notifySwitchToPage">&#x4F1A;&#x8BDD;&#x5185;&#x4E3B;&#x529F;&#x80FD;&#x9875;&#x5207;&#x6362;&#x901A;&#x77E5;</a>  </li>
+<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="Constant.html#MAIN_PAGE_TYPE">&#x4E3B;&#x529F;&#x80FD;&#x7C7B;&#x578B;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x89C6;&#x9891;&#x5899;&#x3001;&#x5171;&#x4EAB;&#x3001;&#x767D;&#x677F;&#x3001;&#x5F71;&#x97F3;&#x5171;&#x4EAB;</span>
-<span class="hljs-keyword">enum</span> MAIN_PAGE_TYPE { MAINPAGE_VIDEOWALL, MAINPAGE_SHARE, MAINPAGE_WHITEBOARD, MAINPAGE_MEDIASHARE};
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x529F;&#x80FD;&#x5207;&#x6362;
+        * @access public
+        * @param {number} mainPage -&#x529F;&#x80FD;&#x7C7B;&#x578B;
+        * @param {string} pageID - &#x5B50;&#x9875;&#x9762;&#x6807;&#x8BC6;&#xFF08;&#x5982;&#x521B;&#x5EFA;&#x767D;&#x677F;&#x65F6;&#x8FD4;&#x56DE;&#x7684;boardID&#xFF09;
+        */</span>
+        CRVideo_Switchtopage(mainPage,pageID)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5207;&#x6362;&#x529F;&#x80FD;&#x9875;</span>
-MAIN_PAGE_TYPE mainPage = MAINPAGE_VIDEOWALL;
-Login.Instance.CRVideo.Meeting.switchToPage((<span class="hljs-keyword">int</span>)mainPage, <span class="hljs-string">&quot;&quot;</span>);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x76F8;&#x5173;&#x59D4;&#x6258;</span>
-Login.Instance.CRVideo.Meeting.notifySwitchToPage += <span class="hljs-keyword">new</span> ICloudroomVideoMeetingEvents_notifySwitchToPageEventHandler(notifySwitchToPage);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5F53;&#x4ED6;&#x4EBA;&#x5207;&#x6362;&#x529F;&#x80FD;&#x9875;&#x65F6;&#xFF0C;&#x6536;&#x5230;&#x901A;&#x77E5;&#x6D88;&#x606F;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifySwitchToPage</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMeetingEvents_notifySwitchToPageEvent e</span>)
-</span>{
-    <span class="hljs-keyword">switch</span> (e.p_mainPage)
-    {
-        <span class="hljs-keyword">case</span> (<span class="hljs-keyword">int</span>)MAIN_PAGE_TYPE.MAINPAGE_VIDEOWALL:
-            <span class="hljs-comment">//...</span>
-            <span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">case</span> (<span class="hljs-keyword">int</span>)MAIN_PAGE_TYPE.MAINPAGE_SHARE:
-            <span class="hljs-comment">//...</span>
-            <span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">case</span> (<span class="hljs-keyword">int</span>)MAIN_PAGE_TYPE.MAINPAGE_WHITEBOARD:
-           <span class="hljs-comment">//...</span>
-           <span class="hljs-comment">//p_subPageID &#x5927;&#x529F;&#x80FD;&#x5185;&#x90E8;&#x7684;&#x5C0F;&#x529F;&#x80FD;&#x9875;</span>
-            <span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">case</span> (<span class="hljs-keyword">int</span>)MAIN_PAGE_TYPE.MAINPAGE_MEDIASHARE:
-           <span class="hljs-comment">//...</span>
-            <span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">default</span>:
-            <span class="hljs-comment">// &#x9519;&#x8BEF;&#x7684;&#x529F;&#x80FD;&#x9875;</span>
-            <span class="hljs-keyword">break</span>;
-    }
-}
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/* SDK&#x901A;&#x77E5;&#x529F;&#x80FD;&#x5207;&#x6362; //&#x5F53;&#x4ED6;&#x4EBA;&#x5207;&#x6362;&#x529F;&#x80FD;&#x9875;&#x65F6;&#xFF0C;&#x6536;&#x5230;&#x901A;&#x77E5;&#x6D88;&#x606F;
+        * @callback CRVideo.CbProxy~CRVideo_NotifySwitchToPage
+        * @param {CRVideo_MAIN_PAGE_TYPE} mainPage  - &#x529F;&#x80FD;&#x7C7B;&#x578B;
+        * @param {string} pageID - &#x5B50;&#x9875;&#x9762;&#x6807;&#x8BC6;
+        */</span>
+        CRVideo_NotifySwitchToPage.callback = function(mainPage,pageID){
+
+        }
 </code></pre>
 <h3 id="queue">&#x961F;&#x5217;&#x7BA1;&#x7406; </h3>
 <blockquote>
 <p>&#x5229;&#x7528;&#x961F;&#x5217;&#x529F;&#x80FD;&#xFF0C;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x5206;&#x914D;&#x3002;&#x4F7F;&#x7528;&#x961F;&#x5217;&#x65F6;&#x901A;&#x5E38;&#x4F1A;&#x6709;&#x4E24;&#x79CD;&#x89D2;&#x8272;&#xFF0C;&#x5750;&#x5E2D;&#x548C;&#x5BA2;&#x6237;&#xFF0C;&#x961F;&#x5217;&#x6A21;&#x5757;&#x628A;&#x6392;&#x961F;&#x7684;&#x5BA2;&#x6237;&#x5206;&#x914D;&#x7ED9;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x961F;&#x5217;&#x7684;&#x5750;&#x5E2D;&#x3002;</p>
-<p>&#x7EC4;&#x4EF6;&#x4ECB;&#x7ECD;&#x8BF7;&#x53C2;&#x8003; <a href="queue.md#initQueueDat">&#x961F;&#x5217;&#x7BA1;&#x7406;&#x7EC4;&#x4EF6;</a></p>
+<p>&#x7EC4;&#x4EF6;&#x4ECB;&#x7ECD;&#x8BF7;&#x53C2;&#x8003; <a href="Queue.html#initQueueDat">&#x961F;&#x5217;&#x7BA1;&#x7406;&#x7EC4;&#x4EF6;</a></p>
 <ol>
 <li><a href="#initQueue">&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#xFF0C;&#x83B7;&#x53D6;&#x961F;&#x5217;&#x6570;&#x636E;</a></li>
 <li><a href="#servicesOpr">&#x5750;&#x5E2D;&#x961F;&#x5217;&#x64CD;&#x4F5C;</a></li>
@@ -1895,202 +1891,247 @@ Login.Instance.CRVideo.Meeting.notifySwitchToPage += <span class="hljs-keyword">
 <h4 id="initQueue">1.&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#xFF0C;&#x83B7;&#x53D6;&#x961F;&#x5217;&#x6570;&#x636E; </h4>
 <pre><code>&#x5728;&#x767B;&#x5F55;&#x6210;&#x529F;&#x540E;&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#x6570;&#x636E;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="queue.md#initQueueDat">&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;</a>&#xFF0C;<a href="queue.md#initQueueDatRslt">&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="queue.md#getAllQueueInfo">&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x961F;&#x5217;</a>  </li>
-<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="json.md#SesssionObj">&#x4F1A;&#x8BDD;&#x4FE1;&#x606F;</a>&#xFF0C;<a href="json.md#QueueObj">&#x961F;&#x5217;&#x4FE1;&#x606F;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="Queue.html#initQueueDat">&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;</a>&#xFF0C;<a href="Queue.html#initQueueDatRslt">&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="Queue.html#getAllQueueInfo">&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x961F;&#x5217;</a>  </li>
+<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="ObjectstructureDing.html#SesssionObj">&#x4F1A;&#x8BDD;&#x4FE1;&#x606F;</a>&#xFF0C;<a href="ObjectstructureDing.html#QueueObj">&#x961F;&#x5217;&#x4FE1;&#x606F;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x7ED3;&#x679C;&#x59D4;&#x6258;</span>
-CRVideo.Queue.initQueueDatRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_initQueueDatRsltEventHandler(initQueueDatRslt);
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/**
+        * &#x521D;&#x59CB;&#x5316;&#x7528;&#x6237;&#x961F;&#x5217;&#x529F;&#x80FD;&#x6570;&#x636E;&#x3002;//&#x53EF;&#x5728;&#x767B;&#x5F55;&#x6210;&#x529F;&#x540E;&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#x6570;&#x636E;
+        * &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x56DE;&#x8C03;CRVideo_InitQueueDatRslt&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x6210;&#x529F;&#x540E;&#x624D;&#x53EF;&#x83B7;&#x53D6;&#x961F;&#x5217;&#x961F;&#x5217;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;
+        * @access public
+        * @param {string} cookie -&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_InitQueueDat(cookie)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53EF;&#x5728;&#x767B;&#x5F55;&#x6210;&#x529F;&#x540E;&#x521D;&#x59CB;&#x5316;&#x961F;&#x5217;&#x6570;&#x636E;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">loginSuccess</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_loginSuccessEvent e</span>)
-</span>{
-    CRVideo.Queue.initQueueDat(<span class="hljs-string">&quot;&quot;</span>);  <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x4E13;&#x5BB6;&#x5750;&#x5E2D;&#x7528;&#x6237;&#x961F;&#x5217;</span>
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x54CD;&#x5E94;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initQueueDatRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_initQueueDatRsltEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr != <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-comment">// &quot;&#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x51FA;&#x9519;&#xFF0C;&#x8BF7;&#x91CD;&#x65B0;&#x767B;&#x5F55;&quot;</span>
-        <span class="hljs-keyword">return</span>;
-    }
-    <span class="hljs-comment">//&#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x6210;&#x529F;&#x540E;&#x83B7;&#x53D6;&#x4E0A;&#x4E00;&#x6B21;&#x610F;&#x5916;&#x7ED3;&#x675F;&#x7684;&#x89C6;&#x9891;&#x4F1A;&#x8BDD;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x6062;&#x590D;&#x4F1A;&#x8BDD;</span>
-    VideoSessionInfo sessionInfo = JsonConvert.DeserializeObject&lt;VideoSessionInfo&gt;(CRVideo.Queue.getSessionInfo());
-    <span class="hljs-keyword">if</span> (sessionInfo.callID != <span class="hljs-string">&quot;&quot;</span> &amp;&amp; sessionInfo.duration &gt; <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-keyword">if</span> (MessageBox.Show(<span class="hljs-string">&quot;&#x662F;&#x5426;&#x6062;&#x590D;&#x610F;&#x5916;&#x5173;&#x95ED;&#x7684;&#x89C6;&#x9891;&#x4F1A;&#x8BDD;&#xFF1F;&quot;</span>, <span class="hljs-string">&quot;&#x63D0;&#x793A;&quot;</span>, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-        {
-            <span class="hljs-comment">//&#x8FDB;&#x5165;&#x4E4B;&#x524D;&#x7684;&#x4F1A;&#x8BDD;</span>
-        }
-        <span class="hljs-keyword">else</span>
-        {
-            <span class="hljs-comment">//&#x7ED3;&#x675F;&#x4E0A;&#x6B21;&#x7684;&#x4F1A;&#x8BDD;&#xFF0C;&#x51C6;&#x5907;&#x65B0;&#x7684;&#x4F1A;&#x8BDD;</span>
-        }
-    }
-    <span class="hljs-comment">//&#x53D6;&#x5230;&#x6240;&#x6709;&#x7684;&#x961F;&#x5217;&#x4FE1;&#x606F;</span>
-    List&lt;QueueInfo&gt; queues = JsonConvert.DeserializeObject&lt;List&lt;QueueInfo&gt;&gt;(CRVideo.Queue.getAllQueueInfo());
-    <span class="hljs-comment">//&#x9009;&#x62E9;&#x5750;&#x5E2D;&#x52A0;&#x8F7D;&#x961F;&#x5217;&#x4FE1;&#x606F;&#x8FD8;&#x662F;&#x5BA2;&#x6237;&#x52A0;&#x8F7D;&#x4FE1;&#x606F;</span>
-    <span class="hljs-comment">//ServicesShow(queues);</span>
-    <span class="hljs-comment">// or</span>
-    <span class="hljs-comment">//ClientsShow(queues);</span>
-}
-</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_InitQueueDatRslt
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+        CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
+
+            <span class="hljs-comment">/**
+            * @typedef {object} CRVideo_QueStatus - &#x961F;&#x5217;&#x72B6;&#x6001;
+            * @property {number} queID - &#x961F;&#x5217;id
+            * @property {number} agent_num - &#x5750;&#x5E2D;&#x6570;&#x91CF;
+            * @property {number} wait_num - &#x6392;&#x961F;&#x5BA2;&#x6237;&#x6570;&#x91CF;
+            * @property {number} srv_num - &#x6B63;&#x5728;&#x670D;&#x52A1;&#x7684;&#x5BA2;&#x6237;&#x6570;&#x91CF;
+
+        };
+</span></code></pre>
 <h4 id="servicesOpr">2.&#x5750;&#x5E2D;&#x961F;&#x5217;&#x64CD;&#x4F5C; </h4>
 <pre><code>&#x5750;&#x5E2D;&#x89D2;&#x8272;&#x5F00;&#x59CB;&#x548C;&#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;&#xFF0C;&#x4EE5;&#x53CA;&#x64CD;&#x4F5C;&#x540E;&#x961F;&#x5217;&#x72B6;&#x6001;&#x7684;&#x53D8;&#x5316;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="queue.md#startService">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;</a>&#xFF0C;<a href="queue.md#startServiceRslt">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x961F;&#x5217;&#x670D;&#x52A1;&#x7ED3;&#x679C;</a>  </li>
-<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="json.md#QueueStatusObj">&#x961F;&#x5217;&#x72B6;&#x6001;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="Queue.html#startService">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;</a>&#xFF0C;<a href="Queue.html#startServiceRslt">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x961F;&#x5217;&#x670D;&#x52A1;&#x7ED3;&#x679C;</a>  </li>
+<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="ObjectstructureDing.html#QueueStatusObj">&#x961F;&#x5217;&#x72B6;&#x6001;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5F00;&#x59CB;&#x670D;&#x52A1;&#x961F;&#x5217;</span>
-Login.Instance.CRVideo.Queue.startService(queID, <span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/**
+        * &#x5F00;&#x59CB;&#x670D;&#x52A1;&#x67D0;&#x4E2A;&#x961F;&#x5217;(&#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x8C03;&#x7528;&#xFF0C;&#x5F00;&#x542F;&#x5BF9;&#x591A;&#x4E2A;&#x961F;&#x5217;&#x7684;&#x670D;&#x52A1;) //&#x5F00;&#x59CB;&#x670D;&#x52A1;&#x961F;&#x5217;
+        * &#x64CD;&#x4F5C;&#x56DE;&#x8C03;CRVideo_StartServiceRslt
+        * &#x5F00;&#x542F;&#x6210;&#x529F;&#x540E;&#xFF1A;
+        * a. &#x5982;&#x679C;&#x6CA1;&#x6709;&#x5F00;&#x542F;&#x514D;&#x6253;&#x633D;&#xFF0C;&#x90A3;&#x4E48;&#x7CFB;&#x7EDF;&#x4F1A;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x5BA2;&#x6237;&#xFF1A;VideoCall_Queue_CallBack::autoAssignUser&#xFF1B;
+        * b. &#x5982;&#x679C;&#x5F00;&#x542F;&#x514D;&#x6253;&#x633D;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C31;&#x4E0D;&#x4F1A;&#x5206;&#x914D;&#x5BA2;&#x6237;&#xFF0C;&#x5982;&#x9700;&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x53EF;&#x8C03;&#x7528;&#xFF1A;reqAssignUser&#x3002;
+        * @access public
+        * @param {string} queID  - &#x961F;&#x5217;ID
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_StartService(queID,cookie)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;</span>
-Login.Instance.CRVideo.Queue.stopService(queID, <span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/**
+        * &#x505C;&#x6B62;&#x670D;&#x52A1;&#x67D0;&#x4E2A;&#x961F;&#x5217; //&#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;
+        * &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x56DE;&#x8C03;CRVideo_StopServiceRslt
+        * @access public
+        * @param {string} queID  - queID &#x961F;&#x5217;ID
+        * @param {string} cookie - cookie&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_StopService(queID,cookie)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x7684;&#x6240;&#x6709;&#x961F;&#x5217;</span>
-<span class="hljs-keyword">string</span>[] queIDs = Login.Instance.CRVideo.Queue.getServingQueues().Split(<span class="hljs-string">&apos;\n&apos;</span>);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x83B7;&#x53D6;&#x6211;&#x670D;&#x52A1;&#x7684;&#x6240;&#x6709;&#x961F;&#x5217;
+        * @access public
+        * @returns {string[]} &#x8FD4;&#x56DE;&#x6211;&#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;&#x5217;&#x8868;
+        */</span>
+        <span class="hljs-keyword">var</span> GetServingQueues = CRVideo_GetServingQueues()
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x76F8;&#x5173;&#x59D4;&#x6258;</span>
-Login.Instance.CRVideo.Queue.startServiceRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_startServiceRsltEventHandler(startServiceRslt);
-Login.Instance.CRVideo.Queue.stopServiceRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_stopServiceRsltEventHandler(stopServiceRslt);
+<pre><code class="lang-cs">    <span class="hljs-comment">/* &#x5F00;&#x59CB;&#x670D;&#x52A1;&#x961F;&#x5217;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_StartServiceRslt
+        * @param {number} queID  - &#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;ID
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;
+        */</span>
+        CRVideo_StartServiceRslt.callback = function(queID,sdkErr,cookie){
 
-Login.Instance.CRVideo.Queue.queueStatusChanged += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_queueStatusChangedEventHandler(queueStatusChanged);
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5F00;&#x59CB;&#x961F;&#x5217;&#x670D;&#x52A1;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">startServiceRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_startServiceRsltEvent e</span>)
-</span>{
-    <span class="hljs-comment">//</span>
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_StopServiceRslt
+        * @param {number} queID  - &#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;ID
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;
+        */</span>
+        CRVideo_StopServiceRslt.callback = function(queID,sdkErr,cookie){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x901A;&#x77E5;&#x961F;&#x5217;&#x670D;&#x52A1;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stopServiceRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_stopServiceRsltEvent e</span>)
-</span>{
-    <span class="hljs-comment">//</span>
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">queueStatusChanged</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_queueStatusChangedEvent e</span>)
-</span>{
-    QueueStatus state = JsonConvert.DeserializeObject&lt;QueueStatus&gt;(e.p_jsonQueStatus);
-}
+<pre><code class="lang-cs">
+    <span class="hljs-comment">/**
+        * &#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5;
+        * @callback CRVideo.CbProxy~CRVideo_QueueStatusChanged
+        * @param {CRVideo_QueStatus} queStatus  -&#x961F;&#x5217;&#x72B6;&#x6001;
+        */</span>
+         CRVideo_QueueStatusChanged.callback=function(queStatus){
+           <span class="hljs-comment">/**
+            * @typedef {object} CRVideo_QueInfo - &#x961F;&#x5217;&#x4FE1;&#x606F;
+            * @property {number} queID - &#x961F;&#x5217;id
+            * @property {number} name - &#x961F;&#x5217;&#x540D;&#x79F0;
+            * @property {string} desc - &#x961F;&#x5217;&#x63CF;&#x8FF0;
+            * @property {number} prio - &#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x503C;&#x8D8A;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;
+            */</span>
+        }
 </code></pre>
 <h4 id="reqAssignUser">3.&#x5750;&#x5E2D;&#x8BF7;&#x6C42;&#x7528;&#x6237; </h4>
 <pre><code>&#x5728;&#x8BBE;&#x7F6E;DND&#x514D;&#x6253;&#x6270;&#x72B6;&#x4E0B;&#x6001;&#xFF0C;&#x7CFB;&#x7EDF;&#x4E0D;&#x518D;&#x81EA;&#x52A8;&#x5206;&#x914D;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x7533;&#x8BF7;&#x7528;&#x6237;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meetingMgr.md#setDNDStatus">&#x514D;&#x6253;&#x6270;</a>&#xFF0C;<a href="meetingMgr.md#setDNDStatusSuccess">&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="queue.md#reqAssignUser">&#x8BF7;&#x6C42;&#x5206;&#x914D;&#x7528;&#x6237;</a>&#xFF0C;<a href="queue.md#reqAssignUserRslt">&#x8BF7;&#x6C42;&#x5206;&#x914D;&#x7528;&#x6237;&#x7ED3;&#x679C;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="MeetingMrg.html#setDNDStatus">&#x514D;&#x6253;&#x6270;</a>&#xFF0C;<a href="MeetingMrg.html#setDNDStatusSuccess">&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="Queue.html#reqAssignUser">&#x8BF7;&#x6C42;&#x5206;&#x914D;&#x7528;&#x6237;</a>&#xFF0C;<a href="Queue.html#reqAssignUserRslt">&#x8BF7;&#x6C42;&#x5206;&#x914D;&#x7528;&#x6237;&#x7ED3;&#x679C;</a></li>
 </ul>
-<pre><code class="lang-cs">Login.Instance.CRVideo.Queue.reqAssignUserRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_reqAssignUserRsltEventHandler(reqAssignUserRslt);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;&#x3002;
+        * &#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;CRVideo_SetDNDStatusSuccess,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;CRVideo_SetDNDStatusFail&#x3002;
+        * @access public
+        * @param {number} DNDStatus - 0&#x4EE3;&#x8868;&#x5173;&#x95ED;&#x514D;&#x6253;&#x6270;&#xFF0C; &#x5176;&#x5B83;&#x503C;&#x4EE3;&#x8868;&#x5F00;&#x542F;&#x514D;&#x6253;&#x6270;&#xFF0C;&#x542B;&#x4E49;&#x81EA;&#x7531;&#x5B9A;&#x4E49;
+        * @param {string} cookie -  &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_SetDNDStatus(DNDStatus,cookie)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;&#xFF0C;&#x5173;&#x6389;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x63A8;&#x9001;</span>
-Login.Instance.CRVideo.Mgr.setDNDStatus(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x8BF7;&#x6C42;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;
+        * &#x5F53;&#x5173;&#x95ED;&#x514D;&#x6253;&#x6270;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x5BA2;&#x6237;&#xFF0C;&#x65E0;&#x9700;&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;&#xFF1B;
+        * &#x5F53;&#x5F00;&#x542F;&#x514D;&#x6253;&#x6270;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x4E0D;&#x518D;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x5BA2;&#x6237;&#xFF0C;&#x5EA7;&#x5E2D;&#x5982;&#x9700;&#x670D;&#x52A1;&#x5BA2;&#x6237;&#x53EF;&#x4F7F;&#x7528;&#x6B64;&#x51FD;&#x6570;&#x5206;&#x914D;&#xFF1B;
+        * @access public
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_ReqAssignUser(cookie)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x624B;&#x52A8;&#x8BF7;&#x6C42;&#x4E00;&#x4E2A;&#x7528;&#x6237;</span>
-Login.Instance.CRVideo.Queue.reqAssignUser(<span class="hljs-string">&quot;&quot;</span>);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x8BF7;&#x6C42;&#x7528;&#x6237;&#x7684;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reqAssignUserRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_reqAssignUserRsltEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr == (<span class="hljs-keyword">int</span>)VCALLSDK_ERR_DEF.VCALLSDK_NOERR)
-    {
-        UserInfo user = JsonConvert.DeserializeObject&lt;UserInfo&gt;(e.p_jsonUsr);
-        <span class="hljs-comment">// &#x8BF7;&#x6C42;&#x7528;&#x6237;&#x6210;&#x529F;</span>
-    }
-    <span class="hljs-function"><span class="hljs-keyword">else</span> <span class="hljs-title">if</span>(<span class="hljs-params">e.p_sdkErr == (<span class="hljs-keyword">int</span></span>)VCALLSDK_ERR_DEF.VCALLSDK_QUE_NOUSER)
-    </span>{
-        <span class="hljs-comment">// &#x961F;&#x5217;&#x4E2D;&#x6CA1;&#x6709;&#x6392;&#x961F;&#x4EBA;&#x5458;</span>
-    }
-    <span class="hljs-keyword">else</span>
-    {
-       <span class="hljs-comment">// &#x624B;&#x52A8;&#x8BF7;&#x6C42;&#x7528;&#x6237;&#x5931;&#x8D25;&#xFF0C;&#x4EE3;&#x7801;&#xFF1A;e.p_sdkErr</span>
-    }
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D6;&#x6D88;&#x514D;&#x6253;&#x6270;&#xFF0C;&#x5F00;&#x542F;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x63A8;&#x9001;</span>
-Login.Instance.CRVideo.Mgr.setDNDStatus(<span class="hljs-number">0</span>, <span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x8BF7;&#x6C42;&#x5206;&#x914D;&#x5BA2;&#x6237;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_ReqAssignUserRslt
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {CRVideo_QueUser} user  - &#x961F;&#x5217;&#x7528;&#x6237;&#x4FE1;&#x606F;
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;
+        */</span>
+        CRVideo_ReqAssignUserRslt.callback = function(sdkErr,user,cookie){
+
+        }
 </code></pre>
 <h4 id="autoAssignUser">4.&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x7ED9;&#x5750;&#x5E2D;&#x5206;&#x914D;&#x7528;&#x6237; </h4>
 <pre><code>&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x5728;&#x5750;&#x5E2D;&#x8FD8;&#x672A;&#x9009;&#x62E9;&#x63A5;&#x53D7;&#x6216;&#x62D2;&#x7EDD;&#x65F6;&#xFF0C;&#x7CFB;&#x7EDF;&#x53EF;&#x4EE5;&#x64A4;&#x56DE;&#x5206;&#x914D;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="queue.md#autoAssignUser">&#x81EA;&#x52A8;&#x5206;&#x914D;&#x7528;&#x6237;&#x901A;&#x77E5;</a>&#xFF0C;<a href="queue.md#acceptAssignUser">&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;</a>&#xFF0C;<a href="queue.md#cancelAssignUser">&#x81EA;&#x52A8;&#x5206;&#x914D;&#x7528;&#x6237;&#x88AB;&#x53D6;&#x6D88;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="Queue.html#autoAssignUser">&#x81EA;&#x52A8;&#x5206;&#x914D;&#x7528;&#x6237;&#x901A;&#x77E5;</a>&#xFF0C;<a href="Queue.html#acceptAssignUser">&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;</a>&#xFF0C;<a href="Queue.html#cancelAssignUser">&#x81EA;&#x52A8;&#x5206;&#x914D;&#x7528;&#x6237;&#x88AB;&#x53D6;&#x6D88;</a></li>
 </ul>
-<pre><code class="lang-cs">Login.Instance.CRVideo.Queue.autoAssignUser += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_autoAssignUserEventHandler(autoAssignUser);
-Login.Instance.CRVideo.Queue.cancelAssignUser += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_cancelAssignUserEventHandler(cancelAssignUser);
-Login.Instance.CRVideo.Queue.responseAssignUserRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_responseAssignUserRsltEventHandler(responseAssignUserRslt);
+<pre><code class="lang-cs">    <span class="hljs-comment">/* &#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x5B89;&#x6392;&#x5BA2;&#x6237;
+        * @callback CRVideo.CbProxy~CRVideo_AutoAssignUser
+        * @param {CRVideo_QueUser} user - &#x961F;&#x5217;&#x7528;&#x6237;&#x4FE1;&#x606F;
+        * &#x5982;&#x679C;&#x60F3;&#x505C;&#x6B62;&#x7CFB;&#x7EDF;&#x7684;&#x81EA;&#x52A8;&#x5206;&#x914D;&#xFF0C;&#x8BF7;&#x901A;setDNDStatus&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x529F;&#x80FD;
+        */</span>
+        CRVideo_AutoAssignUser.callback = function(user){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x5206;&#x914D;&#x7528;&#x6237;&#x901A;&#x77E5;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">autoAssignUser</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_autoAssignUserEvent e</span>)
-</span>{
-    UserInfo user = JsonConvert.DeserializeObject&lt;UserInfo&gt;(e.p_jsonUsr);
-    <span class="hljs-keyword">if</span>(MessageBox.Show(<span class="hljs-string">&quot;&#x662F;&#x5426;&#x63A5;&#x53D7;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;:&quot;</span> + user.name +<span class="hljs-string">&quot; ?&quot;</span>, <span class="hljs-string">&quot;&#x63D0;&#x793A;&quot;</span>, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-    {
-        Login.Instance.CRVideo.Queue.acceptAssignUser(user.queID, user.userID, <span class="hljs-string">&quot;&quot;</span>);
-        <span class="hljs-comment">// do something with this user...</span>
-    }
-    <span class="hljs-keyword">else</span>
-    {
-        Login.Instance.CRVideo.Queue.rejectAssignUser(user.queID, user.usrID, <span class="hljs-string">&quot;&quot;</span>);
-    }
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x54CD;&#x5E94;&#x5206;&#x914D;&#x5BA2;&#x6237;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_ResponseAssignUserRslt
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;
+        */</span>
+        CRVideo_ResponseAssignUserRslt.callback = function(sdkErr,cookie){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x63A5;&#x53D7;&#x6216;&#x62D2;&#x7EDD;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x64CD;&#x4F5C;&#x54CD;&#x5E94;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">responseAssignUserRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_responseAssignUserRsltEvent e</span>)
-</span>{
-    <span class="hljs-comment">//</span>
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x7CFB;&#x7EDF;&#x64A4;&#x56DE;&#x5206;&#x914D;&#x6B64;&#x7528;&#x6237;&#x901A;&#x77E5;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cancelAssignUser</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_cancelAssignUserEvent e</span>)
-</span>{
-    <span class="hljs-comment">//&#x53D6;&#x6D88;&#x5206;&#x914D;&#x7528;&#x6237;&#x7684;&#x5F39;&#x6846;</span>
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x7CFB;&#x7EDF;&#x53D6;&#x6D88;&#x5DF2;&#x7ECF;&#x5B89;&#x6392;&#x7684;&#x5BA2;&#x6237;
+        * @callback CRVideo.CbProxy~CRVideo_CancelAssignUser
+        * @param {string} queID - &#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;
+        * @param {string} userid - &#x7528;&#x6237;id
+        */</span>
+        CRVideo_CancelAssignUser.callback = function(queID,userid){
+
+        }
 </code></pre>
 <h4 id="clientQueue">5.&#x5BA2;&#x6237;&#x6392;&#x961F;&#x64CD;&#x4F5C; </h4>
 <pre><code>&#x5BA2;&#x6237;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x6392;&#x961F;&#xFF0C;&#x6BCF;&#x6B21;&#x53EA;&#x80FD;&#x6392;&#x4E00;&#x4E2A;&#x961F;&#x5217;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="queue.md#startQueuing">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x6392;&#x961F;</a>&#xFF0C;<a href="queue.md#startQueuingRslt">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="queue.md#queueStatusChanged">&#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;</a>&#xFF0C;<a href="queue.md#queuingInfoChanged">&#x6392;&#x961F;&#x4FE1;&#x606F;&#x53D8;&#x5316;</a>  </li>
-<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="json.md#QueueStatusObj">&#x961F;&#x5217;&#x72B6;&#x6001;</a>&#xFF0C;<a href="json.md#QueuingObj">&#x6392;&#x961F;&#x4FE1;&#x606F;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="Queue.html#startQueuing">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x6392;&#x961F;</a>&#xFF0C;<a href="Queue.html#startQueuingRslt">&#x5F00;&#x59CB;/&#x505C;&#x6B62;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="Queue.html#queueStatusChanged">&#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;</a>&#xFF0C;<a href="Queue.html#queuingInfoChanged">&#x6392;&#x961F;&#x4FE1;&#x606F;&#x53D8;&#x5316;</a>  </li>
+<li>&#x76F8;&#x5173;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x8BF7;&#x53C2;&#x8003; <a href="ObjectstructureDing.html#,">&#x961F;&#x5217;&#x72B6;&#x6001;</a>&#xFF0C;<a href="ObjectstructureDing.html#QueuingObj">&#x6392;&#x961F;&#x4FE1;&#x606F;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x76F8;&#x5173;&#x59D4;&#x6258;</span>
-Login.Instance.CRVideo.Queue.startQueuingRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_startQueuingRsltEventHandler(startQueuingRslt);
-Login.Instance.CRVideo.Queue.stopQueuingRslt += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_stopQueuingRsltEventHandler(stopQueuingRslt);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x5BA2;&#x6237;&#x5F00;&#x59CB;&#x6392;&#x961F;
+        * &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x56DE;&#x8C03;CRVideo_StartQueuingRslt
+        * @access public
+        * @param {string} queID  - queID &#x961F;&#x5217;ID
+        * @param {string} cookie - cookie&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_StartQueuing(queID,cookie)
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x5BA2;&#x6237;&#x505C;&#x6B62;&#x6392;&#x961F;
+        * &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x56DE;&#x8C03;CRVideo_StopQueuingRslt
+        * @access public
+        * @param {string} cookie - cookie&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>
+        CRVideo_StopQueuing(cookie)
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x5F00;&#x59CB;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_StartQueuingRslt
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+        CRVideo_StartQueuingRslt.callback = function(sdkErr,cookie){
 
-Login.Instance.CRVideo.Queue.queueStatusChanged += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_queueStatusChangedEventHandler(queueStatusChanged);
-Login.Instance.CRVideo.Queue.queuingInfoChanged += <span class="hljs-keyword">new</span> ICloudroomQueueEvents_queuingInfoChangedEventHandler(queuingInfoChanged);
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5F00;&#x59CB;&#x6392;&#x961F;</span>
-<span class="hljs-keyword">int</span> queID = <span class="hljs-number">1</span>;
-Login.Instance.CRVideo.Queue.startQueuing(queID, <span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x505C;&#x6B62;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_StopQueuingRslt
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;
+        */</span>
+        CRVideo_StopQueuingRslt.callback = function(sdkErr,cookie){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x505C;&#x6B62;&#x6392;&#x961F;</span>
-Login.Instance.CRVideo.Queue.stopQueuing(<span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5;
+        * @callback CRVideo.CbProxy~CRVideo_QueueStatusChanged
+        * @param {CRVideo_QueStatus} queStatus  -&#x961F;&#x5217;&#x72B6;&#x6001;
+        */</span>
+        CRVideo_QueueStatusChanged.callback = function(queStatus){
+             <span class="hljs-comment">/**
+            * @typedef {object} CRVideo_QueInfo - &#x961F;&#x5217;&#x4FE1;&#x606F;
+            * @property {number} queID - &#x961F;&#x5217;id
+            * @property {number} name - &#x961F;&#x5217;&#x540D;&#x79F0;
+            * @property {string} desc - &#x961F;&#x5217;&#x63CF;&#x8FF0;
+            * @property {number} prio - &#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x503C;&#x8D8A;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;
+            */</span>
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5F00;&#x59CB;&#x6392;&#x961F;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">startQueuingRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_startQueuingRsltEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr != <span class="hljs-number">0</span>) <span class="hljs-comment">//&#x5F00;&#x59CB;&#x6392;&#x961F;&#x5931;&#x8D25;</span>
-    {
-        <span class="hljs-comment">// ....</span>
-    }
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x505C;&#x6B62;&#x6392;&#x961F;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">stopQueuingRslt</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_stopQueuingRsltEvent e</span>)
-</span>{
-    <span class="hljs-comment">//&#x2026;&#x2026;</span>
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">queueStatusChanged</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_queueStatusChangedEvent e</span>)
-</span>{
-    QueueStatus state = JsonConvert.DeserializeObject&lt;QueueStatus&gt;(e.p_jsonQueStatus);
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6392;&#x961F;&#x4FE1;&#x606F;&#x66F4;&#x65B0;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">queuingInfoChanged</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomQueueEvents_queuingInfoChangedEvent e</span>)
-</span>{
-    QueuingInfo queuingInfo = JsonConvert.DeserializeObject&lt;QueuingInfo&gt;(e.p_queuingInfo);
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x6392;&#x961F;&#x4FE1;&#x606F;&#x53D8;&#x5316;&#x901A;&#x77E5;
+        * @callback CRVideo.CbProxy~CRVideo_QueuingInfoChanged
+        * @param {CRVideo_QueInfo} queuingInfo - &#x961F;&#x5217;&#x4FE1;&#x606F;
+        */</span>
+        CRVideo_QueuingInfoChanged.callback = function(queuingInfo){
+            <span class="hljs-comment">/**
+            * &#x5F00;&#x59CB;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C;
+            * @callback CRVideo.CbProxy~CRVideo_StartQueuingRslt
+            * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x7ED3;&#x679C;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+            * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+            */</span>
+        }
 </code></pre>
 <h3 id="call">&#x547C;&#x53EB;&#x4ED6;&#x4EBA; </h3>
 <blockquote>
@@ -2103,70 +2144,90 @@ Login.Instance.CRVideo.Queue.stopQueuing(<span class="hljs-string">&quot;&quot;<
 <h4 id="call">1.&#x4E3B;&#x53EB; </h4>
 <pre><code>&#x547C;&#x53EB;&#x53D1;&#x8D77;&#x65B9;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meetingMgr.md#call">&#x5F00;&#x59CB;&#x547C;&#x53EB;</a>&#xFF0C;<a href="meetingMgr.md#hungupCall">&#x6302;&#x65AD;&#x547C;&#x53EB;</a>&#xFF0C;<a href="meetingMgr.md#callSuccess">&#x5F00;&#x59CB;&#x547C;&#x53EB;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="meetingMgr.md#hungupCallSuccess">&#x6302;&#x65AD;&#x547C;&#x53EB;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="meetingMgr.md#notifyCallAccepted">&#x901A;&#x77E5;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="MeetingMrg.html#call">&#x5F00;&#x59CB;&#x547C;&#x53EB;</a>&#xFF0C;<a href="MeetingMrg.html#hungupCall">&#x6302;&#x65AD;&#x547C;&#x53EB;</a>&#xFF0C;<a href="MeetingMrg.html#callSuccess">&#x5F00;&#x59CB;&#x547C;&#x53EB;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="MeetingMrg.html#hungupCallSuccess">&#x6302;&#x65AD;&#x547C;&#x53EB;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="MeetingMrg.html#notifyCallAccepted">&#x901A;&#x77E5;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x76F8;&#x5173;&#x59D4;&#x6258;</span>
-Login.Instance.CRVideo.Mgr.callSuccess += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_callSuccessEventHandler(callSuccess);
-Login.Instance.CRVideo.Mgr.callFail += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_callFailEventHandler(callFailed);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x8D77;&#x547C;&#x53EB;&#xFF0C;&#x9080;&#x8BF7;&#x7528;&#x6237;&#x53C2;&#x52A0;&#x89C6;&#x9891;&#x4F1A;&#x8BDD;&#x3002;
+        * &#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;CRVideo_CallSuccess,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;CRVideo_CallFail&#x3002;
+        * &#x547C;&#x53EB;&#x65F6;&#xFF0C;&#x5BF9;&#x65B9;&#x8FDF;&#x8FDF;&#x4E0D;&#x54CD;&#x5E94;&#xFF0C;30&#x79D2;&#x540E;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x7ED3;&#x675F;&#x547C;&#x53EB;&#x3002;
+        * @access public
+        * @param {string} calledUserID -  &#x88AB;&#x53EB;&#x7528;&#x6237;&#x7684;&#x8D26;&#x6237;ID
+        * @param {CRVideo_MeetInfoObj} meetObj - &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;
+        * @param {string} usrExtDat - &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;(&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        * @returns {string} &#x8FD4;&#x56DE;&#x672C;&#x6B21;&#x547C;&#x53EB;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x547C;&#x53EB;ID&#xFF09;
+        */</span>    
+        <span class="hljs-keyword">var</span> callID =CRVideo_Call(calledUserID,meetObj,usrExtDat,cookie)
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x6302;&#x65AD;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x89C6;&#x9891;&#x547C;&#x53EB;&#x6216;&#x89C6;&#x9891;&#x901A;&#x8BDD;
+        * &#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;CRVideo_HangupCallSuccess,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;CRVideo_HangupCallFail&#x3002;
+        * @access public
+        * @param {string} callID  - &#x547C;&#x53EB;ID
+        * @param {string} usrExtDat - &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)
+        */</span>    
+        CRVideo_HungupCall(callID,usrExtDat,cookie)
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x547C;&#x53EB;&#x4ED6;&#x4EBA;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94;
+        * @callback CRVideo.CbProxy~CRVideo_CallSuccess
+        * @param {string} callID - &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6; 
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+        CRVideo_CallSuccess.callback = function(callID,callback){
 
-Login.Instance.CRVideo.Mgr.notifyCallAccepted += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_notifyCallAcceptedEventHandler(notifyCallAccepted);
-Login.Instance.CRVideo.Mgr.notifyCallRejected += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_notifyCallRejectedEventHandler(notifyCallRejected);
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5F00;&#x59CB;&#x547C;&#x53EB;&#xFF0C;meetObj&#x4E3A;&#x4E4B;&#x524D;&#x521B;&#x5EFA;&#x7684;&#x4F1A;&#x8BAE;&#x5BF9;&#x8C61;&#x5B57;&#x7B26;&#x4E32;</span>
-<span class="hljs-keyword">string</span> userID = <span class="hljs-string">&quot;user_000007&quot;</span>;
-<span class="hljs-keyword">string</span> callID = Login.Instance.CRVideo.Mgr.call(userID, meetObj, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x547C;&#x53EB;&#x4ED6;&#x4EBA;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94;
+        * @callback CRVideo.CbProxy~CRVideo_CallFail
+        * @param {string} callID - &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6; 
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+        CRVideo_CallFail.callback = function(callID,sdkErr,cookie){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6302;&#x65AD;&#x547C;&#x53EB;</span>
-Login.Instance.CRVideo.Mgr.hungupCall(callID, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x547C;&#x53EB;&#x6210;&#x529F;&#x53D1;&#x51FA;&#xFF0C;&#x7B49;&#x5F85;&#x5BF9;&#x65B9;&#x54CD;&#x5E94;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">callSuccess</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_callSuccessEvent e</span>)
-</span>{
-   <span class="hljs-comment">//</span>
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x547C;&#x53EB;&#x53D1;&#x51FA;&#x5931;&#x8D25;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">callFailed</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_callFailEvent e</span>)
-</span>{
-    <span class="hljs-comment">// &#x547C;&#x53EB;&#x5931;&#x8D25;&#xFF0C;&#x4EE3;&#x7801;&#xFF1A; e.p_sdkErr</span>
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6211;&#x7684;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x63A5;&#x53D7;&#xFF0C;&#x5F97;&#x5230;&#x4F1A;&#x8BAE;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;&#x4F1A;&#x8BAE;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyCallAccepted</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_notifyCallAcceptedEvent e</span>)
-</span>{
-    MeetObj meet = JsonConvert.DeserializeObject&lt;MeetObj&gt;(e.p_meetObj);
-    Login.Instance.CRVideo.Meeting.enterMeeting(meet.ID, meet.pswd, MyUserId, MyNickname, <span class="hljs-string">&quot;&quot;</span>);
-    <span class="hljs-comment">//&#x6253;&#x5F00;&#x4F1A;&#x8BDD;&#x754C;&#x9762;&#x2026;&#x2026;</span>
-}
-<span class="hljs-comment">//&#x6211;&#x7684;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x62D2;&#x7EDD;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyCallRejected</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_notifyCallRejectedEvent e</span>)
-</span>{
-    <span class="hljs-comment">//&#x88AB;&#x62D2;&#x7EDD;&#x4E86; o.o &#x2026;&#x2026;</span>
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x89C6;&#x9891;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x63A5;&#x53D7;
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCallAccepted
+        * @param {string} callID - &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6; 
+        * @param {CRVideo_MeetInfoObj} meetObj - &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;
+        * @param {string} usrExtDat - &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;
+        */</span>
+        CRVideo_NotifyCallAccepted = function(callID,meetObj,usrExtDat){
+
+        }
+
+    <span class="hljs-comment">/**
+        * SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x62D2;&#x7EDD;
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCallRejected
+        * @param {string} callID - &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6; 
+        * @param {number} sdkErr - &#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x62D2;&#x7EDD;&#x7684;&#x539F;&#x56E0;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} usrExtDat - &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;
+        */</span>
+         CRVideo_NotifyCallRejected = function(callID,sdkErr,usrExtDat){
+
+        }
 </code></pre>
 <h4 id="called">2.&#x88AB;&#x53EB; </h4>
 <pre><code>&#x88AB;&#x547C;&#x53EB;&#x65B9;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meetingMgr.md#notifyCallIn">&#x901A;&#x77E5;&#x6709;&#x4EBA;&#x547C;&#x5165;</a>&#xFF0C;<a href="meetingMgr.md#acceptCall">&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;</a>&#xFF0C;<a href="meetingMgr.md#acceptCallSuccess">&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x547C;&#x53EB;&#x7ED3;&#x679C;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="MeetingMrg.html#notifyCallIn">&#x901A;&#x77E5;&#x6709;&#x4EBA;&#x547C;&#x5165;</a>&#xFF0C;<a href="MeetingMrg.html#acceptCall">&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;</a>&#xFF0C;<a href="MeetingMrg.html#acceptCallSuccess">&#x63A5;&#x53D7;/&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x547C;&#x53EB;&#x7ED3;&#x679C;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x59D4;&#x6258;</span>
-Login.Instance.CRVideo.Mgr.notifyCallIn += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_notifyCallInEventHandler(notifyCallIn);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6709;&#x547C;&#x53EB;&#x8FDB;&#x5165;</span>
-<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyCallIn</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_notifyCallInEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span>(<span class="hljs-comment">/*&#x63A5;&#x53D7;&#x547C;&#x53EB;&#xFF0C; &#x8FDB;&#x5165;&#x4F1A;&#x8BAE;*/</span>)
-    {
-        Login.Instance.CRVideo.Mgr.acceptCall(e.p_callID, e.p_meetObj, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
-        MeetObj meet = JsonConvert.DeserializeObject&lt;MeetObj&gt;(e.p_meetObj);
-        Login.Instance.CRVideo.Meeting.enterMeeting(meet.ID, meet.pswd, MyUserId, MyNickname, <span class="hljs-string">&quot;&quot;</span>);
-        <span class="hljs-comment">//&#x6253;&#x5F00;&#x4F1A;&#x8BDD;&#x754C;&#x9762;&#x2026;&#x2026;</span>
-    }
-    <span class="hljs-keyword">else</span> <span class="hljs-comment">//&#x62D2;&#x7EDD;&#x5BF9;&#x65B9;&#x7684;&#x547C;&#x53EB;</span>
-    {
-        Login.Instance.CRVideo.Mgr.rejectCall(e.p_callID, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
-    }
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x88AB;&#x547C;&#x53EB;
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCallIn
+        * @param {string} callID - &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6; 
+        * @param {CRVideo_MeetInfoObj} meetObj - &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;
+        * @param {string} callerID - &#x547C;&#x53EB;&#x4EBA;&#x5458;&#x7684;&#x6807;&#x8BC6;ID
+        * @param {string} usrExtDat - &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;
+        */</span>
+        CRVideo_NotifyCallIn.callback = function(callID,meetObj,callerID,usrExtDat){
+
+        }
 </code></pre>
 <h3 id="datatransfer">&#x900F;&#x660E;&#x4F20;&#x8F93; </h3>
 <blockquote>
@@ -2179,125 +2240,140 @@ Login.Instance.CRVideo.Mgr.notifyCallIn += <span class="hljs-keyword">new</span>
 <h4 id="send">1.&#x53D1;&#x9001;&#x547D;&#x4EE4;&#x3001;&#x6587;&#x672C;&#x3001;&#x6587;&#x4EF6; </h4>
 <pre><code>&#x5C0F;&#x6570;&#x636E;&#x8D70;&#x547D;&#x4EE4;&#x63A5;&#x53E3;&#xFF0C;&#x5927;&#x6570;&#x636E;&#x8D70;&#x6587;&#x672C;&#x63A5;&#x53E3;&#xFF0C;&#x547D;&#x4EE4;&#x7684;&#x53D1;&#x9001;&#x4E0D;&#x53EF;&#x4EE5;&#x88AB;&#x53D6;&#x6D88;&#xFF0C;&#x4E5F;&#x6CA1;&#x6709;&#x8FDB;&#x5EA6;&#x901A;&#x77E5;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meetingMgr.md#sendCmd">&#x53D1;&#x9001;&#x547D;&#x4EE4;/&#x6570;&#x636E;/&#x6587;&#x4EF6;</a>&#xFF0C;<a href="meetingMgr.md#cancelSend">&#x53D6;&#x6D88;&#x53D1;&#x9001;</a>&#xFF0C;<a href="meetingMgr.md#sendCmdRlst">&#x53D1;&#x9001;&#x547D;&#x4EE4;/&#x6570;&#x636E;/&#x6587;&#x4EF6;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="meetingMgr.md#sendProgress">&#x53D1;&#x9001;&#x8FDB;&#x5EA6;</a>&#xFF0C;<a href="meetingMgr.md#cancelSendRlst">&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x7ED3;&#x679C;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="MeetingMrg.html#sendCmd">&#x53D1;&#x9001;&#x547D;&#x4EE4;/&#x6570;&#x636E;/&#x6587;&#x4EF6;</a>&#xFF0C;<a href="MeetingMrg.html#cancelSend">&#x53D6;&#x6D88;&#x53D1;&#x9001;</a>&#xFF0C;<a href="MeetingMrg.html#sendCmdRlst">&#x53D1;&#x9001;&#x547D;&#x4EE4;/&#x6570;&#x636E;/&#x6587;&#x4EF6;&#x7ED3;&#x679C;</a>&#xFF0C;<a href="MeetingMrg.html#sendProgress">&#x53D1;&#x9001;&#x8FDB;&#x5EA6;</a>&#xFF0C;<a href="MeetingMrg.html#cancelSendRlst">&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x7ED3;&#x679C;</a></li>
 </ul>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D1;&#x9001;&#x547D;&#x4EE4;&#x548C;&#x6570;&#x636E;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">btnSendCmd_Click</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, RoutedEventArgs e</span>)
-</span>{
-    <span class="hljs-keyword">string</span> userID = <span class="hljs-string">&quot;user_000008&quot;</span>;
-    <span class="hljs-keyword">byte</span>[] cmdBytes = Encoding.Default.GetBytes(txtCmdData.Text.Trim());
-    <span class="hljs-comment">//&#x5C0F;&#x6570;&#x636E;&#x8D70;sendcmd&#x63A5;&#x53E3;&#xFF0C;&#x5927;&#x6570;&#x636E;&#x8D70;sendbuffer&#x63A5;&#x53E3;</span>
-    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> &lt; cmdBytes.Length &lt; <span class="hljs-number">50000</span>)
-    {
-        Login.Instance.CRVideo.Mgr.sendCmd(userID, Convert.ToBase64String(cmdBytes));
-    }
-    <span class="hljs-keyword">else</span>
-    {
-        Login.Instance.CRVideo.Mgr.sendBuffer(userID, Convert.ToBase64String(cmdBytes));
-    }
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D1;&#x9001;&#x6587;&#x4EF6;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendFile</span>(<span class="hljs-params"></span>)
-</span>{
-    <span class="hljs-keyword">using</span> (FileStream stream = <span class="hljs-keyword">new</span> FileInfo(mSelectedFile).OpenRead())
-    {
-        label_sendBuffer_desc.Text = <span class="hljs-string">&quot;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#xFF1A;&quot;</span> + stream.Length / <span class="hljs-number">1024</span> + <span class="hljs-string">&quot;KB&quot;</span>;
-    }
-    <span class="hljs-keyword">string</span> userID = <span class="hljs-string">&quot;user_000022&quot;</span>;
-    mFileTaskID = (<span class="hljs-keyword">string</span>)Login.Instance.CRVideo.Mgr.sendFile(userID, mSelectedFile);
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D6;&#x6D88;&#x53D1;&#x9001;</span>
-Login.Instance.CRVideo.Mgr.cancelSend(mFileTaskID);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x5173;&#x8054;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#x59D4;&#x6258;</span>
-Login.Instance.CRVideo.Mgr.sendCmdRlst += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_sendCmdRlstEventHandler(sendCmdRlst);
-Login.Instance.CRVideo.Mgr.sendBufferRlst += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_sendBufferRlstEventHandler(sendBufferRlst);
-Login.Instance.CRVideo.Mgr.sendFileRlst += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_sendFileRlstEventHandler(sendFileRlst);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x5C0F;&#x5757;&#x6570;&#x636E;(&#x4E00;&#x6B21;&#x6027;&#x53D1;&#x9001;&#x4E0D;&#x4F1A;&#x6709;&#x8FDB;&#x5EA6;&#x901A;&#x77E5;,&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;CRVideo_SendCmdRlst,CRVideo_SendCmd&#x4E0D;&#x80FD;&#x88AB;CRVideo_CancelSend)
+        * @access public
+        * @param {string} targetUserId  - &#x76EE;&#x6807;&#x7528;&#x6237;ID
+        * @param {string} data - &#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;
+        * @returns {string} &#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;ID
+        */</span>    
+        <span class="hljs-keyword">var</span> sendCmdID = CRVideo_SendCmd(targetUserId,data);
 
-Login.Instance.CRVideo.Mgr.cancelSendRlst += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_cancelSendRlstEventHandler(cancelSendRlst);
-Login.Instance.CRVideo.Mgr.sendProgress += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_sendProgressEventHandler(sendProgress);
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D1;&#x9001;&#x5927;&#x6570;&#x636E;&#x548C;&#x6587;&#x4EF6;&#x7684;&#x8FDB;&#x5165;&#x901A;&#x77E5;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendProgress</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_sendProgressEvent e</span>)
-</span>{
-    <span class="hljs-keyword">string</span> text = <span class="hljs-string">&quot;&#x603B;&#x5927;&#x5C0F;&#xFF1A;&quot;</span> + e.p_totalLen + <span class="hljs-string">&quot;, &#x5DF2;&#x53D1;&#x9001;&quot;</span> + e.p_sendedLen;
-    <span class="hljs-comment">//&#x53D1;&#x5B8C;&#x4E86;</span>
-    <span class="hljs-keyword">if</span> (e.p_sendedLen == e.p_totalLen)
-    {
-        <span class="hljs-comment">//&#x53D1;&#x9001;&#x6210;&#x529F;</span>
-    }
+    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x5927;&#x5757;&#x6570;&#x636E;(&#x5206;&#x5757;&#x53D1;&#x9001;&#xFF0C;&#x8FDB;&#x5EA6;&#x901A;&#x77E5;&#x4E8B;&#x4EF6;CRVideo_SendProgress,&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;CRVideo_SendBufferRlst,&#x53D6;&#x6D88;&#x53D1;&#x9001;CRVideo_CancelSend)
+        * @access public
+        * @param {string} targetUserId  - &#x76EE;&#x6807;&#x7528;&#x6237;ID
+        * @param {string} data - &#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;
+        * @returns {string} &#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;ID
+        */</span>    
+        <span class="hljs-keyword">var</span> sendBufferID = CRVideo_SendBuffer(targetUserId,data)
+
 }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D1;&#x9001;&#x547D;&#x4EE4;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendCmdRlst</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_sendCmdRlstEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr != <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-comment">//&#x53D1;&#x9001;&#x547D;&#x4EE4;&#x6570;&#x636E;&#x5931;&#x8D25;&#xFF1A;e.p_sdkErr</span>
-    }
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x6587;&#x4EF6;(&#x5206;&#x5757;&#x53D1;&#x9001;&#xFF0C;&#x8FDB;&#x5EA6;&#x901A;&#x77E5;&#x4E8B;&#x4EF6;CRVideo_SendProgress,&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;CRVideo_SendFileRlst,&#x53D6;&#x6D88;&#x53D1;&#x9001;CRVideo_CancelSend)
+        * @access public
+        * @param {string} targetUserId  - &#x76EE;&#x6807;&#x7528;&#x6237;ID
+        * @param {string} fileName - &#x9700;&#x8981;&#x53D1;&#x9001;&#x7684;&#x6587;&#x4EF6;&#x540D; 
+        * @returns {string} &#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;ID
+        */</span>    
+        <span class="hljs-keyword">var</span> sendvFileID = CRVideo_SendFile(targetUserId,data)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D1;&#x9001;&#x6570;&#x636E;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendBufferRlst</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_sendBufferRlstEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr != <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-comment">//&#x53D1;&#x9001;&#x5931;&#x8D25;: e.p_sdkErr</span>
-    }
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D6;&#x6D88;&#x6570;&#x636E;&#x53D1;&#x9001;
+        * &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x5219;&#x56DE;&#x8C03;CRVideo_CancelSendRlst&#x3002;
+        * @access public
+        * @param {string} taskID - &#x4EFB;&#x52A1;ID
+        */</span>
+        CRVideo_CancelSend(taskID)
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D1;&#x9001;&#x6587;&#x4EF6;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sendFileRlst</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_sendFileRlstEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr != <span class="hljs-number">0</span>)
-    {
-        mBufferTaskID = <span class="hljs-string">&quot;&quot;</span>;
-        <span class="hljs-comment">//&#x53D1;&#x9001;&#x5931;&#x8D25;: e.p_sdkErr</span>
-    }
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x8FDB;&#x5EA6;
+        * @callback CRVideo.CbProxy~CRVideo_SendProgress
+        * @param {string} taskID - &#x53D1;&#x9001;&#x4EFB;&#x52A1;id
+        * @param {number} sendedLen  - &#x5DF2;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x957F;&#x5EA6;
+        * @param {number} totalLen   - &#x9700;&#x8981;&#x53D1;&#x9001;&#x7684;&#x603B;&#x957F;&#x5EA6;
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+        CRVideo_SendProgress.callback = function(taskID,sendedLen,totalLen,cookie){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x7684;&#x7ED3;&#x679C;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cancelSendRlst</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_cancelSendRlstEvent e</span>)
-</span>{
-    <span class="hljs-keyword">if</span> (e.p_sdkErr != <span class="hljs-number">0</span>)
-    {
-       <span class="hljs-comment">//&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x5931;&#x8D25;&quot;</span>
-    }
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_SendCmdRlst
+        * @param {string} taskID - &#x53D1;&#x9001;&#x4EFB;&#x52A1;id
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+        CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){
+
+        }
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_SendBufferRlst
+        * @param {string} taskID - &#x53D1;&#x9001;&#x4EFB;&#x52A1;id
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+         CRVideo_SendBufferRlst.callback = function(taskID,sdkErr,cookie){
+
+        }
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D1;&#x9001;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C;
+        * @callback CRVideo.CbProxy~CRVideo_SendFileRlst
+        * @param {string} taskID - &#x53D1;&#x9001;&#x4EFB;&#x52A1;id
+        * @param {number} fileName - &#x6587;&#x4EF6;&#x540D;
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+         CRVideo_SendFileRlst.callback = function(taskID,fileName,sdkErr,cookie){
+
+        }
+</code></pre>
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * &#x53D6;&#x6D88;&#x53D1;&#x9001;&#x54CD;&#x5E94;
+        * @callback CRVideo.CbProxy~CRVideo_CancelSendRlst
+        * @param {string} taskID - &#x53D1;&#x9001;&#x4EFB;&#x52A1;id
+        * @param {number} sdkErr - &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;cr/error
+        * @param {string} cookie - &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;
+        */</span>
+         CRVideo_CancelSendRlst.callback = function(taskID,sdkErr,cookie){
+
+        }
 </code></pre>
 <h4 id="receive">2.&#x6536;&#x5230;&#x547D;&#x4EE4;&#x3001;&#x6570;&#x636E;&#x3001;&#x6587;&#x4EF6; </h4>
 <pre><code>&#x6536;&#x5230;&#x522B;&#x4EBA;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x901A;&#x77E5;
 </code></pre><ul>
-<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="meetingMgr.md#notifyCmdData">&#x901A;&#x77E5;&#x6709;&#x547D;&#x4EE4;/&#x6570;&#x636E;/&#x6587;&#x4EF6;&#x53D1;&#x6765;</a></li>
+<li>&#x76F8;&#x5173;API&#x8BF7;&#x53C2;&#x8003; <a href="MeetingMrg.html#notifyCmdData">&#x901A;&#x77E5;&#x6709;&#x547D;&#x4EE4;/&#x6570;&#x636E;/&#x6587;&#x4EF6;&#x53D1;&#x6765;</a></li>
 </ul>
-<pre><code class="lang-cs">Login.Instance.CRVideo.Mgr.notifyCmdData += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_notifyCmdDataEventHandler(notifyCmdData);
-Login.Instance.CRVideo.Mgr.notifyBufferData += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_notifyBufferDataEventHandler(notifyBufferData);
-Login.Instance.CRVideo.Mgr.notifyFileData += <span class="hljs-keyword">new</span> ICloudroomVideoMgrEvents_notifyFileDataEventHandler(notifyFileData);
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x5C0F;&#x5757;&#x6570;&#x636E;
+        * @callback CRVideo.CbProxy~CRVideo_NotifyCmdData
+        * @param {string} sourceUserId - &#x6570;&#x636E;&#x6765;&#x6E90;
+        * @param {string} data - &#x6570;&#x636E;
+        */</span>
+        CRVideo_NotifyCmdData.callback = function(sourceUserId,data){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6536;&#x5230;&#x547D;&#x4EE4;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyCmdData</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_notifyCmdDataEvent e</span>)
-</span>{
-    <span class="hljs-keyword">byte</span>[] cmdBytes = Convert.FromBase64String(e.p_data);
-    <span class="hljs-keyword">string</span> text = <span class="hljs-string">&quot;&#x6765;&#x81EA;[&quot;</span> + e.p_sourceUserId + <span class="hljs-string">&quot;]&#x7684;&#x547D;&#x4EE4;:&quot;</span> + Encoding.Default.GetString(cmdBytes);
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x5927;&#x5757;&#x6570;&#x636E;
+        * @callback CRVideo.CbProxy~CRVideo_NotifyBufferData
+        * @param {string} sourceUserId - &#x6570;&#x636E;&#x6765;&#x6E90;
+        * @param {string} data - &#x6570;&#x636E;
+        */</span>
+        CRVideo_NotifyBufferData.callback = function(sourceUserId,data){
+
+        }
 </code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6536;&#x5230;&#x5927;&#x6570;&#x636E;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyBufferData</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_notifyBufferDataEvent e</span>)
-</span>{
-    <span class="hljs-keyword">byte</span>[] byteArray = Convert.FromBase64String(e.p_data);
-    <span class="hljs-keyword">string</span> text = <span class="hljs-string">&quot;&#x6765;&#x81EA;[&quot;</span> + e.p_sourceUserId + <span class="hljs-string">&quot;]&#x7684;&#x6570;&#x636E;&quot;</span> + Encoding.Default.GetString(byteArray);
-}
-</code></pre>
-<pre><code class="lang-cs"><span class="hljs-comment">//&#x6536;&#x5230;&#x6587;&#x4EF6;</span>
-<span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">notifyFileData</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, ICloudroomVideoMgrEvents_notifyFileDataEvent e</span>)
-</span>{
-    <span class="hljs-keyword">string</span> text = <span class="hljs-string">&quot;&#x6536;&#x5230;&quot;</span> + e.p_sourceUserId + <span class="hljs-string">&quot;&#x53D1;&#x6765;&#x7684;&#x6587;&#x4EF6;&#xFF1A;&quot;</span> + e.p_orgFileName + <span class="hljs-string">&quot;&#xFF0C;&#x4E34;&#x65F6;&#x5B58;&#x653E;&#x4F4D;&#x7F6E;&#xFF1A;&quot;</span> + e.p_tmpFile;
-}
+<pre><code class="lang-cs">    <span class="hljs-comment">/**
+        * SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x6587;&#x4EF6;&#x6570;&#x636E;&#xFF08;&#x6536;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x5728;&#x7CFB;&#x7EDF;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BF7;&#x5C3D;&#x5FEB;&#x79FB;&#x8D70;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#xFF09;
+        * @callback CRVideo.CbProxy~CRVideo_NotifyFileData
+        * @param {string} sourceUserId - &#x6570;&#x636E;&#x6765;&#x6E90;
+        * @param {string} tmpFile - &#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x8BF7;&#x79FB;&#x9664;&#x6216;&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;
+        * @param {string} orgFileName  - &#x6E90;&#x59CB;&#x6587;&#x4EF6;&#x540D; 
+        */</span>
+        CRVideo_NotifyFileData.callback = function(sourceUserId,tmpFile,orgFileName){
+
+        }
 </code></pre>
 <footer class="page-footer"><span class="copyright">&#xA9; HeDonghai all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-01-19 18:35:24
+2018-01-20 16:39:31
 </span></footer>
                                 
                                 </section>
@@ -2331,7 +2407,7 @@ Login.Instance.CRVideo.Mgr.notifyFileData += <span class="hljs-keyword">new</spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集成指南","level":"1.3","depth":1,"next":{"title":"开始音视频会话","level":"1.3.1","depth":2,"anchor":"#startMeeting","path":"IntegratedGuide.md","ref":"IntegratedGuide.md#startMeeting","articles":[]},"previous":{"title":"Demo说明","level":"1.2","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","book-summary-scroll-position-saver","expandable-chapters","search-plus","splitter","tbfed-pagefooter","back-to-top-button","yahei","theme-api","theme-comscore","livereload"],"styles":{"website":"style.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy; HeDonghai","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"theme-comscore":{},"theme-api":{"languages":[],"split":true,"theme":"light"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HeDonghai","pdf":{"pageNumbers":true,"fontSize":18,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":30,"bottom":50},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Cloudroom SDK Refference","language":"zh-hans","gitbook":"*","description":"云屋视频SDK参考文档"},"file":{"path":"IntegratedGuide.md","mtime":"2018-01-19T10:35:24.543Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-19T10:36:57.145Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"集成指南","level":"1.3","depth":1,"next":{"title":"开始音视频会话","level":"1.3.1","depth":2,"anchor":"#startMeeting","path":"IntegratedGuide.md","ref":"IntegratedGuide.md#startMeeting","articles":[]},"previous":{"title":"Demo说明","level":"1.2","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","book-summary-scroll-position-saver","expandable-chapters","search-plus","splitter","tbfed-pagefooter","back-to-top-button","yahei","theme-api","theme-comscore","livereload"],"styles":{"website":"style.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy; HeDonghai","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"theme-comscore":{},"theme-api":{"languages":[],"split":true,"theme":"light"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HeDonghai","pdf":{"pageNumbers":true,"fontSize":18,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":30,"bottom":50},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Cloudroom SDK Refference","language":"zh-hans","gitbook":"*","description":"云屋视频SDK参考文档"},"file":{"path":"IntegratedGuide.md","mtime":"2018-01-20T08:39:31.089Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-20T15:01:29.718Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
