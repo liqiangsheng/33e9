@@ -141,7 +141,7 @@
 | PAUSED|	3	|录制已暂停	|   
 | STOPPING	|4|录制正在结束	 |
 
-##录制语音类型
+##录制语音类型 {#RECORD_AUDIO_TYPE}
 >RECORD_AUDIO_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -154,7 +154,7 @@
 | REC_AUDIO_TYPE_ALL|	3	|录制本地+其他人语音	|   
 
 
-##录制图像类型
+##录制图像类型 {#RECORD_VIDEO_TYPE}
 >RECORD_VIDEO_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -165,7 +165,7 @@
 | RECORD_VIDEO_TYPE_SCREEN	|1|	录制屏幕	|   
 | REC_VCONTENT_VIDEOS|3|	录制视频图像   |
 
-##录制视频的布局类型
+##录制视频的布局类型 {#RECORD_VLAYOUT}
 >RECORD_VLAYOUT
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -175,7 +175,7 @@
 | REC_VLAYOUT_GRID|	0	|表格类型	   |
 | REC_VLAYOUT_PIP	|1|	画中画类型(只有在录两个视频时有效)	|   
 
-##屏幕共享的编码类型
+##屏幕共享的编码类型 {#ENCODE_TYPE}
 >ENCODE_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -185,7 +185,7 @@
 | ENC_CLOUDROOM|	0	|云屋科技私有编码格式（清晰度更高，带宽大）	   |
 | ENC_H264	|1|	(清晰度差一些，带宽小）	|   
 
-##鼠标事件类型
+##鼠标事件类型 {#MOUSE_MSG_TYPE}
 >MOUSE_MSG_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -197,7 +197,7 @@
 | MOUSE_UP|	2	|鼠标键弹起	   |
 | MOUSE_DBCLICK	|3|	鼠标双击|
 
-##鼠标键类型
+##鼠标键类型 {#MOUSE_KEY_TYPE}
 >MOUSE_KEY_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -211,7 +211,7 @@
 | MOUSEKEY_WHEEL|	4|	鼠标滚轮	|   
 | MOUSEKEY_X	|5	|鼠标侧键|
 
-##键盘事件类型
+##键盘事件类型 {#KEY_MSG_TYPE}
 >KEY_MSG_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -232,7 +232,7 @@
 | MAINPAGE_SHARE|	1|	共享	   |
 | MAINPAGE_WHITEBOARD|	2	|白板	|
 
-##影音的清晰度
+##影音的清晰度 {#VDEFINITION_TYPE}
 >VDEFINITION_TYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -244,7 +244,7 @@
 | V_UD|2|	超清 1920x1080|	   
 
 
-##视频墙分屏模式
+##视频墙分屏模式 {#VIDEOLAYOUTMODE}
 >VIDEOLAYOUTMODE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>
@@ -262,7 +262,7 @@
 | VLO_WALL16|	8	|16分屏	|   
 | VLO_WALL25	|9|	25分屏	|
 
-##录制的类型
+##录制的类型 {#REC_DATATYPE}
 >REC_DATATYPE
 
 <p style="width:100%;height:4px;background:#f7f7f7"></p>

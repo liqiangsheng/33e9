@@ -3,7 +3,7 @@
 >CloudroomMeeting是核心控件，实现登录、队列、呼叫、通话建立、音频采集播入、视频采集编解码、屏幕共享、录制、影音播放等
 
 <!-- 1 -->
-### <font color="#0099cc">获取sdk的版本信息</font>
+### <font color="#0099cc">获取sdk的版本信息</font> {#Version}
 
 <p style="background:#f7f7f7;color:#718c00">属性 Version</p>
 
@@ -18,7 +18,7 @@
 >可读
 
 <!-- 2 -->
-### <font color="#0099cc">SDK初始化</font>
+### <font color="#0099cc">SDK初始化</font> {#init}
 
 <p style="background:#f7f7f7;color:#718c00">方法 init ()</p>
 
@@ -35,7 +35,7 @@
 >每次init后，都应对一次uninit
 
 <!-- 3 -->
-### <font color="#0099cc">SDK反初始化</font>
+### <font color="#0099cc">SDK反初始化</font> {#uninit}
 
 <p style="background:#f7f7f7;color:#718c00">方法 uninit ()</p>
 
@@ -48,7 +48,7 @@
 - **参数**:无
 
 <!-- 4 -->
-### <font color="#0099cc">设置服务器地址、获取设置的服务器地址</font>
+### <font color="#0099cc">设置服务器地址、获取设置的服务器地址</font> {#loginServerAddr}
 
 <p style="background:#f7f7f7;color:#718c00">属性 loginServerAddr</p>
 
@@ -63,7 +63,7 @@
 >可读、可写.支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080;183.60.47.52:8080;）
 
 <!-- 5 -->
-### <font color="#0099cc">登陆服务器</font>
+### <font color="#0099cc">登陆服务器</font> {#login}
 
 <p style="background:#f7f7f7;color:#718c00">方法 login ()</p>
 
@@ -81,7 +81,7 @@
   + privAuthCode ------ 自定义验证码(有复杂要求的，可以使用json格式)，不需要时传空字符串
   + cookie ------ 自定义数据 (在回调时，回传给调用者)，不需要时传空字符串
 
->成功事件loginSuccess;失败事件loginFail
+>成功事件[loginSuccess](#loginSuccess);失败事件[loginFail](#loginFail)
 
 <!-- 6 -->
 ### <font color="#0099cc">注销本次登陆</font>
@@ -99,7 +99,7 @@
 >无事件
 
 <!-- 7 -->
-### <font color="#0099cc">设置免打扰状态</font>
+### <font color="#0099cc">设置免打扰状态</font> {#setDNDStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setDNDStatus ()</p>
 
@@ -113,10 +113,10 @@
   + DNDStatus ------ 0代表关闭免打扰， 其它值代表开启免打扰，含义自由定义
   + cookie ------ 自定义数据(在回调时，回传给调用者)，不需要时传空字符串
 
->成功事件setDNDStatusSuccess;失败事件setDNDStatusFail
+>成功事件[setDNDStatusSuccess](#setDNDStatusSuccess);失败事件[setDNDStatusFail](#setDNDStatusFail)
 
 <!-- 8 -->
-### <font color="#0099cc">创建会议</font>
+### <font color="#0099cc">创建会议</font> {#CreateMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 CreateMeeting ()</p>
 
@@ -130,10 +130,10 @@
   + meetSubject ------ 会议主题（字符长度最大值50）
   + cookie ------ 自定义数据(在回调时，回传给调用者)，不需要时传空字符串
 
->成功事件createMeetingSuccess;失败事件createMeetingFail
+>成功事件[createMeetingSuccess](#createMeetingSuccess);失败事件[createMeetingFail](#createMeetingFail)
 
 <!-- 9 -->
-### <font color="#0099cc">呼叫成功，双方开始进入本次视频会话</font>
+### <font color="#0099cc">呼叫成功，双方开始进入本次视频会话</font> {#enterMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 enterMeeting  ()</p>
 
@@ -147,10 +147,10 @@
   + meetID  ------ 视频会话ID
   + pswd ------ 本次会议中的密码（系统自动生成，在呼叫回调中取得）
 
->响应事件enterMeetingRslt
+>响应事件[enterMeetingRslt](#enterMeetingRslt)
 
 <!-- 10 -->
-### <font color="#0099cc">判断某个用户是否在会话中</font>
+### <font color="#0099cc">判断某个用户是否在会话中</font> {#isUserInMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 isUserInMeeting ()</p>
 
@@ -165,7 +165,7 @@
   + pswd ------ 本次会议中的密码（系统自动生成，在呼叫回调中取得）
 
 <!-- 11 -->
-### <font color="#0099cc">结束会话</font>
+### <font color="#0099cc">结束会话</font> {#stopMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 stopMeeting ()</p>
 
@@ -177,11 +177,10 @@
 
 - **参数**:无
 
-
->响应事件 endMeetingRslt;会话被他人结束回调事件 meetingStopped
+>响应事件 [endMeetingRslt](#endMeetingRslt);会话被他人结束回调事件 [meetingStopped](#meetingStopped)
 
 <!-- 12 -->
-### <font color="#0099cc">离开会话</font>
+### <font color="#0099cc">离开会话</font> {#exitMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">方法 exitMeeting ()</p>
 
@@ -194,7 +193,7 @@
 - **参数**:无
 
 
->他人离开会话的回调事件userLeftMeeting
+>他人离开会话的回调事件[userLeftMeeting](#userLeftMeeting)
 
 <!-- 13 -->
 ### <font color="#0099cc">获取某个用户的信息</font>
@@ -223,7 +222,7 @@ json串中含单个成员信息，如
 - videoStatus ------ 视频状态,数值参考视频状态定义VSTATUS
 
 <!-- 14 -->
-### <font color="#0099cc">获取所有用户的信息</font>
+### <font color="#0099cc">获取所有用户的信息</font> {#getAllMembers}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAllMembers ()</p>
 
@@ -243,12 +242,12 @@ json串中含单个成员信息，如:
 
 - nickname ------ 设备名称
 
-- audioStatus ------ 音频状态,数值参考麦克风状态ASTATUS
+- audioStatus ------ 音频状态,数值参考麦克风状态[ASTATUS](#Constant.md#ASTATUS)
 
-- videoStatus ------ 视频状态,数值参考视频状态定义VSTATUS
+- videoStatus ------ 视频状态,数值参考视频状态定义[VSTATUS](#Constant.md#VSTATUS)
 
 <!-- 15 -->
-### <font color="#0099cc">获取某个用户的昵称</font>
+### <font color="#0099cc">获取某个用户的昵称</font> {#getMemberNickName}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getMemberNickName ()</p>
 
@@ -262,7 +261,7 @@ json串中含单个成员信息，如:
  + userID ------ 用户ID
 
 <!-- 16 -->
-### <font color="#0099cc">获取系统上的麦克风列表</font>
+### <font color="#0099cc">获取系统上的麦克风列表</font> {#getAudioMicNames}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAudioMicNames ()</p>
 
@@ -275,7 +274,7 @@ json串中含单个成员信息，如:
 - **参数**:无
 
 <!-- 17 -->
-### <font color="#0099cc">获取系统上的扬声器列表</font>
+### <font color="#0099cc">获取系统上的扬声器列表</font> {#getAudioSpkNames}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAudioSpkNames ()</p>
 
@@ -288,7 +287,7 @@ json串中含单个成员信息，如:
 - **参数**:无
 
 <!-- 18 -->
-### <font color="#0099cc">获取音频参数</font>
+### <font color="#0099cc">获取音频参数</font> {#getAudioCfg}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAudioCfg ()</p>
 
@@ -309,7 +308,7 @@ json格式说明:
 - "privAgc": "0" ------- 是否开启云屋私有语音自动增益0：不开启；1：开启
 
 <!-- 19 -->
-### <font color="#0099cc">设置音频参数</font>
+### <font color="#0099cc">设置音频参数</font> {#setAudioCfg}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setAudioCfg ()</p>
 
@@ -330,7 +329,7 @@ json格式说明:
 - "privAgc": "0" ------- 是否开启云屋私有语音自动增益0：不开启；1：开启
 
 <!-- 20 -->
-### <font color="#0099cc">设置、获取麦克风音量大小</font>
+### <font color="#0099cc">设置、获取麦克风音量大小</font> {#micVolume}
 
 <p style="background:#f7f7f7;color:#718c00">属性 micVolume</p>
 
@@ -345,7 +344,7 @@ json格式说明:
 > 可读、可写.音量等级（0-255）
 
 <!-- 21 -->
-### <font color="#0099cc">设置、获取本地扬声器音量</font>
+### <font color="#0099cc">设置、获取本地扬声器音量</font> {#speakerVolume}
 
 <p style="background:#f7f7f7;color:#718c00">属性 speakerVolume</p>
 
@@ -360,7 +359,7 @@ json格式说明:
 > 可读、可写.音量等级（0-255）
 
 <!-- 22 -->
-### <font color="#0099cc">获取用户说话声音大小</font>
+### <font color="#0099cc">获取用户说话声音大小</font> {#getMicEnergy}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getMicEnergy ()</p>
 
@@ -374,7 +373,7 @@ json格式说明:
  + userID ------ 登录成功后分配的userID
 
 <!-- 23 -->
-### <font color="#0099cc">打开用户的麦克风</font>
+### <font color="#0099cc">打开用户的麦克风</font> {#openMic}
 
 <p style="background:#f7f7f7;color:#718c00">方法  openMic ()</p>
 
@@ -390,7 +389,7 @@ json格式说明:
 > 打开麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
 
 <!-- 24 -->
-### <font color="#0099cc">关闭用户的麦克风</font>
+### <font color="#0099cc">关闭用户的麦克风</font> {#closeMic}
 
 <p style="background:#f7f7f7;color:#718c00">方法  closeMic ()</p>
 
@@ -406,7 +405,7 @@ json格式说明:
 > 关麦操作是立即生效的，会立即停止采集
 
 <!-- 25 -->
-### <font color="#0099cc">获取用户的麦状态</font>
+### <font color="#0099cc">获取用户的麦状态</font> {#getAudioStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getAudioStatus  ()</p>
 
@@ -414,13 +413,13 @@ json格式说明:
 
 - **功能**:获取用户的麦状态
 
-- **返回值**:麦克风设备状态，请参见ASTATUS定义
+- **返回值**:麦克风设备状态，请参见[ASTATUS](Constant.md#ASTATUS)定义
 
 - **参数**:
  + userID ------ 登录成功后分配的userID
 
 <!-- 26 -->
-### <font color="#0099cc">视频的显示尺寸</font>
+### <font color="#0099cc">视频的显示尺寸</font> {#videoFPS}
 
 <p style="background:#f7f7f7;color:#718c00">属性  videoFPS</p>
 
@@ -436,7 +435,7 @@ json格式说明:
 
 
 <!-- 27 -->
-### <font color="#0099cc">视频的显示尺寸</font>
+### <font color="#0099cc">视频的显示尺寸</font> {#curVideoSize}
 
 <p style="background:#f7f7f7;color:#718c00">属性  curVideoSize</p>
 
@@ -448,10 +447,10 @@ json格式说明:
 
 - **参数**:无
 
->可读、可写.详见视频尺寸定义VIDEO_SHOW_SIZE
+>可读、可写.详见视频尺寸定义[VIDEO_SHOW_SIZE](Constant.md#VIDEO_SHOW_SIZE)
 
 <!-- 28 -->
-### <font color="#0099cc">获取指定视频尺寸的码率</font>
+### <font color="#0099cc">获取指定视频尺寸的码率</font> {#getVideoBitrates}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getVideoBitrate ()</p>
 
@@ -462,10 +461,10 @@ json格式说明:
 - **返回值**:kbps 比特率；（-1代表使用sdk内部默认值）
 
 - **参数**:
- + videoSizeType ----- 视频尺寸，请参见VIDEO_SHOW_SIZE定义
+ + videoSizeType ----- 视频尺寸，请参见[VIDEO_SHOW_SIZE](Constant.md#VIDEO_SHOW_SIZE)定义
 
 <!-- 29 -->
-### <font color="#0099cc">设置指定视频尺寸的码率</font>
+### <font color="#0099cc">设置指定视频尺寸的码率</font> {#setVideoBitrate}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setVideoBitrate ()</p>
 
@@ -474,11 +473,11 @@ json格式说明:
 - **功能**:设置指定视频尺寸的码率
 
 - **参数**:
- + videoSizeType ------ 视频尺寸，请参见VIDEO_SHOW_SIZE定义
+ + videoSizeType ------ 视频尺寸，请参见[VIDEO_SHOW_SIZE](Constant.md#VIDEO_SHOW_SIZE)定义
  + kbps ------ 比特率；（-1代表使用sdk内部默认值）
 
  <!-- 30 -->
-### <font color="#0099cc">获取用户的摄像头状态</font>
+### <font color="#0099cc">获取用户的摄像头状态</font> {#getVideoStatus}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getVideoStatus ()</p>
 
@@ -486,13 +485,13 @@ json格式说明:
 
 - **功能**:获取用户的摄像头状态
 
-- **返回值**:麦克风摄像头状态，请参见VSTATUS定义
+- **返回值**:麦克风摄像头状态，请参见[VSTATUS](Constant.md#VSTATUS)定义
 
 - **参数**:
  + userID ------ 用户的ID
 
   <!-- 31 -->
-### <font color="#0099cc">打开用户的摄像头，以便本地、远端显示视频图像</font>
+### <font color="#0099cc">打开用户的摄像头，以便本地、远端显示视频图像</font> {#openVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  openVideo ()</p>
 
@@ -508,7 +507,7 @@ json格式说明:
 >请见事件[videoStatusChanged](#videoStatusChanged)
 
   <!-- 32 -->
-### <font color="#0099cc">关闭用户的摄像头</font>
+### <font color="#0099cc">关闭用户的摄像头</font> {#closeVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  closeVideo ()</p>
 
@@ -524,7 +523,7 @@ json格式说明:
 >请见事件[videoStatusChanged](#videoStatusChanged)
 
  <!-- 33 -->
-### <font color="#0099cc">关闭所有用户的麦克风</font>
+### <font color="#0099cc">关闭所有用户的麦克风</font> {#setAllAudioClose}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setAllAudioClose ()</p>
 
@@ -539,7 +538,7 @@ json格式说明:
 >请见事件[audioStatusChanged](#audioStatusChanged)
 
  <!-- 34 -->
-### <font color="#0099cc">取得观看设备列表</font>
+### <font color="#0099cc">取得观看设备列表</font> {#getWatchVideos}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getWatchVideos ()</p>
 
@@ -562,7 +561,7 @@ json串中含有多个设备列表：
 - videoID ------ 设备id
 
  <!-- 35 -->
-### <font color="#0099cc">获取指定用户的最新图像</font>
+### <font color="#0099cc">获取指定用户的最新图像</font> {#getVideoImg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getVideoImg ()</p>
 
@@ -587,7 +586,7 @@ json串中含有多个设备列表：
 - frameTime ------ 图像产生的时间，从1970-01-01 00:00:00到现在为止，过去的毫秒时间
 
  <!-- 36 -->
-### <font color="#0099cc">设置默认的摄像头</font>
+### <font color="#0099cc">设置默认的摄像头</font> {#setDefaultVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setDefaultVideo ()</p>
 
@@ -601,10 +600,10 @@ json串中含有多个设备列表：
  + userID ------ 用户ID
  + videoID ------ 摄像头ID
 
->videoID，应该从getAllVideoInfo返回值中获取。
+>videoID，应该从[getAllVideoInfo](#getAllVideoInfo)返回值中获取。
 
  <!-- 37 -->
-### <font color="#0099cc">获取指定用户的默认摄像头</font>
+### <font color="#0099cc">获取指定用户的默认摄像头</font> {#getDefaultVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getDefaultVideo ()</p>
 
@@ -620,7 +619,7 @@ json串中含有多个设备列表：
 >如果用户没有摄像头，返回0；
 
  <!-- 38 -->
-### <font color="#0099cc">查询用户是否启用多摄像头</font>
+### <font color="#0099cc">查询用户是否启用多摄像头</font> {#getEnableMutiVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getEnableMutiVideo ()</p>
 
@@ -634,7 +633,7 @@ json串中含有多个设备列表：
  + userID ------ 用户ID
 
   <!-- 39 -->
-### <font color="#0099cc">设置用户是否启用多摄像头</font>
+### <font color="#0099cc">设置用户是否启用多摄像头</font> {#setEnableMutiVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setEnableMutiVideo ()</p>
 
@@ -651,7 +650,7 @@ json串中含有多个设备列表：
 >（用户实现同时打开多个视频设备）
 
   <!-- 40 -->
-### <font color="#0099cc">获取用户所有的摄像头信息</font>
+### <font color="#0099cc">获取用户所有的摄像头信息</font> {#getAllVideoInfo}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getAllVideoInfo ()</p>
 
@@ -677,7 +676,7 @@ json格式的字符串,详见说明：
 - videoName -------设备名称
 
   <!-- 41 -->
-### <font color="#0099cc">获取会议内所有可观看的摄像头</font>
+### <font color="#0099cc">获取会议内所有可观看的摄像头</font> {#getWatchableVideos}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getWatchableVideos ()</p>
 
@@ -701,7 +700,7 @@ json格式的字符串,详见说明：
 - videoID ------ 设备id
 
   <!-- 42 -->
-### <font color="#0099cc">获取当前屏幕共享配置</font>
+### <font color="#0099cc">获取当前屏幕共享配置</font> {#getScreenShareCfg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getScreenShareCfg ()</p>
 
@@ -724,7 +723,7 @@ json格式的字符串,详见说明：
 - maxKbps ------ 最大码率，缺省800kbps
 
   <!-- 43 -->
-### <font color="#0099cc">设置当前屏幕共享配置</font>
+### <font color="#0099cc">设置当前屏幕共享配置</font> {#setScreenShareCfg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setScreenShareCfg ()</p>
 
@@ -747,7 +746,7 @@ json格式的字符串,详见说明：
 - maxKbps ------ 最大码率，缺省800kbps
 
   <!-- 44 -->
-### <font color="#0099cc">检查屏幕共享是否已开启</font>
+### <font color="#0099cc">检查屏幕共享是否已开启</font> {#isScreenShareStarted}
 
 <p style="background:#f7f7f7;color:#718c00">属性  isScreenShareStarted</p>
 
@@ -762,7 +761,7 @@ json格式的字符串,详见说明：
 >可读.0：没有开启，1：已经开启
 
   <!-- 45 -->
-### <font color="#0099cc">开启屏幕共享</font>
+### <font color="#0099cc">开启屏幕共享</font> {#startScreenShare}
 
 <p style="background:#f7f7f7;color:#718c00">方法  startScreenShare ()</p>
 
@@ -777,7 +776,7 @@ json格式的字符串,详见说明：
 >响应事件startScreenShareRslt
 
  <!-- 46 -->
-### <font color="#0099cc">停止屏幕共享</font>
+### <font color="#0099cc">停止屏幕共享</font> {#stopScreenShare}
 
 <p style="background:#f7f7f7;color:#718c00">方法  stopScreenShare ()</p>
 
@@ -792,7 +791,7 @@ json格式的字符串,详见说明：
 >响应事件stopScreenShareRslt
 
 <!-- 47 -->
-### <font color="#0099cc">支持的最大屏幕宽度</font>
+### <font color="#0099cc">支持的最大屏幕宽度</font> {#supportMaxScreenWidth}
 
 <p style="background:#f7f7f7;color:#718c00">属性  supportMaxScreenWidth</p>
 
@@ -807,7 +806,7 @@ json格式的字符串,详见说明：
 >可读
 
 <!-- 48 -->
-### <font color="#0099cc">支持的最大屏幕高度</font>
+### <font color="#0099cc">支持的最大屏幕高度</font> {#supportMaxScreenHeight}
 
 <p style="background:#f7f7f7;color:#718c00">属性  supportMaxScreenHeight</p>
 
@@ -822,7 +821,7 @@ json格式的字符串,详见说明：
 >可读
 
   <!-- 49 -->
-### <font color="#0099cc">设获取屏幕共享解码图像</font>
+### <font color="#0099cc">设获取屏幕共享解码图像</font> {#getShareScreenDecodeImg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getShareScreenDecodeImg ()</p>
 
@@ -845,7 +844,7 @@ json格式的字符串,详见说明：
 - frameTime ------ 图像产生的时间，从1970-01-01 00:00:00到现在为止，过去的毫秒时间
 
 <!-- 50 -->
-### <font color="#0099cc">设置、获取自定义抓屏功能</font>
+### <font color="#0099cc">设置、获取自定义抓屏功能</font> {#customizeCatchScreen}
 
 <p style="background:#f7f7f7;color:#718c00">属性  customizeCatchScreen</p>
 
@@ -860,7 +859,7 @@ json格式的字符串,详见说明：
 >可读、可写.0：默认抓屏处理；1：自定议抓屏设置自定义抓屏后，sdk需要图像时将产生notiyCatchScreen事件，使用者再通过setCustomizeScreenImg接口送入图像
 
 <!-- 51 -->
-### <font color="#0099cc">设置自定义的抓屏图像数据</font>
+### <font color="#0099cc">设置自定义的抓屏图像数据</font> {#setCustomizeScreenImg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setCustomizeScreenImg ()</p>
 
@@ -880,7 +879,7 @@ json格式的字符串,详见说明：
 >当前只支持VFMT_ARGB32格式；如果在收到notiyCatchScreen事件时，暂当前无图像可送时，可送空数据进去(width=0, height=0, dat为空)
 
 <!-- 52 -->
-### <font color="#0099cc">设置要录制的视频</font>
+### <font color="#0099cc">设置要录制的视频</font> {#setRecordVideos}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setRecordVideos ()</p>
 
@@ -895,7 +894,7 @@ json格式的字符串,详见说明：
 >如果为录屏方式时，配置不生效
 
 <!-- 53 -->
-### <font color="#0099cc">开启录制</font>
+### <font color="#0099cc">开启录制</font> {#startRecording}
 
 <p style="background:#f7f7f7;color:#718c00">方法  startRecording ()</p>
 
@@ -927,7 +926,7 @@ json详解：
 - recDataType ------ 录制内容类型（视频+音频），值参考定义REC_DATATYPE
 
 <!-- 54 -->
-### <font color="#0099cc">停止录制</font>
+### <font color="#0099cc">停止录制</font> {#stopRecording}
 
 <p style="background:#f7f7f7;color:#718c00">方法  stopRecording ()</p>
 
@@ -940,7 +939,7 @@ json详解：
 - **参数**:无
 
 <!-- 55 -->
-### <font color="#0099cc">得到录制结果文件大小</font>
+### <font color="#0099cc">得到录制结果文件大小</font> {#getRecFileSize}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getRecFileSize ()</p>
 
@@ -953,7 +952,7 @@ json详解：
 - **参数**:无
 
 <!-- 56 -->
-### <font color="#0099cc">得到录制的时长</font>
+### <font color="#0099cc">得到录制的时长</font> {#getRecDuration}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getRecDuration ()</p>
 
@@ -966,7 +965,7 @@ json详解：
 - **参数**:无
 
 <!-- 57 -->
-### <font color="#0099cc">取得所有录制文件信息</font>
+### <font color="#0099cc">取得所有录制文件信息</font> {#getAllRecordFiles}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getAllRecordFiles ()</p>
 
@@ -987,7 +986,7 @@ json串中包含多个录制文件信息：
 - uploadPercent ------ 录制结果中视频尺寸宽度 
 
 <!-- 58 -->
-### <font color="#0099cc">删除本地的录制文件，上传中的文件会被取消上传</font>
+### <font color="#0099cc">删除本地的录制文件，上传中的文件会被取消上传</font> {#removeFromFileMgr}
 
 <p style="background:#f7f7f7;color:#718c00">方法  removeFromFileMgr ()</p>
 
@@ -1001,7 +1000,7 @@ json串中包含多个录制文件信息：
  + filename ------ 文件名，全路径
 
 <!-- 59 -->
-### <font color="#0099cc">上传文件</font>
+### <font color="#0099cc">上传文件</font> {#uploadRecordFile}
 
 <p style="background:#f7f7f7;color:#718c00">方法  uploadRecordFile  ()</p>
 
@@ -1015,7 +1014,7 @@ json串中包含多个录制文件信息：
  + filename ------ 文件名，全路径
 
 <!-- 60 -->
-### <font color="#0099cc">取消上传中的录制文件</font>
+### <font color="#0099cc">取消上传中的录制文件</font>{#cancelUploadRecordFile}
 
 <p style="background:#f7f7f7;color:#718c00">方法  cancelUploadRecordFile ()</p>
 
@@ -1029,7 +1028,7 @@ json串中包含多个录制文件信息：
  + filename ------ 文件名，全路径
 
 <!-- 61 -->
-### <font color="#0099cc">回放录制文件</font>
+### <font color="#0099cc">回放录制文件</font>{#playbackRecordFile}
 
 <p style="background:#f7f7f7;color:#718c00">方法  playbackRecordFile ()</p>
 
@@ -1045,7 +1044,7 @@ json串中包含多个录制文件信息：
 >可创建影音控件显示录制内容，功能同接口startPlayMedia
 
  <!-- 62 -->
-### <font color="#0099cc">发送IM消息</font>
+### <font color="#0099cc">发送IM消息</font>{#sendIMmsg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  sendIMmsg ()</p>
 
@@ -1063,7 +1062,7 @@ json串中包含多个录制文件信息：
 >发送结果事件sendIMmsgRlst
 
 <!-- 63 -->
-### <font color="#0099cc">播放是否静音</font>
+### <font color="#0099cc">播放是否静音</font>{#speakerMute}
 
 <p style="background:#f7f7f7;color:#718c00">属性  speakerMute</p>
 
@@ -1078,7 +1077,7 @@ json串中包含多个录制文件信息：
 >可读、可写. 对会议内所有声音生效.0:不静音 ; 1:静音
 
 <!-- 64 -->
-### <font color="#0099cc">赋予控制权限</font>
+### <font color="#0099cc">赋予控制权限</font>{#giveCtrlRight}
 
 <p style="background:#f7f7f7;color:#718c00">方法  giveCtrlRight ()</p>
 
@@ -1094,7 +1093,7 @@ json串中包含多个录制文件信息：
 >控制权限更改通知事件notifyGiveCtrlRight
 
 <!-- 65 -->
-### <font color="#0099cc">收回控制权限</font>
+### <font color="#0099cc">收回控制权限</font>{#releaseCtrlRight}
 
 <p style="background:#f7f7f7;color:#718c00">方法  releaseCtrlRight ()</p>
 
@@ -1110,7 +1109,7 @@ json串中包含多个录制文件信息：
 >收回控制权限通知事件notifyReleaseCtrlRight
 
 <!-- 66 -->
-### <font color="#0099cc">发送鼠标控制消息</font>
+### <font color="#0099cc">发送鼠标控制消息</font> {#sendMouseCtrlMsg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  sendMouseCtrlMsg ()</p>
 
@@ -1127,7 +1126,7 @@ json串中包含多个录制文件信息：
  + ptY ------ 鼠标在屏幕中的纵坐标
  
 <!-- 67 -->
-### <font color="#0099cc">发送键盘控制消息</font>
+### <font color="#0099cc">发送键盘控制消息</font> {#sendKeyCtrlMsg}
 
 <p style="background:#f7f7f7;color:#718c00">方法  sendKeyCtrlMsg ()</p>
 
@@ -1143,7 +1142,7 @@ json串中包含多个录制文件信息：
  + bExtendedKey  ------
 
 <!-- 68 -->
-### <font color="#0099cc">发送小块数据</font>
+### <font color="#0099cc">发送小块数据</font> {#sendCmd}
 
 <p style="background:#f7f7f7;color:#718c00">方法  sendCmd ()</p>
 
@@ -1160,7 +1159,7 @@ json串中包含多个录制文件信息：
 >一次性发送，不会有进度通知.发送结果事件sendCmdRlst
 
 <!-- 69 -->
-### <font color="#0099cc">发送大块数据</font>
+### <font color="#0099cc">发送大块数据</font> {#sendBuffer}
 
 <p style="background:#f7f7f7;color:#718c00">方法  sendBuffer ()</p>
 
@@ -1177,7 +1176,7 @@ json串中包含多个录制文件信息：
 >分块发送，进度通知事件sendProgress.发送结果事件 sendBufferRlst.取消发送 cancelSend
 
 <!-- 70 -->
-### <font color="#0099cc">取消数据发送</font>
+### <font color="#0099cc">取消数据发送</font> {#cancelSend}
 
 <p style="background:#f7f7f7;color:#718c00">方法  cancelSend ()</p>
 
@@ -1193,7 +1192,7 @@ json串中包含多个录制文件信息：
 >取消结果通知事件 cancelSendRlst
 
 <!-- 71 -->
-### <font color="#0099cc">发送文件</font>
+### <font color="#0099cc">发送文件</font> {#sendFile}
 
 <p style="background:#f7f7f7;color:#718c00">方法  sendFile ()</p>
 
@@ -1210,7 +1209,7 @@ json串中包含多个录制文件信息：
 >分块发送，进度通知事件sendProgress.发送结果事件sendFileRlst.取消发送cancelSend
 
 <!-- 72 -->
-### <font color="#0099cc">功能切换</font>
+### <font color="#0099cc">功能切换</font> {#switchToPage}
 
 <p style="background:#f7f7f7;color:#718c00">方法  switchToPage ()</p>
 
@@ -1232,7 +1231,7 @@ jsonSubPage格式说明:
 - boardID ------ 白板id
 
 <!-- 73 -->
-### <font color="#0099cc">获取当前主功能区</font>
+### <font color="#0099cc">获取当前主功能区</font> {#getCurrentMainPage}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getCurrentMainPage ()</p>
 
@@ -1245,7 +1244,7 @@ jsonSubPage格式说明:
 - **参数**:无
 
 <!-- 74 -->
-### <font color="#0099cc">获取当前子功能区</font>
+### <font color="#0099cc">获取当前子功能区</font> {#getCurrentSubPage}
 
 <p style="background:#f7f7f7;color:#718c00">方法  getCurrentSubPage ()</p>
 
@@ -1265,7 +1264,7 @@ jsonSubPage格式说明:
 - boardID ------ 白板id
 
 <!-- 75 -->
-### <font color="#0099cc">设置视频墙分屏模式</font>
+### <font color="#0099cc">设置视频墙分屏模式</font> {#setVideoWallMode}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setVideoWallMode ()</p>
 
@@ -1281,7 +1280,7 @@ jsonSubPage格式说明:
 >videoWallMode数值参见VIDEOLAYOUTMODE定义
 
 <!-- 76 -->
-### <font color="#0099cc">当前哪个用户为主视频</font>
+### <font color="#0099cc">当前哪个用户为主视频</font> {#mainVideo}
 
 <p style="background:#f7f7f7;color:#718c00">属性mainVideo</p>
 
@@ -1296,7 +1295,7 @@ jsonSubPage格式说明:
 >可读、可写
 
 <!-- 77 -->
-### <font color="#0099cc">创建白板</font>
+### <font color="#0099cc">创建白板</font> {#createBoard}
 
 <p style="background:#f7f7f7;color:#718c00">方法  createBoard ()</p>
 
@@ -1319,7 +1318,7 @@ json格式说明:
 - boardID ------ 白板id
 
 <!-- 78 -->
-### <font color="#0099cc">关闭白板</font>
+### <font color="#0099cc">关闭白板</font> {#closeBoard}
 
 <p style="background:#f7f7f7;color:#718c00">方法  closeBoard ()</p>
 
@@ -1339,7 +1338,7 @@ json格式说明:
 - boardID ------ 白板id
 
 <!-- 79 -->
-### <font color="#0099cc">添加图元信息</font>
+### <font color="#0099cc">添加图元信息</font> {#addBoardElement}
 
 <p style="background:#f7f7f7;color:#718c00">方法  addBoardElement ()</p>
 
@@ -1354,7 +1353,7 @@ json格式说明:
  + element ------ 图元信息，参见对象ElementData 的定义
 
 <!-- 80 -->
-### <font color="#0099cc">删除图元</font>
+### <font color="#0099cc">删除图元</font> {#delBoardElement}
 
 <p style="background:#f7f7f7;color:#718c00">方法  delBoardElement ()</p>
 
@@ -1369,7 +1368,7 @@ json格式说明:
  + elementIDs ------ 图元数组，参见对象ElementIDs 的定义
 
 <!-- 81 -->
-### <font color="#0099cc">设置鼠标热点消息</font>
+### <font color="#0099cc">设置鼠标热点消息</font>{#setMouseHotSpot}
 
 <p style="background:#f7f7f7;color:#718c00">方法  setMouseHotSpot ()</p>
 
@@ -1385,7 +1384,7 @@ json格式说明:
  + y ------ 屏幕纵坐标
 
 <!-- 82 -->
-### <font color="#0099cc">影音播放的清晰度</font>
+### <font color="#0099cc">影音播放的清晰度</font>{#vDefinition}
 
 <p style="background:#f7f7f7;color:#718c00">属性  vDefinition</p>
 
@@ -1400,7 +1399,7 @@ json格式说明:
 >可读、可写. 音量等级（0-255）
 
 <!-- 83 -->
-### <font color="#0099cc">影音播放的音量</font>
+### <font color="#0099cc">影音播放的音量</font>{#mediaVolume}
 
 <p style="background:#f7f7f7;color:#718c00">属性  mediaVolume</p>
 
@@ -1415,7 +1414,7 @@ json格式说明:
 >可读、可写. 音量等级（0-255）
 
 <!-- 84 -->
-### <font color="#0099cc">登录成功响应</font>
+### <font color="#0099cc">登录成功响应</font>{#loginSuccess}
 
 <p style="background:#f7f7f7;color:#718c00">事件  loginSuccess ()</p>
 
@@ -1428,7 +1427,7 @@ json格式说明:
  + cookie ------ 自定义用户数据
 
 <!-- 85 -->
-### <font color="#0099cc">登录失败响应</font>
+### <font color="#0099cc">登录失败响应</font>{#loginFail}
 
 <p style="background:#f7f7f7;color:#718c00">事件  loginFail ()</p>
 
@@ -1441,7 +1440,7 @@ json格式说明:
  + cookie ------ 自定义用户数据
 
 <!-- 86 -->
-### <font color="#0099cc">SDK通知自己掉线</font>
+### <font color="#0099cc">SDK通知自己掉线</font>{#lineOff}
 
 <p style="background:#f7f7f7;color:#718c00">事件  lineOff ()</p>
 
@@ -1453,7 +1452,7 @@ json格式说明:
  + sdkErr ------ 掉线的错误代码
 
 <!-- 87 -->
-### <font color="#0099cc">客户端设置免打扰状态操作成功响应</font>
+### <font color="#0099cc">客户端设置免打扰状态操作成功响应</font>{#setDNDStatusSuccess}
 
 <p style="background:#f7f7f7;color:#718c00">事件  setDNDStatusSuccess ()</p>
 
@@ -1465,7 +1464,7 @@ json格式说明:
  + cookie ------ 自定义用户数据
 
 <!-- 88 -->
-### <font color="#0099cc">客户端设置免打扰状态操作失败响应</font>
+### <font color="#0099cc">客户端设置免打扰状态操作失败响应</font>{#setDNDStatusFail}
 
 <p style="background:#f7f7f7;color:#718c00">事件  setDNDStatusFail ()</p>
 
@@ -1478,7 +1477,7 @@ json格式说明:
  + cookie ------ 自定义用户数据
 
 <!-- 89 -->
-### <font color="#0099cc">创建会议成功响应</font>
+### <font color="#0099cc">创建会议成功响应</font>{#createMeetingSuccess}
 
 <p style="background:#f7f7f7;color:#718c00">事件  createMeetingSuccess ()</p>
 
@@ -1492,7 +1491,7 @@ json格式说明:
  + cookie ------ 自定义用户数据
 
 <!-- 90 -->
-### <font color="#0099cc">创建会议失败响应</font>
+### <font color="#0099cc">创建会议失败响应</font>{#createMeetingFail}
 
 <p style="background:#f7f7f7;color:#718c00">事件  createMeetingFail ()</p>
 
@@ -1505,7 +1504,7 @@ json格式说明:
  + cookie ------ 自定义用户数据
 
 <!-- 91 -->
-### <font color="#0099cc">某用户进入了会议</font>
+### <font color="#0099cc">某用户进入了会议</font>{#userEnterMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">事件  userEnterMeeting ()</p>
 
@@ -1517,7 +1516,7 @@ json格式说明:
  + userID ------ 进入会议的用户id
 
 <!-- 92 -->
-### <font color="#0099cc">SDK通知从会议里掉线</font>
+### <font color="#0099cc">SDK通知从会议里掉线</font>{#meetingDropped}
 
 <p style="background:#f7f7f7;color:#718c00">事件  meetingDropped ()</p>
 
@@ -1528,7 +1527,7 @@ json格式说明:
 - **参数**:无
 
 <!-- 93 -->
-### <font color="#0099cc">会议已被结束</font>
+### <font color="#0099cc">会议已被结束</font>{#meetingStopped}
 
 <p style="background:#f7f7f7;color:#718c00">事件  meetingStopped ()</p>
 
@@ -1539,7 +1538,7 @@ json格式说明:
 - **参数**:无
 
 <!-- 94 -->
-### <font color="#0099cc">通知结束视频会议结果</font>
+### <font color="#0099cc">通知结束视频会议结果</font>{#endMeetingRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件  endMeetingRslt ()</p>
 
@@ -1551,7 +1550,7 @@ json格式说明:
  + code ------ 数值参考CRMEETSDK_ERR_DEF，值为CRMEETSDK_NOERR时结束成功，否则为不成功代码。 
 
 <!-- 95 -->
-### <font color="#0099cc">某用户进入了会议</font>
+### <font color="#0099cc">某用户进入了会议</font>{#userEnterMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">事件  userEnterMeeting ()</p>
 
@@ -1563,7 +1562,7 @@ json格式说明:
  + userID ------ 进入会议的用户id
 
 <!-- 96 -->
-### <font color="#0099cc">某用户离开了会议</font>
+### <font color="#0099cc">某用户离开了会议</font>{#userLeftMeeting}
 
 <p style="background:#f7f7f7;color:#718c00">事件  userLeftMeeting ()</p>
 
@@ -1575,7 +1574,7 @@ json格式说明:
  + userID------ 离开会议的用户id
 
 <!-- 97 -->
-### <font color="#0099cc">SDK通知我的网络变化</font>
+### <font color="#0099cc">SDK通知我的网络变化</font>{#netStateChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件  netStateChanged ()</p>
 
@@ -1587,7 +1586,7 @@ json格式说明:
  + level ------ 网络状况等级(0~10，10分为最佳网络)
 
 <!-- 98 -->
-### <font color="#0099cc">SDK通知用户的说话声音强度更新</font>
+### <font color="#0099cc">SDK通知用户的说话声音强度更新</font>{#micEnergyUpdate}
 
 <p style="background:#f7f7f7;color:#718c00">事件  micEnergyUpdate ()</p>
 
@@ -1601,7 +1600,7 @@ json格式说明:
  + newLevel ------ 现在的说话声音强度(0~10)
 
 <!-- 99 -->
-### <font color="#0099cc">SDK通知本地音频设备有变化</font>
+### <font color="#0099cc">SDK通知本地音频设备有变化</font>{#audioDevChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件  audioDevChanged ()</p>
 
@@ -1612,7 +1611,7 @@ json格式说明:
 - **参数**:无
 
 <!-- 100 -->
-### <font color="#0099cc">SDK通知打开本地音频状态变化</font>
+### <font color="#0099cc">SDK通知打开本地音频状态变化</font>{#audioStatusChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件  audioStatusChanged ()</p>
 
@@ -1626,7 +1625,7 @@ json格式说明:
  + newStatus ------ 新状态，数值参考麦克风状态定义ASTATUS
 
 <!-- 101 -->
-### <font color="#0099cc">SDK通知打开本地视频状态变化</font>
+### <font color="#0099cc">SDK通知打开本地视频状态变化</font>{#videoStatusChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件  videoStatusChanged ()</p>
 
@@ -1640,7 +1639,7 @@ json格式说明:
  + newStatus ------ 新状态，数值参考视频状态定义VSTATUS
 
 <!-- 102 -->
-### <font color="#0099cc">通知用户有新的视频数据</font>
+### <font color="#0099cc">通知用户有新的视频数据</font>{#notifyVideoData}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyVideoData ()</p>
 
@@ -1655,7 +1654,7 @@ json格式说明:
 >收到此通知消息后，可能过getVideoImg获取图像显示；但如果之前显示的帧时戳更大，说明此通知消息已过时，直接忽略即可；
 
 <!-- 103 -->
-### <font color="#0099cc">SDK通知用户的视频设备有变化</font>
+### <font color="#0099cc">SDK通知用户的视频设备有变化</font>{#videoDevChanged}
 
 <p style="background:#f7f7f7;color:#718c00">事件  videoDevChanged ()</p>
 
@@ -1667,7 +1666,7 @@ json格式说明:
  + userID ------ 设备变化的用户ID
 
 <!-- 104 -->
-### <font color="#0099cc">开启屏幕共享的响应事件 </font>
+### <font color="#0099cc">开启屏幕共享的响应事件 </font>{#startScreenShareRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件  startScreenShareRslt ()</p>
 
@@ -1679,7 +1678,7 @@ json格式说明:
  + sdkErr ------ 操作失败代码,数值参考CRMEETSDK_ERR_DEF
 
 <!-- 105 -->
-### <font color="#0099cc">停止屏幕共享的响应事件</font>
+### <font color="#0099cc">停止屏幕共享的响应事件</font>{#stopScreenShareRslt}
 
 <p style="background:#f7f7f7;color:#718c00">事件  stopScreenShareRslt ()</p>
 
@@ -1691,7 +1690,7 @@ json格式说明:
  + sdkErr ------ 操作失败代码,数值参考CRMEETSDK_ERR_DEF
 
 <!-- 106 -->
-### <font color="#0099cc">通知他人开启了屏幕共享</font>
+### <font color="#0099cc">通知他人开启了屏幕共享</font>{#notifyScreenShareStarted}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyScreenShareStarted ()</p>
 
@@ -1702,7 +1701,7 @@ json格式说明:
 - **参数**:无
 
 <!-- 107 -->
-### <font color="#0099cc">通知他人停止了屏幕共享</font>
+### <font color="#0099cc">通知他人停止了屏幕共享</font>{#notifyScreenShareStopped}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyScreenShareStopped ()</p>
 
@@ -1713,7 +1712,7 @@ json格式说明:
 - **参数**:无
 
 <!-- 108 -->
-### <font color="#0099cc">通知对端屏幕图像有变化</font>
+### <font color="#0099cc">通知对端屏幕图像有变化</font>{#notifyScreenShareData}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyScreenShareData ()</p>
 
@@ -1725,7 +1724,7 @@ json格式说明:
  + changedRt ------ 变化的区域；（可以只重绘这块区域）
 
 <!-- 109 -->
-### <font color="#0099cc">自定义抓屏时，ocx通知使用者抓屏</font>
+### <font color="#0099cc">自定义抓屏时，ocx通知使用者抓屏</font>{#notiyCatchScreen}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notiyCatchScreen ()</p>
 
@@ -1738,7 +1737,7 @@ json格式说明:
 >在收到通知时， 一定要及时setCustomizeScreenImg，如果没图像时，可以先送入空图像；
 
 <!-- 110 -->
-### <font color="#0099cc">发送IM消息时，ocx通知使用者发送结果</font>
+### <font color="#0099cc">发送IM消息时，ocx通知使用者发送结果</font>{#sendIMmsgRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件  sendIMmsgRlst ()</p>
 
@@ -1752,7 +1751,7 @@ json格式说明:
  + cookie ------ 用户自定义数据
 
 <!-- 111 -->
-### <font color="#0099cc">ocx通知收到IM消息</font>
+### <font color="#0099cc">ocx通知收到IM消息</font>{#notifyIMmsg}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyIMmsg ()</p>
 
@@ -1765,7 +1764,7 @@ json格式说明:
  + text ------ 消息内容
 
 <!-- 111 -->
-### <font color="#0099cc">录制异常，录制将自动停止</font>
+### <font color="#0099cc">录制异常，录制将自动停止</font>{#recordErr}
 
 <p style="background:#f7f7f7;color:#718c00">事件  recordErr ()</p>
 
@@ -1776,7 +1775,7 @@ json格式说明:
 - **参数**:无
 
 <!-- 113 -->
-### <font color="#0099cc">ocx通知远程控制权限给予了某人</font>
+### <font color="#0099cc">ocx通知远程控制权限给予了某人</font>{#notifyGiveCtrlRight}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyGiveCtrlRight ()</p>
 
@@ -1789,7 +1788,7 @@ json格式说明:
  + targetId ------ 控制权限给予了谁
 
 <!-- 114 -->
-### <font color="#0099cc">ocx通知收回远程控制</font>
+### <font color="#0099cc">ocx通知收回远程控制</font>{#notifyReleaseCtrlRight}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyReleaseCtrlRight ()</p>
 
@@ -1802,7 +1801,7 @@ json格式说明:
  + targetId ------ 收回了谁的控制权限
 
 <!-- 115 -->
-### <font color="#0099cc">发送数据时，ocx通知发送结果</font>
+### <font color="#0099cc">发送数据时，ocx通知发送结果</font>{#sendCmdRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件  sendCmdRlst ()</p>
 
@@ -1816,7 +1815,7 @@ json格式说明:
  + cookie ------ 用户自定义数据
 
 <!-- 116 -->
-### <font color="#0099cc">发送数据时，ocx通知发送结果</font>
+### <font color="#0099cc">发送数据时，ocx通知发送结果</font>{#sendBufferRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件  sendBufferRlst ()</p>
 
@@ -1830,7 +1829,7 @@ json格式说明:
  + cookie ------ 用户自定义数据
 
 <!-- 117 -->
-### <font color="#0099cc">发送文件时，ocx通知发送结果</font>
+### <font color="#0099cc">发送文件时，ocx通知发送结果</font>{#sendFileRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件  sendFileRlst ()</p>
 
@@ -1845,7 +1844,7 @@ json格式说明:
  + cookie ------ 用户自定义数据
 
 <!-- 118 -->
-### <font color="#0099cc">发送数据时，ocx通知发送进度</font>
+### <font color="#0099cc">发送数据时，ocx通知发送进度</font>{#sendProgress}
 
 <p style="background:#f7f7f7;color:#718c00">事件  sendProgress ()</p>
 
@@ -1860,7 +1859,7 @@ json格式说明:
  + cookie ------ 用户自定义数据
 
 <!-- 119 -->
-### <font color="#0099cc">取消发送</font>
+### <font color="#0099cc">取消发送</font>{#cancelSendRlst}
 
 <p style="background:#f7f7f7;color:#718c00">事件  cancelSendRlst ()</p>
 
@@ -1872,7 +1871,7 @@ json格式说明:
  + taskID ------ 发送任务id
 
 <!-- 120 -->
-### <font color="#0099cc">ocx通知收到小块数据</font>
+### <font color="#0099cc">ocx通知收到小块数据</font>{#notifyCmdData}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyCmdData ()</p>
 
@@ -1885,7 +1884,7 @@ json格式说明:
  + data ------ 参见对象ByteArray定义
 
 <!-- 121 -->
-### <font color="#0099cc">ocx通知收到大块数据</font>
+### <font color="#0099cc">ocx通知收到大块数据</font>{#notifyBufferData}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyBufferData ()</p>
 
@@ -1898,7 +1897,7 @@ json格式说明:
  + data ------ 参见对象ByteArray定义
 
 <!-- 122 -->
-### <font color="#0099cc">ocx通知收到文件数据</font>
+### <font color="#0099cc">ocx通知收到文件数据</font>{#notifyFileData}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyFileData ()</p>
 
@@ -1914,7 +1913,7 @@ json格式说明:
 >收到的文件生成在系统临时目录下，请尽快移走对应文件
 
 <!-- 123 -->
-### <font color="#0099cc">ocx通知功能切换</font>
+### <font color="#0099cc">ocx通知功能切换</font>{#notifySwitchToPage}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifySwitchToPage ()</p>
 
@@ -1927,7 +1926,7 @@ json格式说明:
  + subPage ------ 参见对象SubPage 定义
 
 <!-- 124 -->
-### <font color="#0099cc">ocx通知视频分屏模式切换</font>
+### <font color="#0099cc">ocx通知视频分屏模式切换</font>{#notifyVideoWallMode}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyVideoWallMode ()</p>
 
@@ -1939,7 +1938,7 @@ json格式说明:
  + model ------ 分屏模式(数值参见VIDEOLAYOUTMODE定义)
 
 <!-- 125 -->
-### <font color="#0099cc">ocx通知主视频更改</font>
+### <font color="#0099cc">ocx通知主视频更改</font>{#notifyMainVideo}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyMainVideo ()</p>
 
@@ -1951,7 +1950,7 @@ json格式说明:
  + userID ------ 用户ID
 
 <!-- 126 -->
-### <font color="#0099cc">ocx通知之前已经创建好的白板</font>
+### <font color="#0099cc">ocx通知之前已经创建好的白板</font>{#notifyInitBoards}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyInitBoards ()</p>
 
@@ -1963,7 +1962,7 @@ json格式说明:
  + boards ------ 已经创建好的白板列表
 
 <!-- 127 -->
-### <font color="#0099cc">ocx通知之前已经创建好的白板上的图元数据</font>
+### <font color="#0099cc">ocx通知之前已经创建好的白板上的图元数据</font>{#notifyInitBoardElements}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyInitBoardElements ()</p>
 
@@ -1978,7 +1977,7 @@ json格式说明:
 >白板上每一个图元数据就是一个json字符串
 
 <!-- 128 -->
-### <font color="#0099cc">ocx通知创建白板</font>
+### <font color="#0099cc">ocx通知创建白板</font>{#notifyCreateBoard}
 
 <p style="background:#f7f7f7;color:#718c00">事件  notifyCreateBoard ()</p>
 
@@ -1994,7 +1993,7 @@ json格式说明:
  + operatorID ------ 创建白板的用户ID
 
 <!-- 129 -->
-### <font color="#0099cc">关闭白板</font>
+### <font color="#0099cc">关闭白板</font>{#notifyCloseBoard}
 
 <p style="background:#f7f7f7;color:#718c00">方法  notifyCloseBoard ()</p>
 
@@ -2007,7 +2006,7 @@ json格式说明:
  + operatorID ------ 关闭白板的用户ID
 
 <!-- 130 -->
-### <font color="#0099cc">ocx通知添加图元信息</font>
+### <font color="#0099cc">ocx通知添加图元信息</font>{#notifyAddBoardElement}
 
 <p style="background:#f7f7f7;color:#718c00">方法  notifyAddBoardElement ()</p>
 
@@ -2022,7 +2021,7 @@ json格式说明:
  + operatorID ------ 添加图元的用户ID
 
 <!-- 131 -->
-### <font color="#0099cc">ocx通知删除图元</font>
+### <font color="#0099cc">ocx通知删除图元</font>{#notifyDelBoardElement}
 
 <p style="background:#f7f7f7;color:#718c00">方法  notifyDelBoardElement ()</p>
 
@@ -2036,7 +2035,7 @@ json格式说明:
  + operatorID ------ 删除图元的用户ID
 
 <!-- 132 -->
-### <font color="#0099cc">ocx通知设置鼠标热点消息</font>
+### <font color="#0099cc">ocx通知设置鼠标热点消息</font>{#notifyMouseHotSpot}
 
 <p style="background:#f7f7f7;color:#718c00">方法  notifyMouseHotSpot ()</p>
 

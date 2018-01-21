@@ -57,8 +57,8 @@ memberCount |  会议内人数
 --------        | ---
 userID          |  用户ID
 nickName        |  用户昵称
-audioStatus     |  音频状态,数值参考麦克风状态ASTATUS
-videoStatus     |  视频状态,数值参考视频状态定义VSTATUS
+audioStatus     |  音频状态,数值参考麦克风状态[ASTATUS](Constant.md#ASTATUS)
+videoStatus     |  视频状态,数值参考视频状态定义[VSTATUS](Constant.md#VSTATUS)
 
 ## <font color="#0099cc">成员对象列表</font>  {#MembersObj}
 
@@ -101,9 +101,9 @@ privAgc     |  是否开启云屋私有语音自动增益0：不开启；1：开
 
 属性            | 值
 --------        | ---
-sizeType          |  视频尺寸，请参见：VIDEO_SHOW_SIZE
+sizeType          |  视频尺寸，请参见：[VIDEO_SHOW_SIZE](Constant.md#VIDEO_SHOW_SIZE)
 fps        |  帧率：视频帧率(5~30)
-maxbps     |  视频码率（1~100*1000*1000）;(未配置则使用内部默认值，请参见VIDEO_SHOW_SIZE)
+maxbps     |  视频码率（1~100*1000*1000）;(未配置则使用内部默认值，请参见[VIDEO_SHOW_SIZE](Constant.md#VIDEO_SHOW_SIZE))
 qp_min     |  最佳质量(18~51, 越小质量越好) (未配置则使用内部默认值25)
 qp_max     |  最差质量(18~51, 越大质量越差) (未配置则使用内部默认值36)
 wh_rate    | 视频宽高比,取值如下:<font color="#ef8020"> 0 为16:9(未配置时内部默认值);</font><font color="red"><p>1 为4:3;</p></font><font color="blueviolet"><p>2 为1:1;</p></font>
@@ -130,7 +130,7 @@ wh_rate    | 视频宽高比,取值如下:<font color="#ef8020"> 0 为16:9(未�
 
 属性            | 值
 --------        | ---
-format          |  图像格式,数值参考视频图像格式VIDEO_FORMAT
+format          |  图像格式,数值参考视频图像格式[VIDEO_FORMAT](Constant.md#VIDEO_FORMAT)
 dat        |  图像数据Base64编码
 width     |  图像宽度
 height     |  图像高度
@@ -248,7 +248,7 @@ recordHeight       |  录制结果中视频尺寸高度
 frameRate       |  录制的帧率，取值范围:1-30(值越大,cpu要求更高，推荐15帧)
 bitRate       | 录制的最高码率<p>当图像变化小时，实际码率会低于此值。建议:</p><p>640*360: 500000; (500kbps)</p><p>1280*720：1000000; (1mbps)</p><p>1920*1080: 2000000; (2mbps)</p>
 defaultQP       |  <p>录制的缺省质量，缺省值：28</p><p>取值范围：0~51;  (0完全无损, 51质量非常差)</p><p>推荐：高质量取值18, 中质量28， 低质量36</p>
-recDataType       |  录制内容类型，值参考定义REC_DATATYPE
+recDataType       |  录制内容类型，值参考定义[REC_DATATYPE](Constant.md#REC_DATATYPE)
 isUploadOnRecording       | 是否边录边上传，0：手动上传；1：边录制边上传；
 
 ##<font color="#0099cc">录制文件列表 </font> {#RecordFilesObj}
