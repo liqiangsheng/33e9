@@ -7,6 +7,8 @@
 
 >CRVIDEOSDK_ERR_DEF
 
+----
+
 | 代码     | 数值        | 含义      |
 |:-------- |:-----------|:----------|
 | CRVIDEOSDK_NOERR | 0 | 没有错误    | 
@@ -60,7 +62,7 @@
 
 ### 麦克风状态 {#ASTATUS}
 
->ASTATUS
+>CRVideo_ASTATUS
 
 ----
 
@@ -74,7 +76,7 @@
 
 ### 视频尺寸定义 {#VIDEO_SHOW_SIZE}
 
->VIDEO_SHOW_SIZE
+>CRVideo_VIDEO_SHOW_SIZE
 
 ----
  
@@ -96,7 +98,7 @@
 
 ### 视频状态定义 {#VSTATUS}
 
->VSTATUS
+>CRVideo_VSTATUS
 
 ----
 
@@ -110,7 +112,7 @@
 
 ### 视频图像格式 {#VIDEO_FORMAT}
 
->VIDEO_FORMAT
+>CRVideo_VIDEO_FORMAT
 
 ----
 
@@ -121,7 +123,7 @@
 
 ### 录制内容类型 {#REC_VCONTENT_TYPE}
 
->REC_VCONTENT_TYPE
+>CRVideo_REC_VCONTENT_TYPE
 
 ----
 
@@ -135,7 +137,7 @@
 
 ### 录制的状态 {#RECORD_STATE}
 
->RECORD_STATE
+>CRVideo_RECORD_STATE
 
 ----
 
@@ -149,7 +151,7 @@
 
 ### 录制语音类型 {#RECORD_AUDIO_TYPE}
 
->RECORD_AUDIO_TYPE
+>CRVideo_RECORD_AUDIO_TYPE
 
 ----
 
@@ -163,7 +165,7 @@
 
 ### 录制图像类型 {#RECORD_VIDEO_TYPE}
 
->RECORD_VIDEO_TYPE
+>CRVideo_RECORD_VIDEO_TYPE
 
 ----
 
@@ -175,7 +177,7 @@
 
 ### 录制视频的布局类型 {#RECORD_VLAYOUT}
 
->RECORD_VLAYOUT
+>CRVideo_RECORD_VLAYOUT
 
 ----
 
@@ -186,7 +188,7 @@
 
 ### 屏幕共享的编码类型 {#ENCODE_TYPE}
 
->ENCODE_TYPE
+>CRVideo_ENCODE_TYPE
 
 ----
 
@@ -197,7 +199,7 @@
 
 ### 鼠标事件类型 {#MOUSE_MSG_TYPE}
 
->MOUSE_MSG_TYPE
+>CRVideo_MOUSE_MSG_TYPE
 
 ----
 
@@ -210,7 +212,7 @@
 
 ### 鼠标键类型 {#MOUSE_KEY_TYPE}
 
->MOUSE_KEY_TYPE
+>CRVideo_MOUSE_KEY_TYPE 
 
 ----
 
@@ -225,7 +227,7 @@
 
 ### 键盘事件类型 {#KEY_MSG_TYPE}
 
->KEY_MSG_TYPE
+>CRVideo_KEY_MSG_TYPE
 
 ----
 
@@ -236,7 +238,7 @@
 
 ### 功能类型  {#MAIN_PAGE_TYPE}
 
->MAIN_PAGE_TYPE
+>CRVideo_MAIN_PAGE_TYPE
 
 ----
 
@@ -244,24 +246,12 @@
 |:-------- |:-----------|:----------|
 | MAINPAGE_VIDEOWALL|	0|	视频墙	  | 
 | MAINPAGE_SHARE|	1|	共享	   |
-| MAINPAGE_WHITEBOARD|	2	|白板	|
-
-### 影音的清晰度 {#VDEFINITION_TYPE}
-
->VDEFINITION_TYPE
-
-----
-
-| 代码     | 数值        |   分辨率和码率 |
-|:-------- |:-----------|:----------|
-| V_SD	|0	|标清 640x360	|   
-| V_HD	|1|高清 1280x720 |  
-| V_UD|2|	超清 1920x1080|	   
+| MAINPAGE_WHITEBOARD|	2	|白板	|   
 
 
 ### 视频墙分屏模式 {#VIDEOLAYOUTMODE}
 
->VIDEOLAYOUTMODE
+>CRVideo_VIDEOLAYOUTMODE
 
 ----
 
@@ -278,23 +268,9 @@
 | VLO_WALL16|	8	|16分屏	|   
 | VLO_WALL25	|9|	25分屏	|
 
-### 录制的类型 {#REC_DATATYPE}
+### Http文件传输状态 {#HTTP_TRANSFER_STAT}
 
->REC_DATATYPE
-
-----
-
-| 代码     | 数值        |   分辨率和码率 |
-|:-------- |:-----------|:----------|
-| REC_AV_DEFAULT|	0|	录制所有语音和视频	 |  
-| REC_AUDIO_LOC	|1	|录制本地语音	   |
-| REC_AUDIO_OTHER	|2|	录制其他人语音	   |
-<font color="red">REC_VIDEO	3	录制视频(内容由setRecordVideos设定)用户可以自由组合，如REC_AUDIO_LOC|REC_VIDEO，表示录制本地语音和视频；
-REC_AUDIO_LOC|REC_AUDIO_OTHER，录制双方语音</font>
-
-## Http文件传输状态 {#HTTP_TRANSFER_STATE}
-
-> HTTP_TRANSFER_STATE
+> CRVideo_HTTP_TRANSFER_STAT
 
 ----
 
@@ -305,9 +281,9 @@ REC_AUDIO_LOC|REC_AUDIO_OTHER，录制双方语音</font>
 |HTTPFS_TRANSFERING |2| 传输(上传/下载)中|
 |HTTPFS_FINISHED    |3| 传输完成|
 
-## Http文件传输结果 {#HTTP_TRANSFER_RESULT}
+### Http文件传输结果 {#HTTP_TRANSFER_RESULT}
 
-> HTTP_TRANSFER_RESULT
+> CRVideo_HTTP_TRANSFER_RESULT
 
 ----
 
@@ -324,9 +300,9 @@ REC_AUDIO_LOC|REC_AUDIO_OTHER，录制双方语音</font>
 |HTTPR_HTTPERR_BEGIN        |1000|  http错误码启始|
 |HTTPR_HTTPERR_END          |1999|  http错误码结束|
 
-## 影音播放工具条UI组件 {#ToolBarUI}
+### 录制布局 {#ToolBarUI}
 
-> ToolBarUI
+> CRVideo_ToolBarUI
 
 ----
 
@@ -335,5 +311,44 @@ REC_AUDIO_LOC|REC_AUDIO_OTHER，录制双方语音</font>
 |BTN_Pause   |0|    暂停|
 |BTN_Stop    |1|    停止|
  
+### 录制的内容类型 {#REC_DATATYPE}
 
-   
+> CRVideo_REC_DATATYPE
+
+----
+
+|代码|数值|含义|
+|------------|-------------|-----|
+|REC_AV_DEFAULT   |0|    录制所有|
+|REC_AUDIO_LOC    |1|    录制本地音频|
+|REC_AUDIO_OTHER    |2|    录制其它音频|
+|REC_VIDEO   |3|    录制视频|
+
+
+
+### 影音结束原因 {#STOP_REASON}
+
+>CRVideo_STOP_REASON
+
+----
+
+|代码|数值|含义|
+|------------|-------------|-----|
+|MEDIA_CLOSE|	number|	文件关闭|
+|MEDIA_FINI	number|	播放到文件尾部|
+|MEDIA_FILEOPEN_ERR|	number|	打开文件失败|
+|MEDIA_FORMAT_ERR	|number|	文件格式错误|
+|MEDIA_UNSUPPORT|	number	|影音格式不支持|
+|MEDIA_EXCEPTION|	number|	其他异常|
+
+### 视频尺寸定义 {#VIDEO_WH_RATE}
+
+>CRVideo_VIDEO_WH_RATE
+
+----
+
+|代码|数值|含义|
+|------------|-------------|-----|
+|RATE_16_9	|number	|16:9宽高比|
+|RATE_4_3	|number	|4:3宽高比|
+|RATE_1_1	|number	|1:1宽高比|

@@ -164,7 +164,7 @@
 > 进入会话成功后，配置并打开自己的麦克风和摄像头
 >
 > 相关API请参考 [麦克风/扬声器列表](VideoMeeting.md#getAudioMicNames)，[麦克风设置](VideoMeeting.md#getAudioCfg)，[摄像头设备列表](VideoMeeting.md#getAllVideoInfo)，[视频设置](VideoMeeting.md#setVideoCfg)，[会议内可观看摄像头列表](meeting.md#getWatchableVideos)，[开/关摄像头](VideoMeeting.md#openVideo)，[视频状态](VideoMeeting.md#getVideoStatus)，[获取/设置默认视频](VideoMeeting.md#setDefaultVideo)，[成员视频UI显示组件](VideoUi.md#videoui)  
-> 相关结构定义请参考 [音频配置](ObjectstructureDing.md#AudioCfgObj)，[用户视频信息](ObjectstructureDing.md#VideoInfoObj)，[用户视频信息列表](ObjectstructureDing.md#VideoInfosObj)
+> 相关结构定义请参考 [音频配置](TypeDefinitions.md#AudioCfgObj)，[用户视频信息](TypeDefinitions.md#VideoInfoObj)，[用户视频信息列表](TypeDefinitions.md#VideoInfosObj)
 
     {
         CRVideo_SetEnableMutiVideo(g_userID,true);   // 是否可以打开更多的摄像头 传用户ID，bool
@@ -271,7 +271,7 @@
 > 用[成员视频UI显示组件](VideoUi.md#videoui)创建多个视频窗口，来显示进入会议内的成员。
 >
 > 相关API请参考 [有人进入/离开会议通知](VideoMeeting.md#userEnterMeeting)，[成员视频UI显示组件](VideoUi.md#videoui)，[会议内可观看摄像头列表](VideoMeeting.md#getWatchableVideos)  
-> 相关结构定义请参考 [用户视频信息列表](ObjectstructureDing.md#VideoInfoObjs)
+> 相关结构定义请参考 [用户视频信息列表](TypeDefinitions.md#VideoInfoObjs)
 
     {
         * 获取会议内所有可观看的摄像头
@@ -309,17 +309,17 @@
 > 相关API请参考 [进入/退出/结束会议](VideoMeeting.md#enterMeeting)
 
     {
-      /**
-	 * 离开会话
-	 * 他人离开会话的回调事件CRVideo_UserLeftMeeting
-	 * @access public
-	 */	
-	  CRVideo_ExitMeeting()
-      
-     * 某用户离开了会议
-	 * @callback CRVideo.CbProxy~CRVideo_UserLeftMeeting
-	 * @param {number} id - 离开会议的用户ID
-	 */
+    /**
+        * 离开会话
+        * 他人离开会话的回调事件CRVideo_UserLeftMeeting
+        * @access public
+        */	
+        CRVideo_ExitMeeting()
+        
+        * 某用户离开了会议
+        * @callback CRVideo.CbProxy~CRVideo_UserLeftMeeting
+        * @param {number} id - 离开会议的用户ID
+        */
       CRVideo_UserLeftMeeting.callback=function(用户ID){
            
       }
@@ -369,21 +369,21 @@
 
 ```cs
     /**
-	 * 打开自己的麦克风
-	 * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
-	 * @param {string} userID - 用户的ID
-	 * @access public
-	 */
+        * 打开自己的麦克风
+        * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
+        * @param {string} userID - 用户的ID
+        * @access public
+        */
 	CRVideo_OpenMic(userid);
 ```
 
 ```cs
     /**
-	 * 关闭自己的麦克风
-	 * 关麦操作是立即生效的，本地会立即停止采集；
-	 * @access public
-	 * @param {string} userID - 登录成功后分配的userID
-	 */
+        * 关闭自己的麦克风
+        * 关麦操作是立即生效的，本地会立即停止采集；
+        * @access public
+        * @param {string} userID - 登录成功后分配的userID
+        */
 	CRVideo_CloseMic(userid);
 ```
 
@@ -397,40 +397,40 @@
 * 相关结构定义请参考 [麦克风状态](Constant.md#ASTATUS)
 
 ```cs
-//连接状态变化委托
- //摄像头列表更新 通知用户的视频设备有变化	
-    CRVideo_VideoDevChanged.callback =function(userID){
-       
+        //连接状态变化委托
+        //摄像头列表更新 通知用户的视频设备有变化	
+         CRVideo_VideoDevChanged.callback =function(userID){
+            
     }
 ```
 
 ```cs
-      //摄像头状态改变
-       //   1会话中设备的所有者ID 2旧状态 3新状态
-      CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
+        //摄像头状态改变
+        //   1会话中设备的所有者ID 2旧状态 3新状态
+        CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
 
-          if(g_userID == userID){
-            /**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
-              if(newStatus !=CRVideo_VSTATUS.VOPEN && newStatus !=CRVideo_VSTATUS.VOPENING){
-                 CRVideo_OpenVideo(g_userID);
-              }
-          }
-      }
-       /* 视频状态
-	   * @enum { number }
-	   */
-        CRVideo_VSTATUS = 
-        {
-		/**视频状态未知*/
-		VUNKNOWN:0,
-		/**没有视频设备*/
-		VNULL:1,
-		/**视频处于关闭状态（软开关）*/
-		VCLOSE:2,
-		/**视频处于打开状态（软开关）*/
-		VOPEN:3,
-		/**向服务器发送打开消息中	*/
-		VOPENING:4,
+            if(g_userID == userID){
+                /**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
+                if(newStatus !=CRVideo_VSTATUS.VOPEN && newStatus !=CRVideo_VSTATUS.VOPENING){
+                    CRVideo_OpenVideo(g_userID);
+                }
+            }
+        }
+        /* 视频状态
+        * @enum { number }
+        */
+            CRVideo_VSTATUS = 
+            {
+            /**视频状态未知*/
+            VUNKNOWN:0,
+            /**没有视频设备*/
+            VNULL:1,
+            /**视频处于关闭状态（软开关）*/
+            VCLOSE:2,
+            /**视频处于打开状态（软开关）*/
+            VOPEN:3,
+            /**向服务器发送打开消息中	*/
+            VOPENING:4,
 	}
 ```
 
@@ -440,19 +440,19 @@
 
 ````cs
      /**
-	 * 设置麦克风音量大小
-	 * @access public
-	 * @param {number} level - 音量等级（ 取值范围：0~255）
-	 * @returns {bool} 设置成功则返回true,否则返回false
+        * 设置麦克风音量大小
+        * @access public
+        * @param {number} level - 音量等级（ 取值范围：0~255）
+        * @returns {bool} 设置成功则返回true,否则返回false
 	 */
 	var SetMicVolume = CRVideo_SetMicVolume(level)
 
     /**
-	 * 设置本地扬声器音量
-	 * @access public
-	 * @param {number} level - 音量等级（ 取值范围：0~255）
-	 * @returns {bool} 设置成功则返回true,否则返回false
-	 */
+        * 设置本地扬声器音量
+        * @access public
+        * @param {number} level - 音量等级（ 取值范围：0~255）
+        * @returns {bool} 设置成功则返回true,否则返回false
+        */
 	var SetSpeakerVolume = CRVideo_SetSpeakerVolume(value)
 ````
 
@@ -463,14 +463,14 @@
 * 相关API请参考 [麦克风声音变化](VideoMeeting.md#micEnergyUpdate)
 
 ```cs
-     //麦克风音量波动
-     /**
-	 * SDK通知用户的说话声音强度更新
-	 * @callback CRVideo.CbProxy~CRVideo_MicEnergyUpdate
-	 * @param {string} userID - 用户ID
-	 * @param {number} oldLevel - 原来的说话声音强度
-	 * @param {number} newLevel - 现在的说话声音强度
-	 */
+       //麦克风音量波动
+    /**
+        * SDK通知用户的说话声音强度更新
+        * @callback CRVideo.CbProxy~CRVideo_MicEnergyUpdate
+        * @param {string} userID - 用户ID
+        * @param {number} oldLevel - 原来的说话声音强度
+        * @param {number} newLevel - 现在的说话声音强度
+        */
      CRVideo_MicEnergyUpdate.callback=function(userID ,oldLevel,newLevel){
        
      }
@@ -492,131 +492,28 @@
 #### 1.录制内容配置 {#setRecordVideos}
 
 * 相关API请参考 [录制内容配置](VideoMeeting.md#setRecordVideos)  
-* 相关结构定义请参考 [录制内容配置](ObjectstructureDing.md#RecordVideosObj)
+* 相关结构定义请参考 [录制内容配置](TypeDefinitions.md#RecordVideosObj)
 
 ```cs
 
     /**
-	 * 开始录制
-	 * @access public
-	 * @param {string} recordPath - 录像存储的路径
-	 * @param {CRVideo_RECORD_AUDIO_TYPE} audioType - 音频类型
-	 * @param {number} frameRate - 帧率，建议不要太高；(取值1~24)
-	 * @param {number} recordWidth - 视频宽度
-	 * @param {number} recordHeight - 视频高度
-	 * @param {number} bitRate - 录制的最高码率，当图像变化小时，实际码率会低于此值。建议：640*360: 500000; (500kbps)，1280*720：1000000; (1mbps)，1920*1080: 2000000; (2mbps)
-	 * @param {number} defaultQP - 目标质量(推荐:36, 中:28,  高:22)
-	 * @param {CRVideo_REC_DATATYPE} recDataType - 录制内容类型（视频+音频）
-	 * @param {number} recDataType - 录制内容类型（视频+音频）
-	 * @param {number} isUploadOnRecording - 是否录制的同时上传 1为是，0为否
-	 */	
+        * 开始录制
+        * @access public
+        * @param {string} recordPath - 录像存储的路径
+        * @param {CRVideo_RECORD_AUDIO_TYPE} audioType - 音频类型
+        * @param {number} frameRate - 帧率，建议不要太高；(取值1~24)
+        * @param {number} recordWidth - 视频宽度
+        * @param {number} recordHeight - 视频高度
+        * @param {number} bitRate - 录制的最高码率，当图像变化小时，实际码率会低于此值。建议：640*360: 500000; (500kbps)，1280*720：1000000; (1mbps)，1920*1080: 2000000; (2mbps)
+        * @param {number} defaultQP - 目标质量(推荐:36, 中:28,  高:22)
+        * @param {CRVideo_REC_DATATYPE} recDataType - 录制内容类型（视频+音频）
+        * @param {number} recDataType - 录制内容类型（视频+音频）
+        * @param {number} isUploadOnRecording - 是否录制的同时上传 1为是，0为否
+        */	
 
      CRVideo_StartRecordIng(recordPath,audioType,frameRate,recordWidth,recordHeight,bitRate,defaultQP,recDataType,isUploadOnRecording)
     
-    //布局
-    if(){
-        布局1
-    }else if(){
-        布局2
-    }else{
-        布局3.。。
-    }
-```
-
-```cs
-               //配置录制内容
-                //录音内容
-                var recContents = [];
-                //录制视频的高度初始值  录制视频的宽度初始值
-                if(g_recordHeight*16/9 > g_recordWidth){
-                    var sWidth = g_recordWidth;
-                    var sHeight = g_recordWidth/16*9;
-                    var sX = 0;
-                    var sY = (g_recordHeight-sHeight)/2;
-                }else{
-                    var sWidth = g_recordHeight*16/9;
-                    var sHeight = g_recordHeight;
-                    var sX = (g_recordWidth-sWidth)/2;
-                    var sY = 0;
-                }
-                var videoAContent = {};// A视频内容
-                var videoAStampContent = {};//A视频内容的邮票
-                var videoAlogoContent = {};//A视频标志内容
-                var videoBContent = {};// B视频内容
-                var videoBStampContent = {};//B视频内容的邮票
-                var videoBlogoContent = {};//B视频标志内容
-                 
-                if(g_single_video){//如果是单摄像头
-
-                    videoAContent["type"] = 0;  //录制类型 
-                    videoAContent["left"] = sX; //左
-                    videoAContent["top"] = sY;  //上
-                    videoAContent["width"] = sWidth; //宽
-                    videoAContent["height"] = sHeight; //高
-                    // 用户id.摄像头id, videoAObj对象里面的getVideoID()方法
-                    videoAContent["param"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()};
-                    //加入到录音内容中
-                    recContents.push(videoAContent);
-                }else{//双摄像头
-                    //A:
-                    videoAContent["type"] = 0;
-                    videoAContent["left"] = sX;
-                    videoAContent["top"] = sY+sHeight/4;
-                    videoAContent["width"] = sWidth/2;
-                    videoAContent["height"] = sHeight/2;
-                   // 用户id.摄像头id, videoAObj对象里面的getVideoID()方法
-                    videoAContent["param"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()};
-                    //加入到录音内容中
-                    recContents.push(videoAContent);
-                   
-                    //B:
-                    videoBContent["type"] = 0;
-                    videoBContent["left"] = sX+sWidth/2;
-                    videoBContent["top"] = sY+sHeight/4 ;
-                    videoBContent["width"] = sWidth/2;
-                    videoBContent["height"] = sHeight/2;
-                    videoBContent["parma"] = {"camid":g_userID+"."+g_videoBObj.getVideoID()};
-                    //加入到录音内容中
-                    recContents.push(videoBContent);
-                    // B视频标志内容
-                    //图像 
-                    videoBlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;//==1
-                    videoBlogoContent["left"] = videoBContent["left"] +3;
-                    videoBlogoContent["top"] = videoBContent["top"] +3;
-                    videoBlogoContent["width"] = 32;
-                    videoBlogoContent["height"] = 32;
-                    videoBlogoContent["param"] = {"resourceid":g_logo_id}; //资源独一无二
-                    recContents.push(videoBlogoContent);
-                    // B视频内容的邮票
-                    //时间戳水印
-                    videoBStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;//==4
-                    videoBStampContent["left"] = videoBContent["left"] +35;
-                    videoBStampContent["top"] = videoBContent["top"] +3;
-                    videoBStampContent["width"] = 175;
-                    videoBStampContent["height"] = 32
-                    recContents.push(videoBStampContent);
-                }    
-                // A视频标志内容
-                //图像 
-                videoAlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC; //==1
-				videoAlogoContent["left"] = videoAContent["left"]+3;
-				videoAlogoContent["top"] = videoAContent["top"]+3;
-				videoAlogoContent["width"] = 32;
-				videoAlogoContent["height"] = 32;
-				videoAlogoContent["param"] = {"resourceid":g_logo_id};
-				recContents.push(videoAlogoContent);
-				// A视频内容的邮票
-                //时间戳水印
-				videoAStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;// == 4
-				videoAStampContent["left"] = videoAContent["left"]+35;
-				videoAStampContent["top"] = videoAContent["top"]+3;
-				videoAStampContent["width"] = 175;
-				videoAStampContent["height"] = 32;
-                recContents.push(videoAStampContent);
-
-                // 设置录制视频信息
-                CRVideo_SetRecordVideos(recContents)
-
+   
 ```
 
 #### 2.开始/停止录制 {#startRecording}
@@ -626,7 +523,7 @@
     3. 在录制过程中可以多次更新录制配置，从而变更录制内容
 
 * 相关API请参考 [开始/停止录制](VideoMeeting.md#startRecording)  
-* 相关结构定义请参考 [录制内容类型](Constant.md#REC_VCONTENT_TYPE)，[录制文件配置](ObjectstructureDing.md#RecordCfgObj)
+* 相关结构定义请参考 [录制内容类型](Constant.md#REC_VCONTENT_TYPE)，[录制文件配置](TypeDefinitions.md#RecordCfgObj)
 
 ```cs
         //定义录制文件参数
@@ -663,14 +560,14 @@
 * 相关结构定义请参考 [错误码定义](Constant.md#CRVIDEOSDK_ERR_DEF), [录制状态](Constant.md#RECORD_STATE)，[通知录制文件状态变化](VideoMeeting.md#notifyRecordFileStateChanged)
 
 ```cs
-        /**
+    /**
         * 获取当前录制的文件大小（以字节为单位）
         * @access public
         * @returns {number} 返回录制文件大小（以字节为单位）
         */	//获取当前录制的文件大小（以字节为单位）
         var CRVideo_GetRecFileSize = CRVideo_GetRecFileSize()
         
-         /**
+    /**
         * 获取录制的文件时长（以秒为单位）
         * @access public
         * @returns {number} 返回录制的文件时长（以秒为单位）
@@ -700,12 +597,12 @@
 * 相关API请参考 [设置录制文件是否加密](VideoMeeting.md#setRecordFileEncrypt)
 
 ```cs
-/**
-	 * 设置本地生成的录制文件是否加密
-	 * @access public
-	 * @param {number} encrypt - 1表示加密 0表示不加密
-	 */	
-	 CRVideo_SetRecordFileEncrypt (encrypt)
+    /**
+        * 设置本地生成的录制文件是否加密
+        * @access public
+        * @param {number} encrypt - 1表示加密 0表示不加密
+        */	
+	    CRVideo_SetRecordFileEncrypt (encrypt)
 ```
 
 #### 5.录制文件列表 {#getAllRecordFiles}
@@ -714,7 +611,7 @@
 * 相关结构定义请参考 [录制文件列表](json.md#RecordFilesObj)
 
 ```cs
-        /* 取得所有录制文件信息
+     /* 取得所有录制文件信息
         * @access public
         * @return {CRVideo_RecordFileInfo[]} - 返回含多个录制文件信息
         */	
@@ -729,7 +626,7 @@
 * 相关API请参考 [录制列表添加/删除文件](VideoMeeting.md#addFileToRecordMgr)
 
 ```cs
-        /**
+    /**
         * 第三方录制文件调用此接口后可进行本地回放和上传到服务器record下
         * @typedef {object} CRVideo_AddFileToRecordMgr - 添加本地文件到录制文件管理中
         * @property {string} fileName - 文件名，不含路径
@@ -741,7 +638,7 @@
 ```
 
 ```cs
-        /**
+    /**
         * 删除本地的录制文件，上传中的文件会被取消上传
         * @access public
         * @param {string} filename - 文件名，全路径
@@ -754,7 +651,7 @@
     参数是绝对路径文件名
 
 * 相关API请参考 [上传/取消上传录制文件](VideoMeeting.md#uploadRecordFile)，[通知录制文件上传进度](VideoMeeting.md#notifyRecordFileUploadProgress)，[通知录制文件状态变化](VideoMeeting.md#notifyRecordFileStateChanged)  
-* 相关结构定义请参考 [录制文件列表](ObjectstructureDing.md#RecordFilesObj)
+* 相关结构定义请参考 [录制文件列表](TypeDefinitions.md#RecordFilesObj)
 
 ```cs
         // /上传文件 filename - 文件名，全路径
@@ -768,17 +665,17 @@
 
 ```cs
         // 通知录制文件上传进度 fileName - 文件名 percent - 进度0-100
-       CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){
-            // 上传文件：fileName
-            // 上传进度：percent
+        CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){
+        // 上传文件：fileName
+        // 上传进度：percent
         }
 ```
 
 ```cs
-//sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
-CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
-    //fileName, 文件名
-    //state， 状态
+        //sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
+        CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
+         //fileName, 文件名
+        //state， 状态
 }
 ```
 
@@ -803,7 +700,7 @@ CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
     获取网盘的使用情况和已经上传到服务器的文件列表
 
 * 相关API请参考 [会议网盘容量](VideoMeeting.md#getNetDiskSummary)，[获取网盘文件列表](VideoMeeting.md#getNetDiskFileList)  
-* 相关结构定义请参考 [网盘文件](ObjectstructureDing.md#NetFileObj)，[网盘文件列表](ObjectstructureDing.md#NetFileObjs)
+* 相关结构定义请参考 [网盘文件](TypeDefinitions.md#NetFileObj)，[网盘文件列表](TypeDefinitions.md#NetFileObjs)
 
 ```cs
     /**
@@ -942,7 +839,7 @@ CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
     使用接口启动共享，出现共享内容显示组件后，用组件上的功能开始标注和结束共享。
 
 * 相关API请参考 [屏幕共享配置](VideoMeeting.md#getScreenShareCfg)，[开始/停止屏幕共享](VideoMeeting.md#startScreenShare)，[屏幕共享状态](VideoMeeting.md#isScreenShareStarted)，[开始/停止屏幕共享操作结果](VideoMeeting.md#startScreenShareRslt)，[开始/停止屏幕共享通知](VideoMeeting.md#notifyScreenShareStarted)  
-* 相关结构定义请参考 [屏幕共享配置](ObjectstructureDing.md#ScreenShareCfgObj)
+* 相关结构定义请参考 [屏幕共享配置](TypeDefinitions.md#ScreenShareCfgObj)
 
 ```cs
     /**
@@ -1086,7 +983,7 @@ CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
         * @param {bool} bPause - ture为暂停，false为恢复
         */	
         CRVideo_PausePlayMedia(bPause)
-```cs
+
     /**
         * 停止播放影音
         * @access public
@@ -1112,7 +1009,7 @@ CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
 #### 4.文件列表、播放信息、播放音量 {#list}
 
 * 相关API请参考 [影音文件列表](VideoMeeting.md#getAllFilesInMediaPath)，[影音播放信息](VideoMeeting.md#getMediaInfo)，[影音播放音量](VideoMeeting.md#mediaVolume)  
-* 相关结构定义请参考 [影音文件](ObjectstructureDing.md#MediaInfoObj)
+* 相关结构定义请参考 [影音文件](TypeDefinitions.md#MediaInfoObj)
 
 ```cs
     /**
@@ -1135,8 +1032,8 @@ CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
 ```
 
 ```cs
-//设置当前播放的影音声音
-int vol = 24;
+    //设置当前播放的影音声音
+    var vol = 24;
     /**
         * 设置本地扬声器音量
         * @access public
@@ -1197,7 +1094,7 @@ int vol = 24;
 > 获取会话内人员及相关信息，得到成员的userID后可以对其进行相关的远程音视频操作
 
 * 相关API请参考 [会议成员列表](VideoMeeting.md#getAllMembers)，[会议成员信息](VideoMeeting.md#getMemberInfo)  
-* 相关结构定义请参考 [会议成员](ObjectstructureDing.md#MemberObj)
+* 相关结构定义请参考 [会议成员](TypeDefinitions.md#MemberObj)
 
 ```cs
     
@@ -1266,7 +1163,7 @@ int vol = 24;
     在登录成功后初始化队列数据
 
 * 相关API请参考 [初始化队列](Queue.md#initQueueDat)，[初始化队列结果](Queue.md#initQueueDatRslt)，[查询所有队列](Queue.md#getAllQueueInfo)  
-* 相关结构定义请参考 [会话信息](ObjectstructureDing.md#SesssionObj)，[队列信息](ObjectstructureDing.md#QueueObj)
+* 相关结构定义请参考 [会话信息](TypeDefinitions.md#SesssionObj)，[队列信息](TypeDefinitions.md#QueueObj)
 
 ```cs
     
@@ -1304,7 +1201,7 @@ int vol = 24;
     坐席角色开始和停止服务队列，以及操作后队列状态的变化
 
 * 相关API请参考 [开始/停止服务队列](Queue.md#startService)，[开始/停止队列服务结果](Queue.md#startServiceRslt)  
-* 相关结构定义请参考 [队列状态](ObjectstructureDing.md#QueueStatusObj)
+* 相关结构定义请参考 [队列状态](TypeDefinitions.md#QueueStatusObj)
 
 ```cs
     
@@ -1474,7 +1371,7 @@ int vol = 24;
     客户选择一个队列进行排队，每次只能排一个队列
 
 * 相关API请参考 [开始/停止排队](Queue.md#startQueuing)，[开始/停止排队操作结果](Queue.md#startQueuingRslt)，[队列状态变化](Queue.md#queueStatusChanged)，[排队信息变化](Queue.md#queuingInfoChanged)  
-* 相关结构定义请参考 [队列状态](ObjectstructureDing.md#,  )，[排队信息](ObjectstructureDing.md#QueuingObj)
+* 相关结构定义请参考 [队列状态](TypeDefinitions.md#,  )，[排队信息](TypeDefinitions.md#QueuingObj)
 
 ```cs
     /**

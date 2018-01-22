@@ -77,3 +77,38 @@
 * 进入远程双录主界面(客户)
 
 ![](./images/yuanchengshuanglu7.png)
+
+
+## 视频呼叫 {#RemoteDoubleRecord}
+
+> JavaScript编写，主要了利用队列系统进行用户分配，然后呼叫分到的用户，双方进入同一个视频会话，创建视频，进入视频，视频内录制、音视频设置、发送文件、截图。
+
+* 关闭所有浏览器点击[安装SDK](Explain.md#install)，然后打开Examples 目录下面的VideoCall(web)->index.html
+
+* 输入服务器地址和用户ID，登录(坐席)
+
+![](./images/video1.png)
+
+* 点击开启服务器。等待连接(坐席)
+
+![](./images/video2.png)
+
+* 输入服务器地址和用户ID，登录(客户)
+
+![](./images/video3.png)
+
+* 点击连接服务器(客户)
+
+![](./images/video4.png)
+
+* 等待排队(客户)
+
+![](./images/video5.png)
+
+* 进入远程双录主界面(坐席)
+
+![](./images/video6.png)
+
+* 进入远程双录主界面(客户)
+
+![](./images/video7.png)
