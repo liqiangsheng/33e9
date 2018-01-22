@@ -4,11 +4,11 @@
 
 <p style="width:100%;height:4px;background:#f7f7f7;"></p>
 
-## <font color="#0099cc">说明</font> {#runEvn}
+### <font color="#0099cc">说明</font> {#runEvn}
 
 >会议SDK结构、SDK开发流程、SDK浏览器开发环境。CloudroomVideo SDK for Web支持的浏览器有：IE8,IE9,IE10,IE11，chrome44及以下(包含chrome44)。
 
-#### <font color="#0099cc">sdk说明</font>
+#### <font color="#0099cc">sdk说明</font> {#SDKExplain}
 
 
 > - doc<font color="#f77a0b">(文档说明文件夹）</font>
@@ -48,7 +48,7 @@
 
 > - readme.txt<font color="#f77a0b">（readme文件</font>
 
-## <font color="#0099cc">开发准备</font>
+### <font color="#0099cc">开发准备</font> {#Development}
 
 <p style="width:100%;background:#f7f7f7;">JavaScript 的开发工具有很多，开发者可根据自己的喜好进行选择。在此，我们推荐开发者使用<font color="#718c00"> dreamwaver</font> 作为自己的开发工具，本套开发指南也是针对<font color="#718c00"> dreamwaver </font>开发环境下进行编写的。</p>
 
@@ -104,7 +104,7 @@
 
   **五：重启浏览器**
 
-## <font color="#0099cc">基本流程</font>
+### <font color="#0099cc">基本流程</font> {#BasicProcess}
 
 >流程1：<font color="red">（不登录，只参加会议）SDK初始化 -> 设置服务器地址->（参会）-> 反初始化</font>
 
@@ -144,12 +144,12 @@
 
   &emsp;&emsp;退出程序时，必须注销本次登录，然后再进行SDK反初始化操作
   
-## <font color="#0099cc">呼叫和排队</font>
+### <font color="#0099cc">呼叫和排队</font> {#CallAndQueue}
 
 <p style="background:#f7f7f7">&emsp;&emsp;CloudroomVideo SDK for Web为开发者提供呼叫、排队功能。</p>
 <p style="background:#f7f7f7">&emsp;&emsp;SDK目录的examples/VideoCall(web)文件夹为视频呼叫的demo。这个demo主要展示的某坐席用户服务于某个队列，系统把这个队列里的排队用户分配给此坐席用户，经过一系列握手之后，再进行视频通话的功能。</p>
 
-## <font color="#0099cc">业务流程说明</font>
+### <font color="#0099cc">业务流程说明</font> {#operation}
 
 >坐席客户:<font color="red">初始化SDK->登录->取得队列信息->服务于某个队列->接受某个排队用户->创建会议->呼叫排队用户->进入会议->音视频通话->挂断/被挂断->停止服务->注销->卸载SDK</font>
 
@@ -173,7 +173,7 @@
 
  D.队列有优先级，客服服务多个队列时，将从高优先级的队列服务起。（不同优先级的客户可以通过排队不同队列来实现。 这样比在一个队列插队好，不会引起其他排队用户等待数增加）
 
-## <font color="#0099cc">会议</font>
+### <font color="#0099cc">会议</font> {#meeting}
 
 <p style="background:#f7f7f7">&emsp;&emsp;CloudroomVideo SDK for Web为开发者提供的音视频通信功能，屏幕共享，影音共享等功能，须在会议里进行。</p>
 
@@ -197,7 +197,7 @@ B.如果只是参会，可以不登录；（如上图参会者）
 
 C.离开会议是没有响应消息的（在网络不通时离开会议也不会退不出去），但“结束会议”时有响应的, 只有收到结束成功消息，才真正算结束成功了。
 
-## <font color="#0099cc">音视频通讯</font>
+### <font color="#0099cc">音视频通讯</font> {#communication}
 
 <p style="background:#f7f7f7">&emsp;&emsp;CloudroomVideo SDK for Web为开发者提供便捷的音视频通讯接口，通过以下几步的操作，可以在会议中集成音视频交互功能。音视频通讯需在会议里进行。</p>
 
@@ -392,7 +392,7 @@ CloudroomVideoUI是视频显示组件，它显示设定的用户的视频。
 
   CloudroomScreenShareUI是屏幕共享显示组件，它用于显示会议内对方共享的屏幕图像。
 
-  该组件一个进程内只能创建一个实例，整个程序只能创建一个CloudroomScreenShareUI对象，用来接受显示他人开启共享后传过来的画面, 开启共享的接口是CloudroomVideoMeeting中的接口[startScreenShare](meeting.md#startScreenShare)。
+  该组件一个进程内只能创建一个实例，整个程序只能创建一个CloudroomScreenShareUI对象，用来接受显示他人开启共享后传过来的画面, 开启共享的接口是CloudroomVideoMeeting中的接口[startScreenShare](VideoMeeting.md#startScreenShare)。
 
   注意：只有在CloudroomVideoMeeting入会成功后才能正常工作。
 
@@ -407,58 +407,4 @@ CloudroomMediaUI是影音显示组件，它用于显示自己或者对方会议�
 该组件一个进程内只能创建一个实例，整个程序只能创建一个CloudroomMediaUI对象，影音控制接口由CloudroomVideoMeeting统一提供。
 
 注意：只有在CloudroomVideoMeeting入会成功后才能正常工作。
-
-# <font color="#2674ba">会议CloudroomMeetingSDK(V3.1)</font>
-
->CloudroomMeetingSDK是由众多的DLL组合而成，对外提供有四个控件：
-
-   &emsp;&emsp;a.[<font color="#718c00">云屋会议控件CloudroomMeeting</font>](#CloudroomMeeting)
-
-   &emsp;&emsp;b.[<font color="#718c00">视频界面控件VideoUI</font>](#VideoUI)
-
-   &emsp;&emsp;c.[<font color="#718c00">屏幕共享界面控件ScreenShareUI</font>](#ScreenShareUI)
-
-   &emsp;&emsp;d.[<font color="#718c00">媒体界面控件MediaUI</font>](#MediaUI)
-    
-### <a id="CloudroomMeeting"><font color="#0099cc">CloudroomMeeting</font></a>
-
->- <p>CLSID:<font face="微软雅黑"> {BDEB623E-D629-49d5-AE39-5B43E7572A62}</font>;</p>
--  <p>ProgID: npCloudroomMeetingSDK.ScreenShareUI;</p>
--  <p>MIME TYPE: application/x-cloudroom-meetingsdk;</p>
--  <p>CloudroomMeeting是核心控件，它实现会议的基础功能;</p>
--  <p>一个进程内只能创建一个实例，直到应用退出时才反初始化并销毁;</p>
-
-   + CloudroomMeeting控件使用过程主要包括:
-
-    a.创建控件实例，执行初始化;
-
-    b.登录;
-
-    c.通话;
-
-### <a id="VideoUI"><font color="#0099cc">VideoUI</font></a>
-
->- <p>CLSID: {5872A9E0-2401-4abb-B75A-D6F361099C81};</p>
--  <p>ProgID: npCloudroomMeetingSDK.VideoUI;</p>
--  <p>MIME TYPE: application/x-cloudroom-videoui;</p>
--  <p>VideoUI是视频显示控件，它显示设定的用户的视频;</p>
--  <p>VideoUI可以创建多个实例，然后分别配置大小、位置并设置要显示的用户ID即可;</p>
--  <p>也可以不使用VideoUI控件，而是接收CloudroomMeeting的notifyVideoData事件，然后使用CloudroomMeeting的getVideoImg接口来获取图像，自已实现显示功能;</p>
-<font color="red">&emsp;&emsp;注意：CloudroomMeetingSDK视频统一采用16:9的尺寸编码，为了保证显示的图像不变形，请尽量保证VideoUI的宽高比为16:9。</font>
-
-### <a id="ScreenShareUI"><font color="#0099cc">ScreenShareUI</font></a>
-
->- <p>CLSID: {CLSID: {11A191A8-4E28-4952-99F6-D5CBC862FEB4};</p>
--  <p>ProgID: ProgID: npCloudroomMeetingSDK.ScreenShareUI;</p>
--  <p>MIME TYPE: application/x-cloudroom-screenshareui;</p>
--  <p>ScreenShareUI是屏幕共享显示控件，它用于显示对方共享的屏幕图像；</p>
--  <p>也可以不使用ScreenShareUI控件，而是接收CloudroomMeeting的notifyScreenShareData事件，然后使用CloudroomMeetig的getShareScreenDecodeImg接口来获取图像，自已实现显示功能;</p>
-
-### <a id="MediaUI"><font color="#0099cc">MediaUI</font></a>
-
->- <p>CLSID: {8344A9F9-EBC1-4A27-B20D-A100D68ACC7B};</p>
--  <p>ProgID: npCloudroomMeetingSDK.MediaUI;</p>
--  <p>MIME TYPE: application/x-cloudroom-mediaui;</p>
--  <p>MediaUI是影音显示控件，它用于显示自己或者对方播放的影音图像;</p>
--  <p>可以创建多个影音控件，但显示的都是当前播放的影音内容，影音控制接口由CloudroomMeetig统一提供</p>
 

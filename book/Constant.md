@@ -1,9 +1,9 @@
 # 常量定义
 >相关数值及含义定义
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
-##错误代码含义 {#CRVIDEOSDK_ERR_DEF}
+### 错误代码含义 {#CRVIDEOSDK_ERR_DEF}
 
 >CRVIDEOSDK_ERR_DEF
 
@@ -58,10 +58,11 @@
 | CRVIDEOSDK_RECORDFILE_STATE_ERR | 1200 | 状态错误不可上传/取消上传    | 
 | CRVIDEOSDK_RECORDFILE_NOT_EXIST | 1201 | 录制文件不存在    | 
 
-##麦克风状态 {#ASTATUS}
+### 麦克风状态 {#ASTATUS}
+
 >ASTATUS
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        | 含义      |
 |:-------- |:-----------|:----------|
@@ -71,10 +72,11 @@
 |AOPEN	   |3	|麦克风处于打开状态（软开关）	|   
 |AOPENING  |4	|向服务器发送打开消息中	| 
 
-##视频尺寸定义 {#VIDEO_SHOW_SIZE}
+### 视频尺寸定义 {#VIDEO_SHOW_SIZE}
+
 >VIDEO_SHOW_SIZE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
  
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -92,10 +94,11 @@
 |VSIZE_SZ_720	|12|1280*720,  最大码率：1mbps	|   
 |VSIZE_SZ_1080	|13|1920*1080, 最大码率：2mbps	|
 
-##视频状态定义 {#VSTATUS}
+### 视频状态定义 {#VSTATUS}
+
 >VSTATUS
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -105,20 +108,22 @@
 | VOPEN	|3|	视频处于打开状态（软开关）|	   
 | VOPENING|	4	|向服务器发送打开消息中	 |
 
-##视频图像格式 {#VIDEO_FORMAT}
+### 视频图像格式 {#VIDEO_FORMAT}
+
 >VIDEO_FORMAT
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
 | VFMT_YUV420P|0	|yuv420p	   |
 | VFMT_ARGB32	|1 |32-bit ARGB format (0xAARRGGBB)	 |
 
-##录制内容类型 {#REC_VCONTENT_TYPE}
+### 录制内容类型 {#REC_VCONTENT_TYPE}
+
 >REC_VCONTENT_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -128,10 +133,11 @@
 | RECVTP_MEDIA|	3	|影音共享	|   
 | RECVTP_TIMESTAMP	|4|时间戳	 |
 
-##录制的状态 {#RECORD_STATE}
+### 录制的状态 {#RECORD_STATE}
+
 >RECORD_STATE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -141,10 +147,11 @@
 | PAUSED|	3	|录制已暂停	|   
 | STOPPING	|4|录制正在结束	 |
 
-##录制语音类型 {#RECORD_AUDIO_TYPE}
+### 录制语音类型 {#RECORD_AUDIO_TYPE}
+
 >RECORD_AUDIO_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -154,10 +161,11 @@
 | REC_AUDIO_TYPE_ALL|	3	|录制本地+其他人语音	|   
 
 
-##录制图像类型 {#RECORD_VIDEO_TYPE}
+### 录制图像类型 {#RECORD_VIDEO_TYPE}
+
 >RECORD_VIDEO_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -165,30 +173,33 @@
 | RECORD_VIDEO_TYPE_SCREEN	|1|	录制屏幕	|   
 | REC_VCONTENT_VIDEOS|3|	录制视频图像   |
 
-##录制视频的布局类型 {#RECORD_VLAYOUT}
+### 录制视频的布局类型 {#RECORD_VLAYOUT}
+
 >RECORD_VLAYOUT
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
 | REC_VLAYOUT_GRID|	0	|表格类型	   |
 | REC_VLAYOUT_PIP	|1|	画中画类型(只有在录两个视频时有效)	|   
 
-##屏幕共享的编码类型 {#ENCODE_TYPE}
+### 屏幕共享的编码类型 {#ENCODE_TYPE}
+
 >ENCODE_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
 | ENC_CLOUDROOM|	0	|云屋科技私有编码格式（清晰度更高，带宽大）	   |
 | ENC_H264	|1|	(清晰度差一些，带宽小）	|   
 
-##鼠标事件类型 {#MOUSE_MSG_TYPE}
+### 鼠标事件类型 {#MOUSE_MSG_TYPE}
+
 >MOUSE_MSG_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -197,10 +208,11 @@
 | MOUSE_UP|	2	|鼠标键弹起	   |
 | MOUSE_DBCLICK	|3|	鼠标双击|
 
-##鼠标键类型 {#MOUSE_KEY_TYPE}
+### 鼠标键类型 {#MOUSE_KEY_TYPE}
+
 >MOUSE_KEY_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -211,20 +223,22 @@
 | MOUSEKEY_WHEEL|	4|	鼠标滚轮	|   
 | MOUSEKEY_X	|5	|鼠标侧键|
 
-##键盘事件类型 {#KEY_MSG_TYPE}
+### 键盘事件类型 {#KEY_MSG_TYPE}
+
 >KEY_MSG_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
 | KEYT_DWON|	0|	键值按下|	   
 | KEYT_UP	|1	|键值弹起| 
 
-##功能类型  {#MAIN_PAGE_TYPE}
+### 功能类型  {#MAIN_PAGE_TYPE}
+
 >MAIN_PAGE_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -232,10 +246,11 @@
 | MAINPAGE_SHARE|	1|	共享	   |
 | MAINPAGE_WHITEBOARD|	2	|白板	|
 
-##影音的清晰度 {#VDEFINITION_TYPE}
+### 影音的清晰度 {#VDEFINITION_TYPE}
+
 >VDEFINITION_TYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -244,10 +259,11 @@
 | V_UD|2|	超清 1920x1080|	   
 
 
-##视频墙分屏模式 {#VIDEOLAYOUTMODE}
+### 视频墙分屏模式 {#VIDEOLAYOUTMODE}
+
 >VIDEOLAYOUTMODE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -262,10 +278,11 @@
 | VLO_WALL16|	8	|16分屏	|   
 | VLO_WALL25	|9|	25分屏	|
 
-##录制的类型 {#REC_DATATYPE}
+### 录制的类型 {#REC_DATATYPE}
+
 >REC_DATATYPE
 
-<p style="width:100%;height:4px;background:#f7f7f7"></p>
+----
 
 | 代码     | 数值        |   分辨率和码率 |
 |:-------- |:-----------|:----------|
@@ -275,7 +292,48 @@
 <font color="red">REC_VIDEO	3	录制视频(内容由setRecordVideos设定)用户可以自由组合，如REC_AUDIO_LOC|REC_VIDEO，表示录制本地语音和视频；
 REC_AUDIO_LOC|REC_AUDIO_OTHER，录制双方语音</font>
 
+## Http文件传输状态 {#HTTP_TRANSFER_STATE}
 
+> HTTP_TRANSFER_STATE
+
+----
+
+|代码|数值|含义|
+|------------|-------------|-----|
+|HTTPFS_NULL        |0| 未开始|
+|HTTPFS_QUEUE       |1| 排队中|
+|HTTPFS_TRANSFERING |2| 传输(上传/下载)中|
+|HTTPFS_FINISHED    |3| 传输完成|
+
+## Http文件传输结果 {#HTTP_TRANSFER_RESULT}
+
+> HTTP_TRANSFER_RESULT
+
+----
+
+|代码|数值|含义|
+|------------|-------------|-----|
+|HTTPR_Success              |0| 成功|
+|HTTPR_InnerErr             |1| 内部错误|
+|HTTPR_ParamErr             |2| 参数错误|
+|HTTPR_NetworkFail          |3| 网络不通/地址不对|
+|HTTPR_NetworkTimeout       |4| 超时失败|
+|HTTPR_FileOperationFail    |5| 文件操作失败|
+|HTTPR_PathNotSupprot       |6| 不支持的路径|
+|HTTPR_FileTransfering      |7| 文件正在传输|
+|HTTPR_HTTPERR_BEGIN        |1000|  http错误码启始|
+|HTTPR_HTTPERR_END          |1999|  http错误码结束|
+
+## 影音播放工具条UI组件 {#ToolBarUI}
+
+> ToolBarUI
+
+----
+
+|代码|数值|含义|
+|------------|-------------|-----|
+|BTN_Pause   |0|    暂停|
+|BTN_Stop    |1|    停止|
  
 
    

@@ -1,6 +1,6 @@
 # <font color="#2674ba">对象结构定义</font> 
 
-## <font color="#0099cc">会议对象</font> {#MeetInfoObj}
+### <font color="#0099cc">会议对象</font> {#MeetInfoObj}
 
 >MeetInfoObj
 
@@ -22,7 +22,7 @@ pubMeetUrl  |  会议公共链接
 creator     |  会议创建者
 memberCount |  会议内人数
 
-## <font color="#0099cc">会议对象列表</font> {#MeetInfoObjs}
+### <font color="#0099cc">会议对象列表</font> {#MeetInfoObjs}
 
 >MeetInfoObjs
 
@@ -42,7 +42,35 @@ memberCount |  会议内人数
 "memberCount":<font color="#ef8020">4</font>},... </p>]
 </div>
 
-## <font color="#0099cc">成员对象</font> {#MemberObj}
+### <font color="#0099cc">会议对象</font> {#UserStatusObj}
+
+>UserStatusObj
+
+<div style="background:#f7f7f7;color:#718c00">
+  
+{"userID":<font color="#ef8020">xxx</font>,
+"userStatus":<font color="#ef8020">0</font>,
+"DNDType":<font color="#ef8020">"0"</font>,}
+</div>
+
+属性        | 值
+--------    | ---
+userID          |  用户id
+userStatus        |  用户的在线状态（参见：[CLIENT_STATUS](Constanr.md#CLIENT_STATUS)）
+DNDType     |  用户免打扰状态（参见[setDNDStatus](MeetingMrg.md#setDNDStatus)）
+
+### <font color="#0099cc">会议对象列表</font> {#UserStatusObjs}
+
+>UserStatusObjs
+
+<div style="background:#f7f7f7;color:#718c00">
+  
+[<p>{"userID":<font color="#ef8020">xxx</font>,"userStatus":<font color="#ef8020">0</font>,"DNDType":<font color="#ef8020">"0"</font>},</p><p>{"userID":<font color="#ef8020">xxx</font>,"userStatus":<font color="#ef8020">0</font>,"DNDType":<font color="#ef8020">"0"</font>}</p>...]
+</div>
+
+>UserStatusObj列表
+
+### <font color="#0099cc">成员对象</font> {#MemberObj}
 
 >MemberObj
 
@@ -60,7 +88,7 @@ nickName        |  用户昵称
 audioStatus     |  音频状态,数值参考麦克风状态[ASTATUS](Constant.md#ASTATUS)
 videoStatus     |  视频状态,数值参考视频状态定义[VSTATUS](Constant.md#VSTATUS)
 
-## <font color="#0099cc">成员对象列表</font>  {#MembersObj}
+### <font color="#0099cc">成员对象列表</font>  {#MembersObj}
 
 >MembersObj
 
@@ -72,7 +100,7 @@ videoStatus     |  视频状态,数值参考视频状态定义[VSTATUS](Constant
 
 </p>
 
-## <font color="#0099cc">音频配置</font>  {#AudioCfgObj}
+### <font color="#0099cc">音频配置</font>  {#AudioCfgObj}
 
 >AudioCfgObj
 
@@ -90,7 +118,7 @@ speakerName        |  扬声器名称(空代表系统默认设备)
 privEC     |  是否开启云屋私有回声消息0：不开启；1：开启(缺省建议不开启)
 privAgc     |  是否开启云屋私有语音自动增益0：不开启；1：开启(缺省建议不开启)
 
-## <font color="#0099cc">视频配置</font> {#VideoCfgObj}
+### <font color="#0099cc">视频配置</font> {#VideoCfgObj}
 
 >VideoCfgObj
 
@@ -114,7 +142,7 @@ wh_rate    | 视频宽高比,取值如下:<font color="#ef8020"> 0 为16:9(未�
 >- maxbps码率控制，是为了确保结果一定不大于“目标码率”（体积受控）；
 >- 当要超出码率控制时，自动降低质量；当质量达到目标时，自动减少码率甚至无码率输出。
 
-## <font color="#0099cc">视频帧图像 </font> {#VideoImgObj}
+### <font color="#0099cc">视频帧图像 </font> {#VideoImgObj}
 
 >VideoImgObj
 
@@ -136,7 +164,7 @@ width     |  图像宽度
 height     |  图像高度
 frameTime     |  图像的时戳
 
-##<font color="#0099cc">用户视频信息 </font> {#VideoInfoObj}
+### <font color="#0099cc">用户视频信息 </font> {#VideoInfoObj}
 
 >VideoInfoObj 
 
@@ -152,9 +180,9 @@ userID          |  用户id
 videoID       |  设备id
 videoName     |  设备名称
 
-##<font color="#0099cc">用户视频信息列表</font>
+### <font color="#0099cc">用户视频信息列表</font> {#VideoInfosObj}
 
->VideoInfosObj {#VideoInfosObj}
+>VideoInfosObj 
 
 <p style="background:#f7f7f7;color:#718c00">
 [
@@ -165,7 +193,7 @@ videoName     |  设备名称
 ]
 </p>
 
-##<font color="#0099cc">用户视频列表</font> {#VideoIDObjs}
+### <font color="#0099cc">用户视频列表</font> {#VideoIDObjs}
 
 >VideoIDObjs
 
@@ -183,7 +211,7 @@ videoName     |  设备名称
 userID          |  用户id
 videoID       |  设备id
 
-##<font color="#0099cc">屏幕共享配置</font> {#ScreenShareCfgObj}
+### <font color="#0099cc">屏幕共享配置</font> {#ScreenShareCfgObj}
 
 >ScreenShareCfgObj
 
@@ -195,13 +223,13 @@ videoID       |  设备id
 
 属性            | 值
 --------        | ---
-encodeType          |  编码类型,详见屏幕共享的编码类型ENCODE_TYPE
+encodeType          |  编码类型,详见屏幕共享的编码类型[ENCODE_TYPE](Constant.md#ENCODE_TYPE)
 catchRect       |  {"left":10,"top":10,"width":100,"height":100}用于实现区域共享
 catchWnd       |  共享窗口的窗口句柄，用于实现窗口共享
 maxFPS       |  最大帧率, 缺省为8 (当网络发不动时，帧率会自动下降)
 maxKbps       | 最大帧率, 缺省为8 (当网络发不动时，帧率会自动下降)
 
-##<font color="#0099cc">录制视频对象列表</font> {#RecordVideosObj}
+### <font color="#0099cc">录制视频对象列表</font> {#RecordVideosObj}
 
 >RecordVideosObj
 
@@ -225,7 +253,7 @@ type         |  录制类型REC_VCONTENT_TYPE说明:<p>当type=RECVTP_VIDEO时�
 keepAspectRatio         |  内容保持原始比例；（0：不保持；1：保持）
 param         |  具体值与type相关；
 
-##<font color="#0099cc">录制文件配置 </font> {#RecordCfgObj}
+### <font color="#0099cc">录制文件配置 </font> {#RecordCfgObj}
 
 >RecordCfgObj 
 
@@ -251,7 +279,7 @@ defaultQP       |  <p>录制的缺省质量，缺省值：28</p><p>取值范围�
 recDataType       |  录制内容类型，值参考定义[REC_DATATYPE](Constant.md#REC_DATATYPE)
 isUploadOnRecording       | 是否边录边上传，0：手动上传；1：边录制边上传；
 
-##<font color="#0099cc">录制文件列表 </font> {#RecordFilesObj}
+### <font color="#0099cc">录制文件列表 </font> {#RecordFilesObj}
 
 >RecordFilesObj 
 
@@ -271,7 +299,7 @@ size       |  文件大小
 state       |  0:没有上传，1:上传中，2:上传完毕
 uploadPercent       |  录制结果中视频尺寸高度上传进度，state为1时此字段有效
 
-##<font color="#0099cc">影音文件</font> {#MediaInfoObj}
+### <font color="#0099cc">影音文件</font> {#MediaInfoObj}
 
 >MediaInfoObj
 
@@ -285,7 +313,7 @@ userID          |  用户id径
 state       |   播放状态 0:播放 1:暂停 2:未播放
 mediaName       |  影音文件名
 
-##<font color="#0099cc">图片资源</font> {#PicResourceObj}
+### <font color="#0099cc">图片资源</font> {#PicResourceObj}
 
 >PicResourceObj
 
@@ -300,7 +328,7 @@ dat       |   <p>资源数据，不同格式时，要提供的数据各不一样
 width          |  图像宽度(像素), 在fmt为"yuv420p"，"rgb32"时，需要此参数
 height          |  图像高度(像素), 在fmt为"yuv420p"，"rgb32"时，需要此参数
 
-##<font color="#0099cc">白板信息列表</font> {#BoardObjs}
+### <font color="#0099cc">白板信息列表</font> {#BoardObjs}
 
 >BoardObjs
 
@@ -312,7 +340,7 @@ height          |  图像高度(像素), 在fmt为"yuv420p"，"rgb32"时，需�
 ]
 </div>
 
-##<font color="#0099cc">白板配置对象</font> {#BoardObj}
+### <font color="#0099cc">白板配置对象</font> {#BoardObj}
 
 >BoardObj
 
@@ -331,7 +359,7 @@ title      |   白板的名字
 width、height      |  白板的宽、高
 pageCount    |  页数(建议白板是一页，文档是实际页面数)
 
-##<font color="#0099cc">白板图元列表</font> {#BoardElementObjs}
+### <font color="#0099cc">白板图元列表</font> {#BoardElementObjs}
 
 >BoardElementObjs
 
@@ -342,7 +370,7 @@ pageCount    |  页数(建议白板是一页，文档是实际页面数)
 ]
 </p>
 
-##<font color="#0099cc">白板图元</font> {#BoardElementObj}
+### <font color="#0099cc">白板图元</font> {#BoardElementObj}
 
 >BoardElementObj
 
@@ -361,7 +389,7 @@ left、top     |  图元在页内的左上角位置
 …    |  可自由扩展
 说明：    | <p>1.elementID必须调用createElementID（）获取, 即使是曾经调此接口创建的然后存入了磁盘文件，再次读入会议时，所有elementID也需要重新生重。</p><p>2.如果要和云屋产品互通，那就需要按云屋的定义取值，可以联系云屋获取相关文档</p>
 
-##<font color="#0099cc">网盘文件对象</font> {#NetFileObj}
+### <font color="#0099cc">网盘文件对象</font> {#NetFileObj}
 
 >NetFileObj
 
@@ -389,7 +417,7 @@ size         |  在服务器上的大小
 orgSize         |  原始文件大小
 status         |  文件状态
 
-##<font color="#0099cc">网盘文件对象列表</font> {#NetFileObjs}
+### <font color="#0099cc">网盘文件对象列表</font> {#NetFileObjs}
 
 >NetFileObjs
 
@@ -413,3 +441,67 @@ status         |  文件状态
 "orgSize":<font color="#ef8020">""</font>,
 "status":<font color="#ef8020">""</font>}</p>]
 </div>
+
+### <font color="#0099cc">队列状态</font> {#QueueStatusObj}
+
+>QueueStatusObj
+
+<p style="background:#f7f7f7;color:#718c00">
+{"queID":<font color="#ef8020">0</font>,"agent_num":<font color="#ef8020">12</font>,"wait_num":<font color="#ef8020">3</font>,"srv_num":<font color="#ef8020">11</font>}
+</p>
+
+属性            | 值
+--------        | ---
+queID         |  队列id
+agent_num      |   坐席数量
+wait_num    |  排队客户数量
+srv_num   |  正在服务的客户数量
+
+### <font color="#0099cc">排队信息</font> {#QueuingObj}
+
+>QueuingObj
+
+<p style="background:#f7f7f7;color:#718c00">
+{"queID":<font color="#ef8020">0</font>,"position":<font color="#ef8020">3</font>,"queuingTime":<font color="#ef8020">17</font>}
+</p>
+
+属性            | 值
+--------        | ---
+queID         |  队列ID 我排的队列(-1:代表我没有排队；-2:代表我正在会话中,通过GetSessionInfo可获取相关信息)
+position      |   我的位置
+queuingTime    |  我排队的时长(单位s)
+
+### <font color="#0099cc">会话信息</font> {#SesssionObj}
+
+>SesssionObj
+
+<p style="background:#f7f7f7;color:#718c00">
+{"callID":<font color="#ef8020">0000123</font>,"peerID":<font color="#ef8020">123</font>,"peerName":<font color="#ef8020">aaa</font>,"bCallAccepted":<font color="#ef8020">1</font>,"meetingID":<font color="#ef8020">321321</font>,"meetingPswd":"<font color="#ef8020">123456</font>","duration":<font color="#ef8020">120</font>}
+</p>
+
+属性            | 值
+--------        | ---
+callID         |  会话中的呼叫ID
+peerID      |   会话中的目标用户ID
+peerName    |  会话中的目标用户昵称
+bCallAccepted    |  呼叫是否被对方接受 0:暂未接受，1:已接受
+meetingID    |  会话中分配的会议ID
+meetingPswd    |  会议密码
+duration    |  会话持续的时长(秒)
+
+### <font color="#0099cc">队列用户</font> {#QueueUser}
+
+>QueueUser
+
+<p style="background:#f7f7f7;color:#718c00">
+{"queID":<font color="#ef8020">1</font>,"usrID":<font color="#ef8020">31231231</font>,"name":<font color="#ef8020">aaa</font>,"queuingTime":<font color="#ef8020">10</font>,"usrExtDat":<font color="#ef8020">""</font>}
+</p>
+
+属性            | 值
+--------        | ---
+queID         |  队列ID
+usrID      |   用户ID
+name    |  用户昵称
+queuingTime    |  用户排队的时长(单位s)
+usrExtDat    |  用户排队时传入的扩展参数
+

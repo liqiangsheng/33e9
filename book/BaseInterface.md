@@ -16,12 +16,12 @@
 
 - **参数**:无
 
->可读。这个接口在init之前可用
+>可读。这个接口在[init](#init)之前可用
 
 <!-- 2 -->
 ### <font color="#0099cc">获取sdk所在的目录</font> {#sdkPath}
 
-<p style="background:#f7f7f7;color:#718c00">属性sdkPath</p>
+<p style="background:#f7f7f7;color:#718c00">属性 sdkPath</p>
 
 >string sdkPath
 
@@ -31,7 +31,7 @@
 
 - **参数**:无
 
->可读。这个接口在init之前可用
+>可读。这个接口在[init](#init)之前可用
 
 <!-- 3 -->
 ### <font color="#0099cc">设置SDK参数</font> {#setSDKParams}
@@ -53,7 +53,7 @@
 |NoMediaDatToSvr|0/1 (缺省:0)|与服务器无实时流媒体数据（可减少复杂度，加快登录速度）|
 |Timeout|10000-120000|网络通信超时时间，单位是毫秒，超出范围时就近取边界值|
 
->这个接口在init之前调用有效
+>这个接口在[init](#init)之前调用有效
 
 <!-- 4 -->
 ### <font color="#0099cc">设置是否开启日志</font> {#enableLog2File}
@@ -69,7 +69,7 @@
 - **参数**:
  + bEnable ------ 1 表示开启日志 0表示不开启日志
 
-> SDK中日志功能默认是打开的这个接口在init之前或者之后均可调用
+> SDK中日志功能默认是打开的这个接口在[init](#init)之前或者之后均可调用
 
 <!-- 5 -->
 ### <font color="#0099cc">SDK初始化</font> {#init}
@@ -86,7 +86,7 @@
   + oemid ------ 开发商ID，没有特别要求可填：CLOUDROOM
   + sdkFilePath ------ sdk配置、临时文件存放位置，可为空
 
->每次init后，都应对一次uninit
+>每次[init](#init)后，都应对一次[uninit](#uninit)
 
 <!-- 6 -->
 ### <font color="#0099cc">SDK反初始化</font> {#uninit}

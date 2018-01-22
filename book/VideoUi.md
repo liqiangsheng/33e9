@@ -4,7 +4,7 @@
 >CloudroomVideoUI是视频显示控件，它显示设定的用户的视频
 
 <!-- 1 -->
-### <font color="#0099cc">设置显示的目标用户视频</font>
+### <font color="#0099cc">设置显示的目标用户视频</font> {#setVideo}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setVideo （）</p>
 
@@ -19,7 +19,7 @@
  + videoID ----- 目标用户ID
 
 <!-- 2 -->
-### <font color="#0099cc">获取当前显示的用户</font>
+### <font color="#0099cc">获取当前显示的用户</font> {#getUserID}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getUserID ()</p>
 
@@ -32,7 +32,7 @@
 - **参数**:无
 
 <!-- 3 -->
-### <font color="#0099cc">获取当前显示的用户的视频设备</font>
+### <font color="#0099cc">获取当前显示的用户的视频设备</font> {#getVideoID}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getVideoID ()</p>
 
@@ -45,7 +45,7 @@
 - **参数**:无
 
 <!-- 4 -->
-### <font color="#0099cc">拍照</font>
+### <font color="#0099cc">拍照</font> {#savePic}
 
 <p style="background:#f7f7f7;color:#718c00">方法 savePic ()</p>
 
@@ -59,7 +59,7 @@
  + pathFileName ----- 保存为本地路径文件名
 
 <!-- 5 -->
-### <font color="#0099cc">拍照</font>
+### <font color="#0099cc">拍照</font> {#savePicToBase64}
 
 <p style="background:#f7f7f7;color:#718c00">方法 savePicToBase64 ()</p>
 
@@ -72,7 +72,7 @@
 - **参数**:图片格式，支持bmp, png, gif, jpg, jpeg
 
 <!-- 6 -->
-### <font color="#0099cc">清空缓存的图像</font>
+### <font color="#0099cc">清空缓存的图像</font> {#clear}
 
 <p style="background:#f7f7f7;color:#718c00">方法 clear ()</p>
 
@@ -85,7 +85,7 @@
 - **参数**:无
 
 <!-- 7 -->
-### <font color="#0099cc">设置显示的视频画面是否保持比例</font>
+### <font color="#0099cc">设置显示的视频画面是否保持比例</font> {#keepAspectRatio}
 
 <p style="background:#f7f7f7;color:#718c00">属性keepAspectRatio</p>
 
@@ -98,7 +98,7 @@
 >可读写。true: 保持比例不拉伸， false:不保持比例进行拉伸
 
 <!-- 8 -->
-### <font color="#0099cc">检查昵称是否可见</font>
+### <font color="#0099cc">检查昵称是否可见</font> {#visibleNickName}
 
 <p style="background:#f7f7f7;color:#718c00">属性visibleNickName</p>
 
@@ -111,7 +111,7 @@
 >可读写。0: 可见， 1:不可见
 
 <!-- 9 -->
-### <font color="#0099cc">检查图像是否为空</font>
+### <font color="#0099cc">检查图像是否为空</font> {#isPicEmpty}
 
 <p style="background:#f7f7f7;color:#718c00">属性isPicEmpty</p>
 

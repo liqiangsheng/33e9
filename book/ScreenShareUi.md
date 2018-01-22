@@ -4,7 +4,7 @@
 >CloudroomScreenShareUI是远端屏幕显示控件
 
 <!-- 1 -->
-### <font color="#0099cc">拍照</font>
+### <font color="#0099cc">拍照</font> {#savePic}
 
 <p style="background:#f7f7f7;color:#718c00">方法 savePic （）</p>
 
@@ -17,7 +17,7 @@
 - **参数**:无
 
 <!-- 2 -->
-### <font color="#0099cc">清空缓存的图像</font>
+### <font color="#0099cc">清空缓存的图像</font> {#clear}
 
 <p style="background:#f7f7f7;color:#718c00">方法 clear ()</p>
 
@@ -30,7 +30,7 @@
 - **参数**:无
 
 <!-- 3 -->
-### <font color="#0099cc">设置标注画笔样式</font>
+### <font color="#0099cc">设置标注画笔样式</font> {#setPenStyle}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setPenStyle ()</p>
 
@@ -45,7 +45,7 @@
  + penWidth ------ 画笔宽度
 
 <!-- 4 -->
-### <font color="#0099cc">检查图像是否为空</font>
+### <font color="#0099cc">检查图像是否为空</font> {#isPicEmpty}
 
 <p style="background:#f7f7f7;color:#718c00">属性isPicEmpty</p>
 
@@ -58,7 +58,7 @@
 >可读。0: 有图像, 1:无图像
 
 <!--5 -->
-### <font color="#0099cc">开启标注模式</font>
+### <font color="#0099cc">开启标注模式</font> {#enableMarked}
 
 <p style="background:#f7f7f7;color:#718c00">属性enableMarked</p>
 
@@ -71,7 +71,7 @@
 >读、写
 
 <!-- 6 -->
-### <font color="#0099cc">绘制模式，是否拉伸绘制</font>
+### <font color="#0099cc">绘制模式，是否拉伸绘制</font> {#keepAspectRatio}
 
 <p style="background:#f7f7f7;color:#718c00">属性keepAspectRatio</p>
 
@@ -84,7 +84,7 @@
 >读、写
 
 <!-- 7 -->
-### <font color="#0099cc">开启控制模式</font>
+### <font color="#0099cc">开启控制模式</font> {#ctrlOpen}
 
 <p style="background:#f7f7f7;color:#718c00">属性ctrlOpen</p>
 

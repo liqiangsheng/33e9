@@ -4,7 +4,7 @@
 >CloudroomMediaUI是影音显示控件
 
 <!-- 1 -->
-### <font color="#0099cc">保存播放影音画面到图片文件</font>
+### <font color="#0099cc">保存播放影音画面到图片文件</font> {#savePicToFile}
 
 <p style="background:#f7f7f7;color:#718c00">方法 savePicToFile （）</p>
 
@@ -20,7 +20,7 @@
 >支持格式：bmp, png, gif, jpg, jpeg
 
 <!-- 2 -->
-### <font color="#0099cc">保存播放截图为base64数据字符串</font>
+### <font color="#0099cc">保存播放截图为base64数据字符串</font> {#savePicToBase64}
 
 <p style="background:#f7f7f7;color:#718c00">方法 savePicToBase64 ()</p>
 
@@ -34,7 +34,7 @@
  + format ------ 支持格式：bmp, png, gif, jpg, jpeg
 
 <!-- 3 -->
-### <font color="#0099cc">显示隐藏播放工具条上的界面元素</font>
+### <font color="#0099cc">显示隐藏播放工具条上的界面元素</font> {#setToolBarUIElementVisible}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setToolBarUIElementVisible ()</p>
 
@@ -51,7 +51,7 @@
 >影音控件默认工具条可用
 
 <!-- 4 -->
-### <font color="#0099cc">绘制模式，是否拉伸绘制</font>
+### <font color="#0099cc">绘制模式，是否拉伸绘制</font> {#keepAspectRatio}
 
 <p style="background:#f7f7f7;color:#718c00">属性keepAspectRatio</p>
 
@@ -64,7 +64,7 @@
 >读、写
 
 <!--5 -->
-### <font color="#0099cc">工具条是否可用</font>
+### <font color="#0099cc">工具条是否可用</font> {#disableToolBar}
 
 <p style="background:#f7f7f7;color:#718c00">方法 disableToolBar ()</p>
 

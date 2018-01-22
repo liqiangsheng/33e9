@@ -91,7 +91,7 @@
 
 - **参数**:无
 
->可读、可写.0：默认抓屏处理；1：自定议抓屏设置自定义抓屏后，sdk需要图像时将产生notiyCatchScreen事件，使用者再通过setCustomizeScreenImg接口送入图像
+>可读、可写.0：默认抓屏处理；1：自定议抓屏设置自定义抓屏后，sdk需要图像时将产生[notiyCatchScreen](#notiyCatchScreen)事件，使用者再通过[setCustomizeScreenImg](#setCustomizeScreenImg)接口送入图像
 
 <!-- 7 -->
 ### <font color="#0099cc">播放是否静音</font> {#speakerMute}
@@ -153,7 +153,7 @@
   + meetID  ------ 视频会议ID
   + pswd ------ 本次会议中的密码（在创建会议时）
 
->响应事件enterMeetingRslt
+>响应事件[enterMeetingRslt](#enterMeetingRslt)
 
 <!-- 11 -->
 ### <font color="#0099cc">判断某个用户是否在会议中</font> {#isUserInMeeting}
@@ -184,7 +184,7 @@
   + meetID ------ 会议id
   + cookie ------ 自定义数据(在回调时，回传给调用者)
 
->响应事件 stopMeetingRslt   会议被他人结束时的回调事件 meetingStopped
+>响应事件[stopMeetingRslt](#stopMeetingRslt),会议被他人结束时的回调事件[meetingStopped](#meetingStopped)
 
 <!-- 13 -->
 ### <font color="#0099cc">离开会议</font> {#exitMeeting}
@@ -199,7 +199,7 @@
 
 - **参数**:无
 
->他人离开会议的回调事件userLeftMeeting
+>他人离开会议的回调事件[userLeftMeeting](#userLeftMeeting)
 
 <!-- 14 -->
 ### <font color="#0099cc">获取所有用户的信息</font> {#getAllMembers}
@@ -210,7 +210,7 @@
 
 - **功能**:获取所有用户的信息
 
-- **返回值**:json格式的字符串,详见MembersObj说明
+- **返回值**:json格式的字符串,详见[MembersObj](ObjectstructureDing.md#MembersObj)说明
 
 - **参数**:无
 
@@ -223,7 +223,7 @@
 
 - **功能**:获取某个用户的信息
 
-- **返回值**:json格式的字符串,详见MemberObj说明
+- **返回值**:json格式的字符串,详见[MemberObj](ObjectstructureDing.md#MemberObj)说明
 
 - **参数**:
  + userID ------ 用户ID 
@@ -243,7 +243,7 @@
  + userID ------ 用户ID
 
 <!-- 17 -->
-### <font color="#0099cc">获取系统上的麦克风列表</font> {#getAudioMicNames }
+### <font color="#0099cc">获取系统上的麦克风列表</font> {#getAudioMicNames}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAudioMicNames ()</p>
 
@@ -277,7 +277,7 @@
 
 - **功能**:获取音频参数
 
-- **返回值**:json格式的字符串,详见AudioCfgObj说明
+- **返回值**:json格式的字符串,详见[AudioCfgObj](ObjectstructureDing.md#AudioCfgObj)说明
 
 - **参数**:无
 
@@ -293,7 +293,7 @@
 - **返回值**:无
 
 - **参数**:
- + json ------ json格式的字符串,详见AudioCfgObj说明
+ + json ------ json格式的字符串,详见[AudioCfgObj](ObjectstructureDing.md#AudioCfgObj)说明
 
 <!-- 21 -->
 ### <font color="#0099cc">获取用户说话声音大小</font> {#getMicEnergy}
@@ -460,7 +460,7 @@
  + userID ------ 用户ID
  + videoID ------ 摄像头ID
 
->videoID，应该从getAllVideoInfo返回值中获取
+>videoID，应该从[getAllVideoInfo](#getAllVideoInfo)返回值中获取
 
 <!-- 33 -->
 ### <font color="#0099cc">获取指定用户的默认摄像头</font> {#getDefaultVideo}
@@ -508,7 +508,7 @@
  + bEnable ------ bEnable: 1表示开启，0表示关闭
 
 <!-- 35 -->
-### <font color="#0099cc">获取用户所有的摄像头信息</font> {#getAllVideoInfo }
+### <font color="#0099cc">获取用户所有的摄像头信息</font> {#getAllVideoInfo}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getAllVideoInfo ()</p>
 
@@ -522,7 +522,7 @@
  + userID ------ 用户ID
 
 <!-- 36 -->
-### <font color="#0099cc">获取会议内所有可观看的摄像头</font> {#getWatchableVideos }
+### <font color="#0099cc">获取会议内所有可观看的摄像头</font> {#getWatchableVideos}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getWatchableVideos ()</p>
 
@@ -535,7 +535,7 @@
 - **参数**:无
 
 <!-- 37 -->
-### <font color="#0099cc">将图片资源设置给sdk</font> {#setPicResource }
+### <font color="#0099cc">将图片资源设置给sdk</font> {#setPicResource}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setPicResource ()</p>
 
@@ -550,7 +550,7 @@
  + jsonVal ------ 资源内容，json格式，详见[PicResourceObj](ObjectstructureDing.md#PicResourceObj)说明。（注：如果jsonVal为空串，代表移除资源。）
 
 <!-- 38 -->
-### <font color="#0099cc">获取当前屏幕共享配置</font> {#getScreenShareCfg }
+### <font color="#0099cc">获取当前屏幕共享配置</font> {#getScreenShareCfg}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getScreenShareCfg ()</p>
 
@@ -563,7 +563,7 @@
 - **参数**:无
 
 <!-- 39 -->
-### <font color="#0099cc">设置当前屏幕共享配置</font> {#setScreenShareCfg }
+### <font color="#0099cc">设置当前屏幕共享配置</font> {#setScreenShareCfg}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setScreenShareCfg ()</p>
 
@@ -576,7 +576,7 @@
 - **参数**:json格式的字符串,详见[ScreenShareCfgObj](ObjectstructureDing.md#ScreenShareCfgObj)说明
 
 <!-- 40 -->
-### <font color="#0099cc">开启屏幕共享</font> {#startScreenShare }
+### <font color="#0099cc">开启屏幕共享</font> {#startScreenShare}
 
 <p style="background:#f7f7f7;color:#718c00">方法 startScreenShare ()</p>
 
@@ -591,7 +591,7 @@
 >响应事件startScreenShareRslt
 
 <!-- 41 -->
-### <font color="#0099cc">停止屏幕共享</font> {#stopScreenShare }
+### <font color="#0099cc">停止屏幕共享</font> {#stopScreenShare}
 
 <p style="background:#f7f7f7;color:#718c00">方法 stopScreenShare ()</p>
 
@@ -606,7 +606,7 @@
 >响应事件stopScreenShareRslt
 
 <!-- 42 -->
-### <font color="#0099cc">获取屏幕共享解码图像</font> {#getShareScreenDecodeImg }
+### <font color="#0099cc">获取屏幕共享解码图像</font> {#getShareScreenDecodeImg}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getShareScreenDecodeImg ()</p>
 
@@ -619,7 +619,7 @@
 - **参数**:无
 
 <!-- 43 -->
-### <font color="#0099cc">设置自定义的抓屏图像数据</font> {#setCustomizeScreenImg }
+### <font color="#0099cc">设置自定义的抓屏图像数据</font> {#setCustomizeScreenImg}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setCustomizeScreenImg ()</p>
 
@@ -638,7 +638,7 @@
 >当前只支持VFMT_ARGB32格式；如果在收到notiyCatchScreen事件时，暂当前无图像可送时，可送空数据进去(width=0, height=0, dat为空)
 
 <!-- 44 -->
-### <font color="#0099cc">设置要录制的视频</font> {#setRecordVideos }
+### <font color="#0099cc">设置要录制的视频</font> {#setRecordVideos}
 
 <p style="background:#f7f7f7;color:#718c00">方法 setRecordVideos ()</p>
 
@@ -651,7 +651,7 @@
 - **参数**: json格式的字符串,详见[RecordVideosObj](ObjectstructureDing.md#RecordVideosObj)说明(录制过程中配置有效)
 
 <!-- 45 -->
-### <font color="#0099cc">开启录制</font> {#startRecording }
+### <font color="#0099cc">开启录制</font> {#startRecording}
 
 <p style="background:#f7f7f7;color:#718c00">方法 startRecording ()</p>
 
@@ -664,7 +664,7 @@
 - **参数**:json 录制参数,json格式的字符串,详见[RecordCfgObj](ObjectstructureDing.md#RecordCfgObj)说明
 
 <!-- 46 -->
-### <font color="#0099cc">停止录制</font> {#stopRecording }
+### <font color="#0099cc">停止录制</font> {#stopRecording}
 
 <p style="background:#f7f7f7;color:#718c00">方法 stopRecording ()</p>
 
@@ -677,7 +677,7 @@
 - **参数**:无 
 
 <!-- 47 -->
-### <font color="#0099cc">开启录制</font> {#getRecFileSize }
+### <font color="#0099cc">开启录制</font> {#getRecFileSize}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getRecFileSize ()</p>
 
@@ -690,7 +690,7 @@
 - **参数**:无
 
 <!-- 48 -->
-### <font color="#0099cc">得到录制的时长</font> {#getRecDuration }
+### <font color="#0099cc">得到录制的时长</font> {#getRecDuration}
 
 <p style="background:#f7f7f7;color:#718c00">方法 getRecDuration ()</p>
 
@@ -1613,9 +1613,9 @@
  + sdkErr ------ 错误信息,数值参考[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 <!-- 109 -->
-### <font color="#0099cc">录制状态更改通知</font> {#recordErr}
+### <font color="#0099cc">录制状态更改通知</font> {#recordStateChanged}
 
-<p style="background:#f7f7f7;color:#718c00">事件 recordErr</p>
+<p style="background:#f7f7f7;color:#718c00">事件 recordStateChanged</p>
 
 >void recordStateChanged(int state)	
 
@@ -1983,7 +1983,7 @@
  + state ------ 状态 0 未上传 1 上传中 2已上传 3 上传失败
 
 <!-- 137 -->
-### <font color="#0099cc">SDK通知录制文件上传进度</font> {#notifyRecordFileUploadProgress }
+### <font color="#0099cc">SDK通知录制文件上传进度</font> {#notifyRecordFileUploadProgress}
 
 <p style="background:#f7f7f7;color:#718c00">事件 notifyRecordFileUploadProgress</p>
 
@@ -1996,7 +1996,7 @@
  + percent ------ 进度0-100 
 
 <!-- 138 -->
-### <font color="#0099cc">SDK通知影音文件打开</font> {#notifyMediaOpened }
+### <font color="#0099cc">SDK通知影音文件打开</font> {#notifyMediaOpened}
 
 <p style="background:#f7f7f7;color:#718c00">事件 notifyMediaOpened</p>
 
@@ -2024,7 +2024,7 @@
 <!-- 140 -->
 ### <font color="#0099cc">SDK通知影音播放停止</font> {#notifyMediaStop}
 
-<p style="background:#f7f7f7;color:#718c00">事件 notifyMediaStops</p>
+<p style="background:#f7f7f7;color:#718c00">事件 notifyMediaStop</p>
 
 >void notifyMediaStop(string userid, int reason)
 
@@ -2102,11 +2102,11 @@
  + cookie ------ 自定义用户数据
 
 <!-- 146 -->
-### <font color="#0099cc">取消第3方呼叫操作结果</font> {#clientCancelInvite}
+### <font color="#0099cc">取消第3方呼叫操作结果</font> {#clientCancelInviteRslt}
 
-<p style="background:#f7f7f7;color:#718c00">事件 clientCancelInvite</p>
+<p style="background:#f7f7f7;color:#718c00">事件 clientCancelInviteRslt</p>
 
->void clientCancelInvite(string inviteID, int sdkErr, string cookie)
+>void clientCancelInviteRslt(string inviteID, int sdkErr, string cookie)
 
 - **功能**:取消第3方呼叫操作结果  
 
