@@ -33,13 +33,9 @@
     {
         //初始化
         //"CLOUDROOM"为向云屋科技申请的代理商ID
-        //g_location_dir为路径
-        var init = CRVideo_Init("CLOUDROOM", g_location_dir);
         
-
-        //确定初始化
-        g_init=true;
-
+        var init = CRVideo_Init("CLOUDROOM", '路径');
+        
         //初始化失败会返回对应的错误码
         if(init == CRVideo_WEB_OCX_NOTINSTALLED){
             
@@ -74,7 +70,7 @@
         cr_account= $("#login_cpyname").val() ||"demo@cloudroom.com";
 
         //md5加密
-        cr_psw = md5($("#login_psd").val()) || "e10adc3949ba59abbe56e057f20f883e";
+        cr_psw = md5($("#login_psd").val()) || "md5加密后的密码";
 
         //昵称
         g_nickname = uuid(32,16)
@@ -407,28 +403,12 @@
         CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
 
             if(g_userID == userID){
-                /**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
+                [视频状态](Constant.md#VSTATUS)/**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
                 if(newStatus !=CRVideo_VSTATUS.VOPEN && newStatus !=CRVideo_VSTATUS.VOPENING){
                     CRVideo_OpenVideo(g_userID);
                 }
             }
         }
-        /* 视频状态
-        * @enum { number }
-        */
-            CRVideo_VSTATUS = 
-            {
-            /**视频状态未知*/
-            VUNKNOWN:0,
-            /**没有视频设备*/
-            VNULL:1,
-            /**视频处于关闭状态（软开关）*/
-            VCLOSE:2,
-            /**视频处于打开状态（软开关）*/
-            VOPEN:3,
-            /**向服务器发送打开消息中	*/
-            VOPENING:4,
-	}
 ```
 
 #### 3.设置麦克风和扬声器音量 {#Volume}
@@ -523,27 +503,9 @@
 * 相关结构定义请参考 [录制内容类型](Constant.md#REC_VCONTENT_TYPE)，[录制文件配置](json.md#RecordCfgObj)
 
 ```cs
-        //定义录制文件参数
-        var cfg = {}；
-        var date = new Date();
-        var year = date.getFullYear();
-        var mouth = date.getMonth()+1;
-        var day =date.getDate();
-        var hour = date.getHours();
-        var minute = date.getMinutes();
-        var second = date.getSeconds();
-        cfg.filePathName = year+'-'+mouth+'-'+day+'-'+hour+'-'+minute+'-'+second+'.mp4';;
-        cfg.recordWidth = 1280; //宽度
-        cfg.recordHeight = 720; //高度
-        cfg.frameRate = 15;     //帧率
-        cfg.bitRate = 1000000;  //码率
-        cfg.defaultQP = 24;     //清晰度
-        cfg.recDataType = recDataType; //录制内容
+        /
         //开始录制
         CRVideo_StartRecordIng(cfg)
-
-        //开始录制后，更新录制配置
-        updateRecord(); //上方自定义函数
 ```
 
 ```cs

@@ -37,7 +37,7 @@
 |boardPageNo	|number|	白板的页序号(0为第一页)|
 |element|	string	|图元信息，参见json格式之[BoardElementObj](json.md#BoardElementObj)|
    
->其他参会者会收到：[notifyAddBoardElement](callback.md#CRVideo_NotifyAddBoardElement)事件;同时后台会保存图元，新入会者会在[notifyInitBoardPageDat](callback.md#notifyInitBoardPageDat)中得到这些图元
+>其他参会者会收到：[CRVideo_NotifyAddBoardElement](callback.md#CRVideo_NotifyAddBoardElement)事件;同时后台会保存图元，新入会者会在[CRVideo_NotifyInitBoardPageDat](callback.md#CRVideo_NotifyInitBoardPageDat)中得到这些图元
 
 ####第三方录制文件调用此接口后可进行本地回放和上传到服务器record下 {#CRVideo_AddFileToRecordMgr}
 
@@ -115,7 +115,7 @@
 |inviteID	|string|	邀请标识码（邀请ID|
 |cookie|	string|	自定义数据 (在回调时，回传给调用者)|
 
->结果事件[clientCancelInviteRslt](callback.md#CRVideo_ClientCancelInviteRslt)，根据sdkErr判断是否成功
+>结果事件[CRVideo_ClientCancelInviteRslt](callback.md#CRVideo_ClientCancelInviteRslt)，根据sdkErr判断是否成功
 
 ####2方通话时呼叫第3方 {#CRVideo_ClientInvite}
 
@@ -141,7 +141,7 @@
 |:-------- |:-----------|:----------|
 |boardID	|string	|白板标识|
 
->其他参会者将收到[notifyCloseBoard](callback.md#CRVideo_NotifyCreateBoard)事件；同时后台会移除对应白板的所有信息
+>其他参会者将收到[CRVideo_NotifyCloseBoard](callback.md#CRVideo_NotifyCloseBoard)事件；同时后台会移除对应白板的所有信息
 
 ####关闭自己的麦克风 {#CRVideo_CloseMic}
 
@@ -178,7 +178,7 @@
 |height|	number|	白板高度|
 |pageCount	|number|	白板内有多个页（一般空白板1页，文档白板为实际页数|
 
->其他参会者会收到：[notifyCreateBoard事件](callback.md#CRVideo_NotifyCreateBoard);同时后台会记录下白板数据，新入会者会收到：[notifyInitBoards](callback.md#CRVideo_NotifyInitBoards)事件.注意：创建完白板后，一定要及尽快调用[CRVideo_InitBoardPageDat](#CRVideo_InitBoardPageDat)初始化各页数据
+>其他参会者会收到：[CRVideo_NotifyCreateBoard](callback.md#CRVideo_NotifyCreateBoard)事件;同时后台会记录下白板数据，新入会者会收到：[CRVideo_NotifyInitBoards](callback.md#CRVideo_NotifyInitBoards)事件.注意：创建完白板后，一定要及尽快调用[CRVideo_InitBoardPageDat](#CRVideo_InitBoardPageDat)初始化各页数据
 
 ####创建一个符合云层要求的图元id {#CRVideo_CreateElementID}
 
@@ -232,7 +232,7 @@
 |boardPageNo	|number|	白板的页序号(0为第一页)|
 |elementIDs|	string|	图元id列表，多值时，以“;”分隔，如：“id1;id2”|
 
->说明：其他参会者会收到：[notifyDelBoardElement](callback.md#CRVideo_NotifyDelBoardElement)事件;同时后台会移除这些图元，新入会者会在[notifyInitBoardPageDat](callback.md#CRVideo_NotifyInitBoardPageDat)中将不包含这些图元
+>说明：其他参会者会收到：[CRVideo_NotifyDelBoardElement](callback.md#CRVideo_NotifyDelBoardElement)事件;同时后台会移除这些图元，新入会者会在[CRVideo_NotifyInitBoardPageDat](callback.md#CRVideo_NotifyInitBoardPageDat)中将不包含这些图元
 
 ####删除网盘文件 {#CRVideo_Deletenetdiskfile}
 
@@ -476,7 +476,7 @@
 
 - **返回值**:无
 
->即使用[makeNetDiskFileID](#CRVideo_MakeNetDiskFileID)中参数fileType为0的生成的fileID上传的文件
+>即使用[CRVideo_MakeNetDiskFileID](#CRVideo_MakeNetDiskFileID)中参数fileType为0的生成的fileID上传的文件
 
 ####获取会议网盘的容量信息 {#CRVideo_GetNetDiskSummary}
 
@@ -484,7 +484,7 @@
 
 - **返回值**:无
 
->调用结果请见事件[getNetDiskSummaryRslt](callback.md#CRVideo_GetNetDiskSummaryRslt)
+>调用结果请见事件[CRVideo_GetNetDiskSummaryRslt](callback.md#CRVideo_GetNetDiskSummaryRslt)
 
 ####获取队列状态 {#CRVideo_GetQueueStatus}
 
@@ -730,7 +730,7 @@
 | boardPageNo	| number| 	白板的页序号(0为第一页)| 
 | element	 |string| 	图元信息，参见json格式之BoardElementObj|
 
->说明：其他参会者会收到：[notifyModifyBoardElement](callback.md#CRVideo_notifyModifyBoardElement)事件;同时后台会覆盖对应图元的数据，新入会者会在[notifyInitBoardPageDat](callback.md#CRVideo_notifyInitBoardPageDat)中得到这些图元
+>说明：其他参会者会收到：[CRVideo_notifyModifyBoardElement](callback.md#CRVideo_notifyModifyBoardElement)事件;同时后台会覆盖对应图元的数据，新入会者会在[CRVideo_notifyInitBoardPageDat](callback.md#CRVideo_notifyInitBoardPageDat)中得到这些图元
 
 ####打开自己的麦克风 {#CRVideo_OpenMic}
 
@@ -1259,7 +1259,7 @@
 |:-------- |:-----------|:----------|
 |cookie |	number |自定义数据(在回调时，回传给调用者)，不需要时传空字符串| 
 
->企业下所有用户状态有变化时(包括呼叫会议状态、免打扰状态)，都会收到通知 开启后，用户量越大消息量越大，所以请按需开启 在[startUserStatusNotify](#CRVideo_StartUserStatusNotify)前，应该先通过[getUserStatus](#CRVideo_GetUserStatus)获取所有用户状态
+>企业下所有用户状态有变化时(包括呼叫会议状态、免打扰状态)，都会收到通知 开启后，用户量越大消息量越大，所以请按需开启 在[CRVideo_StartUserStatusNotify](#CRVideo_StartUserStatusNotify)前，应该先通过[CRVideo_GetUserStatus](#CRVideo_GetUserStatus)获取所有用户状态
 
 ####停止获取语音pcm数据 {#CRVideo_StopGetAudioPCM}
 
