@@ -24,9 +24,9 @@
 
 ### 1. [初始化SDK]{#init}
 
-> 初始化是整个SDK的使用基础，通常在程序启动的时候进行初始化([init](BaseInterface.md#init))，退出的时候进行反初始化([uninit](BaseInterface.md#init))，整个程序的生命周期中只进行一次初始化和反初始化。
+> 初始化是整个SDK的使用基础，通常在程序启动的时候进行初始化([CRVideo_Init](methods.md#CRVideo_Init))，退出的时候进行反初始化([CRVideo_Uninit](methods.md#CRVideo_Uninit))，整个程序的生命周期中只进行一次初始化和反初始化。
 >
-> 相关API参考请见 [初始化/反初始化](BaseInterface.md#init)
+> 相关API参考请见 [初始化/反初始化](methods.md#CRVideo_Init)
 
     SDK内部的组件多为单例组件，整个程序中只能有一个实例，比如“基础组件”，“会议管理组件”，“视频会议组件”，具体请参见各个组件说明。
 
@@ -64,7 +64,7 @@
 
 > 设置视频服务器地址，使用云屋授权账号和自定义用户编号登录
 >
-> 相关API请参考 [服务器地址](BaseInterface.md#serverAddr)，[登录/注销](MeetingMrg.md#login)
+> 相关API请参考 [服务器地址](methods.md#CRVideo_SetServerAddr)，[登录/注销](methods.md#CRVideo_Login)
 
     {     
         //服务器名字
@@ -104,7 +104,7 @@
 
 > 输入会议标题，创建一个没有密码的视频会话
 >
-> 相关API请参考 [创建/销毁视频会议](MeetingMrg.md#createMeeting)
+> 相关API请参考 [创建/销毁视频会议](methods.md#CRVideo_CreateMeeting)
 
     {
         //创建会议
@@ -136,7 +136,7 @@
 
 > 用创建成功的会话信息（会议ID和密码）进入会话，其他用户也是利用此会话信息进入该会话。
 >
-> 相关API请参考 [进入/退出/结束会议](VideoMeeting.md#enterMeeting)
+> 相关API请参考 [进入/退出/结束会议](methods.md#CRVideo_EnterMeeting)
 
       {  
           //进入会议
@@ -162,9 +162,9 @@
 ### 5. [打开麦克风/摄像头]{#audio}
 
 > 进入会话成功后，配置并打开自己的麦克风和摄像头
->
-> 相关API请参考 [麦克风/扬声器列表](VideoMeeting.md#getAudioMicNames)，[麦克风设置](VideoMeeting.md#getAudioCfg)，[摄像头设备列表](VideoMeeting.md#getAllVideoInfo)，[视频设置](VideoMeeting.md#setVideoCfg)，[会议内可观看摄像头列表](meeting.md#getWatchableVideos)，[开/关摄像头](VideoMeeting.md#openVideo)，[视频状态](VideoMeeting.md#getVideoStatus)，[获取/设置默认视频](VideoMeeting.md#setDefaultVideo)，[成员视频UI显示组件](VideoUi.md#videoui)  
-> 相关结构定义请参考 [音频配置](TypeDefinitions.md#AudioCfgObj)，[用户视频信息](TypeDefinitions.md#VideoInfoObj)，[用户视频信息列表](TypeDefinitions.md#VideoInfosObj)
+
+> 相关API请参考 [麦克风/扬声器列表](methods.md#CRVideo_GetAudioMicNames)，[麦克风设置](methods.md#CRVideo_GetAudioCfg)，[摄像头设备列表](methods.md#CRVideo_GetAllVideoInfo)，[视频设置](methods.md#CRVideo_SetVideoCfg)，[会议内可观看摄像头列表](methods.md#CRVideo_GetWatchableVideos)，[开/关摄像头](methods.md#CRVideo_OpenVideo)，[视频状态](methods.md#CRVideo_GetVideoStatus)，[获取/设置默认视频](methods.md#CRVideo_SetDefaultVideo) 
+> 相关结构定义请参考 [音频配置](json.md#AudioCfgObj)，[用户视频信息](json.md#VideoInfoObj)，[用户视频信息列表](json.md#VideoInfosObj)
 
     {
         CRVideo_SetEnableMutiVideo(g_userID,true);   // 是否可以打开更多的摄像头 传用户ID，bool
@@ -266,12 +266,11 @@
 
 ### 6. [有其他人进入会话]{#userEnter}
 
-> 其他人入会的步骤也是上述的[4、5]步，拿到会议信息后进入到他人创建的会议，此步骤的目的是为了实时关注比自己晚进来的人并刷新摄像头画面显示；如果想要获取之前进来的人，可以调用 [getAllMembers](VideoMeeting.md#getAllMembers) 获取会议成员列表，也可以调用 [getWatchableVideos](VideoMeeting.md#getWatchableVideos) 获取所有可以观看的摄像头列表进行加载。
->
-> 用[成员视频UI显示组件](VideoUi.md#videoui)创建多个视频窗口，来显示进入会议内的成员。
->
-> 相关API请参考 [有人进入/离开会议通知](VideoMeeting.md#userEnterMeeting)，[成员视频UI显示组件](VideoUi.md#videoui)，[会议内可观看摄像头列表](VideoMeeting.md#getWatchableVideos)  
-> 相关结构定义请参考 [用户视频信息列表](TypeDefinitions.md#VideoInfoObjs)
+> 其他人入会的步骤也是上述的[4、5]步，拿到会议信息后进入到他人创建的会议，此步骤的目的是为了实时关注比自己晚进来的人并刷新摄像头画面显示；如果想要获取之前进来的人，可以调用 [CRVideo_GetAllMembers](methods.md#CRVideo_GetAllMembers) 获取会议成员列表，也可以调用 [CRVideo_GetWatchableVideos](methods.md#CRVideo_GetWatchableVideos) 获取所有可以观看的摄像头列表进行加载。
+
+
+> 相关API请参考 [有人进入/离开会议通知](callback.md#CRVideo_UserEnterMeeting)，[会议内可观看摄像头列表](methods.md#CRVideo_GetWatchableVideos)  
+> 相关结构定义请参考 [用户视频信息列表](json.md#VideoInfosObj)
 
     {
         * 获取会议内所有可观看的摄像头
@@ -298,15 +297,13 @@
                 //第三方离开的相关操作
             }
             
-> **至此，一个简单的音视频会话就建立起来了。**       
-
-### 7. [退出会话]{#exit}
+> **至此，一个简单的音视频会话就建立起来了。**  
 
 ### 7.退出会话 {#exit}
 
 > 在未注销的情况下可反复的进入退出同一个会议。
 >
-> 相关API请参考 [进入/退出/结束会议](VideoMeeting.md#enterMeeting)
+> 相关API请参考 [进入/退出/结束会议](methods.md#CRVideo_EnterMeeting)
 
     {
     /**
@@ -330,7 +327,7 @@
 
 > 可重复的登录和注销。
 >
-> 相关API请参考 [进入/退出/结束会议](VideoMeeting.md#enterMeeting)，[登录/注销](MeetingMrg.md#login)，[初始化/反初始化](BaseInterface.md#init)
+> 相关API请参考 [进入/退出/结束会议](methods.md#CRVideo_EnterMeeting)，[登录/注销](methods.md#CRVideo_Login)，[初始化/反初始化](methods.md#CRVideo_Init)
 
     {
         //注销本次登陆
@@ -341,7 +338,7 @@
 
 > 执行反初始化后SDK功能不再可用。
 >
-> 相关API请参考 [初始化/反初始化](cloudroomsdk.md#init)
+> 相关API请参考 [初始化/反初始化](methods.md#CRVideo_Init)
 
      {
         //反初始化
@@ -365,7 +362,7 @@
 
     通过传入参数来控制开关的对象，如果是本地机器上的麦克风，需要传入自己的ID，如果要远程开关他人麦克风，则传入对方的ID
 
-* 相关API请参考 [麦克风、扬声器设备的获取](#audio)，[开/关麦克风](VideoMeeting.md#openMic)
+* 相关API请参考 [麦克风、扬声器设备的获取](methods.md#CRVideo_GetAudioSpkNames)，[开/关麦克风](methods.md#CRVideo_OpenMic)
 
 ```cs
     /**
@@ -393,7 +390,7 @@
     2. 自己的麦克风被他人开关也会收到该回调函数
     3. 也可主动获取麦克风状态，一般用于各种判断
 
-* 相关API请参考 [麦克风状态变化](VideoMeeting.md#audioStatusChanged)  
+* 相关API请参考 [麦克风状态变化](callback.md#CRVideo_AudioStatusChanged)  
 * 相关结构定义请参考 [麦克风状态](Constant.md#ASTATUS)
 
 ```cs
@@ -436,7 +433,7 @@
 
 #### 3.设置麦克风和扬声器音量 {#Volume}
 
-* 相关API请参考 [麦克风音量](VideoMeeting.md#micVolume),[扬声器音量](VideoMeeting.md#speakerVolume)
+* 相关API请参考 [麦克风音量](methods.md#CRVideo_SetMicVolume),[扬声器音量](methods.md#CRVideo_SetSpeakerVolume)
 
 ````cs
      /**
@@ -460,7 +457,7 @@
 
     可用来实时展示当前麦克风采集到声音的大小
 
-* 相关API请参考 [麦克风声音变化](VideoMeeting.md#micEnergyUpdate)
+* 相关API请参考 [麦克风声音变化](callback.md#CRVideo_MicEnergyUpdate)
 
 ```cs
        //麦克风音量波动
@@ -491,8 +488,8 @@
 
 #### 1.录制内容配置 {#setRecordVideos}
 
-* 相关API请参考 [录制内容配置](VideoMeeting.md#setRecordVideos)  
-* 相关结构定义请参考 [录制内容配置](TypeDefinitions.md#RecordVideosObj)
+* 相关API请参考 [录制内容配置](methods.md#CRVideo_SetRecordVideos)  
+* 相关结构定义请参考 [录制内容配置](json.md#RecordVideosObj)
 
 ```cs
 
@@ -522,8 +519,8 @@
     2. 然后更新录制内容配置
     3. 在录制过程中可以多次更新录制配置，从而变更录制内容
 
-* 相关API请参考 [开始/停止录制](VideoMeeting.md#startRecording)  
-* 相关结构定义请参考 [录制内容类型](Constant.md#REC_VCONTENT_TYPE)，[录制文件配置](TypeDefinitions.md#RecordCfgObj)
+* 相关API请参考 [开始/停止录制](methods.md#CRVideo_StartRecordIng)  
+* 相关结构定义请参考 [录制内容类型](Constant.md#REC_VCONTENT_TYPE)，[录制文件配置](json.md#RecordCfgObj)
 
 ```cs
         //定义录制文件参数
@@ -556,8 +553,8 @@
 
 #### 3.录制文件的大小、时长、状态 {#getRecFileSize}
 
-* 相关API请参考[录制文件大小](VideoMeeting.md#getRecFileSize)，[时长](VideoMeeting.md#getRecDuration)，[录制状态变化通知](VideoMeeting.md#recordStateChanged)  
-* 相关结构定义请参考 [错误码定义](Constant.md#CRVIDEOSDK_ERR_DEF), [录制状态](Constant.md#RECORD_STATE)，[通知录制文件状态变化](VideoMeeting.md#notifyRecordFileStateChanged)
+* 相关API请参考[录制文件大小](methods.md#CRVideo_GetRecFileSize)，[时长](methods.md#CRVideo_GetRecDuration)，[录制状态变化通知](callback.md#CRVideo_MicEnergyUpdate)  
+* 相关结构定义请参考 [错误码定义](Constant.md#CRVIDEOSDK_ERR_DEF), [录制状态](Constant.md#RECORD_STATE)，[通知录制文件状态变化](callback.md#CRVideo_NotifyRecordFileStateChanged)
 
 ```cs
     /**
@@ -594,7 +591,7 @@
 
     启动录制时调用，则本次录制是否加密本地录制文件，也可全局配置，这样每一次录制都是加密的。
 
-* 相关API请参考 [设置录制文件是否加密](VideoMeeting.md#setRecordFileEncrypt)
+* 相关API请参考 [设置录制文件是否加密](methods.md#CRVideo_SetRecordFileEncrypt)
 
 ```cs
     /**
@@ -607,7 +604,7 @@
 
 #### 5.录制文件列表 {#getAllRecordFiles}
 
-* 相关API请参考 [录制文件列表](VideoMeeting.md#getAllRecordFiles)  
+* 相关API请参考 [录制文件列表](methods.md#CRVideo_GetAllRecordFiles)  
 * 相关结构定义请参考 [录制文件列表](json.md#RecordFilesObj)
 
 ```cs
@@ -623,7 +620,7 @@
     1. 添加录制文件到录制文件列表，这样此文件便可上传和回放
     2. 移除文件时本地文件会被删掉，正在上传的文件会被取消上传，已经上传的文件不受影响
 
-* 相关API请参考 [录制列表添加/删除文件](VideoMeeting.md#addFileToRecordMgr)
+* 相关API请参考 [录制列表添加/删除文件](methods.md#CRVideo_AddFileToRecordMgr)
 
 ```cs
     /**
@@ -650,8 +647,8 @@
 
     参数是绝对路径文件名
 
-* 相关API请参考 [上传/取消上传录制文件](VideoMeeting.md#uploadRecordFile)，[通知录制文件上传进度](VideoMeeting.md#notifyRecordFileUploadProgress)，[通知录制文件状态变化](VideoMeeting.md#notifyRecordFileStateChanged)  
-* 相关结构定义请参考 [录制文件列表](TypeDefinitions.md#RecordFilesObj)
+* 相关API请参考 [上传/取消上传录制文件](methods.md#CRVideo_UploadRecordFile)，[通知录制文件上传进度](callback.md#CRVideo_NotifyRecordFileUploadProgress)，[通知录制文件状态变化](callback.md#CRVideo_NotifyRecordFileStateChanged)  
+* 相关结构定义请参考 [录制文件列表](json.md#RecordFilesObj)
 
 ```cs
         // /上传文件 filename - 文件名，全路径
@@ -683,7 +680,7 @@
 
     此接口需要配合影音共享UI显示组件或者影音播放相关的接口进行画面和声音展示
 
-> 相关API请参考 [回放录制文件](VideoMeeting.md#playbackRecordFile)
+> 相关API请参考 [回放录制文件](methods.md#CRVideo_PlaybackRecordFile)
 
 ```cs
         //开始回放 fileName 文件名
@@ -699,8 +696,8 @@
 
     获取网盘的使用情况和已经上传到服务器的文件列表
 
-* 相关API请参考 [会议网盘容量](VideoMeeting.md#getNetDiskSummary)，[获取网盘文件列表](VideoMeeting.md#getNetDiskFileList)  
-* 相关结构定义请参考 [网盘文件](TypeDefinitions.md#NetFileObj)，[网盘文件列表](TypeDefinitions.md#NetFileObjs)
+* 相关API请参考 [会议网盘容量](methods.md#CRVideo_GetNetDiskSummary)，[获取网盘文件列表](methods.md#CRVideo_GetNetDiskFileList)  
+* 相关结构定义请参考 [网盘文件](json.md#NetFileObj)，[网盘文件列表](json.md#NetFileObjs)
 
 ```cs
     /**
@@ -744,7 +741,7 @@
     1.上传、下载、删除、暂停（上传下载）、取消操作
     2.上传时需要调用SDK接口生成网盘文件ID
 
-* 相关API请参考 [生成网盘文件ID](VideoMeeting.md#makeNetDiskFileID)，[上传/下载/删除网盘文件](VideoMeeting.md#uploadNetDiskFile)，[取消网盘文件操作](VideoMeeting.md#cancleNetDiskFile)，[暂停/继续网盘文件传输](VideoMeeting.md#setNetDiskTransportPause)，[获取网盘容量信息结果](VideoMeeting.md#getNetDiskSummaryRslt)，[获取网盘文件列表结果](VideoMeeting.md#getNetDiskFileListRslt)，[删除网盘文件结果](VideoMeeting.md#notifyNetDiskFileDeleteRslt)，[网盘容量不足通知](VideoMeeting.md#notifyNetDiskIsFull)，[通知网盘文件传输进度](VideoMeeting.md#notifyNetDiskTransforProgress)
+* 相关API请参考 [生成网盘文件ID](methods.md#CRVideo_MakeNetDiskFileID)，[上传/下载/删除网盘文件](methods.md#CRVideo_Uploadnetdiskfile)，[取消网盘文件操作](methods.md#CRVideo_Canclenetdiskfile)，[暂停/继续网盘文件传输](methods.md#CRVideo_SetNetDiskTransportPause)，[获取网盘容量信息结果](callback.md#CRVideo_GetNetDiskSummaryRslt)，[获取网盘文件列表结果](callback.md#CRVideo_GetNetDiskFileListRslt)，[删除网盘文件结果](callback.md#CRVideo_NotifyNetDiskFileDeleteRslt)，[网盘容量不足通知](callback.md#CRVideo_NotifyNetDiskIsFull)，[通知网盘文件传输进度](callback.md#CRVideo_NotifyNetDiskTransforProgress)
 
 ```cs
     /**
@@ -838,8 +835,8 @@
 
     使用接口启动共享，出现共享内容显示组件后，用组件上的功能开始标注和结束共享。
 
-* 相关API请参考 [屏幕共享配置](VideoMeeting.md#getScreenShareCfg)，[开始/停止屏幕共享](VideoMeeting.md#startScreenShare)，[屏幕共享状态](VideoMeeting.md#isScreenShareStarted)，[开始/停止屏幕共享操作结果](VideoMeeting.md#startScreenShareRslt)，[开始/停止屏幕共享通知](VideoMeeting.md#notifyScreenShareStarted)  
-* 相关结构定义请参考 [屏幕共享配置](TypeDefinitions.md#ScreenShareCfgObj)
+* 相关API请参考 [屏幕共享配置](methods.md#CRVideo_GetScreenShareCfg)，[开始/停止屏幕共享](methods.md#CRVideo_StartScreenShare)，[开始/停止屏幕共享操作结果](callback.md#CRVideo_StartScreenShareRslt)，[开始/停止屏幕共享通知](callback.md#CRVideo_NotifyScreenShareStarted)  
+* 相关结构定义请参考 [屏幕共享配置](json.md#ScreenShareCfgObj)
 
 ```cs
     /**
@@ -853,7 +850,7 @@
         * 操作完成则回调CRVideo_StartScreenShareRslt
         * @access public
         */	
-        CRVideo_StartScreenShare(public)
+        CRVideo_StartScreenShare()
 ```
 
 ```cs
@@ -861,7 +858,7 @@
         * 停止屏幕共享
         * @access public
         */	
-        CRVideo_StopScreenShare(public)
+        CRVideo_StopScreenShare()
 ```
 
 ```cs
@@ -910,7 +907,7 @@
 
     把共享区域的操作控制权限赋予某人，自己也可以获取他人赋予的操作权限
 
-* 相关API请参考 [赋予/收回远程屏幕控制权限](VideoMeeting.md#giveCtrlRight)，[通知赋予/收回屏幕共享操作权限](VideoMeeting.md#notifyGiveCtrlRight)
+* 相关API请参考 [赋予/收回远程屏幕控制权限](callback.md#CRVideo_NotifyGiveCtrlRight)，[通知赋予/收回屏幕共享操作权限](callback.md#CRVideo_NotifyReleaseCtrlRight)
 
 ```cs
 
@@ -921,7 +918,9 @@
         * @param {string} operId - 操作的用户ID
         * @param {string} targetId - 控制权限给予了谁
         */
-        CRVideo_NotifyGiveCtrlRight(operId,targetId)
+        CRVideo_NotifyGiveCtrlRight.callback=function(operId,targetId){
+
+        }
 ```
 
 ```cs
@@ -931,7 +930,9 @@
         * @param {string} operId - 操作的用户ID
         * @param {string} targetId - 收回了谁的控制权限
         */
-        CRVideo_NotifyReleaseCtrlRight(operId,targetId)
+        CRVideo_NotifyReleaseCtrlRight.callback=function(operId,targetId){
+
+        }
 ```
 
 ### 影音播放共享 {#media}
@@ -945,7 +946,7 @@
 
     此配置主要是为了定义共享播放时会议内其他人看到的效果
 
-* 相关API请参考 [影音播放配置](VideoMeeting.md#setMediaCfg )  
+* 相关API请参考 [影音播放配置](methods.md#CRVideo_SetMediacfg )  
 * 相关结构定义请参考 [视频尺寸定义](Constant.md#VIDEO_SHOW_SIZE)
 
 ```cs
@@ -962,7 +963,7 @@
     每次只能播放一个视频，当前播放需要先停止然后才能进行下一个视频播放；
     开始播放参数可控制此播放是只有自己可见还是会议内所有人可见。
 
-* 相关API请参考 [开始/暂停/停止影音播放](VideoMeeting.md#startPlayMedia)，[通知影音打开/播放/暂停/停止](VideoMeeting.md#notifyMediaOpened)，[通知更新影音播放进度](VideoMeeting.md#notifyPlayPosSetted)
+* 相关API请参考 [开始/暂停/停止影音播放](methods.md#CRVideo_StartPlayMedia)，[通知影音打开/播放/暂停/停止](callback.md#CRVideo_NotifyMediaOpened)，[通知更新影音播放进度](callback.md#CRVideo_NotifyPlayPosSetted)
 
 ```cs
     /**
@@ -995,7 +996,7 @@
 
     可以通过播放组件上的工具条拖动来调整播放进度，也可以用代码来设置播放的进度
 
-* 相关API请参考 [设置播放进度](VideoMeeting.md#setMediaPlayPos)
+* 相关API请参考 [设置播放进度](methods.md#CRVideo_SetMediaplaypos)
 
 ```cs
     /**
@@ -1008,8 +1009,8 @@
 
 #### 4.文件列表、播放信息、播放音量 {#list}
 
-* 相关API请参考 [影音文件列表](VideoMeeting.md#getAllFilesInMediaPath)，[影音播放信息](VideoMeeting.md#getMediaInfo)，[影音播放音量](VideoMeeting.md#mediaVolume)  
-* 相关结构定义请参考 [影音文件](TypeDefinitions.md#MediaInfoObj)
+* 相关API请参考 [影音文件列表](methods.md#CRVideo_GetAllFilesInMediaPath)，[影音播放信息](methods.md#CRVideo_Getmediainfo)，[影音播放音量](methods.md#CRVideo_SetSpeakerVolume)  
+* 相关结构定义请参考 [影音文件](json.md#MediaInfoObj)
 
 ```cs
     /**
@@ -1047,7 +1048,7 @@
 
 > 实现会话内文本聊天，如果需要更加丰富的聊天内容，可自己传输文本格式，并进行相关解析
 
-* 相关API请参考 [发送IM文本消息](VideoMeeting.md#sendIMmsg)，[通知收到IM消息](VideoMeeting.md#notifyIMmsg)
+* 相关API请参考 [发送IM文本消息](methods.md#CRVideo_SendIMmsg)，[通知收到IM消息](callback.md#CRVideo_NotifyIMmsg)
 
 ```cs
     /**
@@ -1093,8 +1094,8 @@
 
 > 获取会话内人员及相关信息，得到成员的userID后可以对其进行相关的远程音视频操作
 
-* 相关API请参考 [会议成员列表](VideoMeeting.md#getAllMembers)，[会议成员信息](VideoMeeting.md#getMemberInfo)  
-* 相关结构定义请参考 [会议成员](TypeDefinitions.md#MemberObj)
+* 相关API请参考 [会议成员列表](methods.md#CRVideo_GetAllMembers)，[会议成员信息](methods.md#CRVideo_GetMemberInfo)  
+* 相关结构定义请参考 [会议成员](json.md#MemberObj)
 
 ```cs
     
@@ -1122,7 +1123,7 @@
 
 > 用户会话内同步所有人的功能，包括视频墙、影音共享、屏幕共享、电子白板
 
-* 相关API请参考 [设置/获取会话内主功能页](VideoMeeting.md#switchToPage)，[会话内主功能页切换通知](VideoMeeting.md#notifySwitchToPage)  
+* 相关API请参考 [设置/获取会话内主功能页](methods.md#CRVideo_Switchtopage)，[会话内主功能页切换通知](callback.md#CRVideo_NotifySwitchToPage)  
 * 相关结构定义请参考 [主功能类型](Constant.md#MAIN_PAGE_TYPE)
 
 ```cs
@@ -1162,8 +1163,8 @@
 
     在登录成功后初始化队列数据
 
-* 相关API请参考 [初始化队列](Queue.md#initQueueDat)，[初始化队列结果](Queue.md#initQueueDatRslt)，[查询所有队列](Queue.md#getAllQueueInfo)  
-* 相关结构定义请参考 [会话信息](TypeDefinitions.md#SesssionObj)，[队列信息](TypeDefinitions.md#QueueObj)
+* 相关API请参考 [初始化队列](methods.md#CRVideo_InitQueueDat)，[初始化队列结果](callback.md#CRVideo_InitQueueDatRslt)，[查询所有队列](methods.md#CRVideo_GetAllQueueInfo)  
+* 相关结构定义请参考 [队列信息](TypeDefinitions.md#CRVideo_QueueInfo)
 
 ```cs
     
@@ -1200,8 +1201,8 @@
 
     坐席角色开始和停止服务队列，以及操作后队列状态的变化
 
-* 相关API请参考 [开始/停止服务队列](Queue.md#startService)，[开始/停止队列服务结果](Queue.md#startServiceRslt)  
-* 相关结构定义请参考 [队列状态](TypeDefinitions.md#QueueStatusObj)
+* 相关API请参考 [开始/停止服务队列](methods.md#CRVideo_StartService)，[开始/停止队列服务结果](callback.md#CRVideo_StartServiceRslt)  
+* 相关结构定义请参考 [队列状态](TypeDefinitions.md#CRVideo_QueStatus)
 
 ```cs
     
@@ -1287,7 +1288,7 @@
 
     在设置DND免打扰状下态，系统不再自动分配，需要手动申请用户
 
-* 相关API请参考 [免打扰](MeetingMrg.md#setDNDStatus)，[设置免打扰结果](MeetingMrg.md#setDNDStatusSuccess)，[请求分配用户](Queue.md#reqAssignUser)，[请求分配用户结果](Queue.md#reqAssignUserRslt)
+* 相关API请参考 [免打扰](methods.md#CRVideo_SetDNDStatus)，[设置免打扰结果](callback.md#CRVideo_SetDNDStatusSuccess)，[请求分配用户](methods.md#CRVideo_ReqAssignUser)，[请求分配用户结果](callback.md#CRVideo_ReqAssignUserRslt)
 
 ```cs
     /**
@@ -1328,7 +1329,7 @@
 
     系统自动分配的用户在坐席还未选择接受或拒绝时，系统可以撤回分配
 
-* 相关API请参考 [自动分配用户通知](Queue.md#autoAssignUser)，[接受/拒绝分配的用户](Queue.md#acceptAssignUser)，[自动分配用户被取消](Queue.md#cancelAssignUser)
+* 相关API请参考 [自动分配用户通知](callback.md#CRVideo_AutoAssignUser)，[接受/拒绝分配的用户](methods.md#CRVideo_AcceptAssignUser)，[自动分配用户被取消](callback.md#CRVideo_CancelAssignUser)
 
 ```cs
     /* 系统自动安排客户
@@ -1370,8 +1371,8 @@
 
     客户选择一个队列进行排队，每次只能排一个队列
 
-* 相关API请参考 [开始/停止排队](Queue.md#startQueuing)，[开始/停止排队操作结果](Queue.md#startQueuingRslt)，[队列状态变化](Queue.md#queueStatusChanged)，[排队信息变化](Queue.md#queuingInfoChanged)  
-* 相关结构定义请参考 [队列状态](TypeDefinitions.md#,  )，[排队信息](TypeDefinitions.md#QueuingObj)
+* 相关API请参考 [开始/停止排队](methods.md#CRVideo_StartQueuing)，[开始/停止排队操作结果](callback.md#CRVideo_StartQueuingRslt)，[队列状态变化](callback.md#CRVideo_QueueStatusChanged)，[排队信息变化](callback.md#CRVideo_QueuingInfoChanged)  
+* 相关结构定义请参考 [队列状态](TypeDefinitions.md#CRVideo_QueStatus )，[排队信息](TypeDefinitions.md#CRVideo_QueuingInfo)
 
 ```cs
     /**
@@ -1455,14 +1456,14 @@
 
 > 实现用户到用户的呼叫，以此来实现会话信息的分发以及相关信息的传递
 >
-> 1. [主叫](#call)
+> 1. [主叫](#call1)
 > 1. [被叫](#called)
 
-#### 1.主叫 {#call}
+#### 1.主叫 {#call1}
 
     呼叫发起方
 
-* 相关API请参考 [开始呼叫](MeetingMrg.md#call)，[挂断呼叫](MeetingMrg.md#hungupCall)，[开始呼叫结果](MeetingMrg.md#callSuccess)，[挂断呼叫结果](MeetingMrg.md#hungupCallSuccess)，[通知呼叫被对方接受/拒绝](MeetingMrg.md#notifyCallAccepted)
+* 相关API请参考 [开始呼叫](methods.md#CRVideo_Call)，[挂断呼叫](methods.md#CRVideo_HungupCall)，[开始呼叫结果](callback.md#CRVideo_CallSuccess)，[挂断呼叫结果](callback.md#CRVideo_CallFail)，[通知呼叫被对方接受/拒绝](callback.md#CRVideo_NotifyCallAccepted)
 
 ```cs
     /**
@@ -1544,7 +1545,7 @@
 
     被呼叫方
 
-* 相关API请参考 [通知有人呼入](MeetingMrg.md#notifyCallIn)，[接受/拒绝他人的呼叫](MeetingMrg.md#acceptCall)，[接受/拒绝他人呼叫结果](MeetingMrg.md#acceptCallSuccess)
+* 相关API请参考 [通知有人呼入](callback.md#CRVideo_NotifyCallIn)，[接受/拒绝他人的呼叫](methods.md#CRVideo_AcceptCall)，[接受/拒绝他人呼叫结果](callback.md#CRVideo_AcceptCallSuccess)
 
 ```cs
     /**
@@ -1571,7 +1572,7 @@
 
     小数据走命令接口，大数据走文本接口，命令的发送不可以被取消，也没有进度通知
 
-* 相关API请参考 [发送命令/数据/文件](MeetingMrg.md#sendCmd)，[取消发送](MeetingMrg.md#cancelSend)，[发送命令/数据/文件结果](MeetingMrg.md#sendCmdRlst)，[发送进度](MeetingMrg.md#sendProgress)，[取消发送结果](MeetingMrg.md#cancelSendRlst)
+* 相关API请参考 [发送命令/数据/文件](methods.md#CRVideo_SendCmd)，[取消发送](methods.md#CRVideo_CancelSend)，[发送命令/数据/文件结果](callback.md#CRVideo_SendCmdRlst)，[发送进度](callback.md#CRVideo_SendProgress)，[取消发送结果](callback.md#CRVideo_CancelSendRlst)
 
 ```cs
     /**
@@ -1687,7 +1688,7 @@
 
     收到别人发送数据的通知
 
-* 相关API请参考 [通知有命令/数据/文件发来](MeetingMrg.md#notifyCmdData)
+* 相关API请参考 [通知有命令/数据/文件发来](callback.md#CRVideo_NotifyCmdData)
 
 ```cs
     /**

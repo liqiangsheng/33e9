@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>回调函数 · Cloudroom SDK Refference</title>
+        <title>容器类 · Cloudroom SDK Refference</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -75,10 +75,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="callback.html" />
+    <link rel="next" href="ClassContainer.html" />
     
     
-    <link rel="prev" href="methods.html" />
+    <link rel="prev" href="TypeDefinitions.html" />
     
 
     </head>
@@ -2269,7 +2269,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="callback.html">
+        <li class="chapter " data-level="1.5" data-path="callback.html">
             
                 <a href="callback.html">
             
@@ -4315,7 +4315,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.8" data-path="ClassContainer.html">
+        <li class="chapter active" data-level="1.8" data-path="ClassContainer.html">
             
                 <a href="ClassContainer.html">
             
@@ -4721,7 +4721,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >回调函数</a>
+        <a href="." >容器类</a>
     </h1>
 </div>
 
@@ -4736,912 +4736,473 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="callback">&#x56DE;&#x8C03;&#x51FD;&#x6570; </h1>
+                                <h1 id="ClassContainer">&#x5BB9;&#x5668;&#x7C7B; </h1>
 <ul>
-<li><h5 id="&#x4F1A;&#x8BAE;&#x521B;&#x5EFA;&#x7BA1;&#x7406;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;"><a href="#create">&#x4F1A;&#x8BAE;&#x521B;&#x5EFA;&#x7BA1;&#x7406;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</a></h5>
+<li><h5 id="&#x663E;&#x793A;&#x5BB9;&#x5668;&#x7684;&#x57FA;&#x7C7B;-"><a href="#container">&#x663E;&#x793A;&#x5BB9;&#x5668;&#x7684;&#x57FA;&#x7C7B; </a></h5>
 </li>
-<li><h5 id="&#x4F1A;&#x8BAE;&#x7BA1;&#x7406;&#x7C7B;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;"><a href="#meetingMrg">&#x4F1A;&#x8BAE;&#x7BA1;&#x7406;&#x7C7B;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</a></h5>
+<li><h5 id="&#x5F71;&#x97F3;&#x64AD;&#x653E;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;"><a href="#MediaContainer">&#x5F71;&#x97F3;&#x64AD;&#x653E;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;</a></h5>
 </li>
-<li><h5 id="&#x961F;&#x5217;&#x7C7B;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;"><a href="#queue">&#x961F;&#x5217;&#x7C7B;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</a></h5>
+<li><h5 id="&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x64AD;&#x653E;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;"><a href="#ScreenShareContainer">&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x64AD;&#x653E;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;</a></h5>
+</li>
+<li><h5 id="&#x89C6;&#x9891;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;"><a href="#VideoContainer">&#x89C6;&#x9891;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;</a></h5>
 </li>
 </ul>
-<blockquote>
-<p>sdk&#x56DE;&#x8C03;&#x63A5;&#x53E3;</p>
-</blockquote>
-<h3 id="create">&#x4F1A;&#x8BAE;&#x521B;&#x5EFA;&#x7BA1;&#x7406;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</h3>
-<h4 id="CRVideo_LoginSuccess">&#x767B;&#x5F55;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_LoginSuccess.callback = function(usrID,cookie){}</p>
-</blockquote>
-<ul>
-<li>usrID ----- &#x7528;&#x6237;&#x8D26;&#x6237;</li>
-<li>usrID ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_LoginFail">&#x767B;&#x5F55;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_LoginFail .callback = function(sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_LineOff">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x6389;&#x7EBF; </h4>
-<blockquote>
-<p>CRVideo_LineOff.callback = function(sdkErr){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_SetDNDStatusSuccess">&#x5BA2;&#x6237;&#x7AEF;&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_SetDNDStatusSuccess.callback = function(cookie){}</p>
-</blockquote>
-<ul>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_SetDNDStatusFail">&#x5BA2;&#x6237;&#x7AEF;&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_SetDNDStatusFail.callback = function(sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_GetUserStatusSuccess">&#x5BA2;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_GetUserStatusSuccess.callback = function(usersStatus,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x5217;&#x8868;&#xFF0C;userID:&#x7528;&#x6237;id,userStatus:&#x7528;&#x6237;&#x7684;&#x5728;&#x7EBF;&#x72B6;&#x6001;(0 &#x79BB;&#x7EBF;  1&#x5728;&#x7EBF;&#x7A7A;&#x95F2;  2 &#x5728;&#x7EBF;&#x5FD9;&#x788C;  3&#x5728;&#x7EBF;&#x4F1A;&#x8BAE;&#x4E2D;),DNDType:&#x7528;&#x6237;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;(0&#x4EE3;&#x8868;&#x5173;&#x95ED;&#x514D;&#x6253;&#x6270;&#xFF0C; &#x5176;&#x5B83;&#x503C;&#x4EE3;&#x8868;&#x5F00;&#x542F;&#x514D;&#x6253;&#x6270;)</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_GetUserStatusFail">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_GetUserStatusFail.callback = function(sdkErr ,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_NotifyUserStatus">&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5; </h4>
-<blockquote>
-<p>CRVideo_NotifyUserStatus.callback = function(userStatus ,cookie){}</p>
-</blockquote>
-<ul>
-<li>userStatus ----- userStatus&#x5355;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x4FE1;&#x606F;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_StartUserStatusNotifyRslt">&#x542F;&#x52A8;&#x7528;&#x6237;&#x72B6;&#x6001;&#x63A8;&#x9001;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_StartUserStatusNotifyRslt.callback = function(sdkErr ,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_StopUserStatusNotifyRslt">&#x7ED3;&#x675F;&#x7528;&#x6237;&#x72B6;&#x6001;&#x63A8;&#x9001;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_StopUserStatusNotifyRslt.callback = function(sdkErr ,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_CreateMeetingSuccess">&#x521B;&#x5EFA;&#x4F1A;&#x8BAE;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_CreateMeetingSuccess.callback = function(meetObj,cookie){}</p>
-</blockquote>
-<ul>
-<li>meetObj ----- &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_CreateMeetingFail">&#x521B;&#x5EFA;&#x4F1A;&#x8BAE;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_CreateMeetingFail.callback = function(sdkErr ,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_DestroyMeetingRslt">&#x7ED3;&#x675F;&#x4F1A;&#x8BAE;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_DestroyMeetingRslt.callback = function(sdkErr ,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_CallSuccess">&#x547C;&#x53EB;&#x4ED6;&#x4EBA;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_CallSuccess.callback = function(callID ,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_CallFail">&#x547C;&#x53EB;&#x4ED6;&#x4EBA;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_CallFail.callback = function(callID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_AcceptCallSuccess">&#x63A5;&#x53D7;&#x4ED6;&#x4EBA;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_AcceptCallSuccess.callback = function(callID,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_AcceptCallFail">&#x63A5;&#x53D7;&#x4ED6;&#x4EBA;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_AcceptCallFail.callback = function(callID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_RejectCallSuccess">&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_RejectCallSuccess.callback = function(callID,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_RejectCallFail">&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_RejectCallFail.callback = function(callID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_HangupCallSuccess">&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_HangupCallSuccess.callback = function(callID,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_HangupCallFail">&#x6302;&#x65AD;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_HangupCallFail.callback = function(callID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_NotifyCallIn">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x88AB;&#x547C;&#x53EB; </h4>
-<blockquote>
-<p>CRVideo_NotifyCallIn.callback = function(callID,meetObj,callerID,usrExtDat){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>meetObj ----- &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</li>
-<li>callerID ----- &#x547C;&#x53EB;&#x4EBA;&#x5458;&#x7684;&#x6807;&#x8BC6;ID</li>
-<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_NotifyCallAccepted">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x89C6;&#x9891;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x63A5;&#x53D7; </h4>
-<blockquote>
-<p>CRVideo_NotifyCallAccepted.callback = function(callID,meetObj,callerID,usrExtDat){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>meetObj ----- &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</li>
-<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_NotifyCallRejected">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x62D2;&#x7EDD; </h4>
-<blockquote>
-<p>CRVideo_NotifyCallRejected.callback = function(callID,sdkErr,usrExtDat){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_NotifyCallHungup">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x547C;&#x53EB;&#x88AB;&#x6302;&#x65AD; </h4>
-<blockquote>
-<p>CRVideo_NotifyCallHungup.callback = function(callID,usrExtDat){}</p>
-</blockquote>
-<ul>
-<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
-<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_SendCmdRlst">&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_SendBufferRlst">&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_SendBufferRlst.callback = function(taskID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_SendFileRlst">&#x53D1;&#x9001;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_SendFileRlst.callback = function(taskID,fileName,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_SendProgress">&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x8FDB;&#x5EA6; </h4>
-<blockquote>
-<p>CRVideo_SendProgress.callback = function(taskID,sendedLen,totalLen,cookie){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
-<li>sendedLen ----- &#x5DF2;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x957F;&#x5EA6;</li>
-<li>totalLen ----- &#x9700;&#x8981;&#x53D1;&#x9001;&#x7684;&#x603B;&#x957F;&#x5EA6;</li>
-<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_CancelSendRlst">&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_CancelSendRlst.callback = function(taskID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
-</ul>
-<h4 id="CRVideo_NotifyCmdData">SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x5C0F;&#x5757;&#x6570;&#x636E; </h4>
-<blockquote>
-<p>CRVideo_NotifyCmdData.callback = function(sourceUserId,data){}</p>
-</blockquote>
-<ul>
-<li>sourceUserId ----- &#x6570;&#x636E;&#x6765;&#x6E90;</li>
-<li>data ----- &#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_NotifyBufferData">SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x5927;&#x5757;&#x6570;&#x636E; </h4>
-<blockquote>
-<p>CRVideo_NotifyBufferData.callback = function(sourceUserId,data){}</p>
-</blockquote>
-<ul>
-<li>sourceUserId ----- &#x6570;&#x636E;&#x6765;&#x6E90;</li>
-<li>data ----- &#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_NotifyFileData">SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x6587;&#x4EF6;&#x6570;&#x636E;&#xFF08;&#x6536;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x5728;&#x7CFB;&#x7EDF;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BF7;&#x5C3D;&#x5FEB;&#x79FB;&#x8D70;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#xFF09; </h4>
-<blockquote>
-<p>CRVideo_NotifyFileData.callback = function(sourceUserId,tmpFile,orgFileName){}</p>
-</blockquote>
-<ul>
-<li>sourceUserId ----- &#x6570;&#x636E;&#x6765;&#x6E90;</li>
-<li>tmpFile ----- &#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x8BF7;&#x79FB;&#x9664;&#x6216;&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;</li>
-<li>orgFileName ----- &#x6E90;&#x59CB;&#x6587;&#x4EF6;&#x540D;</li>
-</ul>
-<h4 id="CRVideo_NotifyCancelSend">SDK&#x901A;&#x77E5;&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x6587;&#x4EF6;&#x6570;&#x636E; </h4>
-<blockquote>
-<p>CRVideo_NotifyCancelSend.callback = function(taskID){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D6;&#x6D88;&#x7684;&#x4EFB;&#x52A1;id</li>
-</ul>
-<h4 id="CRVideo_GetMeetingsSuccess">&#x83B7;&#x53D6;&#x4F1A;&#x8BAE;&#x5217;&#x8868;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_GetMeetingsSuccess.callback = function(cookie){}</p>
-</blockquote>
-<ul>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_GetMeetingsFail">&#x83B7;&#x53D6;&#x4F1A;&#x8BAE;&#x5217;&#x8868;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_GetMeetingsFail.callback = function(sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h3 id="meetingMrg">&#x4F1A;&#x8BAE;&#x7BA1;&#x7406;&#x7C7B;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</h3>
-<h4 id="CRVideo_EnterMeetingRslt">&#x8FDB;&#x5165;&#x4F1A;&#x8BAE;&#x5B8C;&#x6210;&#x54CD;&#x5E94; </h4>
-<blockquote>
-<p>CRVideo_EnterMeetingRslt.callback = function(sdkErr){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_UserEnterMeeting">&#x67D0;&#x7528;&#x6237;&#x8FDB;&#x5165;&#x4E86;&#x4F1A;&#x8BAE; </h4>
-<blockquote>
-<p>CRVideo_UserEnterMeeting.callback = function(usrID){}</p>
-</blockquote>
-<ul>
-<li>usrID ----- &#x8FDB;&#x5165;&#x4F1A;&#x8BAE;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_UserLeftMeeting">&#x67D0;&#x7528;&#x6237;&#x79BB;&#x5F00;&#x4E86;&#x4F1A;&#x8BAE; </h4>
-<blockquote>
-<p>CRVideo_UserLeftMeeting.callback = function(id){}</p>
-</blockquote>
-<ul>
-<li>id ----- &#x79BB;&#x5F00;&#x4F1A;&#x8BAE;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_StopMeetingRslt">&#x901A;&#x77E5;&#x7ED3;&#x675F;&#x89C6;&#x9891;&#x4F1A;&#x8BAE;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_StopMeetingRslt.callback = function(sdkErr){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_MeetingStopped">&#x4F1A;&#x8BAE;&#x5DF2;&#x88AB;&#x7ED3;&#x675F; </h4>
-<blockquote>
-<p>CRVideo_MeetingStopped.callback = function(){}</p>
-</blockquote>
-<h4 id="CRVideo_MeetingDropped">SDK&#x901A;&#x77E5;&#x4ECE;&#x4F1A;&#x8BAE;&#x91CC;&#x6389;&#x7EBF;&#x4E86; </h4>
-<blockquote>
-<p>CRVideo_MeetingDropped.callback = function(){}</p>
-</blockquote>
-<h4 id="CRVideo_NetStateChanged">SDK&#x901A;&#x77E5;&#x6211;&#x7684;&#x7F51;&#x7EDC;&#x53D8;&#x5316; </h4>
-<blockquote>
-<p>CRVideo_NetStateChanged.callback = function(level){}</p>
-</blockquote>
-<ul>
-<li>level ----- &#x7F51;&#x7EDC;&#x72B6;&#x51B5;&#x7B49;&#x7EA7;(0~10&#xFF0C;10&#x5206;&#x4E3A;&#x6700;&#x4F73;&#x7F51;&#x7EDC;)</li>
-</ul>
-<h4 id="CRVideo_AudioStatusChanged">SDK&#x901A;&#x77E5;&#x6253;&#x5F00;&#x672C;&#x5730;&#x97F3;&#x9891;&#x72B6;&#x6001;&#x53D8;&#x5316; </h4>
-<blockquote>
-<p>CRVideo_AudioStatusChanged.callback = function(userID,oldStatus,newStatus){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x4F1A;&#x8BDD;&#x4E2D;&#x8BBE;&#x5907;&#x7684;&#x6240;&#x6709;&#x8005;ID</li>
-<li>oldStatus ----- &#x65E7;&#x72B6;&#x6001;</li>
-<li>newStatus ----- &#x65B0;&#x72B6;&#x6001;</li>
-</ul>
-<h4 id="CRVideo_MicEnergyUpdate">SDK&#x901A;&#x77E5;&#x7528;&#x6237;&#x7684;&#x8BF4;&#x8BDD;&#x58F0;&#x97F3;&#x5F3A;&#x5EA6;&#x66F4;&#x65B0; </h4>
-<blockquote>
-<p>CRVideo_MicEnergyUpdate.callback = function(userID,oldLevel,newLevel){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x7528;&#x6237;ID</li>
-<li>oldLevel ----- &#x539F;&#x6765;&#x7684;&#x8BF4;&#x8BDD;&#x58F0;&#x97F3;&#x5F3A;&#x5EA6;</li>
-<li>newLevel ----- &#x73B0;&#x5728;&#x7684;&#x8BF4;&#x8BDD;&#x58F0;&#x97F3;&#x5F3A;&#x5EA6;</li>
-</ul>
-<h4 id="CRVideo_VideoStatusChanged">SDK&#x901A;&#x77E5;&#x6253;&#x5F00;&#x672C;&#x5730;&#x89C6;&#x9891;&#x72B6;&#x6001;&#x53D8;&#x5316; </h4>
-<blockquote>
-<p>CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x4F1A;&#x8BDD;&#x4E2D;&#x8BBE;&#x5907;&#x7684;&#x6240;&#x6709;&#x8005;ID</li>
-<li>oldStatus ----- &#x65E7;&#x72B6;&#x6001;</li>
-<li>newStatus ----- &#x65B0;&#x72B6;&#x6001;</li>
-</ul>
-<h4 id="CRVideo_NotifyVideoData">SDK&#x901A;&#x77E5;&#x7528;&#x6237;&#x6709;&#x65B0;&#x7684;&#x89C6;&#x9891;&#x6570;&#x636E; </h4>
-<blockquote>
-<p>CRVideo_NotifyVideoData.callback = function(userID,videoId,frmTime){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x7528;&#x6237;&#x6807;&#x8BC6;ID</li>
-<li>videoId ----- &#x7528;&#x6237;&#x7684;&#x6444;&#x50CF;&#x5934;ID</li>
-<li>frmTime ----- frmTime &#x56FE;&#x50CF;&#x7684;&#x521B;&#x5EFA;&#x65F6;&#x6233;</li>
-</ul>
-<h4 id="CRVideo_VideoDevChanged">SDK&#x901A;&#x77E5;&#x7528;&#x6237;&#x7684;&#x89C6;&#x9891;&#x8BBE;&#x5907;&#x6709;&#x53D8;&#x5316; </h4>
-<blockquote>
-<p>CRVideo_VideoDevChanged.callback = function(userID){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x8BBE;&#x5907;&#x53D8;&#x5316;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_DefVideoChanged">SDK&#x901A;&#x77E5;&#x7528;&#x6237;&#x7684;&#x89C6;&#x9891;&#x9ED8;&#x8BA4;&#x8BBE;&#x5907;&#x6709;&#x53D8;&#x5316; </h4>
-<blockquote>
-<p>CRVideo_DefVideoChanged.callback = function(userID,videoID){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x8BBE;&#x5907;&#x53D8;&#x5316;&#x7684;&#x7528;&#x6237;ID</li>
-<li>videoID ----- &#x9ED8;&#x8BA4;&#x8BBE;&#x5907;id</li>
-</ul>
-<h4 id="CRVideo_NotifyAudioPCMDat">SDK&#x901A;&#x77E5;&#x8BED;&#x97F3;PCM&#x6570;&#x636E; </h4>
-<blockquote>
-<p>CRVideo_NotifyAudioPCMDat.callback = function(aSide,base64PcmDat){}</p>
-</blockquote>
-<ul>
-<li>aSide ----- &#x58F0;&#x9053;&#x7C7B;&#x578B;</li>
-<li>base64PcmDat ----- PCM&#x6570;&#x636E;(base64&#x683C;&#x5F0F;)</li>
-</ul>
-<h4 id="CRVideo_RecordErr">&#x5F55;&#x5236;&#x5F02;&#x5E38;&#xFF0C;&#x5F55;&#x5236;&#x5C06;&#x81EA;&#x52A8;&#x505C;&#x6B62; </h4>
-<blockquote>
-<p>CRVideo_RecordErr.callback = function(sdkErr){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_RecordStateChanged">&#x5F55;&#x5236;&#x72B6;&#x6001;&#x66F4;&#x6539;&#x901A;&#x77E5; </h4>
-<blockquote>
-<p>CRVideo_RecordStateChanged.callback = function(state){}</p>
-</blockquote>
-<ul>
-<li>state ----- &#x5F55;&#x5236;&#x72B6;&#x6001;,&#x6570;&#x503C;&#x8BF7;&#x53C2;&#x8003;&#x5B9A;&#x4E49;<a href="Constant.html#RECORD_STATE">RECORD_STATE</a></li>
-</ul>
-<h4 id="CRVideo_UploadRecordFileErr">&#x4E0A;&#x4F20;&#x5F55;&#x5236;&#x6587;&#x4EF6;&#x9519;&#x8BEF;&#x901A;&#x77E5; </h4>
-<blockquote>
-<p>CRVideo_UploadRecordFileErr.callback = function(fileName,sdkErr){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x672C;&#x5730;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_NotifyRecordFileStateChanged">SDK&#x901A;&#x77E5;&#x5F55;&#x5236;&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x66F4;&#x6539; </h4>
-<blockquote>
-<p>CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x672C;&#x5730;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</li>
-<li>state ----- &#x72B6;&#x6001; 0 &#x672A;&#x4E0A;&#x4F20; 1 &#x4E0A;&#x4F20;&#x4E2D; 2&#x5DF2;&#x4E0A;&#x4F20;</li>
-</ul>
-<h4 id="CRVideo_NotifyRecordFileUploadProgress">SDK&#x901A;&#x77E5;&#x4E0A;&#x4F20;&#x5F55;&#x5236;&#x6587;&#x4EF6;&#x8FDB;&#x5EA6; </h4>
-<blockquote>
-<p>CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>percent ----- &#x8FDB;&#x5EA6;0-100</li>
-</ul>
-<h4 id="CRVideo_StartScreenShareRslt">&#x5F00;&#x542F;&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x7684;&#x54CD;&#x5E94;&#x4E8B;&#x4EF6; </h4>
-<blockquote>
-<p>CRVideo_StartScreenShareRslt.callback = function(sdkErr){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_StopScreenShareRslt">&#x505C;&#x6B62;&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x7684;&#x54CD;&#x5E94;&#x4E8B;&#x4EF6; </h4>
-<blockquote>
-<p>CRVideo_StopScreenShareRslt.callback = function(sdkErr){}</p>
-</blockquote>
-<ul>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-</ul>
-<h4 id="CRVideo_NotifyScreenShareStarted">&#x901A;&#x77E5;&#x4ED6;&#x4EBA;&#x5F00;&#x542F;&#x4E86;&#x5C4F;&#x5E55;&#x5171;&#x4EAB; </h4>
-<blockquote>
-<p>CRVideo_NotifyScreenShareStarted.callback = function(){}</p>
-</blockquote>
-<h4 id="CRVideo_NotifyScreenShareStopped">&#x901A;&#x77E5;&#x4ED6;&#x4EBA;&#x505C;&#x6B62;&#x4E86;&#x5C4F;&#x5E55;&#x5171;&#x4EAB; </h4>
-<blockquote>
-<p>CRVideo_NotifyScreenShareStopped.callback = function(){}</p>
-</blockquote>
-<h4 id="CRVideo_NotifyScreenShareData">&#x901A;&#x77E5;&#x5BF9;&#x7AEF;&#x5C4F;&#x5E55;&#x56FE;&#x50CF;&#x6709;&#x53D8;&#x5316; </h4>
-<blockquote>
-<p>CRVideo_NotifyScreenShareData.callback = function(userID,rect){}</p>
-</blockquote>
-<ul>
-<li>userID ----- &#x7528;&#x6237;ID</li>
-<li>rect ----- &#x53D8;&#x5316;&#x7684;&#x533A;&#x57DF;&#xFF1B;&#xFF08;&#x53EF;&#x4EE5;&#x53EA;&#x91CD;&#x7ED8;&#x8FD9;&#x5757;&#x533A;&#x57DF;&#xFF09;</li>
-</ul>
-<h4 id="CRVideo_NotifyCatchScreen">&#x81EA;&#x5B9A;&#x4E49;&#x6293;&#x5C4F;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x4F7F;&#x7528;&#x8005;&#x6293;&#x5C4F;&#xFF08;&#x5728;&#x6536;&#x5230;&#x901A;&#x77E5;&#x65F6;&#xFF0C; &#x4E00;&#x5B9A;&#x8981;&#x53CA;&#x65F6;CRVideo_SetCustomizeScreenImg&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x56FE;&#x50CF;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5148;&#x9001;&#x5165;&#x7A7A;&#x56FE;&#x50CF;&#xFF09; </h4>
-<blockquote>
-<p>CRVideo_NotifyCatchScreen.callback = function(){}</p>
-</blockquote>
-<h4 id="CRVideo_NotifyGiveCtrlRight">SDK&#x901A;&#x77E5;&#x8FDC;&#x7A0B;&#x63A7;&#x5236;&#x6743;&#x9650;&#x7ED9;&#x4E88;&#x4E86;&#x67D0;&#x4EBA; </h4>
-<blockquote>
-<p>CRVideo_NotifyGiveCtrlRight.callback = function(operId,targetId){}</p>
-</blockquote>
-<ul>
-<li>operId ----- &#x64CD;&#x4F5C;&#x7684;&#x7528;&#x6237;ID</li>
-<li>targetId ----- &#x63A7;&#x5236;&#x6743;&#x9650;&#x7ED9;&#x4E88;&#x4E86;&#x8C01;</li>
-</ul>
-<h4 id="CRVideo_NotifyReleaseCtrlRight">SDK&#x901A;&#x77E5;&#x6536;&#x56DE;&#x8FDC;&#x7A0B;&#x63A7;&#x5236; </h4>
-<blockquote>
-<p>CRVideo_NotifyReleaseCtrlRight.callback = function(operId,targetId){}</p>
-</blockquote>
-<ul>
-<li>operId ----- &#x64CD;&#x4F5C;&#x7684;&#x7528;&#x6237;ID</li>
-<li>targetId ----- &#x6536;&#x56DE;&#x4E86;&#x8C01;&#x7684;&#x63A7;&#x5236;&#x6743;&#x9650;</li>
-</ul>
-<h4 id="CRVideo_SendIMmsgRlst">&#x53D1;&#x9001;IM&#x6D88;&#x606F;&#xFF0C;SDK&#x901A;&#x77E5;&#x4F7F;&#x7528;&#x8005;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_SendIMmsgRlst.callback = function(taskID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
-<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
-</ul>
-<h4 id="CRVideo_NotifyIMmsg">SDK&#x901A;&#x77E5;&#x6536;&#x5230;IM&#x6D88;&#x606F; </h4>
-<blockquote>
-<p>CRVideo_NotifyIMmsg.callback = function(fromUserID,text,sendTime){}</p>
-</blockquote>
-<ul>
-<li>fromUserID ----- &#x6D88;&#x606F;&#x6765;&#x6E90;</li>
-<li>text ----- &#x6D88;&#x606F;&#x5185;&#x5BB9;</li>
-<li>sendTime ----- &#x6D88;&#x606F;&#x53D1;&#x9001;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x4ECE;1970&#x5F00;&#x59CB;&#x7B97;&#x8D77;</li>
-</ul>
-<h4 id="CRVideo_NotifySwitchToPage">SDK&#x901A;&#x77E5;&#x529F;&#x80FD;&#x5207;&#x6362; </h4>
-<blockquote>
-<p>CRVideo_NotifySwitchToPage.callback = function(mainPage,pageID){}</p>
-</blockquote>
-<ul>
-<li>mainPage ----- &#x529F;&#x80FD;&#x7C7B;&#x578B;</li>
-<li>pageID ----- &#x5B50;&#x9875;&#x9762;&#x6807;&#x8BC6;</li>
-</ul>
-<h4 id="CRVideo_NotifyVideoWallMode">SDK&#x901A;&#x77E5;&#x89C6;&#x9891;&#x5206;&#x5C4F;&#x6A21;&#x5F0F;&#x5207;&#x6362; </h4>
-<blockquote>
-<p>CRVideo_NotifyVideoWallMode.callback = function(model){}</p>
-</blockquote>
-<ul>
-<li>model ----- &#x5206;&#x5C4F;&#x6A21;&#x5F0F;</li>
-</ul>
-<h4 id="CRVideo_NotifyMainVideoChanged">SDK&#x901A;&#x77E5;&#x4E3B;&#x89C6;&#x9891;&#x66F4;&#x6539; </h4>
-<blockquote>
-<p>CRVideo_NotifyMainVideoChanged.callback = function(operId,targetId){}</p>
-</blockquote>
-<h4 id="CRVideo_NotifyInitBoards">SDK&#x5165;&#x4F1A;&#x540E;&#x901A;&#x77E5;&#x4F1A;&#x8BAE;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x767D;&#x677F;&#x5217;&#x8868; </h4>
-<blockquote>
-<p>CRVideo_NotifyInitBoards.callback = function(BoardObjs){}</p>
-</blockquote>
-<ul>
-<li>BoardObjs ----- &#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x597D;&#x7684;&#x767D;&#x677F;&#x5217;&#x8868;, json&#x7ED3;&#x6784;&#x4F53;&#x8BF7;&#x53C2;&#x89C1;BoardObjs&#x8BF4;&#x660E;</li>
-</ul>
-<h4 id="CRVideo_NotifyInitBoardPageDat">&#x521D;&#x59CB;&#x5316;&#x767D;&#x677F;&#x9875;&#x6570;&#x636E; </h4>
-<blockquote>
-<p>CRVideo_NotifyInitBoardPageDat.callback = function(boardID,boardPageNo,imgID,elementDatas,operatorID){}</p>
-</blockquote>
-<ul>
-<li>boardID ----- &#x767D;&#x677F;&#x6807;&#x8BC6;</li>
-<li>boardPageNo ----- &#x767D;&#x677F;&#x9875;&#x5E8F;&#x53F7;</li>
-<li>imgID ----- &#x9875;&#x80CC;&#x666F;&#x6587;&#x4EF6;ID&#xFF08;&#x7A7A;&#x4EE3;&#x8868;&#x65E0;&#x80CC;&#x666F;&#xFF09;</li>
-<li>elementDatas ----- &#x6B64;&#x9875;&#x7684;&#x6240;&#x6709;&#x56FE;&#x5143;, &#x8BE6;&#x89C1;json&#x7ED3;&#x6784;&#x4E4B;BoardElementObjs</li>
-<li>operatorID ----- &#x521D;&#x59CB;&#x5316;&#x7528;&#x6237;&#xFF08;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x4EE3;&#x8868;&#x5165;&#x4F1A;&#x65F6;&#x540E;&#x53F0;&#x4E8B;&#x4EF6;&#xFF09;</li>
-</ul>
-<h4 id="CRVideo_NotifyCreateBoard">SDK&#x901A;&#x77E5;&#x521B;&#x5EFA;&#x767D;&#x677F; </h4>
-<blockquote>
-<p>CRVideo_NotifyCreateBoard.callback = function(jsonBoard,operatorID){}</p>
-</blockquote>
-<ul>
-<li>jsonBoard ----- &#x767D;&#x677F;&#x4FE1;&#x606F;&#xFF0C;&#x8BE6;&#x89C1;json&#x683C;&#x5F0F;&#x4E4B;BoardObj</li>
-<li>operatorID ----- &#x521B;&#x5EFA;&#x767D;&#x677F;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_NotifyCloseBoard">SDK&#x901A;&#x77E5;&#x5173;&#x95ED;&#x767D;&#x677F; </h4>
-<blockquote>
-<p>CRVideo_NotifyCreateBoard.callback = function(boardID,operatorID){}</p>
-</blockquote>
-<ul>
-<li>boardID ----- &#x767D;&#x677F;&#x6807;&#x8BC6;</li>
-<li>operatorID ----- &#x5173;&#x95ED;&#x767D;&#x677F;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_NotifyBoardBkImage">SDK&#x901A;&#x77E5;&#x767D;&#x677F;&#x80CC;&#x666F; </h4>
-<blockquote>
-<p>CRVideo_NotifyBoardBkImage.callback = function(subPage,imgFileID,operatorID){}</p>
-</blockquote>
-<ul>
-<li>subPage ----- &#x767D;&#x677F;&#x4FE1;&#x606F;</li>
-<li>imgFileID ----- &#x80CC;&#x666F;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#xFF0C;&#x901A;&#x8FC7;downloadNetDiskFile&#x53EF;&#x4E0B;&#x8F7D;&#x5230;&#x672C;&#x5730;&#x663E;&#x793A;</li>
-<li>operatorID ----- &#x64CD;&#x4F5C;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_NotifyAddBoardElement">SDK&#x901A;&#x77E5;&#x6DFB;&#x52A0;&#x56FE;&#x5143;&#x4FE1;&#x606F; </h4>
-<blockquote>
-<p>CRVideo_NotifyAddBoardElement.callback = function(boardID,boardPageNo,element,operatorID){}</p>
-</blockquote>
-<ul>
-<li>boardID ----- &#x767D;&#x677F;&#x6807;&#x8BC6;</li>
-<li>boardPageNo ----- &#x767D;&#x677F;&#x9875;&#x5E8F;&#x53F7;</li>
-<li>element ----- &#x6B64;&#x9875;&#x7684;&#x6240;&#x6709;&#x56FE;&#x5143;, &#x8BE6;&#x89C1;json&#x7ED3;&#x6784;&#x4E4B;BoardElementObj</li>
-<li>operatorID ----- &#x6DFB;&#x52A0;&#x56FE;&#x5143;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_NotifyModifyBoardElement">SDK&#x901A;&#x77E5;&#x56FE;&#x5143;&#x4FE1;&#x606F;&#x88AB;&#x4FEE;&#x6539; </h4>
-<blockquote>
-<p>CRVideo_NotifyModifyBoardElement.callback = function(boardID,boardPageNo,element,operatorID){}</p>
-</blockquote>
-<ul>
-<li>boardID ----- &#x767D;&#x677F;&#x6807;&#x8BC6;</li>
-<li>boardPageNo ----- &#x767D;&#x677F;&#x9875;&#x5E8F;&#x53F7;</li>
-<li>element ----- &#x6B64;&#x9875;&#x7684;&#x6240;&#x6709;&#x56FE;&#x5143;, &#x8BE6;&#x89C1;json&#x7ED3;&#x6784;&#x4E4B;BoardElementObj</li>
-<li>operatorID ----- &#x6DFB;&#x52A0;&#x56FE;&#x5143;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_NotifyDelBoardElement">SDK&#x901A;&#x77E5;&#x5220;&#x9664;&#x56FE;&#x5143; </h4>
-<blockquote>
-<p>CRVideo_NotifyDelBoardElement.callback = function(boardID,boardPageNo,elementIDs,operatorID){}</p>
-</blockquote>
-<ul>
-<li>boardID ----- &#x767D;&#x677F;&#x6807;&#x8BC6;</li>
-<li>boardPageNo ----- &#x767D;&#x677F;&#x9875;&#x5E8F;&#x53F7;</li>
-<li>elementIDs -----  &#x56FE;&#x5143;id&#x5217;&#x8868;&#xFF0C;&#x4EE5; &#x201C;;&#x201D;&#x5206;&#x9694;</li>
-<li>operatorID ----- &#x5220;&#x9664;&#x56FE;&#x5143;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_NotifyMouseHotSpot">SDK&#x901A;&#x77E5;&#x8BBE;&#x7F6E;&#x9F20;&#x6807;&#x70ED;&#x70B9;&#x6D88;&#x606F; </h4>
-<blockquote>
-<p>CRVideo_NotifyMouseHotSpot.callback = function(boardID,x,y,operatorID){}</p>
-</blockquote>
-<ul>
-<li>boardID ----- &#x767D;&#x677F;&#x6807;&#x8BC6;</li>
-<li>x ----- &#x5C4F;&#x5E55;&#x6A2A;&#x5750;&#x6807;</li>
-<li>y -----  &#x5C4F;&#x5E55;&#x7EB5;&#x5750;&#x6807;</li>
-<li>operatorID ----- &#x64CD;&#x4F5C;&#x8005;&#x7684;&#x7528;&#x6237;ID</li>
-</ul>
-<h4 id="CRVideo_GetNetDiskSummaryRslt">SDK&#x901A;&#x77E5;&#x83B7;&#x53D6;&#x7F51;&#x76D8;&#x5BB9;&#x91CF;&#x4FE1;&#x606F;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_GetNetDiskSummaryRslt.callback = function(diskLimit,diskUsed){}</p>
-</blockquote>
-<ul>
-<li>diskLimit ----- &#x7F51;&#x76D8;&#x603B;&#x5BB9;&#x91CF;</li>
-<li>diskUsed ----- &#x7F51;&#x76D8;&#x5DF2;&#x7528;&#x5BB9;&#x91CF;</li>
-</ul>
-<h4 id="CRVideo_GetNetDiskFileListRslt">SDK&#x901A;&#x77E5;&#x83B7;&#x53D6;&#x7F51;&#x76D8;&#x6587;&#x4EF6;&#x5217;&#x8868; </h4>
-<blockquote>
-<p>CRVideo_GetNetDiskFileListRslt.callback = function(fileList){}</p>
-</blockquote>
-<ul>
-<li>fileList ----- &#x7F51;&#x76D8;&#x6587;&#x4EF6;&#x5217;&#x8868;&#xFF0C;json&#x683C;&#x5F0F;&#xFF0C;&#x5B9A;&#x4E49;&#x89C1;NetDiskObjs</li>
-</ul>
-<h4 id="CRVideo_NotifyNetDiskIsFull">SDK&#x901A;&#x77E5;&#x7F51;&#x76D8;&#x7A7A;&#x95F4;&#x5DF2;&#x6EE1;&#xFF0C;&#x5BB9;&#x91CF;&#x4E0D;&#x8DB3; </h4>
-<blockquote>
-<p>CRVideo_NotifyNetDiskIsFull.callback = function(fileList){}</p>
-</blockquote>
-<h4 id="CRVideo_NotifyNetDiskFileDeleteRslt">SDK&#x901A;&#x77E5;&#x5220;&#x9664;&#x7F51;&#x76D8;&#x6587;&#x4EF6;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_NotifyNetDiskFileDeleteRslt.callback = function(fileID,isSucceed){}</p>
-</blockquote>
-<ul>
-<li>fileID ----- &#x7F51;&#x76D8;&#x6587;&#x4EF6;id</li>
-<li>isSucceed ----- &#x662F;&#x5426;&#x6210;&#x529F; 1 &#x6210;&#x529F; 0 &#x5931;&#x8D25;</li>
-</ul>
-<h4 id="CRVideo_NotifyNetDiskTransforProgress">SDK&#x901A;&#x77E5;&#x7F51;&#x76D8;&#x4E0A;&#x4F20;&#x6216;&#x4E0B;&#x8F7D;&#x8FDB;&#x5EA6; </h4>
-<blockquote>
-<p>CRVideo_NotifyNetDiskTransforProgress.callback = function(fileID,percent,isSucceed){}</p>
-</blockquote>
-<ul>
-<li>fileID ----- &#x7F51;&#x76D8;&#x6587;&#x4EF6;id</li>
-<li>percent ----- &#x8FDB;&#x5EA6;0-100</li>
-<li>isSucceed ----- &#x662F;&#x5426;&#x6210;&#x529F; 1 &#x6210;&#x529F; 0 &#x5931;&#x8D25;</li>
-</ul>
-<h4 id="CRVideo_NotifyMediaOpened">SDK&#x901A;&#x77E5;&#x5F71;&#x97F3;&#x6587;&#x4EF6;&#x6253;&#x5F00; </h4>
-<blockquote>
-<p>CRVideo_NotifyMediaOpened.callback = function(totalTime,w,h){}</p>
-</blockquote>
-<ul>
-<li>totalTime ----- &#x5F71;&#x97F3;&#x65F6;&#x957F;(&#x79D2;) </li>
-<li>w ----- &#x5BBD;&#x5EA6;</li>
-<li>h ----- &#x9AD8;&#x5EA6;</li>
-</ul>
-<h4 id="CRVideo_NotifyMediaStart">SDK&#x901A;&#x77E5;&#x5F71;&#x97F3;&#x5F00;&#x59CB;&#x64AD;&#x653E; </h4>
-<blockquote>
-<p>CRVideo_NotifyMediaStart.callback = function(userid){}</p>
-</blockquote>
-<ul>
-<li>userid ----- &#x64CD;&#x4F5C;&#x8005;&#x7684;&#x7528;&#x6237;id</li>
-</ul>
-<h4 id="CRVideo_NotifyMediaStop">SDK&#x901A;&#x77E5;&#x5F71;&#x97F3;&#x64AD;&#x653E;&#x505C;&#x6B62; </h4>
-<blockquote>
-<p>CRVideo_NotifyMediaStop.callback = function(userid,reason){}</p>
-</blockquote>
-<ul>
-<li>userid ----- &#x64CD;&#x4F5C;&#x8005;&#x7684;&#x7528;&#x6237;id</li>
-<li>reason ----- &#x64AD;&#x653E;&#x505C;&#x6B62;&#x539F;&#x56E0; </li>
-</ul>
-<h4 id="CRVideo_NotifyMediaPause">SDK&#x901A;&#x77E5;&#x8BBE;&#x7F6E;&#x9F20;&#x6807;&#x70ED;&#x70B9;&#x6D88;&#x606F; </h4>
-<blockquote>
-<p>CRVideo_NotifyMediaPause.callback = function(userid,pause){}</p>
-</blockquote>
-<ul>
-<li>userid ----- &#x64CD;&#x4F5C;&#x8005;&#x7684;&#x7528;&#x6237;id</li>
-<li>pause ----- &#x662F;&#x5426;&#x6682;&#x505C; 1&#x6682;&#x505C; 0&#x64AD;&#x653E; </li>
-</ul>
-<h4 id="CRVideo_NotifyPlayPosSetted">SDK&#x901A;&#x77E5;&#x64AD;&#x653E;&#x8FDB;&#x5EA6;&#x5DF2;&#x8BBE;&#x7F6E;&#x5B8C;&#x6210; </h4>
-<blockquote>
-<p>CRVideo_NotifyPlayPosSetted.callback = function(setPTS){}</p>
-</blockquote>
-<ul>
-<li>setPTS ----- &#x64AD;&#x653E;&#x8FDB;&#x5EA6;</li>
-</ul>
-<h4 id="CRVideo_NotifyMemberMediaData">SDK&#x901A;&#x77E5;&#x5F71;&#x97F3;&#x5E27;&#x6570;&#x636E;&#x5DF2;&#x89E3;&#x7801;&#x5B8C;&#x6BD5; </h4>
-<blockquote>
-<p>CRVideo_NotifyMemberMediaData.callback = function(userid,curPos){}</p>
-</blockquote>
-<ul>
-<li>userid ----- &#x64CD;&#x4F5C;&#x8005;&#x7684;&#x7528;&#x6237;id</li>
-<li>curPos ----- &#x5F53;&#x524D;&#x64AD;&#x653E;&#x8FDB;&#x5EA6;</li>
-</ul>
-<h4 id="CRVideo_ClientInviteRslt">&#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_ClientInviteRslt.callback = function(inviteID,sdkEr,cookie){}</p>
-</blockquote>
-<ul>
-<li>inviteID ----- &#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x9080;&#x8BF7;ID</li>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</li>
-</ul>
-<h4 id="CRVideo_ClientCancelInviteRslt">&#x53D6;&#x6D88;&#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_ClientCancelInviteRslt.callback = function(inviteID,sdkEr,cookie){}</p>
-</blockquote>
-<ul>
-<li>inviteID ----- &#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;(&#x9080;&#x8BF7;ID)</li>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a>&#xFF0C;CRVIDEOSDK_NOERR&#x4E3A;&#x6210;&#x529F;&#x64CD;&#x4F5C;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</li>
-</ul>
-<h4 id="CRVideo_NotifyInviteStatus">SDK&#x901A;&#x77E5;&#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x72B6;&#x6001;&#x6539;&#x53D8; </h4>
-<blockquote>
-<p>CRVideo_NotifyInviteStatus.callback = function(inviteID,status){}</p>
-</blockquote>
-<ul>
-<li>inviteID ----- &#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x9080;&#x8BF7;ID</li>
-<li>status ----- &#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x72B6;&#x6001;&#x7801;,0-&#x632F;&#x94C3; 1-&#x63A5;&#x901A; 2-&#x62D2;&#x7EDD; 3-&#x672A;&#x5E94;&#x7B54; 4-&#x6302;&#x65AD;</li>
-</ul>
-<h3 id="queue">&#x961F;&#x5217;&#x7C7B;&#x7684;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</h3>
-<h4 id="CRVideo_InitQueueDatRslt">&#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</li>
-</ul>
-<h4 id="CRVideo_InitQueueDatRslt">&#x961F;&#x5217;&#x521D;&#x59CB;&#x5316;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
-    /**</p>
-<pre><code> * @typedef {object} CRVideo_QueStatus - &#x961F;&#x5217;&#x72B6;&#x6001;
- * @property {number} queID - &#x961F;&#x5217;id
- * @property {number} agent_num - &#x5750;&#x5E2D;&#x6570;&#x91CF;
- * @property {number} wait_num - &#x6392;&#x961F;&#x5BA2;&#x6237;&#x6570;&#x91CF;
- * @property {number} srv_num - &#x6B63;&#x5728;&#x670D;&#x52A1;&#x7684;&#x5BA2;&#x6237;&#x6570;&#x91CF;
- */
-</code></pre><p>}</p>
-</blockquote>
-<ul>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</li>
-</ul>
-<h4 id="CRVideo_QueueStatusChanged">&#x961F;&#x5217;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5; </h4>
-<blockquote>
-<p>CRVideo_QueueStatusChanged.callback = function(queStatus){
-    /**</p>
-<pre><code> * @typedef {object} CRVideo_QueInfo - &#x961F;&#x5217;&#x4FE1;&#x606F;
- * @property {number} queID - &#x961F;&#x5217;id
- * @property {number} name - &#x961F;&#x5217;&#x540D;&#x79F0;
- * @property {string} desc - &#x961F;&#x5217;&#x63CF;&#x8FF0;
- * @property {number} prio - &#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x503C;&#x8D8A;&#x5C0F;&#x4F18;&#x5148;&#x7EA7;&#x8D8A;&#x9AD8;
- */
-</code></pre><p>}</p>
-</blockquote>
-<ul>
-<li>queStatus ----- &#x961F;&#x5217;&#x72B6;&#x6001;</li>
-</ul>
-<h4 id="CRVideo_QueuingInfoChanged">&#x6392;&#x961F;&#x4FE1;&#x606F;&#x53D8;&#x5316;&#x901A;&#x77E5; </h4>
-<blockquote>
-<p>CRVideo_QueuingInfoChanged.callback = function(queuingInfo){}</p>
-</blockquote>
-<ul>
-<li>queuingInfo ----- &#x961F;&#x5217;&#x4FE1;&#x606F;</li>
-</ul>
-<h4 id="CRVideo_StartQueuingRslt">&#x5F00;&#x59CB;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_StartQueuingRslt.callback = function(sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_StopQueuingRslt">&#x505C;&#x6B62;&#x6392;&#x961F;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_StopQueuingRslt.callback = function(sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_StartServiceRslt">&#x5F00;&#x59CB;&#x670D;&#x52A1;&#x961F;&#x5217;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_StartServiceRslt.callback = function(queID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>queID ----- &#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;ID</li>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_StopServiceRslt">&#x505C;&#x6B62;&#x670D;&#x52A1;&#x961F;&#x5217;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_StopServiceRslt.callback = function(queID,sdkErr,cookie){}</p>
-</blockquote>
-<ul>
-<li>queID ----- &#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;ID</li>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_ResponseAssignUserRslt">&#x54CD;&#x5E94;&#x5206;&#x914D;&#x5BA2;&#x6237;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_ResponseAssignUserRslt.callback = function(sdkErr,cookie){
-    /**</p>
-<pre><code> * @typedef {object} CRVideo_QueUser - &#x961F;&#x5217;&#x7528;&#x6237;&#x4FE1;&#x606F;
- * @property {number} queID - &#x961F;&#x5217;ID
- * @property {string} usrID - &#x7528;&#x6237;ID
- * @property {string} name - &#x7528;&#x6237;&#x6635;&#x79F0;
- * @property {string} queuingTime - &#x5DF2;&#x6392;&#x961F;&#x65F6;&#x957F;(&#x79D2;)
- * @property {string} param - &#x7528;&#x6237;&#x547C;&#x53EB;&#x65F6;&#x7684;&#x79C1;&#x6709;&#x6570;&#x636E;
- */
-</code></pre><p>}</p>
-</blockquote>
-<ul>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_AutoAssignUser">&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x5B89;&#x6392;&#x5BA2;&#x6237; </h4>
-<blockquote>
-<p>CRVideo_AutoAssignUser.callback = function(user){}</p>
-</blockquote>
-<ul>
-<li>user ----- &#x961F;&#x5217;&#x7528;&#x6237;&#x4FE1;&#x606F; &#x5982;&#x679C;&#x60F3;&#x505C;&#x6B62;&#x7CFB;&#x7EDF;&#x7684;&#x81EA;&#x52A8;&#x5206;&#x914D;&#xFF0C;&#x8BF7;&#x901A;setDNDStatus&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x529F;&#x80FD;</li>
-</ul>
-<h4 id="CRVideo_ReqAssignUserRslt">&#x8BF7;&#x6C42;&#x5206;&#x914D;&#x5BA2;&#x6237;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_ReqAssignUserRslt.callback = function(sdkErr,user,cookie){}</p>
-</blockquote>
-<ul>
-<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
-<li>user ----- &#x961F;&#x5217;&#x7528;&#x6237;&#x4FE1;&#x606F;</li>
-<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;</li>
-</ul>
-<h4 id="CRVideo_CancelAssignUser">&#x7CFB;&#x7EDF;&#x53D6;&#x6D88;&#x5DF2;&#x7ECF;&#x5B89;&#x6392;&#x7684;&#x5BA2;&#x6237; </h4>
-<blockquote>
-<p>CRVideo_CancelAssignUser.callback = function(queID,userid){}</p>
-</blockquote>
-<ul>
-<li>queID ----- &#x670D;&#x52A1;&#x7684;&#x961F;&#x5217;</li>
-<li>userid ----- &#x7528;&#x6237;id   </li>
-</ul>
-<h4 id="CRVideo_FileStateChanged">&#x901A;&#x77E5;&#x7528;&#x6237;&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x66F4;&#x6539; </h4>
-<blockquote>
-<p>CRVideo_FileStateChanged.callback = function(fileName,state){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>state ----- &#x72B6;&#x6001;</li>
-</ul>
-<h4 id="CRVideo_FileHttpRspHeader">&#x901A;&#x77E5;&#x7528;&#x6237;&#x6587;&#x4EF6;http&#x54CD;&#x5E94;&#x5934; </h4>
-<blockquote>
-<p>CRVideo_FileHttpRspHeader.callback = function(fileName,rspHeader){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>rspHeader ----- http&#x54CD;&#x5E94;&#x5934;</li>
-</ul>
-<h4 id="CRVideo_FileHttpRspContent">&#x901A;&#x77E5;&#x7528;&#x6237;&#x6587;&#x4EF6;http&#x54CD;&#x5E94;&#x7ED3;&#x679C; </h4>
-<blockquote>
-<p>CRVideo_FileHttpRspContent.callback = function(fileName,rspHeader){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>rspHeader ----- http&#x54CD;&#x5E94;&#x7ED3;&#x679C;</li>
-</ul>
-<h4 id="CRVideo_FileProgress">&#x7CFB;&#x7EDF;&#x53D6;&#x6D88;&#x5DF2;&#x7ECF;&#x5B89;&#x6392;&#x7684;&#x5BA2;&#x6237; </h4>
-<blockquote>
-<p>CRVideo_FileProgress.callback = function(fileName,finisedSize,totalSize){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>finisedSize ----- &#x5DF2;&#x4F20;&#x8F93;&#x5927;&#x5C0F;</li>
-<li>finisedSize ----- &#x6587;&#x4EF6;&#x5927;&#x5C0F;</li>
-</ul>
-<h4 id="CRVideo_FileFinished">&#x901A;&#x77E5;&#x7528;&#x6237;&#x6587;&#x4EF6;&#x4F20;&#x8F93;&#x7ED3;&#x675F; </h4>
-<blockquote>
-<p>CRVideo_FileFinished.callback = function(fileName,rslt){}</p>
-</blockquote>
-<ul>
-<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
-<li>rslt ----- &#x4F20;&#x8F93;&#x7ED3;&#x679C;</li>
-</ul>
-<h4 id="CRVideo_NotifyShareRectChanged">&#x901A;&#x77E5;&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x5927;&#x5C0F;&#x6539;&#x53D8; </h4>
-<blockquote>
-<p>CRVideo_NotifyShareRectChanged.callback = function(w,h){}</p>
-</blockquote>
-<ul>
-<li>w ----- &#x5BBD;&#x5EA6;</li>
-<li>h ----- &#x9AD8;&#x5EA6; </li>
+<h3 id="Container">CRVideo.Container </h3>
+<blockquote>
+<p>new Container() <font color="red">&#x663E;&#x793A;&#x5BB9;&#x5668;&#x7684;&#x57FA;&#x7C7B;</font></p>
+</blockquote>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>handler() <font color="red">object&#x5BF9;&#x8C61;</font> </li>
+<li>height() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6;</font></li>
+<li>id() <font color="red">id</font></li>
+<li>style() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x6837;&#x5F0F;</font></li>
+<li>width() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x5BBD;&#x5EA6;</font></li>
+</ul>
+<h3 id="MediaContainer">CRVideo.MediaContainer </h3>
+<blockquote>
+<p>new MediaContainer() <font color="red">&#x5F71;&#x97F3;&#x64AD;&#x653E;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;</font></p>
+</blockquote>
+<h3 id="methods">Methods</h3>
+<ul>
+<li>disableToolBar(bDisable) <font color="red">&#x5DE5;&#x5177;&#x6761;&#x662F;&#x5426;&#x53EF;&#x7528;</font></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> bDisable</td>
+<td>number</td>
+<td>0:&#x53EF;&#x7528;; &#x975E;0:&#x4E0D;&#x53EF;&#x7528;;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>handler() <font color="red">object&#x5BF9;&#x8C61;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.handler()</li>
+</ul>
+</li>
+<li><p>height() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.height()</li>
+</ul>
+</li>
+<li><p>id() <font color="red">id</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.id()</li>
+</ul>
+</li>
+<li><p>keepAspectRatio(value) <font color="red">&#x7ED8;&#x5236;&#x6A21;&#x5F0F;&#xFF0C;&#x662F;&#x5426;&#x62C9;&#x4F38;&#x7ED8;&#x5236;</font></p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> value</td>
+<td>bool</td>
+<td>true: &#x4FDD;&#x6301;&#x6BD4;&#x4F8B;&#x4E0D;&#x62C9;&#x4F38;&#xFF0C; false:&#x4E0D;&#x4FDD;&#x6301;&#x6BD4;&#x4F8B;&#x8FDB;&#x884C;&#x62C9;&#x4F38;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>savePicToBase64(format) <font color="red">&#x4FDD;&#x5B58;&#x64AD;&#x653E;&#x5F71;&#x97F3;&#x753B;&#x9762;&#x5230;&#x56FE;&#x7247;&#x6587;&#x4EF6;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:Base64&#x5B57;&#x7B26;&#x4E32; (string)</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> format</td>
+<td>string</td>
+<td>&#x652F;&#x6301;&#x683C;&#x5F0F;:bmp, png, gif, jpg, jpeg</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>savePicToFile(pathFileName) <font color="red">&#x4FDD;&#x5B58;&#x64AD;&#x653E;&#x5F71;&#x97F3;&#x753B;&#x9762;&#x5230;&#x56FE;&#x7247;&#x6587;&#x4EF6;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:0&#x6210;&#x529F;&#xFF0C;&#x975E;0&#x5931;&#x8D25; (number)</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> pathFileName</td>
+<td>string</td>
+<td>&#x672C;&#x5730;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6587;&#x4EF6;&#x540D;(&#x652F;&#x6301;&#x683C;&#x5F0F;&#xFF1A;bmp, png, gif, jpg, jpeg)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>setToolBarUIElementVisible(UIElement, isVisible) <font color="red">&#x663E;&#x793A;&#x9690;&#x85CF;&#x64AD;&#x653E;&#x5DE5;&#x5177;&#x6761;&#x4E0A;&#x7684;&#x754C;&#x9762;&#x5143;&#x7D20;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UIElement</td>
+<td>CRVideo_ToolBarUI</td>
+<td>&#x754C;&#x9762;&#x5143;&#x7D20;</td>
+</tr>
+<tr>
+<td>isVisible</td>
+<td>bool</td>
+<td>&#x662F;&#x5426;&#x53EF;&#x89C1;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>style() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x6837;&#x5F0F;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.style()</li>
+</ul>
+</li>
+<li><p>width() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x5BBD;&#x5EA6;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.width()</li>
+</ul>
+</li>
+</ul>
+<h3 id="ScreenShareContainer">CRVideo.ScreenShareContainer </h3>
+<blockquote>
+<p>new ScreenShareContainer() <font color="red">&#x5C4F;&#x5E55;&#x5171;&#x4EAB;&#x64AD;&#x653E;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;</font></p>
+</blockquote>
+<h3 id="methods">Methods</h3>
+<ul>
+<li><p>clear() <font color="red">&#x6E05;&#x7A7A;&#x7F13;&#x5B58;&#x7684;&#x56FE;&#x50CF;</font></p>
+</li>
+<li><p>ctrlOpen(value) <font color="red">&#x5F00;&#x542F;&#x63A7;&#x5236;&#x6A21;&#x5F0F;</font></p>
+</li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> value</td>
+<td>bool</td>
+<td>true: &#x5F00;&#x542F;&#xFF0C; false:&#x4E0D;&#x5F00;&#x542F;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>enableMarked(value) <font color="red">&#x5F00;&#x542F;&#x6807;&#x6CE8;&#x6A21;&#x5F0F;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> value</td>
+<td>bool</td>
+<td>0: &#x4E0D;&#x5F00;&#x542F;, 1:&#x5F00;&#x542F;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>isPicEmpty(num) <font color="red">&#x68C0;&#x67E5;&#x56FE;&#x50CF;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> value</td>
+<td>bool</td>
+<td>0: &#x6709;&#x56FE;&#x50CF;, 1:&#x65E0;&#x56FE;&#x50CF;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>keepAspectRatio(num) <font color="red">&#x7ED8;&#x5236;&#x6A21;&#x5F0F;&#xFF0C;&#x662F;&#x5426;&#x62C9;&#x4F38;&#x7ED8;&#x5236;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> value</td>
+<td>bool</td>
+<td>true: &#x4FDD;&#x6301;&#x6BD4;&#x4F8B;&#x4E0D;&#x62C9;&#x4F38;&#xFF0C; false:&#x4E0D;&#x4FDD;&#x6301;&#x6BD4;&#x4F8B;&#x8FDB;&#x884C;&#x62C9;&#x4F38;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>savePic(pathFileName) <font color="red">&#x62CD;&#x7167;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:0:&#x6210;&#x529F;&#xFF1B; &#x975E;0&#xFF1A;&#x4FDD;&#x5B58;&#x9047;&#x5230;&#x7684;&#x9519;&#x8BEF;&#x7801;(bool)</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> pathFileName</td>
+<td>string</td>
+<td>&#x672C;&#x5730;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6587;&#x4EF6;&#x540D;(&#x652F;&#x6301;&#x683C;&#x5F0F;&#xFF1A;bmp, png, gif, jpg, jpeg)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>setPenStyle(intRgba&#xFF1A;, penWidth) <font color="red">&#x8BBE;&#x7F6E;&#x6807;&#x6CE8;&#x753B;&#x7B14;&#x6837;&#x5F0F;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td> intRgba&#xFF1A;</td>
+<td>num</td>
+<td>&#x989C;&#x8272;&#xFF0C;&#x6392;&#x5217;&#x65B9;&#x5F0F;bgr(8:8:8)</td>
+</tr>
+<tr>
+<td>penWidth</td>
+<td>num</td>
+<td>&#x753B;&#x7B14;&#x5BBD;&#x5EA6;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="VideoContainer">CRVideo.VideoContainer </h3>
+<blockquote>
+<p>new VideoContainer() <font color="red">&#x89C6;&#x9891;&#x7684;&#x5448;&#x73B0;&#x5BB9;&#x5668;</font></p>
+<p><strong>&#x7EE7;&#x627F;</strong><a href="#Container">CRVideo.Container</a></p>
+</blockquote>
+<h3 id="methods">Methods</h3>
+<ul>
+<li><p>clear() <font color="red">&#x6E05;&#x7406;&#x5F53;&#x524D;&#x56FE;&#x50CF;</font></p>
+</li>
+<li><p>getVideoID() <font color="red">&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x663E;&#x793A;&#x7684;&#x7528;&#x6237;&#x7684;&#x89C6;&#x9891;&#x8BBE;&#x5907;</font></p>
+</li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x89C6;&#x9891;ID (string)</p>
+<ul>
+<li>getVisibleNickName() <font color="red">&#x83B7;&#x53D6;&#x662F;&#x5426;&#x663E;&#x793A;&#x6635;&#x79F0;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x5426;&#x663E;&#x793A;&#x6635;&#x79F0; (bool)</p>
+<ul>
+<li><p>handler() <font color="red">object&#x5BF9;&#x8C61;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.handler()</li>
+</ul>
+</li>
+<li><p>height() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x9AD8;&#x5EA6;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.height()</li>
+</ul>
+</li>
+<li><p>id() <font color="red">id</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.id()</li>
+</ul>
+</li>
+<li><p>isPicEmpty() <font color="red">&#x68C0;&#x67E5;&#x56FE;&#x50CF;&#x662F;&#x5426;&#x4E3A;&#x7A7A;</font></p>
+</li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x56FE;&#x50CF;&#x662F;&#x5426;&#x4E3A;&#x7A7A; (bool)</p>
+<ul>
+<li>keepAspectRatio(value) <font color="red">&#x8BBE;&#x7F6E;&#x663E;&#x793A;&#x7684;&#x89C6;&#x9891;&#x753B;&#x9762;&#x662F;&#x5426;&#x4FDD;&#x6301;&#x6BD4;&#x4F8B;</font></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>bool</td>
+<td>true: &#x4FDD;&#x6301;&#x6BD4;&#x4F8B;&#x4E0D;&#x62C9;&#x4F38;&#xFF0C; false:&#x4E0D;&#x4FDD;&#x6301;&#x6BD4;&#x4F8B;&#x8FDB;&#x884C;&#x62C9;&#x4F38;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>savePic(pathFileName) <font color="red">&#x62CD;&#x7167;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:0:&#x6210;&#x529F;&#xFF1B; &#x975E;0&#xFF1A;&#x4FDD;&#x5B58;&#x9047;&#x5230;&#x7684;&#x9519;&#x8BEF;&#x7801; (bool)</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pathFileName</td>
+<td>string</td>
+<td>&#x672C;&#x5730;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;&#x6587;&#x4EF6;&#x540D;(&#x652F;&#x6301;&#x683C;&#x5F0F;&#xFF1A;bmp, png, gif, jpg, jpeg)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>savePicToBase64(format) <font color="red">&#x62CD;&#x7167;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:Base64&#x4E3A;&#x56FE;&#x7247;&#x6570;&#x636E;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4E0D;&#x6210;&#x529F;&#x5219;&#x4E3A;&#x7A7A; (string)</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>&#x56FE;&#x7247;&#x683C;&#x5F0F;&#xFF0C;&#x652F;&#x6301;bmp, png, gif, jpg, jpeg</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>setVideo(userID, videoID) <font color="red">&#x8BBE;&#x7F6E;&#x663E;&#x793A;&#x7684;&#x76EE;&#x6807;&#x7528;&#x6237;&#x89C6;&#x9891;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>userID</td>
+<td>string</td>
+<td>&#x76EE;&#x6807;&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td>videoID</td>
+<td>number</td>
+<td>&#x7528;&#x6237;&#x7684;&#x6307;&#x5B9A;&#x89C6;&#x9891;&#x8BBE;&#x5907;&#xFF08;-1&#xFF0C;&#x4EE3;&#x8868;&#x7528;&#x6237;&#x7684;&#x9ED8;&#x8BA4;&#x89C6;&#x9891;&#x8BBE;&#x5907;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>setVisibleNickName(value) <font color="red">&#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x663E;&#x793A;&#x6635;&#x79F0;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>bool</td>
+<td>&#x5426;&#x663E;&#x793A;&#x6635;&#x79F0;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>visibleNickName(value) <font color="red">&#x68C0;&#x67E5;&#x6635;&#x79F0;&#x662F;&#x5426;&#x53EF;&#x89C1;</font></li>
+</ul>
+<p><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>bool</td>
+<td>0: &#x53EF;&#x89C1;&#xFF0C; 1:&#x4E0D;&#x53EF;&#x89C1;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>style() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x6837;&#x5F0F;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.style()</li>
+</ul>
+</li>
+<li><p>width() <font color="red">&#x5BB9;&#x5668;&#x7684;&#x5BBD;&#x5EA6;</font></p>
+<ul>
+<li><strong>&#x7EE7;&#x627F;</strong>:<a href="#Container">CRVideo.Container</a>.width()</li>
+</ul>
+</li>
 </ul>
 <footer class="page-footer"><span class="copyright">&#xA9; HeDonghai all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-01-23 17:43:50
+2018-01-23 13:53:30
 </span></footer>
                                 
                                 </section>
@@ -5675,7 +5236,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"回调函数","level":"1.5","depth":1,"next":{"title":"登录成功响应","level":"1.5.1","depth":2,"anchor":"#CRVideo_LoginSuccess","path":"callback.md","ref":"callback.md#CRVideo_LoginSuccess","articles":[]},"previous":{"title":"上传录像文件","level":"1.4.136","depth":2,"anchor":"#CRVideo_UploadRecordFile","path":"methods.md","ref":"methods.md#CRVideo_UploadRecordFile","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","book-summary-scroll-position-saver","expandable-chapters","search-plus","splitter","tbfed-pagefooter","back-to-top-button","yahei","theme-api","theme-comscore","livereload"],"styles":{"website":"style.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy; HeDonghai","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"theme-comscore":{},"theme-api":{"languages":[],"split":true,"theme":"light"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Carter","pdf":{"pageNumbers":true,"fontSize":18,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":30,"bottom":50},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Cloudroom SDK Refference","language":"zh-hans","gitbook":"*","description":"云屋视频会议SDK参考文档"},"file":{"path":"callback.md","mtime":"2018-01-23T09:43:50.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T11:20:24.742Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"容器类","level":"1.8","depth":1,"next":{"title":"显示容器的基类 ","level":"1.8.1","depth":2,"anchor":"#container","path":"ClassContainer.md","ref":"ClassContainer.md#container","articles":[]},"previous":{"title":"队列状态信息","level":"1.7.23","depth":2,"anchor":"#CRVideo_SubPage","path":"TypeDefinitions.md","ref":"TypeDefinitions.md#CRVideo_SubPage","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","book-summary-scroll-position-saver","expandable-chapters","search-plus","splitter","tbfed-pagefooter","back-to-top-button","yahei","theme-api","theme-comscore","livereload"],"styles":{"website":"style.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy; HeDonghai","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"theme-comscore":{},"theme-api":{"languages":[],"split":true,"theme":"light"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Carter","pdf":{"pageNumbers":true,"fontSize":18,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":30,"bottom":50},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Cloudroom SDK Refference","language":"zh-hans","gitbook":"*","description":"云屋视频会议SDK参考文档"},"file":{"path":"ClassContainer.md","mtime":"2018-01-23T05:53:30.246Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-23T11:20:24.742Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

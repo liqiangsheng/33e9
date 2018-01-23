@@ -303,9 +303,9 @@
 
 >CRVideo_MeetingStopped.callback = function(){}
 
-#### SDK通知从会议里掉线了 {#CRVideo_MeetingStopped}
+#### SDK通知从会议里掉线了 {#CRVideo_MeetingDropped}
 
->CRVideo_MeetingStopped.callback = function(){}
+>CRVideo_MeetingDropped.callback = function(){}
 
 #### SDK通知我的网络变化 {#CRVideo_NetStateChanged}
 
@@ -313,7 +313,7 @@
 
 - level ----- 网络状况等级(0~10，10分为最佳网络)
 
-#### SDK通知打开本地音频状态变 {#CRVideo_AudioStatusChanged}
+#### SDK通知打开本地音频状态变化 {#CRVideo_AudioStatusChanged}
 
 >CRVideo_AudioStatusChanged.callback = function(userID,oldStatus,newStatus){}
 
@@ -550,14 +550,14 @@
 - y -----  屏幕纵坐标
 - operatorID ----- 操作者的用户ID
 
-#### SDK通知获取网盘容量信息结果 {#CRVideo_NotifyMouseHotSpot}
+#### SDK通知获取网盘容量信息结果 {#CRVideo_GetNetDiskSummaryRslt}
 
->CRVideo_NotifyMouseHotSpot.callback = function(diskLimit,diskUsed){}
+>CRVideo_GetNetDiskSummaryRslt.callback = function(diskLimit,diskUsed){}
 
 - diskLimit ----- 网盘总容量
 - diskUsed ----- 网盘已用容量
 
-#### SDK通知获取网盘文件列表 {#CRVideo_NotifyMouseHotSpot}
+#### SDK通知获取网盘文件列表 {#CRVideo_GetNetDiskFileListRslt}
 
 >CRVideo_GetNetDiskFileListRslt.callback = function(fileList){}
 
@@ -590,9 +590,9 @@
 - w ----- 宽度
 - h ----- 高度
 
-#### SDK通知影音开始播放 {#CRVideo_NotifyMediaOpened}
+#### SDK通知影音开始播放 {#CRVideo_NotifyMediaStart}
 
->CRVideo_NotifyMediaOpened.callback = function(userid){}
+>CRVideo_NotifyMediaStart.callback = function(userid){}
 
 - userid ----- 操作者的用户id
 
@@ -623,12 +623,20 @@
 - userid ----- 操作者的用户id
 - curPos ----- 当前播放进度
 
-#### 第3方呼叫操作结果 {#CRVideo_NotifyMemberMediaData}
+#### 第3方呼叫操作结果 {#CRVideo_ClientInviteRslt}
 
->CRVideo_NotifyMemberMediaData.callback = function(inviteID,sdkEr,cookie){}
+>CRVideo_ClientInviteRslt.callback = function(inviteID,sdkEr,cookie){}
 
 - inviteID ----- 邀请标识码（邀请ID
 - sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- cookie ----- 自定义数据 (在回调时，回传给调用者)
+
+#### 取消第3方呼叫操作结果 {#CRVideo_ClientCancelInviteRslt}
+
+>CRVideo_ClientCancelInviteRslt.callback = function(inviteID,sdkEr,cookie){}
+
+- inviteID ----- 邀请标识码(邀请ID)
+- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)，CRVIDEOSDK_NOERR为成功操作
 - cookie ----- 自定义数据 (在回调时，回传给调用者)
 
 #### SDK通知第3方呼叫状态改变 {#CRVideo_NotifyInviteStatus}

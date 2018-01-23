@@ -230,3 +230,101 @@
 |dat	|string|	图像数据Base64编码|
 |width|	number|	图像宽度|
 |height	|number	|图像高度|
+
+### CRVideo_Board {#CRVideo_Board}
+
+>白板信息
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|userID	|string	|用户ID|
+|boardID|	number|	白板id|
+|title	|string|	白板名称|
+|width|	number|	白板宽度|
+|height	|number	|白板高度|
+
+### CRVideo_MeetInfoObj {#CRVideo_MeetInfoObj}
+
+>区域
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|ID	|number	|会议号，0时代表会议信息为空|
+|pswd	|number	|会议密码；（空代表会议无密码）|
+|subject|	number|	会议主题|
+|pubMeetUrl	|number	|会议公共链接|
+
+### CRVideo_QueInfo {#CRVideo_QueInfo}
+
+>队列信息
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|queID|	number|	队列id|
+|name	|number|	队列名称|
+|desc	|string|	队列描述|
+|prio	|number|	优先级，值越小优先级越高|
+
+### CRVideo_QueStatus {#CRVideo_QueStatus}
+
+>队列状态
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|queID| 	number| 	队列id| 
+|agent_num	| number| 	坐席数量| 
+|wait_num| 	number| 	排队客户数量| 
+|srv_num	| number| 	正在服务的客户数量|
+
+### CRVideo_QueUser {#CRVideo_QueUser}
+
+>队列用户信息
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|queID	|number|	队列ID|
+|usrID	|string|	用户ID|
+|name	|string|	用户昵称|
+|queuingTime|	string|	已排队时长(秒)|
+|param	|string|	用户呼叫时的私有数据|
+
+### CRVideo_Rect {#CRVideo_Rect}
+
+>区域
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|left	| number| 	区域右上角x坐标| 
+|top	|number| 	区域右上角y坐标| 
+|width	| number| 	区域宽度| 
+|height| 	number| 	区域高度|
+
+### CRVideo_SubPage {#CRVideo_SubPage}
+
+>队列状态信息
+
+- **Type**:
+ + object
+  
+| 参数    | 类型        |   说明               |
+|:-------- |:-----------|:----------           |
+|userID	|number|	用户ID|
+|boardID	|number|	白板id|

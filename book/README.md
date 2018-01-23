@@ -79,7 +79,7 @@
 ![](./images/yuanchengshuanglu7.png)
 
 
-## 视频呼叫 {#RemoteDoubleRecord}
+## 视频呼叫 {#videocall}
 
 > JavaScript编写，主要了利用队列系统进行用户分配，然后呼叫分到的用户，双方进入同一个视频会话，创建视频，进入视频，视频内录制、音视频设置、发送文件、截图。
 
