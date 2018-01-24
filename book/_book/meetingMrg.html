@@ -1,0 +1,5987 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>会议管理接口 · Cloudroom SDK Refference</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Carter">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-yahei/yahei.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-api/theme-api.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="meetingMrg.html" />
+    
+    
+    <link rel="prev" href="basics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./#demo">
+            
+                    
+                    Demo说明
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="./">
+            
+                <a href="./#Meeting">
+            
+                    
+                    会议Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="./">
+            
+                <a href="./#Double">
+            
+                    
+                    双录Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" data-path="./">
+            
+                <a href="./#RemoteDoubleRecord">
+            
+                    
+                    远程双录Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" data-path="./">
+            
+                <a href="./#videocall">
+            
+                    
+                    视频呼叫Demo
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Explain.html">
+            
+                <a href="Explain.html">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Explain.html">
+            
+                <a href="Explain.html#SDKExplain">
+            
+                    
+                    sdk文件夹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="Explain.html">
+            
+                <a href="Explain.html#Development">
+            
+                    
+                    开发准备
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="Explain.html">
+            
+                <a href="Explain.html#BasicProcess">
+            
+                    
+                    基本流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="Explain.html">
+            
+                <a href="Explain.html#CallAndQueue">
+            
+                    
+                    呼叫和排队
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="Explain.html">
+            
+                <a href="Explain.html#operation">
+            
+                    
+                    业务流程说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="Explain.html">
+            
+                <a href="Explain.html#meeting">
+            
+                    
+                    会议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="Explain.html">
+            
+                <a href="Explain.html#communication">
+            
+                    
+                    音视频通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html">
+            
+                    
+                    集成指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#startMeeting">
+            
+                    
+                    开始音视频会话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#add">
+            
+                    
+                    添加音视频会话功能
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.2.1" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#AVSet">
+            
+                    
+                    音视频控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.2" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#record">
+            
+                    
+                    录制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.3" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#netdisk">
+            
+                    
+                    文件上传下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.4" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#media">
+            
+                    
+                    影音播放共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.5" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#screenshare">
+            
+                    
+                    屏幕共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.6" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#IM">
+            
+                    
+                    聊天
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.7" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#members">
+            
+                    
+                    参会成员管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2.8" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#page">
+            
+                    
+                    功能页同步
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#clientQueue">
+            
+                    
+                    客户排队操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#call">
+            
+                    
+                    呼叫他人
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="IntegratedGuide.html">
+            
+                <a href="IntegratedGuide.html#datatransfer">
+            
+                    
+                    透明传输
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="basics.html">
+            
+                <a href="basics.html">
+            
+                    
+                    基础接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="basics.html">
+            
+                <a href="basics.html#basicsFunction">
+            
+                    
+                    基础函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="basics.html">
+            
+                <a href="basics.html#CRVideo_PluginVersion">
+            
+                    
+                    获取Plugin版本号
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="basics.html">
+            
+                <a href="basics.html#CRVideo_SdkPath">
+            
+                    
+                    获取sdk所在的目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="basics.html">
+            
+                <a href="basics.html#CRVideo_Init">
+            
+                    
+                    SDK初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.4" data-path="basics.html">
+            
+                <a href="basics.html#CRVideo_Uninit">
+            
+                    
+                    SDK反初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.5" data-path="basics.html">
+            
+                <a href="basics.html#CRVideo_SetServerAddr">
+            
+                    
+                    设置服务器地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.6" data-path="basics.html">
+            
+                <a href="basics.html#CRVideo_GetServerAddr">
+            
+                    
+                    获取服务器地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html">
+            
+                    
+                    会议管理接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#meetingFunction">
+            
+                    
+                    会议管理函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_Login">
+            
+                    
+                    登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_Logout">
+            
+                    
+                    注销本次登陆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SetDNDStatus">
+            
+                    
+                    设置免打扰状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.4" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_GetUserStatus">
+            
+                    
+                    获取用户在线状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.5" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_StartUserStatusNotify">
+            
+                    
+                    开启用户的状态推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.6" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_StopUserStatusNotify">
+            
+                    
+                    关闭用户的状态推送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.7" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CreateMeeting">
+            
+                    
+                    创建会议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.8" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_DestroyMeeting">
+            
+                    
+                    结束会话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.9" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_GetMeetings">
+            
+                    
+                    获取会议列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.10" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_Call">
+            
+                    
+                    发起呼叫，邀请用户参加视频会话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.11" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_AcceptCall">
+            
+                    
+                    接受对方发起的视频请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.12" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_RejectCall">
+            
+                    
+                    拒绝对方的视频请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.13" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_HungupCall">
+            
+                    
+                    挂断正在进行的视频呼叫或视频通话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.14" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_ClientInvite">
+            
+                    
+                    2方通话时呼叫第3方
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.15" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_ClientCancelInvite">
+            
+                    
+                    取消第3方呼叫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.16" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendCmd">
+            
+                    
+                    发送小块数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.17" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendBuffer">
+            
+                    
+                    发送大块数据(分块发送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.18" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendFile">
+            
+                    
+                    发送文件(分块发送
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.19" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CancelSend">
+            
+                    
+                    取消数据发送
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#meetingCallback">
+            
+                    
+                    会议管理回调
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_LoginSuccess">
+            
+                    
+                    登录成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_LoginFail">
+            
+                    
+                    登录失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SetDNDStatusSuccess">
+            
+                    
+                    客户端设置免打扰状态操作成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SetDNDStatusFail">
+            
+                    
+                    客户端设置免打扰状态操作失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.5" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_GetUserStatusSuccess">
+            
+                    
+                    客获取所有用户在线状态成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.6" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_GetUserStatusFail">
+            
+                    
+                    获取所有用户在线状态失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.7" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_StartUserStatusNotifyRslt">
+            
+                    
+                    启动用户状态推送响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.8" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_StopUserStatusNotifyRslt">
+            
+                    
+                    结束用户状态推送响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.9" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyUserStatus">
+            
+                    
+                    某个用户状态变化通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.10" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_LineOff">
+            
+                    
+                    SDK通知自己掉线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.11" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CreateMeetingSuccess">
+            
+                    
+                    创建会议成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.12" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CreateMeetingFail">
+            
+                    
+                    创建会议失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.13" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_DestroyMeetingRslt">
+            
+                    
+                    结束会议响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.14" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_GetMeetingsSuccess">
+            
+                    
+                    获取会议列表成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.15" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_GetMeetingsFail">
+            
+                    
+                    获取会议列表失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.16" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CallSuccess">
+            
+                    
+                    呼叫他人操作成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.17" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CallFail">
+            
+                    
+                    呼叫他人操作失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.18" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_AcceptCallSuccess">
+            
+                    
+                    接受他人呼叫操作成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.19" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_AcceptCallFail">
+            
+                    
+                    接受他人呼叫操作失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.20" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_RejectCallSuccess">
+            
+                    
+                    拒绝他人的呼叫成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.21" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_RejectCallFail">
+            
+                    
+                    拒绝他人的呼叫失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.22" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_HangupCallSuccess">
+            
+                    
+                    拒绝他人的呼叫成功响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.23" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_HangupCallFail">
+            
+                    
+                    挂断呼叫操作失败响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.24" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyCallIn">
+            
+                    
+                    SDK通知自己被呼叫
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.25" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyCallAccepted">
+            
+                    
+                    SDK通知自己视频呼叫被对方接受
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.26" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyCallRejected">
+            
+                    
+                    SDK通知自己呼叫被对方拒绝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.27" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyCallHungup">
+            
+                    
+                    SDK通知自己呼叫被挂断
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.28" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_ClientInviteRslt">
+            
+                    
+                    第3方呼叫操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.29" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_ClientCancelInviteRslt">
+            
+                    
+                    取消第3方呼叫操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.30" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyInviteStatus">
+            
+                    
+                    SDK通知第3方呼叫状态改变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.31" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendCmdRlst">
+            
+                    
+                    发送数据时，SDK通知发送结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.32" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendBufferRlst">
+            
+                    
+                    发送数据时，SDK通知发送结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.33" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendFileRlst">
+            
+                    
+                    发送文件时，SDK通知发送结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.34" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_SendProgress">
+            
+                    
+                    发送数据时，SDK通知发送进度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.35" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_CancelSendRlst">
+            
+                    
+                    取消发送响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.36" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyCmdData">
+            
+                    
+                    SDK通知收到小块数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.37" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyBufferData">
+            
+                    
+                    SDK通知收到大块数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.38" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyFileData">
+            
+                    
+                    SDK通知收到文件数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.39" data-path="meetingMrg.html">
+            
+                <a href="meetingMrg.html#CRVideo_NotifyCancelSend">
+            
+                    
+                    SDK通知取消发送文件数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html">
+            
+                    
+                    视频会议接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#videoMrgFunction">
+            
+                    
+                    视频管理函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_EnterMeeting">
+            
+                    
+                    呼叫成功
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_ExitMeeting">
+            
+                    
+                    离开会话
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAllMembers">
+            
+                    
+                    获取所有用户的信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetMemberInfo">
+            
+                    
+                    获取指定用户的信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetMemberNickName">
+            
+                    
+                    获取某个用户的昵称
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_IsUserInMeeting">
+            
+                    
+                    判断某个用户是否在会话中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAudioMicNames">
+            
+                    
+                    获取系统上的麦克风设备列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.8" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAudioSpkNames">
+            
+                    
+                    获取系统上的扬声器设备列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.9" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetAudioCfg">
+            
+                    
+                    系统音频参数设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.10" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAudioCfg">
+            
+                    
+                    获取音频参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.11" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetMicEnergy">
+            
+                    
+                    获取用户说话声音大小
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.12" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_OpenMic">
+            
+                    
+                    打开自己的麦克风
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.13" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CloseMic">
+            
+                    
+                    关闭自己的麦克风
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.14" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAudioStatus">
+            
+                    
+                    获取用户的麦状态 麦克风设备状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.15" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetMicVolume">
+            
+                    
+                    获取麦克风音量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.16" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetSpeakerVolume">
+            
+                    
+                    获取本地扬声器音量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.17" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetAllAudioClose">
+            
+                    
+                    关闭所有用户的麦克风
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.18" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAllVideoInfo">
+            
+                    
+                    获取用户所有的摄像头信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.19" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetVideoCfg">
+            
+                    
+                    系统视频参数设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.20" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetWatchableVideos">
+            
+                    
+                    获取会议内所有可观看的摄像头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.21" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_OpenVideo">
+            
+                    
+                    打开用户的摄像头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.22" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CloseVideo">
+            
+                    
+                    关闭用户的摄像头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.23" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetVideoStatus">
+            
+                    
+                    获取用户的摄像头状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.24" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetDefaultVideo">
+            
+                    
+                    获取指定用户的默认摄像头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.25" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetDefaultVideo">
+            
+                    
+                    设置默认的摄像头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.26" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetEnableMutiVideo">
+            
+                    
+                    查询用户是否启用多摄像头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.27" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetVideoImg">
+            
+                    
+                    获取指定用户的最新图像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.28" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetScreenShareCfg">
+            
+                    
+                    获取当前屏幕共享配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.29" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetScreenShareCfg">
+            
+                    
+                    设置屏幕共享配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.30" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StartScreenShare">
+            
+                    
+                    开启屏幕共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.31" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StopScreenShare">
+            
+                    
+                    停止屏幕共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.32" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetShareScreenDecodeImg">
+            
+                    
+                    获取屏幕共享解码图像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.33" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetCustomizeScreenImg">
+            
+                    
+                    设置自定义的抓屏图像数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.34" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GiveCtrlRight">
+            
+                    
+                    赋予控制权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.35" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_ReleaseCtrlRight">
+            
+                    
+                    收回控制权限
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.36" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SendMouseCtrlMsg">
+            
+                    
+                    发送鼠标控制消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.37" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SendKeyCtrlMsg">
+            
+                    
+                    发送键盘控制消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.38" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetRecordVideos">
+            
+                    
+                    设置录制视频
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.39" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StartRecordIng">
+            
+                    
+                    开始录制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.40" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StopRecord">
+            
+                    
+                    停止录制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.41" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetRecDuration">
+            
+                    
+                    获取录制的文件时长
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.42" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetRecFileSize">
+            
+                    
+                    获取当前录制的文件大小
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.43" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetRecordFileEncrypt">
+            
+                    
+                    设置本地生成的录制文件是否加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.44" data-path="methvideoMrgods.md">
+            
+                <span>
+            
+                    
+                    取得所有录制文件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.45" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CancelFileTransfer">
+            
+                    
+                    取消传输
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.46" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CancelUploadRecordFile">
+            
+                    
+                    取消上传录像文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.47" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_UploadRecordFile">
+            
+                    
+                    上传录像文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.48" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_PlaybackRecordFile">
+            
+                    
+                    回放录制文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.49" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Switchtopage">
+            
+                    
+                    功能切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.50" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Getcurrentmainpage">
+            
+                    
+                    获取当前主功能区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.51" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Getcurrentsubpage">
+            
+                    
+                    获取当前子功能区
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.52" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetVideoWallMode">
+            
+                    
+                    获取视频墙当前分屏模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.53" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Setvideowallmode">
+            
+                    
+                    设置视频墙分屏模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.54" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetMainVideo">
+            
+                    
+                    获取当前哪个用户为主视频
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.55" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Createboard">
+            
+                    
+                    创建白板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.56" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Closeboard">
+            
+                    
+                    关闭白板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.57" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_InitBoardPageDat">
+            
+                    
+                    初始化白板指定页数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.58" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CreateElementID">
+            
+                    
+                    创建一个符合云层要求的图元id
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.59" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Addboardelement">
+            
+                    
+                    添加图元信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.60" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_ModifyBoardElement">
+            
+                    
+                    修改图元信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.61" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Delboardelement">
+            
+                    
+                    删除图元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.62" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Setmousehotspot">
+            
+                    
+                    设置鼠标热点消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.63" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetNetDiskSummary">
+            
+                    
+                    获取会议网盘的容量信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.64" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetNetDiskFileList">
+            
+                    
+                    获取网盘用户共享文件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.65" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_MakeNetDiskFileID">
+            
+                    
+                    生成网盘文件全局唯一ID
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.66" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Uploadnetdiskfile">
+            
+                    
+                    上传文件到网盘
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.67" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Deletenetdiskfile">
+            
+                    
+                    删除网盘文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.68" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Downloadnetdiskfile">
+            
+                    
+                    从网盘中下载文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.69" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Canclenetdiskfile">
+            
+                    
+                    取消网盘文件操作（上传/下载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.70" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetNetDiskTransportPause">
+            
+                    
+                    设置网盘文件传输暂停或继续
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.71" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StartPlayMedia">
+            
+                    
+                    开始播放影音
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.72" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetMediacfg">
+            
+                    
+                    配置远程影音共享时，图像质量参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.73" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetMediacfg">
+            
+                    
+                    获取音频参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.74" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_PausePlayMedia">
+            
+                    
+                    暂停或恢复播放影音
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.75" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StopPlayMedia">
+            
+                    
+                    停止播放影音
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.76" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetMediaplaypos">
+            
+                    
+                    设置播放进度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.77" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetAllFilesInMediaPath">
+            
+                    
+                    取得播放路径下的所有可播放文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.78" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Getmediainfo">
+            
+                    
+                    取得影音文件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.79" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_Getmediaimg">
+            
+                    
+                    取得影音帧信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.80" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StartGetAudioPCM">
+            
+                    
+                    开始获取语音pcm数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.81" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StopGetAudioPCM">
+            
+                    
+                    停止获取语音pcm数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.82" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SendIMmsg">
+            
+                    
+                    发送IM消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.83" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetPicResource">
+            
+                    
+                    暂未定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.84" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CreatScreenShareObj">
+            
+                    
+                    创建screenShare对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.85" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CreatVideoObj">
+            
+                    
+                    创建media对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.86" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetVideoCfg">
+            
+                    
+                    获取视频参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.87" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetMainVideo">
+            
+                    
+                    设置当前哪个用户为主视频
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.88" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetMicVolume">
+            
+                    
+                    设置麦克风音量大小
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.89" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SetSpeakerVolume">
+            
+                    
+                    设置本地扬声器音量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.90" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_CreatMediaObj">
+            
+                    
+                    创建media对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#videoMrgCallback">
+            
+                    
+                    视频管理回调
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_EnterMeetingRslt">
+            
+                    
+                    进入会议完成响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.2" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StopMeetingRslt">
+            
+                    
+                    通知结束视频会议结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.3" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_UserEnterMeeting">
+            
+                    
+                    某用户进入了会议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.4" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_UserLeftMeeting">
+            
+                    
+                    某用户离开了会议
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.5" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_MeetingDropped">
+            
+                    
+                    SDK通知从会议里掉线了
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.6" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_MeetingStopped">
+            
+                    
+                    会议已被结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.7" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_AudioDevChanged">
+            
+                    
+                    SDK通知本地音频设备有变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.8" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_AudioStatusChanged">
+            
+                    
+                    SDK通知打开本地音频状态变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.9" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_MicEnergyUpdate">
+            
+                    
+                    SDK通知用户的说话声音强度更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.10" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_VideoStatusChanged">
+            
+                    
+                    SDK通知打开本地视频状态变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.11" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_VideoDevChanged">
+            
+                    
+                    SDK通知用户的视频设备有变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.12" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyVideoData">
+            
+                    
+                    SDK通知用户有新的视频数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.13" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_UploadRecordFileErr">
+            
+                    
+                    上传录制文件错误通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.14" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_RecordErr">
+            
+                    
+                    录制异常，录制将自动停止
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.15" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_RecordStateChanged">
+            
+                    
+                    录制状态更改通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.16" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StartScreenShareRslt">
+            
+                    
+                    开启屏幕共享的响应事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.17" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_StopScreenShareRslt">
+            
+                    
+                    停止屏幕共享的响应事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.18" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyScreenShareStarted">
+            
+                    
+                    通知他人开启了屏幕共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.19" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyScreenShareStopped">
+            
+                    
+                    通知他人停止了屏幕共享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.20" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyScreenShareData">
+            
+                    
+                    通知对端屏幕图像有变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.21" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyCatchScreen">
+            
+                    
+                    自定义抓屏时，SDK通知使用者抓屏
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.22" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyGiveCtrlRight">
+            
+                    
+                    SDK通知远程控制权限给予了某人
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.23" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyReleaseCtrlRight">
+            
+                    
+                    SDK通知收回远程控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.24" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyShareRectChanged">
+            
+                    
+                    通知屏幕共享大小改变
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.25" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_SendIMmsgRlst">
+            
+                    
+                    发送IM消息，SDK通知使用者发送结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.26" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyIMmsg">
+            
+                    
+                    SDK通知收到IM消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.27" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifySwitchToPage">
+            
+                    
+                    SDK通知功能切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.28" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyVideoWallMode">
+            
+                    
+                    SDK通知视频分屏模式切换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.29" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMainVideoChanged">
+            
+                    
+                    SDK通知主视频更改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.30" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyInitBoards">
+            
+                    
+                    SDK入会后通知会议中已经存在的白板列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.31" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyInitBoardPageDat">
+            
+                    
+                    初始化白板页数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.32" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyCreateBoard">
+            
+                    
+                    SDK通知创建白板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.33" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyCloseBoard">
+            
+                    
+                    SDK通知关闭白板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.34" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyBoardBkImage">
+            
+                    
+                    SDK通知白板背景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.35" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyAddBoardElement">
+            
+                    
+                    SDK通知添加图元信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.36" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyModifyBoardElement">
+            
+                    
+                    SDK通知图元信息被修改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.37" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyDelBoardElement">
+            
+                    
+                    SDK通知删除图元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.38" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMouseHotSpot">
+            
+                    
+                    SDK通知设置鼠标热点消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.39" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetNetDiskSummaryRslt">
+            
+                    
+                    SDK通知获取网盘容量信息结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.40" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_GetNetDiskFileListRslt">
+            
+                    
+                    SDK通知获取网盘文件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.41" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyNetDiskFileDeleteRslt">
+            
+                    
+                    SDK通知删除网盘文件结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.42" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyNetDiskTransforProgress">
+            
+                    
+                    SDK通知网盘上传或下载进度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.43" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyNetDiskIsFull">
+            
+                    
+                    SDK通知网盘空间已满，容量不足
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.44" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyRecordFileStateChanged">
+            
+                    
+                    SDK通知录制文件状态更改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.45" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyRecordFileUploadProgress">
+            
+                    
+                    SDK通知上传录制文件进度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.46" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMediaOpened">
+            
+                    
+                    SDK通知影音文件打开
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.47" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMediaStart">
+            
+                    
+                    SDK通知影音开始播放
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.48" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMediaStop">
+            
+                    
+                    SDK通知影音播放停止
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.49" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMediaPause">
+            
+                    
+                    SDK通知设置鼠标热点消息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.50" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyPlayPosSetted">
+            
+                    
+                    SDK通知播放进度已设置完成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.51" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyMemberMediaData">
+            
+                    
+                    SDK通知影音帧数据已解码完毕
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.52" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_DefVideoChanged">
+            
+                    
+                    SDK通知用户的视频默认设备有变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.53" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NetStateChanged">
+            
+                    
+                    SDK通知我的网络变化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2.54" data-path="videoMrg.html">
+            
+                <a href="videoMrg.html#CRVideo_NotifyAudioPCMDat">
+            
+                    
+                    SDK通知语音PCM数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html">
+            
+                    
+                    队列管理接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#queueMrgFunction">
+            
+                    
+                    队列管理函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1.1" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_InitQueueDat">
+            
+                    
+                    初始化用户队列功能数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.2" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_RefreshAllQueueStatus">
+            
+                    
+                    刷新所有队列状态信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.3" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_GetAllQueueInfo">
+            
+                    
+                    获取所有队列信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.4" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_GetQueueStatus">
+            
+                    
+                    获取队列状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.5" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_GetQueuingInfo">
+            
+                    
+                    获取我的排队信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.6" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_GetServingQueues">
+            
+                    
+                    获取我服务的所有队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.7" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_GetSessionInfo">
+            
+                    
+                    获取我的会话信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.8" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StartQueuing">
+            
+                    
+                    客户开始排队
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.9" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StopQueuing">
+            
+                    
+                    客户停止排队
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.10" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StartService">
+            
+                    
+                    开始服务某个队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.11" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StopService">
+            
+                    
+                    停止服务某个队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.12" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_ReqAssignUser">
+            
+                    
+                    请求分配一个客户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.13" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_AcceptAssignUser">
+            
+                    
+                    接受系统安排的客户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.1.14" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_RejectAssignUser">
+            
+                    
+                    拒绝系统安排的客户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#queueMrgCallback">
+            
+                    
+                    队列管理回调
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.2.1" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_InitQueueDatRslt">
+            
+                    
+                    队列初始化操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.2" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_QueueStatusChanged">
+            
+                    
+                    队列状态变化通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.3" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_QueuingInfoChanged">
+            
+                    
+                    排队信息变化通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.4" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StartQueuingRslt">
+            
+                    
+                    开始排队操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.5" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StopQueuingRslt">
+            
+                    
+                    停止排队操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.6" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StartServiceRslt">
+            
+                    
+                    开始服务队列操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.7" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_StopServiceRslt">
+            
+                    
+                    停止服务队列操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.8" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_ResponseAssignUserRslt">
+            
+                    
+                    响应分配客户操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.9" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_AutoAssignUser">
+            
+                    
+                    系统自动安排客户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.10" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_ReqAssignUserRslt">
+            
+                    
+                    请求分配客户操作结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2.11" data-path="queueMrg.html">
+            
+                <a href="queueMrg.html#CRVideo_CancelAssignUser">
+            
+                    
+                    系统取消已经安排的客户
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html">
+            
+                    
+                    Http管理接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#httpMrgFunction">
+            
+                    
+                    Http管理函数
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1.1" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_GetAllTransferInfos">
+            
+                    
+                    获取本地所有上传、下载文件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.2" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_StartTransferFile">
+            
+                    
+                    开始下载/上传文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.3" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_RmTransferInfo">
+            
+                    
+                    删除传输记录及相关文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.4" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_GetTransferInfo">
+            
+                    
+                    获取本地上传、下载文件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.5" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_RemoveFromFileMgr">
+            
+                    
+                    删除本地的录制文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.6" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_SetRecordUploadCfg">
+            
+                    
+                    上传录像文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.7" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_AddFileToRecordMgr">
+            
+                    
+                    第三方录制文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.1.8" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_SetFileUploadRate">
+            
+                    
+                    文件上传的流量控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#httpMrgCallback">
+            
+                    
+                    Http管理回调
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.2.1" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_FileStateChanged">
+            
+                    
+                    通知用户文件状态更改
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.2" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_FileProgress">
+            
+                    
+                    系统取消已经安排的客户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.3" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_FileFinished">
+            
+                    
+                    通知用户文件传输结束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.4" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_FileHttpRspHeader">
+            
+                    
+                    通知用户文件http响应头
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2.5" data-path="httpMrg.html">
+            
+                <a href="httpMrg.html#CRVideo_FileHttpRspContent">
+            
+                    
+                    通知用户文件http响应结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Constant.html">
+            
+                <a href="Constant.html">
+            
+                    
+                    常量定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="Constant.html">
+            
+                <a href="Constant.html#CRVIDEOSDK_ERR_DEF">
+            
+                    
+                    错误代码含义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="Constant.html">
+            
+                <a href="Constant.html#ASTATUS">
+            
+                    
+                    麦克风状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="Constant.html">
+            
+                <a href="Constant.html#VIDEO_SHOW_SIZE">
+            
+                    
+                    视频尺寸定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="Constant.html">
+            
+                <a href="Constant.html#VSTATUS">
+            
+                    
+                    视频状态定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="Constant.html">
+            
+                <a href="Constant.html#REC_VCONTENT_TYPE">
+            
+                    
+                    视频图像格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="Constant.html">
+            
+                <a href="Constant.html#RECORD_STATE">
+            
+                    
+                    录制的状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="Constant.html">
+            
+                <a href="Constant.html#RECORD_AUDIO_TYPE">
+            
+                    
+                    录制语音类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="Constant.html">
+            
+                <a href="Constant.html#RECORD_VIDEO_TYPE">
+            
+                    
+                    录制图像类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="Constant.html">
+            
+                <a href="Constant.html#RECORD_VLAYOUT">
+            
+                    
+                    录制视频的布局类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.10" data-path="Constant.html">
+            
+                <a href="Constant.html#ENCODE_TYPE">
+            
+                    
+                    屏幕共享的编码类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.11" data-path="Constant.html">
+            
+                <a href="Constant.html#MOUSE_MSG_TYPE">
+            
+                    
+                    鼠标事件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.12" data-path="Constant.html">
+            
+                <a href="Constant.html#MOUSE_KEY_TYPE">
+            
+                    
+                    鼠标键类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.13" data-path="Constant.html">
+            
+                <a href="Constant.html#KEY_MSG_TYPE">
+            
+                    
+                    键盘事件类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.14" data-path="Constant.html">
+            
+                <a href="Constant.html#MAIN_PAGE_TYPE">
+            
+                    
+                    功能类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.15" data-path="Constant.html">
+            
+                <a href="Constant.html#VIDEOLAYOUTMODE">
+            
+                    
+                    视频墙分屏模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.16" data-path="Constant.html">
+            
+                <a href="Constant.html#REC_DATATYPE">
+            
+                    
+                    录制的类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.17" data-path="Constant.html">
+            
+                <a href="Constant.html#HTTP_TRANSFER_STATE">
+            
+                    
+                    Http文件传输状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.18" data-path="Constant.html">
+            
+                <a href="Constant.html#HTTP_TRANSFER_RESULT">
+            
+                    
+                    Http文件传输结果
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.19" data-path="Constant.html">
+            
+                <a href="Constant.html#ToolBarUI">
+            
+                    
+                    录制布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.20" data-path="Constant.html">
+            
+                <a href="Constant.html#STOP_REASON">
+            
+                    
+                    影音结束原因
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.21" data-path="Constant.html">
+            
+                <a href="Constant.html#VIDEO_WH_RATE">
+            
+                    
+                    视频尺寸定义
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html">
+            
+                    
+                    类型定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_AddFileToRecordMgr">
+            
+                    
+                    添加本地文件到录制文件管理中
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_AudioCfg">
+            
+                    
+                    音频参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_FileInfo">
+            
+                    
+                    排队信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_MediaInfoObj">
+            
+                    
+                    影音文件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_MemberInfo">
+            
+                    
+                    成员信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_QueueInfo">
+            
+                    
+                    队列信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_QueuingInfo">
+            
+                    
+                    排队信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_RecordFileInfo">
+            
+                    
+                    录制文件信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_RecordUploadCfg">
+            
+                    
+                    上传配置参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_RecordVideoInfo">
+            
+                    
+                    需要录制的视频信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.11" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_ScreenShareCfgObj">
+            
+                    
+                    屏幕共享配置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.12" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_SessionInfo">
+            
+                    
+                    排队信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.13" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_VideoCfg">
+            
+                    
+                    视频参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.14" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_VideoDeviceInfo">
+            
+                    
+                    视频设备信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.15" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_VideoIDsObj">
+            
+                    
+                    视频设备对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.16" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_VideoImgObj">
+            
+                    
+                    视频参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.17" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_Board">
+            
+                    
+                    白板信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.18" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_MeetInfoObj">
+            
+                    
+                    区域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.19" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_QueInfo">
+            
+                    
+                    队列信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.20" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_QueStatus">
+            
+                    
+                    队列状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.21" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_QueUser">
+            
+                    
+                    队列用户信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.22" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_Rect">
+            
+                    
+                    区域
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.23" data-path="TypeDefinitions.html">
+            
+                <a href="TypeDefinitions.html#CRVideo_SubPage">
+            
+                    
+                    队列状态信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="ClassContainer.html">
+            
+                <a href="ClassContainer.html">
+            
+                    
+                    容器定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="ClassContainer.html">
+            
+                <a href="ClassContainer.html#container">
+            
+                    
+                    显示容器的基类 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="ClassContainer.html">
+            
+                <a href="ClassContainer.html#MediaContainer">
+            
+                    
+                    影音播放的呈现容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="ClassContainer.html">
+            
+                <a href="ClassContainer.html#ScreenShareContainer">
+            
+                    
+                    屏幕共享播放的呈现容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="ClassContainer.html">
+            
+                <a href="ClassContainer.html#VideoContainer">
+            
+                    
+                    视频的呈现容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    对象结构定义
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="json.html">
+            
+                <a href="json.html#MeetInfoObj">
+            
+                    
+                    会议对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="json.html">
+            
+                <a href="json.html#MeetInfoObjs">
+            
+                    
+                    会议对象列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="json.html">
+            
+                <a href="json.html#MemberObj">
+            
+                    
+                    成员对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="json.html">
+            
+                <a href="json.html#MembersObj">
+            
+                    
+                    成员对象列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="json.html">
+            
+                <a href="json.html#AudioCfgObj">
+            
+                    
+                    音频配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="json.html">
+            
+                <a href="json.html#VideoCfgObj">
+            
+                    
+                    视频配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="json.html">
+            
+                <a href="json.html#VideoImgObj">
+            
+                    
+                    视频帧图像
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="json.html">
+            
+                <a href="json.html#VideoInfoObj">
+            
+                    
+                    用户视频信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.9" data-path="json.html">
+            
+                <a href="json.html#VideoInfosObj">
+            
+                    
+                    用户视频信息列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.10" data-path="json.html">
+            
+                <a href="json.html#VideoIDObjs">
+            
+                    
+                    用户视频列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.11" data-path="json.html">
+            
+                <a href="json.html#ScreenShareCfgObj">
+            
+                    
+                    屏幕共享配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.12" data-path="json.html">
+            
+                <a href="json.html#RecordVideosObj">
+            
+                    
+                    录制视频对象列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.13" data-path="json.html">
+            
+                <a href="json.html#RecordCfgObj">
+            
+                    
+                    录制文件配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.14" data-path="json.html">
+            
+                <a href="json.html#RecordFilesObj">
+            
+                    
+                    录制文件列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.15" data-path="json.html">
+            
+                <a href="json.html#MediaInfoObj">
+            
+                    
+                    影音文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.16" data-path="json.html">
+            
+                <a href="json.html#PicResourceObj">
+            
+                    
+                    图片资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.17" data-path="json.html">
+            
+                <a href="json.html#BoardObjs">
+            
+                    
+                    白板信息列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.18" data-path="json.html">
+            
+                <a href="json.html#BoardObj">
+            
+                    
+                    白板配置对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.19" data-path="json.html">
+            
+                <a href="json.html#BoardElementObjs">
+            
+                    
+                    白板图元列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.20" data-path="json.html">
+            
+                <a href="json.html#BoardElementObj">
+            
+                    
+                    白板图元
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.21" data-path="json.html">
+            
+                <a href="json.html#NetFileObj">
+            
+                    
+                    网盘文件对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.22" data-path="json.html">
+            
+                <a href="json.html#NetFileObjs">
+            
+                    
+                    网盘文件对象列表
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >会议管理接口</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="meetingMrg">&#x4F1A;&#x8BAE;&#x7BA1;&#x7406;&#x7EC4;&#x4EF6; </h1>
+<blockquote>
+<p>CloudroomVideoMgr &#x63D0;&#x4F9B;&#x767B;&#x5F55;&#x3001;&#x547C;&#x53EB;&#x3001;&#x4F1A;&#x8BAE;&#x521B;&#x5EFA;&#x9500;&#x6BC1;&#x3001;&#x900F;&#x660E;&#x4F20;&#x8F93;&#x7B49;&#x529F;&#x80FD; &#x5355;&#x4F8B;&#x7EC4;&#x4EF6;&#xFF0C;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x751F;&#x547D;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x6709;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x3002;</p>
+</blockquote>
+<h3 id="meetingFunction">&#x4F1A;&#x8BAE;&#x7BA1;&#x7406;&#x51FD;&#x6570; </h3>
+<h4 id="CRVideo_Login">&#x767B;&#x5F55; </h4>
+<blockquote>
+<p>CRVideo_Login(authAcnt, authPswd, nickName, privAcnt, privAuthCode, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">authAcnt</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x4E91;&#x5C4B;&#x9274;&#x6743;&#x5E10;&#x53F7;</td>
+</tr>
+<tr>
+<td style="text-align:left">authPswd</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x4E91;&#x5C4B;&#x9274;&#x6743;&#x5BC6;&#x7801;</td>
+</tr>
+<tr>
+<td style="text-align:left">nickName</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x6635;&#x79F0;</td>
+</tr>
+<tr>
+<td style="text-align:left">privAcnt</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x5E10;&#x53F7;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:left">privAuthCode</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x9A8C;&#x8BC1;&#x7801;(&#x6709;&#x590D;&#x6742;&#x8981;&#x6C42;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;json&#x683C;&#x5F0F;)&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_LoginSuccess">CRVideo_LoginSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_LoginFail">CRVideo_LoginFail</a></p>
+</blockquote>
+<h4 id="CRVideo_Logout">&#x6CE8;&#x9500;&#x672C;&#x6B21;&#x767B;&#x9646; </h4>
+<blockquote>
+<p>CRVideo_Logout()</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<h4 id="CRVideo_SetDNDStatus">&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001; </h4>
+<blockquote>
+<p>CRVideo_SetDNDStatus(DNDStatus, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">DNDStatus</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">0&#x4EE3;&#x8868;&#x5173;&#x95ED;&#x514D;&#x6253;&#x6270;&#xFF0C; &#x5176;&#x5B83;&#x503C;&#x4EE3;&#x8868;&#x5F00;&#x542F;&#x514D;&#x6253;&#x6270;&#xFF0C;&#x542B;&#x4E49;&#x81EA;&#x7531;&#x5B9A;&#x4E49;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_SetDNDStatusSuccess">CRVideo_SetDNDStatusSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_SetDNDStatusFail">CRVideo_SetDNDStatusFail</a></p>
+</blockquote>
+<h4 id="CRVideo_GetUserStatus">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001; </h4>
+<blockquote>
+<p>CRVideo_GetUserStatus(cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;(&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="CRVideo_StartUserStatusNotify">&#x5F00;&#x542F;&#x7528;&#x6237;&#x7684;&#x72B6;&#x6001;&#x63A8;&#x9001; </h4>
+<blockquote>
+<p>CRVideo_StartUserStatusNotify(cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;(&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x4F01;&#x4E1A;&#x4E0B;&#x6240;&#x6709;&#x7528;&#x6237;&#x72B6;&#x6001;&#x6709;&#x53D8;&#x5316;&#x65F6;(&#x5305;&#x62EC;&#x547C;&#x53EB;&#x4F1A;&#x8BAE;&#x72B6;&#x6001;&#x3001;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;)&#xFF0C;&#x90FD;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5; &#x5F00;&#x542F;&#x540E;&#xFF0C;&#x7528;&#x6237;&#x91CF;&#x8D8A;&#x5927;&#x6D88;&#x606F;&#x91CF;&#x8D8A;&#x5927;&#xFF0C;&#x6240;&#x4EE5;&#x8BF7;&#x6309;&#x9700;&#x5F00;&#x542F; &#x5728;<a href="#CRVideo_StartUserStatusNotify">CRVideo_StartUserStatusNotify</a>&#x524D;&#xFF0C;&#x5E94;&#x8BE5;&#x5148;&#x901A;&#x8FC7;<a href="#CRVideo_GetUserStatus">CRVideo_GetUserStatus</a>&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#x72B6;&#x6001;</p>
+</blockquote>
+<h4 id="CRVideo_StopUserStatusNotify">&#x5173;&#x95ED;&#x7528;&#x6237;&#x7684;&#x72B6;&#x6001;&#x63A8;&#x9001; </h4>
+<blockquote>
+<p>CRVideo_StopUserStatusNotify(cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;(&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="CRVideo_CreateMeeting">&#x521B;&#x5EFA;&#x4F1A;&#x8BAE; </h4>
+<blockquote>
+<p>CRVideo_CreateMeeting(meetSubject, createPswd, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0; </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">meetSubject</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x4F1A;&#x8BAE;&#x4E3B;&#x9898;&#xFF08;&#x5B57;&#x7B26;&#x957F;&#x5EA6;&#x6700;&#x5927;&#x503C;50&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">createPswd</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x521B;&#x5EFA;&#x4F1A;&#x8BAE;&#x5BC6;&#x7801;&#xFF08;=0&#x65F6;&#xFF1A;&#x4F1A;&#x8BAE;&#x65E0;&#x5BC6;&#x7801;&#xFF0C;&gt;0&#x65F6;&#xFF1A;&#x5BC6;&#x7801;&#x7531;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x751F;&#x6210;&#xFF09;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_CreateMeetingSuccess">CRVideo_CreateMeetingSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_CreateMeetingFail">CRVideo_CreateMeetingFail</a></p>
+</blockquote>
+<h4 id="CRVideo_DestroyMeeting">&#x7ED3;&#x675F;&#x4F1A;&#x8BDD; </h4>
+<blockquote>
+<p>CRVideo_DestroyMeeting(meetID, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0; </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">meetID</td>
+<td style="text-align:left">number</td>
+<td style="text-align:left">&#x4F1A;&#x8BAE;id</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><a href="videoMrg.html#CRVideo_StopMeetingRslt">CRVideo_StopMeetingRslt</a>&#xFF0C;&#x4F1A;&#x8BDD;&#x88AB;&#x4ED6;&#x4EBA;&#x7ED3;&#x675F;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;<a href="videoMrg.html#CRVideo_MeetingStopped">CRVideo_MeetingStopped</a></p>
+</blockquote>
+<h4 id="CRVideo_GetMeetings">&#x83B7;&#x53D6;&#x4F1A;&#x8BAE;&#x5217;&#x8868; </h4>
+<blockquote>
+<p>CRVideo_GetMeetings(cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x54CD;&#x5E94;&#x4E8B;&#x4EF6;<a href="#CRVideo_GetMeetingsSuccess">CRVideo_GetMeetingsSuccess</a>&#xFF0C;&#x4F1A;&#x8BDD;&#x88AB;&#x4ED6;&#x4EBA;&#x7ED3;&#x675F;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;<a href="#CRVideo_GetMeetingsFail">CRVideo_GetMeetingsFail</a></p>
+</blockquote>
+<h4 id="CRVideo_Call">&#x53D1;&#x8D77;&#x547C;&#x53EB;&#xFF0C;&#x9080;&#x8BF7;&#x7528;&#x6237;&#x53C2;&#x52A0;&#x89C6;&#x9891;&#x4F1A;&#x8BDD; </h4>
+<blockquote>
+<p>CRVideo_Call(calledUserID, meetObj, usrExtDat, cookie) </p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x8FD4;&#x56DE;&#x672C;&#x6B21;&#x547C;&#x53EB;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x547C;&#x53EB;ID&#xFF09; </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">calledUserID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x88AB;&#x53EB;&#x7528;&#x6237;&#x7684;&#x8D26;&#x6237;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">meetObj</td>
+<td style="text-align:left"><a href="TypeDefinitions.html#CRVideo_MeetInfoObj">CRVideo_MeetInfoObj</a></td>
+<td style="text-align:left">&#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:left">usrExtDat</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;(&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_CallSuccess">CRVideo_CallSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_CallSuccess">CRVideo_CallFail</a>&#x3002; &#x547C;&#x53EB;&#x65F6;&#xFF0C;&#x5BF9;&#x65B9;&#x8FDF;&#x8FDF;&#x4E0D;&#x54CD;&#x5E94;&#xFF0C;30&#x79D2;&#x540E;&#x7CFB;&#x7EDF;&#x81EA;&#x52A8;&#x7ED3;&#x675F;&#x547C;&#x53EB;</p>
+</blockquote>
+<h4 id="CRVideo_AcceptCall">&#x63A5;&#x53D7;&#x5BF9;&#x65B9;&#x53D1;&#x8D77;&#x7684;&#x89C6;&#x9891;&#x8BF7;&#x6C42; </h4>
+<blockquote>
+<p>CRVideo_AcceptCall(callID, meetObj, usrExtDat, cookie)</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">callID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x547C;&#x53EB;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">meetObj</td>
+<td style="text-align:left"><a href="TypeDefinitions.html#CRVideo_MeetInfoObj">CRVideo_MeetInfoObj</a></td>
+<td style="text-align:left">&#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td style="text-align:left">usrExtDat</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x5F00;&#x59CB;&#x8FDB;&#x5165;&#x89C6;&#x9891;&#x4F1A;&#x8BDD; &#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_AcceptCallSuccess">CRVideo_AcceptCallSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_AcceptCallFail">CRVideo_AcceptCallFail</a></p>
+</blockquote>
+<h4 id="CRVideo_RejectCall">&#x62D2;&#x7EDD;&#x5BF9;&#x65B9;&#x7684;&#x89C6;&#x9891;&#x8BF7;&#x6C42; </h4>
+<blockquote>
+<p>CRVideo_RejectCall(callID, usrExtDat, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">callID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x547C;&#x53EB;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">usrExtDat</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_RejectCallSuccess">CRVideo_RejectCallSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_RejectCallFail">CRVideo_RejectCallFail</a></p>
+</blockquote>
+<h4 id="CRVideo_HungupCall">&#x6302;&#x65AD;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x89C6;&#x9891;&#x547C;&#x53EB;&#x6216;&#x89C6;&#x9891;&#x901A;&#x8BDD; </h4>
+<blockquote>
+<p>CRVideo_HungupCall(callID, usrExtDat, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">callID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x547C;&#x53EB;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">usrExtDat</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_HangupCallSuccess">CRVideo_HangupCallSuccess</a>,&#x5931;&#x8D25;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_HangupCallFail">CRVideo_HangupCallFail</a></p>
+</blockquote>
+<h4 id="CRVideo_ClientInvite">2&#x65B9;&#x901A;&#x8BDD;&#x65F6;&#x547C;&#x53EB;&#x7B2C;3&#x65B9; </h4>
+<blockquote>
+<p>CRVideo_ClientInvite(called, meetObj, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x672C;&#x6B21;&#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x9080;&#x8BF7;ID</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">called</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x88AB;&#x53EB;&#x7528;&#x6237;&#x7684;&#x8D26;&#x6237;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">meetObj</td>
+<td style="text-align:left">CRVideo_MeetInfoObj</td>
+<td style="text-align:left">&#x5F53;&#x524D;&#x4F1A;&#x8BAE;&#x4FE1;&#x606F;(json&#x7ED3;&#x6784;&#x4F53;&#x8BF7;&#x53C2;&#x89C1;MeetInfoObj)</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;<a href="#CRVideo_ClientInviteRslt">CRVideo_ClientInviteRslt</a>&#xFF0C;&#x6839;&#x636E;sdkErr&#x5224;&#x65AD;&#x662F;&#x5426;&#x6210;&#x529F;</p>
+</blockquote>
+<h4 id="CRVideo_ClientCancelInvite">&#x53D6;&#x6D88;&#x7B2C;3&#x65B9;&#x547C;&#x53EB; </h4>
+<blockquote>
+<p>CRVideo_ClientCancelInvite(inviteID, cookie)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0; </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">inviteID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x9080;&#x8BF7;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">cookie</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;<a href="#CRVideo_ClientCancelInviteRslt">CRVideo_ClientCancelInviteRslt</a>&#xFF0C;&#x6839;&#x636E;sdkErr&#x5224;&#x65AD;&#x662F;&#x5426;&#x6210;&#x529F;</p>
+</blockquote>
+<h4 id="CRVideo_SendCmd">&#x53D1;&#x9001;&#x5C0F;&#x5757;&#x6570; </h4>
+<blockquote>
+<p>CRVideo_SendCmd(targetUserId, data) </p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;ID(string)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">targetUserId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x4E00;&#x6B21;&#x6027;&#x53D1;&#x9001;&#x4E0D;&#x4F1A;&#x6709;&#x8FDB;&#x5EA6;&#x901A;&#x77E5;,&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;<a href="#CRVideo_SendCmdRlst">CRVideo_SendCmdRlst</a>,CRVideo_SendCmd&#x4E0D;&#x80FD;&#x88AB;<a href="#CRVideo_CancelSend">CRVideo_CancelSend</a>)</p>
+</blockquote>
+<h4 id="CRVideo_SendBuffer">&#x53D1;&#x9001;&#x5927;&#x5757;&#x6570;&#x636E;(&#x5206;&#x5757;&#x53D1;&#x9001; </h4>
+<blockquote>
+<p>CRVideo_SendBuffer(targetUserId, data)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;ID(string)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">targetUserId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x8FDB;&#x5EA6;&#x901A;&#x77E5;&#x4E8B;&#x4EF6;<a href="#CRVideo_SendProgress">CRVideo_SendProgress</a>,&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;<a href="#CRVideo_SendBufferRlst">CRVideo_SendBufferRlst</a>,&#x53D6;&#x6D88;&#x53D1;&#x9001;<a href="#CRVideo_CancelSend">CRVideo_CancelSend</a>)</p>
+</blockquote>
+<h4 id="CRVideo_SendFile">&#x53D1;&#x9001;&#x6587;&#x4EF6;(&#x5206;&#x5757;&#x53D1;&#x9001; </h4>
+<blockquote>
+<p>CRVideo_SendFile(targetUserId, fileName)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x5206;&#x914D;&#x7684;&#x4EFB;&#x52A1;ID(string)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">targetUserId</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x76EE;&#x6807;&#x7528;&#x6237;ID</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x8FDB;&#x5EA6;&#x901A;&#x77E5;&#x4E8B;&#x4EF6;<a href="#CRVideo_SendProgress">CRVideo_SendProgress</a>,&#x53D1;&#x9001;&#x7ED3;&#x679C;&#x4E8B;&#x4EF6;<a href="#CRVideo_SendFileRlst">CRVideo_SendFileRlst</a>,&#x53D6;&#x6D88;&#x53D1;&#x9001;<a href="#CRVideo_CancelSend">CRVideo_CancelSend</a>)</p>
+</blockquote>
+<h4 id="CRVideo_CancelSend">&#x53D6;&#x6D88;&#x6570;&#x636E;&#x53D1;&#x9001; </h4>
+<blockquote>
+<p>CRVideo_CancelSend(taskID)</p>
+</blockquote>
+<ul>
+<li><strong>&#x8FD4;&#x56DE;&#x503C;</strong>:&#x65E0; </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;</th>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">taskID</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x4EFB;&#x52A1;ID</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>&#x53D6;&#x6D88;&#x6570;&#x636E;&#x53D1;&#x9001; &#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x5219;&#x56DE;&#x8C03;<a href="#CRVideo_CancelSendRlst">CRVideo_CancelSendRlst</a></p>
+</blockquote>
+<hr>
+<h3 id="meetingCallback">&#x4F1A;&#x8BAE;&#x7BA1;&#x7406;&#x56DE;&#x8C03; </h3>
+<h4 id="CRVideo_LoginSuccess">&#x767B;&#x5F55;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_LoginSuccess.callback = function(usrID,cookie){}</p>
+</blockquote>
+<ul>
+<li>usrID ----- &#x7528;&#x6237;&#x8D26;&#x6237;</li>
+<li>usrID ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_LoginFail">&#x767B;&#x5F55;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_LoginFail .callback = function(sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_SetDNDStatusSuccess">&#x5BA2;&#x6237;&#x7AEF;&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_SetDNDStatusSuccess.callback = function(cookie){}</p>
+</blockquote>
+<ul>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_SetDNDStatusFail">&#x5BA2;&#x6237;&#x7AEF;&#x8BBE;&#x7F6E;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_SetDNDStatusFail.callback = function(sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_GetUserStatusSuccess">&#x5BA2;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_GetUserStatusSuccess.callback = function(usersStatus,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x5217;&#x8868;&#xFF0C;userID:&#x7528;&#x6237;id,userStatus:&#x7528;&#x6237;&#x7684;&#x5728;&#x7EBF;&#x72B6;&#x6001;(0 &#x79BB;&#x7EBF;  1&#x5728;&#x7EBF;&#x7A7A;&#x95F2;  2 &#x5728;&#x7EBF;&#x5FD9;&#x788C;  3&#x5728;&#x7EBF;&#x4F1A;&#x8BAE;&#x4E2D;),DNDType:&#x7528;&#x6237;&#x514D;&#x6253;&#x6270;&#x72B6;&#x6001;(0&#x4EE3;&#x8868;&#x5173;&#x95ED;&#x514D;&#x6253;&#x6270;&#xFF0C; &#x5176;&#x5B83;&#x503C;&#x4EE3;&#x8868;&#x5F00;&#x542F;&#x514D;&#x6253;&#x6270;)</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_GetUserStatusFail">&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_GetUserStatusFail.callback = function(sdkErr ,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_StartUserStatusNotifyRslt">&#x542F;&#x52A8;&#x7528;&#x6237;&#x72B6;&#x6001;&#x63A8;&#x9001;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_StartUserStatusNotifyRslt.callback = function(sdkErr ,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_StopUserStatusNotifyRslt">&#x7ED3;&#x675F;&#x7528;&#x6237;&#x72B6;&#x6001;&#x63A8;&#x9001;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_StopUserStatusNotifyRslt.callback = function(sdkErr ,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_NotifyUserStatus">&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x72B6;&#x6001;&#x53D8;&#x5316;&#x901A;&#x77E5; </h4>
+<blockquote>
+<p>CRVideo_NotifyUserStatus.callback = function(userStatus ,cookie){}</p>
+</blockquote>
+<ul>
+<li>userStatus ----- userStatus&#x5355;&#x4E2A;&#x7528;&#x6237;&#x5728;&#x7EBF;&#x72B6;&#x6001;&#x4FE1;&#x606F;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_LineOff">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x6389;&#x7EBF; </h4>
+<blockquote>
+<p>CRVideo_LineOff.callback = function(sdkErr){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+</ul>
+<h4 id="CRVideo_CreateMeetingSuccess">&#x521B;&#x5EFA;&#x4F1A;&#x8BAE;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_CreateMeetingSuccess.callback = function(meetObj,cookie){}</p>
+</blockquote>
+<ul>
+<li>meetObj ----- &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_CreateMeetingFail">&#x521B;&#x5EFA;&#x4F1A;&#x8BAE;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_CreateMeetingFail.callback = function(sdkErr ,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_DestroyMeetingRslt">&#x7ED3;&#x675F;&#x4F1A;&#x8BAE;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_DestroyMeetingRslt.callback = function(sdkErr ,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_GetMeetingsSuccess">&#x83B7;&#x53D6;&#x4F1A;&#x8BAE;&#x5217;&#x8868;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_GetMeetingsSuccess.callback = function(cookie){}</p>
+</blockquote>
+<ul>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_GetMeetingsFail">&#x83B7;&#x53D6;&#x4F1A;&#x8BAE;&#x5217;&#x8868;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_GetMeetingsFail.callback = function(sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_CallSuccess">&#x547C;&#x53EB;&#x4ED6;&#x4EBA;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_CallSuccess.callback = function(callID ,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_CallFail">&#x547C;&#x53EB;&#x4ED6;&#x4EBA;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_CallFail.callback = function(callID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_AcceptCallSuccess">&#x63A5;&#x53D7;&#x4ED6;&#x4EBA;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_AcceptCallSuccess.callback = function(callID,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_AcceptCallFail">&#x63A5;&#x53D7;&#x4ED6;&#x4EBA;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_AcceptCallFail.callback = function(callID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_RejectCallSuccess">&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_RejectCallSuccess.callback = function(callID,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_RejectCallFail">&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_RejectCallFail.callback = function(callID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_HangupCallSuccess">&#x62D2;&#x7EDD;&#x4ED6;&#x4EBA;&#x7684;&#x547C;&#x53EB;&#x6210;&#x529F;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_HangupCallSuccess.callback = function(callID,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_HangupCallFail">&#x6302;&#x65AD;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_HangupCallFail.callback = function(callID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_NotifyCallIn">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x88AB;&#x547C;&#x53EB; </h4>
+<blockquote>
+<p>CRVideo_NotifyCallIn.callback = function(callID,meetObj,callerID,usrExtDat){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>meetObj ----- &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</li>
+<li>callerID ----- &#x547C;&#x53EB;&#x4EBA;&#x5458;&#x7684;&#x6807;&#x8BC6;ID</li>
+<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
+</ul>
+<h4 id="CRVideo_NotifyCallAccepted">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x89C6;&#x9891;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x63A5;&#x53D7; </h4>
+<blockquote>
+<p>CRVideo_NotifyCallAccepted.callback = function(callID,meetObj,callerID,usrExtDat){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>meetObj ----- &#x4F1A;&#x8BAE;&#x4FE1;&#x606F;</li>
+<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
+</ul>
+<h4 id="CRVideo_NotifyCallRejected">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x547C;&#x53EB;&#x88AB;&#x5BF9;&#x65B9;&#x62D2;&#x7EDD; </h4>
+<blockquote>
+<p>CRVideo_NotifyCallRejected.callback = function(callID,sdkErr,usrExtDat){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
+</ul>
+<h4 id="CRVideo_NotifyCallHungup">SDK&#x901A;&#x77E5;&#x81EA;&#x5DF1;&#x547C;&#x53EB;&#x88AB;&#x6302;&#x65AD; </h4>
+<blockquote>
+<p>CRVideo_NotifyCallHungup.callback = function(callID,usrExtDat){}</p>
+</blockquote>
+<ul>
+<li>callID ----- &#x547C;&#x53EB;&#x5168;&#x5C40;&#x6807;&#x8BC6;</li>
+<li>usrExtDat ----- &#x81EA;&#x5B9A;&#x4E49;&#x6269;&#x5C55;&#x53C2;&#x6570;</li>
+</ul>
+<h4 id="CRVideo_ClientInviteRslt">&#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
+<blockquote>
+<p>CRVideo_ClientInviteRslt.callback = function(inviteID,sdkEr,cookie){}</p>
+</blockquote>
+<ul>
+<li>inviteID ----- &#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x9080;&#x8BF7;ID</li>
+<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</li>
+</ul>
+<h4 id="CRVideo_ClientCancelInviteRslt">&#x53D6;&#x6D88;&#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x64CD;&#x4F5C;&#x7ED3;&#x679C; </h4>
+<blockquote>
+<p>CRVideo_ClientCancelInviteRslt.callback = function(inviteID,sdkEr,cookie){}</p>
+</blockquote>
+<ul>
+<li>inviteID ----- &#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;(&#x9080;&#x8BF7;ID)</li>
+<li>sdkEr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a>&#xFF0C;CRVIDEOSDK_NOERR&#x4E3A;&#x6210;&#x529F;&#x64CD;&#x4F5C;</li>
+<li>cookie ----- &#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E; (&#x5728;&#x56DE;&#x8C03;&#x65F6;&#xFF0C;&#x56DE;&#x4F20;&#x7ED9;&#x8C03;&#x7528;&#x8005;)</li>
+</ul>
+<h4 id="CRVideo_NotifyInviteStatus">SDK&#x901A;&#x77E5;&#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x72B6;&#x6001;&#x6539;&#x53D8; </h4>
+<blockquote>
+<p>CRVideo_NotifyInviteStatus.callback = function(inviteID,status){}</p>
+</blockquote>
+<ul>
+<li>inviteID ----- &#x9080;&#x8BF7;&#x6807;&#x8BC6;&#x7801;&#xFF08;&#x9080;&#x8BF7;ID</li>
+<li>status ----- &#x7B2C;3&#x65B9;&#x547C;&#x53EB;&#x72B6;&#x6001;&#x7801;,0-&#x632F;&#x94C3; 1-&#x63A5;&#x901A; 2-&#x62D2;&#x7EDD; 3-&#x672A;&#x5E94;&#x7B54; 4-&#x6302;&#x65AD;</li>
+</ul>
+<h4 id="CRVideo_SendCmdRlst">&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
+<blockquote>
+<p>CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_SendBufferRlst">&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
+<blockquote>
+<p>CRVideo_SendBufferRlst.callback = function(taskID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_SendFileRlst">&#x53D1;&#x9001;&#x6587;&#x4EF6;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x7ED3;&#x679C; </h4>
+<blockquote>
+<p>CRVideo_SendFileRlst.callback = function(taskID,fileName,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
+<li>fileName ----- &#x6587;&#x4EF6;&#x540D;</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_SendProgress">&#x53D1;&#x9001;&#x6570;&#x636E;&#x65F6;&#xFF0C;SDK&#x901A;&#x77E5;&#x53D1;&#x9001;&#x8FDB;&#x5EA6; </h4>
+<blockquote>
+<p>CRVideo_SendProgress.callback = function(taskID,sendedLen,totalLen,cookie){}</p>
+</blockquote>
+<ul>
+<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
+<li>sendedLen ----- &#x5DF2;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x957F;&#x5EA6;</li>
+<li>totalLen ----- &#x9700;&#x8981;&#x53D1;&#x9001;&#x7684;&#x603B;&#x957F;&#x5EA6;</li>
+<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_CancelSendRlst">&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x54CD;&#x5E94; </h4>
+<blockquote>
+<p>CRVideo_CancelSendRlst.callback = function(taskID,sdkErr,cookie){}</p>
+</blockquote>
+<ul>
+<li>taskID ----- &#x53D1;&#x9001;&#x4EFB;&#x52A1;id</li>
+<li>sdkErr ----- &#x64CD;&#x4F5C;&#x5931;&#x8D25;&#x4EE3;&#x7801;,&#x5B9A;&#x4E49;&#x89C1;<a href="Constant.html#CRVIDEOSDK_ERR_DEF">CRVIDEOSDK_ERR_DEF</a></li>
+<li>cookie  ----- &#x81EA;&#x5B9A;&#x4E49;&#x7528;&#x6237;&#x6570;&#x636E; </li>
+</ul>
+<h4 id="CRVideo_NotifyCmdData">SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x5C0F;&#x5757;&#x6570;&#x636E; </h4>
+<blockquote>
+<p>CRVideo_NotifyCmdData.callback = function(sourceUserId,data){}</p>
+</blockquote>
+<ul>
+<li>sourceUserId ----- &#x6570;&#x636E;&#x6765;&#x6E90;</li>
+<li>data ----- &#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_NotifyBufferData">SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x5927;&#x5757;&#x6570;&#x636E; </h4>
+<blockquote>
+<p>CRVideo_NotifyBufferData.callback = function(sourceUserId,data){}</p>
+</blockquote>
+<ul>
+<li>sourceUserId ----- &#x6570;&#x636E;&#x6765;&#x6E90;</li>
+<li>data ----- &#x6570;&#x636E;</li>
+</ul>
+<h4 id="CRVideo_NotifyFileData">SDK&#x901A;&#x77E5;&#x6536;&#x5230;&#x6587;&#x4EF6;&#x6570;&#x636E;&#xFF08;&#x6536;&#x5230;&#x7684;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x5728;&#x7CFB;&#x7EDF;&#x4E34;&#x65F6;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x8BF7;&#x5C3D;&#x5FEB;&#x79FB;&#x8D70;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;&#xFF09; </h4>
+<blockquote>
+<p>CRVideo_NotifyFileData.callback = function(sourceUserId,tmpFile,orgFileName){}</p>
+</blockquote>
+<ul>
+<li>sourceUserId ----- &#x6570;&#x636E;&#x6765;&#x6E90;</li>
+<li>tmpFile ----- &#x4E34;&#x65F6;&#x6587;&#x4EF6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x65F6;&#xFF0C;&#x8BF7;&#x79FB;&#x9664;&#x6216;&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x6587;&#x4EF6;</li>
+<li>orgFileName ----- &#x6E90;&#x59CB;&#x6587;&#x4EF6;&#x540D;</li>
+</ul>
+<h4 id="CRVideo_NotifyCancelSend">SDK&#x901A;&#x77E5;&#x53D6;&#x6D88;&#x53D1;&#x9001;&#x6587;&#x4EF6;&#x6570;&#x636E; </h4>
+<blockquote>
+<p>CRVideo_NotifyCancelSend.callback = function(taskID){}</p>
+</blockquote>
+<ul>
+<li>taskID ----- &#x53D6;&#x6D88;&#x7684;&#x4EFB;&#x52A1;id </li>
+</ul>
+<footer class="page-footer"><span class="copyright">&#xA9; HeDonghai all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-01-24 19:08:52
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"会议管理接口","level":"1.5","depth":1,"next":{"title":"会议管理函数","level":"1.5.1","depth":2,"anchor":"#meetingFunction","path":"meetingMrg.md","ref":"meetingMrg.md#meetingFunction","articles":[{"title":"登录","level":"1.5.1.1","depth":3,"anchor":"#CRVideo_Login","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_Login","articles":[]},{"title":"注销本次登陆","level":"1.5.1.2","depth":3,"anchor":"#CRVideo_Logout","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_Logout","articles":[]},{"title":"设置免打扰状态","level":"1.5.1.3","depth":3,"anchor":"#CRVideo_SetDNDStatus","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_SetDNDStatus","articles":[]},{"title":"获取用户在线状态","level":"1.5.1.4","depth":3,"anchor":"#CRVideo_GetUserStatus","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_GetUserStatus","articles":[]},{"title":"开启用户的状态推送","level":"1.5.1.5","depth":3,"anchor":"#CRVideo_StartUserStatusNotify","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_StartUserStatusNotify","articles":[]},{"title":"关闭用户的状态推送","level":"1.5.1.6","depth":3,"anchor":"#CRVideo_StopUserStatusNotify","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_StopUserStatusNotify","articles":[]},{"title":"创建会议","level":"1.5.1.7","depth":3,"anchor":"#CRVideo_CreateMeeting","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_CreateMeeting","articles":[]},{"title":"结束会话","level":"1.5.1.8","depth":3,"anchor":"#CRVideo_DestroyMeeting","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_DestroyMeeting","articles":[]},{"title":"获取会议列表","level":"1.5.1.9","depth":3,"anchor":"#CRVideo_GetMeetings","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_GetMeetings","articles":[]},{"title":"发起呼叫，邀请用户参加视频会话","level":"1.5.1.10","depth":3,"anchor":"#CRVideo_Call","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_Call","articles":[]},{"title":"接受对方发起的视频请求","level":"1.5.1.11","depth":3,"anchor":"#CRVideo_AcceptCall","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_AcceptCall","articles":[]},{"title":"拒绝对方的视频请求","level":"1.5.1.12","depth":3,"anchor":"#CRVideo_RejectCall","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_RejectCall","articles":[]},{"title":"挂断正在进行的视频呼叫或视频通话","level":"1.5.1.13","depth":3,"anchor":"#CRVideo_HungupCall","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_HungupCall","articles":[]},{"title":"2方通话时呼叫第3方","level":"1.5.1.14","depth":3,"anchor":"#CRVideo_ClientInvite","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_ClientInvite","articles":[]},{"title":"取消第3方呼叫","level":"1.5.1.15","depth":3,"anchor":"#CRVideo_ClientCancelInvite","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_ClientCancelInvite","articles":[]},{"title":"发送小块数","level":"1.5.1.16","depth":3,"anchor":"#CRVideo_SendCmd","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_SendCmd","articles":[]},{"title":"发送大块数据(分块发送","level":"1.5.1.17","depth":3,"anchor":"#CRVideo_SendBuffer","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_SendBuffer","articles":[]},{"title":"发送文件(分块发送","level":"1.5.1.18","depth":3,"anchor":"#CRVideo_SendFile","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_SendFile","articles":[]},{"title":"取消数据发送","level":"1.5.1.19","depth":3,"anchor":"#CRVideo_CancelSend","path":"meetingMrg.md","ref":"meetingMrg.md#CRVideo_CancelSend","articles":[]}]},"previous":{"title":"获取服务器地址","level":"1.4.1.6","depth":3,"anchor":"#CRVideo_GetServerAddr","path":"basics.md","ref":"basics.md#CRVideo_GetServerAddr","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-livereload","-sharing","book-summary-scroll-position-saver","expandable-chapters","search-plus","splitter","tbfed-pagefooter","back-to-top-button","yahei","theme-api","theme-comscore","livereload"],"styles":{"website":"style.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy; HeDonghai","modify_label":"文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"yahei":{},"book-summary-scroll-position-saver":{},"splitter":{},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"white","family":"msyh","size":2},"highlight":{},"theme-comscore":{},"theme-api":{"languages":[],"split":true,"theme":"light"},"back-to-top-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"Carter","pdf":{"pageNumbers":true,"fontSize":18,"fontFamily":"Arial","paperSize":"a3","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":30,"left":30,"top":30,"bottom":50},"toc":true},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Cloudroom SDK Refference","language":"zh-hans","gitbook":"*","description":"云屋视频会议SDK参考文档"},"file":{"path":"meetingMrg.md","mtime":"2018-01-24T11:08:52.970Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-24T11:09:02.325Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-book-summary-scroll-position-saver/book-summary-scroll-position-saver.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-api/theme-api.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

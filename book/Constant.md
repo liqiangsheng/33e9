@@ -11,54 +11,54 @@
 
 | 代码     | 数值        | 含义      |
 |:-------- |:-----------|:----------|
-| CRVIDEOSDK_NOERR | 0 | 没有错误    | 
-| CRVIDEOSDK_UNKNOWERR | 1| 未知错误    | 
-| CRVIDEOSDK_OUTOF_MEM | 2 | 内存不足    | 
-| CRVIDEOSDK_INNER_ERR | 3| sdk内部错误    | 
-| CRVIDEOSDK_MISMATCHCLIENTVER | 4 | 不支持的sdk版本    | 
-| CRVIDEOSDK_MEETPARAM_ERR | 5| 参数错误    | 
-| CRVIDEOSDK_ERR_DATA | 6 | 无效数据    | 
-| CRVIDEOSDK_ANCTPSWD_ERR |7 | 帐号密码不正确    | 
-| CRVIDEOSDK_SERVER_EXCEPTION | 8 | 服务异常    | 
-| CRVIDEOSDK_LOGINSTATE_ERROR | 9 | 登录状态错误    | 
-| CRVIDEOSDK_USER_BEEN_KICKOUT | 10 | 登录用户被踢下线    | 
-| CRVIDEOSDK_NETWORK_INITFAILED | 200 | 网络初始化失败  | 
-| CRVIDEOSDK_NO_SERVERINFO | 201 | 没有服务器信息    | 
-| CRVIDEOSDK_NOSERVER_RSP | 202 | 服务器没有响应    | 
-| CRVIDEOSDK_CREATE_CONN_FAILED | 203 | 创建连接失败    | 
-| CRVIDEOSDK_SOCKETEXCEPTION | 204 | socket异常    | 
-| CRVIDEOSDK_SOCKETTIMEOUT | 205 | 网络超时    | 
-| CRVIDEOSDK_FORCEDCLOSECONNECTION | 206 | 连接被关闭    | 
-| CRVIDEOSDK_CONNECTIONLOST | 207 | 连接丢失    | 
-| CRVIDEOSDK_QUE_ID_INVALID |400 | 队列ID错误    | 
-| CRVIDEOSDK_QUE_NOUSER | 401 | 没有用户在排队    | 
-| CRVIDEOSDK_QUE_USER_CANCELLED |402| 排队用户已取消    | 
-| CRVIDEOSDK_QUE_SERVICE_NOT_START | 403 | 队列服务还未开启    | 
-| CRVIDEOSDK_ALREADY_OTHERQUE | 404 | 已在其它队列排队(客户只能在一个队列排队)    | 
-| CRVIDEOSDK_INVALID_CALLID | 600 | 无效的呼叫ID    | 
-| CRVIDEOSDK_ERR_CALL_EXIST | 601| 已在呼叫中    | 
-| CRVIDEOSDK_ERR_BUSY | 602| 对方忙    | 
-| CRVIDEOSDK_ERR_OFFLINE | 603 | 对方不在线    | 
-| CRVIDEOSDK_ERR_NOANSWER | 604| 对方无应答    | 
-| CRVIDEOSDK_ERR_USER_NOT_FOUND | 605 | 用户不存在    | 
-| CRVIDEOSDK_ERR_REFUSE | 606 | 对方拒接    | 
-| CRVIDEOSDK_MEETNOTEXIST | 800 | 没有会议不存在或已结束错误    | 
-| CRVIDEOSDK_AUTHERROR | 801 | 会议密码不正确    | 
-| CRVIDEOSDK_MEMBEROVERFLOWERROR | 802| 会议终端数量已满（购买的license不够)    | 
-| CRVIDEOSDK_RESOURCEALLOCATEERROR | 803 | 分配会议资源失败    | 
-| CRVIDEOSDK_MEETROOMLOCKED | 804 | 会议已加锁    | 
-| CRVIDEOSDK_CATCH_SCREEN_ERR | 900| 抓屏失败    | 
-| CRVIDEOSDK_RECORD_MAX | 901| 单次录制达到最大时长(8h)    | 
-| CRVIDEOSDK_RECORD_NO_DISK | 902| 磁盘空间不够    | 
-| CRVIDEOSDK_SENDFAIL | 1000 | 发送失败    | 
-| CRVIDEOSDK_CONTAIN_SENSITIVEWORDS | 1001 | 有敏感词语    | 
-| CRVIDEOSDK_SENDCMD_LARGE | 1100 | 发送信令数据过大    | 
-| CRVIDEOSDK_SENDBUFFER_LARGE |1101| 发送数据过大    | 
-| CRVIDEOSDK_SENDDATA_TARGETINVALID | 1102 | 目标用户不存在    | 
-| CRVIDEOSDK_SENDFILE_FILEINERROR | 1103 | 文件错误    | 
-| CRVIDEOSDK_TRANSID_INVALID | 1104 | 无效的发送id    | 
-| CRVIDEOSDK_RECORDFILE_STATE_ERR | 1200 | 状态错误不可上传/取消上传    | 
-| CRVIDEOSDK_RECORDFILE_NOT_EXIST | 1201 | 录制文件不存在    | 
+| CRVideo_NOERR  | 0 | 没有错误    | 
+| CRVideo_UNKNOWERR | 1| 未知错误    | 
+| CRVideo_OUTOF_MEM  | 2 | 内存不足    | 
+| CRVideo_INNER_ERR | 3| sdk内部错误    | 
+| CRVideo_MISMATCHCLIENTVER | 4 | 不支持的sdk版本    | 
+| CRVideo_MEETPARAM_ERR | 5| 参数错误    | 
+| CRVideo_ERR_DATA | 6 | 无效数据    | 
+| CRVideo_ANCTPSWD_ERR |7 | 帐号密码不正确    | 
+| CRVideo_SERVER_EXCEPTION | 8 | 服务异常    | 
+| CRVideo_LOGINSTATE_ERROR | 9 | 登录状态错误    | 
+| CRVideo_USER_BEEN_KICKOUT | 10 | 登录用户被踢下线    | 
+| CRVideo_NETWORK_INITFAILED | 200 | 网络初始化失败  | 
+| CRVideo_NO_SERVERINFO | 201 | 没有服务器信息    | 
+| CRVideo_NOSERVER_RSP | 202 | 服务器没有响应    | 
+| CRVideo_CREATE_CONN_FAILED | 203 | 创建连接失败    | 
+| CRVideo_SOCKETEXCEPTION | 204 | socket异常    | 
+| CRVideo_SOCKETTIMEOUT | 205 | 网络超时    | 
+| CRVideo_FORCEDCLOSECONNECTION | 206 | 连接被关闭    | 
+| CRVideo_CONNECTIONLOST | 207 | 连接丢失    | 
+| CRVideo_QUE_ID_INVALID |400 | 队列ID错误    | 
+| CRVideo_QUE_NOUSER | 401 | 没有用户在排队    | 
+| CRVideo_QUE_USER_CANCELLED |402| 排队用户已取消    | 
+| CRVideo_QUE_SERVICE_NOT_START | 403 | 队列服务还未开启    | 
+| CRVideo_ALREADY_OTHERQUE | 404 | 已在其它队列排队(客户只能在一个队列排队)    | 
+| CRVideo_INVALID_CALLID | 600 | 无效的呼叫ID    | 
+| CRVideo_ERR_CALL_EXIST | 601| 已在呼叫中    | 
+| CRVideo_ERR_BUSY | 602| 对方忙    | 
+| CRVideo_ERR_OFFLINE | 603 | 对方不在线    | 
+| CRVideo_ERR_NOANSWER | 604| 对方无应答    | 
+| CRVideo_ERR_USER_NOT_FOUND | 605 | 用户不存在    | 
+| CRVideo_ERR_REFUSE | 606 | 对方拒接    | 
+| CRVideo_MEETNOTEXIST | 800 | 没有会议不存在或已结束错误    | 
+| CRVideo_AUTHERROR | 801 | 会议密码不正确    | 
+| CRVideo_MEMBEROVERFLOWERROR | 802| 会议终端数量已满（购买的license不够)    | 
+| CRVideo_RESOURCEALLOCATEERROR | 803 | 分配会议资源失败    | 
+| CRVideo_MEETROOMLOCKED | 804 | 会议已加锁    | 
+| CRVideo_CATCH_SCREEN_ERR | 900| 抓屏失败    | 
+| CRVideo_RECORD_MAX | 901| 单次录制达到最大时长(8h)    | 
+| CRVideo_RECORD_NO_DISK | 902| 磁盘空间不够    | 
+| CRVideo_SENDFAIL | 1000 | 发送失败    | 
+| CRVideo_CONTAIN_SENSITIVEWORDS | 1001 | 有敏感词语    | 
+| CRVideo_SENDCMD_LARGE | 1100 | 发送信令数据过大    | 
+| CRVideo_SENDBUFFER_LARGE |1101| 发送数据过大    | 
+| CRVideo_SENDDATA_TARGETINVALID | 1102 | 目标用户不存在    | 
+| CRVideo_SENDFILE_FILEINERROR | 1103 | 文件错误    | 
+| CRVideo_TRANSID_INVALID | 1104 | 无效的发送id    | 
+| CRVideo_RECORDFILE_STATE_ERR | 1200 | 状态错误不可上传/取消上传    | 
+| CRVideo_RECORDFILE_NOT_EXIST | 1201 | 录制文件不存在    | 
 
 ### 麦克风状态 {#ASTATUS}
 
