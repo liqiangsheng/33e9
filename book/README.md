@@ -50,31 +50,31 @@
 
 * 关闭所有浏览器点击[安装SDK](Explain.md#install)，然后打开Examples 目录下面的RemoteRecordDemo(web)->index.html
 
-* 输入服务器地址和用户ID，登录(坐席)
+* 输入服务器地址和用户ID，登录（坐席）
 
 ![](./images/yuanchengshuanglu4.png)
 
-* 点击开启服务器。等待连接(坐席)
+* 点击开启服务器。等待连接（坐席）
 
 ![](./images/yuanchengshuanglu5.png)
 
-* 输入服务器地址和用户ID，登录(客户)
+* 输入服务器地址和用户ID，登录（客户）
 
 ![](./images/yuanchengshuanglu1.png)
 
-* 点击连接服务器(客户)
+* 点击连接服务器（客户）
 
 ![](./images/yuanchengshuanglu2.png)
 
-* 等待排队(客户)
+* 等待排队（客户）
 
 ![](./images/yuanchengshuanglu3.png)
 
-* 进入远程双录主界面(坐席)
+* 进入远程双录主界面（坐席）
 
 ![](./images/yuanchengshuanglu6.png)
 
-* 进入远程双录主界面(客户)
+* 进入远程双录主界面（客户）
 
 ![](./images/yuanchengshuanglu7.png)
 
@@ -85,30 +85,30 @@
 
 * 关闭所有浏览器点击[安装SDK](Explain.md#install)，然后打开Examples 目录下面的VideoCall(web)->index.html
 
-* 输入服务器地址和用户ID，登录(坐席)
+* 输入服务器地址和用户ID，登录（坐席）
 
 ![](./images/video1.png)
 
-* 点击开启服务器。等待连接(坐席)
+* 点击开启服务器。等待连接（坐席）
 
 ![](./images/video2.png)
 
-* 输入服务器地址和用户ID，登录(客户)
+* 输入服务器地址和用户ID，登录（客户）
 
 ![](./images/video3.png)
 
-* 点击连接服务器(客户)
+* 点击连接服务器（客户）
 
 ![](./images/video4.png)
 
-* 等待排队(客户)
+* 等待排队（客户）
 
 ![](./images/video5.png)
 
-* 进入远程双录主界面(坐席)
+* 进入远程双录主界面（坐席）
 
 ![](./images/video6.png)
 
-* 进入远程双录主界面(客户)
+* 进入远程双录主界面（客户）
 
 ![](./images/video7.png)

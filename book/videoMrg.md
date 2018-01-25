@@ -18,7 +18,7 @@
 |pswd|	string	|本次会议中的密码（系统自动生成，在呼叫回调中取得）|
 |userID	|string|	用户id|
 |nickName	|string	|昵称|
-|cookie	|string	|自定义数据 (在回调时，回传给调用者)|
+|cookie	|string	|自定义数据 （在回调时，回传给调用者）|
 
 >双方开始进入本次视频会话 操作完成则回调[CRVideo_EnterMeetingRslt](#CRVideo_EnterMeetingRslt)
 
@@ -34,13 +34,13 @@
 
 >CRVideo_GetAllMembers()
 
-- **返回值**:返回含多个成员信息(Array-[CRVideo_MemberInfo](TypeDefinitions.md#CRVideo_MemberInfo))
+- **返回值**:返回含多个成员信息（Array ------[CRVideo_MemberInfo](TypeDefinitions.md#CRVideo_MemberInfo)）
 
 ####获取指定用户的信息 {#CRVideo_GetMemberInfo}
 
 >CRVideo_GetMemberInfo(userID)
 
-- **返回值**:info - 返回用户userID的成员信息([CRVideo_MemberInfo](TypeDefinitions.md#CRVideo_MemberInfo))
+- **返回值**:返回用户userID的成员信息（[CRVideo_MemberInfo](TypeDefinitions.md#CRVideo_MemberInfo)）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -50,7 +50,7 @@
 
 >CRVideo_GetMemberNickName(userID) 
 
-- **返回值**:返回用户userID的昵称(string)
+- **返回值**:用户userID的昵称(string)
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -60,7 +60,7 @@
 
 >CRVideo_IsUserInMeeting(userID)
 
-- **返回值**:如果用户存在则返回true,否则返回false(bool)
+- **返回值**:如果用户存在则返回true，否则返回false(bool)
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -70,13 +70,13 @@
 
 >CRVideo_GetAudioMicNames() 
 
-- **返回值**:返回麦克风设备字符串列表(Array.<string>)
+- **返回值**:返回麦克风设备字符串列表（Array）
 
 ####获取系统上的扬声器设备列表 {#CRVideo_GetAudioSpkNames}
 
 >CRVideo_GetAudioSpkNames()
 
-- **返回值**:返回扬声器设备列表(Array.<string>)
+- **返回值**:扬声器设备列表（Array）
 
 ####系统音频参数设置 {#CRVideo_SetAudioCfg}
 
@@ -92,7 +92,7 @@
 
 >CRVideo_GetAudioCfg()
 
-- **返回值**:返回cfg对象([CRVideo_AudioCfg](TypeDefinitions.md#CRVideo_AudioCfg))
+- **返回值**:cfg对象（[CRVideo_AudioCfg](TypeDefinitions.md#CRVideo_AudioCfg)）
 
 ####获取用户说话声音大小 {#CRVideo_GetMicEnergy}
 
@@ -138,19 +138,19 @@
 |:-------- |:-----------|:----------|
 |userID	 |string	|登录成功后分配的userID|
 
->双方开始进入本次视频会话 操作完成则回调[CRVideo_EnterMeetingRslt](#CRVideo_EnterMeetingRslt)
+>双方开始进入本次视频会话。操作完成则回调[CRVideo_EnterMeetingRslt](#CRVideo_EnterMeetingRslt)
 
 ####获取麦克风音量 {#CRVideo_GetMicVolume}
 
 >CRVideo_GetMicVolume()
 
-- **返回值**:返回麦克风音量（0~255）(number)
+- **返回值**:返回麦克风音量（0~255）（number）
 
 ####获取本地扬声器音量 {#CRVideo_GetSpeakerVolume}
 
 >CRVideo_GetSpeakerVolume() 
 
-- **返回值**:返回扬声器音量（0~255）(number)
+- **返回值**:返回扬声器音量（0~255）（number）
 
 ####关闭所有用户的麦克风 {#CRVideo_SetAllAudioClose}
 
@@ -162,7 +162,7 @@
 
 >CRVideo_GetAllVideoInfo() 
 
-- **返回值**:返回设备列表(Array.[CRVideo_VideoDeviceInfo](TypeDefinitions.md#CRVideo_VideoDeviceInfo))
+- **返回值**:返回设备列表（Array ------ [CRVideo_VideoDeviceInfo](TypeDefinitions.md#CRVideo_VideoDeviceInfo)）
 
 ####系统视频参数设置 {#CRVideo_SetVideoCfg}
 
@@ -178,9 +178,9 @@
 
 >CRVideo_GetWatchableVideos()
 
-- **返回值**:对象VideoIDArray( Array-[CRVideo_VideoIDsObj](TypeDefinitions.md#CRVideo_VideoIDsObj))
+- **返回值**:对象VideoIDArray（Array ------ [CRVideo_VideoIDsObj](TypeDefinitions.md#CRVideo_VideoIDsObj)）
 
->只有摄像头打开才能被获取到,能获取到自已的和会议里其他人的
+>只有摄像头打开才能被获取到，能获取到自已的和会议里其他人的
 
 ####打开用户的摄像头 {#CRVideo_OpenVideo}
 
@@ -208,7 +208,7 @@
 
 >CRVideo_GetVideoStatus(userID)
 
-- **返回值**:麦克风摄像头状态([CRVideo_VSTATUS](Constang.md#VSTATUS))
+- **返回值**:麦克风摄像头状态（[CRVideo_VSTATUS](Constang.md#VSTATUS)）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -218,7 +218,7 @@
 
 >CRVideo_GetDefaultVideo(userID)
 
-- **返回值**:返回摄像头ID(number)
+- **返回值**:返回摄像头ID （number）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -239,7 +239,7 @@
 
 >CRVideo_GetEnableMutiVideo(userID)
 
-- **返回值**:返回用户是否多摄像头(bool)
+- **返回值**:用户是否多摄像头（bool）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -249,7 +249,7 @@
 
 >CRVideo_GetVideoImg() 
 
-- **返回值**:返回frame视频数据([CRVideo_VideoImgObj](TypeDefinitions.md#CRVideo_VideoImgObj))
+- **返回值**:返回frame视频数据（[CRVideo_VideoImgObj](TypeDefinitions.md#CRVideo_VideoImgObj)）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -260,7 +260,7 @@
 
 >CRVideo_GetScreenShareCfg() 
 
-- **返回值**:屏幕共享配置([CRVideo_ScreenShareCfgObj](TypeDefinitions.md#CRVideo_ScreenShareCfgObj))
+- **返回值**:屏幕共享配置（[CRVideo_ScreenShareCfgObj](TypeDefinitions.md#CRVideo_ScreenShareCfgObj)）
 
 ####设置屏幕共享配置 {#CRVideo_SetScreenShareCfg}
 
@@ -301,7 +301,7 @@
 |format	|[CRVideo_VIDEO_FORMAT](Constant.md#VIDEO_FORMAT)	|视频格式|
 |width	|number|	图像的宽度|
 |heigh|	number	|图像的高度|
-|dat	|string	|承载argb数据,base64编码|
+|dat	|string	|承载argb数据，base64编码|
 
 ####赋予控制权限 {#CRVideo_GiveCtrlRight}
 
@@ -368,11 +368,11 @@
 |:-------- |:-----------|:----------|
 |recordPath	| string	| 录像存储的路径| 
 | audioType| 	[CRVideo_RECORD_AUDIO_TYPE](Constant.md#RECORD_AUDIO_TYPE)| 	音频类型| 
-| frameRate	| number| 	帧率，建议不要太高；(取值1~24)| 
+| frameRate	| number| 	帧率，建议不要太高；（取值1~24）| 
 | recordWidth	| number| 	视频宽度| 
 | recordHeight| 	number	| 视频高度| 
-| bitRate	| number| 	录制的最高码率，当图像变化小时，实际码率会低于此值。建议：640*360: 500000; (500kbps)，1280*720：1000000; (1mbps)，1920*1080: 2000000; (2mbps)| 
-| defaultQP	| number	| 目标质量(推荐:36, 中:28, 高:22)| 
+| bitRate	| number| 	录制的最高码率，当图像变化小时，实际码率会低于此值。建议：640*360: 500000; (500kbps)，1280*720：1000000; （1mbps），1920*1080: 2000000; （2mbps）| 
+| defaultQP	| number	| 目标质量（推荐:36， 中:28， 高:22）| 
 | recDataType	| [CRVideo_REC_DATATYPE](Constant.md#CRVideo_REC_DATATYPE)| 	录制内容类型（视频+音频）| 
 | recDataType| 	number| 	录制内容类型（视频+音频）| 
 | isUploadOnRecording	| number| 	是否录制的同时上传 1为是，0为否| 
@@ -401,7 +401,7 @@
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
-|encrypt |	number |	1表示加密 0表示不加密| 
+|encrypt |	number |	1表示加密； 0表示不加密| 
 
 ####取得所有录制文件信息 {#CRVideo_GetAllRecordFiles}
 
@@ -472,13 +472,13 @@
 
 >CRVideo_Getcurrentsubpage()
 
-- **返回值**:jsonSubPage - 子功能区信息([CRVideo_SubPage](TypeDefinitions.md#CRVideo_SubPage))
+- **返回值**:子功能区信息([CRVideo_SubPage](TypeDefinitions.md#CRVideo_SubPage))
 
 ####获取视频墙当前分屏模式 {#CRVideo_GetVideoWallMode}
 
 >CRVideo_GetVideoWallMode()
 
-- **返回值**:videoWallMode - 分屏模式([CRVideo_VIDEOLAYOUTMODE](Constant.md#CRVideo_VIDEOLAYOUTMODE))
+- **返回值**:分屏模式([CRVideo_VIDEOLAYOUTMODE](Constant.md#CRVideo_VIDEOLAYOUTMODE))
 
 ####设置视频墙分屏模式 {#CRVideo_Setvideowallmode}
 
@@ -542,7 +542,7 @@
 
 - **返回值**:图元id
 
->本地操作;所有白板图元id，必须由此接口创建；（历史文件存储的图元id，在会议内不能再使用，应重新创建）
+>本地操作；所有白板图元id，必须由此接口创建；（历史文件存储的图元id，在会议内不能再使用，应重新创建）
 
 ####添加图元信息 {#CRVideo_Addboardelement}
 
@@ -582,9 +582,9 @@
 |:-------- |:-----------|:----------|
 |boardID	|string|	白板标识|
 |boardPageNo	|number|	白板的页序号(0为第一页)|
-|elementIDs|	string|	图元id列表，多值时，以“;”分隔，如：“id1;id2”|
+|elementIDs|	string|	图元id列表，多值时，以“；”分隔，如：“id1；id2”|
 
->说明：其他参会者会收到：[CRVideo_NotifyDelBoardElement](#CRVideo_NotifyDelBoardElement)事件;同时后台会移除这些图元，新入会者会在[CRVideo_NotifyInitBoardPageDat](#CRVideo_NotifyInitBoardPageDat)中将不包含这些图元
+>说明：其他参会者会收到：[CRVideo_NotifyDelBoardElement](#CRVideo_NotifyDelBoardElement)事件；同时后台会移除这些图元，新入会者会在[CRVideo_NotifyInitBoardPageDat](#CRVideo_NotifyInitBoardPageDat)中将不包含这些图元
 
 ####设置鼠标热点消息 {#CRVideo_Setmousehotspot}
 
@@ -624,7 +624,7 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |fileType	 |number |	文件类型，0:用户共享文件，1:程序使用文件 |
-|newFileName	 |string |	传入的全局唯一文件名，建议带文件后缀 说明：1.fileType等于0时，为会议网盘共享文件，上传的文件可通过; 2.getNetDiskFileList获取到文件列表详情 3.fileType等于1时，用户程序内资源文件，如白板的背景图片，无法获取文件详情 4.两种文件类型都要调用uploadNetDiskFile和downloadNetDiskFile进行上传和下载|
+|newFileName	 |string |	传入的全局唯一文件名，建议带文件后缀 说明：1.fileType等于0时，为会议网盘共享文件，上传的文件可通过； 2.getNetDiskFileList获取到文件列表详情 3.fileType等于1时，用户程序内资源文件，如白板的背景图片，无法获取文件详情 4.两种文件类型都要调用uploadNetDiskFile和downloadNetDiskFile进行上传和下载|
 
 ####上传文件到网盘 {#CRVideo_Uploadnetdiskfile}
 
@@ -635,7 +635,7 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |fileID| 	string	| 网盘文件ID| 
-| localFilePath	| string| 	本地文件路径,含文件名|
+| localFilePath	| string| 	本地文件路径，含文件名|
 
 ####删除网盘文件 {#CRVideo_Deletenetdiskfile}
 
@@ -670,7 +670,7 @@
 
 ####设置网盘文件传输暂停或继续 {#CRVideo_SetNetDiskTransportPause}
 
->CRVideo_SetNetDiskTransportPause(fileID, bTranPause)
+>CRVideo_SetNetDiskTransportPause(fileID， bTranPause)
 
 - **返回值**:无
 
@@ -737,13 +737,13 @@
 
 >CRVideo_GetAllFilesInMediaPath()
 
-- **返回值**:文件名列表(Array.<string>)
+- **返回值**:文件名列表（Array）
 
 ####取得影音文件信息 {#CRVideo_Getmediainfo}
 
 >CRVideo_Getmediainfo(userID)
 
-- **返回值**:影音文件信息([CRVideo_MediaInfoObj](TypeDefinitions.md#CRVideo_MediaInfoObj))
+- **返回值**:影音文件信息（[CRVideo_MediaInfoObj](TypeDefinitions.md#CRVideo_MediaInfoObj)）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -769,7 +769,7 @@
 |:-------- |:-----------|:----------|
 |aSide|	number|	声道类型 0:麦克风，1:扬声器|
 |getType	|number|	获取方式 0:回调方式，1:保存为文件|
-|jsonParam	|string	|当getType=0 表示回调方式, jsonParam可配置回调的数据大小(320-32000)，如: {"EachSize":320};当getType=1 表示保存为文件，jsonParam可配置文件名,如: { "FileName" : "e:\\test.pcm" }| 
+|jsonParam	|string	|当getType=0 表示回调方式，jsonParam可配置回调的数据大小(320-32000)，如: {"EachSize":320};当getType=1 表示保存为文件，jsonParam可配置文件名，如: { "FileName" ： "e:\\test.pcm" }| 
 
 ####停止获取语音pcm数据 {#CRVideo_StopGetAudioPCM}
 
@@ -823,7 +823,7 @@
 
 >CRVideo_GetVideoCfg() 
 
-- **返回值**:获取视频参数([CRVideo_VideoCfg](TypeDefinitions.md#CRVideo_VideoCfg))
+- **返回值**:获取视频参数（[CRVideo_VideoCfg](TypeDefinitions.md#CRVideo_VideoCfg)）
 
 ####设置当前哪个用户为主视频 {#CRVideo_SetMainVideo}
 
@@ -839,7 +839,7 @@
 
 >CRVideo_SetMicVolume(level) 
 
-- **返回值**:设置成功则返回true,否则返回false(bool)
+- **返回值**:设置成功则返回true,否则返回false（bool）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -849,7 +849,7 @@
 
 >CRVideo_SetSpeakerVolume(level)
 
-- **返回值**:设置成功则返回true,否则返回false(bool)
+- **返回值**:设置成功则返回true,否则返回false（bool）
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
@@ -863,19 +863,19 @@
 
 ----
 
-###会议管理函数 {#videoMrgCallback}
+###视频管理函数 {#videoMrgCallback}
 
 #### 进入会议完成响应 {#CRVideo_EnterMeetingRslt}
 
->CRVideo_EnterMeetingRslt.callback = function(sdkErr){}
+>CRVideo_EnterMeetingRslt.callback = function(sdkEr){}
 
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 通知结束视频会议结果 {#CRVideo_StopMeetingRslt}
 
->CRVideo_StopMeetingRslt.callback = function(sdkErr){}
+>CRVideo_StopMeetingRslt.callback = function(sdkEr){}
 
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 某用户进入了会议 {#CRVideo_UserEnterMeeting}
 
@@ -941,34 +941,34 @@
 
 #### 上传录制文件错误通知 {#CRVideo_UploadRecordFileErr}
 
->CRVideo_UploadRecordFileErr.callback = function(fileName,sdkErr){}
+>CRVideo_UploadRecordFileErr.callback = function(fileName,sdkEr){}
 
 - fileName ----- 本地文件路径
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 录制异常，录制将自动停止 {#CRVideo_RecordErr}
 
->CRVideo_RecordErr.callback = function(sdkErr){}
+>CRVideo_RecordErr.callback = function(sdkEr){}
 
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 录制状态更改通知 {#CRVideo_RecordStateChanged}
 
 >CRVideo_RecordStateChanged.callback = function(state){}
 
-- state ----- 录制状态,数值请参考定义[RECORD_STATE](Constant.md#RECORD_STATE)
+- state ----- 录制状态，数值请参考定义[RECORD_STATE](Constant.md#RECORD_STATE)
 
 #### 开启屏幕共享的响应事件 {#CRVideo_StartScreenShareRslt}
 
->CRVideo_StartScreenShareRslt.callback = function(sdkErr){}
+>CRVideo_StartScreenShareRslt.callback = function(sdkEr){}
 
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 停止屏幕共享的响应事件 {#CRVideo_StopScreenShareRslt}
 
->CRVideo_StopScreenShareRslt.callback = function(sdkErr){}
+>CRVideo_StopScreenShareRslt.callback = function(sdkEr){}
 
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 通知他人开启了屏幕共享 {#CRVideo_NotifyScreenShareStarted}
 
@@ -1012,10 +1012,10 @@
 
 #### 发送IM消息，SDK通知使用者发送结果 {#CRVideo_SendIMmsgRlst}
 
->CRVideo_SendIMmsgRlst.callback = function(taskID,sdkErr,cookie){}
+>CRVideo_SendIMmsgRlst.callback = function(taskID,sdkEr,cookie){}
 
 - taskID ----- 发送任务id
-- sdkErr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### SDK通知收到IM消息 {#CRVideo_NotifyIMmsg}
@@ -1047,7 +1047,7 @@
 
 >CRVideo_NotifyInitBoards.callback = function(BoardObjs){}
 
-- BoardObjs ----- 已经创建好的白板列表, json结构体请参见BoardObjs说明
+- BoardObjs ----- 已经创建好的白板列表， json结构体请参见[BoardObjs](json.md#BoardObjs)说明
 
 #### 初始化白板页数据 {#CRVideo_NotifyInitBoardPageDat}
 
@@ -1056,14 +1056,14 @@
 - boardID ----- 白板标识
 - boardPageNo ----- 白板页序号
 - imgID ----- 页背景文件ID（空代表无背景）
-- elementDatas ----- 此页的所有图元, 详见json结构之BoardElementObjs
+- elementDatas ----- 此页的所有图元， 详见json结构之[BoardElementObjs](json.md#BoardElementObjs)
 - operatorID ----- 初始化用户（为空时，代表入会时后台事件）
 
 #### SDK通知创建白板 {#CRVideo_NotifyCreateBoard}
 
 >CRVideo_NotifyCreateBoard.callback = function(jsonBoard,operatorID){}
 
-- jsonBoard ----- 白板信息，详见json格式之BoardObj
+- jsonBoard ----- 白板信息，详见json格式之[BoardObj](json.md#BoardObj)
 - operatorID ----- 创建白板的用户ID
 
 #### SDK通知关闭白板 {#CRVideo_NotifyCloseBoard}
@@ -1087,7 +1087,7 @@
 
 - boardID ----- 白板标识
 - boardPageNo ----- 白板页序号
-- element ----- 此页的所有图元, 详见json结构之BoardElementObj
+- element ----- 此页的所有图元， 详见json结构之[BoardElementObj](json.md#BoardElementObj)
 - operatorID ----- 添加图元的用户ID
 
 #### SDK通知图元信息被修改 {#CRVideo_NotifyModifyBoardElement}
@@ -1096,7 +1096,7 @@
 
 - boardID ----- 白板标识
 - boardPageNo ----- 白板页序号
-- element ----- 此页的所有图元, 详见json结构之BoardElementObj
+- element ----- 此页的所有图元, 详见json结构之[BoardElementObj](json.md#BoardElementObj)
 - operatorID ----- 添加图元的用户ID
 
 #### SDK通知删除图元 {#CRVideo_NotifyDelBoardElement}
@@ -1105,7 +1105,7 @@
 
 - boardID ----- 白板标识
 - boardPageNo ----- 白板页序号
-- elementIDs -----  图元id列表，以 “;”分隔
+- elementIDs -----  图元id列表，以 “；”分隔
 - operatorID ----- 删除图元的用户ID
 
 #### SDK通知设置鼠标热点消息 {#CRVideo_NotifyMouseHotSpot}
@@ -1135,7 +1135,7 @@
 >CRVideo_NotifyNetDiskFileDeleteRslt.callback = function(fileID,isSucceed){}
 
 - fileID ----- 网盘文件id
-- isSucceed ----- 是否成功 1 成功 0 失败
+- isSucceed ----- 是否成功 1成功 0失败
 
 #### SDK通知网盘上传或下载进度 {#CRVideo_NotifyNetDiskTransforProgress}
 
@@ -1143,7 +1143,7 @@
 
 - fileID ----- 网盘文件id
 - percent ----- 进度0-100
-- isSucceed ----- 是否成功 1 成功 0 失败
+- isSucceed ----- 是否成功 1成功 0失败
 
 #### SDK通知网盘空间已满，容量不足 {#CRVideo_NotifyNetDiskIsFull}
 
@@ -1154,7 +1154,7 @@
 >CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){}
 
 - fileName ----- 本地文件路径
-- state ----- 状态 0 未上传 1 上传中 2已上传
+- state ----- 状态： 0未上传 1上传中 2已上传
 
 #### SDK通知上传录制文件进度 {#CRVideo_NotifyRecordFileUploadProgress}
 
@@ -1167,7 +1167,7 @@
 
 >CRVideo_NotifyMediaOpened.callback = function(totalTime,w,h){}
 
-- totalTime ----- 影音时长(秒) 
+- totalTime ----- 影音时长（秒）
 - w ----- 宽度
 - h ----- 高度
 
@@ -1215,11 +1215,11 @@
 
 >CRVideo_NetStateChanged.callback = function(level){}
 
-- level ----- 网络状况等级(0~10，10分为最佳网络)
+- level ----- 网络状况等级（0~10，10分为最佳网络）
 
 #### SDK通知语音PCM数据 {#CRVideo_NotifyAudioPCMDat}
 
 >CRVideo_NotifyAudioPCMDat.callback = function(aSide,base64PcmDat){}
 
 - aSide ----- 声道类型
-- base64PcmDat ----- PCM数据(base64格式)
+- base64PcmDat ----- PCM数据（base64格式）
