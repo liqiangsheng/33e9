@@ -863,7 +863,7 @@
 
 ----
 
-###视频管理函数 {#videoMrgCallback}
+###视频回调函数 {#videoMrgCallback}
 
 #### 进入会议完成响应 {#CRVideo_EnterMeetingRslt}
 
