@@ -335,7 +335,7 @@
 |代码|数值|含义|
 |------------|-------------|-----|
 |MEDIA_CLOSE|	number|	文件关闭|
-|MEDIA_FINI	number|	播放到文件尾部|
+|MEDIA_FINI	|number|	播放到文件尾部|
 |MEDIA_FILEOPEN_ERR|	number|	打开文件失败|
 |MEDIA_FORMAT_ERR	|number|	文件格式错误|
 |MEDIA_UNSUPPORT|	number	|影音格式不支持|

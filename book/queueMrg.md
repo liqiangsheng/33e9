@@ -16,7 +16,7 @@
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
-|cookie	|string|	自定义数据 (在回调时，回传给调用者)|
+|cookie	|string|	自定义数据 （在回调时，回传给调用者）|
 
 >操作完成回调[CRVideo_InitQueueDatRslt](#CRVideo_InitQueueDatRslt)，队列初始化成功后才可获取队列队列相关信息
 
@@ -71,7 +71,7 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |queID	 |string |	队列ID |
-|cookie	 |string |自定义数据 (在回调时，回传给调用者)| 
+|cookie	 |string |自定义数据 （在回调时，回传给调用者）| 
 
 >操作完成回调[CRVideo_StartQueuingRslt](#CRVideo_StartQueuingRslt)
 
@@ -83,7 +83,7 @@
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
-|cookie	|string|	自定义数据 (在回调时，回传给调用者)|
+|cookie	|string|	自定义数据 （在回调时，回传给调用者）|
 
 >操作完成回调[CRVideo_StopQueuingRslt](#CRVideo_StopQueuingRslt)
 
@@ -96,7 +96,7 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |queID	 |string |	队列ID |
-|cookie |	string |	自定义数据 (在回调时，回传给调用者| 
+|cookie |	string |	自定义数据 （在回调时，回传给调用者）| 
 
 >可以多次调用，开启对多个队列的服务。操作回调[CRVideo_StartServiceRslt](#CRVideo_StartServiceRslt) 开启成功后： a. 如果没有开启免打挽，那么系统会自动分配客户：[CRVideo_AutoAssignUser](#CRVideo_AutoAssignUser)； b. 如果开启免打挽，系统就不会分配客户，如需服务客户可调用：[CRVideo_ReqAssignUser](#CRVideo_ReqAssignUser)
 
@@ -109,7 +109,7 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |queID	|string|	queID 队列ID|
-|cookie	|string|	cookie自定义数据 (在回调时，回传给调用者) | 
+|cookie	|string|	cookie自定义数据（在回调时，回传给调用者）| 
 
 >操作完成回调[CRVideo_StopServiceRslt](#CRVideo_StopServiceRslt)
 
@@ -121,7 +121,7 @@
 
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
-|cookie	|string	|自定义数据 (在回调时，回传给调用者)|
+|cookie	|string	|自定义数据 （在回调时，回传给调用者）|
 
 >当关闭免打扰时，系统将自动分配客户，无需调用此函数； 当开启免打扰时，系统不再自动分配客户，座席如需服务客户可使用此函数分配
 
@@ -133,7 +133,7 @@
 |:-------- |:-----------|:----------|
 |queID|	string	|队列ID|
 |userID|	string	|队列中的用户ID|
-|cookie	|string|	自定义数据 (在回调时，回传给调用者)|
+|cookie	|string|	自定义数据（在回调时，回传给调用者）|
 
 ####拒绝系统安排的客户 {#CRVideo_RejectAssignUser}
 
@@ -145,7 +145,7 @@
 |:-------- |:-----------|:----------|
 |queID	 | string | 	队列ID | 
 |userID | 	string | 	队列中的用户ID | 
-|cookie	 | string | 	自定义数据 (在回调时，回传给调用者)|
+|cookie	 | string | 	自定义数据（在回调时，回传给调用者）|
 
 ----
     
@@ -155,23 +155,17 @@
 
 >CRVideo_InitQueueDatRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- cookie ----- 自定义数据 （在回调时，回传给调用者）
 
 #### 队列初始化操作结果 {#CRVideo_InitQueueDatRslt}
 
 >CRVideo_InitQueueDatRslt.callback = function(sdkEr,cookie){
-    /**
-	 * @typedef {object} CRVideo_QueStatus - 队列状态
-	 * @property {number} queID - 队列id
-	 * @property {number} agent_num - 坐席数量
-	 * @property {number} wait_num - 排队客户数量
-	 * @property {number} srv_num - 正在服务的客户数量
-	 */
+  
 }
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- cookie ----- 自定义数据 （在回调时，回传给调用者）
 
 #### 队列状态变化通知 {#CRVideo_QueueStatusChanged}
 
@@ -191,15 +185,15 @@
 
 >CRVideo_StartQueuingRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 停止排队操作结果 {#CRVideo_StopQueuingRslt}
 
 >CRVideo_StopQueuingRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 开始服务队列操作结果 {#CRVideo_StartServiceRslt}
 
@@ -207,7 +201,7 @@
 
 - queID ----- 服务的队列ID
 - sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 停止服务队列操作结果 {#CRVideo_StopServiceRslt}
 
@@ -215,7 +209,7 @@
 
 - queID ----- 服务的队列ID
 - sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 响应分配客户操作结果 {#CRVideo_ResponseAssignUserRslt}
 
@@ -224,7 +218,7 @@
 }
 
 - sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 系统自动安排客户 {#CRVideo_AutoAssignUser}
 
@@ -238,7 +232,7 @@
 
 - sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - user ----- 队列用户信息
-- cookie ----- 自定义数据 (在回调时，回传给调用者)
+- cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 系统取消已经安排的客户 {#CRVideo_CancelAssignUser}
 
