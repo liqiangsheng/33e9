@@ -1,4 +1,4 @@
-# <font color="#2674ba">云屋视频SDK参考</font>
+# <font color="#2674ba">云屋视频会议SDK参考</font>
 
 <p style="background:#f7f7f7;font-size:14px;height:50px;line-height:50px;">此版本适合V3.6版本的SDK</p>
 
@@ -6,9 +6,9 @@
 
 ### <font color="#0099cc">说明</font> {#runEvn}
 
->会议SDK结构、SDK开发流程、SDK浏览器开发环境。CloudroomVideo SDK for Web支持的浏览器有：IE8,IE9,IE10,IE11，chrome44及以下（包含chrome44）。
+>会议SDK结构、SDK开发流程、SDK浏览器开发环境。CloudroomVideo SDK for Web支持的浏览器有：IE8，IE9，IE10，IE11，chrome44及以下（包含chrome44）。
 
-#### <font color="#0099cc">sdk说明</font> {#SDKExplain}
+#### <font color="#0099cc">文件夹说明</font> {#SDKExplain}
 
 
 > - doc<font color="#f77a0b">（文档说明文件夹）</font>
@@ -50,39 +50,39 @@
 
 ### <font color="#0099cc">开发准备</font> {#Development}
 
-<p style="width:100%;background:#f7f7f7;">JavaScript 的开发工具有很多，开发者可根据自己的喜好进行选择。在此，我们推荐开发者使用<font color="#718c00"> dreamwaver</font> 作为自己的开发工具，本套开发指南也是针对<font color="#718c00"> dreamwaver </font>开发环境下进行编写的。</p>
+<p style="width:100%;background:#f7f7f7;">JavaScript 的开发工具有很多，开发者可根据自己的喜好进行选择。在此，我们推荐开发者使用<font color="#718c00">Visual Studio Code</font> 作为自己的开发工具，本套开发指南也是针对<font color="#718c00">Visual Studio Code</font>开发环境下进行编写的。</p>
 
 #### <font color="#0099cc">安装插件</font> {#install}
 
 - 首先要安装开发插件，CloudroomVideo SDK for Web 提供的所有 JavaScript 接口都是基于这个插件实现，进行web开发之前需要确保插件已经安装成功，双击SDK目录下的开发环境下进行编写的。
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/1.png)
+![CloudroomVideoSDK.exe安装](./images/1.png)
 
  选择安装
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/2.png)
+![CloudroomVideoSDK.exe安装](./images/2.png)
 
- 插件会自动开始安装
+插件会自动开始安装
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/3.png)
+![CloudroomVideoSDK.exe安装](./images/3.png)
 
- 完成安装
+完成安装
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/4.png)
+![CloudroomVideoSDK.exe安装](./images/4.png)
 
 #### <font color="#0099cc">导入SDK文件</font> {#developEvn}
 
 - 将SDK包js子目录下的CloudroomVideoSDK.js和CloudroomVideoSDK_iePatch.js文件拷贝到自己的web开发环境当中
  
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/5.png)
+ ![CloudroomVideoSDK.exe安装](./images/5.png)
 
  引用CloudroomVideoSDK.js
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/6.png) 
+ ![CloudroomVideoSDK.exe安装](./images/6.png) 
 
  如果是IE开发，还需要引用补丁文件
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/7.png) 
+ ![CloudroomVideoSDK.exe安装](./images/7.png) 
  
 #### <font color="#0099cc">浏览器版本的支持说明</font>
 
@@ -90,17 +90,17 @@
 
  **一：在chrome浏览器输入“chrome://flags”**
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/8.png) 
+ ![CloudroomVideoSDK.exe安装](./images/8.png) 
  
   **二：启用**
  
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/9.png) 
+ ![CloudroomVideoSDK.exe安装](./images/9.png) 
 
   **三：在chrome浏览器输入“chrome://plugins”**
 
   **四：找到“CloudroomVideoSDK”，“启用”并勾选“始终允许运行”**
 
- ![CloudroomVideoSDK.exe安装](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/10.png) 
+ ![CloudroomVideoSDK.exe安装](./images/10.png) 
 
   **五：重启浏览器**
 
@@ -169,7 +169,6 @@ CRVideo_Uninit()
 #### <font color="#0099cc">设置服务器地址</font>
 
 ```cs
-
 /**
 * 设置服务器地址
 * @access public
@@ -179,12 +178,11 @@ CRVideo_SetServerAddr(serverList)
 
 ```
  
-&emsp;&emsp;支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080；183.60.47.52:8080），此接口并不会对服务器地址的有效性进行验证，请保证地址准确。
+支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080；183.60.47.52:8080），此接口并不会对服务器地址的有效性进行验证，请保证地址准确。
 
 #### <font color="#0099cc">登录</font>
 
 ```cs
-
 /**
 * 登录
 * 操作成功则回调CRVideo_LoginSuccess,失败则回调CRVideo_LoginFail
@@ -200,7 +198,7 @@ CRVideo_Login(authAcnt,authPswd,nickName,privAcnt,privAuthCode,cookie)
 
 ```
  
-&emsp;&emsp;登录会有结果事件通知，成功事件CRVideo_LoginSuccess，失败事件CRVideo_LoginFail，失败事件的错误码参见CloudroomVideoSDK.js文件的详细描述。
+登录会有结果事件通知，成功事件CRVideo_LoginSuccess，失败事件CRVideo_LoginFail，失败事件的错误码参见CloudroomVideoSDK.js文件的详细描述。
   
 #### <font color="#0099cc">注销</font>
 
@@ -210,12 +208,13 @@ CRVideo_Logout()
 
 ```
 
-&emsp;&emsp;退出程序时，必须注销本次登录，然后再进行SDK反初始化操作
+退出程序时，必须注销本次登录，然后再进行SDK反初始化操作
   
 ### <font color="#0099cc">呼叫和排队</font> {#CallAndQueue}
 
-<p style="background:#f7f7f7">&emsp;&emsp;CloudroomVideo SDK for Web为开发者提供呼叫、排队功能。</p>
-<p style="background:#f7f7f7">&emsp;&emsp;SDK目录的examples/VideoCall(web)文件夹为视频呼叫的demo。这个demo主要展示的某坐席用户服务于某个队列，系统把这个队列里的排队用户分配给此坐席用户，经过一系列握手之后，再进行视频通话的功能。</p>
+**CloudroomVideo SDK for Web为开发者提供呼叫、排队功能。**
+
+>SDK目录的examples/VideoCall(web)文件夹为视频呼叫的demo。这个demo主要展示的某坐席用户服务于某个队列，系统把这个队列里的排队用户分配给此坐席用户，经过一系列握手之后，再进行视频通话的功能。
 
 ### <font color="#0099cc">业务流程说明</font> {#operation}
 
@@ -227,9 +226,9 @@ CRVideo_Logout()
 
 坐席客户与排队客户通讯的时序图如下所示:
 
-![时序图](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/sxt1.png)
+![时序图](./images/sxt1.png)
 
-&emsp;&emsp;坐席客户在接受排队用户时，需要创建一个会议，创建成功后把排队用户呼叫进会议中，再进行后面的业务功能操作。用户与用户之间的各种通信功能，如音视频通话，屏幕共享，影音共享等等，必须依托于会议存在。后面还会对会议功能有更详细的说明。
+坐席客户在接受排队用户时，需要创建一个会议，创建成功后把排队用户呼叫进会议中，再进行后面的业务功能操作。用户与用户之间的各种通信功能，如音视频通话，屏幕共享，影音共享等等，必须依托于会议存在。后面还会对会议功能有更详细的说明。
 
 #### <font color="#0099cc">注意事项</font>
  
@@ -255,7 +254,7 @@ D.队列有优先级，客服服务多个队列时，将从高优先级的队列
 
 一次完整的会议时序图如下所示:
 
-![时序图](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/sxt2.png)
+![时序图](./images/sxt2.png)
 
 #### <font color="#0099cc">注意事项</font>
 
@@ -267,11 +266,11 @@ C.离开会议是没有响应消息的（在网络不通时离开会议也不会
 
 ### <font color="#0099cc">音视频通讯</font> {#communication}
 
-<p style="background:#f7f7f7">&emsp;&emsp;CloudroomVideo SDK for Web为开发者提供便捷的音视频通讯接口，通过以下几步的操作，可以在会议中集成音视频交互功能。音视频通讯需在会议里进行。</p>
+**CloudroomVideo SDK for Web为开发者提供便捷的音视频通讯接口，通过以下几步的操作，可以在会议中集成音视频交互功能。音视频通讯需在会议里进行。**
 
 #### <font color="#0099cc">参会人信息</font>
 
-&emsp;&emsp;会议里可以通过接口CRVideo_GetAllMembers获取当前参加会议的所有成员的详细信息，接口如下所示：
+会议里可以通过接口CRVideo_GetAllMembers获取当前参加会议的所有成员的详细信息，接口如下所示：
 
 ```cs
 /**
@@ -283,10 +282,9 @@ var meber = CRVideo_GetAllMembers()
 
 ```
 
-&emsp;&emsp;会议里可以通过接口CRVideo_GetMemberInfo获取指定成员的详细信息，接口如下所示：
+会议里可以通过接口CRVideo_GetMemberInfo获取指定成员的详细信息，接口如下所示：
 
 ```cs
-
 /**
 * 获取指定用户的信息
 * @access public
@@ -339,6 +337,7 @@ CRVideo_OpenMic(userid)
 * @param {string} userID - 登录成功后分配的userID
 */
 CRVideo_CloseMic(userID)
+
 ```
 <font color="red">(取得用户麦克风是否开启或关闭，可通过接口CRVideo_GetMemberInfo获取)</font>
 
@@ -348,18 +347,53 @@ CRVideo_CloseMic(userID)
 计算机可拥有多个摄像头，通过接口CRVideo_GetVideoDevices获取指定用户的视频设备列表(CRVideo_VideoDeviceInfo:用户ID,设备id,设备名称)，接口如下所示：
 
 ```cs
-![打开视频](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/dksp1.png)
+/**
+* @typedef {object} CRVideo_VideoDeviceInfo - 视频设备信息
+* @property {string} userID - 用户ID
+* @property {string} videoID - 设备id
+* @property {string} videoName - 设备名称
+*/
+/**
+* 获取用户所有的摄像头信息
+* @access public
+* @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
+*/
+var VideoInfoArr = CRVideo_GetAllVideoInfo(userID,videoID,videoName)
+
 ```
 
 通过接口CRVideo_SetDefaultVideo设置指定用户的默认摄像头，接口如下所示:
 
 ```cs
-![打开视频](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/dksp2.png)
+/**
+* 设置默认的摄像头
+* @access public
+* @param {string} userID - 用户ID
+* @param {number} videoID - 摄像头ID
+*/
+CRVideo_SetDefaultVideo(userID,videoID)
+
 ```
 
 通过接口CRVideo_SetVideoCfg配置视频的清晰度、帧率、码率等；
 
 ```cs
+/**
+* @typedef {object} CRVideo_VideoCfg - 视频参数
+* @property {CRVideo_VIDEO_WH_RATE} sizeType - 视频尺寸
+* @property {number} fps - 帧率：视频帧率(5~30)
+* @property {number} maxbps - 视频码率（1~100*1000*1000）;(未配置则使用内部默认值，请参见VIDEO_SHOW_SIZE)
+* @property {number} qp_min - 最佳质量(18~51, 越小质量越好) (未配置则使用内部默认值25)
+* @property {number} qp_max - 最差质量(18~51, 越大质量越差) (未配置则使用内部默认值36)
+* @property {number} wh_rate - 视频宽高比(0对应16:9,1对应4:3,2对应1:1) (未配置则使用内部默认值0)
+  * @property {CRVideo_VIDEO_WH_RATE} wh_rate - 视频宽高比例
+*/
+/**
+* 系统视频参数设置
+* @access public
+* @param {CRVideo_VideoCfg} cfg - 设置参数
+*/
+CRVideo_SetVideoCfg(cfg)
 
 ```
 
@@ -367,9 +401,19 @@ CRVideo_CloseMic(userID)
 
 ```cs
 
-![打开视频](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/dksp3.png)
+/**
+* 打开用户的摄像头，以便本地、远端显示视频图像
+* @access public
+* @param {string} userID - 用户ID
+*/
+CRVideo_OpenVideo(userID)
 
-![打开视频](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/dksp4.png)
+/**
+* 关闭用户的摄像头
+* @access public
+* @param {string} userID - 用户ID
+*/
+CRVideo_CloseVideo(userID)
 
 ```
 
@@ -379,31 +423,65 @@ CRVideo_CloseMic(userID)
 
 参会过程中可将视频、音频录制成视频。
 
-&emsp;&emsp;先通过接口CRVideo_StartRecord开启录制，参数说明请参考截图，接口如下所示：
+先通过接口CRVideo_StartRecordIng开启录制，参数说明请参考截图，接口如下所示：
 
 ```cs
 
-![会议录制](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/lzsp1.png)
+/**
+* 开始录制
+* @access public
+* @param {string} recordPath - 录像存储的路径
+* @param {CRVideo_RECORD_AUDIO_TYPE} audioType - 音频类型
+* @param {number} frameRate - 帧率，建议不要太高；(取值1~24)
+* @param {number} recordWidth - 视频宽度
+* @param {number} recordHeight - 视频高度
+* @param {number} bitRate - 录制的最高码率，当图像变化小时，实际码率会低于此值。建议：640*360: 500000; (500kbps)，1280*720：1000000; (1mbps)，1920*1080: 2000000; (2mbps)
+* @param {number} defaultQP - 目标质量(推荐:36, 中:28,  高:22)
+* @param {CRVideo_REC_DATATYPE} recDataType - 录制内容类型（视频+音频）
+* @param {number} recDataType - 录制内容类型（视频+音频）
+* @param {number} isUploadOnRecording - 是否录制的同时上传 1为是，0为否
+*/	
+CRVideo_StartRecordIng(recordPath,audioType,frameRate,recordWidth,recordHeight,bitRate,defaultQP,recDataType,isUploadOnRecording)
 
 ```
 
-&emsp;&emsp;再通过接口CRVideo_SetRecordVideos，配置录制的视频内容； 
+再通过接口CRVideo_SetRecordVideos，配置录制的视频内容； 
 
 ```cs
+/**
+* @typedef {object} CRVideo_RecordVideoInfo - 需要录制的视频信息
+* @property {number} left - 左
+* @property {number} top - 上
+* @property {number} width - 宽
+* @property {number} height - 高
+* @property {object} param - 附加参数
+* @property {CRVideo_REC_VCONTENT_TYPE} param.type - 录制类型
+  * @property {number} keepAspectRatio - 1、表示内容保持比例居中显示，0、表示内容拉伸
+* @property {string} param.camid - 用户id.摄像头id,示例中c90d98e2-e50d-4abe-a318-104271a47cb6为用户id，1为摄像头id
+*/
+/**
+* 设置录制视频 (录制过程中可随时设置，改变录制内容)
+* @access public
+* @param {CRVideo_RecordVideoInfo[]} value - 需要录制的视频数组
+*/	
+CRVideo_SetRecordVideos(value)
 
 ```
-
-&emsp;&emsp;可以通过接口CRVideo_StopRecord停止录制，接口如下所示：
+可以通过接口CRVideo_StopRecord停止录制，接口如下所示：
 
 ```cs
 
-![会议录制](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/lzsp2.png)
+/**
+* 停止录制
+* @access public
+*/	
+CRVideo_StopRecord()
 
 ```
 
 ## <font color="#0099cc">其他接口</font>
 
-&emsp;&emsp;更多的功能接口，请参考SDK目录的doc文件夹。如图所示，打开doc文件夹下的index.html。
+更多的功能接口，请参考SDK目录的doc文件夹。如图所示，打开doc文件夹下的index.html。
 
-![其他接口](https://raw.githubusercontent.com/liqiangsheng/33e9/master/book/images/qt1.png)
+![其他接口](./images/qt1.png)
 

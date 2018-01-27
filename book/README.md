@@ -22,7 +22,7 @@
 
 ![](./images/meeting3.png)
 
-* 第三方进入会议，输入会议号进入
+*输入会议号进入会议
 
 ![](./images/meeting4.png)
 

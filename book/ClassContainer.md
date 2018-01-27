@@ -7,7 +7,7 @@
 
 ### 显示容器的基类 {#container}
 
->CRVideo.Container = function(){}
+>CRVideo.Container()
 
 ### Methods
 
@@ -19,7 +19,7 @@
 
 ### 影音播放的呈现容器 {#MediaContainer}
 
->CRVideo.MediaContainer.prototype = new CRVideo.Container()
+>CRVideo_CreatMediaObj()
 
 ### Methods
 
@@ -74,7 +74,7 @@ isVisible	|bool	|是否可见
 
 ### 屏幕共享播放的呈现容器 {#ScreenShareContainer}
 
->CRVideo.ScreenShareContainer.prototype = new CRVideo.Container()
+>CRVideo_CreatScreenShareObj()
 
 ### Methods
 
@@ -125,7 +125,7 @@ penWidth|	num	|画笔宽度
 
 ### 视频的呈现容器 {#VideoContainer}
 
-> CRVideo.VideoContainer.prototype = new CRVideo.Container()
+>CRVideo_CreatVideoObj()
 
 ### Methods
 

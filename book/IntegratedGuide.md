@@ -841,8 +841,6 @@ CRVideo_NotifyScreenShareStarted.callback=function(){
 * 相关API请参考 [赋予/收回远程屏幕控制权限](videoMrg.md#CRVideo_NotifyGiveCtrlRight)，[通知赋予/收回屏幕共享操作权限](videoMrg.md#CRVideo_NotifyReleaseCtrlRight)
 
 ```cs
-
-```cs
 /**
 * SDK通知远程控制权限给予了某人
 * @callback CRVideo.CbProxy~CRVideo_NotifyGiveCtrlRight

@@ -1,6 +1,6 @@
 # Summary
 * [说明](Explain.md)
-    * [sdk文件夹](Explain.md#SDKExplain)
+    * [文件夹说明](Explain.md#SDKExplain)
     * [开发准备](Explain.md#Development)
     * [基本流程](Explain.md#BasicProcess)
     * [呼叫和排队](Explain.md#CallAndQueue)
