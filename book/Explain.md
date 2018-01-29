@@ -1,6 +1,8 @@
-# <font color="#2674ba">云屋视频会议SDK参考</font>
+# <font color="#2674ba">云屋视频会议SDK参考</font>  
 
-<p style="background:#f7f7f7;font-size:14px;height:50px;line-height:50px;">此版本适合V3.6版本的SDK</p>
+[点击下载SDK](http://www.cloudroom.com/api/getDownloadUrlApi?Client=SDK-76)                                   
+
+<p style="background:#f7f7f7;font-size:14px;height:50px;line-height:50px;">此版本适合v3.0系列</p>
 
 <p style="width:100%;height:4px;background:#f7f7f7;"></p>
 

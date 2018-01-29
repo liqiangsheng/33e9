@@ -1,0 +1,79 @@
+/*弹窗*/
+.lacy-alert {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 1000;
+	border-radius: 12px;
+	width: 80%;
+	background: #fff;
+	overflow: hidden;
+	-webkit-transform: translateX( -50%) translateY( -50%);
+	transform: translateX( -50%) translateY( -50%);
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	color: #484848;
+	border: 2px orange solid;
+	max-width: 400px
+}
+
+.lacy-alert .bgd {
+	padding: .5rem;
+	line-height: 1.5;
+}
+
+.lacy-alert .hd {
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.lacy-alert .bd {
+	margin: 1rem .5rem 0;
+	font-size: 1.2rem;
+	height: 3.5rem;
+	text-align: center
+}
+
+.lacy-alert .bd p {
+	font-size: 14px;
+	padding: 0;
+	line-height: 1.5em;
+}
+
+.lacy-alert .fd {
+	padding: .4rem 0;
+	text-align: center;
+	height: 2.4rem;
+	line-height: 2.4rem
+}
+
+.lacy-alert .alert-btn {
+	outline: none;
+	display: inline-block !important;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	padding: 0 16px;
+	color: #fff;
+	font-size: 1.2rem;
+	text-align: center;
+	vertical-align: middle;
+	border: none;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.lacy-alert .alert-btn-lg {
+	width: 30%;
+	color: #22b2e1;
+	text-align: center;
+	border-radius: 8px;
+}
+
+.lacy-alert .alert-btn-st {
+	width: 48%;
+	color: #22b2e1;
+	text-align: center;
+}
+//

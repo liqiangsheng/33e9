@@ -457,7 +457,7 @@ $(function(){
                 //隐藏主播放页面
                 $("#mediaContainer").css({display:"none"});
                 // A摄像的大小
-				$("#videoAContainer").css({"display":"block","left":"0px","top":"40px","width":"375px","height":"210px"});
+				g_videoAObj.css({"display":"block","left":"0px","top":"40px","width":"375px","height":"210px"});
 				g_videoAObj.width(375);
                 g_videoAObj.height(210);
                 // B摄像的大小
