@@ -1,8 +1,6 @@
-# <font color="#2674ba">云屋视频会议SDK参考</font>  
+# <font color="#2674ba">云屋视频会议SDK参考</font>                                    
 
-[点击下载SDK](http://www.cloudroom.com/api/getDownloadUrlApi?Client=SDK-76)                                   
-
-<p style="background:#f7f7f7;font-size:14px;height:50px;line-height:50px;">此版本适合v3.0系列</p>
+[点击下载SDK](http://www.cloudroom.com/list-43.html)  此版本适合v3.0系列SDK  
 
 <p style="width:100%;height:4px;background:#f7f7f7;"></p>
 
@@ -244,7 +242,7 @@ D.队列有优先级，客服服务多个队列时，将从高优先级的队列
 
 ### <font color="#0099cc">会议</font> {#meeting}
 
-<p style="background:#f7f7f7">&emsp;&emsp;CloudroomVideo SDK for Web为开发者提供的音视频通信功能，屏幕共享，影音共享等功能，须在会议里进行。</p>
+<p style="background:#f7f7f7">CloudroomVideo SDK for Web为开发者提供的音视频通信功能，屏幕共享，影音共享等功能，须在会议里进行。</p>
 
 #### <font color="#0099cc">业务流程说明</font>
 

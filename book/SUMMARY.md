@@ -97,7 +97,7 @@
         * [SDK通知取消发送文件数据](meetingMrg.md#CRVideo_NotifyCancelSend) 
 * [视频会议接口](videoMrg.md)
     * [视频管理函数](videoMrg.md#videoMrgFunction)
-        * [呼叫成功](videoMrg.md#CRVideo_EnterMeeting)
+        * [进入会话](videoMrg.md#CRVideo_EnterMeeting)
         * [离开会话](videoMrg.md#CRVideo_ExitMeeting)
         * [获取所有用户的信息](videoMrg.md#CRVideo_GetAllMembers)
         * [获取指定用户的信息](videoMrg.md#CRVideo_GetMemberInfo)

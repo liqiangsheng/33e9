@@ -6,7 +6,7 @@
 
 ###视频管理函数 {#videoMrgFunction}
 
-####呼叫成功 {#CRVideo_EnterMeeting}
+####进入会话 {#CRVideo_EnterMeeting}
 
 >CRVideo_EnterMeeting(meetID, pswd, userID, nickName, cookie)
 
@@ -780,7 +780,6 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |aSide	| number| 	声道类型 0:麦克风，1:扬声器| 
-| 无返回值| 		|      | 
 
 ####发送IM消息 {#CRVideo_SendIMmsg}
 
@@ -869,13 +868,13 @@
 
 >CRVideo_EnterMeetingRslt.callback = function(sdkEr){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 通知结束视频会议结果 {#CRVideo_StopMeetingRslt}
 
 >CRVideo_StopMeetingRslt.callback = function(sdkEr){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 某用户进入了会议 {#CRVideo_UserEnterMeeting}
 
@@ -944,13 +943,13 @@
 >CRVideo_UploadRecordFileErr.callback = function(fileName,sdkEr){}
 
 - fileName ----- 本地文件路径
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 录制异常，录制将自动停止 {#CRVideo_RecordErr}
 
 >CRVideo_RecordErr.callback = function(sdkEr){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 录制状态更改通知 {#CRVideo_RecordStateChanged}
 
@@ -962,13 +961,13 @@
 
 >CRVideo_StartScreenShareRslt.callback = function(sdkEr){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 停止屏幕共享的响应事件 {#CRVideo_StopScreenShareRslt}
 
 >CRVideo_StopScreenShareRslt.callback = function(sdkEr){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 通知他人开启了屏幕共享 {#CRVideo_NotifyScreenShareStarted}
 
@@ -1015,7 +1014,7 @@
 >CRVideo_SendIMmsgRlst.callback = function(taskID,sdkEr,cookie){}
 
 - taskID ----- 发送任务id
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### SDK通知收到IM消息 {#CRVideo_NotifyIMmsg}

@@ -201,7 +201,7 @@ $(function(){
 
         //创建会议成功
         CRVideo_CreateMeetingSuccess.callback=function(meetObj,cookie){
-            // console.log(meetObj)
+            console.log(meetObj)
             g_meetingId=meetObj.ID;
             g_meetingPsw=meetObj.pswd;
             enterMeet();

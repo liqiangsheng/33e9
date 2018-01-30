@@ -22,7 +22,7 @@
 1. [退出会话](#exit)
 1. [注销登陆](#logout)
 
-### 1. [初始化SDK]{#init}
+### 1. 初始化SDK {#init}
 
 > 初始化是整个SDK的使用基础，通常在程序启动的时候进行初始化([CRVideo_Init](basics.md#CRVideo_Init))，退出的时候进行反初始化([CRVideo_Uninit](basics.md#CRVideo_Uninit))，整个程序的生命周期中只进行一次初始化和反初始化。
 >
@@ -58,7 +58,7 @@ if(init == CRVideo_WEB_OCX_NOTINSTALLED){
 
 ```
 
-### 2. [登录连接视频服务器]{#login}
+### 2. 登录连接视频服务器 {#login}
 
 > 设置视频服务器地址，使用云屋授权账号和自定义用户编号登录
 >
@@ -99,7 +99,7 @@ CRVideo_LoginFail.callback = function(sdkErr,cookie){
 }
 ```
 
-### 3. [创建视频会话] {#create}
+### 3. 创建视频会话 {#create}
 
 > 输入会议标题，创建一个没有密码的视频会话
 >
@@ -131,7 +131,7 @@ CRVideo_LineOff.callback=function(sdkErr){
 }
 ```
 
-### 4. [进入会话]{#enter}
+### 4. 进入会话 {#enter}
 
 > 用创建成功的会话信息（会议ID和密码）进入会话，其他用户也是利用此会话信息进入该会话。
 >
@@ -153,7 +153,7 @@ CRVideo_EnterMeetingRslt.callback=function(sdkErr){
 }
 ```
 
-### 5. [打开麦克风/摄像头]{#audio}
+### 5. 打开麦克风/摄像头 {#audio}
 
 > 进入会话成功后，配置并打开自己的麦克风和摄像头
 
@@ -217,7 +217,7 @@ if(vStatus == 0){
 
 }
 ```
-### 6. [有其他人进入会话]{#userEnter}
+### 6. 有其他人进入会话 {#userEnter}
 
 > 其他人入会的步骤也是上述的[4、5]步，拿到会议信息后进入到他人创建的会议，此步骤的目的是为了实时关注比自己晚进来的人并刷新摄像头画面显示；如果想要获取之前进来的人，可以调用 [CRVideo_GetAllMembers](videoMrg.md#CRVideo_GetAllMembers) 获取会议成员列表，也可以调用 [CRVideo_GetWatchableVideos](videoMrg.md#CRVideo_GetWatchableVideos) 获取所有可以观看的摄像头列表进行加载。
 
@@ -281,7 +281,7 @@ CRVideo_UserLeftMeeting.callback=function(用户ID){
 
 ```
 
-### 8. [注销登陆]{#logout}
+### 8. 注销登陆 {#logout}
 
 > 可重复的登录和注销。
 >
@@ -1449,7 +1449,7 @@ CRVideo_CallFail.callback = function(callID,sdkErr,cookie){
 * @param {CRVideo_MeetInfoObj} meetObj - 会议信息
 * @param {string} usrExtDat - 自定义扩展参数
 */
-CRVideo_NotifyCallAccepted = function(callID,meetObj,usrExtDat){
+CRVideo_NotifyCallAccepted.call = function(callID,meetObj,usrExtDat){
 
 }
 
@@ -1460,7 +1460,7 @@ CRVideo_NotifyCallAccepted = function(callID,meetObj,usrExtDat){
 * @param {number} sdkErr - 呼叫被对方拒绝的原因代码,定义见cr/error
 * @param {string} usrExtDat - 自定义扩展参数
 */
-    CRVideo_NotifyCallRejected = function(callID,sdkErr,usrExtDat){
+    CRVideo_NotifyCallRejected.call = function(callID,sdkErr,usrExtDat){
 
 }
 ```

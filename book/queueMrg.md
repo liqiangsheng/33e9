@@ -155,7 +155,7 @@
 
 >CRVideo_InitQueueDatRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据 （在回调时，回传给调用者）
 
 #### 队列初始化操作结果 {#CRVideo_InitQueueDatRslt}
@@ -164,7 +164,7 @@
   
 }
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据 （在回调时，回传给调用者）
 
 #### 队列状态变化通知 {#CRVideo_QueueStatusChanged}
@@ -185,14 +185,14 @@
 
 >CRVideo_StartQueuingRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 停止排队操作结果 {#CRVideo_StopQueuingRslt}
 
 >CRVideo_StopQueuingRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 开始服务队列操作结果 {#CRVideo_StartServiceRslt}
@@ -200,7 +200,7 @@
 >CRVideo_StartServiceRslt.callback = function(queID,sdkEr,cookie){}
 
 - queID ----- 服务的队列ID
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 停止服务队列操作结果 {#CRVideo_StopServiceRslt}
@@ -208,7 +208,7 @@
 >CRVideo_StopServiceRslt.callback = function(queID,sdkEr,cookie){}
 
 - queID ----- 服务的队列ID
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 响应分配客户操作结果 {#CRVideo_ResponseAssignUserRslt}
@@ -217,7 +217,7 @@
 
 }
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### 系统自动安排客户 {#CRVideo_AutoAssignUser}
@@ -230,7 +230,7 @@
 
 >CRVideo_ReqAssignUserRslt.callback = function(sdkEr,user,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - user ----- 队列用户信息
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 

@@ -260,7 +260,7 @@
 
 >CRVideo_LoginFail.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据 
 
 ####客户端设置免打扰状态操作成功响应 {#CRVideo_SetDNDStatusSuccess}
@@ -273,7 +273,7 @@
 
 >CRVideo_SetDNDStatusFail.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 ####客获取所有用户在线状态成功响应 {#CRVideo_GetUserStatusSuccess}
@@ -287,21 +287,21 @@
 
 >CRVideo_GetUserStatusFail.callback = function(sdkEr ,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 ####启动用户状态推送响应 {#CRVideo_StartUserStatusNotifyRslt}
 
 >CRVideo_StartUserStatusNotifyRslt.callback = function(sdkEr ,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 结束用户状态推送响应 {#CRVideo_StopUserStatusNotifyRslt}
 
 >CRVideo_StopUserStatusNotifyRslt.callback = function(sdkEr ,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 ####某个用户状态变化通知 {#CRVideo_NotifyUserStatus}
@@ -315,7 +315,7 @@
 
 >CRVideo_LineOff.callback = function(sdkEr){}
 
-- sdkEr ----- 掉线原因，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 掉线原因，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 
 #### 创建会议成功响应 {#CRVideo_CreateMeetingSuccess}
 
@@ -328,14 +328,14 @@
 
 >CRVideo_CreateMeetingFail.callback = function(sdkEr ,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 结束会议响应 {#CRVideo_DestroyMeetingRslt}
 
 >CRVideo_DestroyMeetingRslt.callback = function(sdkEr ,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 获取会议列表成功响应 {#CRVideo_GetMeetingsSuccess}
@@ -349,7 +349,7 @@
 
 >CRVideo_GetMeetingsFail.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 呼叫他人操作成功响应 {#CRVideo_CallSuccess}
@@ -364,7 +364,7 @@
 >CRVideo_CallFail.callback = function(callID,sdkEr,cookie){}
 
 - callID ----- 呼叫全局标识
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 接受他人呼叫操作成功响应 {#CRVideo_AcceptCallSuccess}
@@ -379,7 +379,7 @@
 >CRVideo_AcceptCallFail.callback = function(callID,sdkEr,cookie){}
 
 - callID ----- 呼叫全局标识
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 拒绝他人的呼叫成功响应 {#CRVideo_RejectCallSuccess}
@@ -394,7 +394,7 @@
 >CRVideo_RejectCallFail.callback = function(callID,sdkEr,cookie){}
 
 - callID ----- 呼叫全局标识
-- sdkEr ----- 操作失败代码,定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### 挂断他人的呼叫成功响应 {#CRVideo_HangupCallSuccess}
@@ -409,7 +409,7 @@
 >CRVideo_HangupCallFail.callback = function(callID,sdkEr,cookie){}
 
 - callID ----- 呼叫全局标识
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义用户数据
 
 #### SDK通知自己被呼叫 {#CRVideo_NotifyCallIn}
@@ -434,7 +434,7 @@
 >CRVideo_NotifyCallRejected.callback = function(callID,sdkErr,usrExtDat){}
 
 - callID ----- 呼叫全局标识
-- sdkErr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkErr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - usrExtDat ----- 自定义扩展参数
 
 #### SDK通知自己呼叫被挂断 {#CRVideo_NotifyCallHungup}
@@ -449,7 +449,7 @@
 >CRVideo_ClientInviteRslt.callback = function(inviteID,sdkEr,cookie){}
 
 - inviteID ----- 邀请标识码（邀请ID
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据 （在回调时，回传给调用者）
 
 #### 取消第3方呼叫操作结果 {#CRVideo_ClientCancelInviteRslt}
@@ -457,7 +457,7 @@
 >CRVideo_ClientCancelInviteRslt.callback = function(inviteID,sdkEr,cookie){}
 
 - inviteID ----- 邀请标识码（邀请ID）
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie ----- 自定义数据（在回调时，回传给调用者）
 
 #### SDK通知第3方呼叫状态改变 {#CRVideo_NotifyInviteStatus}
@@ -472,7 +472,7 @@
 >CRVideo_SendCmdRlst.callback = function(taskID,sdkEr,cookie){}
 
 - taskID ----- 发送任务id
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie  ----- 自定义用户数据 
 
 #### 发送大块数据时，SDK通知发送结果 {#CRVideo_SendBufferRlst}
@@ -480,7 +480,7 @@
 >CRVideo_SendBufferRlst.callback = function(taskID,sdkEr,cookie){}
 
 - taskID ----- 发送任务id
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie  ----- 自定义用户数据 
 
 #### 发送文件时，SDK通知发送结果 {#CRVideo_SendFileRlst}
@@ -489,7 +489,7 @@
 
 - taskID ----- 发送任务id
 - fileName ----- 文件名
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie  ----- 自定义用户数据 
 
 #### 发送数据时，SDK通知发送进度 {#CRVideo_SendProgress}
@@ -506,7 +506,7 @@
 >CRVideo_CancelSendRlst.callback = function(taskID,sdkEr,cookie){}
 
 - taskID ----- 发送任务id
-- sdkEr ----- 操作失败代码，定义见[CRVIDEOSDK_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
 - cookie  ----- 自定义用户数据 
 
 #### SDK通知收到小块数据 {#CRVideo_NotifyCmdData}

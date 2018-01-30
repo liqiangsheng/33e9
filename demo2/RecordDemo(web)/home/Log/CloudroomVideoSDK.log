@@ -1,0 +1,925 @@
+[2018-01-30 18:40:27.930][INF][MeetingSDK:9912:215] ---------- SDK running... (pid:12920)----------
+[2018-01-30 18:40:27.930][INF][MeetingSDK:9912:216] startLog:C:\Users\admin\Desktop\git\demo2\RecordDemo(web)\home\Log\CloudroomVideoSDK.log
+[2018-01-30 18:40:27.930][DBG][MeetingSDK:9912:217] CloudroomVideoSD init...(SDKVer:)
+[2018-01-30 18:40:27.930][DBG][MeetingSDK:9912:218] sdkParams:{"NoCallSvr":0,"NoMediaDatToSvr":0}
+[2018-01-30 18:40:27.935][DBG][MeetMgr:9912:219] MeetingMgrSDK init(sdkver:1.4.0 2018-1-15_11:41:09)...
+[2018-01-30 18:40:27.935][DBG][MeetMgr:9912:220] init ICE moudle, Timeout:90000
+[2018-01-30 18:40:27.937][DBG][ICE:9912:221] initialize communicator for MeetingCallAPI, timeout:90000, ConnectTimeout:30000, noSig:0...
+[2018-01-30 18:40:27.937][DBG][ICE:9912:222] initialize communicator for MeetingCallAPI...finished
+[2018-01-30 18:40:27.937][INF][SIG:9912:223] version: SIGClient 1.0.3.3 Release, for Win32, Built on Jan  5 2018,  16:22:42
+[2018-01-30 18:40:27.938][INF][SIG:9912:224] MainFrame::prepare in
+[2018-01-30 18:40:27.938][INF][SIG:9912:225] MainFrame::prepare out
+[2018-01-30 18:40:27.938][INF][SIG:9912:226] MainFrame::initialize in
+[2018-01-30 18:40:27.938][INF][SIG:9912:227] MainFrame::initialize out
+[2018-01-30 18:40:27.938][INF][SIG:9912:228] SIGClientInit out
+[2018-01-30 18:40:27.938][INF][SIG:9912:229] SIGClientStart in
+[2018-01-30 18:40:27.938][INF][SIG:9912:230] SIGClientStart out
+[2018-01-30 18:40:27.938][INF][SIG:13552:231] MainService::WorkThread start run.
+[2018-01-30 18:40:27.938][DBG][Main:9912:232] MeetingSDK init(sdkver:3.8.3 2018-1-15_11:41:58)...
+[2018-01-30 18:40:27.938][DBG][Main:9912:233] MeetingSDK testMode:0, shName:
+[2018-01-30 18:40:27.938][DBG][httpLink:9912:234] setHttpTimeout:90000
+[2018-01-30 18:40:27.940][DBG][ICE:9912:235] initialize communicator for MeetingSDK, timeout:90000, ConnectTimeout:30000, noSig:0...
+[2018-01-30 18:40:27.940][DBG][ICE:9912:236] initialize communicator for MeetingSDK...finished
+[2018-01-30 18:40:27.940][DBG][Main:9912:237] Init model:LOGIN
+[2018-01-30 18:40:27.940][DBG][Main:9912:238] Init model:MEMBER
+[2018-01-30 18:40:27.941][DBG][Audio:13548:239] voiceEng init...
+[2018-01-30 18:40:27.941][DBG][Audio:13548:240] AudioPrint level:0x1000, CRVE_Init in
+[2018-01-30 18:40:27.941][INF][MS:13548:241] MSCSetCRVECommandCallback in
+[2018-01-30 18:40:27.941][INF][MS:13548:242] handler?null: yes
+[2018-01-30 18:40:27.941][INF][MS:13548:243] MSCSetCRVECommandCallback out
+[2018-01-30 18:40:27.941][DBG][Audio:13548:244] AudioPrint level:0x1000, CRVE_Init out
+[2018-01-30 18:40:27.941][DBG][Audio:13548:245] voiceEng init...2
+[2018-01-30 18:40:27.941][DBG][Audio:13548:246] AudioPrint level:0x1000, CRVE_CreateChannel in
+[2018-01-30 18:40:27.941][DBG][Main:9912:247] Init model:PSTNCTL
+[2018-01-30 18:40:27.941][DBG][Audio:13548:248] AudioPrint level:0x1000, CRVE_CreateChannel out
+[2018-01-30 18:40:27.941][DBG][Main:9912:249] Init model:INVITE
+[2018-01-30 18:40:27.941][DBG][Audio:13548:250] AudioPrint level:0x1000, CRVE_SetSpeakerVolume in
+[2018-01-30 18:40:27.941][DBG][Main:9912:251] Init model:MSClient
+[2018-01-30 18:40:27.941][DBG][MSCLient:9912:252] MscIncLib::SIGClientInit...
+[2018-01-30 18:40:27.941][INF][SIG:9912:253] SIGClientInit in
+[2018-01-30 18:40:27.941][INF][SIG:9912:254] version: SIGClient 1.0.3.3 Release, for Win32, Built on Jan  5 2018,  16:22:42
+[2018-01-30 18:40:27.941][INF][SIG:9912:255] SIGClientInit out
+[2018-01-30 18:40:27.941][DBG][MSCLient:9912:0] MscIncLib::MSCInit...
+[2018-01-30 18:40:27.941][INF][MS:9912:1] MSCInit in
+[2018-01-30 18:40:27.941][INF][MS:9912:2] version: MSClient 1.3.0.3 Release, for Win32, Built on Jan  5 2018,  16:24:16
+[2018-01-30 18:40:27.941][DBG][Audio:13548:3] AudioPrint level:0x1000, CRVE_SetSpeakerVolume out
+[2018-01-30 18:40:27.941][DBG][Audio:13548:4] voiceEng init...end
+[2018-01-30 18:40:27.942][INF][MS:9912:5] MainFrame::prepare in
+[2018-01-30 18:40:27.942][INF][MS:9912:6] MainFrame::prepare out
+[2018-01-30 18:40:27.942][INF][MS:13384:7] MainService::WorkThread start run.
+[2018-01-30 18:40:27.963][INF][MS:13384:8] MainFrame::initialize in
+[2018-01-30 18:40:27.963][INF][MS:13384:9] MainFrame::initialize out
+[2018-01-30 18:40:27.963][INF][MS:9912:10] MSCInit out
+[2018-01-30 18:40:27.963][INF][MS:9912:11] MSCSetTransProtocol in
+[2018-01-30 18:40:27.963][INF][MS:9912:12] transProto:0
+[2018-01-30 18:40:27.963][INF][MS:9912:13] MSCSetTransProtocol out
+[2018-01-30 18:40:27.963][INF][SIG:9912:14] SIGClientStart in
+[2018-01-30 18:40:27.963][INF][SIG:9912:15] SIGClientStart out
+[2018-01-30 18:40:27.963][INF][MS:9912:16] MSCStart in
+[2018-01-30 18:40:27.963][INF][MS:9912:17] MSCStart out
+[2018-01-30 18:40:27.963][DBG][Main:9912:18] Init model:SYNC
+[2018-01-30 18:40:27.963][DBG][Main:9912:19] Init model:BRIDGE
+[2018-01-30 18:40:27.964][DBG][Main:9912:20] Init model:VIDEO
+[2018-01-30 18:40:27.964][DBG][Video:9912:21] avcodec version: 0x395964
+[2018-01-30 18:40:27.964][DBG][Video:9912:22] profile:high444, noCabac:0, noHardCoding:0, sliceMaxSZ:0, iFrameMSecond:0
+[2018-01-30 18:40:27.964][DBG][Video:9912:23] KVideoMgr cpuCount:4
+[2018-01-30 18:40:27.965][INF][MS:9912:24] MSCSetVideoCallback in
+[2018-01-30 18:40:27.965][INF][MS:9912:25] pHandler?null: yes
+[2018-01-30 18:40:27.965][INF][MS:9912:26] MSCSetVideoCallback out
+[2018-01-30 18:40:27.965][DBG][Main:9912:27] Init model:AUDIO
+[2018-01-30 18:40:27.965][DBG][Main:9912:28] Init model:MEDIA
+[2018-01-30 18:40:27.965][INF][MS:9912:29] MSCSetFilmCallback in
+[2018-01-30 18:40:27.965][INF][MS:9912:30] pHandler?null: yes
+[2018-01-30 18:40:27.965][INF][MS:9912:31] MSCSetFilmCallback out
+[2018-01-30 18:40:27.965][DBG][Main:9912:32] Init model:FILE_TRANS_NOTIFY
+[2018-01-30 18:40:27.965][DBG][Main:9912:33] Init model:FILE_TRANSFER
+[2018-01-30 18:40:27.967][DBG][Main:9912:34] Init model:FILE_SVRCOVER
+[2018-01-30 18:40:27.967][DBG][Main:9912:35] Init model:WHITE_BOARD
+[2018-01-30 18:40:27.967][DBG][Main:9912:36] Init model:SCREEN_SHARE
+[2018-01-30 18:40:27.968][DBG][Main:9912:37] Init model:NOTICE
+[2018-01-30 18:40:27.968][DBG][Main:9912:38] Init model:ROLLCALL
+[2018-01-30 18:40:27.968][DBG][Main:9912:39] Init model:IM
+[2018-01-30 18:40:27.968][DBG][Main:9912:40] Init model:NRTCOMM
+[2018-01-30 18:40:27.968][DBG][Main:9912:41] Init model:RECORD
+[2018-01-30 18:40:27.968][DBG][Main:9912:42] Init model:BROADCAST
+[2018-01-30 18:40:27.969][DBG][Audio:9912:43] WaitVoiceEngInit...
+[2018-01-30 18:40:27.969][DBG][Audio:9912:44] WaitVoiceEngInit...finished
+[2018-01-30 18:40:27.969][DBG][RateControl:9912:45] Upload start(bps:102400)...
+[2018-01-30 18:40:27.969][DBG][RateControl:9912:46] Download start(bps:100000000)...
+[2018-01-30 18:40:27.971][DBG][MeetingSDK:9912:47] sdk file path: C:\Users\admin\Desktop\git\demo2\RecordDemo(web)\home\
+[2018-01-30 18:40:27.972][DBG][MeetingSDK:9912:48] set login server address:www.cloudroom.com
+[2018-01-30 18:40:27.972][DBG][httpLink:9912:49] setHttpServers:www.cloudroom.com
+[2018-01-30 18:40:27.972][DBG][httpLink:9912:50] slot_selectFinished:www.cloudroom.com
+[2018-01-30 18:40:28.004][DBG][MeetingSDK:9912:51] setMgrCallBack:0xda7e2f0
+[2018-01-30 18:40:28.004][DBG][MeetingSDK:9912:52] login...(nickname:E82268EBB4CB4164070A751FCECD2327)
+[2018-01-30 18:40:28.006][CRIT][MeetMgr:9912:53] WebAPI login, reqID:5c8e4ae2-d154-4592-a23e-ea92495035e4-7, oemkey:CLOUDROOM, userName:demo@cloudroom.com, pcid:e7907c25-c0e6-4690-a2d0-6e0a2331a881, clientVer:, sdkVer:1.4.0 2018-1-15_11:41:09, languange:, ip:10.8.8.202, mac:98-90-96-D0-1C-F2, OSVer:10.0.16299(Microsoft  (build 16299), 64-bit), OSLang:0x804 Chinese (PRC), CPU:4(3292MHz, Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz), Mem:4002(used:80%)!
+[2018-01-30 18:40:28.006][DBG][MeetMgr:9912:54] WebAPI SendMsg url:/servlet/getCallServerInfo, dat:{    "ClientVer": "",    "IpAddr": "10.8.8.202",    "Language": "",    "MacAddr": "98-90-96-D0-1C-F2",    "MgrSDKVer": "1.4.0 2018-1-15_11:41:09",    "OEMKey": "CLOUDROOM",    "PRODUCT": "win32_net",    "RequestId": "5c8e4ae2-d154-4592-a23e-ea92495035e4-7",    "UserName": "demo@cloudroom.com",    "UserPswd": "********************************"}
+[2018-01-30 18:40:28.006][DBG][httpLink:9912:55] sendHttpCmd url:http://www.cloudroom.com/servlet/getCallServerInfo, dateLen:357, cmdID:5c8e4ae2-d154-4592-a23e-ea92495035e4-8
+[2018-01-30 18:40:28.361][DBG][httpLink:9912:56] http rsp(200), url:/servlet/getCallServerInfo, cmdID:5c8e4ae2-d154-4592-a23e-ea92495035e4-8
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:57] WebAPI success! cmdType:/servlet/getCallServerInfo, RequestId:5c8e4ae2-d154-4592-a23e-ea92495035e4-7
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:58] WebAPI MyPublicIP:183.15.176.98
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:59] WebAPI get call serverinfo success, call server:59.110.14.207:13102;60.190.243.250:13102
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:60] LoginMgr login meeting server succeed, begin to Login call server...
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:61] setTunnel off
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:62] setSigProxyParams:
+[2018-01-30 18:40:28.361][INF][SIG:9912:63] SIGClientSetServerPorts in
+[2018-01-30 18:40:28.361][INF][SIG:9912:64] paramStr:
+[2018-01-30 18:40:28.361][INF][SIG:9912:65] SetTunnelParams SigPort:0, udtPort:0
+[2018-01-30 18:40:28.361][INF][SIG:9912:66] SIGClientSetServerPorts out
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:67] CallAPI setLoginServerAddr(59.110.14.207:13102;60.190.243.250:13102)...
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:68] register the CallServer(crAcnt:demo@cloudroom.com, userID:C16167AAF3A0F7FEA1595DF81EE42C49)...
+[2018-01-30 18:40:28.361][INF][SIG:9912:69] SIGClientSetTunnelServerIP in
+[2018-01-30 18:40:28.361][INF][SIG:9912:70] serverip: 
+[2018-01-30 18:40:28.361][INF][SIG:9912:71] SIGClientSetTunnelServerIP out
+[2018-01-30 18:40:28.361][DBG][MeetMgr:9912:72] wait for server selecting...(59.110.14.207:13102;60.190.243.250:13102)
+[2018-01-30 18:40:28.361][INF][SIG:9912:73] proxy init channel(127.0.0.1:57962--59.110.14.207:13102) succ
+[2018-01-30 18:40:28.362][INF][SIG:9912:74] proxy init channel(127.0.0.1:57963--60.190.243.250:13102) succ
+[2018-01-30 18:40:28.362][DBG][MeetMgr:9912:75] begin ping '59.110.14.207:13102' ...
+[2018-01-30 18:40:28.362][DBG][ICE:9912:76] category=Network, msg=trying to establish tcp connection to 127.0.0.1:57962
+[2018-01-30 18:40:28.362][DBG][MeetMgr:9912:77] begin ping '60.190.243.250:13102' ...
+[2018-01-30 18:40:28.362][DBG][ICE:9912:78] category=Network, msg=trying to establish tcp connection to 127.0.0.1:57963
+[2018-01-30 18:40:28.362][INF][SIG:13552:79] proxy channel(127.0.0.1:57962--59.110.14.207:13102) accept new session 127.0.0.1:57964
+[2018-01-30 18:40:28.362][INF][SIG:13552:80] session(127.0.0.1:57964) connect to 59.110.14.207:2728
+[2018-01-30 18:40:28.362][DBG][ICE:13580:81] category=Network, msg=tcp connection establishedlocal address = 127.0.0.1:57964remote address = 127.0.0.1:57962
+[2018-01-30 18:40:28.362][DBG][ICE:13580:82] category=Network, msg=tcp connection establishedlocal address = 127.0.0.1:57965remote address = 127.0.0.1:57963
+[2018-01-30 18:40:28.362][INF][SIG:13552:83] open tcp ipv4 connection, localAddr 0.0.0.0:57966, remoteAddr 59.110.14.207:2728
+[2018-01-30 18:40:28.362][INF][SIG:13552:84] open tcp ipv4 connection, localAddr 0.0.0.0:57967, remoteAddr 59.110.14.207:443
+[2018-01-30 18:40:28.362][INF][SIG:13552:85] proxy channel(127.0.0.1:57963--60.190.243.250:13102) accept new session 127.0.0.1:57965
+[2018-01-30 18:40:28.362][INF][SIG:13552:86] session(127.0.0.1:57965) connect to 60.190.243.250:2728
+[2018-01-30 18:40:28.363][INF][SIG:13552:87] open tcp ipv4 connection, localAddr 0.0.0.0:57968, remoteAddr 60.190.243.250:2728
+[2018-01-30 18:40:28.363][INF][SIG:13552:88] open tcp ipv4 connection, localAddr 0.0.0.0:57969, remoteAddr 60.190.243.250:443
+[2018-01-30 18:40:28.403][INF][SIG:13552:89] session(127.0.0.1:57965) establish connection 10.8.8.202:57969-60.190.243.250:443 succ.
+[2018-01-30 18:40:28.404][INF][SIG:13552:90] session(127.0.0.1:57965) establish connection 10.8.8.202:57968-60.190.243.250:2728 succ.
+[2018-01-30 18:40:28.404][INF][SIG:13552:91] session(127.0.0.1:57965) select connection 10.8.8.202:57968-60.190.243.250:2728
+[2018-01-30 18:40:28.404][INF][SIG:13552:92] session(127.0.0.1:57965) send init msg.
+[2018-01-30 18:40:28.408][INF][SIG:13552:93] session(127.0.0.1:57964) establish connection 10.8.8.202:57967-59.110.14.207:443 succ.
+[2018-01-30 18:40:28.408][INF][SIG:13552:94] session(127.0.0.1:57964) establish connection 10.8.8.202:57966-59.110.14.207:2728 succ.
+[2018-01-30 18:40:28.408][INF][SIG:13552:95] session(127.0.0.1:57964) select connection 10.8.8.202:57966-59.110.14.207:2728
+[2018-01-30 18:40:28.408][INF][SIG:13552:96] session(127.0.0.1:57964) send init msg.
+[2018-01-30 18:40:28.447][INF][SIG:13552:97] session(127.0.0.1:57965) recv init ack msg, sessionId:f0783e84-effed110
+[2018-01-30 18:40:28.447][INF][SIG:13552:98] session(127.0.0.1:57965) recv close msg, reason:connect server 60.190.243.250:13102 fail, tcp ipv4 socket connect error(111):Connection refused! localAddr 60.190.243.250:44045, remoteAddr 60.190.243.250:13102
+[2018-01-30 18:40:28.447][INF][SIG:13552:99] session(127.0.0.1:57965) destroy
+[2018-01-30 18:40:28.447][DBG][ICE:13580:100] category=Network, msg=closing tcp connectionlocal address = 127.0.0.1:57965remote address = 127.0.0.1:57963
+[2018-01-30 18:40:28.448][WAR][MeetMgr:13580:101] ping server 60.190.243.250:13102 failed!
+[2018-01-30 18:40:28.452][INF][SIG:13552:102] session(127.0.0.1:57964) recv init ack msg, sessionId:e8499d74-efba7f40
+[2018-01-30 18:40:28.453][INF][SIG:13552:103] sigproxy local packet received.
+[2018-01-30 18:40:28.492][DBG][MeetMgr:13580:104] ping server 59.110.14.207:13102 success!
+[2018-01-30 18:40:28.492][DBG][MeetMgr:9912:105] selected call server:59.110.14.207:13102, continue to register the call server
+[2018-01-30 18:40:28.492][DBG][MeetMgr:9912:106] continue login callserver...
+[2018-01-30 18:40:29.595][DBG][MeetMgr:9912:107] callsvr register success({    "RspCode": 0,    "RspDesc": "Ok",    "meetID": 0,    "sessionID": "90150FA9-9BD5-4F52-BC61-32E47AE31B1F",    "ttv_type": 1,    "userID": "C16167AAF3A0F7FEA1595DF81EE42C49",    "userName": "E82268EBB4CB4164070A751FCECD2327",    "userPhoneNum": "008615890908080",    "userRole": 1,    "websvrList": ""})!
+[2018-01-30 18:40:29.595][DBG][MeetMgr:9912:108] start handShake2CallSvr, timeout:30000
+[2018-01-30 18:40:29.595][DBG][MeetingSDK:9912:109] login success, userID:C16167AAF3A0F7FEA1595DF81EE42C49, nickName:E82268EBB4CB4164070A751FCECD2327, userRole:1, userType:0
+[2018-01-30 18:40:29.596][DBG][httpLink:9912:110] cancel all http cmd!
+[2018-01-30 18:40:29.596][WAR][MeetMgr:9912:111] ~MeetingCallAPI
+[2018-01-30 18:40:29.596][DBG][httpLink:9912:112] cancel all http cmd!
+[2018-01-30 18:40:29.604][DBG][MeetingSDK:9912:113] create Meeting, meetSubject:财富宝货币市场基金  00034, createPswd:0
+[2018-01-30 18:40:29.604][DBG][MeetMgr:9912:114] WebAPI SendMsg url:/servlet/ClientCreateNetMeet, dat:{    "ClientVer": "",    "IsRegular": 0,    "MeetSubject": "财富宝货币市场基金  00034",    "MeetingMode": "",    "NeedPswd": "*",    "OEMKey": "CLOUDROOM",    "PRODUCT": "win32_net",    "RequestId": "5c8e4ae2-d154-4592-a23e-ea92495035e4-9",    "UserName": "demo@cloudroom.com",    "UserPswd": "e10adc3949ba59abbe56e057f20f883e"}
+[2018-01-30 18:40:29.604][DBG][httpLink:9912:115] sendHttpCmd url:http://www.cloudroom.com/servlet/ClientCreateNetMeet, dateLen:349, cmdID:5c8e4ae2-d154-4592-a23e-ea92495035e4-10
+[2018-01-30 18:40:32.890][DBG][httpLink:9912:116] http rsp(200), url:/servlet/ClientCreateNetMeet, cmdID:5c8e4ae2-d154-4592-a23e-ea92495035e4-10
+[2018-01-30 18:40:32.890][DBG][MeetMgr:9912:117] WebAPI success! cmdType:/servlet/ClientCreateNetMeet, RequestId:5c8e4ae2-d154-4592-a23e-ea92495035e4-9
+[2018-01-30 18:40:32.891][DBG][MeetingSDK:9912:118] setMeetingCallBack:0xda7f160
+[2018-01-30 18:40:32.891][DBG][MeetingSDK:9912:119] enter meeting, meetID:79541243, userID:C16167AAF3A0F7FEA1595DF81EE42C49, nickName
+[2018-01-30 18:40:32.892][DBG][MeetMgr:9912:120] WebAPI SendMsg url:/servlet/joinMeetingAPI, dat:{    "ClientVer": "",    "MeetID": 79541243,    "MeetPswd": "",    "NickName": "E82268EBB4CB4164070A751FCECD2327",    "OEMKey": "CLOUDROOM",    "PRODUCT": "win32_net",    "RequestId": "5c8e4ae2-d154-4592-a23e-ea92495035e4-11",    "UserType": 4}
+[2018-01-30 18:40:32.892][DBG][httpLink:9912:121] sendHttpCmd url:http://www.cloudroom.com/servlet/joinMeetingAPI, dateLen:254, cmdID:5c8e4ae2-d154-4592-a23e-ea92495035e4-12
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:122] http rsp(200), url:/servlet/joinMeetingAPI, cmdID:5c8e4ae2-d154-4592-a23e-ea92495035e4-12
+[2018-01-30 18:40:33.111][DBG][MeetMgr:9912:123] WebAPI success! cmdType:/servlet/joinMeetingAPI, RequestId:5c8e4ae2-d154-4592-a23e-ea92495035e4-11
+[2018-01-30 18:40:33.111][DBG][MeetingSDK:9912:124] start meeting succeed, crmt:CRMT:LU1FRVRVUkw9d3d3LmNsb3Vkcm9vbS5jb20vc2VydmxldC9nZXRDbGllbnRBY2NLZXkKLU1FRVQ9Nzk1NDEyNDM7NjM4MWQ0OGIwNGUxYTE1NTRhYzZhNzcyZjI0MGViODcKLUFDTlQ9MDs0OzAyZTRjMTUwMDZkN2MxNjVlOTY0MjQyNDdjNzczYzYzOzQ1MzgzMjMyMzYzODQ1NDI0MjM0NDM0MjM0MzEzNjM0MzAzNzMwNDEzNzM1MzE0NjQzNDU0MzQ0MzIzMzMyMzc7Ci1MQU5HPXpoX0NOCi1NRUVUVFlQRT1NQUlOCi1MT0dDRkc9MDsxMzkuMTk5LjIyMi40NzoxMjAwNTozMzY2Ci1XRUJTVlI9MTgzLjYwLjQ3LjUyOzEzOS4xOTkuMjIyLjQ3OzQ3LjkzLjM3LjIyMwotRE9NQUlOPTExMDA=
+[2018-01-30 18:40:33.111][DBG][MeetingSDK:9912:125] login meet with userID:C16167AAF3A0F7FEA1595DF81EE42C49
+[2018-01-30 18:40:33.111][INF][Login:9912:126] LoginLib loginState:0!
+[2018-01-30 18:40:33.111][INF][Login:9912:127] start login...
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:128] QNetworkProxy type:2, host:, port:0, name:
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:129] setHttpServers:183.60.47.52;139.199.222.47;47.93.37.223
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:130] http ping, addr:183.60.47.52;
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:131] http ping, addr:139.199.222.47;
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:132] http ping, addr:47.93.37.223;
+[2018-01-30 18:40:33.111][DBG][Login:9912:133] start get meeting info: CRMT:LUFDTlQ9MDs0OzAyZTRjMTUwMDZkN2MxNjVlOTY0MjQyNDdjNzczYzYzOzQ1MzgzMjMyMzYzODQ1NDI0MjM0NDM0MjM0MzEzNjM0MzAzNzMwNDEzNzM1MzE0NjQzNDU0MzQ0MzIzMzMyMzc7Ci1ET01BSU49MTEwMAotTEFORz16aF9DTgotTE9HQ0ZHPTA7MTM5LjE5OS4yMjIuNDc6MTIwMDU6MzM2NgotTUVFVD03OTU0MTI0Mzs2MzgxZDQ4YjA0ZTFhMTU1NGFjNmE3NzJmMjQwZWI4NwotTUVFVFRZUEU9TUFJTgotTUVFVFVSTD13d3cuY2xvdWRyb29tLmNvbS9zZXJ2bGV0L2dldENsaWVudEFjY0tleQotUFJPRFVDVD13aW4zMl9uZXQKLVdFQlNWUj0xODMuNjAuNDcuNTI7MTM5LjE5OS4yMjIuNDc7NDcuOTMuMzcuMjIzCg==
+[2018-01-30 18:40:33.111][DBG][httpLink:9912:134] httpCmd buffered, url:/servlet/getClientAccKey, cmdID:62e82f72-ff3e-46b9-b211-b59f6c3fccd9-2!
+[2018-01-30 18:40:33.129][DBG][httpLink:9912:135] http ping rsp(200), addr:183.60.47.52, rspDat:{"RspCode":0,"RspDesc":"","PublicIP":"183.15.176.98","tvType":0}
+[2018-01-30 18:40:33.129][DBG][httpLink:9912:136] slot_selectFinished:183.60.47.52
+[2018-01-30 18:40:33.129][DBG][httpLink:9912:137] sendHttpCmd url:http://183.60.47.52/servlet/getClientAccKey, dateLen:477, cmdID:62e82f72-ff3e-46b9-b211-b59f6c3fccd9-2
+[2018-01-30 18:40:33.368][DBG][httpLink:9912:138] http rsp(200), url:/servlet/getClientAccKey, cmdID:62e82f72-ff3e-46b9-b211-b59f6c3fccd9-2
+[2018-01-30 18:40:33.368][DBG][Login:9912:139] MeetingInfo: CRMT:LURPTUFJTj0xMTAwCi1QSE9OQks9d3d3LmNsb3Vkcm9vbS5jb20vbWVldGluZ2FwaS9yZXN0Ci1BQ05UPTA7NDswMmU0YzE1MDA2ZDdjMTY1ZTk2NDI0MjQ3Yzc3M2M2Mzs0NTM4MzIzMjM2Mzg0NTQyNDIzNDQzNDIzNDMxMzYzNDMwMzczMDQxMzczNTMxNDY0MzQ1NDM0NDMyMzMzMjM3Ci1MQU5HPXpoX0NOCi1NRUVUVVJMPXd3dy5jbG91ZHJvb20uY29tL3NlcnZsZXQvZ2V0Q2xpZW50QWNjS2V5Ci1CWlRZUEU9MAotQUNTU1ZSPTEwMDc6MTEyLjI5LjE3Ny4xMzk6MjY5ODoyMDYzOzUwMDA3OjQ3LjkzLjUxLjE4ODoyNjk4OjIwNjM7MTAxMTo2MC4xOTAuMjQzLjI1MDoyNjk4OjIwNjM7MTAxMjoyMjIuMTg2LjYxLjkyOjI2OTg6MjA2Mzs1MDAwMzo0Ny45NC4yMS42OjI2OTg6MjA2MzsxMDEzOjEwMS42NC4xODIuNjA6MjY5ODoyMDYzOwotTUVFVFRZUEU9TUFJTgotTUVFVD03OTU0MTI0Mzs2MzgxZDQ4YjA0ZTFhMTU1NGFjNmE3NzJmMjQwZWI4NzsKLVBST0RVQ1Q9d2luMzJfbmV0Ci1MT0dDRkc9MDsxMzkuMTk5LjIyMi40NzoxMjAwNTozMzY2Ci1TUFZFUj0zLjkuMwotV0VCU1ZSPTE4My42MC40Ny41MjsxMzkuMTk5LjIyMi40Nzs0Ny45My4zNy4yMjMKLVRVTk5FTD0wCi1NWVBVQklQPTE4My4xNS4xNzYuOTgKLUVYQ0ZHPTEKLVVQRFNWUj1hbGk5LmNsb3Vkcm9vbS5jb206ODA4MDtzMTEuY2xvdWRyb29tLmNvbTo4MDgwOzEzOS4xOTkuMjIyLjQ3O3MxMy5jbG91ZHJvb20uY29tO3M3LmNsb3Vkcm9vbS5jb207Cg==
+[2018-01-30 18:40:33.369][INF][SIG:9912:140] SIGClientSetNetworkProxyCfg in
+[2018-01-30 18:40:33.369][INF][SIG:9912:141] type:0, servIP:, servPort:0, userName:, password:
+[2018-01-30 18:40:33.369][INF][SIG:9912:142] SIGClientSetNetworkProxyCfg out
+[2018-01-30 18:40:33.369][INF][SIG:9912:143] SIGClientSetServerPorts in
+[2018-01-30 18:40:33.369][INF][SIG:9912:144] paramStr:
+[2018-01-30 18:40:33.369][INF][SIG:9912:145] SetTunnelParams SigPort:0, udtPort:0
+[2018-01-30 18:40:33.369][INF][SIG:9912:146] SIGClientSetServerPorts out
+[2018-01-30 18:40:33.369][INF][Login:9912:147] StartConnectAccess...
+[2018-01-30 18:40:33.369][INF][Login:9912:148] access: 1007,112.29.177.139:2698:2063
+[2018-01-30 18:40:33.369][INF][Login:9912:149] access: 1011,60.190.243.250:2698:2063
+[2018-01-30 18:40:33.369][INF][Login:9912:150] access: 1012,222.186.61.92:2698:2063
+[2018-01-30 18:40:33.369][INF][Login:9912:151] access: 1013,101.64.182.60:2698:2063
+[2018-01-30 18:40:33.369][INF][Login:9912:152] access: 50003,47.94.21.6:2698:2063
+[2018-01-30 18:40:33.369][INF][Login:9912:153] access: 50007,47.93.51.188:2698:2063
+[2018-01-30 18:40:33.369][DBG][MSCLient:9912:154] PathDetect mode:2
+[2018-01-30 18:40:33.369][INF][MS:9912:155] MSCPathDetect in
+[2018-01-30 18:40:33.369][INF][MS:9912:156] MSCPathDetect: 112.29.177.139:2698 60.190.243.250:2698 222.186.61.92:2698 101.64.182.60:2698 47.94.21.6:2698 47.93.51.188:2698, pHandler?null: yes detectMode: QUICK
+[2018-01-30 18:40:33.369][INF][MS:9912:157] MSCPathDetect out
+[2018-01-30 18:40:33.369][DBG][MS:13384:158] index:3,type:6,name:{206A4D6A-A468-4319-BE08-404FBF0CDB0A},desc:Intel(R) Ethernet Connection I217-LM,addrLen:6,mac:98-90-96-d0-1c-f2,dhcp:n,ipLst(ip:10.8.8.202 mask:255.255.255.0; ),gwLst(ip:10.8.8.253 mask:255.255.255.255; )
+[2018-01-30 18:40:33.369][DBG][MS:13384:159] routeDestInfo[112.29.177.139]:dwForwardIfIndex:3,dwBestIfIndex:3,dwForwardDest:0.0.0.0,dwForwardMask:0.0.0.0,dwForwardNextHop:10.8.8.253
+[2018-01-30 18:40:33.369][INF][MS:13384:160] DefaultAdaptor:Intel(R) Ethernet Connection I217-LM(10.8.8.202) is wireless:n
+[2018-01-30 18:40:33.369][INF][MS:13384:161] start both tcp and udp detect.
+[2018-01-30 18:40:33.369][INF][SIG:13384:162] proxy init channel(127.0.0.1:57973--112.29.177.139:2698) succ
+[2018-01-30 18:40:33.369][INF][MS:13384:163] open tcp ipv4 connection, localAddr 127.0.0.1:57974, remoteAddr 127.0.0.1:57973
+[2018-01-30 18:40:33.369][INF][MS:13384:164] create tcp detect conn 127.0.0.1:57973 to 112.29.177.139:2698
+[2018-01-30 18:40:33.370][INF][SIG:13552:165] proxy channel(127.0.0.1:57973--112.29.177.139:2698) accept new session 127.0.0.1:57974
+[2018-01-30 18:40:33.370][INF][SIG:13384:166] proxy init channel(127.0.0.1:57975--60.190.243.250:2698) succ
+[2018-01-30 18:40:33.370][INF][SIG:13552:167] session(127.0.0.1:57974) connect to 112.29.177.139:2728
+[2018-01-30 18:40:33.370][INF][SIG:13552:168] open tcp ipv4 connection, localAddr 0.0.0.0:57977, remoteAddr 112.29.177.139:2728
+[2018-01-30 18:40:33.370][INF][MS:13384:169] open tcp ipv4 connection, localAddr 127.0.0.1:57976, remoteAddr 127.0.0.1:57975
+[2018-01-30 18:40:33.370][INF][MS:13384:170] create tcp detect conn 127.0.0.1:57975 to 60.190.243.250:2698
+[2018-01-30 18:40:33.370][INF][SIG:13552:171] open tcp ipv4 connection, localAddr 0.0.0.0:57978, remoteAddr 112.29.177.139:443
+[2018-01-30 18:40:33.370][INF][SIG:13384:172] proxy init channel(127.0.0.1:57979--222.186.61.92:2698) succ
+[2018-01-30 18:40:33.370][INF][SIG:13552:173] proxy channel(127.0.0.1:57975--60.190.243.250:2698) accept new session 127.0.0.1:57976
+[2018-01-30 18:40:33.370][INF][SIG:13552:174] session(127.0.0.1:57976) connect to 60.190.243.250:2728
+[2018-01-30 18:40:33.370][INF][MS:13384:175] open tcp ipv4 connection, localAddr 127.0.0.1:57980, remoteAddr 127.0.0.1:57979
+[2018-01-30 18:40:33.370][INF][MS:13384:176] create tcp detect conn 127.0.0.1:57979 to 222.186.61.92:2698
+[2018-01-30 18:40:33.370][INF][SIG:13552:177] open tcp ipv4 connection, localAddr 0.0.0.0:57981, remoteAddr 60.190.243.250:2728
+[2018-01-30 18:40:33.370][INF][SIG:13552:178] open tcp ipv4 connection, localAddr 0.0.0.0:57983, remoteAddr 60.190.243.250:443
+[2018-01-30 18:40:33.370][INF][SIG:13384:179] proxy init channel(127.0.0.1:57982--101.64.182.60:2698) succ
+[2018-01-30 18:40:33.370][INF][SIG:13552:180] proxy channel(127.0.0.1:57979--222.186.61.92:2698) accept new session 127.0.0.1:57980
+[2018-01-30 18:40:33.370][INF][SIG:13552:181] session(127.0.0.1:57980) connect to 222.186.61.92:2728
+[2018-01-30 18:40:33.370][INF][MS:13384:182] open tcp ipv4 connection, localAddr 127.0.0.1:57984, remoteAddr 127.0.0.1:57982
+[2018-01-30 18:40:33.370][INF][MS:13384:183] create tcp detect conn 127.0.0.1:57982 to 101.64.182.60:2698
+[2018-01-30 18:40:33.370][INF][SIG:13552:184] open tcp ipv4 connection, localAddr 0.0.0.0:57985, remoteAddr 222.186.61.92:2728
+[2018-01-30 18:40:33.370][INF][SIG:13552:185] open tcp ipv4 connection, localAddr 0.0.0.0:57987, remoteAddr 222.186.61.92:443
+[2018-01-30 18:40:33.370][INF][SIG:13384:186] proxy init channel(127.0.0.1:57986--47.94.21.6:2698) succ
+[2018-01-30 18:40:33.370][INF][SIG:13552:187] proxy channel(127.0.0.1:57982--101.64.182.60:2698) accept new session 127.0.0.1:57984
+[2018-01-30 18:40:33.370][INF][SIG:13552:188] session(127.0.0.1:57984) connect to 101.64.182.60:2728
+[2018-01-30 18:40:33.371][INF][MS:13384:189] open tcp ipv4 connection, localAddr 127.0.0.1:57988, remoteAddr 127.0.0.1:57986
+[2018-01-30 18:40:33.371][INF][MS:13384:190] create tcp detect conn 127.0.0.1:57986 to 47.94.21.6:2698
+[2018-01-30 18:40:33.371][INF][SIG:13552:191] open tcp ipv4 connection, localAddr 0.0.0.0:57989, remoteAddr 101.64.182.60:2728
+[2018-01-30 18:40:33.371][INF][SIG:13552:192] open tcp ipv4 connection, localAddr 0.0.0.0:57991, remoteAddr 101.64.182.60:443
+[2018-01-30 18:40:33.371][INF][SIG:13384:193] proxy init channel(127.0.0.1:57990--47.93.51.188:2698) succ
+[2018-01-30 18:40:33.371][INF][SIG:13552:194] proxy channel(127.0.0.1:57986--47.94.21.6:2698) accept new session 127.0.0.1:57988
+[2018-01-30 18:40:33.371][INF][SIG:13552:195] session(127.0.0.1:57988) connect to 47.94.21.6:2728
+[2018-01-30 18:40:33.371][INF][MS:13384:196] open tcp ipv4 connection, localAddr 127.0.0.1:57992, remoteAddr 127.0.0.1:57990
+[2018-01-30 18:40:33.371][INF][MS:13384:197] create tcp detect conn 127.0.0.1:57990 to 47.93.51.188:2698
+[2018-01-30 18:40:33.371][INF][SIG:13552:198] open tcp ipv4 connection, localAddr 0.0.0.0:57993, remoteAddr 47.94.21.6:2728
+[2018-01-30 18:40:33.371][INF][SIG:13552:199] open tcp ipv4 connection, localAddr 0.0.0.0:57994, remoteAddr 47.94.21.6:443
+[2018-01-30 18:40:33.371][INF][SIG:13552:200] proxy channel(127.0.0.1:57990--47.93.51.188:2698) accept new session 127.0.0.1:57992
+[2018-01-30 18:40:33.371][INF][SIG:13552:201] session(127.0.0.1:57992) connect to 47.93.51.188:2728
+[2018-01-30 18:40:33.371][INF][SIG:13552:202] open tcp ipv4 connection, localAddr 0.0.0.0:57995, remoteAddr 47.93.51.188:2728
+[2018-01-30 18:40:33.371][INF][MS:13384:203] create udp detect conn 112.29.177.139:2698
+[2018-01-30 18:40:33.371][INF][MS:13384:204] create udp detect conn 60.190.243.250:2698
+[2018-01-30 18:40:33.371][INF][MS:13384:205] create udp detect conn 222.186.61.92:2698
+[2018-01-30 18:40:33.371][INF][MS:13384:206] create udp detect conn 101.64.182.60:2698
+[2018-01-30 18:40:33.371][INF][MS:13384:207] create udp detect conn 47.94.21.6:2698
+[2018-01-30 18:40:33.371][INF][MS:13384:208] create udp detect conn 47.93.51.188:2698
+[2018-01-30 18:40:33.371][INF][MS:13384:209] tcp detect connection(127.0.0.1:57974-127.0.0.1:57973) established succ.
+[2018-01-30 18:40:33.371][INF][SIG:13552:210] open tcp ipv4 connection, localAddr 0.0.0.0:57996, remoteAddr 47.93.51.188:443
+[2018-01-30 18:40:33.371][INF][MS:13384:211] tcp detect connection(127.0.0.1:57976-127.0.0.1:57975) established succ.
+[2018-01-30 18:40:33.371][INF][MS:13384:212] tcp detect connection(127.0.0.1:57980-127.0.0.1:57979) established succ.
+[2018-01-30 18:40:33.371][INF][MS:13384:213] tcp detect connection(127.0.0.1:57984-127.0.0.1:57982) established succ.
+[2018-01-30 18:40:33.371][INF][MS:13384:214] tcp detect connection(127.0.0.1:57988-127.0.0.1:57986) established succ.
+[2018-01-30 18:40:33.371][INF][MS:13384:215] tcp detect connection(127.0.0.1:57992-127.0.0.1:57990) established succ.
+[2018-01-30 18:40:33.399][INF][SIG:13552:216] session(127.0.0.1:57980) establish connection 10.8.8.202:57985-222.186.61.92:2728 succ.
+[2018-01-30 18:40:33.399][INF][SIG:13552:217] session(127.0.0.1:57980) select connection 10.8.8.202:57985-222.186.61.92:2728
+[2018-01-30 18:40:33.399][INF][SIG:13552:218] session(127.0.0.1:57980) send init msg.
+[2018-01-30 18:40:33.401][INF][SIG:13552:219] session(127.0.0.1:57976) establish connection 10.8.8.202:57983-60.190.243.250:443 succ.
+[2018-01-30 18:40:33.402][INF][SIG:13552:220] sigproxy local packet received.
+[2018-01-30 18:40:33.402][INF][SIG:13552:221] session(127.0.0.1:57976) establish connection 10.8.8.202:57981-60.190.243.250:2728 succ.
+[2018-01-30 18:40:33.402][INF][SIG:13552:222] session(127.0.0.1:57976) select connection 10.8.8.202:57981-60.190.243.250:2728
+[2018-01-30 18:40:33.402][INF][SIG:13552:223] session(127.0.0.1:57976) send init msg.
+[2018-01-30 18:40:33.410][INF][SIG:13552:224] session(127.0.0.1:57984) establish connection 10.8.8.202:57989-101.64.182.60:2728 succ.
+[2018-01-30 18:40:33.410][INF][SIG:13552:225] session(127.0.0.1:57984) select connection 10.8.8.202:57989-101.64.182.60:2728
+[2018-01-30 18:40:33.410][INF][SIG:13552:226] session(127.0.0.1:57984) send init msg.
+[2018-01-30 18:40:33.414][INF][SIG:13552:227] session(127.0.0.1:57992) establish connection 10.8.8.202:57996-47.93.51.188:443 succ.
+[2018-01-30 18:40:33.414][INF][SIG:13552:228] session(127.0.0.1:57974) establish connection 10.8.8.202:57977-112.29.177.139:2728 succ.
+[2018-01-30 18:40:33.414][INF][SIG:13552:229] session(127.0.0.1:57974) select connection 10.8.8.202:57977-112.29.177.139:2728
+[2018-01-30 18:40:33.414][INF][SIG:13552:230] session(127.0.0.1:57974) send init msg.
+[2018-01-30 18:40:33.414][INF][SIG:13552:231] session(127.0.0.1:57992) establish connection 10.8.8.202:57995-47.93.51.188:2728 succ.
+[2018-01-30 18:40:33.414][INF][SIG:13552:232] session(127.0.0.1:57992) select connection 10.8.8.202:57995-47.93.51.188:2728
+[2018-01-30 18:40:33.414][INF][SIG:13552:233] session(127.0.0.1:57992) send init msg.
+[2018-01-30 18:40:33.414][INF][SIG:13552:234] session(127.0.0.1:57988) establish connection 10.8.8.202:57993-47.94.21.6:2728 succ.
+[2018-01-30 18:40:33.414][INF][SIG:13552:235] session(127.0.0.1:57988) select connection 10.8.8.202:57993-47.94.21.6:2728
+[2018-01-30 18:40:33.414][INF][SIG:13552:236] session(127.0.0.1:57988) send init msg.
+[2018-01-30 18:40:33.427][INF][SIG:13552:237] session(127.0.0.1:57980) recv init ack msg, sessionId:f08520c4-f07240e0
+[2018-01-30 18:40:33.429][INF][MS:13384:238] udp responsed.
+[2018-01-30 18:40:33.438][INF][SIG:13552:239] session(127.0.0.1:57976) recv init ack msg, sessionId:e596d684-e14edf60
+[2018-01-30 18:40:33.451][INF][SIG:13552:240] session(127.0.0.1:57984) recv init ack msg, sessionId:ef9d56a4-f057ca80
+[2018-01-30 18:40:33.454][INF][MS:13384:241] tcp responsed.
+[2018-01-30 18:40:33.462][INF][SIG:13552:242] session(127.0.0.1:57974) recv init ack msg, sessionId:f55b63cc-f0582ca0
+[2018-01-30 18:40:33.463][INF][SIG:13552:243] session(127.0.0.1:57992) recv init ack msg, sessionId:ed5cb5ac-f554e3e8
+[2018-01-30 18:40:33.464][INF][SIG:13552:244] session(127.0.0.1:57988) recv init ack msg, sessionId:ed82e354-f0a9da88
+[2018-01-30 18:40:33.521][INF][MS:13384:245] GetPingResult 1007(112.29.177.139):2698(tcp): delay=110
+[2018-01-30 18:40:33.521][INF][MS:13384:246] GetPingResult 1011(60.190.243.250):2698(tcp): delay=70
+[2018-01-30 18:40:33.521][INF][MS:13384:247] GetPingResult 1012(222.186.61.92):2698(tcp): delay=60
+[2018-01-30 18:40:33.521][INF][MS:13384:248] GetPingResult 1013(101.64.182.60):2698(tcp): delay=90
+[2018-01-30 18:40:33.521][INF][MS:13384:249] GetPingResult 50003(47.94.21.6):2698(tcp): delay=110
+[2018-01-30 18:40:33.521][INF][MS:13384:250] GetPingResult 50007(47.93.51.188):2698(tcp): delay=110
+[2018-01-30 18:40:33.521][INF][MS:13384:251] GetPingResult 1007(112.29.177.139):2698(udp): delay=50
+[2018-01-30 18:40:33.521][INF][MS:13384:252] GetPingResult 1011(60.190.243.250):2698(udp): delay=30
+[2018-01-30 18:40:33.521][INF][MS:13384:253] GetPingResult 1012(222.186.61.92):2698(udp): delay=30
+[2018-01-30 18:40:33.521][INF][MS:13384:254] GetPingResult 1013(101.64.182.60):2698(udp): delay=40
+[2018-01-30 18:40:33.521][INF][MS:13384:255] GetPingResult 50003(47.94.21.6):2698(udp): delay=50
+[2018-01-30 18:40:33.521][INF][MS:13384:0] GetPingResult 50007(47.93.51.188):2698(udp): delay=50
+[2018-01-30 18:40:33.521][INF][MS:13384:1] set current trans proto to udp.
+[2018-01-30 18:40:33.522][INF][SIG:13552:2] session(127.0.0.1:57974) close by client.
+[2018-01-30 18:40:33.522][INF][SIG:13552:3] session(127.0.0.1:57974) send close msg.
+[2018-01-30 18:40:33.522][INF][Login:9912:4] OnAcessDetectResult...(wifi=0, locip=10.8.8.202)
+[2018-01-30 18:40:33.522][INF][Login:9912:5] detect rslt: 1007(112.29.177.139, publicIP:183.15.176.98, hisScore:0), delay:50, lostRate:0, protocol:1
+[2018-01-30 18:40:33.522][INF][Login:9912:6] detect rslt: 1011(60.190.243.250, publicIP:183.15.176.98, hisScore:0), delay:30, lostRate:0, protocol:1
+[2018-01-30 18:40:33.522][INF][Login:9912:7] detect rslt: 1012(222.186.61.92, publicIP:183.15.176.98, hisScore:0), delay:30, lostRate:0, protocol:1
+[2018-01-30 18:40:33.522][INF][Login:9912:8] detect rslt: 1013(101.64.182.60, publicIP:183.15.176.98, hisScore:0), delay:40, lostRate:0, protocol:1
+[2018-01-30 18:40:33.522][INF][Login:9912:9] detect rslt: 50003(47.94.21.6, publicIP:183.15.176.98, hisScore:0), delay:50, lostRate:0, protocol:1
+[2018-01-30 18:40:33.522][INF][Login:9912:10] detect rslt: 50007(47.93.51.188, publicIP:183.15.176.98, hisScore:0), delay:50, lostRate:0, protocol:1
+[2018-01-30 18:40:33.522][DBG][Login:9912:11] GetLastErrAccess, null info
+[2018-01-30 18:40:33.522][INF][Login:9912:12] begin connect access...
+[2018-01-30 18:40:33.522][INF][Login:9912:13] connect to access 1012(T79541243)...
+[2018-01-30 18:40:33.523][INF][SIG:9912:14] proxy init channel(127.0.0.1:57997--222.186.61.92:2063) succ
+[2018-01-30 18:40:33.523][DBG][ICE:9912:15] category=Network, msg=trying to establish tcp connection to 127.0.0.1:57997
+[2018-01-30 18:40:33.523][DBG][ICE:13368:16] category=Network, msg=tcp connection establishedlocal address = 127.0.0.1:57998remote address = 127.0.0.1:57997
+[2018-01-30 18:40:33.552][INF][SIG:13552:17] session(127.0.0.1:57974) destroy
+[2018-01-30 18:40:33.552][INF][SIG:13552:18] session(127.0.0.1:57976) close by client.
+[2018-01-30 18:40:33.552][INF][SIG:13552:19] session(127.0.0.1:57976) send close msg.
+[2018-01-30 18:40:33.582][INF][SIG:13552:20] session(127.0.0.1:57976) destroy
+[2018-01-30 18:40:33.582][INF][SIG:13552:21] session(127.0.0.1:57980) close by client.
+[2018-01-30 18:40:33.582][INF][SIG:13552:22] session(127.0.0.1:57980) send close msg.
+[2018-01-30 18:40:33.613][INF][SIG:13552:23] session(127.0.0.1:57980) destroy
+[2018-01-30 18:40:33.613][INF][SIG:13552:24] session(127.0.0.1:57984) close by client.
+[2018-01-30 18:40:33.613][INF][SIG:13552:25] session(127.0.0.1:57984) send close msg.
+[2018-01-30 18:40:33.643][INF][SIG:13552:26] session(127.0.0.1:57984) destroy
+[2018-01-30 18:40:33.643][INF][SIG:13552:27] session(127.0.0.1:57988) close by client.
+[2018-01-30 18:40:33.643][INF][SIG:13552:28] session(127.0.0.1:57988) send close msg.
+[2018-01-30 18:40:33.674][INF][SIG:13552:29] session(127.0.0.1:57988) destroy
+[2018-01-30 18:40:33.674][INF][SIG:13552:30] session(127.0.0.1:57992) close by client.
+[2018-01-30 18:40:33.674][INF][SIG:13552:31] session(127.0.0.1:57992) send close msg.
+[2018-01-30 18:40:33.704][INF][SIG:13552:32] session(127.0.0.1:57992) destroy
+[2018-01-30 18:40:33.704][INF][SIG:13552:33] proxy channel(127.0.0.1:57997--222.186.61.92:2063) accept new session 127.0.0.1:57998
+[2018-01-30 18:40:33.704][INF][SIG:13552:34] session(127.0.0.1:57998) connect to 222.186.61.92:2728
+[2018-01-30 18:40:33.704][INF][SIG:13552:35] open tcp ipv4 connection, localAddr 0.0.0.0:57999, remoteAddr 222.186.61.92:2728
+[2018-01-30 18:40:33.705][INF][SIG:13552:36] open tcp ipv4 connection, localAddr 0.0.0.0:58000, remoteAddr 222.186.61.92:443
+[2018-01-30 18:40:33.730][INF][SIG:13552:37] session(127.0.0.1:57998) establish connection 10.8.8.202:57999-222.186.61.92:2728 succ.
+[2018-01-30 18:40:33.730][INF][SIG:13552:38] session(127.0.0.1:57998) select connection 10.8.8.202:57999-222.186.61.92:2728
+[2018-01-30 18:40:33.730][INF][SIG:13552:39] session(127.0.0.1:57998) send init msg.
+[2018-01-30 18:40:33.757][INF][SIG:13552:40] session(127.0.0.1:57998) recv init ack msg, sessionId:ef097a94-f07240e0
+[2018-01-30 18:40:33.783][DBG][Login:9912:41] access[1012] createSession success!
+[2018-01-30 18:40:33.783][INF][Login:9912:42] connect to resm...
+[2018-01-30 18:40:33.783][INF][Login:9912:43] start select meeting access(domain:1100)
+[2018-01-30 18:40:33.935][INF][Login:9912:44] selected access(1012/1100)
+[2018-01-30 18:40:33.935][DBG][Login:9912:45] AccessConnection destroy!
+[2018-01-30 18:40:33.935][DBG][Login:9912:46] access[1012] disconnect!
+[2018-01-30 18:40:33.935][DBG][ICE:9912:47] category=Network, msg=closing tcp connectionlocal address = 127.0.0.1:57998remote address = 127.0.0.1:57997
+[2018-01-30 18:40:33.935][INF][SIG:13552:48] session(127.0.0.1:57998) close by client.
+[2018-01-30 18:40:33.935][INF][Login:9912:49] StartConnectAccess(1012)...
+[2018-01-30 18:40:33.935][INF][Login:9912:50] begin connect access...
+[2018-01-30 18:40:33.935][INF][SIG:13552:51] session(127.0.0.1:57998) send close msg.
+[2018-01-30 18:40:33.935][INF][Login:9912:52] connect to access 1012(N79541243)...
+[2018-01-30 18:40:33.935][INF][SIG:9912:53] proxy init channel(127.0.0.1:58001--222.186.61.92:2063) succ
+[2018-01-30 18:40:33.935][DBG][ICE:9912:54] category=Network, msg=trying to establish tcp connection to 127.0.0.1:58001
+[2018-01-30 18:40:33.936][DBG][ICE:13368:55] category=Network, msg=tcp connection establishedlocal address = 127.0.0.1:58002remote address = 127.0.0.1:58001
+[2018-01-30 18:40:33.966][INF][SIG:13552:56] session(127.0.0.1:57998) destroy
+[2018-01-30 18:40:33.966][INF][SIG:13552:57] proxy channel(127.0.0.1:58001--222.186.61.92:2063) accept new session 127.0.0.1:58002
+[2018-01-30 18:40:33.966][INF][SIG:13552:58] session(127.0.0.1:58002) connect to 222.186.61.92:2728
+[2018-01-30 18:40:33.966][INF][SIG:13552:59] open tcp ipv4 connection, localAddr 0.0.0.0:58003, remoteAddr 222.186.61.92:2728
+[2018-01-30 18:40:33.966][INF][SIG:13552:60] open tcp ipv4 connection, localAddr 0.0.0.0:58004, remoteAddr 222.186.61.92:443
+[2018-01-30 18:40:33.998][INF][SIG:13552:61] session(127.0.0.1:58002) establish connection 10.8.8.202:58003-222.186.61.92:2728 succ.
+[2018-01-30 18:40:33.998][INF][SIG:13552:62] session(127.0.0.1:58002) select connection 10.8.8.202:58003-222.186.61.92:2728
+[2018-01-30 18:40:33.998][INF][SIG:13552:63] session(127.0.0.1:58002) send init msg.
+[2018-01-30 18:40:34.032][INF][SIG:13552:64] session(127.0.0.1:58002) recv init ack msg, sessionId:ef15eeac-f07240e0
+[2018-01-30 18:40:34.065][DBG][Login:9912:65] access[1012] createSession success!
+[2018-01-30 18:40:34.065][DBG][Login:9912:66] access[1012] getCategory...
+[2018-01-30 18:40:34.098][DBG][Login:9912:67] access[1012] getCategoryForClient success! (79541243_'k7`AQS;v0z_|,bUD&L>)
+[2018-01-30 18:40:34.098][DBG][Login:9912:68] access[1012] create callbackAdapter...
+[2018-01-30 18:40:34.223][DBG][Login:9912:69] access[1012] create callbackAdapter success!
+[2018-01-30 18:40:34.223][INF][MS:9912:70] MSCInitAccess in
+[2018-01-30 18:40:34.223][INF][MS:9912:71] init accessAddr 1012(222.186.61.92):2698, conferenceId:79541243
+[2018-01-30 18:40:34.223][INF][MS:9912:72] MSCInitAccess out
+[2018-01-30 18:40:34.223][INF][MS:9912:73] MSCUpdateNickName in
+[2018-01-30 18:40:34.223][INF][MS:9912:74] 'E82268EBB4CB4164070A751FCECD2327'
+[2018-01-30 18:40:34.223][INF][MS:9912:75] MSCUpdateNickName out
+[2018-01-30 18:40:34.223][INF][Login:9912:76] prepair local servant
+[2018-01-30 18:40:34.223][INF][MS:9912:77] MSClientServantGet in
+[2018-01-30 18:40:34.223][INF][MS:9912:78] MSClientServantGet out
+[2018-01-30 18:40:34.223][INF][Login:9912:79] setup local servant...
+[2018-01-30 18:40:34.223][DBG][Login:9912:80] setup servant 'ConferenceCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:81] setup servant 'MS.MSClient' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:82] setup servant 'SyncCtrlCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:83] setup servant 'MeetBridgeCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:84] setup servant 'VideoCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:85] setup servant 'AudioCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:86] setup servant 'MediaCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:87] setup servant 'FileTransferCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:88] setup servant 'WhiteBoardCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:89] setup servant 'ScreenShareClient' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:90] setup servant 'NoticeCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:91] setup servant 'RollCallCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:92] setup servant 'IMCallback' success!
+[2018-01-30 18:40:34.223][DBG][Login:9912:93] setup servant 'AnsQueCallback' success!
+[2018-01-30 18:40:34.223][INF][Login:9912:94] login to '79541243'...
+[2018-01-30 18:40:34.224][INF][Login:9912:95] login data: appType:net, meetID:79541243, memberID:0, memberType:6, termID:0, nickName:E82268EBB4CB4164070A751FCECD2327
+[2018-01-30 18:40:34.224][DBG][Login:9912:96] start handShake2Access...
+[2018-01-30 18:40:34.539][INF][Login:9912:97] user netdisk field:1!, comp netdisk field:1!
+[2018-01-30 18:40:34.539][INF][Login:9912:98] get login rsp(termID:1)!
+[2018-01-30 18:40:34.583][INF][MS:9912:99] MSCUpdateNickName in
+[2018-01-30 18:40:34.583][INF][MS:9912:100] 'E82268EBB4CB4164070A751FCECD2327'
+[2018-01-30 18:40:34.583][INF][MS:9912:101] MSCUpdateNickName out
+[2018-01-30 18:40:34.583][INF][Login:9912:102] reinit: LOGIN
+[2018-01-30 18:40:34.583][INF][Login:9912:103] reinit: MEMBER
+[2018-01-30 18:40:34.587][INF][Member:9912:104] My termid:1, nikeName:E82268EBB4CB4164070A751FCECD2327, actor:0, bindId:0, termType:1
+[2018-01-30 18:40:34.587][INF][Member:9912:105] Total Members: 1
+[2018-01-30 18:40:34.587][DBG][Member:9912:106] Req: getHistoryMemberNames.
+[2018-01-30 18:40:34.587][INF][Login:9912:107] reinit: PSTNCTL
+[2018-01-30 18:40:34.587][DBG][Invite:9912:108] Req: getInviteMembers.
+[2018-01-30 18:40:34.587][DBG][Pstn:9912:109] Req: getPSTNHostSync.
+[2018-01-30 18:40:34.587][INF][Login:9912:110] reinit: INVITE
+[2018-01-30 18:40:34.587][INF][Login:9912:111] reinit: MSClient
+[2018-01-30 18:40:34.587][DBG][MSCLient:9912:112] MscIncLib::loginSuccess 1
+[2018-01-30 18:40:34.587][INF][MS:9912:113] MSCSetPathWatchCallback in
+[2018-01-30 18:40:34.587][INF][MS:9912:114] pHandler?null: yes
+[2018-01-30 18:40:34.587][INF][MS:9912:115] MSCSetPathWatchCallback out
+[2018-01-30 18:40:34.587][INF][MS:9912:116] MSCSetClientReportProxy in
+[2018-01-30 18:40:34.587][INF][MS:9912:117] selfTermID: 1
+[2018-01-30 18:40:34.587][INF][MS:9912:118] MSCSetClientReportProxy out
+[2018-01-30 18:40:34.587][DBG][MSCLient:9912:119] MscIncLib::loginSuccess 2
+[2018-01-30 18:40:34.587][INF][MS:9912:120] MSCSetPingCallback in
+[2018-01-30 18:40:34.587][INF][MS:9912:121] pHandler?null: yes
+[2018-01-30 18:40:34.587][INF][MS:9912:122] MSCSetPingCallback out
+[2018-01-30 18:40:34.587][INF][Login:9912:123] reinit: SYNC
+[2018-01-30 18:40:34.587][INF][Sync:9912:124] lastTabValue:50
+[2018-01-30 18:40:34.587][INF][Login:9912:125] reinit: BRIDGE
+[2018-01-30 18:40:34.587][DBG][Member:9912:126] getBridgeInfo_sync
+[2018-01-30 18:40:34.588][INF][MS:13384:127] UpdateClientIP, hostIP:10.8.8.202, maskLen:24, publicIP:183.15.176.98
+[2018-01-30 18:40:34.588][INF][Login:9912:128] reinit: VIDEO
+[2018-01-30 18:40:34.588][DBG][Video:9912:129] profile:high444, noCabac:0, noHardCoding:0, sliceMaxSZ:0, iFrameMSecond:0
+[2018-01-30 18:40:34.588][WAR][MS:13384:130] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:34.588][WAR][MS:13384:131] lan socket invalid.
+[2018-01-30 18:40:34.588][INF][MS:13384:132] broadcast LAN_FIND_REQ, conferenceId: 79541243, termId: 1
+[2018-01-30 18:40:34.588][WAR][MS:13384:133] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:34.588][WAR][MS:13384:134] lan socket invalid.
+[2018-01-30 18:40:34.588][INF][MS:13384:135] broadcast LAN_FIND_REQ, conferenceId: 79541243, termId: 1
+[2018-01-30 18:40:34.599][DBG][Video:9912:136] get IAMStreamConfig from:g_PIN_CATEGORY[0], g_MediaType[0]
+[2018-01-30 18:40:34.605][DBG][Video:9912:137] Get isSupportPTZ failed! (HRESULT: 0x80004002)
+[2018-01-30 18:40:34.605][DBG][Video:9912:138] devinfo, devID:1, devName:Logitech HD Pro Webcam C920, devSID:\\?\usb#vid_046d&pid_082d&mi_00#7&141988b1&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\{bbefb6c7-2fc4-4139-bb8b-a58bba724083}
+[2018-01-30 18:40:34.605][DBG][Video:9912:139] vinfo:40; size:320x180; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:140] vinfo:21; size:320x180; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:141] vinfo:4; size:320x180; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:142] vinfo:41; size:320x240; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:143] vinfo:22; size:320x240; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:144] vinfo:5; size:320x240; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:145] vinfo:42; size:352x288; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:146] vinfo:23; size:352x288; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:147] vinfo:6; size:352x288; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:148] vinfo:43; size:432x240; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:149] vinfo:24; size:432x240; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:150] vinfo:7; size:432x240; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:151] vinfo:44; size:640x360; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:152] vinfo:25; size:640x360; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:153] vinfo:8; size:640x360; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:154] vinfo:36; size:640x480; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:155] vinfo:17; size:640x480; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:156] vinfo:0; size:640x480; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:157] vinfo:45; size:800x448; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:158] vinfo:26; size:800x448; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:159] vinfo:9; size:800x448; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:160] vinfo:46; size:800x600; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:161] vinfo:27; size:800x600; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:162] vinfo:10; size:800x600; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:163] vinfo:47; size:864x480; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:164] vinfo:28; size:864x480; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:165] vinfo:11; size:864x480; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:166] vinfo:48; size:960x720; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:167] vinfo:29; size:960x720; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:168] vinfo:12; size:960x720; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:169] vinfo:49; size:1024x576; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:170] vinfo:30; size:1024x576; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:171] vinfo:13; size:1024x576; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:172] vinfo:50; size:1280x720; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:173] vinfo:31; size:1280x720; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:174] vinfo:14; size:1280x720; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:175] vinfo:51; size:1600x896; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:176] vinfo:32; size:1600x896; fps:30; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:177] vinfo:15; size:1600x896; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:178] vinfo:52; size:1920x1080; fps:5; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:179] vinfo:33; size:1920x1080; fps:5; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:180] vinfo:16; size:1920x1080; fps:30; fmt:12(MJPG{47504A4D-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:181] vinfo:53; size:2304x1296; fps:2; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:182] vinfo:34; size:2304x1296; fps:2; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:183] vinfo:54; size:2304x1536; fps:2; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;
+[2018-01-30 18:40:34.605][DBG][Video:9912:184] vinfo:35; size:2304x1536; fps:2; fmt:3(RGB24{E436EB7D-524F-11ce-9F53-0020AF0BA770}); interlaced:0;
+[2018-01-30 18:40:34.606][DBG][Video:9912:185] deviceChanged(oldCount:0, newCount:1)
+[2018-01-30 18:40:34.606][DBG][Video:9912:186] ss_openCamChanged(oldOpen:0, newOpen:1)
+[2018-01-30 18:40:34.606][DBG][Video:9912:187] setCurrentDev:\\?\usb#vid_046d&pid_082d&mi_00#7&141988b1&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\{bbefb6c7-2fc4-4139-bb8b-a58bba724083}
+[2018-01-30 18:40:34.610][DBG][MeetingSDK:9912:188] videoDefCamChanged, userID:C16167AAF3A0F7FEA1595DF81EE42C49(camID:1)
+[2018-01-30 18:40:34.648][DBG][MeetingSDK:9912:189] cb_videoDevChanged, userID:C16167AAF3A0F7FEA1595DF81EE42C49
+[2018-01-30 18:40:34.649][DBG][Video:9912:190] mainVideoMode:2, mainCamID:0.0, bWallStart:1, vLayout:0
+[2018-01-30 18:40:34.649][INF][Login:9912:191] reinit: AUDIO
+[2018-01-30 18:40:34.651][DBG][Audio:9912:192] voiceEng resetCodec(AMR-WB, 16000)...
+[2018-01-30 18:40:34.651][INF][MS:9912:193] MSCSetAudioCallback in
+[2018-01-30 18:40:34.651][INF][MS:9912:194] pHandler?null: yes
+[2018-01-30 18:40:34.651][INF][MS:9912:195] MSCSetAudioCallback out
+[2018-01-30 18:40:34.651][INF][Audio:9912:196] CONFINFO_OMNIDIRECTIONAL_MIC: yamaha:20:0;eacome:40:0;innotrik:40:0;cr-:40:0;r-talk:40:0;clearone:40:0;conferencecam connect:80:0;usb:80:0;dongle:80:0;jabra:80:0;auctopus:80:0;conexant:80:0;CE-LINK:80:0;
+[2018-01-30 18:40:34.652][INF][Audio:9912:197] User(1,E82268EBB4CB4164070A751FCECD2327) audio cfg: privEC:1, privAgc:1, supperEC:0
+[2018-01-30 18:40:34.652][DBG][Audio:9912:198] reCfgAudio, micName:, speakerName:
+[2018-01-30 18:40:34.652][DBG][Audio:9912:199] CRVE_SetPrivateAesStatus  enable:1  force:0
+[2018-01-30 18:40:34.678][WAR][Audio:9912:200] CRVE_SetVADStatus failed! err=0
+[2018-01-30 18:40:34.678][DBG][Audio:9912:201] start voice eng...
+[2018-01-30 18:40:34.678][DBG][Audio:9912:202] startVoice....
+[2018-01-30 18:40:34.678][DBG][Audio:9912:203] AudioPrint level:0x1000, CRVE_StartSend in
+[2018-01-30 18:40:34.685][DBG][Audio:9912:204] AudioPrint level:0x1000, CRVE_StartSend out
+[2018-01-30 18:40:34.685][DBG][Audio:9912:205] AudioPrint level:0x1000, CRVE_StartReceive in
+[2018-01-30 18:40:34.685][DBG][Audio:9912:206] AudioPrint level:0x1000, CRVE_StartReceive out
+[2018-01-30 18:40:34.685][DBG][Audio:9912:207] AudioPrint level:0x1000, CRVE_StartPlayout in
+[2018-01-30 18:40:34.688][INF][MS:13384:208] report lan neighbor:
+[2018-01-30 18:40:34.705][DBG][Audio:9912:209] AudioPrint level:0x1000, CRVE_StartPlayout out
+[2018-01-30 18:40:34.705][DBG][Audio:9912:210] start voice eng...finished
+[2018-01-30 18:40:34.706][INF][Audio:9912:211] setMicDeviceStatus: 1
+[2018-01-30 18:40:34.706][INF][Audio:9912:212] Mic On_StatusUpdate(operId=1, id=1, state:0(Unknow)->2(Closed))
+[2018-01-30 18:40:34.706][DBG][MeetingSDK:9912:213] user audio status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:0, new:2
+[2018-01-30 18:40:34.707][INF][Audio:9912:214] local voiceEng nochange
+[2018-01-30 18:40:34.707][DBG][Audio:9912:215] startVoice....
+[2018-01-30 18:40:34.707][INF][Audio:9912:216] GetRecordState...
+[2018-01-30 18:40:34.707][INF][Login:9912:217] reinit: MEDIA
+[2018-01-30 18:40:34.707][DBG][Media:9912:218] setSubscribeMedia(1)!
+[2018-01-30 18:40:34.707][DBG][Media:9912:219] getMediaInfoSync...
+[2018-01-30 18:40:34.707][DBG][Video:9912:220] setMediaCfg: size:8,fps:12,maxbps:350000,minQP:24,maxQP:35
+[2018-01-30 18:40:34.707][INF][Login:9912:221] reinit: FILE_TRANS_NOTIFY
+[2018-01-30 18:40:34.707][INF][Login:9912:222] reinit: FILE_TRANSFER
+[2018-01-30 18:40:34.707][INF][Login:9912:223] reinit: FILE_SVRCOVER
+[2018-01-30 18:40:34.707][INF][Login:9912:224] reinit: WHITE_BOARD
+[2018-01-30 18:40:34.707][DBG][WhiteBoard:9912:225] last elemId: 50
+[2018-01-30 18:40:34.707][INF][Login:9912:226] reinit: SCREEN_SHARE
+[2018-01-30 18:40:34.707][INF][ScreenShr:9912:227] GetScreenShareInfo...
+[2018-01-30 18:40:34.707][INF][MS:9912:228] MSCSetScreenCallback in
+[2018-01-30 18:40:34.707][INF][MS:9912:229] pHandler?null: yes
+[2018-01-30 18:40:34.707][INF][MS:9912:230] MSCSetScreenCallback out
+[2018-01-30 18:40:34.707][INF][Login:9912:231] reinit: NOTICE
+[2018-01-30 18:40:34.707][DBG][Notice:9912:232] getNoticeMsg...
+[2018-01-30 18:40:34.707][INF][Login:9912:233] reinit: ROLLCALL
+[2018-01-30 18:40:34.707][DBG][RollCall:9912:234] Req: getRollCallInfo.
+[2018-01-30 18:40:34.707][INF][Login:9912:235] reinit: IM
+[2018-01-30 18:40:34.707][DBG][IM:9912:236] Req: getLastMsg index 0.
+[2018-01-30 18:40:34.708][DBG][IM:9912:237] Req: getForbidList_syn
+[2018-01-30 18:40:34.708][INF][Login:9912:238] reinit: NRTCOMM
+[2018-01-30 18:40:34.708][DBG][AnsQues:9912:239] Req: getQuesType.
+[2018-01-30 18:40:34.708][DBG][AnsQues:9912:240] Req: getQuesList.
+[2018-01-30 18:40:34.708][INF][Login:9912:241] reinit: RECORD
+[2018-01-30 18:40:34.708][INF][Login:9912:242] reinit: BROADCAST
+[2018-01-30 18:40:34.708][INF][Login:9912:243] login success!
+[2018-01-30 18:40:34.708][INF][Login:9912:244] LoginLib loginState:1!
+[2018-01-30 18:40:34.708][INF][Login:9912:245] login success! termid:1, nikename:E82268EBB4CB4164070A751FCECD2327, pcid:e7907c25-c0e6-4690-a2d0-6e0a2331a881, svrTime:2018-01-30 18:40:33, wifi:0, locIP:10.8.8.202, mac:98-90-96-D0-1C-F2, pubIP:183.15.176.98, appLang:zh_CN, OSVer:10.0.16299(Microsoft  (build 16299), 64-bit), OSLang:0x804 Chinese (PRC), CPU:4(3292MHz, Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz), Mem:4002(used:80%)
+[2018-01-30 18:40:34.709][DBG][Login:9912:246] GetAllDiskInfo:C:\: total:121318MB, free:29707MBD:\: total:204699MB, free:62520MBE:\: total:307199MB, free:297305MBF:\: total:441866MB, free:348119MB
+[2018-01-30 18:40:34.709][DBG][Login:9912:247] start handShake2Ctl, timeout:30000!
+[2018-01-30 18:40:34.709][DBG][FileTranCom:9912:248] NddMgr start(id:213213)
+[2018-01-30 18:40:34.709][DBG][FileTranUser:9912:249] NddMgr start(id:0)
+[2018-01-30 18:40:34.709][DBG][FileTranConf:9912:250] NddMgr start(id:79541243)
+[2018-01-30 18:40:34.710][DBG][MeetingSDK:9912:251] open video(C16167AAF3A0F7FEA1595DF81EE42C49)
+[2018-01-30 18:40:34.710][DBG][Video:9912:252] open video task
+[2018-01-30 18:40:34.711][DBG][Video:9912:253] setMultiCamera:1
+[2018-01-30 18:40:34.715][DBG][Video:9912:254] ss_openCamChanged(oldOpen:1, newOpen:1)
+[2018-01-30 18:40:34.715][DBG][MeetingSDK:9912:255] open mic(id:C16167AAF3A0F7FEA1595DF81EE42C49)
+[2018-01-30 18:40:34.715][INF][Audio:9912:0] askForMic(termid=1, state:2->4)
+[2018-01-30 18:40:34.715][DBG][MeetingSDK:9912:1] user audio status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:2, new:4
+[2018-01-30 18:40:34.719][DBG][Video:9912:2] LockVideoCfg: size:8,fps:12,maxbps:350000,minQP:22,maxQP:25,whRate:1.78
+[2018-01-30 18:40:34.719][DBG][Video:9912:3] setMediaCfg: size:8,fps:12,maxbps:350000,minQP:22,maxQP:25
+[2018-01-30 18:40:34.720][DBG][RateControl:9912:4] Upload setByteRate(102400)...
+[2018-01-30 18:40:34.721][DBG][MRecord:9912:5] set record file encrypt: 1
+[2018-01-30 18:40:34.722][DBG][MRecord:9912:6] get all record files(return 0)
+[2018-01-30 18:40:34.739][DBG][Member:13368:7] Rsp: getHistoryMemberNamesResp.
+[2018-01-30 18:40:34.739][WAR][Main:13368:8] mod:INVITE, cmd:getInviteMembers, ConferenceError(0:) (Conference::NotPermitError)
+[2018-01-30 18:40:34.740][WAR][Main:13368:9] mod:INVITE, cmd:getPSTNHostSync, ConferenceError(0:) (Conference::NoPSTNHostError)
+[2018-01-30 18:40:34.740][DBG][Member:13368:10] Rsp: getBridgeInfo_sync
+[2018-01-30 18:40:34.741][DBG][Video:13368:11] notify Update AllCameraInfos, termid:1, infos:1;Logitech HD Pro Webcam C920;2;0
+[2018-01-30 18:40:34.741][DBG][Video:13368:12] notifySetOpenedCameraNumber: termid:1, Cams:1;1;
+[2018-01-30 18:40:34.742][DBG][Video:9912:13] ss_updateStatus: 1, vs:0(Unknow)->2(Closed), opr:1
+[2018-01-30 18:40:34.742][DBG][MeetingSDK:9912:14] user video status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:0, new:2
+[2018-01-30 18:40:34.845][INF][MS:13368:15] MSClientI::AudioAllocRaw_async in
+[2018-01-30 18:40:34.845][INF][MS:13368:16] codecType:4, transType:0, ioMode:2
+[2018-01-30 18:40:34.845][INF][MS:13368:17] MSClientI::AudioAllocRaw_async out
+[2018-01-30 18:40:34.845][INF][MS:13384:18] set g_localSourceAudioMSID: 2470
+[2018-01-30 18:40:34.845][INF][MS:13384:19] AudioAllocRawAsync codecType:4, transType:0, ioMode:2, resp msid:2470
+[2018-01-30 18:40:34.850][DBG][Media:13368:20] getMediaInfoResp, operID:0
+[2018-01-30 18:40:34.851][DBG][ScreenShr:13368:21] getScreenShareInfoRsp, state:0, sharer:0, controller:0, proxy:
+[2018-01-30 18:40:34.851][DBG][RollCall:13368:22] Rsp: getRollCallInfo(bRollcall:0, rollcaller:0, passedTime:0)
+[2018-01-30 18:40:34.851][DBG][IM:13368:23] Rsp: getLastMsg success.
+[2018-01-30 18:40:34.851][DBG][IM:13368:24] Rsp: getIMForbidList success.(ids:)
+[2018-01-30 18:40:34.851][DBG][AnsQues:13368:25] Rsp: getQuesType success.
+[2018-01-30 18:40:34.872][DBG][AnsQues:13368:26] Rsp: getQuesList success.
+[2018-01-30 18:40:34.872][DBG][Video:9912:27] ss_updateStatus: 1, vs:2(Closed)->3(Open), opr:1
+[2018-01-30 18:40:34.872][DBG][MeetingSDK:9912:28] user video status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:2, new:3
+[2018-01-30 18:40:34.872][INF][MS:13368:29] MSClientI::VideoAllocRaw_async in
+[2018-01-30 18:40:34.872][INF][MS:13368:30] contentType:0, srcTermID:1, cameraID:1, ioMode:3, attachToMSID:4294967295, subscribeFlag:n, srcSelf:y
+[2018-01-30 18:40:34.872][INF][MS:13368:31] MSClientI::VideoAllocRaw_async out
+[2018-01-30 18:40:34.872][INF][MS:13384:32] m_maxSendByteRateLimit:360, m_minSendByteRateLimit:10, m_curSendByteRate:200
+[2018-01-30 18:40:34.872][INF][MS:13384:33] set camera(1) msid: 2471
+[2018-01-30 18:40:34.872][INF][MS:13384:34] MSClientI::VideoAllocRawAsync in
+[2018-01-30 18:40:34.872][INF][MS:13384:35] VideoAllocRawAsync contentType:0, srcTermID:1, cameraID:1, ioMode:3, attachToMSID:4294967295, subscribeFlag:n, srcSelf:y, resp msid:2471
+[2018-01-30 18:40:34.872][INF][MS:13384:36] MSClientI::VideoAllocRawAsync out
+[2018-01-30 18:40:34.872][INF][MS:13368:37] MSClientI::VideoAllocRaw_async in
+[2018-01-30 18:40:34.872][INF][MS:13368:38] contentType:0, srcTermID:1, cameraID:101, ioMode:3, attachToMSID:4294967295, subscribeFlag:n, srcSelf:y
+[2018-01-30 18:40:34.872][INF][MS:13368:39] MSClientI::VideoAllocRaw_async out
+[2018-01-30 18:40:34.872][INF][MS:13384:40] m_maxSendByteRateLimit:360, m_minSendByteRateLimit:10, m_curSendByteRate:200
+[2018-01-30 18:40:34.872][INF][MS:13384:41] set camera(101) msid: 2472
+[2018-01-30 18:40:34.872][INF][MS:13384:42] MSClientI::VideoAllocRawAsync in
+[2018-01-30 18:40:34.872][INF][Audio:13368:43] getRecordState:0
+[2018-01-30 18:40:34.872][INF][MS:13384:44] VideoAllocRawAsync contentType:0, srcTermID:1, cameraID:101, ioMode:3, attachToMSID:4294967295, subscribeFlag:n, srcSelf:y, resp msid:2472
+[2018-01-30 18:40:34.872][INF][MS:13384:45] MSClientI::VideoAllocRawAsync out
+[2018-01-30 18:40:34.925][DBG][Video:2856:46] slot_startCap! (camID:1, dev:\\?\usb#vid_046d&pid_082d&mi_00#7&141988b1&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\{bbefb6c7-2fc4-4139-bb8b-a58bba724083})
+[2018-01-30 18:40:34.930][DBG][Video:2856:47] get IAMStreamConfig from:g_PIN_CATEGORY[0], g_MediaType[0]
+[2018-01-30 18:40:34.935][DBG][Video:2856:48] Get isSupportPTZ failed! (HRESULT: 0x80004002)
+[2018-01-30 18:40:34.935][DBG][Video:2856:49] SetImgScaleType:0, camID:1
+[2018-01-30 18:40:34.935][DBG][Video:2856:50] getVideoFrameByDstSize 640x360, fps:12
+[2018-01-30 18:40:34.935][DBG][Video:2856:51] Start Capture Frame(camID:1): vinfo:44; size:640x360; fps:30; fmt:0(I420{30323449-0000-0010-8000-00AA00389B71}); interlaced:0;, FrameInfoID:44, realfps:12 capSz:640x360
+[2018-01-30 18:40:35.000][DBG][Video:2856:52] RenderStream:g_PIN_CATEGORY[0], g_MediaType[0]
+[2018-01-30 18:40:35.002][DBG][Video:2856:53] RestartMediaControl::Run...
+[2018-01-30 18:40:35.022][WAR][Video:2856:54] RestartMediaControl::Run failed! hr:0x8007001f(连到系统上的设备没有发挥作用。)
+[2018-01-30 18:40:35.022][WAR][Video:2856:55] StartCap failed!
+[2018-01-30 18:40:35.022][DBG][Video:2856:56] inner_stopCap(camID:1)
+[2018-01-30 18:40:35.022][DBG][Video:2856:57] StopCap(camID:1)...
+[2018-01-30 18:40:35.022][DBG][Video:2856:58] StopCap(camID:1)...1
+[2018-01-30 18:40:35.033][INF][MS:13368:59] MSClientI::ModifyPeerAddr_async in
+[2018-01-30 18:40:35.033][INF][MS:13368:60] msid:2470, peerMSID:205422, peerIP:222.186.61.92, peerPort:13303
+[2018-01-30 18:40:35.033][INF][MS:13368:61] MSClientI::ModifyPeerAddr_async out
+[2018-01-30 18:40:35.035][INF][MS:13368:62] MSClientI::ModifyPeerAddr_async in
+[2018-01-30 18:40:35.035][INF][MS:13368:63] msid:2471, peerMSID:205423, peerIP:222.186.61.92, peerPort:13303
+[2018-01-30 18:40:35.035][INF][MS:13368:64] MSClientI::ModifyPeerAddr_async out
+[2018-01-30 18:40:35.037][INF][MS:13368:65] MSClientI::ModifyPeerAddr_async in
+[2018-01-30 18:40:35.037][INF][MS:13368:66] msid:2472, peerMSID:205424, peerIP:222.186.61.92, peerPort:13303
+[2018-01-30 18:40:35.037][INF][MS:13368:67] MSClientI::ModifyPeerAddr_async out
+[2018-01-30 18:40:35.042][WAR][Video:2856:68] MediaControl(camID:1) stop run failed! hr:0x8007001f(连到系统上的设备没有发挥作用。)
+[2018-01-30 18:40:35.042][DBG][Video:2856:69] StopCap(camID:1)...2
+[2018-01-30 18:40:35.042][DBG][Video:2856:70] StopCap(camID:1)...3
+[2018-01-30 18:40:35.042][DBG][Video:2856:71] StopCap(camID:1)...4
+[2018-01-30 18:40:35.042][DBG][Video:2856:72] StopCap(camID:1)...5
+[2018-01-30 18:40:35.042][DBG][Video:2856:73] StopCap(camID:1)...6
+[2018-01-30 18:40:35.042][DBG][Video:2856:74] StopCap(camID:1)...7
+[2018-01-30 18:40:35.043][DBG][Video:2856:75] StopCap(camID:1)...8
+[2018-01-30 18:40:35.044][DBG][Video:2856:76] StopCap(camID:1)...end
+[2018-01-30 18:40:35.044][DBG][Video:2856:77] KVideoInputDevice_DS(camID:1) close...
+[2018-01-30 18:40:35.044][DBG][Video:2856:78] KVideoInputDevice_DS(camID:1) closed!
+[2018-01-30 18:40:35.044][DBG][MeetingSDK:9912:79] open video result:0, devID:\\?\usb#vid_046d&pid_082d&mi_00#7&141988b1&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\{bbefb6c7-2fc4-4139-bb8b-a58bba724083}
+[2018-01-30 18:40:35.099][INF][Audio:9912:80] Mic On_StatusUpdate(operId=1, id=1, state:4(Opening)->2(Closed))
+[2018-01-30 18:40:35.099][DBG][MeetingSDK:9912:81] user audio status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:4, new:2
+[2018-01-30 18:40:35.099][INF][Audio:9912:82] slot_delayTryOpenMyMic...
+[2018-01-30 18:40:35.099][INF][Audio:9912:83] local voiceEng nochange
+[2018-01-30 18:40:35.588][WAR][MS:13384:84] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:35.599][INF][Audio:9912:85] askForMic(termid=1, state:2->4)
+[2018-01-30 18:40:35.599][DBG][MeetingSDK:9912:86] user audio status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:2, new:4
+[2018-01-30 18:40:35.613][DBG][Login:9912:87] reportNetState(10)
+[2018-01-30 18:40:35.714][DBG][FileTranConf:9912:88] begin_createConfSession(meetid:79541243)
+[2018-01-30 18:40:35.715][DBG][FileTranUser:9912:89] begin_createUserSession(UserID:0)
+[2018-01-30 18:40:35.715][DBG][FileTranCom:9912:90] begin_createCompanySession(CompID:213213)
+[2018-01-30 18:40:35.746][INF][MS:13368:91] MSClientI::AudioAllocRaw_async in
+[2018-01-30 18:40:35.746][INF][MS:13368:92] codecType:4, transType:0, ioMode:3
+[2018-01-30 18:40:35.746][INF][MS:13368:93] MSClientI::AudioAllocRaw_async out
+[2018-01-30 18:40:35.746][INF][MS:13384:94] AudioAllocRawAsync codecType:4, transType:0, ioMode:3, resp msid:2473
+[2018-01-30 18:40:35.807][INF][MS:13368:95] MSClientI::ModifyPeerAddr_async in
+[2018-01-30 18:40:35.807][INF][MS:13368:96] msid:2473, peerMSID:205426, peerIP:222.186.61.92, peerPort:13303
+[2018-01-30 18:40:35.808][INF][MS:13368:97] MSClientI::ModifyPeerAddr_async out
+[2018-01-30 18:40:35.846][WAR][FileTranUser:13368:98] begin_createUserSession failed! (NetDiskService::InvalidUserId)
+[2018-01-30 18:40:35.846][DBG][FileTranUser:9912:99] slot_createUserSessionEx!
+[2018-01-30 18:40:35.846][DBG][FileTranUser:9912:100] no need to retry, stop it!
+[2018-01-30 18:40:35.846][DBG][FileTranUser:9912:101] NddMgr Stop
+[2018-01-30 18:40:35.848][DBG][FileTranCom:13368:102] createCompanySessionRsp(NDCompanySession/B065546E-69FC-466F-B0A4-B1CDAD540CC4 -t -e 1.0:tcp -h 59.110.14.207 -p 57471 -t 60000)(begin_createCompanySession)!
+[2018-01-30 18:40:35.848][DBG][FileTranCom:9912:103] slot_createCompanySessionRsp(NDCompanySession/B065546E-69FC-466F-B0A4-B1CDAD540CC4 -t -e 1.0:tcp -h 59.110.14.207 -p 57471 -t 60000)!
+[2018-01-30 18:40:35.848][DBG][FileTranConf:13368:104] createConfSessionRsp(NDConfSession/7614E76A-77DD-4F66-9A62-89C952D38CC4 -t -e 1.0:tcp -h 59.110.14.207 -p 57471 -t 60000)(begin_createConfSession)!
+[2018-01-30 18:40:35.849][INF][MS:13384:105] msid 2470 udp stream packet received from 222.186.61.92:13303
+[2018-01-30 18:40:35.849][DBG][FileTranConf:9912:106] slot_createConfSessionRsp(NDConfSession/7614E76A-77DD-4F66-9A62-89C952D38CC4 -t -e 1.0:tcp -h 59.110.14.207 -p 57471 -t 60000)!
+[2018-01-30 18:40:35.849][DBG][FileTranConf:9912:107] begin_getSummary
+[2018-01-30 18:40:35.849][DBG][MSCLient:13384:108] OnNetStateValue: -1->5
+[2018-01-30 18:40:35.849][DBG][MSCLient:13384:109] OnVocStateValue: -1->5
+[2018-01-30 18:40:35.849][DBG][FileTranConf:9912:110] begin_listDir
+[2018-01-30 18:40:35.867][INF][Audio:9912:111] Mic On_StatusUpdate(operId=1, id=1, state:4(Opening)->3(Open))
+[2018-01-30 18:40:35.867][DBG][MeetingSDK:9912:112] user audio status changed, userID:C16167AAF3A0F7FEA1595DF81EE42C49, old:4, new:3
+[2018-01-30 18:40:35.868][INF][Audio:9912:113] SetMicState(1)
+[2018-01-30 18:40:35.868][INF][Audio:9912:114] SetMicMute(0)
+[2018-01-30 18:40:35.868][DBG][Audio:9912:115] AudioPrint level:0x1000, CRVE_SetInputMute in
+[2018-01-30 18:40:35.868][DBG][Audio:9912:116] AudioPrint level:0x1000, CRVE_SetInputMute out
+[2018-01-30 18:40:36.180][DBG][FileTranConf:13368:117] getSummaryRsp(begin_getSummary)!
+[2018-01-30 18:40:36.180][DBG][MeetingSDK:9912:118] getDiskSummaryRsp, limit:1048576, used:0
+[2018-01-30 18:40:36.387][INF][MS:13384:119] set g_localSourceAudioMSID: 2473
+[2018-01-30 18:40:36.449][DBG][FileTranConf:13368:120] listDirRsp(begin_listDir)!
+[2018-01-30 18:40:36.449][DBG][MeetingSDK:9912:121] getNetDiskFileList, count:0
+[2018-01-30 18:40:36.588][WAR][MS:13384:122] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:36.749][INF][MS:13384:123] msid 2473 udp stream packet received from 222.186.61.92:13303
+[2018-01-30 18:40:37.588][WAR][MS:13384:124] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:38.589][WAR][MS:13384:125] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:39.589][WAR][MS:13384:126] bind udp ipv4 socket error(10048):通常每个套接字地址(协议/网络地址/端口)只允许使用一次。! localAddr 10.8.8.202:11578
+[2018-01-30 18:40:39.589][WAR][MS:13384:127] lan through sock open fail, port:11578
+[2018-01-30 18:40:40.753][INF][MS:13368:128] MSClientI::Free_async in
+[2018-01-30 18:40:40.753][INF][MS:13368:129] msid:2470
+[2018-01-30 18:40:40.753][INF][MS:13368:130] MSClientI::Free_async out
+[2018-01-30 18:40:40.753][INF][MS:13384:131] msid 2470 sendSeq:0, recvSeq:257, singleLost:0, continLost2Cnt:0, continLost5Cnt:0, continLost10Cnt:0, continLostPkt:0
+[2018-01-30 18:40:44.225][DBG][Login:9912:132] handShake2Access...
+[2018-01-30 18:40:44.258][DBG][Login:9912:133] handShake2Access success! (delay:31)
+[2018-01-30 18:40:49.688][WAR][MS:13384:134] lan detect socket invalid.
+[2018-01-30 18:40:54.255][DBG][Login:9912:135] handShake2Access...
+[2018-01-30 18:40:54.297][DBG][Login:9912:136] handShake2Access success! (delay:32)
+[2018-01-30 18:40:59.585][DBG][MeetMgr:9912:137] handShake2CallSvr(sessionID:90150FA9-9BD5-4F52-BC61-32E47AE31B1F, timeStamp:28129296, callID:)
+[2018-01-30 18:40:59.627][DBG][MeetMgr:9912:138] handShake2CallSvr success! (delay:32)
+[2018-01-30 18:41:04.287][DBG][Login:9912:139] handShake2Access...
+[2018-01-30 18:41:04.321][DBG][Login:9912:140] handShake2Access success! (delay:31)
+[2018-01-30 18:41:04.709][INF][Login:9912:141] handShake2Ctl...
+[2018-01-30 18:41:04.859][DBG][Login:9912:142] handShake2Ctl success! (delay:141)
+[2018-01-30 18:41:05.834][DBG][FileTranCom:9912:143] begin_keepAlive...
+[2018-01-30 18:41:05.852][DBG][FileTranConf:9912:144] begin_keepAlive...
+[2018-01-30 18:41:05.966][DBG][FileTranConf:13368:145] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:41:05.966][DBG][FileTranCom:13368:146] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:41:05.966][DBG][FileTranConf:9912:147] ndd keepAlive success!(delay:114)
+[2018-01-30 18:41:05.966][DBG][FileTranCom:9912:148] ndd keepAlive success!(delay:132)
+[2018-01-30 18:41:13.365][INF][SIG:13552:149] proxy channel(127.0.0.1:57963-->60.190.243.250:13102) idle remove
+[2018-01-30 18:41:13.365][INF][SIG:13552:150] proxy channel(127.0.0.1:57963--60.190.243.250:13102) destroy
+[2018-01-30 18:41:14.318][DBG][Login:9912:151] handShake2Access...
+[2018-01-30 18:41:14.351][DBG][Login:9912:152] handShake2Access success! (delay:31)
+[2018-01-30 18:41:18.372][INF][SIG:13552:153] proxy channel(127.0.0.1:57973-->112.29.177.139:2698) idle remove
+[2018-01-30 18:41:18.372][INF][SIG:13552:154] proxy channel(127.0.0.1:57973--112.29.177.139:2698) destroy
+[2018-01-30 18:41:18.372][INF][SIG:13552:155] proxy channel(127.0.0.1:57975-->60.190.243.250:2698) idle remove
+[2018-01-30 18:41:18.372][INF][SIG:13552:156] proxy channel(127.0.0.1:57975--60.190.243.250:2698) destroy
+[2018-01-30 18:41:18.374][INF][SIG:13552:157] proxy channel(127.0.0.1:57979-->222.186.61.92:2698) idle remove
+[2018-01-30 18:41:18.374][INF][SIG:13552:158] proxy channel(127.0.0.1:57979--222.186.61.92:2698) destroy
+[2018-01-30 18:41:18.374][INF][SIG:13552:159] proxy channel(127.0.0.1:57990-->47.93.51.188:2698) idle remove
+[2018-01-30 18:41:18.374][INF][SIG:13552:160] proxy channel(127.0.0.1:57990--47.93.51.188:2698) destroy
+[2018-01-30 18:41:18.374][INF][SIG:13552:161] proxy channel(127.0.0.1:57982-->101.64.182.60:2698) idle remove
+[2018-01-30 18:41:18.374][INF][SIG:13552:162] proxy channel(127.0.0.1:57982--101.64.182.60:2698) destroy
+[2018-01-30 18:41:18.374][INF][SIG:13552:163] proxy channel(127.0.0.1:57986-->47.94.21.6:2698) idle remove
+[2018-01-30 18:41:18.374][INF][SIG:13552:164] proxy channel(127.0.0.1:57986--47.94.21.6:2698) destroy
+[2018-01-30 18:41:24.349][DBG][Login:9912:165] handShake2Access...
+[2018-01-30 18:41:24.391][DBG][Login:9912:166] handShake2Access success! (delay:31)
+[2018-01-30 18:41:29.622][DBG][MeetMgr:9912:167] handShake2CallSvr(sessionID:90150FA9-9BD5-4F52-BC61-32E47AE31B1F, timeStamp:28159328, callID:)
+[2018-01-30 18:41:29.666][DBG][MeetMgr:9912:168] handShake2CallSvr success! (delay:47)
+[2018-01-30 18:41:34.381][DBG][Login:9912:169] handShake2Access...
+[2018-01-30 18:41:34.421][DBG][Login:9912:170] handShake2Access success! (delay:32)
+[2018-01-30 18:41:34.553][DBG][Audio:9912:171] On_UpdateVoiceEnergy: 1:0->5;
+[2018-01-30 18:41:34.682][DBG][Audio:9372:172] send: audioCount:3000
+[2018-01-30 18:41:34.853][INF][Login:9912:173] handShake2Ctl...
+[2018-01-30 18:41:34.958][DBG][Login:9912:174] handShake2Ctl success! (delay:94)
+[2018-01-30 18:41:35.967][DBG][FileTranCom:9912:175] begin_keepAlive...
+[2018-01-30 18:41:35.967][DBG][FileTranConf:9912:176] begin_keepAlive...
+[2018-01-30 18:41:36.064][DBG][Audio:13324:177] recv: audioCount:3000
+[2018-01-30 18:41:36.066][DBG][FileTranCom:13368:178] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:41:36.066][DBG][FileTranConf:13368:179] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:41:36.066][DBG][FileTranCom:9912:180] ndd keepAlive success!(delay:99)
+[2018-01-30 18:41:36.066][DBG][FileTranConf:9912:181] ndd keepAlive success!(delay:99)
+[2018-01-30 18:41:36.553][DBG][Audio:9912:182] On_UpdateVoiceEnergy: 1:0->6;
+[2018-01-30 18:41:38.553][DBG][Audio:9912:183] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:41:44.412][DBG][Login:9912:184] handShake2Access...
+[2018-01-30 18:41:44.445][DBG][Login:9912:185] handShake2Access success! (delay:31)
+[2018-01-30 18:41:45.556][DBG][Audio:9912:186] On_UpdateVoiceEnergy: 1:0->4;
+[2018-01-30 18:41:47.557][DBG][Audio:9912:187] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:41:51.558][DBG][Audio:9912:188] On_UpdateVoiceEnergy: 1:0->4;
+[2018-01-30 18:41:53.558][DBG][Audio:9912:189] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:41:54.445][DBG][Login:9912:190] handShake2Access...
+[2018-01-30 18:41:54.478][DBG][Login:9912:191] handShake2Access success! (delay:31)
+[2018-01-30 18:41:56.560][DBG][Audio:9912:192] On_UpdateVoiceEnergy: 1:0->6;
+[2018-01-30 18:41:58.561][DBG][Audio:9912:193] On_UpdateVoiceEnergy: 1:0->3;
+[2018-01-30 18:41:59.664][DBG][MeetMgr:9912:194] handShake2CallSvr(sessionID:90150FA9-9BD5-4F52-BC61-32E47AE31B1F, timeStamp:28189375, callID:)
+[2018-01-30 18:41:59.706][DBG][MeetMgr:9912:195] handShake2CallSvr success! (delay:31)
+[2018-01-30 18:42:00.561][DBG][Audio:9912:196] On_UpdateVoiceEnergy: 1:0->9;
+[2018-01-30 18:42:02.562][DBG][Audio:9912:197] On_UpdateVoiceEnergy: 1:0->5;
+[2018-01-30 18:42:04.475][DBG][Login:9912:198] handShake2Access...
+[2018-01-30 18:42:04.525][DBG][Login:9912:199] handShake2Access success! (delay:47)
+[2018-01-30 18:42:04.562][DBG][Audio:9912:200] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:04.945][INF][Login:9912:201] handShake2Ctl...
+[2018-01-30 18:42:05.009][DBG][Login:9912:202] handShake2Ctl success! (delay:62)
+[2018-01-30 18:42:06.052][DBG][FileTranConf:9912:203] begin_keepAlive...
+[2018-01-30 18:42:06.052][DBG][FileTranCom:9912:204] begin_keepAlive...
+[2018-01-30 18:42:06.116][DBG][FileTranConf:13368:205] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:42:06.116][DBG][FileTranConf:9912:206] ndd keepAlive success!(delay:64)
+[2018-01-30 18:42:06.216][DBG][FileTranCom:13368:207] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:42:06.216][DBG][FileTranCom:9912:208] ndd keepAlive success!(delay:164)
+[2018-01-30 18:42:07.565][DBG][Audio:9912:209] On_UpdateVoiceEnergy: 1:0->5;
+[2018-01-30 18:42:09.567][DBG][Audio:9912:210] On_UpdateVoiceEnergy: 1:0->3;
+[2018-01-30 18:42:11.567][DBG][Audio:9912:211] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:14.527][DBG][Login:9912:212] handShake2Access...
+[2018-01-30 18:42:14.560][DBG][Login:9912:213] handShake2Access success! (delay:31)
+[2018-01-30 18:42:15.568][DBG][Audio:9912:214] On_UpdateVoiceEnergy: 1:0->5;
+[2018-01-30 18:42:20.570][DBG][Audio:9912:215] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:24.556][DBG][Login:9912:216] handShake2Access...
+[2018-01-30 18:42:24.587][DBG][Login:9912:217] handShake2Access success! (delay:31)
+[2018-01-30 18:42:26.573][DBG][Audio:9912:218] On_UpdateVoiceEnergy: 1:0->5;
+[2018-01-30 18:42:29.572][DBG][Audio:9912:219] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:29.694][DBG][MeetMgr:9912:220] handShake2CallSvr(sessionID:90150FA9-9BD5-4F52-BC61-32E47AE31B1F, timeStamp:28219406, callID:)
+[2018-01-30 18:42:29.735][DBG][MeetMgr:9912:221] handShake2CallSvr success! (delay:31)
+[2018-01-30 18:42:34.588][DBG][Login:9912:222] handShake2Access...
+[2018-01-30 18:42:34.621][DBG][Login:9912:223] handShake2Access success! (delay:32)
+[2018-01-30 18:42:34.681][DBG][Audio:9372:224] send: audioCount:6000
+[2018-01-30 18:42:35.011][INF][Login:9912:225] handShake2Ctl...
+[2018-01-30 18:42:35.121][DBG][Login:9912:226] handShake2Ctl success! (delay:110)
+[2018-01-30 18:42:36.063][DBG][Audio:13324:227] recv: audioCount:6000
+[2018-01-30 18:42:36.116][DBG][FileTranConf:9912:228] begin_keepAlive...
+[2018-01-30 18:42:36.210][DBG][FileTranCom:9912:229] begin_keepAlive...
+[2018-01-30 18:42:36.229][DBG][FileTranConf:13368:230] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:42:36.229][DBG][FileTranConf:9912:231] ndd keepAlive success!(delay:113)
+[2018-01-30 18:42:36.328][DBG][FileTranCom:13368:232] keepAliveRsp(begin_keepAlive)!
+[2018-01-30 18:42:36.328][DBG][FileTranCom:9912:233] ndd keepAlive success!(delay:118)
+[2018-01-30 18:42:36.781][DBG][MS:13384:234] MediaStream(2473): decrease red to 0
+[2018-01-30 18:42:40.577][DBG][Audio:9912:235] On_UpdateVoiceEnergy: 1:0->5;
+[2018-01-30 18:42:42.578][DBG][Audio:9912:236] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:44.580][DBG][Audio:9912:237] On_UpdateVoiceEnergy: 1:0->7;
+[2018-01-30 18:42:44.618][DBG][Login:9912:238] handShake2Access...
+[2018-01-30 18:42:44.649][DBG][Login:9912:239] handShake2Access success! (delay:31)
+[2018-01-30 18:42:46.581][DBG][Audio:9912:240] On_UpdateVoiceEnergy: 1:0->4;
+[2018-01-30 18:42:48.580][DBG][Audio:9912:241] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:51.581][DBG][Audio:9912:242] On_UpdateVoiceEnergy: 1:0->3;
+[2018-01-30 18:42:53.581][DBG][Audio:9912:243] On_UpdateVoiceEnergy: 1:0->0;
+[2018-01-30 18:42:54.651][DBG][Login:9912:244] handShake2Access...
+[2018-01-30 18:42:54.686][DBG][Login:9912:245] handShake2Access success! (delay:31)
+[2018-01-30 18:42:59.727][DBG][MeetMgr:9912:246] handShake2CallSvr(sessionID:90150FA9-9BD5-4F52-BC61-32E47AE31B1F, timeStamp:28249437, callID:)
+[2018-01-30 18:42:59.770][DBG][MeetMgr:9912:247] handShake2CallSvr success! (delay:47)
+[2018-01-30 18:43:02.958][DBG][MeetingSDK:9912:248] CloudroomVideoSDK::uninit...
+[2018-01-30 18:43:02.958][DBG][MeetingSDK:9912:249] CloudroomMeetingSDK uninit...
+[2018-01-30 18:43:02.958][DBG][MeetingSDK:9912:250] CloudroomMeetingSDK slot_unInit...
+[2018-01-30 18:43:02.958][DBG][MeetMgr:9912:251] LoginMgr unInit...
+[2018-01-30 18:43:02.958][DBG][MeetMgr:9912:252] begin uninit.
+[2018-01-30 18:43:02.958][INF][SIG:9912:253] SIGClientStop in
+[2018-01-30 18:43:02.958][INF][SIG:9912:254] MainService::Reset in
+[2018-01-30 18:43:02.958][INF][SIG:9912:255] MainService::Reset out
+[2018-01-30 18:43:02.958][INF][SIG:9912:0] SIGClientStop out
+[2018-01-30 18:43:02.958][DBG][ICE:9912:1] category=Network, msg=closing tcp connectionlocal address = 127.0.0.1:57964remote address = 127.0.0.1:57962
+[2018-01-30 18:43:02.958][DBG][ICE:9912:2] shutdown communicator for MeetingCallAPI
+[2018-01-30 18:43:02.958][DBG][ICE:9912:3] destroy communicator for MeetingCallAPI...
+[2018-01-30 18:43:02.958][DBG][ICE:9912:4] reset communicator to null...
+[2018-01-30 18:43:02.958][DBG][ICE:9912:5] uninit communicator for MeetingCallAPI...end
+[2018-01-30 18:43:02.958][DBG][httpLink:9912:6] cancel all http cmd!
+[2018-01-30 18:43:02.958][DBG][MeetMgr:9912:7] LoginMgr unInit...end
+[2018-01-30 18:43:02.958][DBG][Main:9912:8] sdk uninit...
+[2018-01-30 18:43:02.958][DBG][RateControl:9912:9] Upload stop...
+[2018-01-30 18:43:02.958][DBG][RateControl:9912:10] Download stop...
+[2018-01-30 18:43:02.960][DBG][Main:9912:11] UnitAllModels...
+[2018-01-30 18:43:02.960][DBG][Main:9912:12] unInit  model:BROADCAST
+[2018-01-30 18:43:02.960][DBG][Main:9912:13] unInit  model:RECORD
+[2018-01-30 18:43:02.960][DBG][Main:9912:14] unInit  model:NRTCOMM
+[2018-01-30 18:43:02.960][DBG][Main:9912:15] unInit  model:IM
+[2018-01-30 18:43:02.960][DBG][Main:9912:16] unInit  model:ROLLCALL
+[2018-01-30 18:43:02.960][DBG][Main:9912:17] unInit  model:NOTICE
+[2018-01-30 18:43:02.960][DBG][Main:9912:18] unInit  model:SCREEN_SHARE
+[2018-01-30 18:43:02.960][DBG][Main:9912:19] unInit  model:WHITE_BOARD
+[2018-01-30 18:43:02.960][DBG][Main:9912:20] unInit  model:FILE_SVRCOVER
+[2018-01-30 18:43:02.960][DBG][Main:9912:21] unInit  model:FILE_TRANSFER
+[2018-01-30 18:43:02.960][DBG][Main:9912:22] unInit  model:FILE_TRANS_NOTIFY
+[2018-01-30 18:43:02.960][DBG][Main:9912:23] unInit  model:MEDIA
+[2018-01-30 18:43:02.960][DBG][Media:9912:24] MediaMgr destory...
+[2018-01-30 18:43:02.960][INF][MS:9912:25] MSCSetFilmCallback in
+[2018-01-30 18:43:02.960][INF][MS:9912:26] pHandler?null: no
+[2018-01-30 18:43:02.960][INF][MS:9912:27] MSCSetFilmCallback out
+[2018-01-30 18:43:02.961][DBG][Media:9912:28] stopMediaFileDecode...
+[2018-01-30 18:43:02.961][DBG][Media:9912:29] stopMediaFileDecode finished!
+[2018-01-30 18:43:02.961][DBG][Main:9912:30] unInit  model:AUDIO
+[2018-01-30 18:43:02.961][DBG][Audio:9912:31] stopVoice....
+[2018-01-30 18:43:02.961][DBG][Audio:9912:32] AudioPrint level:0x1000, CRVE_StopReceive in
+[2018-01-30 18:43:02.961][DBG][Audio:9912:33] AudioPrint level:0x1000, CRVE_StopReceive out
+[2018-01-30 18:43:02.961][DBG][Audio:9912:34] AudioPrint level:0x1000, CRVE_StopPlayout in
+[2018-01-30 18:43:02.990][DBG][Audio:9912:35] AudioPrint level:0x1000, CRVE_StopPlayout out
+[2018-01-30 18:43:02.990][DBG][Audio:9912:36] AudioPrint level:0x1000, CRVE_StopSend in
+[2018-01-30 18:43:02.991][DBG][Audio:9912:37] AudioPrint level:0x1000, CRVE_StopSend out
+[2018-01-30 18:43:02.991][DBG][Main:9912:38] unInit  model:VIDEO
+[2018-01-30 18:43:02.991][INF][MS:9912:39] MSCSetVideoCallback in
+[2018-01-30 18:43:02.991][INF][MS:9912:40] pHandler?null: no
+[2018-01-30 18:43:02.991][INF][MS:9912:41] MSCSetVideoCallback out
+[2018-01-30 18:43:02.991][DBG][Video:9912:42] DeleteAllDecoder...
+[2018-01-30 18:43:02.991][DBG][Video:9912:43] DeleteAllDecoder...finished
+[2018-01-30 18:43:02.991][DBG][Video:9912:44] Stop all cameras...
+[2018-01-30 18:43:02.991][DBG][Video:9912:45] KCapTask stopCap
+[2018-01-30 18:43:02.991][DBG][Video:2856:46] KCapTask ThreadUninit
+[2018-01-30 18:43:02.992][DBG][Video:9912:47] KCapTask destroy! (camID:1, dev:\\?\usb#vid_046d&pid_082d&mi_00#7&141988b1&0&0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\{bbefb6c7-2fc4-4139-bb8b-a58bba724083})
+[2018-01-30 18:43:02.992][DBG][Main:9912:48] unInit  model:BRIDGE
+[2018-01-30 18:43:02.992][DBG][Main:9912:49] unInit  model:SYNC
+[2018-01-30 18:43:02.992][DBG][Main:9912:50] unInit  model:MSClient
+[2018-01-30 18:43:02.992][INF][MS:9912:51] MSCStop in
+[2018-01-30 18:43:02.992][INF][MS:13384:52] Qos DisConnect.
+[2018-01-30 18:43:02.992][INF][MS:13384:53] clear free msid:2471
+[2018-01-30 18:43:02.992][INF][MS:13384:54] set g_localSourceAudioMSID: 2473
+[2018-01-30 18:43:02.992][INF][MS:13384:55] msid:2471 m_sendIFrameCount:0, m_deliverFrameCount:0
+[2018-01-30 18:43:02.992][INF][MS:13384:56] clear free msid:2472
+[2018-01-30 18:43:02.992][INF][MS:13384:57] msid:2472 m_sendIFrameCount:0, m_deliverFrameCount:0
+[2018-01-30 18:43:02.992][INF][MS:13384:58] clear free msid:2473
+[2018-01-30 18:43:02.992][INF][MS:13384:59] msid 2473 sendSeq:7330, recvSeq:7363, singleLost:4, continLost2Cnt:0, continLost5Cnt:0, continLost10Cnt:0, continLostPkt:0
+[2018-01-30 18:43:02.992][INF][MS:13384:60] MainService::Reset in
+[2018-01-30 18:43:02.992][INF][MS:13384:61] MainService::Reset out
+[2018-01-30 18:43:02.992][INF][MS:9912:62] MSCStop out
+[2018-01-30 18:43:02.992][DBG][Main:9912:63] unInit  model:INVITE
+[2018-01-30 18:43:02.992][DBG][Main:9912:64] unInit  model:PSTNCTL
+[2018-01-30 18:43:02.992][DBG][Main:9912:65] unInit  model:MEMBER
+[2018-01-30 18:43:02.992][DBG][Main:9912:66] unInit  model:LOGIN
+[2018-01-30 18:43:02.992][DBG][Login:9912:67] AccessConnection destroy!
+[2018-01-30 18:43:02.992][DBG][Login:9912:68] access[1012] destroy callbackAdapter...
+[2018-01-30 18:43:02.992][DBG][Login:9912:69] access[1012] disconnect!
+[2018-01-30 18:43:02.992][DBG][ICE:9912:70] category=Network, msg=closing tcp connectionlocal address = 127.0.0.1:58002remote address = 127.0.0.1:58001
+[2018-01-30 18:43:02.992][DBG][Login:9912:71] stop handshake to access!
+[2018-01-30 18:43:02.993][DBG][Main:9912:72] destory  model:BROADCAST
+[2018-01-30 18:43:02.993][DBG][Main:9912:73] destory  model:RECORD
+[2018-01-30 18:43:02.993][DBG][Main:9912:74] destory  model:NRTCOMM
+[2018-01-30 18:43:02.993][DBG][Main:9912:75] destory  model:IM
+[2018-01-30 18:43:02.993][DBG][Main:9912:76] destory  model:ROLLCALL
+[2018-01-30 18:43:02.993][DBG][Main:9912:77] destory  model:NOTICE
+[2018-01-30 18:43:02.993][DBG][Main:9912:78] destory  model:SCREEN_SHARE
+[2018-01-30 18:43:02.993][DBG][Main:9912:79] destory  model:WHITE_BOARD
+[2018-01-30 18:43:02.993][DBG][Main:9912:80] destory  model:FILE_SVRCOVER
+[2018-01-30 18:43:02.993][DBG][Main:9912:81] destory  model:FILE_TRANSFER
+[2018-01-30 18:43:02.993][DBG][FileTranCom:9912:82] destory
+[2018-01-30 18:43:02.993][DBG][FileTranUser:9912:83] destory
+[2018-01-30 18:43:02.993][DBG][FileTranConf:9912:84] destory
+[2018-01-30 18:43:02.993][DBG][Main:9912:85] destory  model:FILE_TRANS_NOTIFY
+[2018-01-30 18:43:02.993][DBG][Main:9912:86] destory  model:MEDIA
+[2018-01-30 18:43:02.993][DBG][Main:9912:87] destory  model:AUDIO
+[2018-01-30 18:43:02.993][INF][MS:9912:88] MSCSetAudioCallback in
+[2018-01-30 18:43:02.993][INF][MS:9912:89] pHandler?null: no
+[2018-01-30 18:43:02.993][INF][MS:9912:90] MSCSetAudioCallback out
+[2018-01-30 18:43:02.993][DBG][Main:9912:91] destory  model:VIDEO
+[2018-01-30 18:43:02.993][DBG][Main:9912:92] destory  model:BRIDGE
+[2018-01-30 18:43:02.993][DBG][Main:9912:93] destory  model:SYNC
+[2018-01-30 18:43:02.993][DBG][Main:9912:94] destory  model:MSClient
+[2018-01-30 18:43:02.993][INF][MS:9912:95] MSCStop in
+[2018-01-30 18:43:02.993][INF][MS:9912:96] MSCStop out
+[2018-01-30 18:43:02.993][INF][MS:9912:97] MSCClean in
+[2018-01-30 18:43:03.093][INF][MS:13384:98] transsock closed.
+[2018-01-30 18:43:03.094][INF][MS:13384:99] Qos DisConnect.
+[2018-01-30 18:43:03.095][INF][MS:9912:100] MSCClean out
+[2018-01-30 18:43:03.121][DBG][Main:9912:101] destory  model:INVITE
+[2018-01-30 18:43:03.121][DBG][Main:9912:102] destory  model:PSTNCTL
+[2018-01-30 18:43:03.121][DBG][Main:9912:103] destory  model:MEMBER
+[2018-01-30 18:43:03.121][DBG][Main:9912:104] destory  model:LOGIN
+[2018-01-30 18:43:03.121][DBG][Main:9912:105] UnitAllModels end!
+[2018-01-30 18:43:03.121][DBG][Audio:9912:106] UninitVoiceEng...
+[2018-01-30 18:43:03.121][DBG][Audio:9912:107] AudioPrint level:0x1000, CRVE_DeleteChannel in
+[2018-01-30 18:43:03.121][DBG][Audio:9912:108] AudioPrint level:0x1000, CRVE_DeleteChannel out
+[2018-01-30 18:43:03.121][DBG][Audio:9912:109] AudioPrint level:0x1000, CRVE_UnInit in
+[2018-01-30 18:43:03.121][DBG][Audio:9912:110] AudioPrint level:0x1000, CRVE_UnInit out
+[2018-01-30 18:43:03.121][DBG][Audio:9912:111] UninitVoiceEng...finished
+[2018-01-30 18:43:03.121][DBG][ICE:9912:112] shutdown communicator for MeetingSDK
+[2018-01-30 18:43:03.121][DBG][ICE:9912:113] destroy communicator for MeetingSDK...
+[2018-01-30 18:43:03.121][DBG][ICE:9912:114] reset communicator to null...
+[2018-01-30 18:43:03.121][DBG][ICE:9912:115] uninit communicator for MeetingSDK...end

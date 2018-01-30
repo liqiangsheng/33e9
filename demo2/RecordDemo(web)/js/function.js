@@ -116,3 +116,98 @@ function login(){
 	}
     
 }
+
+
+//*******************************video配置***********************************************
+function updateVideoCfg(sizeType,fps,qp){
+	var cfg = {};
+	cfg.sizeType = sizeType;
+	fps = parseInt($("frame_input").val());
+	if(fps<5){
+		fps = 5;
+	}else if(fps>20){
+		fps = 20;
+	}
+	cfg.fps = fps;
+	maxbps = video_size_arr[sizeType][2]*1000;
+	if(qp == 1){
+            cfg.qp_min = 22
+            cfg.qp_max = 36
+        }else if(qp == 0){
+            cfg.qp_min = 22
+            cfg.qp_max = 25
+        }
+    // 系统视频参数设置 
+        CRVideo_SetVideoCfg(cfg);
+        
+    // 图像质量参数 
+        CRVideo_SetMediacfg(cfg);
+}
+//*******************************进入房间***********************************************
+function enterRoom(){
+	console.log(111)
+	$(".menu_box").css("display","none");
+	$(".login_box").css("display","none");
+	$(".videoPage").css("display","block");
+	
+}
+
+//*******************************点击了客户信息 基础信息*******************************
+$("#showBaseinfo").click(function(){
+	showBaseinfo()
+});
+
+function showBaseinfo(){
+	$("#baseinfoTab").attr("class", "on_tab1"); 
+	$("#IdentityATab").removeClass(); 
+	$("#IdentityBTab").removeClass(); 
+	$("#gereninfo").css("display","block")
+	$("#sfzzm").css("display","none")
+	$("#sfzfm").css("display","none")
+};
+//*******************************点击了客户信息 ID正面*******************************
+$("#showIdentityA").click(function(){
+	showIdentityA()
+});
+
+function showIdentityA(){
+	$("#baseinfoTab").removeClass(); 
+	$("#IdentityATab").attr("class", "on_tab1"); 
+	$("#IdentityBTab").removeClass(); 
+	$("#gereninfo").css("display","none")
+	$("#sfzzm").css("display","block")
+	$("#sfzfm").css("display","none")
+};
+
+
+//*******************************点击了客户信息 ID反面*******************************
+$("#showIdentityB").click(function(){
+	showIdentityB()
+});
+
+function showIdentityB(){
+	$("#baseinfoTab").removeClass(); 
+	$("#IdentityATab").removeClass(); 
+	$("#IdentityBTab").attr("class", "on_tab1");
+	$("#gereninfo").css("display","none")
+	$("#sfzzm").css("display","none")
+	$("#sfzfm").css("display","block")
+};
+//*******************************点击了playImg,suspendImg,stopImg*******************************
+$("#playImg").click(function(){
+	$("#playImg").css("display","none");
+	$("#suspendImg").css("display","block");
+	$("#stopImg").css("display","block");
+})
+
+$("#suspendImg").click(function(){
+	$("#playImg").css("display","block");
+	$("#suspendImg").css("display","none");
+	$("#stopImg").css("display","block");
+})
+
+$("#stopImg").click(function(){
+	$("#playImg").css("display","block");
+	$("#suspendImg").css("display","none");
+	$("#stopImg").css("display","none");
+})
