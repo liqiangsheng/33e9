@@ -235,7 +235,15 @@
     	</div>
     	<div class="videoPage_right">
     		<div class="videoPage_right_view">
-    			
+    			<ul class="videoPage_right_view_list">
+    				<li id="setUp">设置</li>
+    				<li id="startRecord">开始录制</li>
+    				<li id="playback">回放</li>
+    				<li id="upload">上传</li>
+    				<li id="recordMrg">录制文件管理</li>
+    				<li id="singleCamera">单摄像头</li>
+    				<li id="doubleCamera">双摄像头</li>
+    			</ul>
     		</div>
     		<div class="videoPage_right_act">
     			风险提示：买入T+1日确认份额并产生收益，份额确认次日15:00前可查看收益
@@ -267,6 +275,99 @@
     	
     </div>
 </div>
+<!--********************************各种弹窗    遮罩层*******************************************************-->
+<div id="box" style="display: none;position: absolute;left: 0;top: 0;opacity: 0.3;filter:alpha(opacity=0.3);background: #222222;z-index: 1;">
+</div>
+<!--*************************************设置*************************************************************-->
+<div class="full_page_div2" id="full_page_div2">
+	<div class="full_page_header2">
+		<span class="name_label2" style="color: #fff;">设置</span>
+		<span class="name_min2" style="color: #fff;"><img id="closepage" src="image/closepage.png"/></span>
+		<span class="name_del2" style="color: #fff;"><img id="minpage" src="image/minpage.png"/></span>
+	</div>
+	<div class="full_page_tab">
+		<!--<span class="ontab" onclick="changeTab(1)" id="tab1" style="margin-left: 20px;">视频</span>-->
+		<span id="tab1"  class="ontab">录制设置</span>
+		<span id="tab2" >视频设置</span>
+	</div>
+	<div class="full_page_div4" id="full_page_div4">
+		<div class="full_page_msg3">
+			<span class="msg_label3">分辨率：</span>
+			<select id="recordWH">
+			  <option value ="1" checked="checked">360P(640*360)</option>
+			  <option value ="2">480P(848*480)</option>
+			  <option value="3">720P(1280*720)</option>
+			  <option value="4">1080P(1920*1080)</option>
+			  <option value ="5">480P(640*480)</option>
+			</select>
+		</div>
+		<div class="full_page_msg4">
+			<span class="msg_label4">码率(kbps)：</span>
+			<input id="bitRate" type="text" name="malv" value="350"/>
+		</div>
+		<div class="full_page_msg5">
+			<span class="msg_label5">录制内容类型：</span>
+			<input type="radio" name="recDataType" class="recDataType" value="7" checked="checked"/><label>音频+视频</label>
+			<input type="radio" name="recDataType" class="recDataType" value="3"/><label>纯音频</label>
+		</div>
+		<div class="full_page_msg6">
+			<span class="msg_label6">上传限制(KB/s)：</span>
+			<input id="fuRate" type="text" name="malv" value="100"/>
+		</div>
+		<div class="full_page_msg7">
+			<span class="msg_label7">帧率(取值6~20)：</span>
+			<input id="frameRate" type="text" name="frameRate" value="15"/>
+		</div>
+		<div class="full_page_msg8">
+			<span class="msg_label8">录制上传方式：</span>
+			<input type="radio" name="recUpType" class="recUpType" value="0" checked="checked" /><label>手动上传</label>
+			<input type="radio" name="recUpType" class="recUpType" value="1"  /><label>边录边传</label>
+		</div>
+	</div>
+	<div class="full_page_msg2" id="full_page_msg2">
+		<div id="meet_reset_camera" class="meet_video_reset" style="margin-top: 12px;">
+			<label class="meet_label">摄像头</label>
+			<select id="video_select"></select>
+			<!-- <button id="video_operate_btn">关闭</button> -->
+		</div>
+		<div id="meet_reset_speaker" class="meet_video_reset">
+			<label class="meet_label">扬声器</label>
+			<select id="spker_select"></select>
+		</div>
+		<div id="meet_reset_micraphone" class="meet_video_reset">
+			<label class="meet_label">麦克风</label>
+			<select id="mic_select"></select>
+			<!-- <button id="mic_operate_btn">关闭</button> -->
+		</div>
+		<div id="meet_reset_video_size" class="meet_video_reset">
+			<label class="meet_label">视频尺寸</label>
+			<select id="size_select">
+				<option value="8" selected="true">640*360</option>
+				<option value="10">848*480</option>
+				<option value="12">1280*720</option>
+				<option value="13">1920*1080</option>
+			</select>
+		</div>
+		<div id="meet_reset_video_zl" class="meet_video_reset">
+			<label class="meet_label">视频帧率</label>
+			<input id="frame_input" type="text" name="meet_reset_video_zl" value="20" />
+		</div>
+		<div id="meet_reset_video_yx" class="meet_video_reset">
+			<p class="radio_contain">
+				<input class="radio_label" type="radio" name="meet_yx" checked="checked" value="0" />
+				<span class="fs14_col48_verm_disib">视频质量优先</span>
+				<input class="radio_label" type="radio" name="meet_yx" value="1"/>
+				<span class="fs14_col48_verm_disib">视频流畅优先</span>
+			</p>
+		</div>
+	</div>
+	<div class="full_page_button" style="display: block;">
+		<button class="full_page_submit2">确定</button>
+		<button class="full_page_cancle2">取消</button>
+	</div>
+</div>
+<!--**********************************录制文件管理******************************************-->
+
 	<!--[if IE]>
 		<object id="crVideoObj" classid="clsid:07EFD662-A1BB-4d8d-9BEE-F7E43E5FEBF5" width="1" height="1" ></object>
 		<object id="crMgrObj" classid="clsid:120AD2B0-68F2-46c6-88D8-52173F501C0F" width="1" height="1" ></object>

@@ -3,7 +3,7 @@
 
 ----
 
-### 错误代码含义 {#CRVIDEOSDK_ERR_DEF}
+### 错误码 {#CRVIDEOSDK_ERR_DEF}
 
 >CRVideo_ERR_DEF
 

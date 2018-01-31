@@ -211,3 +211,48 @@ $("#stopImg").click(function(){
 	$("#suspendImg").css("display","none");
 	$("#stopImg").css("display","none");
 })
+//*******************************点击了设置*******************************
+$("#setUp").click(function(){
+	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
+	$("#full_page_div2").css({"display":"block"});
+	
+})
+
+//*******************************录制,视频设置*******************************
+$("#tab2").click(function(){
+	$("#full_page_msg2").css({"display":"block"})
+	$("#full_page_div4").css({"display":"none"});
+	
+})
+
+$("#tab1").click(function(){
+	$("#full_page_msg2").css({"display":"none"})
+	$("#full_page_div4").css({"display":"block"});
+	
+})
+
+//*******************************点击了-，X，取消*******************************
+$("#closepage").click(function(){
+	$("#box").css({"display":"none"})
+	$("#full_page_div2").css({"display":"none"});
+	
+})
+
+$("#minpage").click(function(){
+	$("#box").css({"display":"none"})
+	$("#full_page_div2").css({"display":"none"});
+	
+})
+
+$(".full_page_cancle2").click(function(){
+	$("#box").css({"display":"none"})
+	$("#full_page_div2").css({"display":"none"});
+	
+})
+
+//*******************************确定****************************
+$(".full_page_submit2").click(function(){ //还有其他操作
+	$("#box").css({"display":"none"})
+	$("#full_page_div2").css({"display":"none"});
+	
+})

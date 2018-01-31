@@ -8,7 +8,7 @@
 
 ###队列管理函数{#queueMrgFunction}
 
-####初始化用户队列功能数据 {#CRVideo_InitQueueDat}
+####初始化队列 {#CRVideo_InitQueueDat}
 
 >CRVideo_InitQueueDat(cookie)
 
@@ -20,7 +20,7 @@
 
 >操作完成回调[CRVideo_InitQueueDatRslt](#CRVideo_InitQueueDatRslt)，队列初始化成功后才可获取队列队列相关信息
 
-####刷新所有队列状态信息 {#CRVideo_RefreshAllQueueStatus}
+####刷新所有队列状态 {#CRVideo_RefreshAllQueueStatus}
 
 >CRVideo_RefreshAllQueueStatus()
 
@@ -28,7 +28,7 @@
 
 >操作完成则触发[CRVideo_QueueStatusChanged](#CRVideo_QueueStatusChanged)（当前排队的队列，或服务的队列，sdk自动有状态变化回调）
 
-####获取所有队列信息 {#CRVideo_GetAllQueueInfo}
+####查询队列 {#CRVideo_GetAllQueueInfo}
 
 >CRVideo_GetAllQueueInfo() 
 
@@ -62,7 +62,7 @@
 
 - **返回值**: 返回会话信息（[CRVideo_SessionInfo](TypeDefinitions.md#CRVideo_SessionInfo)）
 
-####客户开始排队 {#CRVideo_StartQueuing}
+####开始排队 {#CRVideo_StartQueuing}
 
 >CRVideo_StartQueuing(queID, cookie)
 
@@ -75,7 +75,7 @@
 
 >操作完成回调[CRVideo_StartQueuingRslt](#CRVideo_StartQueuingRslt)
 
-####客户停止排队 {#CRVideo_StopQueuing}
+####停止排队 {#CRVideo_StopQueuing}
 
 >CRVideo_StopQueuing(cookie)
 
@@ -87,7 +87,7 @@
 
 >操作完成回调[CRVideo_StopQueuingRslt](#CRVideo_StopQueuingRslt)
 
-####开始服务某个队列 {#CRVideo_StartService}
+####开始服务队列 {#CRVideo_StartService}
 
 >CRVideo_StartService(queID, cookie)
 
@@ -100,7 +100,7 @@
 
 >可以多次调用，开启对多个队列的服务。操作回调[CRVideo_StartServiceRslt](#CRVideo_StartServiceRslt) 开启成功后： a. 如果没有开启免打挽，那么系统会自动分配客户：[CRVideo_AutoAssignUser](#CRVideo_AutoAssignUser)； b. 如果开启免打挽，系统就不会分配客户，如需服务客户可调用：[CRVideo_ReqAssignUser](#CRVideo_ReqAssignUser)
 
-####停止服务某个队列 {#CRVideo_StopService}
+####停止服务队列 {#CRVideo_StopService}
 
 >CRVideo_StopService(queID, cookie)
 
@@ -125,7 +125,7 @@
 
 >当关闭免打扰时，系统将自动分配客户，无需调用此函数； 当开启免打扰时，系统不再自动分配客户，座席如需服务客户可使用此函数分配
 
-####接受系统安排的客户 {#CRVideo_AcceptAssignUser}
+####接受分配的客户 {#CRVideo_AcceptAssignUser}
 
 >CRVideo_AcceptAssignUser(queID, userID, cookie)
 
@@ -135,7 +135,7 @@
 |userID|	string	|队列中的用户ID|
 |cookie	|string|	自定义数据（在回调时，回传给调用者）|
 
-####拒绝系统安排的客户 {#CRVideo_RejectAssignUser}
+####拒绝分配的客户 {#CRVideo_RejectAssignUser}
 
 >CRVideo_RejectAssignUser(queID, userID, cookie)
 
@@ -151,92 +151,122 @@
     
 ###队列管理回调{#queueMrgCallback}
 
-#### 队列初始化操作结果 {#CRVideo_InitQueueDatRslt}
+####队列初始化操作结果 {#CRVideo_InitQueueDatRslt}
 
 >CRVideo_InitQueueDatRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 （在回调时，回传给调用者）
+- **功能**：队列初始化操作结果
 
-#### 队列初始化操作结果 {#CRVideo_InitQueueDatRslt}
++ **参数**：
+    - sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据 （在回调时，回传给调用者）
 
->CRVideo_InitQueueDatRslt.callback = function(sdkEr,cookie){
-  
-}
+####队列初始化操作结果 {#CRVideo_InitQueueDatRslt}
 
-- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据 （在回调时，回传给调用者）
+>CRVideo_InitQueueDatRslt.callback = function(sdkEr,cookie){}
 
-#### 队列状态变化通知 {#CRVideo_QueueStatusChanged}
+- **功能**：队列初始化操作结果
 
->CRVideo_QueueStatusChanged.callback = function(queStatus){
-  
-}
++ **参数**：
+    - sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据 （在回调时，回传给调用者）
 
-- queStatus ----- [队列状态](TypeDefinitions.md#CRVideo_queStatus)
+####队列状态变化通知 {#CRVideo_QueueStatusChanged}
 
-#### 排队信息变化通知 {#CRVideo_QueuingInfoChanged}
+>CRVideo_QueueStatusChanged.callback = function(queStatus){}
+
+- **功能**：队列状态变化通知
+
++ **参数**：
+    - queStatus ----- [队列状态](TypeDefinitions.md#CRVideo_queStatus)
+
+####排队信息变化通知 {#CRVideo_QueuingInfoChanged}
 
 >CRVideo_QueuingInfoChanged.callback = function(queuingInfo){}
 
-- queuingInfo ----- [队列信息](TypeDefinitions.md#CRVideo_QueueInfo)
+- **功能**：排队信息变化通知
 
-#### 开始排队操作结果 {#CRVideo_StartQueuingRslt}
++ **参数**：
+    - queuingInfo ----- [队列信息](TypeDefinitions.md#CRVideo_QueueInfo)
+
+####开始排队 {#CRVideo_StartQueuingRslt}
 
 >CRVideo_StartQueuingRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据（在回调时，回传给调用者）
+- **功能**：开始排队操作结果
 
-#### 停止排队操作结果 {#CRVideo_StopQueuingRslt}
++ **参数**：
+    - sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据（在回调时，回传给调用者）
+
+####停止排队 {#CRVideo_StopQueuingRslt}
 
 >CRVideo_StopQueuingRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据（在回调时，回传给调用者）
+- **功能**：停止排队操作结果
 
-#### 开始服务队列操作结果 {#CRVideo_StartServiceRslt}
++ **参数**：
+    - sdkEr ----- 操作失败代码，定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据（在回调时，回传给调用者）
+
+####开始服务队列 {#CRVideo_StartServiceRslt}
 
 >CRVideo_StartServiceRslt.callback = function(queID,sdkEr,cookie){}
 
-- queID ----- 服务的队列ID
-- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据（在回调时，回传给调用者）
+- **功能**：开始服务队列操作结果
 
-#### 停止服务队列操作结果 {#CRVideo_StopServiceRslt}
++ **参数**：
+    - queID ----- 服务的队列ID
+    - sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据（在回调时，回传给调用者）
+
+####停止服务队列 {#CRVideo_StopServiceRslt}
 
 >CRVideo_StopServiceRslt.callback = function(queID,sdkEr,cookie){}
 
-- queID ----- 服务的队列ID
-- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据（在回调时，回传给调用者）
+- **功能**：停止服务队列操作结果
 
-#### 响应分配客户操作结果 {#CRVideo_ResponseAssignUserRslt}
++ **参数**：
+    - queID ----- 服务的队列ID
+    - sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据（在回调时，回传给调用者）
 
->CRVideo_ResponseAssignUserRslt.callback = function(sdkEr,cookie){
+####响应分配客户操作结果 {#CRVideo_ResponseAssignUserRslt}
 
-}
+>CRVideo_ResponseAssignUserRslt.callback = function(sdkEr,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- cookie ----- 自定义数据（在回调时，回传给调用者）
+- **功能**：响应分配客户操作结果
 
-#### 系统自动安排客户 {#CRVideo_AutoAssignUser}
++ **参数**：
+    - sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - cookie ----- 自定义数据（在回调时，回传给调用者）
+
+####自动分配用户通知 {#CRVideo_AutoAssignUser}
 
 >CRVideo_AutoAssignUser.callback = function(user){}
 
-- user ----- 队列用户信息。如果想停止系统的自动分配，请通[CRVideo_SetDNDStatus](meetingMrg.md#CRVideo_SetDNDStatus)设置免打扰功能
+- **功能**：系统自动安排客户
 
-#### 请求分配客户操作结果 {#CRVideo_ReqAssignUserRslt}
++ **参数**：
+    - user ----- 队列用户信息。如果想停止系统的自动分配，请通[CRVideo_SetDNDStatus](meetingMrg.md#CRVideo_SetDNDStatus)设置免打扰功能
+
+####请求分配用户结果 {#CRVideo_ReqAssignUserRslt}
 
 >CRVideo_ReqAssignUserRslt.callback = function(sdkEr,user,cookie){}
 
-- sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
-- user ----- 队列用户信息
-- cookie ----- 自定义数据（在回调时，回传给调用者）
+- **功能**：请求分配客户操作结果
 
-#### 系统取消已经安排的客户 {#CRVideo_CancelAssignUser}
++ **参数**：
+    - sdkEr ----- 操作失败代码,定义见[CRVideo_ERR_DEF](Constant.md#CRVIDEOSDK_ERR_DEF)
+    - user ----- 队列用户信息
+    - cookie ----- 自定义数据（在回调时，回传给调用者）
+
+####自动分配用户被取消 {#CRVideo_CancelAssignUser}
 
 >CRVideo_CancelAssignUser.callback = function(queID,userid){}
 
-- queID ----- 服务的队列
-- userid ----- 用户id   
+- **功能**：系统取消已经安排的客户
+
++ **参数**：
+    - queID ----- 服务的队列
+    - userid ----- 用户id   

@@ -10,7 +10,7 @@
 
 >CRVideo_GetAllTransferInfos() 
 
-- **返回值**:filelist - 返回文件信息列表 (Array.[CRVideo_FileInfo](TypeDefinitions.md#CRVideo_FileInfo))
+- **返回值**:filelist - 返回文件信息列表 (Array ------ [CRVideo_FileInfo](TypeDefinitions.md#CRVideo_FileInfo))
 
 ####开始下载/上传文件 {#CRVideo_StartTransferFile}
 
@@ -91,34 +91,39 @@
 
 >CRVideo_FileStateChanged.callback = function(fileName,state){}
 
-- fileName ----- 文件名
-- state ----- 状态
++ **参数**：
+    - fileName ----- 文件名
+    - state ----- 状态
 
 #### 系统取消已经安排的客户 {#CRVideo_FileProgress}
 
 >CRVideo_FileProgress.callback = function(fileName,finisedSize,totalSize){}
 
-- fileName ----- 文件名
-- finisedSize ----- 已传输大小
-- finisedSize ----- 文件大小
++ **参数**：
+    - fileName ----- 文件名
+    - finisedSize ----- 已传输大小
+    - finisedSize ----- 文件大小
 
 #### 通知用户文件传输结束 {#CRVideo_FileFinished}
 
 >CRVideo_FileFinished.callback = function(fileName,rslt){}
 
-- fileName ----- 文件名
-- rslt ----- 传输结果
++ **参数**：
+    - fileName ----- 文件名
+    - rslt ----- 传输结果
 
 #### 通知用户文件http响应头 {#CRVideo_FileHttpRspHeader}
 
 >CRVideo_FileHttpRspHeader.callback = function(fileName,rspHeader){}
 
-- fileName ----- 文件名
-- rspHeader ----- http响应头
++ **参数**：
+    - fileName ----- 文件名
+    - rspHeader ----- http响应头
 
 #### 通知用户文件http响应结果 {#CRVideo_FileHttpRspContent}
 
 >CRVideo_FileHttpRspContent.callback = function(fileName,rspHeader){}
 
-- fileName ----- 文件名
-- rspHeader ----- http响应结果
++ **参数**：
+    - fileName ----- 文件名
+    - rspHeader ----- http响应结果
