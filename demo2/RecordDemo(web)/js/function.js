@@ -222,21 +222,28 @@ $("#setUp").click(function(){
 $("#tab2").click(function(){
 	$("#full_page_msg2").css({"display":"block"})
 	$("#full_page_div4").css({"display":"none"});
-	
+	$("#tab2").addClass("ontab");
+	$("#tab1").removeClass("ontab");
 })
 
 $("#tab1").click(function(){
 	$("#full_page_msg2").css({"display":"none"})
 	$("#full_page_div4").css({"display":"block"});
-	
+	$("#tab1").addClass("ontab");
+	$("#tab2").removeClass("ontab");
 })
 
 //*******************************点击了-，X，取消*******************************
 $("#closepage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	
+	$("#list_container").css({"display":"none"});
 })
+$("#closepage1").click(function(){
+	$("#box").css({"display":"none"})
+	$("#list_container").css({"display":"none"});
+})
+
 
 $("#minpage").click(function(){
 	$("#box").css({"display":"none"})
@@ -255,4 +262,15 @@ $(".full_page_submit2").click(function(){ //还有其他操作
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
 	
+})
+
+//**************************点击录制文件*************************************
+$("#recordMrg").click(function(){
+	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
+	$("#list_container").css({"display":"block"});
+})
+//*************************点击单摄像头***************************************
+$("#recordMrg").click(function(){
+	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
+	$("#list_container").css({"display":"block"});
 })

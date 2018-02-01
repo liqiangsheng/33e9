@@ -894,7 +894,6 @@
 							 		$(".detail_right_video").css("background-color","#10132b");
 							 		g_bg_color = "#10132c";
 							 	}
-							 	//g_call_video.setVideo(g_call_user_id)
 							 },500);
 							updateVideoCfg(g_video_size_type,g_video_fps,g_video_qp,g_wh_rate);
 						}else{
@@ -1716,13 +1715,13 @@
 				$("#detailCallThirdPart").hide();
 				$("#detailCallThirdPart input").val("");
 				// 开始呼叫第三方
-				g_inviteID = CRVideo_ClientInvite(g_third_id,g_session_meetmsg);
+				g_inviteID = CRVideo_CallMoreParty(g_third_id,g_session_meetmsg,thirdName,"");
 				$("#detailThirdAgainLabel").text("正在呼叫【" + g_third_id +"】,请稍后...");
 				$(".detail_call_again_btn").show();
 				$("#detailThirdPartAgain").show();
 			}
 			// 呼叫第三方是否呼叫成功的回调
-			CRVideo_ClientInviteRslt.callback = function(inviteID,sdkErr,cookie){
+			CRVideo_CallMorePartyRslt.callback = function(inviteID,sdkErr,cookie){
 				if(g_inviteID == inviteID){
 					if(sdkErr == CRVideo_NOERR){
 
@@ -1738,7 +1737,7 @@
 				
 			}
 			// 第三方回应的监听
-			CRVideo_NotifyInviteStatus.callback = function(inviteID,status){
+			CRVideo_NotifyCallMorePartyStatus.callback = function(inviteID,status){
 				//第3方呼叫状态码,0-振铃 1-接通 2-拒绝 3-未应答 4-挂断  这是坐席监听第三方的接口
 				if(inviteID == g_inviteID){
 					//g_inviteID = inviteID;
@@ -1796,11 +1795,20 @@
 				}
 			}
 			function detailCallAgainCancle(){
-				CRVideo_ClientCancelInvite(g_inviteID);
+				if(g_inviteID == undefined || g_inviteID == ""){
+					g_third_id = "";
+					$("#detailThirdAgainLabel").text("取消成功");
+					$(".detail_call_again_btn").hide();
+					setTimeout(function(){
+						$("#detailThirdPartAgain").hide();
+					},2000);
+					return;
+				}
+				CRVideo_CancelCallMoreParty(g_inviteID,"","");
 				$("#detailThirdPartAgain").hide();
 			}
 			// 取消第3方呼叫操作结果回调
-			CRVideo_ClientCancelInviteRslt.callback = function(inviteID,sdkErr,cookie){
+			CRVideo_CancelCallMorePartyRslt.callback = function(inviteID,sdkErr,cookie){
 				if(inviteID == g_inviteID){
 					if(sdkErr == CRVideo_NOERR){
 						g_third_id = "";
@@ -2679,7 +2687,7 @@
 						area: '400px',
 						title : ['用户分配中', 'font-size:14px;'],
 						closeBtn: 0,
-						content: '系统为您分配【'+user.usrID+'】<span id="waitingTimer">您已等待：<span id="waitingSecd"></span>秒</span>',
+						content: '系统为您分配【'+user.usrID+'】<span id="waitingTimer">用户已等待：<span id="waitingSecd"></span>秒</span>',
 						btn: ['<p style="font-size:14px;">确定</p>','<p style="font-size:14px;">取消</p>'],
 						yes: function(index, layero){
 								layer.close(index);
@@ -2914,7 +2922,7 @@
 							li.click(function() {
 								queData = g_que_dict[$(this).attr("id")];
 								var queID = queData["queId"];
-								CRVideo_StartQueuing(queID); // 客服开始排队
+								CRVideo_StartQueuing2(queID,"hahh",""); // 客服开始排队
 								popupUserQueLayer();
 							});
 						}	
@@ -3148,9 +3156,7 @@
 			//系统自动安排客户	
 			CRVideo_AutoAssignUser.callback = function(usr)
 			{
-				//console.log("CRVideo_AutoAssignUser(usrID:%s)",usr.usrID);
 				popupUserSrvLayer(usr);
-				console.log("CRVideo_AutoAssignUser" + usr.queuingTime)
 			}
 			//请求分配客户操作结果
 			CRVideo_ReqAssignUserRslt.callback = function(errCode,usr,cookie )
@@ -3274,7 +3280,7 @@
 				if(!g_is_init)//插件是否初始化
 				{
 					//初始化sdk
-					var result = CRVideo_Init("CLOUDROOM",g_location_dir);
+					var result = CRVideo_Init2(g_location_dir);
 					if(result == CRVideo_WEB_OCX_NOTINSTALLED)//没有安装
 					{
 						$('.login_containt').css('display',"none");

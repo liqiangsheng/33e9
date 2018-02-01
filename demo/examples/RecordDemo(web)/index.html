@@ -527,7 +527,7 @@
 			$("#sfzzm").css("display","none")
 			$("#sfzfm").css("display","block")
 		}
-	
+	    $(".detail_box").height($(document).height()-62);
 		var g_nickname;//用户昵称
 		var g_userID;//用户id
 		var g_logining = false; // 判断登录状态登录
@@ -638,7 +638,8 @@
 			//初始化
 			//
 			//------------------------------
-			var result = CRVideo_Init("CLOUDROOM",g_location_dir);
+			//var result = CRVideo_Init("CLOUDROOM",g_location_dir);
+			var result = CRVideo_Init2(g_location_dir);
 			g_init = true;
 			if(result == CRVideo_WEB_OCX_NOTINSTALLED)
 			{
@@ -659,7 +660,7 @@
 			$(".login_button button").css({"backgroundColor":"#ccc","border":"1px solid #ccc"});
 			if(g_logining == false)
 			{
-				var g_server_name = $("#server_name").val()
+				g_server_name = $("#server_name").val()
 				if(g_server_name && g_server_name != '')
 				{
 
@@ -1372,8 +1373,9 @@
 			$("#videoList"+num+" "+".voice1_item_play").css("display","block")
 			$("#videoList"+num+" "+".voice1_item_stop").css('display','none'); 
 			$("#videoList"+num+" "+".voice1_item_pause").css('display','none')
-			g_nowTime_play_num = -1;
 			CRVideo_StopPlayMedia();
+			g_nowTime_play_num = -1;
+			
 			// 没有影音播放，停止媒体播放
 		}
 		//恢复播放媒体
@@ -1428,8 +1430,6 @@
 				g_mediaObj.width(396);
 				g_mediaObj.height(297);
 			}
-			
-
 		}
 		//------------------------------
 		//
@@ -1533,7 +1533,9 @@
 			videoContainerHide();
 			$(".full_page").css('display','block');
 			$(".full_page_div").css('display','block');
-			CRVideo_UploadRecordFile(fileName)
+			//CRVideo_UploadRecordFile(fileName)
+			var svrPath = "/web2018/";
+			CRVideo_UploadRecordFile2(fileName,svrPath + fileName);
 		}
 
 		function cancle_upload(fileName)
@@ -1564,8 +1566,6 @@
 		// sdk通知录制状态更改
 		CRVideo_NotifyRecordFileStateChanged.callback = function(filename,state)
 		{
-			// console.log(filename)日期
-			// console.log(state)1/2
 			$("#file_name").text(filename);
 			if(state == 2)
 			{
@@ -1593,8 +1593,6 @@
 		// 通知录制文件上传进度
 		CRVideo_NotifyRecordFileUploadProgress.callback = function(filename,percent)
 		{
-			console.log(filename)//2018-1-4-17-4-17.mp4
-			console.log(percent)//100
 			//console.log("CRVideo_NotifyRecordFileUploadProgress(filename:"+filename+" percent:"+percent+")");
 			$(".full_page_submit").css("display","none");
 			$("#percent_item").css("width",percent+"%");
@@ -1611,7 +1609,6 @@
 		//更新video配置
 		function updateVideoCfg(sizeType,fps,qp)
 		{
-
 			var cfg = {}
 
 			
@@ -1639,9 +1636,7 @@
 				cfg.qp_min = 22
 				cfg.qp_max = 25
 			}
-			//系统视频参数设置
 			CRVideo_SetVideoCfg(cfg);
-			//配置远程影音共享时，图像质量参数
 			CRVideo_SetMediacfg(cfg)
 		}
 		//------------------------------
@@ -1687,12 +1682,10 @@
 				g_recordWidth = 640;
 				g_recordHeight = 480;
 			}
-			//文件上传的流量控制(SDK默认不开启流控,目前对文件上传控制的功能有：录制文件上传、网盘文件上传。)
 			CRVideo_SetFileUploadRate(g_FURate);
 			g_video_size_type = $("#size_select").val();
 			g_video_fps =  $("#frame_input").val();
 			g_video_qp = $("input[name='meet_yx']:checked").val();
-			//跟新视频
 			updateVideoCfg(parseInt(g_video_size_type),parseInt(g_video_fps),parseInt(g_video_qp));
 		}
 		function setCancle()
@@ -1702,9 +1695,7 @@
 			if($(".list_container").css("display") == "block"){
 			}else{
 				//$(".detail_right_video").css('display','block');
-				//容器显示视频
 				videoContainerShow();
-				//跟新视频
 				updateVideo();
 			}
 			

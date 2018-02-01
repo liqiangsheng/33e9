@@ -125,11 +125,27 @@
 						<div class="inputLayer1" id="login_server_player"></div>
 					</div>
 					<ul class="pull_down_name" id="login_server_pull">
-						<li>10.0.7.20</li>
+						<li>10.8.8.220</li>
 						<li>www.cloudroom.com</li>
 					</ul>
 				</div>
 				
+				<div id="login_cpyname" class="login_form_box">
+					<div id="login_cpyname_input" class="login_input">
+						<label>用户名：</label>
+						<input type="text" name="login_cpyname_name" id="login_cpyname_name" value="demo@cloudroom.com" style="color: #222;">
+						<div class="inputLayer3"></div>
+					</div>
+				</div> 
+
+				<div id="login_psd" class="login_form_box">
+					<div id="login_psd_input" class="login_input">
+						<label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label>
+						<input type="password" name="login_psd_name" id="login_psd_name" value="123456" style="color: #222;">
+						<div class="inputLayer4"></div>
+					</div>
+				</div>
+
 				<div id="login_name" class="login_form_box">
 					<div id="login_name_input" class="login_input">
 						<label>登录昵称：</label>
@@ -137,13 +153,6 @@
 						<div class="inputLayer2" id="login_name_player"></div>
 						<!--<span id="login_name_img"><img class="remeber_name" src="image/icon_14.png"></span>-->
 					</div>
-					<!--<ul class="pull_down_name" id="login_name_pull">
-						<li>deva</li>
-						<li>eva</li>
-						<li>bill</li>
-						<li>micheal</li>
-						<li>lisa</li>
-					</ul>-->
 				</div>
 				<div id="login_style" class="login_form_box">
 					<div id="login_style_input" class="login_input">
@@ -1619,7 +1628,7 @@
 					if(!g_is_init)//插件是否初始化
 					{
 						//初始化sdk
-						var result = CRVideo_Init("CLOUDROOM",g_location_dir);
+						var result = CRVideo_Init2(g_location_dir);
 						if(result == CRVideo_WEB_OCX_NOTINSTALLED)//没有安装
 						{
 							$('.login_containt').css('display',"none");

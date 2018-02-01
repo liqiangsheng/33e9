@@ -379,6 +379,21 @@
 
 	 * @returns {number} 返回错误码（错误码为CRVideo_NOERR表示没有错误）
 	 */	
+	CRVideo_Init2 = function(sdkUsePath,statCallSer,statMediaSer,statHttp){
+		if(statCallSer === undefined)
+		{
+			statCallSer = 1
+		}
+		if(statMediaSer === undefined)
+		{
+			statMediaSer = 1
+		}
+		if(statHttp === undefined)
+		{
+			statHttp = 0
+		}
+		return CRVideo_Init("",sdkUsePath,statCallSer,statMediaSer,statHttp);
+	}
 	CRVideo_Init = function(oemID,sdkUsePath,statCallSer,statMediaSer,statHttp)
 	{
 		if(statCallSer === undefined)
@@ -501,7 +516,6 @@
 				return CRVideo_OCX_VERSION_NOTUPPORTED;
 			}
 
-
 			// 关联回调事件
 			if(!CRVideo.ie || CRVideo.v == 10.0)
 			{
@@ -543,7 +557,10 @@
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallAccepted',CRVideo_NotifyCallAccepted);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallRejected',CRVideo_NotifyCallRejected);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallHungup',CRVideo_NotifyCallHungup);
-				
+				__crVideo_RegisterCallBack(CRVideo._crMgr, 'callMorePartyRslt',CRVideo_CallMorePartyRslt);
+				__crVideo_RegisterCallBack(CRVideo._crMgr, 'cancelCallMorePartyRslt',CRVideo_CancelCallMorePartyRslt);
+				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallMorePartyStatus',CRVideo_NotifyCallMorePartyStatus);
+
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'sendCmdRlst',CRVideo_SendCmdRlst);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'sendBufferRlst',CRVideo_SendBufferRlst);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'sendFileRlst',CRVideo_SendFileRlst);
@@ -622,7 +639,6 @@
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMouseHotSpot',CRVideo_NotifyMouseHotSpot);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'getNetDiskSummaryRslt',CRVideo_GetNetDiskSummaryRslt);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'getNetDiskFileListRslt',CRVideo_GetNetDiskFileListRslt);
-				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyNetDiskIsFull',CRVideo_NotifyNetDiskIsFull);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyNetDiskFileDeleteRslt',CRVideo_NotifyNetDiskFileDeleteRslt);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyNetDiskTransforProgress',CRVideo_NotifyNetDiskTransforProgress);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMediaOpened',CRVideo_NotifyMediaOpened);
@@ -631,9 +647,6 @@
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMediaPause',CRVideo_NotifyMediaPause);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyPlayPosSetted',CRVideo_NotifyPlayPosSetted);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMemberMediaData',CRVideo_NotifyMemberMediaData);
-                __crVideo_RegisterCallBack(CRVideo._crMeet, 'clientInviteRslt',CRVideo_ClientInviteRslt);
-                __crVideo_RegisterCallBack(CRVideo._crMeet, 'clientCancelInviteRslt',CRVideo_ClientCancelInviteRslt);
-                __crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyInviteStatus',CRVideo_NotifyInviteStatus);
 				
 				
 				//-----------------------------
@@ -678,10 +691,11 @@
 			}
 			CRVideo._crSdk.setSDKParams(JSON.stringify(setSDKParams))
 			
-			
-
-
-			var r = CRVideo._crSdk.init(oemID,sdkUsePath);
+			if(oemID == ""){
+				var r = CRVideo._crSdk.init_2(sdkUsePath);
+			}else if(oemID === "CLOUDROOM"){
+				var r = CRVideo._crSdk.init(oemID,sdkUsePath);
+			}
 			if(r == 0)
 			{
 				CRVideo._isinit = true;
@@ -1068,6 +1082,47 @@
 			usrExtDat = "";
 		}
 		CRVideo._crMgr.hungupCall(callID,usrExtDat,cookie);
+	}
+	/**
+	 * 邀请/取消邀请第三方入会
+	 * 操作成功则回调callMorePartyRslt
+	 * @access public
+	 * @param {string} called  - 被叫用户的账户ID
+	 * @param {CRVideo_MeetInfoObj} meetObj 当前会议信息，json结构体请参见MeetInfoObj
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+	 */	
+	CRVideo_CallMoreParty = function(called,meetObj,usrExtDat,cookie)
+	{
+		if(cookie === undefined)
+		{
+			cookie = "";
+		}
+		if(usrExtDat === undefined)
+		{
+			usrExtDat = "";
+		}
+		return CRVideo._crMgr.callMoreParty(called,JSON.stringify(meetObj),usrExtDat,cookie);
+	}
+	/**
+	 * 功能 取消第3方呼叫
+	 * 操作成功则回调数 CRVideo_CancelCallMorePartyRslt
+	 * @access public
+	 * @param {string} inviteID  - 邀请标识码，邀请ID
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+	 */	
+	CRVideo_CancelCallMoreParty= function(inviteID,usrExtDat,cookie)
+	{
+		if(cookie === undefined)
+		{
+			cookie = "";
+		}
+		if(usrExtDat === undefined)
+		{
+			usrExtDat = "";
+		}
+		CRVideo._crMgr.cancelCallMoreParty(inviteID,usrExtDat,cookie);
 	}
 	/**
 	 * 发送小块数据(一次性发送不会有进度通知,发送结果事件CRVideo_SendCmdRlst,CRVideo_SendCmd不能被CRVideo_CancelSend)
@@ -1796,7 +1851,7 @@
 		CRVideo._crMeet.setRecordUploadCfg(JSON.stringify(jsonCfg));
 	}												 
 	/**
-	 * 上传录像文件
+	 * 上传文件在默认位置
 	 * @access public			 
 	 * @param {string} filename - 文件名，全路径
 	 */	
@@ -1804,6 +1859,17 @@
 	{
 		CRVideo._crMeet.uploadRecordFile(fileName);
 	}
+	/**
+	 * 上传文件到服务器指定位置
+	 * @access public			 
+	 * @param {string} filename - 文件名，全路径
+	 * @param {string} svrPathFileName - 服务器路径文件名
+	 */	
+	CRVideo_UploadRecordFile2 = function(fileName,svrPathFileName)
+	{
+		CRVideo._crMeet.uploadRecordFile2(fileName,svrPathFileName);
+	}
+
 	/**
 	 * 取消上传录像文件
 	 * @access public
@@ -2160,14 +2226,14 @@
      * @return {string} - 本次邀请标识码（邀请ID）
 	 */	
 
-	CRVideo_ClientInvite  = function(called,meetObj,cookie)
-	{
-        if(cookie === undefined)
-		{
-			cookie = "";
-		}
-		return CRVideo._crMeet.clientInvite(called,JSON.stringify(meetObj),cookie);
-	}
+	// CRVideo_ClientInvite  = function(called,meetObj,cookie)
+	// {
+ //        if(cookie === undefined)
+	// 	{
+	// 		cookie = "";
+	// 	}
+	// 	return CRVideo._crMeet.clientInvite(called,JSON.stringify(meetObj),cookie);
+	// }
 	 /**
 	 * 取消第3方呼叫 结果事件clientCancelInviteRslt，根据sdkErr判断是否成功
 	 * @access public
@@ -2175,14 +2241,14 @@
 	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
 	 */	
 
-	CRVideo_ClientCancelInvite  = function(inviteID,cookie)
-	{
-        if(cookie === undefined)
-		{
-			cookie = "";
-		}
-		CRVideo._crMeet.clientCancelInvite(inviteID,cookie);
-	}
+	// CRVideo_ClientCancelInvite  = function(inviteID,cookie)
+	// {
+ //        if(cookie === undefined)
+	// 	{
+	// 		cookie = "";
+	// 	}
+	// 	CRVideo._crMeet.clientCancelInvite(inviteID,cookie);
+	// }
 	/**
 	 * 设置当前哪个用户为主视频
 	 * @access public
@@ -2312,6 +2378,25 @@
 			cookie = "";
 		}
 		CRVideo._crQueue.startQueuing(queID,cookie);
+	}
+	/**
+	 * 客户开始排队
+	 * 操作完成回调CRVideo_StartQueuingRslt
+	 * @access public
+	 * @param {number} queID  - queID 队列ID
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - cookie自定义数据 (在回调时，回传给调用者)
+	 */
+	CRVideo_StartQueuing2 = function(queID,usrExtDat,cookie)
+	{
+		if(cookie === undefined)
+		{
+			cookie = "";
+		}
+		if(usrExtDat === undefined){
+			usrExtDat = "";
+		}
+		CRVideo._crQueue.startQueuing2(queID,usrExtDat,cookie);
 	}
 	/**
 	 * 客户停止排队
@@ -2570,13 +2655,19 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-cr_callback.html">cr/callback</a></li><li><a href="module-cr_error.html">cr/error</a></li></ul><h3>Classes</h3><ul><li><a href="CRVideo.CbProxy.html">CbProxy</a></li><li><a href="CRVideo.Container.html">Container</a></li><li><a href="CRVideo.MediaContainer.html">MediaContainer</a></li><li><a href="CRVideo.ScreenShareContainer.html">ScreenShareContainer</a></li><li><a href="CRVideo.VideoContainer.html">VideoContainer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CRVideo">CRVideo</a></li><li><a href="global.html#CRVideo_AcceptAssignUser">CRVideo_AcceptAssignUser</a></li><li><a href="global.html#CRVideo_AcceptCall">CRVideo_AcceptCall</a></li><li><a href="global.html#CRVideo_Addboardelement">CRVideo_Addboardelement</a></li><li><a href="global.html#CRVideo_AddFileToRecordMgr">CRVideo_AddFileToRecordMgr</a></li><li><a href="global.html#CRVideo_ASTATUS">CRVideo_ASTATUS</a></li><li><a href="global.html#CRVideo_Call">CRVideo_Call</a></li><li><a href="global.html#CRVideo_CancelFileTransfer">CRVideo_CancelFileTransfer</a></li><li><a href="global.html#CRVideo_CancelSend">CRVideo_CancelSend</a></li><li><a href="global.html#CRVideo_CancelUploadRecordFile">CRVideo_CancelUploadRecordFile</a></li><li><a href="global.html#CRVideo_Canclenetdiskfile">CRVideo_Canclenetdiskfile</a></li><li><a href="global.html#CRVideo_ClientCancelInvite">CRVideo_ClientCancelInvite</a></li><li><a href="global.html#CRVideo_ClientInvite">CRVideo_ClientInvite</a></li><li><a href="global.html#CRVideo_Closeboard">CRVideo_Closeboard</a></li><li><a href="global.html#CRVideo_CloseMic">CRVideo_CloseMic</a></li><li><a href="global.html#CRVideo_CloseVideo">CRVideo_CloseVideo</a></li><li><a href="global.html#CRVideo_Createboard">CRVideo_Createboard</a></li><li><a href="global.html#CRVideo_CreateElementID">CRVideo_CreateElementID</a></li><li><a href="global.html#CRVideo_CreateMeeting">CRVideo_CreateMeeting</a></li><li><a href="global.html#CRVideo_CreatMediaObj">CRVideo_CreatMediaObj</a></li><li><a href="global.html#CRVideo_CreatScreenShareObj">CRVideo_CreatScreenShareObj</a></li><li><a href="global.html#CRVideo_CreatVideoObj">CRVideo_CreatVideoObj</a></li><li><a href="global.html#CRVideo_Delboardelement">CRVideo_Delboardelement</a></li><li><a href="global.html#CRVideo_Deletenetdiskfile">CRVideo_Deletenetdiskfile</a></li><li><a href="global.html#CRVideo_DestroyMeeting">CRVideo_DestroyMeeting</a></li><li><a href="global.html#CRVideo_Downloadnetdiskfile">CRVideo_Downloadnetdiskfile</a></li><li><a href="global.html#CRVideo_ENCODE_TYPE">CRVideo_ENCODE_TYPE</a></li><li><a href="global.html#CRVideo_EnterMeeting">CRVideo_EnterMeeting</a></li><li><a href="global.html#CRVideo_ExitMeeting">CRVideo_ExitMeeting</a></li><li><a href="global.html#CRVideo_GetAllFilesInMediaPath">CRVideo_GetAllFilesInMediaPath</a></li><li><a href="global.html#CRVideo_GetAllMembers">CRVideo_GetAllMembers</a></li><li><a href="global.html#CRVideo_GetAllQueueInfo">CRVideo_GetAllQueueInfo</a></li><li><a href="global.html#CRVideo_GetAllRecordFiles">CRVideo_GetAllRecordFiles</a></li><li><a href="global.html#CRVideo_GetAllTransferInfos">CRVideo_GetAllTransferInfos</a></li><li><a href="global.html#CRVideo_GetAllVideoInfo">CRVideo_GetAllVideoInfo</a></li><li><a href="global.html#CRVideo_GetAudioCfg">CRVideo_GetAudioCfg</a></li><li><a href="global.html#CRVideo_GetAudioMicNames">CRVideo_GetAudioMicNames</a></li><li><a href="global.html#CRVideo_GetAudioSpkNames">CRVideo_GetAudioSpkNames</a></li><li><a href="global.html#CRVideo_GetAudioStatus">CRVideo_GetAudioStatus</a></li><li><a href="global.html#CRVideo_Getcurrentmainpage">CRVideo_Getcurrentmainpage</a></li><li><a href="global.html#CRVideo_Getcurrentsubpage">CRVideo_Getcurrentsubpage</a></li><li><a href="global.html#CRVideo_GetDefaultVideo">CRVideo_GetDefaultVideo</a></li><li><a href="global.html#CRVideo_GetEnableMutiVideo">CRVideo_GetEnableMutiVideo</a></li><li><a href="global.html#CRVideo_GetMainVideo">CRVideo_GetMainVideo</a></li><li><a href="global.html#CRVideo_GetMediacfg">CRVideo_GetMediacfg</a></li><li><a href="global.html#CRVideo_Getmediaimg">CRVideo_Getmediaimg</a></li><li><a href="global.html#CRVideo_Getmediainfo">CRVideo_Getmediainfo</a></li><li><a href="global.html#CRVideo_GetMeetings">CRVideo_GetMeetings</a></li><li><a href="global.html#CRVideo_GetMemberInfo">CRVideo_GetMemberInfo</a></li><li><a href="global.html#CRVideo_GetMemberNickName">CRVideo_GetMemberNickName</a></li><li><a href="global.html#CRVideo_GetMicEnergy">CRVideo_GetMicEnergy</a></li><li><a href="global.html#CRVideo_GetMicVolume">CRVideo_GetMicVolume</a></li><li><a href="global.html#CRVideo_GetNetDiskFileList">CRVideo_GetNetDiskFileList</a></li><li><a href="global.html#CRVideo_GetNetDiskSummary">CRVideo_GetNetDiskSummary</a></li><li><a href="global.html#CRVideo_GetQueueStatus">CRVideo_GetQueueStatus</a></li><li><a href="global.html#CRVideo_GetQueuingInfo">CRVideo_GetQueuingInfo</a></li><li><a href="global.html#CRVideo_GetRecDuration">CRVideo_GetRecDuration</a></li><li><a href="global.html#CRVideo_GetRecFileSize">CRVideo_GetRecFileSize</a></li><li><a href="global.html#CRVideo_GetScreenShareCfg">CRVideo_GetScreenShareCfg</a></li><li><a href="global.html#CRVideo_GetServerAddr">CRVideo_GetServerAddr</a></li><li><a href="global.html#CRVideo_GetServingQueues">CRVideo_GetServingQueues</a></li><li><a href="global.html#CRVideo_GetSessionInfo">CRVideo_GetSessionInfo</a></li><li><a href="global.html#CRVideo_GetShareScreenDecodeImg">CRVideo_GetShareScreenDecodeImg</a></li><li><a href="global.html#CRVideo_GetSpeakerVolume">CRVideo_GetSpeakerVolume</a></li><li><a href="global.html#CRVideo_GetTransferInfo">CRVideo_GetTransferInfo</a></li><li><a href="global.html#CRVideo_GetUserStatus">CRVideo_GetUserStatus</a></li><li><a href="global.html#CRVideo_GetVideoCfg">CRVideo_GetVideoCfg</a></li><li><a href="global.html#CRVideo_GetVideoImg">CRVideo_GetVideoImg</a></li><li><a href="global.html#CRVideo_GetVideoStatus">CRVideo_GetVideoStatus</a></li><li><a href="global.html#CRVideo_GetVideoWallMode">CRVideo_GetVideoWallMode</a></li><li><a href="global.html#CRVideo_GetWatchableVideos">CRVideo_GetWatchableVideos</a></li><li><a href="global.html#CRVideo_GiveCtrlRight">CRVideo_GiveCtrlRight</a></li><li><a href="global.html#CRVideo_HTTP_TRANSFER_RESULT">CRVideo_HTTP_TRANSFER_RESULT</a></li><li><a href="global.html#CRVideo_HTTP_TRANSFER_STAT">CRVideo_HTTP_TRANSFER_STAT</a></li><li><a href="global.html#CRVideo_HungupCall">CRVideo_HungupCall</a></li><li><a href="global.html#CRVideo_Init">CRVideo_Init</a></li><li><a href="global.html#CRVideo_InitBoardPageDat">CRVideo_InitBoardPageDat</a></li><li><a href="global.html#CRVideo_InitQueueDat">CRVideo_InitQueueDat</a></li><li><a href="global.html#CRVideo_IsUserInMeeting">CRVideo_IsUserInMeeting</a></li><li><a href="global.html#CRVideo_KEY_MSG_TYPE">CRVideo_KEY_MSG_TYPE</a></li><li><a href="global.html#CRVideo_Login">CRVideo_Login</a></li><li><a href="global.html#CRVideo_Logout">CRVideo_Logout</a></li><li><a href="global.html#CRVideo_MAIN_PAGE_TYPE">CRVideo_MAIN_PAGE_TYPE</a></li><li><a href="global.html#CRVideo_MakeNetDiskFileID">CRVideo_MakeNetDiskFileID</a></li><li><a href="global.html#CRVideo_ModifyBoardElement">CRVideo_ModifyBoardElement</a></li><li><a href="global.html#CRVideo_MOUSE_KEY_TYPE">CRVideo_MOUSE_KEY_TYPE</a></li><li><a href="global.html#CRVideo_MOUSE_MSG_TYPE">CRVideo_MOUSE_MSG_TYPE</a></li><li><a href="global.html#CRVideo_OpenMic">CRVideo_OpenMic</a></li><li><a href="global.html#CRVideo_OpenVideo">CRVideo_OpenVideo</a></li><li><a href="global.html#CRVideo_PausePlayMedia">CRVideo_PausePlayMedia</a></li><li><a href="global.html#CRVideo_PlaybackRecordFile">CRVideo_PlaybackRecordFile</a></li><li><a href="global.html#CRVideo_PluginVersion">CRVideo_PluginVersion</a></li><li><a href="global.html#CRVideo_REC_DATATYPE">CRVideo_REC_DATATYPE</a></li><li><a href="global.html#CRVideo_REC_VCONTENT_TYPE">CRVideo_REC_VCONTENT_TYPE</a></li><li><a href="global.html#CRVideo_RECORD_AUDIO_TYPE">CRVideo_RECORD_AUDIO_TYPE</a></li><li><a href="global.html#CRVideo_RECORD_STATE">CRVideo_RECORD_STATE</a></li><li><a href="global.html#CRVideo_RECORD_VIDEO_TYPE">CRVideo_RECORD_VIDEO_TYPE</a></li><li><a href="global.html#CRVideo_RECORD_VLAYOUT">CRVideo_RECORD_VLAYOUT</a></li><li><a href="global.html#CRVideo_RefreshAllQueueStatus">CRVideo_RefreshAllQueueStatus</a></li><li><a href="global.html#CRVideo_RejectAssignUser">CRVideo_RejectAssignUser</a></li><li><a href="global.html#CRVideo_RejectCall">CRVideo_RejectCall</a></li><li><a href="global.html#CRVideo_ReleaseCtrlRight">CRVideo_ReleaseCtrlRight</a></li><li><a href="global.html#CRVideo_RemoveFromFileMgr">CRVideo_RemoveFromFileMgr</a></li><li><a href="global.html#CRVideo_ReqAssignUser">CRVideo_ReqAssignUser</a></li><li><a href="global.html#CRVideo_RmTransferInfo">CRVideo_RmTransferInfo</a></li><li><a href="global.html#CRVideo_SdkPath">CRVideo_SdkPath</a></li><li><a href="global.html#CRVideo_SendBuffer">CRVideo_SendBuffer</a></li><li><a href="global.html#CRVideo_SendCmd">CRVideo_SendCmd</a></li><li><a href="global.html#CRVideo_SendFile">CRVideo_SendFile</a></li><li><a href="global.html#CRVideo_SendIMmsg">CRVideo_SendIMmsg</a></li><li><a href="global.html#CRVideo_SendKeyCtrlMsg">CRVideo_SendKeyCtrlMsg</a></li><li><a href="global.html#CRVideo_SendMouseCtrlMsg">CRVideo_SendMouseCtrlMsg</a></li><li><a href="global.html#CRVideo_SetAllAudioClose">CRVideo_SetAllAudioClose</a></li><li><a href="global.html#CRVideo_SetAudioCfg">CRVideo_SetAudioCfg</a></li><li><a href="global.html#CRVideo_SetCustomizeScreenImg">CRVideo_SetCustomizeScreenImg</a></li><li><a href="global.html#CRVideo_SetDefaultVideo">CRVideo_SetDefaultVideo</a></li><li><a href="global.html#CRVideo_SetDNDStatus">CRVideo_SetDNDStatus</a></li><li><a href="global.html#CRVideo_SetEnableMutiVideo">CRVideo_SetEnableMutiVideo</a></li><li><a href="global.html#CRVideo_SetFileUploadRate">CRVideo_SetFileUploadRate</a></li><li><a href="global.html#CRVideo_SetMainVideo">CRVideo_SetMainVideo</a></li><li><a href="global.html#CRVideo_SetMediacfg">CRVideo_SetMediacfg</a></li><li><a href="global.html#CRVideo_SetMediaplaypos">CRVideo_SetMediaplaypos</a></li><li><a href="global.html#CRVideo_SetMicVolume">CRVideo_SetMicVolume</a></li><li><a href="global.html#CRVideo_Setmousehotspot">CRVideo_Setmousehotspot</a></li><li><a href="global.html#CRVideo_SetNetDiskTransportPause">CRVideo_SetNetDiskTransportPause</a></li><li><a href="global.html#CRVideo_SetPicResource">CRVideo_SetPicResource</a></li><li><a href="global.html#CRVideo_SetRecordFileEncrypt">CRVideo_SetRecordFileEncrypt</a></li><li><a href="global.html#CRVideo_SetRecordUploadCfg">CRVideo_SetRecordUploadCfg</a></li><li><a href="global.html#CRVideo_SetRecordVideos">CRVideo_SetRecordVideos</a></li><li><a href="global.html#CRVideo_SetScreenShareCfg">CRVideo_SetScreenShareCfg</a></li><li><a href="global.html#CRVideo_SetServerAddr">CRVideo_SetServerAddr</a></li><li><a href="global.html#CRVideo_SetSpeakerVolume">CRVideo_SetSpeakerVolume</a></li><li><a href="global.html#CRVideo_SetVideoCfg">CRVideo_SetVideoCfg</a></li><li><a href="global.html#CRVideo_Setvideowallmode">CRVideo_Setvideowallmode</a></li><li><a href="global.html#CRVideo_StartGetAudioPCM">CRVideo_StartGetAudioPCM</a></li><li><a href="global.html#CRVideo_StartPlayMedia">CRVideo_StartPlayMedia</a></li><li><a href="global.html#CRVideo_StartQueuing">CRVideo_StartQueuing</a></li><li><a href="global.html#CRVideo_StartRecordIng">CRVideo_StartRecordIng</a></li><li><a href="global.html#CRVideo_StartScreenShare">CRVideo_StartScreenShare</a></li><li><a href="global.html#CRVideo_StartService">CRVideo_StartService</a></li><li><a href="global.html#CRVideo_StartTransferFile">CRVideo_StartTransferFile</a></li><li><a href="global.html#CRVideo_StartUserStatusNotify">CRVideo_StartUserStatusNotify</a></li><li><a href="global.html#CRVideo_STOP_REASON">CRVideo_STOP_REASON</a></li><li><a href="global.html#CRVideo_StopGetAudioPCM">CRVideo_StopGetAudioPCM</a></li><li><a href="global.html#CRVideo_StopPlayMedia">CRVideo_StopPlayMedia</a></li><li><a href="global.html#CRVideo_StopQueuing">CRVideo_StopQueuing</a></li><li><a href="global.html#CRVideo_StopRecord">CRVideo_StopRecord</a></li><li><a href="global.html#CRVideo_StopScreenShare">CRVideo_StopScreenShare</a></li><li><a href="global.html#CRVideo_StopService">CRVideo_StopService</a></li><li><a href="global.html#CRVideo_StopUserStatusNotify">CRVideo_StopUserStatusNotify</a></li><li><a href="global.html#CRVideo_Switchtopage">CRVideo_Switchtopage</a></li><li><a href="global.html#CRVideo_ToolBarUI">CRVideo_ToolBarUI</a></li><li><a href="global.html#CRVideo_Uninit">CRVideo_Uninit</a></li><li><a href="global.html#CRVideo_Uploadnetdiskfile">CRVideo_Uploadnetdiskfile</a></li><li><a href="global.html#CRVideo_UploadRecordFile">CRVideo_UploadRecordFile</a></li><li><a href="global.html#CRVideo_VIDEO_FORMAT">CRVideo_VIDEO_FORMAT</a></li><li><a href="global.html#CRVideo_VIDEO_SHOW_SIZE">CRVideo_VIDEO_SHOW_SIZE</a></li><li><a href="global.html#CRVideo_VIDEO_WH_RATE">CRVideo_VIDEO_WH_RATE</a></li><li><a href="global.html#CRVideo_VIDEOLAYOUTMODE">CRVideo_VIDEOLAYOUTMODE</a></li><li><a href="global.html#CRVideo_VSTATUS">CRVideo_VSTATUS</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-cr_callback.html">cr/callback</a></li><li><a href="module-cr_error.html">cr/error</a></li></ul><h3>Classes</h3><ul><li><a href="CRVideo.CbProxy.html">CbProxy</a></li><li><a href="CRVideo.Container.html">Container</a></li><li><a href="CRVideo.MediaContainer.html">MediaContainer</a></li><li><a href="CRVideo.ScreenShareContainer.html">ScreenShareContainer</a></li><li><a href="CRVideo.VideoContainer.html">VideoContainer</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CRVideo">CRVideo</a></li><li><a href="global.html#CRVideo_AcceptAssignUser">CRVideo_AcceptAssignUser</a></li><li><a href="global.html#CRVideo_AcceptCall">CRVideo_AcceptCall</a></li><li><a href="global.html#CRVideo_Addboardelement">CRVideo_Addboardelement</a></li><li><a href="global.html#CRVideo_AddFileToRecordMgr">CRVideo_AddFileToRecordMgr</a></li><li><a href="global.html#CRVideo_ASTATUS">CRVideo_ASTATUS</a></li><li><a href="global.html#CRVideo_Call">CRVideo_Call</a></li><li><a href="global.html#CRVideo_CallMoreParty">CRVideo_CallMoreParty</a></li><li><a href="global.html#CRVideo_CancelCallMoreParty">CRVideo_CancelCallMoreParty</a></li><li><a href="global.html#CRVideo_CancelFileTransfer">CRVideo_CancelFileTransfer</a></li><li><a href="global.html#CRVideo_CancelSend">CRVideo_CancelSend</a></li><li><a href="global.html#CRVideo_CancelUploadRecordFile">CRVideo_CancelUploadRecordFile</a></li><li><a href="global.html#CRVideo_Canclenetdiskfile">CRVideo_Canclenetdiskfile</a></li><li><a href="global.html#CRVideo_Closeboard">CRVideo_Closeboard</a></li><li><a href="global.html#CRVideo_CloseMic">CRVideo_CloseMic</a></li><li><a href="global.html#CRVideo_CloseVideo">CRVideo_CloseVideo</a></li><li><a href="global.html#CRVideo_Createboard">CRVideo_Createboard</a></li><li><a href="global.html#CRVideo_CreateElementID">CRVideo_CreateElementID</a></li><li><a href="global.html#CRVideo_CreateMeeting">CRVideo_CreateMeeting</a></li><li><a href="global.html#CRVideo_CreatMediaObj">CRVideo_CreatMediaObj</a></li><li><a href="global.html#CRVideo_CreatScreenShareObj">CRVideo_CreatScreenShareObj</a></li><li><a href="global.html#CRVideo_CreatVideoObj">CRVideo_CreatVideoObj</a></li><li><a href="global.html#CRVideo_Delboardelement">CRVideo_Delboardelement</a></li><li><a href="global.html#CRVideo_Deletenetdiskfile">CRVideo_Deletenetdiskfile</a></li><li><a href="global.html#CRVideo_DestroyMeeting">CRVideo_DestroyMeeting</a></li><li><a href="global.html#CRVideo_Downloadnetdiskfile">CRVideo_Downloadnetdiskfile</a></li><li><a href="global.html#CRVideo_ENCODE_TYPE">CRVideo_ENCODE_TYPE</a></li><li><a href="global.html#CRVideo_EnterMeeting">CRVideo_EnterMeeting</a></li><li><a href="global.html#CRVideo_ExitMeeting">CRVideo_ExitMeeting</a></li><li><a href="global.html#CRVideo_GetAllFilesInMediaPath">CRVideo_GetAllFilesInMediaPath</a></li><li><a href="global.html#CRVideo_GetAllMembers">CRVideo_GetAllMembers</a></li><li><a href="global.html#CRVideo_GetAllQueueInfo">CRVideo_GetAllQueueInfo</a></li><li><a href="global.html#CRVideo_GetAllRecordFiles">CRVideo_GetAllRecordFiles</a></li><li><a href="global.html#CRVideo_GetAllTransferInfos">CRVideo_GetAllTransferInfos</a></li><li><a href="global.html#CRVideo_GetAllVideoInfo">CRVideo_GetAllVideoInfo</a></li><li><a href="global.html#CRVideo_GetAudioCfg">CRVideo_GetAudioCfg</a></li><li><a href="global.html#CRVideo_GetAudioMicNames">CRVideo_GetAudioMicNames</a></li><li><a href="global.html#CRVideo_GetAudioSpkNames">CRVideo_GetAudioSpkNames</a></li><li><a href="global.html#CRVideo_GetAudioStatus">CRVideo_GetAudioStatus</a></li><li><a href="global.html#CRVideo_Getcurrentmainpage">CRVideo_Getcurrentmainpage</a></li><li><a href="global.html#CRVideo_Getcurrentsubpage">CRVideo_Getcurrentsubpage</a></li><li><a href="global.html#CRVideo_GetDefaultVideo">CRVideo_GetDefaultVideo</a></li><li><a href="global.html#CRVideo_GetEnableMutiVideo">CRVideo_GetEnableMutiVideo</a></li><li><a href="global.html#CRVideo_GetMainVideo">CRVideo_GetMainVideo</a></li><li><a href="global.html#CRVideo_GetMediacfg">CRVideo_GetMediacfg</a></li><li><a href="global.html#CRVideo_Getmediaimg">CRVideo_Getmediaimg</a></li><li><a href="global.html#CRVideo_Getmediainfo">CRVideo_Getmediainfo</a></li><li><a href="global.html#CRVideo_GetMeetings">CRVideo_GetMeetings</a></li><li><a href="global.html#CRVideo_GetMemberInfo">CRVideo_GetMemberInfo</a></li><li><a href="global.html#CRVideo_GetMemberNickName">CRVideo_GetMemberNickName</a></li><li><a href="global.html#CRVideo_GetMicEnergy">CRVideo_GetMicEnergy</a></li><li><a href="global.html#CRVideo_GetMicVolume">CRVideo_GetMicVolume</a></li><li><a href="global.html#CRVideo_GetNetDiskFileList">CRVideo_GetNetDiskFileList</a></li><li><a href="global.html#CRVideo_GetNetDiskSummary">CRVideo_GetNetDiskSummary</a></li><li><a href="global.html#CRVideo_GetQueueStatus">CRVideo_GetQueueStatus</a></li><li><a href="global.html#CRVideo_GetQueuingInfo">CRVideo_GetQueuingInfo</a></li><li><a href="global.html#CRVideo_GetRecDuration">CRVideo_GetRecDuration</a></li><li><a href="global.html#CRVideo_GetRecFileSize">CRVideo_GetRecFileSize</a></li><li><a href="global.html#CRVideo_GetScreenShareCfg">CRVideo_GetScreenShareCfg</a></li><li><a href="global.html#CRVideo_GetServerAddr">CRVideo_GetServerAddr</a></li><li><a href="global.html#CRVideo_GetServingQueues">CRVideo_GetServingQueues</a></li><li><a href="global.html#CRVideo_GetSessionInfo">CRVideo_GetSessionInfo</a></li><li><a href="global.html#CRVideo_GetShareScreenDecodeImg">CRVideo_GetShareScreenDecodeImg</a></li><li><a href="global.html#CRVideo_GetSpeakerVolume">CRVideo_GetSpeakerVolume</a></li><li><a href="global.html#CRVideo_GetTransferInfo">CRVideo_GetTransferInfo</a></li><li><a href="global.html#CRVideo_GetUserStatus">CRVideo_GetUserStatus</a></li><li><a href="global.html#CRVideo_GetVideoCfg">CRVideo_GetVideoCfg</a></li><li><a href="global.html#CRVideo_GetVideoImg">CRVideo_GetVideoImg</a></li><li><a href="global.html#CRVideo_GetVideoStatus">CRVideo_GetVideoStatus</a></li><li><a href="global.html#CRVideo_GetVideoWallMode">CRVideo_GetVideoWallMode</a></li><li><a href="global.html#CRVideo_GetWatchableVideos">CRVideo_GetWatchableVideos</a></li><li><a href="global.html#CRVideo_GiveCtrlRight">CRVideo_GiveCtrlRight</a></li><li><a href="global.html#CRVideo_HTTP_TRANSFER_RESULT">CRVideo_HTTP_TRANSFER_RESULT</a></li><li><a href="global.html#CRVideo_HTTP_TRANSFER_STAT">CRVideo_HTTP_TRANSFER_STAT</a></li><li><a href="global.html#CRVideo_HungupCall">CRVideo_HungupCall</a></li><li><a href="global.html#CRVideo_Init2">CRVideo_Init2</a></li><li><a href="global.html#CRVideo_InitBoardPageDat">CRVideo_InitBoardPageDat</a></li><li><a href="global.html#CRVideo_InitQueueDat">CRVideo_InitQueueDat</a></li><li><a href="global.html#CRVideo_IsUserInMeeting">CRVideo_IsUserInMeeting</a></li><li><a href="global.html#CRVideo_KEY_MSG_TYPE">CRVideo_KEY_MSG_TYPE</a></li><li><a href="global.html#CRVideo_Login">CRVideo_Login</a></li><li><a href="global.html#CRVideo_Logout">CRVideo_Logout</a></li><li><a href="global.html#CRVideo_MAIN_PAGE_TYPE">CRVideo_MAIN_PAGE_TYPE</a></li><li><a href="global.html#CRVideo_MakeNetDiskFileID">CRVideo_MakeNetDiskFileID</a></li><li><a href="global.html#CRVideo_ModifyBoardElement">CRVideo_ModifyBoardElement</a></li><li><a href="global.html#CRVideo_MOUSE_KEY_TYPE">CRVideo_MOUSE_KEY_TYPE</a></li><li><a href="global.html#CRVideo_MOUSE_MSG_TYPE">CRVideo_MOUSE_MSG_TYPE</a></li><li><a href="global.html#CRVideo_OpenMic">CRVideo_OpenMic</a></li><li><a href="global.html#CRVideo_OpenVideo">CRVideo_OpenVideo</a></li><li><a href="global.html#CRVideo_PausePlayMedia">CRVideo_PausePlayMedia</a></li><li><a href="global.html#CRVideo_PlaybackRecordFile">CRVideo_PlaybackRecordFile</a></li><li><a href="global.html#CRVideo_PluginVersion">CRVideo_PluginVersion</a></li><li><a href="global.html#CRVideo_REC_DATATYPE">CRVideo_REC_DATATYPE</a></li><li><a href="global.html#CRVideo_REC_VCONTENT_TYPE">CRVideo_REC_VCONTENT_TYPE</a></li><li><a href="global.html#CRVideo_RECORD_AUDIO_TYPE">CRVideo_RECORD_AUDIO_TYPE</a></li><li><a href="global.html#CRVideo_RECORD_STATE">CRVideo_RECORD_STATE</a></li><li><a href="global.html#CRVideo_RECORD_VIDEO_TYPE">CRVideo_RECORD_VIDEO_TYPE</a></li><li><a href="global.html#CRVideo_RECORD_VLAYOUT">CRVideo_RECORD_VLAYOUT</a></li><li><a href="global.html#CRVideo_RefreshAllQueueStatus">CRVideo_RefreshAllQueueStatus</a></li><li><a href="global.html#CRVideo_RejectAssignUser">CRVideo_RejectAssignUser</a></li><li><a href="global.html#CRVideo_RejectCall">CRVideo_RejectCall</a></li><li><a href="global.html#CRVideo_ReleaseCtrlRight">CRVideo_ReleaseCtrlRight</a></li><li><a href="global.html#CRVideo_RemoveFromFileMgr">CRVideo_RemoveFromFileMgr</a></li><li><a href="global.html#CRVideo_ReqAssignUser">CRVideo_ReqAssignUser</a></li><li><a href="global.html#CRVideo_RmTransferInfo">CRVideo_RmTransferInfo</a></li><li><a href="global.html#CRVideo_SdkPath">CRVideo_SdkPath</a></li><li><a href="global.html#CRVideo_SendBuffer">CRVideo_SendBuffer</a></li><li><a href="global.html#CRVideo_SendCmd">CRVideo_SendCmd</a></li><li><a href="global.html#CRVideo_SendFile">CRVideo_SendFile</a></li><li><a href="global.html#CRVideo_SendIMmsg">CRVideo_SendIMmsg</a></li><li><a href="global.html#CRVideo_SendKeyCtrlMsg">CRVideo_SendKeyCtrlMsg</a></li><li><a href="global.html#CRVideo_SendMouseCtrlMsg">CRVideo_SendMouseCtrlMsg</a></li><li><a href="global.html#CRVideo_SetAllAudioClose">CRVideo_SetAllAudioClose</a></li><li><a href="global.html#CRVideo_SetAudioCfg">CRVideo_SetAudioCfg</a></li><li><a href="global.html#CRVideo_SetCustomizeScreenImg">CRVideo_SetCustomizeScreenImg</a></li><li><a href="global.html#CRVideo_SetDefaultVideo">CRVideo_SetDefaultVideo</a></li><li><a href="global.html#CRVideo_SetDNDStatus">CRVideo_SetDNDStatus</a></li><li><a href="global.html#CRVideo_SetEnableMutiVideo">CRVideo_SetEnableMutiVideo</a></li><li><a href="global.html#CRVideo_SetFileUploadRate">CRVideo_SetFileUploadRate</a></li><li><a href="global.html#CRVideo_SetMainVideo">CRVideo_SetMainVideo</a></li><li><a href="global.html#CRVideo_SetMediacfg">CRVideo_SetMediacfg</a></li><li><a href="global.html#CRVideo_SetMediaplaypos">CRVideo_SetMediaplaypos</a></li><li><a href="global.html#CRVideo_SetMicVolume">CRVideo_SetMicVolume</a></li><li><a href="global.html#CRVideo_Setmousehotspot">CRVideo_Setmousehotspot</a></li><li><a href="global.html#CRVideo_SetNetDiskTransportPause">CRVideo_SetNetDiskTransportPause</a></li><li><a href="global.html#CRVideo_SetPicResource">CRVideo_SetPicResource</a></li><li><a href="global.html#CRVideo_SetRecordFileEncrypt">CRVideo_SetRecordFileEncrypt</a></li><li><a href="global.html#CRVideo_SetRecordUploadCfg">CRVideo_SetRecordUploadCfg</a></li><li><a href="global.html#CRVideo_SetRecordVideos">CRVideo_SetRecordVideos</a></li><li><a href="global.html#CRVideo_SetScreenShareCfg">CRVideo_SetScreenShareCfg</a></li><li><a href="global.html#CRVideo_SetServerAddr">CRVideo_SetServerAddr</a></li><li><a href="global.html#CRVideo_SetSpeakerVolume">CRVideo_SetSpeakerVolume</a></li><li><a href="global.html#CRVideo_SetVideoCfg">CRVideo_SetVideoCfg</a></li><li><a href="global.html#CRVideo_Setvideowallmode">CRVideo_Setvideowallmode</a></li><li><a href="global.html#CRVideo_StartGetAudioPCM">CRVideo_StartGetAudioPCM</a></li><li><a href="global.html#CRVideo_StartPlayMedia">CRVideo_StartPlayMedia</a></li><li><a href="global.html#CRVideo_StartQueuing">CRVideo_StartQueuing</a></li><li><a href="global.html#CRVideo_StartQueuing2">CRVideo_StartQueuing2</a></li><li><a href="global.html#CRVideo_StartRecordIng">CRVideo_StartRecordIng</a></li><li><a href="global.html#CRVideo_StartScreenShare">CRVideo_StartScreenShare</a></li><li><a href="global.html#CRVideo_StartService">CRVideo_StartService</a></li><li><a href="global.html#CRVideo_StartTransferFile">CRVideo_StartTransferFile</a></li><li><a href="global.html#CRVideo_StartUserStatusNotify">CRVideo_StartUserStatusNotify</a></li><li><a href="global.html#CRVideo_STOP_REASON">CRVideo_STOP_REASON</a></li><li><a href="global.html#CRVideo_StopGetAudioPCM">CRVideo_StopGetAudioPCM</a></li><li><a href="global.html#CRVideo_StopPlayMedia">CRVideo_StopPlayMedia</a></li><li><a href="global.html#CRVideo_StopQueuing">CRVideo_StopQueuing</a></li><li><a href="global.html#CRVideo_StopRecord">CRVideo_StopRecord</a></li><li><a href="global.html#CRVideo_StopScreenShare">CRVideo_StopScreenShare</a></li><li><a href="global.html#CRVideo_StopService">CRVideo_StopService</a></li><li><a href="global.html#CRVideo_StopUserStatusNotify">CRVideo_StopUserStatusNotify</a></li><li><a href="global.html#CRVideo_Switchtopage">CRVideo_Switchtopage</a></li><li><a href="global.html#CRVideo_ToolBarUI">CRVideo_ToolBarUI</a></li><li><a href="global.html#CRVideo_Uninit">CRVideo_Uninit</a></li><li><a href="global.html#CRVideo_Uploadnetdiskfile">CRVideo_Uploadnetdiskfile</a></li><li><a href="global.html#CRVideo_UploadRecordFile">CRVideo_UploadRecordFile</a></li><li><a href="global.html#CRVideo_UploadRecordFile2">CRVideo_UploadRecordFile2</a></li><li><a href="global.html#CRVideo_VIDEO_FORMAT">CRVideo_VIDEO_FORMAT</a></li><li><a href="global.html#CRVideo_VIDEO_SHOW_SIZE">CRVideo_VIDEO_SHOW_SIZE</a></li><li><a href="global.html#CRVideo_VIDEO_WH_RATE">CRVideo_VIDEO_WH_RATE</a></li><li><a href="global.html#CRVideo_VIDEOLAYOUTMODE">CRVideo_VIDEOLAYOUTMODE</a></li><li><a href="global.html#CRVideo_VSTATUS">CRVideo_VSTATUS</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Dec 07 2017 15:17:26 GMT+0800 (中国标准时间)
+<<<<<<< .mine
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Jan 29 2018 16:01:43 GMT+0800 (中国标准时间)
+||||||| .r379
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Thu Jan 11 2018 20:46:33 GMT+0800 (中国标准时间)
+=======
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Wed Jan 17 2018 14:31:38 GMT+0800 (中国标准时间)
+>>>>>>> .r380
 </footer>
 
 <script> prettyPrint(); </script>

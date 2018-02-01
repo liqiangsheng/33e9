@@ -47,6 +47,16 @@ $(function(){
 		$("#login_name_name").val("").focus();
 	});
 
+	$(".inputLayer3").click(function(){
+		$(".inputLayer3").hide();
+		$("#login_cpyname_name").val("").focus();
+	});
+
+	$(".inputLayer4").click(function(){
+		$(".inputLayer4").hide();
+		$("#login_psd_name").val("").focus();
+	});
+	
 	// 坐席：的点击事件
 	$("#login_style_img").click(function(){
 		$("#login_style_pull").css("display","block");

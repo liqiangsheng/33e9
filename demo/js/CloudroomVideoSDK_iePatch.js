@@ -112,6 +112,20 @@ function crMgrObj::notifyCallHungup()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyCallHungup}, Array.prototype.slice.call(arguments));
 }
+function crMgrObj::callMorePartyRslt()
+{
+	__crVideo_CallBack.apply({"proxy":CRVideo_CallMorePartyRslt}, Array.prototype.slice.call(arguments));
+}
+function crMgrObj::cancelCallMorePartyRslt()
+{
+	__crVideo_CallBack.apply({"proxy":CRVideo_CancelCallMorePartyRslt}, Array.prototype.slice.call(arguments));
+}
+function crMgrObj::notifyCallMorePartyStatus()
+{
+	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyCallMorePartyStatus}, Array.prototype.slice.call(arguments));
+}
+
+
 function crMgrObj::sendCmdRlst()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_SendCmdRlst}, Array.prototype.slice.call(arguments));
@@ -233,10 +247,23 @@ function crMeetObj::cancelUploadRecordFileErr()
 function crMeetObj::notifyRecordFileStateChanged()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyRecordFileStateChanged}, Array.prototype.slice.call(arguments));
-}function crMeetObj::notifyRecordFileUploadProgress()
+}
+function crMeetObj::notifyRecordFileUploadProgress()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyRecordFileUploadProgress}, Array.prototype.slice.call(arguments));
 }
+//function crMeetObj::svrRecordStateChanged()
+//{
+//	__crVideo_CallBack.apply({"proxy":CRVideo_SvrRecordStateChanged}, Array.prototype.slice.call(arguments));
+//}
+//function crMeetObj::getSvrRecordInfo()
+//{
+//	__crVideo_CallBack.apply({"proxy":CRVideo_GetSvrRecordInfo}, Array.prototype.slice.call(arguments));
+//}
+//function crMeetObj::getSvrRecordInfoEx()
+//{
+//	__crVideo_CallBack.apply({"proxy":CRVideo_GetSvrRecordInfoEx}, Array.prototype.slice.call(arguments));
+//}
 function crMeetObj::startScreenShareRslt()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_StartScreenShareRslt}, Array.prototype.slice.call(arguments));
@@ -244,7 +271,8 @@ function crMeetObj::startScreenShareRslt()
 function crMeetObj::stopScreenShareRslt()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_StopScreenShareRslt}, Array.prototype.slice.call(arguments));
-}function crMeetObj::notifyScreenShareStarted()
+}
+function crMeetObj::notifyScreenShareStarted()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyScreenShareStarted}, Array.prototype.slice.call(arguments));
 }
@@ -335,10 +363,10 @@ function crMeetObj::getNetDiskFileListRslt()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_GetNetDiskFileListRslt}, Array.prototype.slice.call(arguments));
 }
-function crMeetObj::notifyNetDiskIsFull()
-{
-	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyNetDiskIsFull}, Array.prototype.slice.call(arguments));
-}
+// function crMeetObj::notifyNetDiskIsFull()
+// {
+// 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyNetDiskIsFull}, Array.prototype.slice.call(arguments));
+// }
 function crMeetObj::notifyNetDiskFileDeleteRslt()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyNetDiskFileDeleteRslt}, Array.prototype.slice.call(arguments));
@@ -371,18 +399,18 @@ function crMeetObj::notifyMemberMediaData()
 {
  	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyMemberMediaData}, Array.prototype.slice.call(arguments));
 }
-function crMeetObj::clientInviteRslt()
-{
-	__crVideo_CallBack.apply({"proxy":CRVideo_ClientInviteRslt}, Array.prototype.slice.call(arguments));
-}
-function crMeetObj::clientCancelInviteRslt()
-{
-	__crVideo_CallBack.apply({"proxy":CRVideo_ClientCancelInviteRslt}, Array.prototype.slice.call(arguments));
-}
-function crMeetObj::notifyInviteStatus()
-{
-	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyInviteStatus}, Array.prototype.slice.call(arguments));
-}
+// function crMeetObj::clientInviteRslt()
+// {
+// 	__crVideo_CallBack.apply({"proxy":CRVideo_ClientInviteRslt}, Array.prototype.slice.call(arguments));
+// }
+// function crMeetObj::clientCancelInviteRslt()
+// {
+// 	__crVideo_CallBack.apply({"proxy":CRVideo_ClientCancelInviteRslt}, Array.prototype.slice.call(arguments));
+// }
+// function crMeetObj::notifyInviteStatus()
+// {
+// 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyInviteStatus}, Array.prototype.slice.call(arguments));
+// }
 
 
 function crQueueObj::initQueueDatRslt()

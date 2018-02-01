@@ -323,7 +323,7 @@ CRVideo_NotifyShareRectChanged.callback = function(x,y,w,h)
 function login() {
 	// 插件是否初始化
 	if(!g_is_init) {
-		var result = CRVideo_Init("CLOUDROOM",g_location_dir);
+		var result = CRVideo_Init2(g_location_dir);
 		if(result == CRVideo_WEB_OCX_NOTINSTALLED) {
 			// 没有安装
 			popTip("没有安装插件");
@@ -484,7 +484,7 @@ CRVideo_EnterMeetingRslt.callback = function(sdkErr) {
 			g_meet_video5.setVisibleNickName(0);
 			g_meet_video5.keepAspectRatio(true);
 		}
-		if(g_screenShareObj == undefined) {
+		if(g_screenShareObj == null) {
 			g_screenShareObj = CRVideo_CreatScreenShareObj();
 			g_screenShareObj.id("screenShareObj");
 			$("#screenShareContainer").append(g_screenShareObj.handler());

@@ -77,8 +77,6 @@
 	text-align: center;
 }
 /************************设置弹窗**************************************************/
-
-
 .full_page_div2{
 	width: 600px;
 	height: 500px;
@@ -91,14 +89,12 @@
 	z-index: 444;
 	display: none;
 	border: 1px solid #eb5405;
-	z-index: 2;
 }
 .full_page_div3{
 	width: 100px;
 	height: 260px;
 }
 .full_page_header2,.full_page_header3{
-	/*width: 100%;*/
 	height: 50px;
 	background-color: #eb5405;
 }
@@ -340,4 +336,90 @@
 	border:1px solid #ccc;
 	background-color: #ccc;
 	color: #333;
+}
+/*********************录制文件管理弹层********************************************/
+.list_container{
+	width: 700px;
+	height: 400px;
+	position: fixed;
+	left: 50%;
+	top:50%;
+	margin-left: -350px;
+	margin-top: -200px;
+	border:1px solid red;
+	z-index:444;
+	background-color: #fff;
+}
+.list_page_header{
+	height: 50px;
+	border-bottom: 1px solid #eb5405;
+	background-color: #eb5405;
+}
+.list_name_label{
+	width: 70px;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	color: #000;
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+	margin-left: 20px;
+	color: #fff;
+}
+.list_name_del{
+	display: inline-block;
+	float: right;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	cursor: pointer;
+	color: #fff;
+}
+.table_list{
+	width: 96%;
+	margin-left: 2%;
+	height: 340px;
+	overflow-y:scroll;
+}
+.tabel_list_head{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	border-right: 1px solid #ccc;
+	font-size: 14px;
+}
+.table_list table tr{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+}
+.table_list table tr td,.table_list table tr td div,.table_list table tr td div span{
+	font-size: 12px;
+}
+.table_list table tr td div span{
+	text-align: left;
+}
+.table_done{
+	width: 80%;
+	margin-left: 10%;
+	height: 26px;
+	margin-top: 2px;
+	background-color: #fff;
+	position: relative;
+}
+.table_up_perc{
+	position: absolute;
+	left:0;
+	top:0;
+	background-color: #eb5405;
+	width: 0;
+	height: 100%;
+}
+.table_up_del_rec{
+	display: inline-block;
+	margin-right: 18px;
+	color: green;
+	cursor: pointer;
 }

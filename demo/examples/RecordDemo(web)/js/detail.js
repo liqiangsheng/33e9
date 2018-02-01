@@ -265,7 +265,6 @@ function videoContainerHide(){
 		recordObjHide();
 	}
 }
-//容器显示视频
 function videoContainerShow(){
 	if(g_layout == "layoutA"){
 		$(".detail_right_video").css('display','block');
