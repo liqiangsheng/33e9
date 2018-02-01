@@ -235,14 +235,15 @@
     	</div>
     	<div class="videoPage_right">
     		<div class="videoPage_right_view">
+    			<div class="videoPage_right_view_box"></div>
     			<ul class="videoPage_right_view_list">
-    				<li id="setUp">设置</li>
-    				<li id="startRecord">开始录制</li>
-    				<li id="playback">回放</li>
-    				<li id="upload">上传</li>
-    				<li id="recordMrg">录制文件管理</li>
-    				<li id="singleCamera">单摄像头</li>
-    				<li id="doubleCamera">双摄像头</li>
+    				<li><button id="setUp">设置</button></li>
+    				<li><button id="startRecord">开始录制</button></li>
+    				<li><button id="playback">回放</button></li>
+    				<li><button id="upload">上传</button></li>
+    				<li><button id="recordMrg">录制文件管理</button></li>
+    				<li><button id="singleCamera">单摄像头</button></li>
+    				<li><button id="doubleCamera">双摄像头</button></li>
     			</ul>
     		</div>
     		<div class="videoPage_right_act">
@@ -383,8 +384,48 @@
 				</tr>
 			</table>
 		</div>
+</div>
+<!--*******************************点击了上传*************************************************************-->
+<div class="full_page_div" id="full_page_div">
+	<div class="full_page_header">
+		<span class="name_label" style="font-size: 14px;color: #fff;">上传面板</span>
+		<span class="name_del1"  style="color: #fff;"><img id="name_del1Img" src="image/closepage.png"/></span>
 	</div>
-
+	<div class="full_page_msg">
+		<span class="msg_label">文件名称：</span>
+		<span class="name_label_detail" id="file_name">----</span>
+	</div>
+	<div class="full_page_msg">
+		<span class="msg_label">上传进度：</span>
+		<span class="name_label_detail" id="upload_num_percert">----</span>
+	</div>
+	<div class="full_page_msg" id="percent_container">
+		<div class="percent_box" id="percent_box">
+			<span class="percent_item" id="percent_item"></span>
+		</div>
+	</div>
+	<div class="full_page_msg">
+		<span class="msg_label">上传状态：</span>
+		<span class="name_label_detail"  id="upload_status">准备上传</span>
+	</div>
+	<div class="full_page_button">
+		<button class="full_page_cancle">取消</button>
+		<a class="full_page_submit" style="display: none;" id="catSerRecBtn" target="_blank">查看服务端录像</a>
+	</div>
+</div>
+<!--*******************************弹出层样式（还没录制）*****************************************************-->
+<div class="alert_palyer" id="alert_palyer" style="display: none;">
+		<div class="alert_page_header">
+			<span class="alert_name_label" style="font-size: 20px;color: #fff;">提示</span>
+			<span class="alert_name_del" style="color: #fff;"><img id="alert_name_delImg" src="image/closepage.png"/></span>
+		</div>
+		<div class="alert_page_msg" id="alert_page_msg">
+			<p class="alert_label_detail"></p>
+		</div>
+		<div class="alert_page_button">
+			<button class="alertr_page_commit">确定</button>
+		</div>
+</div>
 	<!--[if IE]>
 		<object id="crVideoObj" classid="clsid:07EFD662-A1BB-4d8d-9BEE-F7E43E5FEBF5" width="1" height="1" ></object>
 		<object id="crMgrObj" classid="clsid:120AD2B0-68F2-46c6-88D8-52173F501C0F" width="1" height="1" ></object>

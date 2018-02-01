@@ -215,7 +215,9 @@ $("#stopImg").click(function(){
 $("#setUp").click(function(){
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#full_page_div2").css({"display":"block"});
-	
+	flag = 0;
+	flag1 = 0;
+	$(".videoPage_right_view_box").empty();
 })
 
 //*******************************录制,视频设置*******************************
@@ -238,39 +240,196 @@ $("#closepage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
 	$("#list_container").css({"display":"none"});
+	layoutB()
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
 })
 $("#closepage1").click(function(){
 	$("#box").css({"display":"none"})
 	$("#list_container").css({"display":"none"});
+	layoutB()
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
 })
 
 
 $("#minpage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	
+	layoutB()
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
 })
 
 $(".full_page_cancle2").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	
+	layoutB()
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
 })
 
 //*******************************确定****************************
 $(".full_page_submit2").click(function(){ //还有其他操作
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	
+	layoutB()
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
 })
 
 //**************************点击录制文件*************************************
 $("#recordMrg").click(function(){
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#list_container").css({"display":"block"});
+	flag = 0;
+	flag1 = 0;
+	$(".videoPage_right_view_box").empty();
 })
 //*************************点击单摄像头***************************************
-$("#recordMrg").click(function(){
-	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
-	$("#list_container").css({"display":"block"});
+$("#singleCamera").click(function(){
+	flag1 = 0;
+	$("#singleCamera").attr("disabled","disabled")
+	$("#doubleCamera").attr("disabled",false)
+	$(".videoPage_right_view_box").empty();
+	flag++;
+	if(flag == 1){
+		layoutA()
+	}
 })
+//**************************创建单摄像头************************************************
+function layoutA(){
+		g_videoAObj = CRVideo_CreatVideoObj();
+		g_videoAObj.id("videoAObj");
+		g_videoAObj.width(534);
+		g_videoAObj.height(300);
+		$(".videoPage_right_view_box").append(g_videoAObj.handler());
+	    g_videoAObj.hide();
+	    g_videoAObj.left(124);
+		g_videoAObj.top(10);
+		
+		updateVideo()
+		
+}
+//*************************点击双摄像头***************************************
+$("#doubleCamera").click(function(){
+	flag =0;
+	$("#singleCamera").attr("disabled",false)
+	$("#doubleCamera").attr("disabled","disabled")
+	$(".videoPage_right_view_box").empty();
+	flag1++
+	if(flag1 == 1){
+		layoutB()
+	}
+})
+
+//**************************创建双摄像头************************************************
+function layoutB(){
+		g_videoAObj = CRVideo_CreatVideoObj();
+		g_videoAObj.id("videoAObj");
+		g_videoAObj.width(375);
+		g_videoAObj.height(210);
+		$(".videoPage_right_view_box").append(g_videoAObj.handler());
+	    g_videoAObj.hide();
+	    g_videoAObj.left(0);
+		g_videoAObj.top(40);
+		
+		g_videoBObj = CRVideo_CreatVideoObj();
+		g_videoBObj.id("videoBObj");
+		g_videoBObj.width(375);
+		g_videoBObj.height(210);
+		$(".videoPage_right_view_box").append(g_videoBObj.handler());
+	    g_videoBObj.hide();
+	    g_videoBObj.left(375);
+		g_videoBObj.top(40);
+		
+		updateVideo()
+		
+}
+
+//*************************点击开始录制***************************************
+$("#startRecord").click(function(){
+	flag = 0;
+	flag1 = 0;
+	$(".videoPage_right_view_box").empty();
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+})
+//*************************点击回放***************************************
+$("#playback").click(function(){
+	flag = 0;
+	flag1 = 0;
+	$(".videoPage_right_view_box").empty();
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+	alertLayer("还没录制")
+})
+//*************************点击上传***************************************
+$("#upload").click(function(){
+	flag = 0;
+	flag1 = 0;
+	$(".videoPage_right_view_box").empty();
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
+	$("#full_page_div").css("display","block");
+})
+
+$("#name_del1Img,.full_page_cancle").click(function(){
+	
+	$("#box").css({"display":"none"});
+	$("#full_page_div").css("display","none");
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+	layoutB()
+})
+//*****************************弹层（还没录制）********************************************
+
+function alertLayer(msg){
+	flag = 0;
+	flag1 = 0;
+	$(".videoPage_right_view_box").empty();
+    $(".alert_label_detail").text(msg);
+    $("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
+    $(".alert_palyer").css("display","block");
+    
+}
+
+//  点击弹出层的确定 x
+$("#alert_name_delImg").click(function(){
+   $("#box").css({"display":"none"});
+	$("#alert_palyer").css("display","none");
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+	layoutB()
+})
+$(".alertr_page_commit").click(function(){
+   $("#box").css({"display":"none"});
+	$("#alert_palyer").css("display","none");
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+	layoutB()
+})
+
+ /** * **************************更新摄像头**********************************/
+function updateVideo(){
+        //获取用户所有摄像头信息 还会列表
+	var devices = CRVideo_GetAllVideoInfo(g_userID);
+	
+	try{
+	
+	    if(g_videoAObj && devices.length > 0){
+	        //g_videoAObj里面的内置方法setVideo（usrID,videoID）,setVisibleNickName(value);
+	       
+	        g_videoAObj.setVideo(g_userID,devices[0]["videoID"]);
+	        g_videoAObj.setVisibleNickName(false);
+	    }
+	    if(g_videoBObj && devices.length > 1){
+	        g_videoBObj.setVideo(g_userID,devices[1]["videoID"]);
+	                g_videoBObj.setVisibleNickName(false);
+	            }
+	
+	        }catch(e){ }
+       
+}
+

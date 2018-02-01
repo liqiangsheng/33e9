@@ -207,10 +207,13 @@
        g_getAll_videfile_list = CRVideo_GetAllRecordFiles();
     } 
     
-    //点击对应的下标进入对应的会议房间
-        $(".menu_right_detail dl").map(function(index,item){
-            $(this).click(function(){
-                enterRoom()
-            })
-        });
+//**********************点击对应的下标进入对应的会议房间********************************
+ $(".menu_right_detail dl").map(function(index,item){
+    $(this).click(function(){
+        enterRoom()
+        layoutB()
+    	$("#doubleCamera").attr("disabled",false)
+        $("#singleCamera").attr("disabled",false)
+    })
+});
     

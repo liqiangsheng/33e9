@@ -423,3 +423,192 @@
 	color: green;
 	cursor: pointer;
 }
+/*************************************上传面板弹框********************************************/
+.full_page_div{
+	width: 600px;
+	height: 400px;
+	position: fixed;
+	left: 50%;
+	top:50%;
+	margin-left: -300px;
+	margin-top: -200px;
+	background-color: #fff;
+	z-index: 333;
+	display: none;
+}
+.full_page_header{
+	height: 50px;
+	border-bottom: 1px solid #eb5405;
+	background-color: #eb5405;
+}
+.name_label{
+	width: 70px;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	color: #000;
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+	margin-left: 64px;
+}
+.name_label_detail{
+	width: 400px;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	color: #333;
+	font-size: 12px;
+}
+.full_page_msg{
+	width: 80%;
+	margin-left: 10%;
+	height: 50px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+#percent_container{
+	width: 80%;
+	margin-left: 20%;
+	height: 50px;
+	margin-top: 10px;
+	text-align: center;
+	overflow: hidden;
+}
+.msg_label{
+	width: 70px;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	color: #000;
+	font-size: 14px;
+}
+.name_label_detail{
+	width: 400px;
+	height: auto;
+	line-height: 30px;
+	text-align: left;
+	color: #333;
+	font-size: 12px
+}
+.full_page_button{
+	width: 60%;
+	margin-left: 20%;
+	height: 40px;
+	margin-top: 20px;
+	text-align: center;
+}
+.full_page_button button,.full_page_button a{
+	display: inline-block;
+	border:0;
+	outline: none;
+	width: 130px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 4px;
+}
+.full_page_cancle,.full_page_cancle2{
+	border:1px solid #ccc;
+	background-color: #ccc;
+	color: #333;
+	margin-left: 20px;
+}
+.full_page_submit2{
+	margin-left: 20px;
+	border:1px solid #eb5405;
+	background-color: #eb5405;
+	color: #fff;
+}
+.full_page_submit{
+	margin-left: 20px;
+	border:1px solid #eb5405;
+	background-color: #eb5405;
+	color: #fff;
+}
+.full_page_cancle.oncancle,.full_page_cancle2.oncancle{
+	border:1px solid #eb5405;
+	background-color: #eb5405;
+	color: #fff;
+}
+.full_page_submit.onsubmit,.full_page_submit2.onsubmit{
+	border:1px solid #ccc;
+	background-color: #ccc;
+	color: #333;
+}
+/******************弹出层（还没录制）****************************************************/
+#alert_palyer{
+	min-width: 400px;
+	height: 300px;
+	position: fixed;
+	left:50%;
+	top:50%;
+	margin-left: -200px;
+	margin-top: -150px;
+	border:1px solid red;
+	z-index:777;
+	background-color: #fff;
+}
+.alert_page_header{
+	/*width: 100%;*/
+	height: 50px;
+	border-bottom: 1px solid #eb5405;
+	background-color: #eb5405;
+}
+.alert_name_label{
+	width: 70px;
+	height: 50px;
+	line-height: 50px;
+	text-align: left;
+	color: #000;
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+	margin-left: 64px;
+}
+.alert_name_del{
+	display: inline-block;
+	float: right;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.alert_page_msg{
+	width: 80%;
+	margin-left: 10%;
+	height: 140px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.alert_label_detail{
+	width: 300px;
+	height: auto;
+	line-height: 40px;
+	text-align: left;
+	color: #333;
+	font-size: 14px;
+	text-align: center;
+	margin-top: 60px;
+}
+.alert_page_button{
+	width:60%;
+	margin-left: 20%;
+	height: 60px;
+	margin-top: 20px;
+	text-align: center;
+}
+.alert_page_button button{
+	display: inline-block;
+	outline: none;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 4px;
+	margin-left: 20px;
+	border:1px solid #eb5405;
+	background-color: #eb5405;
+	color: #fff;
+}
