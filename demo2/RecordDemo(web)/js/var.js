@@ -20,6 +20,7 @@
     }
     g_location_dir = g_location_dir.slice(start,end)+"/home/";
     g_location_dir = decodeURIComponent(g_location_dir);
+    console.log(g_location_dir)
     var g_meetingId; // 创建的会议号
     var g_meetingPsw; // 会议密码
     var g_meeLoginTimes = 0; // 记录掉线的次数1
@@ -50,4 +51,6 @@
     var g_video_qp = 0;
     var flag = 0;
     var flag1 = 0;
+    var flag2 = 0;
+    var layout  = "layoutA"; //摄像头样式
     var video_size_arr=[[0,0,0],[144,80,56],[224,128,72],[288,160,100],[336,192,150],[448,256,200],[512,288,250],[576,320,300],[640,360,350],[720,400,420],[848,480,500],[1024,576,650],[1280,720,1000],[1920,1080,2000]];

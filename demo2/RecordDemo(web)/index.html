@@ -239,11 +239,14 @@
     			<ul class="videoPage_right_view_list">
     				<li><button id="setUp">设置</button></li>
     				<li><button id="startRecord">开始录制</button></li>
-    				<li><button id="playback">回放</button></li>
+    				<li><button id="playback" style="display: block;">回放</button><button id="playback1" style="display: none;">停止回放</button></li>
     				<li><button id="upload">上传</button></li>
     				<li><button id="recordMrg">录制文件管理</button></li>
     				<li><button id="singleCamera">单摄像头</button></li>
     				<li><button id="doubleCamera">双摄像头</button></li>
+    			</ul>
+    			<ul class="videoPage_right_view_list1">
+    				<li><button id="stopRecord">停止录制</button></li>
     			</ul>
     		</div>
     		<div class="videoPage_right_act">
@@ -258,6 +261,7 @@
     						<div class="videoPage_right_voice_left_list_box2">
     							<img id="playImg" src="image/icon_04.png"/>
     							<img id="suspendImg" src="image/icon_02.png"/>
+    							<img id="playImg1" src="image/icon_04.png"/>
     							<img id="stopImg" src="image/icon_03.png"/>
     						</div>
     					</li>
@@ -408,9 +412,11 @@
 		<span class="msg_label">上传状态：</span>
 		<span class="name_label_detail"  id="upload_status">准备上传</span>
 	</div>
-	<div class="full_page_button">
+	<div class="full_page_button" id="#full_page_button">
 		<button class="full_page_cancle">取消</button>
-		<a class="full_page_submit" style="display: none;" id="catSerRecBtn" target="_blank">查看服务端录像</a>
+		<button class="full_page_cancle1">确定</button>
+		<button class="full_page_cancle2">取消上传</button>
+		<a class="full_page_submit" style="display: none;" id="catSerRecBtn" target="_blank" href="http://www.cloudroom.com/login.html">查看服务端录像</a>
 	</div>
 </div>
 <!--*******************************弹出层样式（还没录制）*****************************************************-->

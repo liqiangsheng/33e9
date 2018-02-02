@@ -216,4 +216,55 @@
         $("#singleCamera").attr("disabled",false)
     })
 });
+//**********************通知打开影音文件    ********************************
+CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
+       
+  layoutC()
+}
     
+//*************************上传视频的回掉*******************************************
+  // sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
+    CRVideo_NotifyRecordFileStateChanged.callback=function(fileName,state){
+
+        $("#file_name").html(fileName);
+        if(state ==2 ){
+            $('#upload_status').html("上传完成");
+            $("#percent_item").css("width","100%");
+            $("#upload_num_percert").html("100%");
+            $('.full_page_cancle1').css("display","block");
+            $('.full_page_cancle').css("display","none");
+            $('.full_page_cancle2').css("display","none");
+            $(".full_page_submit").css("display","inline-block");
+            //是否在上传
+            g_uploading = false;
+        }else if(state == 1){
+            $(".full_page_submit").css("display","none");
+            $('#upload_status').html("上传中...");
+            $('.full_page_cancle1').css("display","none");
+            $('.full_page_cancle2').css("display","block");
+            $('.full_page_cancle').css("display","none");
+        }else if(state == 0 && g_uploading){
+            $(".full_page_submit").css("display","none");
+            $('#upload_status').html("准备上传...");
+            $('.full_page_cancle1').css("display","none");
+            $('.full_page_cancle2').css("display","block");
+            $('.full_page_cancle').css("display","none");
+            $("#percent_item").css("width","0");
+        }
+    }
+    // 通知录制文件上传进度 fileName - 文件名 percent - 进度0-100
+    CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){
+
+        $(".full_page_submit").css("display","none");
+        $("#percent_item").css("width",percent+"%");
+        $("#upload_num_percert").html(percent + "%");
+
+    }
+
+    // 上传文件失败通知 fileName - 本地文件路径 sdkErr - 操作失败代码,定义见cr/error
+    CRVideo_UploadRecordFileErr.callback=function(fileName,sdkErr){
+        $('#upload_status').html("上传失败")
+        $('.full_page_cancle').html("确定")
+        //是否在上传
+        g_uploading = false;
+    }

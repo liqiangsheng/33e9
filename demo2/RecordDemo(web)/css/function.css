@@ -491,28 +491,32 @@
 	color: #333;
 	font-size: 12px
 }
-.full_page_button{
-	width: 60%;
-	margin-left: 20%;
+#full_page_button{
+	width: 70%;
+	margin-left: 15%;
 	height: 40px;
 	margin-top: 20px;
 	text-align: center;
 }
-.full_page_button button,.full_page_button a{
+#full_page_button button,.full_page_button a{
 	display: inline-block;
 	border:0;
 	outline: none;
-	width: 130px;
+	width: 35%;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
 	border-radius: 4px;
 }
-.full_page_cancle,.full_page_cancle2{
+.full_page_cancle,.full_page_cancle2,.full_page_cancle1,.full_page_cancle2{
 	border:1px solid #ccc;
 	background-color: #ccc;
 	color: #333;
 	margin-left: 20px;
+	float: left;
+}
+.full_page_cancle1,.full_page_cancle2{
+	display: none;
 }
 .full_page_submit2{
 	margin-left: 20px;

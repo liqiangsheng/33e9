@@ -832,7 +832,7 @@ $(function(){
         }
         // 开始播放
 		CRVideo_StartPlayMedia(videoName);
-      
+      console.log(videoName)
     }
     //停止播放媒体
     function video_stop(num){
