@@ -12,8 +12,8 @@
             clearInterval(g_residual_timer);
             g_residual_timer = -1;
         }
-        if(g_layout != null){
-            $(".detail_box").css('display','none');
+        if(layout != null){
+            $(".videoPage").css('display','none');
         }
     }
     //按下键盘的事件
@@ -211,16 +211,36 @@
  $(".menu_right_detail dl").map(function(index,item){
     $(this).click(function(){
         enterRoom()
-        layoutB()
     	$("#doubleCamera").attr("disabled",false)
         $("#singleCamera").attr("disabled",false)
     })
 });
 //**********************通知打开影音文件    ********************************
 CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
-       
-  layoutC()
+	if(layout =="layoutC" && width/height == 4/3){
+		  g_mediaObj.hide();    
+		  g_mediaObj.width(396);
+		  g_mediaObj.height(297);
+		  g_mediaObj.left(176);
+		  g_mediaObj.top(1);
+	 }
 }
+//*****************************媒体停止通知****************************************
+  CRVideo_NotifyMediaStop.callback=function(userid){
+ 
+        if(userid == g_userID){
+            //是否回放
+            g_playbacking = false;
+            $("#playback").css("display","block");
+            $("#playback1").css("display","none");
+            //吊A布局
+            $(".videoPage_right_view_box").empty();
+            enterRoom()
+            //更新摄像头
+            updateVideo()
+
+        }
+    }
     
 //*************************上传视频的回掉*******************************************
   // sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
@@ -267,4 +287,21 @@ CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
         $('.full_page_cancle').html("确定")
         //是否在上传
         g_uploading = false;
+    }
+    //摄像头状态改变
+       //   1会话中设备的所有者ID 2旧状态 3新状态
+      CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
+
+          if(g_userID == userID){
+            /**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
+              if(newStatus !=CRVideo_VSTATUS.VOPEN && newStatus !=CRVideo_VSTATUS.VOPENING){
+                 CRVideo_OpenVideo(g_userID);
+              }
+          }
+      }
+    //摄像头列表更新 通知用户的视频设备有变化	
+    CRVideo_VideoDevChanged.callback =function(userID){
+       if(g_userID == userID){
+            updateVideo();
+       }
     }

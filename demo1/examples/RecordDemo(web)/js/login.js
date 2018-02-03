@@ -824,6 +824,7 @@ $(function(){
         $(".detail_right_video").css('display','none');
 
         layoutB();
+        updateVideo()
         //视频是否正在上传
         if(g_uploading == false){
                 $(".detail_right_video").css('display','block');
@@ -832,7 +833,6 @@ $(function(){
         }
         // 开始播放
 		CRVideo_StartPlayMedia(videoName);
-      console.log(videoName)
     }
     //停止播放媒体
     function video_stop(num){

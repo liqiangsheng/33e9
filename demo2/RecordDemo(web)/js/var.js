@@ -7,7 +7,6 @@
     var g_userID;//用户id
     var g_init = false; ///  是否初始化
     var g_residual_timer = -1;//剩余时间
-    var g_layout; // 视频和摄像头A 布局 两个视频播放布局
     var g_logo_id = "6cb4d64a-5647-11e7-bbc9-989096d01cf2";
     var end = g_location_dir.lastIndexOf('/');
     var start = g_location_dir.indexOf('file:///');
@@ -43,14 +42,12 @@
     var g_recDataType = 7; // 录制视频的类型 初始值为音频+视频 纯音频为3
     var g_isUploadOnRecording = 0; // 是否边录边传
     var g_playbacking = false;  // 是否回放状态
+    var g_play = false;// 是否播放状态
     var g_uploading = false; // 视频是否正在上传
     var g_record;  // 录制视频的文件名称
     var g_video_size_type = 8; 
     var g_first_set_video_and_med = true;
     var g_video_fps = 15
     var g_video_qp = 0;
-    var flag = 0;
-    var flag1 = 0;
-    var flag2 = 0;
-    var layout  = "layoutA"; //摄像头样式
+    var layout  = "layoutA"; //摄像头样式布局
     var video_size_arr=[[0,0,0],[144,80,56],[224,128,72],[288,160,100],[336,192,150],[448,256,200],[512,288,250],[576,320,300],[640,360,350],[720,400,420],[848,480,500],[1024,576,650],[1280,720,1000],[1920,1080,2000]];

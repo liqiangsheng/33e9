@@ -145,11 +145,28 @@ function updateVideoCfg(sizeType,fps,qp){
 }
 //*******************************进入房间***********************************************
 function enterRoom(){
-	console.log(111)
+	g_video_filename_list = CRVideo_GetAllFilesInMediaPath();
+	$(".videoPage_right_view_box").empty();
 	$(".menu_box").css("display","none");
 	$(".login_box").css("display","none");
 	$(".videoPage").css("display","block");
-	
+	//主播放容器
+	g_mediaObj = CRVideo_CreatMediaObj();
+	g_mediaObj.id("mediaObj");
+	$(".videoPage_right_view_box").append(g_mediaObj.handler());
+	g_mediaObj.keepAspectRatio(true);
+	//A视频
+	g_videoAObj = CRVideo_CreatVideoObj();
+    g_videoAObj.id("videoAObj")
+    $(".videoPage_right_view_box").append(g_videoAObj.handler())
+	//B视频
+	g_videoBObj = CRVideo_CreatVideoObj();
+    g_videoBObj.id("videoBObj")
+    $(".videoPage_right_view_box").append(g_videoBObj.handler())
+    
+    //吊样式
+    layoutA()
+    updateVideo()
 }
 
 //*******************************点击了客户信息 基础信息*******************************
@@ -193,26 +210,62 @@ function showIdentityB(){
 	$("#sfzzm").css("display","none")
 	$("#sfzfm").css("display","block")
 };
+//**************************playImg方法************************************************
+function playImg(){
+	
+	
+    if(g_single_video == true){
+	
+
+    	g_mediaObj.width(375);
+		g_mediaObj.height(210);
+		g_mediaObj.hide();
+		g_mediaObj.left(0);
+		g_mediaObj.top(40);
+		
+		g_videoAObj.width(375);
+		g_videoAObj.height(210);
+		g_videoAObj.hide();
+		g_videoAObj.left(375);
+		g_videoAObj.top(40);
+		updateVideo();
+    }else{
+    	
+    	g_mediaObj.width(500);
+		g_mediaObj.height(280);
+		g_mediaObj.hide();
+		g_mediaObj.left(0);
+		g_mediaObj.top(0);
+		
+		g_videoAObj.width(250);
+		g_videoAObj.height(140);
+		g_videoAObj.hide();
+		g_videoAObj.left(500);
+		g_videoAObj.top(0);
+		
+		g_videoBObj.width(250);
+		g_videoBObj.height(140);
+		g_videoBObj.hide();
+		g_videoBObj.left(500);
+		g_videoBObj.top(140);
+		updateVideo();
+    }
+
+	
+}
 //*******************************点击了playImg,suspendImg,playImg1,stopImg*******************************
 $("#playImg").click(function(){
 	$("#playImg").css("display","none");
 	$("#suspendImg").css("display","block");
 	$("#playImg1").css("display","none");
 	$("#stopImg").css("display","block");
-	flag2++
-	$(".videoPage_right_view_box").empty();
-	if(flag2 == 1){
-		layoutC();
-		flag2 = 0;
-		flag = 0;
-		flag1 = 0;
-	}
-	g_playbacking = true;
-	$("#singleCamera").attr("disabled",false)
-	$("#doubleCamera").attr("disabled",false)
-	
-	 // 开始播放
-	CRVideo_StartPlayMedia(g_location_dir+"/Media/"+$(".videoPage_right_voice_left_list_box1").html())
+	$("#singleCamera").attr("disabled",false);
+	$("#doubleCamera").attr("disabled",false);
+	g_playbacking = false;
+	playImg()
+	 
+   // 开始播放
+	CRVideo_StartPlayMedia(g_video_filename_list[0])
 })
 
 $("#suspendImg").click(function(){
@@ -234,24 +287,24 @@ $("#playImg1").click(function(){
 })
 
 $("#stopImg").click(function(){
+	layoutA();
 	$("#playImg").css("display","block");
 	$("#suspendImg").css("display","none");
 	$("#playImg1").css("display","none");
 	$("#stopImg").css("display","none");
-	
+	g_playbacking = false;
 	//停止媒体播放
 	CRVideo_StopPlayMedia();
-	g_playbacking = false;
-	$(".videoPage_right_view_box").empty();
-	layoutB()
+	
+
 })
 //*******************************点击了设置*******************************
 $("#setUp").click(function(){
+	$(".videoPage_right_view_box").empty();
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#full_page_div2").css({"display":"block"});
-	flag = 0;
-	flag1 = 0;
-	$(".videoPage_right_view_box").empty();
+	
+	
 })
 
 //*******************************录制,视频设置*******************************
@@ -270,199 +323,403 @@ $("#tab1").click(function(){
 })
 
 //*******************************点击了-，X，取消*******************************
+//X
 $("#closepage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
 	$("#list_container").css({"display":"none"});
-	layoutB()
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	enterRoom()
 })
+//
 $("#closepage1").click(function(){
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
 	$("#box").css({"display":"none"})
 	$("#list_container").css({"display":"none"});
-	layoutB()
-	
-	
+	enterRoom()
 })
 
-
+// - 
 $("#minpage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	layoutB()
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	enterRoom()
 })
 
+//取消
 $(".full_page_cancle2").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	layoutB()
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	enterRoom()
 })
 
 //*******************************确定****************************
 $(".full_page_submit2").click(function(){ //还有其他操作
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	layoutB()
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	enterRoom()
 })
 
 //**************************点击录制文件管理*************************************
 $("#recordMrg").click(function(){
+	$(".videoPage_right_view_box").empty();
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#list_container").css({"display":"block"});
-	flag = 0;
-	flag1 = 0;
-	$(".videoPage_right_view_box").empty();
-	g_getAll_videfile_list = CRVideo_GetAllRecordFiles();
-     console.log(g_getAll_videfile_list)      
+	
+	g_getAll_videfile_list = CRVideo_GetAllRecordFiles();    
     getAllVideoList(g_getAll_videfile_list);
-	 updateVideo();
+	updateVideo();
 })
 //*************************点击单摄像头***************************************
 $("#singleCamera").click(function(){
 	    
 	    $("#singleCamera").attr("disabled","disabled")
 		$("#doubleCamera").attr("disabled",false)
-		$(".videoPage_right_view_box").empty();
-		flag1 = 0;
-		flag++;
-	if(flag == 1){
-		if(g_playbacking == false){
-				layoutA()
-				flag = 0;
-		}else{
-			g_mediaObj = CRVideo_CreatMediaObj();
-			g_mediaObj.id("mediaObj");
-			g_mediaObj.width(375);
-			g_mediaObj.height(210);
-			$(".videoPage_right_view_box").append(g_mediaObj.handler());
-			g_mediaObj.keepAspectRatio(true)
-			g_mediaObj.hide();
-			g_mediaObj.left(0);
-			g_mediaObj.top(40);
-			
-			g_videoAObj = CRVideo_CreatVideoObj();
-			g_videoAObj.id("videoAObj");
-			g_videoAObj.width(375);
-			g_videoAObj.height(210);
-			$(".videoPage_right_view_box").append(g_videoAObj.handler());
-		    g_videoAObj.hide();
-		    g_videoAObj.left(375);
-			g_videoAObj.top(40);
-			
-			updateVideo()
-			flag = 0;
-		}
-	}
+				if(g_single_video){
+					return;
+				};
+	            g_single_video = true;
+	            if(layout == 'layoutA') {
+	                layoutA();
+	            }
+	            else if(layout == 'layoutB') {
+	                layoutB();
+	            }
+	            // 跟新视频
+	            updateVideo();
 })
 //**************************创建单摄像头************************************************
 function layoutA(){
 	    
 	    layout ="layoutA";
-		g_videoAObj = CRVideo_CreatVideoObj();
-		g_videoAObj.id("videoAObj");
-		g_videoAObj.width(534);
-		g_videoAObj.height(300);
-		$(".videoPage_right_view_box").append(g_videoAObj.handler());
-	    g_videoAObj.hide();
-	    g_videoAObj.left(124);
-		g_videoAObj.top(10);
+	    g_mediaObj.show();
+		if(g_single_video){
+			//主
+			g_mediaObj.show();
+			//a
+			g_videoAObj.width(534);
+			g_videoAObj.height(300);
+		    g_videoAObj.hide();
+		    g_videoAObj.left(124);
+			g_videoAObj.top(10)
+			//b
+			g_videoBObj.show();
+		}else{
+			//主
+			g_mediaObj.show();
+			//a
+			g_videoAObj.width(375);
+			g_videoAObj.height(210);
+		    g_videoAObj.hide();
+		    g_videoAObj.left(0);
+			g_videoAObj.top(40)
+			//b
+			g_videoBObj.width(375);
+			g_videoBObj.height(210);
+		    g_videoBObj.hide();
+		    g_videoBObj.left(375);
+			g_videoBObj.top(40);
+		}
+		if(g_startRecord){// 如果是在回放状态
+                //录音内容
+                var recContents = [];
+                //录制视频的高度初始值  录制视频的宽度初始值
+                if(g_recordHeight*16/9 > g_recordWidth){
+                    var sWidth = g_recordWidth;
+                    var sHeight = g_recordWidth/16*9;
+                    var sX = 0;
+                    var sY = (g_recordHeight-sHeight)/2;
+                }else{
+                    var sWidth = g_recordHeight*16/9;
+                    var sHeight = g_recordHeight;
+                    var sX = (g_recordWidth-sWidth)/2;
+                    var sY = 0;
+                }
+                var videoAContent = {};// A视频内容
+                var videoAStampContent = {};//A视频内容的邮票
+                var videoAlogoContent = {};//A视频标志内容
+                var videoBContent = {};// B视频内容
+                var videoBStampContent = {};//B视频内容的邮票
+                var videoBlogoContent = {};//B视频标志内容
+                 
+                if(g_single_video){
+
+                    videoAContent["type"] = 0; 
+                    videoAContent["left"] = sX;
+                    videoAContent["top"] = sY;  
+                    videoAContent["width"] = sWidth; 
+                    videoAContent["height"] = sHeight; 
+                    videoAContent["param"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()};
+                    recContents.push(videoAContent);
+                }else{
+                    //A:
+                    videoAContent["type"] = 0;
+                    videoAContent["left"] = sX;
+                    videoAContent["top"] = sY+sHeight/4;
+                    videoAContent["width"] = sWidth/2;
+                    videoAContent["height"] = sHeight/2;
+                    videoAContent["param"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()};
+                    recContents.push(videoAContent);
+                   
+                    //B:
+                    videoBContent["type"] = 0;
+                    videoBContent["left"] = sX+sWidth/2;
+                    videoBContent["top"] = sY+sHeight/4 ;
+                    videoBContent["width"] = sWidth/2;
+                    videoBContent["height"] = sHeight/2;
+                    videoBContent["parma"] = {"camid":g_userID+"."+g_videoBObj.getVideoID()};
+                    recContents.push(videoBContent);
+                    // B
+                    videoBlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;//==1
+                    videoBlogoContent["left"] = videoBContent["left"] +3;
+                    videoBlogoContent["top"] = videoBContent["top"] +3;
+                    videoBlogoContent["width"] = 32;
+                    videoBlogoContent["height"] = 32;
+                    videoBlogoContent["param"] = {"resourceid":g_logo_id}; //资源独一无二
+                    recContents.push(videoBlogoContent);
+                    // B
+                    videoBStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;//==4
+                    videoBStampContent["left"] = videoBContent["left"] +35;
+                    videoBStampContent["top"] = videoBContent["top"] +3;
+                    videoBStampContent["width"] = 175;
+                    videoBStampContent["height"] = 32
+                    recContents.push(videoBStampContent);
+                }    
+                // A
+                videoAlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC; //==1
+				videoAlogoContent["left"] = videoAContent["left"]+3;
+				videoAlogoContent["top"] = videoAContent["top"]+3;
+				videoAlogoContent["width"] = 32;
+				videoAlogoContent["height"] = 32;
+				videoAlogoContent["param"] = {"resourceid":g_logo_id};
+				recContents.push(videoAlogoContent);
+				// A
+				videoAStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;// == 4
+				videoAStampContent["left"] = videoAContent["left"]+35;
+				videoAStampContent["top"] = videoAContent["top"]+3;
+				videoAStampContent["width"] = 175;
+				videoAStampContent["height"] = 32;
+                recContents.push(videoAStampContent);
+
+                // 设置录制视频信息
+                CRVideo_SetRecordVideos(recContents)
+            }
 		
-		updateVideo()
+		
+		
 		
 }
 //*************************点击双摄像头***************************************
 $("#doubleCamera").click(function(){
-	
-	flag =0;
+
 	$("#singleCamera").attr("disabled",false)
 	$("#doubleCamera").attr("disabled","disabled")
-	$(".videoPage_right_view_box").empty();
-	flag1++
-	if(flag1 == 1){
-		
-		if(g_playbacking == false){
-			layoutB();
-			flag1 = 0;
-		}else{
-			layoutC()
-			flag2 = 0;
-		}
-	}
+			if(!g_single_video){
+				return
+			};
+                
+            g_single_video = false
+            if(layout == 'layoutA')
+                layoutA();
+            else if(layout == 'layoutB')
+                layoutB();
+                //跟新视频
+            updateVideo();
 })
 
 //**************************创建双摄像头************************************************
 function layoutB(){
 	
-	    layout = "layoutB"
-		g_videoAObj = CRVideo_CreatVideoObj();
-		g_videoAObj.id("videoAObj");
-		g_videoAObj.width(375);
-		g_videoAObj.height(210);
-		$(".videoPage_right_view_box").append(g_videoAObj.handler());
-	    g_videoAObj.hide();
-	    g_videoAObj.left(0);
-		g_videoAObj.top(40);
+	    layout = "layoutB";
+	    if(g_single_video){
+	    	//主
+	    	g_mediaObj.width(375);
+            g_mediaObj.height(210);
+            g_mediaObj.hide();
+		    g_mediaObj.left(0);
+			g_mediaObj.top(40);
+            //A
+	    	g_videoAObj.width(375);
+			g_videoAObj.height(210);
+		    g_videoAObj.hide();
+		    g_videoAObj.left(0);
+			g_videoAObj.top(40);
+			//B
+			g_videoBObj.show();
+			
+			updateVideo()
+	    	
+	    }else{
+	    	//主
+	    	g_mediaObj.width(500);
+            g_mediaObj.height(280);
+            g_mediaObj.hide();
+		    g_mediaObj.left(0);
+			g_mediaObj.top(0);
+            //A
+	    	g_videoAObj.width(250);
+			g_videoAObj.height(140);
+		    g_videoAObj.hide();
+		    g_videoAObj.left(500);
+			g_videoAObj.top(0);
+			//B
+			g_videoBObj.width(250);
+			g_videoBObj.height(140);
+		    g_videoBObj.hide();
+		    g_videoBObj.left(500);
+			g_videoBObj.top(140);
+			
+			updateVideo()
+	    }
+	    if(g_startRecord){
+                
+                
+                var recContents = [];
+                if(g_recordHeight*16/9 >g_recordWidth){
+                   var sWidth = g_recordWidth;
+                   var sHeight = g_recordHeight/16*9;
+                   var sX = 0;
+                   var sY = (g_recordHeight-sHeight)/2
+                }else{
+                    var sWidth = g_recordHeight*16/9 ;
+                    var sHeight = g_recordHeight;
+                    var sX = (g_recordWidth-sWidth)/2;
+                    var sY = 0;
+                }
+                var mediaContent = {}; //主视频内容
+                var mediaStampContent = {}; //主视频内容的邮票
+				var mediaStamplogoContent = {} //主视频标志内容
+                var videoAContent = {};// A视频内容
+                var videoAStampContent = {};//A视频内容的邮票
+                var videoAlogoContent = {};//A视频标志内容
+                var videoBContent = {};// B视频内容
+                var videoBStampContent = {};//B视频内容的邮票
+                var videoBlogoContent = {};//B视频标志内容
+                if(g_single_video){
+                    //主
+                    mediaContent["type"] = 3;
+                    mediaContent["left"] =  sX;
+                    mediaContent["top"] =  sY + sHeight/4 ;
+                    mediaContent["width"] =   sWidth/2;
+                    mediaContent["height"] =   sHeight/2;
+                    mediaContent["parma"] =  "";
+                    recContents.push(mediaContent);
+                   //A
+                   videoAContent["type"] = 0;
+                   videoAContent["left"] = sX+sWidth/2;
+                   videoAContent["top"] = sY + sHeight/4;
+                   videoAContent["width"] = sWidth/2;
+                   videoAContent["height"] = sHeight/2;
+                   videoAContent["parma"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()};
+                   recContents.push(videoAContent);
+                }else{
+                    //主
+                    mediaContent["type"] = 3;
+                    mediaContent["left"] =  sX;
+                    mediaContent["top"] =  sY + sHeight/6 ;
+                    mediaContent["width"] =   sWidth*2/3;
+                    mediaContent["height"] =   sHeight*2/3;
+                    mediaContent["parma"] =  "";
+                    recContents.push(mediaContent);
+                    
+                    //A
+                    videoAContent["type"] = 0 ;
+                    videoAContent["left"] = sX +sWidth*2/3 ;
+                    videoAContent["top"] = sY +sHeight/6 ;
+                    videoAContent["width"] = sWidth/3;
+                    videoAContent["height"] = sHeight/3 ;
+                    videoAContent["parma"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()} ;
+                    recContents.push(videoAContent);
+                    
+                    //B
+                    videoBContent["type"] = 0;
+                    videoBContent["left"] = sX +sWidth*2/3;
+                    videoBContent["top"] =  sY +sHeight/2 ;
+                    videoBContent["width"] = sWidth/3;
+                    videoBContent["height"] = sHeight/3 ;
+                    videoBContent["parma"] =  {"camid":g_userID+"."+g_videoBObj.getVideoID()} ;
+                    recContents.push(videoBContent);
+                     // B
+                    videoBlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;
+                    videoBlogoContent["left"] = videoBContent["left"] +3;
+                    videoBlogoContent["top"] =videoBContent["top"] +3;
+                    videoBlogoContent["width"] = 32;
+                    videoBlogoContent["height"] =32;
+                    videoBlogoContent["parma"] ={"resourceid":g_logo_id};
+                    recContents.push(videoBlogoContent);
+                     // B 
+                    videoBStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;
+                    videoBStampContent["left"] = videoBContent["left"]+35;
+                    videoBStampContent["top"] = videoBContent["top"] +3;
+                    videoBStampContent["width"] = 175;
+                    videoBStampContent["height"] =32;
+                    recContents.push(videoBStampContent);
+                }
+                //主 
+                mediaStamplogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;
+                mediaStamplogoContent["left"] = mediaContent["left"] +3;
+                mediaStamplogoContent["top"] = mediaContent["top"] +3;
+                mediaStamplogoContent["width"] = 32;
+                mediaStamplogoContent["height"] =32;
+                mediaStamplogoContent["parma"] = {"resourceid":g_logo_id};
+                recContents.push(mediaStamplogoContent)
+                //主 
+                mediaStampContent["type"] =  CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;
+                mediaStampContent["left"] = mediaContent["left"]+35;
+                mediaStampContent["top"] = mediaContent["top"] +3;
+                mediaStampContent["width"] = 175;
+                mediaStampContent["height"] =32;
+                recContents.push(mediaStampContent);
+                //A 
+                videoAlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;
+                videoAlogoContent["left"] = videoAContent["left"] +3;
+                videoAlogoContent["top"] = videoAContent["top"] +3;
+                videoAlogoContent["width"] = 32;
+                videoAlogoContent["height"] =32;
+                videoAlogoContent["parma"] = {"resourceid":g_logo_id};
+                recContents.push(videoAlogoContent)
+                //A 时间戳水印
+                videoAStampContent["type"] =  CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;
+                videoAStampContent["left"] = videoAContent["left"]+35;
+                videoAStampContent["top"] = videoAContent["top"] +3;
+                videoAStampContent["width"] = 175;
+                videoAStampContent["height"] =32;
+                recContents.push(videoAStampContent);
+
+                // 调用设置摄像头的方法
+                CRVideo_SetRecordVideos(recContents)
+            }
+
 		
-		g_videoBObj = CRVideo_CreatVideoObj();
-		g_videoBObj.id("videoBObj");
-		g_videoBObj.width(375);
-		g_videoBObj.height(210);
-		$(".videoPage_right_view_box").append(g_videoBObj.handler());
-	    g_videoBObj.hide();
-	    g_videoBObj.left(375);
-		g_videoBObj.top(40);
-		
-		updateVideo()
 		
 }
 //*************************创建媒体播放器***************************************
 function layoutC(){
-	g_mediaObj = CRVideo_CreatMediaObj();
-	g_mediaObj.id("mediaObj");
-	g_mediaObj.width(500);
-	g_mediaObj.height(280);
-	$(".videoPage_right_view_box").append(g_mediaObj.handler());
-	g_mediaObj.keepAspectRatio(true)
+	layout = "layoutC";
+	//主
+	g_mediaObj.width(534);
+	g_mediaObj.height(300);
 	g_mediaObj.hide();
-	g_mediaObj.left(10);
+	g_mediaObj.left(124);
 	g_mediaObj.top(0);
-	
-	g_videoAObj = CRVideo_CreatVideoObj();
-	g_videoAObj.id("videoAObj");
-	g_videoAObj.width(250);
-	g_videoAObj.height(140);
-	$(".videoPage_right_view_box").append(g_videoAObj.handler());
-    g_videoAObj.hide();
-    g_videoAObj.left(510);
-	g_videoAObj.top(0);
-	
-	g_videoBObj = CRVideo_CreatVideoObj();
-	g_videoBObj.id("videoBObj");
-	g_videoBObj.width(250);
-	g_videoBObj.height(140);
-	$(".videoPage_right_view_box").append(g_videoBObj.handler());
-    g_videoBObj.hide();
-    g_videoBObj.left(510);
-	g_videoBObj.top(140);
-	
-	updateVideo()
+	//a
+	g_videoAObj.show();
+	//b
+	g_videoBObj.show();
 
 }
 
 //*************************点击开始录制***************************************
 $("#startRecord").click(function(){
-	flag = 0;
-	flag1 = 0;
-	$(".videoPage_right_view_box").empty();
+	
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
 	$(".videoPage_right_view_list").css("display","none");
@@ -483,116 +740,17 @@ $("#startRecord").click(function(){
     CRVideo_StartRecordIng(g_location_dir+g_record,CRVideo_RECORD_AUDIO_TYPE.REC_AUDIO_TYPE_ALL,g_frameRate,g_recordWidth,g_recordHeight,g_bitRate,22,g_recDataType,g_isUploadOnRecording);
 	g_startRecord = true;
 	
-	if(layout == "layoutA"){
-		  layoutA()
-		  
-		  if(g_startRecord){
-                //录制内容
-                var recContents = [];
-                //录制视频的高度初始值  录制视频的宽度初始值
-                if(g_recordHeight*16/9 > g_recordWidth){
-                    var sWidth = g_recordWidth;
-                    var sHeight = g_recordWidth/16*9;
-                    var sX = 0;
-                    var sY = (g_recordHeight-sHeight)/2;
-                }else{
-                    var sWidth = g_recordHeight*16/9;
-                    var sHeight = g_recordHeight;
-                    var sX = (g_recordWidth-sWidth)/2;
-                    var sY = 0;
-                }
-                var videoAContent = {};// A视频内容
-                var videoAStampContent = {};//A视频内容的邮票
-                var videoAlogoContent = {};//A视频标志内容
-               
-
-                    videoAContent["type"] = 0;  //录制类型 
-                    videoAContent["left"] = sX; //左
-                    videoAContent["top"] = sY;  //上
-                    videoAContent["width"] = sWidth; //宽
-                    videoAContent["height"] = sHeight; //高
-                    // 用户id.摄像头id, videoAObj对象里面的getVideoID()方法
-                    videoAContent["param"] = {"camid":g_userID+"."+g_videoAObj.getVideoID()};
-                    //加入到录音内容中
-                    recContents.push(videoAContent);
-                    
-	                // A视频标志内容
-	                //图像 
-	                videoAlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC; //==1
-					videoAlogoContent["left"] = videoAContent["left"]+3;
-					videoAlogoContent["top"] = videoAContent["top"]+3;
-					videoAlogoContent["width"] = 32;
-					videoAlogoContent["height"] = 32;
-					videoAlogoContent["param"] = {"resourceid":g_logo_id};
-					recContents.push(videoAlogoContent);
-					
-					
-	                //时间戳水印
-					videoAStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;// == 4
-					videoAStampContent["left"] = videoAContent["left"]+35;
-					videoAStampContent["top"] = videoAContent["top"]+3;
-					videoAStampContent["width"] = 175;
-					videoAStampContent["height"] = 32;
-	                recContents.push(videoAStampContent);
-
-                // 设置录制视频信息
-                CRVideo_SetRecordVideos(recContents)
-            }
-
-		  //A录制文件的样式
-	}else if(layout == "layoutB"){
-		  layoutB()
-		  
-		  if(g_startRecord){ 
-                //
-                var recContents = [];
-                if(g_recordHeight*16/9 >g_recordWidth){
-                   var sWidth = g_recordWidth;
-                   var sHeight = g_recordHeight/16*9;
-                   var sX = 0;
-                   var sY = (g_recordHeight-sHeight)/2
-                }else{
-                    var sWidth = g_recordHeight*16/9 ;
-                    var sHeight = g_recordHeight;
-                    var sX = (g_recordWidth-sWidth)/2;
-                    var sY = 0;
-                }
-                
-                var videoBContent = {};// B视频内容
-                var videoBStampContent = {};//B视频内容的邮票
-                var videoBlogoContent = {};//B视频标志内容
-                    
-                    //B
-                    videoBContent["type"] = 0;
-                    videoBContent["left"] = sX ;
-                    videoBContent["top"] =  sY ;
-                    videoBContent["width"] = sWidth;
-                    videoBContent["height"] = sHeight ;
-                    videoBContent["parma"] =  {"camid":g_userID+"."+g_videoBObj.getVideoID()} ;
-                    recContents.push(videoBContent);
-                     // B 图像
-                    videoBlogoContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_PIC;
-                    videoBlogoContent["left"] = videoBContent["left"] +3;
-                    videoBlogoContent["top"] =videoBContent["top"] +3;
-                    videoBlogoContent["width"] = 32;
-                    videoBlogoContent["height"] =32;
-                    videoBlogoContent["parma"] ={"resourceid":g_logo_id};
-                    recContents.push(videoBlogoContent);
-                     // B 时间戳水印
-                    videoBStampContent["type"] = CRVideo_REC_VCONTENT_TYPE.RECVTP_TIMESTAMP;
-                    videoBStampContent["left"] = videoBContent["left"]+35;
-                    videoBStampContent["top"] = videoBContent["top"] +3;
-                    videoBStampContent["width"] = 175;
-                    videoBStampContent["height"] =32;
-                    recContents.push(videoBStampContent);
-               
-              
-                // 调用设置摄像头的方法
-                CRVideo_SetRecordVideos(recContents)
-            }
-
-		//B录制文件的样式
-	}
+    if(layout == 'layoutA'){
+        layoutA();
+    }else if(layout == 'layoutB')
+    {
+        layoutB();
+    }else if(layout == 'layoutC')
+    {
+        layoutC();
+    }
+	
+	
 })
 //*************************点击停止录制***************************************
 $("#stopRecord").click(function(){
@@ -600,40 +758,33 @@ $("#stopRecord").click(function(){
 	$("#singleCamera").attr("disabled",false)
 	$(".videoPage_right_view_list").css("display","block");
 	$(".videoPage_right_view_list1").css("display","none");
-	if(layout == "layoutA"){
-		  layoutA()
-		  //停止录制
-          CRVideo_StopRecord();
-          g_startRecord = false
-	}else if(layout == "layoutB"){
-		  layoutB()
-		  //停止录制
-          CRVideo_StopRecord();
-          g_startRecord = false
-	};
+	
+	CRVideo_StopRecord();
+    g_startRecord = false
+	
 })
 //*************************点击回放***************************************
 $("#playback").click(function(){
-	flag = 0;
-	flag1 = 0;
-	$(".videoPage_right_view_box").empty();
-	$("#doubleCamera").attr("disabled",false);
-	$("#singleCamera").attr("disabled",false);
+	
+	$("#doubleCamera").attr("disabled","disabled");
+	$("#singleCamera").attr("disabled","disabled");
 	if(g_playbacking){
 		// 如果正在回放时点击回放则停止播放
 		CRVideo_StopPlayMedia();
 		
 	}else{
 		if(g_record == null){
+			
 			alertLayer("还没录制");
+			
 			return;
 		}
-		
+		//该回放状态
+        g_playbacking = true;
 		layoutC();
 		$('#playback').css("display","none")
 		$('#playback1').css("display","block")
-		//该回放状态
-        g_playbacking = true;
+		
         g_mediaObj.keepAspectRatio(true);
         //回放视频	
         CRVideo_PlaybackRecordFile(g_record)
@@ -642,28 +793,22 @@ $("#playback").click(function(){
 })
 //*************************点击停止回放***************************************
 $("#playback1").click(function(){
-	flag = 0;
-	flag1 = 0;
-	$(".videoPage_right_view_box").empty();
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
 	$('#playback').css("display","block");
 	$('#playback1').css("display","none");
+	
+	// 如果正在回放时点击回放则停止播放
+    CRVideo_StopPlayMedia();
 	g_playbacking = false;
-	if(layout == "layoutA"){
-		  layoutA()
-		  
-	}else if(layout == "layoutB"){
-	      layoutB()
-		 
-	}
+	enterRoom()
+    // 跟新视频
+    updateVideo();
 })
 
 
 //*************************点击上传***************************************
 $("#upload").click(function(){
-	flag = 0;
-	flag1 = 0;
 	$(".videoPage_right_view_box").empty();
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	upload(g_record)
@@ -676,7 +821,8 @@ $("#name_del1Img,.full_page_cancle").click(function(){
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
 	cancle_upload(g_record);
-	layoutB()
+	enterRoom()
+	
 })
 //确定
 $(".full_page_cancle1").click(function(){
@@ -684,26 +830,23 @@ $(".full_page_cancle1").click(function(){
 	flag1 = 0;
 	$("#box").css({"display":"none"});
 	$("#full_page_div").css("display","none");
-	$(".videoPage_right_view_box").empty();
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
-	layoutB()
+	enterRoom()
 })
 //取消上传
 $(".full_page_cancle2").click(function(){
 	$("#box").css({"display":"none"});
 	$("#full_page_div").css("display","none");
-	$(".videoPage_right_view_box").empty();
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
 	cancle_upload(g_record);
-	layoutB()
+	enterRoom()
 })
 //*****************************弹层（还没录制）********************************************
 
 function alertLayer(msg){
-	flag = 0;
-	flag1 = 0;
+	
 	$(".videoPage_right_view_box").empty();
     $(".alert_label_detail").text(msg);
     $("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
@@ -713,27 +856,24 @@ function alertLayer(msg){
 
 //  点击弹出层的确定 x
 $("#alert_name_delImg").click(function(){
-   $("#box").css({"display":"none"});
+    $("#box").css({"display":"none"});
 	$("#alert_palyer").css("display","none");
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
-	if(layout == "layoutA"){
-		layoutA()
-	}else if(layout == "layoutB"){
-		layoutB()
-	}
+	$(".videoPage_right_view_list").css("display","block");
+	$(".videoPage_right_view_list1").css("display","none");
+	$("#doubleCamera").attr("disabled",false);
+	$("#singleCamera").attr("disabled",false);
+    enterRoom()
 	
 })
 $(".alertr_page_commit").click(function(){
    $("#box").css({"display":"none"});
 	$("#alert_palyer").css("display","none");
+	$(".videoPage_right_view_list").css("display","block");
+	$(".videoPage_right_view_list1").css("display","none");
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
-	if(layout == "layoutA"){
-		layoutA()
-	}else if(layout == "layoutB"){
-		layoutB()
-	}
+	enterRoom()
+	
 })
 
  /** * **************************更新摄像头**********************************/
@@ -851,23 +991,94 @@ function upload(fileName){
                 $("#table_list_container").append(str);
                 //点击了本地删除
                 $("#table_list_container #deleteFile").map(function(index){
-                   
+                   $(this).click(function(){
+                        deleteFile(index);
+                    })
                 })
                 //点击了上传
                 $("#table_list_container #uploadFile").map(function(index){
-                  
+                  $(this).click(function(){
+                        uploadFile(index);
+                    })
                 })
                  //点击了回放
                  $("#table_list_container #playbackList").map(function(index){
                
-                   
+                    $(this).click(function(){
+                        playbackList(index);
+                    })
                 })
 
             }
 
         }
+//***************************************************************************
+  
+    function playbackList(i){
+        // 弹出层隐藏 并开始回放
+        var fileName = $("#fileName"+ i).text();
+      console.log(fileName)
+        //关闭列表的方法
+		$("#box").css({"display":"none"})
+		$("#list_container").css({"display":"none"});
+        
+        if(g_playbacking){
+			// 如果正在回放时点击回放则停止播放
+			CRVideo_StopPlayMedia();
+			
+		    }
+        //该回放状态
+	        g_playbacking = true;
+			layoutC();
+			$('#playback').css("display","none")
+			$('#playback1').css("display","block")
+			
+	        g_mediaObj.keepAspectRatio(true);
+	        //回放视频	
+	        CRVideo_PlaybackRecordFile(g_location_dir+fileName)
+            console.log(g_location_dir+fileName)
+        // 更新视频
+        updateVideo();
+    }
+    // 删除
+    function deleteFile(i){
+        // 是否回放？
+        if(g_playbacking)
+        {
+            alertLayer("回放状态不能删除");
+            return;
+        }
+        var fileName = $("#fileName"+ i).text();
+        // 删除本地的录制文件，上传中的文件会被取消上传 filename - 文件名，全路径
+        CRVideo_RemoveFromFileMgr(fileName);
+        
+        if($("#list_item"+i).length > 0){
+
+            $("#list_item"+i).remove();
+        }
+    }
+    
+    function uploadFile(i){
+        var fileName = $("#fileName"+ i).text();
+        //上传文件的方法
+        upload(fileName);
+    }
 //***************************** 十进制的  **************************************
 function decimal(num,v){
     var vv = Math.pow(10,v);
     return Math.round(num*vv)/vv;
 }
+
+
+// // 容器显示视频
+//  function videoContainerShow(){
+//      if(layout == "layoutA"){
+//          
+//          layoutA();
+//      }else if(layout == "layoutB"){
+//         
+//          layoutB();
+//      }else if(layout == "layoutC"){
+//          layoutC();
+//      }
+//  }
