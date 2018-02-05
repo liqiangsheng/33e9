@@ -212,7 +212,7 @@ $(function(){
             alertLayer("创建会议失败 错误码:"+sdkErr);
             g_logining = false;
         }
-        //监控会议掉线
+        //监控会议掉线*********************************************
         CRVideo_MeetingDropped.callback=function(){
             g_meeLoginTimes = g_meeLoginTimes +1;// 每掉线一次，就将其加1 计数
             $("#full_page_msg_normal").css({display:"none"});
@@ -285,7 +285,7 @@ $(function(){
                  clearInterval(timer);
             })
         }
-      //会议掉线
+      //会议掉线********************************************************
       CRVideo_LineOff.callback=function(sdkErr){
         alertLayer("会议离线"+sdkErr);
         if(g_residual_timer != -1){
@@ -457,7 +457,7 @@ $(function(){
                 //隐藏主播放页面
                 $("#mediaContainer").css({display:"none"});
                 // A摄像的大小
-				g_videoAObj.css({"display":"block","left":"0px","top":"40px","width":"375px","height":"210px"});
+				$("#videoAContainer").css({"display":"block","left":"0px","top":"40px","width":"375px","height":"210px"});
 				g_videoAObj.width(375);
                 g_videoAObj.height(210);
                 // B摄像的大小
@@ -824,7 +824,6 @@ $(function(){
         $(".detail_right_video").css('display','none');
 
         layoutB();
-        updateVideo()
         //视频是否正在上传
         if(g_uploading == false){
                 $(".detail_right_video").css('display','block');
@@ -1564,50 +1563,50 @@ $(function(){
 		$(videoListOptionsStr).appendTo("#video_select")
     }
     
-	$("#video_operate_btn").click(function(){
-        // * 获取用户的摄像头状态
-        // * @access public
-        // * @param {string} userID - 用户ID
-        // * @returns {CRVideo_VSTATUS} 麦克风摄像头状态
-		var vStatus = CRVideo_GetVideoStatus(g_userID);
-		if(vStatus == 0){
-			this.popup("没有可打开的视频设备")
+	// $("#video_operate_btn").click(function(){
+    //     // * 获取用户的摄像头状态
+    //     // * @access public
+    //     // * @param {string} userID - 用户ID
+    //     // * @returns {CRVideo_VSTATUS} 麦克风摄像头状态
+	// 	var vStatus = CRVideo_GetVideoStatus(g_userID);
+	// 	if(vStatus == 0){
+	// 		this.popup("没有可打开的视频设备")
 
-		}else if(vStatus ==  2){
-            //打开用户的摄像头，以便本地、远端显示视频图像
-			CRVideo_OpenVideo(g_userID);
-			$("#video_operate_btn").text("关闭");
-			videoOperateBtn = "关闭";
-		}else {
-            // 关闭用户的摄像头
-			CRVideo_CloseVideo(g_userID);
-			$("#video_operate_btn").text("打开");
-			videoOperateBtn = "打开";
-		}
-	})
+	// 	}else if(vStatus ==  2){
+    //         //打开用户的摄像头，以便本地、远端显示视频图像
+	// 		CRVideo_OpenVideo(g_userID);
+	// 		$("#video_operate_btn").text("关闭");
+	// 		videoOperateBtn = "关闭";
+	// 	}else {
+    //         // 关闭用户的摄像头
+	// 		CRVideo_CloseVideo(g_userID);
+	// 		$("#video_operate_btn").text("打开");
+	// 		videoOperateBtn = "打开";
+	// 	}
+	// })
 
-	$("#mic_operate_btn").click(function(){
-        // * 获取用户的麦状态
-		var aStatus = CRVideo_GetAudioStatus(g_userID);
-		if(aStatus == 0){
-			this.popup("没有可打开的音频设备")
+	// $("#mic_operate_btn").click(function(){
+    //     // * 获取用户的麦状态
+	// 	var aStatus = CRVideo_GetAudioStatus(g_userID);
+	// 	if(aStatus == 0){
+	// 		this.popup("没有可打开的音频设备")
 
 
-		}else if(aStatus ==  2){
-            // * 打开自己的麦克风
-            // * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
-			CRVideo_OpenMic(g_userID);
-			$("#mic_operate_btn").text("关闭");
-			micOperateBtn = "关闭";
-		}else{
-            // 关闭自己的麦克风
-            // * 关麦操作是立即生效的，本地会立即停止采集；
-			CRVideo_CloseMic(g_userID);
-			$("#mic_operate_btn").text("打开");
-			micOperateBtn = "打开";
+	// 	}else if(aStatus ==  2){
+    //         // * 打开自己的麦克风
+    //         // * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
+	// 		CRVideo_OpenMic(g_userID);
+	// 		$("#mic_operate_btn").text("关闭");
+	// 		micOperateBtn = "关闭";
+	// 	}else{
+    //         // 关闭自己的麦克风
+    //         // * 关麦操作是立即生效的，本地会立即停止采集；
+	// 		CRVideo_CloseMic(g_userID);
+	// 		$("#mic_operate_btn").text("打开");
+	// 		micOperateBtn = "打开";
 
-		}
-    })
+	// 	}
+    // })
     
 	$("#video_select").change(function(){
         // 设置默认的摄像头

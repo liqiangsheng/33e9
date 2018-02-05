@@ -629,7 +629,13 @@ $("#playback").click(function(){
 			return;
 		}
 		
-		layoutC();
+		if(layout == "layoutA"){
+	          
+	          layoutA();
+	      	}else if(layout == "layoutB"){
+	         
+	          layoutB();
+	      	}
 		$('#playback').css("display","none")
 		$('#playback1').css("display","block")
 		//该回放状态

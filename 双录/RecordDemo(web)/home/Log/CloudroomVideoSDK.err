@@ -1,3 +1,0 @@
-[2018-02-04 15:04:57.957][CRIT][Audio:6528:89] VoiceEng init used: 24441ms
-[2018-02-04 15:11:23.203][CRIT][MeetMgr:5452:97] WebAPI login, reqID:8289e7d7-521e-4944-b182-67d58e954b59-1, oemkey:CLOUDROOM, userName:demo@cloudroom.com, pcid:bec80dfb-66d9-4bdb-94bd-66cc8f1dba29, clientVer:, sdkVer:1.4.0 2018-1-31_09:33:49, languange:, ip:192.168.1.103, mac:3E-F8-62-90-1A-28, OSVer:6.1.7601(Microsoft Windows 7 Ultimate Edition Service Pack 1 (build 7601), 64-bit), OSLang:0x804 Chinese (PRC), CPU:4(2400MHz, Intel(R) Core(TM) i5-6200U CPU @ 2.30GHz), Mem:3980(used:55%)!
-[2018-02-04 15:11:28.553][ERR][Main:6180:8] mod:VIDEO, cmd:REQOPENVIDEO, msg(OutgoingAsync.cpp:714: Ice::UnknownException:unknown exception:exceptions.KeyError: 0)

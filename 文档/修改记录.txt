@@ -13,3 +13,9 @@
 20.18.1.31修改本地双录detail.css --overflow:hidden ====overflow-y: auto;overflow-x: hidden;
 20.18.1.31修改本地双录index.html  530行加$(".detail_box").height($(document).height()-62);
 
+2018.2.5修改530行加$(".detail_box").height($(document).height()-62)删除
+
+2018.2.5index修改458行加$(detail_right_voice1)为（detail_right_voice2）
+2018.2.5detail修改12行加60px；
+2018.2.5detail修改39.45，125，200，209，229行注释高
+2018.2.5detail202行增加.detail_right_voice2样式

@@ -303,7 +303,135 @@ $("#setUp").click(function(){
 	$(".videoPage_right_view_box").empty();
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#full_page_div2").css({"display":"block"});
+	//
+	            $("input[name='meet_yx'][value="+ g_video_qp+"]").attr("checked",true);
+            $("#size_select").val(g_video_size_type)
+            $("#frame_input").val(g_video_fps)
+        //获取音频参数 {CRVideo_AudioCfg} 返回cfg对象
+            var audioCfg = CRVideo_GetAudioCfg();
+            // 获取系统上的麦克风设备列表// {string[]} 返回麦克风设备字符串列表
+            var micArr = CRVideo_GetAudioMicNames();
+            
+            var micArrOptionsStr = "";
+            
+            if(g_first_set_video_and_med){
+		for(var i = 0;i<micArr.length;i++){
+			if(audioCfg.micName == micArr[i]){
+				micArrOptionsStr += "<option value=\""+micArr[i]+"\" selected=\"true\">"+micArr[i]+"</option>"
+			}else{
+				micArrOptionsStr += "<option value=\""+micArr[i]+"\" >"+micArr[i]+"</option>"
+			}
+		}
+		micArrOptionsStr = "<option value=\"\" >默认设备</option>" + micArrOptionsStr
+		$(micArrOptionsStr).appendTo("#mic_select");
+    }
+    // 获取系统上的扬声器设备列表
+    // * @access public
+    // * @returns {string[]} 返回扬声器设备列表
 	
+	var spkerArr =CRVideo_GetAudioSpkNames();
+	var spkerArrOptionsStr = "";
+	if(g_first_set_video_and_med){
+		for(var i = 0;i<spkerArr.length;i++){
+			if(audioCfg.speakerName == spkerArr[i]){
+				spkerArrOptionsStr += "<option value=\""+spkerArr[i]+"\" selected=\"true\">"+spkerArr[i]+"</option>"
+			}else{
+				spkerArrOptionsStr += "<option value=\""+spkerArr[i]+"\" >"+spkerArr[i]+"</option>"
+			}
+		}
+		spkerArrOptionsStr = "<option value=\"\" >默认设备</option>" + spkerArrOptionsStr
+		$(spkerArrOptionsStr).appendTo("#spker_select")
+    }
+    // * 获取指定用户的默认摄像头
+    // * 如果用户没有摄像头，返回0； userID - 用户ID 还回摄像头ID
+    var videoID = CRVideo_GetDefaultVideo(g_userID)
+    // 获取用户所有的摄像头信息 userID @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
+	var videoList = CRVideo_GetAllVideoInfo(g_userID);
+	var videoListOptionsStr = "";
+	if(g_first_set_video_and_med){
+		for(var i = 0;i < videoList.length;i++){
+			var item = videoList[i];
+			if(videoID == item.videoID){
+				videoListOptionsStr += "<option value=\""+item.videoID+"\" selected=\"true\">"+item.videoName+"</option>"
+			}else{
+				videoListOptionsStr += "<option value=\""+item.videoID+"\" >"+item.videoName+"</option>"
+			}
+		}
+		videoListOptionsStr = "<option value=\"-1\" >默认设备</option>" + videoListOptionsStr
+		$(videoListOptionsStr).appendTo("#video_select")
+    }
+    
+	// $("#video_operate_btn").click(function(){
+    //     // * 获取用户的摄像头状态
+    //     // * @access public
+    //     // * @param {string} userID - 用户ID
+    //     // * @returns {CRVideo_VSTATUS} 麦克风摄像头状态
+	// 	var vStatus = CRVideo_GetVideoStatus(g_userID);
+	// 	if(vStatus == 0){
+	// 		this.popup("没有可打开的视频设备")
+
+	// 	}else if(vStatus ==  2){
+    //         //打开用户的摄像头，以便本地、远端显示视频图像
+	// 		CRVideo_OpenVideo(g_userID);
+	// 		$("#video_operate_btn").text("关闭");
+	// 		videoOperateBtn = "关闭";
+	// 	}else {
+    //         // 关闭用户的摄像头
+	// 		CRVideo_CloseVideo(g_userID);
+	// 		$("#video_operate_btn").text("打开");
+	// 		videoOperateBtn = "打开";
+	// 	}
+	// })
+
+	// $("#mic_operate_btn").click(function(){
+    //     // * 获取用户的麦状态
+	// 	var aStatus = CRVideo_GetAudioStatus(g_userID);
+	// 	if(aStatus == 0){
+	// 		this.popup("没有可打开的音频设备")
+
+
+	// 	}else if(aStatus ==  2){
+    //         // * 打开自己的麦克风
+    //         // * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
+	// 		CRVideo_OpenMic(g_userID);
+	// 		$("#mic_operate_btn").text("关闭");
+	// 		micOperateBtn = "关闭";
+	// 	}else{
+    //         // 关闭自己的麦克风
+    //         // * 关麦操作是立即生效的，本地会立即停止采集；
+	// 		CRVideo_CloseMic(g_userID);
+	// 		$("#mic_operate_btn").text("打开");
+	// 		micOperateBtn = "打开";
+
+	// 	}
+    // })
+    
+	$("#video_select").change(function(){
+        // 设置默认的摄像头
+        // * @access public
+        // * @param {string} userID - 用户ID
+        // * @param {number} videoID - 摄像头ID
+		CRVideo_SetDefaultVideo(g_userID,$("#video_select").val());
+	});
+	$("#spker_select").change(function(){
+		var cfg = {};
+		cfg.micName = $("#mic_select").val();
+		cfg.speakerName = $("#spker_select").val();
+		cfg.privAgc = 0;
+        cfg.privEC = 0;
+        // 系统音频参数设置
+		CRVideo_SetAudioCfg(cfg);
+	});
+	$("#mic_select").change(function(){
+		var cfg = {};
+		cfg.micName = $("#mic_select").val();
+		cfg.speakerName = $("#spker_select").val();
+		cfg.privAgc = 0;
+        cfg.privEC = 0;
+        //系统音频参数设置
+		CRVideo_SetAudioCfg(cfg);
+	});
+	g_first_set_video_and_med = false;
 	
 })
 
@@ -330,6 +458,35 @@ $("#closepage").click(function(){
 	$("#list_container").css({"display":"none"});
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	
+	$("#fuRate").val(g_FURate/1024);
+    $("#bitRate").val(g_bitRate/1000) ;
+    $("#frameRate").val(g_frameRate);
+    $("input[name='recDataType'][value="+ g_recDataType+"]").attr("checked",true);
+
+    if(g_recordHeight == 360) {
+
+        var recordWH = $("#recordWH").val(1);
+
+    }else if(g_recordHeight == 480){
+
+        if(g_recordWidth == 640) {
+
+            var recordWH = $("#recordWH").val(5);
+        }else {
+
+            var recordWH = $("#recordWH").val(2);
+        }
+        
+    }else if(g_recordHeight == 720){
+
+        var recordWH = $("#recordWH").val(3);
+
+    }else if(g_recordHeight == 1080){
+
+        var recordWH = $("#recordWH").val(4);
+    }
+
 	enterRoom()
 })
 //
@@ -338,6 +495,7 @@ $("#closepage1").click(function(){
 	$("#singleCamera").attr("disabled",false)
 	$("#box").css({"display":"none"})
 	$("#list_container").css({"display":"none"});
+
 	enterRoom()
 })
 
@@ -347,6 +505,35 @@ $("#minpage").click(function(){
 	$("#full_page_div2").css({"display":"none"});
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	
+	$("#fuRate").val(g_FURate/1024);
+    $("#bitRate").val(g_bitRate/1000) ;
+    $("#frameRate").val(g_frameRate);
+    $("input[name='recDataType'][value="+ g_recDataType+"]").attr("checked",true);
+
+    if(g_recordHeight == 360) {
+
+        var recordWH = $("#recordWH").val(1);
+
+    }else if(g_recordHeight == 480){
+
+        if(g_recordWidth == 640) {
+
+            var recordWH = $("#recordWH").val(5);
+        }else {
+
+            var recordWH = $("#recordWH").val(2);
+        }
+        
+    }else if(g_recordHeight == 720){
+
+        var recordWH = $("#recordWH").val(3);
+
+    }else if(g_recordHeight == 1080){
+
+        var recordWH = $("#recordWH").val(4);
+    }
+
 	enterRoom()
 })
 
@@ -356,15 +543,83 @@ $(".full_page_cancle2").click(function(){
 	$("#full_page_div2").css({"display":"none"});
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	
+	$("#fuRate").val(g_FURate/1024);
+    $("#bitRate").val(g_bitRate/1000) ;
+    $("#frameRate").val(g_frameRate);
+    $("input[name='recDataType'][value="+ g_recDataType+"]").attr("checked",true);
+
+    if(g_recordHeight == 360) {
+
+        var recordWH = $("#recordWH").val(1);
+
+    }else if(g_recordHeight == 480){
+
+        if(g_recordWidth == 640) {
+
+            var recordWH = $("#recordWH").val(5);
+        }else {
+
+            var recordWH = $("#recordWH").val(2);
+        }
+        
+    }else if(g_recordHeight == 720){
+
+        var recordWH = $("#recordWH").val(3);
+
+    }else if(g_recordHeight == 1080){
+
+        var recordWH = $("#recordWH").val(4);
+    }
+    
 	enterRoom()
 })
 
 //*******************************确定****************************
-$(".full_page_submit2").click(function(){ //还有其他操作
+$(".full_page_submit2").click(function(){ 
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
+	
+	g_FURate = $("#fuRate").val()*1024;
+    g_bitRate = $("#bitRate").val() * 1000;
+    g_frameRate = $("#frameRate").val();
+    g_recDataType = $("input[name='recDataType'][checked]").val();
+    g_isUploadOnRecording = $("input[name='recUpType'][checked]").val();
+    var recordWH = $("#recordWH").val();
+    if(recordWH == 1){
+            // 录制视频的宽度
+            g_recordWidth = 640;
+            // 录制视频的高度
+            g_recordHeight = 360;
+        }else if(recordWH == 2){
+            // 录制视频的宽度
+            g_recordWidth = 848;
+            // 录制视频的高度
+            g_recordHeight = 480;
+        }else if(recordWH == 3){
+            // 录制视频的宽度
+            g_recordWidth = 1280;
+            // 录制视频的高度
+            g_recordHeight = 720;
+        }else if(recordWH == 4){
+            // 录制视频的宽度
+            g_recordWidth = 1920;
+            // 录制视频的高度
+            g_recordHeight = 1080;
+        }else if(recordWH == 5){
+            // 录制视频的宽度
+            g_recordWidth = 640;
+            // 录制视频的高度
+            g_recordHeight = 480;
+        }
+        // 文件上传的流量控
+        CRVideo_SetFileUploadRate(g_FURate);
+        g_video_size_type = $("#size_select").val();
+        g_video_fps =  $("#frame_input").val();
+        g_video_qp = $("input[name='meet_yx']:checked").val();
+        updateVideoCfg(parseInt(g_video_size_type),parseInt(g_video_fps),parseInt(g_video_qp));
 	enterRoom()
 })
 
@@ -1003,7 +1258,7 @@ function upload(fileName){
                 })
                  //点击了回放
                  $("#table_list_container #playbackList").map(function(index){
-               
+                   
                     $(this).click(function(){
                         playbackList(index);
                     })
@@ -1017,32 +1272,39 @@ function upload(fileName){
     function playbackList(i){
         // 弹出层隐藏 并开始回放
         var fileName = $("#fileName"+ i).text();
-      console.log(fileName)
-        //关闭列表的方法
-		$("#box").css({"display":"none"})
+        console.log(fileName)
+//      $(".videoPage_right_view_box").empty();
+        $("#box").css({"display":"none"})
 		$("#list_container").css({"display":"none"});
-        
-        if(g_playbacking){
-			// 如果正在回放时点击回放则停止播放
-			CRVideo_StopPlayMedia();
+		
+		 if(g_playbacking){
+		// 如果正在回放时点击回放则停止播放
+		CRVideo_StopPlayMedia();
+		
+		}else{
 			
-		    }
-        //该回放状态
-	        g_playbacking = true;
-			layoutC();
+			
+	      	if(layout == "layoutA"){
+	          
+	          layoutA();
+	      	}else if(layout == "layoutB"){
+	         
+	          layoutB();
+	      	}else if(layout == "layoutC"){
+	          layoutC();
+	      	}
+			  
 			$('#playback').css("display","none")
 			$('#playback1').css("display","block")
-			
+			//该回放状态
+	        g_playbacking = true;
 	        g_mediaObj.keepAspectRatio(true);
 	        //回放视频	
-	        CRVideo_PlaybackRecordFile(g_location_dir+fileName)
-            console.log(g_location_dir+fileName)
-        // 更新视频
-        updateVideo();
+	        CRVideo_PlaybackRecordFile(fileName)
+		}
     }
     // 删除
     function deleteFile(i){
-        // 是否回放？
         if(g_playbacking)
         {
             alertLayer("回放状态不能删除");
@@ -1057,9 +1319,14 @@ function upload(fileName){
             $("#list_item"+i).remove();
         }
     }
-    
+    //上传
     function uploadFile(i){
         var fileName = $("#fileName"+ i).text();
+         //关闭列表的方法
+		$("#box").css({"display":"none"})
+		$("#list_container").css({"display":"none"});
+		$("#full_page_div").css({"display":"block"});
+		 g_uploading = true;
         //上传文件的方法
         upload(fileName);
     }

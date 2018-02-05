@@ -236,6 +236,10 @@ CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
             //吊A布局
             $(".videoPage_right_view_box").empty();
             enterRoom()
+            $("#playImg").css("display","block");
+			$("#suspendImg").css("display","none");
+			$("#playImg1").css("display","none");
+			$("#stopImg").css("display","none");
             //更新摄像头
             updateVideo()
 
