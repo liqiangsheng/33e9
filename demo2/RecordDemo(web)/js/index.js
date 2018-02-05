@@ -233,6 +233,8 @@ CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
             g_playbacking = false;
             $("#playback").css("display","block");
             $("#playback1").css("display","none");
+            $("#singleCamera").attr("disabled",false);
+	        $("#doubleCamera").attr("disabled",false);
             //吊A布局
             $(".videoPage_right_view_box").empty();
             enterRoom()

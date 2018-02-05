@@ -146,6 +146,7 @@ function updateVideoCfg(sizeType,fps,qp){
 //*******************************进入房间***********************************************
 function enterRoom(){
 	g_video_filename_list = CRVideo_GetAllFilesInMediaPath();
+	console.log(g_video_filename_list)
 	$(".videoPage_right_view_box").empty();
 	$(".menu_box").css("display","none");
 	$(".login_box").css("display","none");
@@ -214,47 +215,49 @@ function showIdentityB(){
 function playImg(){
 	
 	
-    if(g_single_video == true){
+    if(g_single_video){
 	
-
-    	g_mediaObj.width(375);
-		g_mediaObj.height(210);
-		g_mediaObj.hide();
-		g_mediaObj.left(0);
-		g_mediaObj.top(40);
-		
-		g_videoAObj.width(375);
-		g_videoAObj.height(210);
-		g_videoAObj.hide();
-		g_videoAObj.left(375);
-		g_videoAObj.top(40);
-		updateVideo();
+       layoutC();
+//  	g_mediaObj.width(375);
+//		g_mediaObj.height(210);
+//		g_mediaObj.hide();
+//		g_mediaObj.left(0);
+//		g_mediaObj.top(40);
+//		
+//		g_videoAObj.width(375);
+//		g_videoAObj.height(210);
+//		g_videoAObj.hide();
+//		g_videoAObj.left(375);
+//		g_videoAObj.top(40);
+//		updateVideo();
     }else{
     	
-    	g_mediaObj.width(500);
-		g_mediaObj.height(280);
-		g_mediaObj.hide();
-		g_mediaObj.left(0);
-		g_mediaObj.top(0);
-		
-		g_videoAObj.width(250);
-		g_videoAObj.height(140);
-		g_videoAObj.hide();
-		g_videoAObj.left(500);
-		g_videoAObj.top(0);
-		
-		g_videoBObj.width(250);
-		g_videoBObj.height(140);
-		g_videoBObj.hide();
-		g_videoBObj.left(500);
-		g_videoBObj.top(140);
-		updateVideo();
+//  	g_mediaObj.width(500);
+//		g_mediaObj.height(280);
+//		g_mediaObj.hide();
+//		g_mediaObj.left(0);
+//		g_mediaObj.top(0);
+//		
+//		g_videoAObj.width(250);
+//		g_videoAObj.height(140);
+//		g_videoAObj.hide();
+//		g_videoAObj.left(500);
+//		g_videoAObj.top(0);
+//		
+//		g_videoBObj.width(250);
+//		g_videoBObj.height(140);
+//		g_videoBObj.hide();
+//		g_videoBObj.left(500);
+//		g_videoBObj.top(140);
+//		updateVideo();
+     layoutB()
     }
 
 	
 }
 //*******************************点击了playImg,suspendImg,playImg1,stopImg*******************************
 $("#playImg").click(function(){
+	g_nowTime_play_num = 1;
 	$("#playImg").css("display","none");
 	$("#suspendImg").css("display","block");
 	$("#playImg1").css("display","none");
@@ -361,56 +364,9 @@ $("#setUp").click(function(){
 		$(videoListOptionsStr).appendTo("#video_select")
     }
     
-	// $("#video_operate_btn").click(function(){
-    //     // * 获取用户的摄像头状态
-    //     // * @access public
-    //     // * @param {string} userID - 用户ID
-    //     // * @returns {CRVideo_VSTATUS} 麦克风摄像头状态
-	// 	var vStatus = CRVideo_GetVideoStatus(g_userID);
-	// 	if(vStatus == 0){
-	// 		this.popup("没有可打开的视频设备")
 
-	// 	}else if(vStatus ==  2){
-    //         //打开用户的摄像头，以便本地、远端显示视频图像
-	// 		CRVideo_OpenVideo(g_userID);
-	// 		$("#video_operate_btn").text("关闭");
-	// 		videoOperateBtn = "关闭";
-	// 	}else {
-    //         // 关闭用户的摄像头
-	// 		CRVideo_CloseVideo(g_userID);
-	// 		$("#video_operate_btn").text("打开");
-	// 		videoOperateBtn = "打开";
-	// 	}
-	// })
-
-	// $("#mic_operate_btn").click(function(){
-    //     // * 获取用户的麦状态
-	// 	var aStatus = CRVideo_GetAudioStatus(g_userID);
-	// 	if(aStatus == 0){
-	// 		this.popup("没有可打开的音频设备")
-
-
-	// 	}else if(aStatus ==  2){
-    //         // * 打开自己的麦克风
-    //         // * 打开自已的麦克风时，先会进入到AOPENING状态，等服务器处理后才会进入AOPEN状态，此时说话才能被采集到；
-	// 		CRVideo_OpenMic(g_userID);
-	// 		$("#mic_operate_btn").text("关闭");
-	// 		micOperateBtn = "关闭";
-	// 	}else{
-    //         // 关闭自己的麦克风
-    //         // * 关麦操作是立即生效的，本地会立即停止采集；
-	// 		CRVideo_CloseMic(g_userID);
-	// 		$("#mic_operate_btn").text("打开");
-	// 		micOperateBtn = "打开";
-
-	// 	}
-    // })
-    
 	$("#video_select").change(function(){
         // 设置默认的摄像头
-        // * @access public
-        // * @param {string} userID - 用户ID
-        // * @param {number} videoID - 摄像头ID
 		CRVideo_SetDefaultVideo(g_userID,$("#video_select").val());
 	});
 	$("#spker_select").change(function(){
