@@ -508,14 +508,14 @@
 	text-align: center;
 	border-radius: 4px;
 }
-.full_page_cancle,.full_page_cancle2,.full_page_cancle1,.full_page_cancle2{
+.full_page_cancle1,.full_page_cancle3{
 	border:1px solid #ccc;
 	background-color: #ccc;
 	color: #333;
 	margin-left: 20px;
 	float: left;
 }
-.full_page_cancle1,.full_page_cancle2{
+.full_page_cancle1{
 	display: none;
 }
 .full_page_submit2{
@@ -615,4 +615,57 @@
 	border:1px solid #eb5405;
 	background-color: #eb5405;
 	color: #fff;
+}
+/**************************************会议掉线*********************************************************/
+#lineOff{
+	width: 400px;
+	height: 300px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	right: 0;
+	z-index: 999;
+	border: 1px solid orangered;
+	display: none;
+}
+
+#lineOff_header{
+	width: 100%;
+	height: 49px;
+	font-size: 14px;
+	border-bottom: 1px solid orangered;
+	text-align: center;
+	line-height: 50px;
+}
+#lineOff_center{
+	width: 100%;
+	height: 100px;
+	text-align: center;
+    margin-top: 50px;
+}
+#lineOff_bnt{
+	width: 100%;
+	height: 50px;
+	margin-top:20px ;
+}
+#lineOff_yes{
+	width: 49%;
+	height: 100%;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	border: 0;
+	background: orangered;
+	
+}
+#lineOff_no{
+	width: 49%;
+	height: 100%;
+	float: right;
+	text-align: center;
+	line-height: 50px;
+	border: 0;
+	background: #CCCCCC;
+	
 }

@@ -47,6 +47,8 @@ $("body").append(htm);
      param = {};
  });
  
+
+ 
 	
 }
 
@@ -1062,8 +1064,6 @@ $("#name_del1Img,.full_page_cancle").click(function(){
 })
 //确定
 $(".full_page_cancle1").click(function(){
-	flag = 0;
-	flag1 = 0;
 	$("#box").css({"display":"none"});
 	$("#full_page_div").css("display","none");
 	$("#doubleCamera").attr("disabled",false);
@@ -1071,7 +1071,7 @@ $(".full_page_cancle1").click(function(){
 	enterRoom()
 })
 //取消上传
-$(".full_page_cancle2").click(function(){
+$(".full_page_cancle3").click(function(){
 	$("#box").css({"display":"none"});
 	$("#full_page_div").css("display","none");
 	$("#doubleCamera").attr("disabled",false);

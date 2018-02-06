@@ -258,8 +258,7 @@ CRVideo_NotifyRecordFileStateChanged.callback=function(fileName,state){
         $("#percent_item").css("width","100%");
         $("#upload_num_percert").html("100%");
         $('.full_page_cancle1').css("display","block");
-        $('.full_page_cancle').css("display","none");
-        $('.full_page_cancle2').css("display","none");
+        $('.full_page_cancle3').css("display","none");
         $(".full_page_submit").css("display","inline-block");
         //是否在上传
         g_uploading = false;
@@ -267,14 +266,12 @@ CRVideo_NotifyRecordFileStateChanged.callback=function(fileName,state){
         $(".full_page_submit").css("display","none");
         $('#upload_status').html("上传中...");
         $('.full_page_cancle1').css("display","none");
-        $('.full_page_cancle2').css("display","block");
-        $('.full_page_cancle').css("display","none");
+        $('.full_page_cancle3').css("display","block");
     }else if(state == 0 && g_uploading){
         $(".full_page_submit").css("display","none");
         $('#upload_status').html("准备上传...");
         $('.full_page_cancle1').css("display","none");
-        $('.full_page_cancle2').css("display","block");
-        $('.full_page_cancle').css("display","none");
+        $('.full_page_cancle3').css("display","block");
         $("#percent_item").css("width","0");
     }
 }
@@ -290,7 +287,9 @@ CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){
 //************************************** 上传文件失败通知 ******************************************
 CRVideo_UploadRecordFileErr.callback=function(fileName,sdkErr){
     $('#upload_status').html("上传失败")
-    $('.full_page_cancle').html("确定")
+    $('.full_page_cancle1').css("display","block");
+    $('.full_page_cancle3').css("display","none");
+    $(".full_page_submit").css("display","none");
     //是否在上传
     g_uploading = false;
 }
@@ -310,3 +309,46 @@ CRVideo_VideoDevChanged.callback =function(userID){
         updateVideo();
    }
 }
+//******************************************会议掉线*********************************************
+CRVideo_LineOff.callback=function(sdkErr){
+	alert({
+	    title:'提示',
+	    content:'会议掉线:'+sdkErr,
+	    noText:'取消',
+	    yesText:'确定'
+	})
+}
+//**************************************监控会议掉线********************************************************
+CRVideo_MeetingDropped.callback=function(){
+  
+   $("#box").css({"display":"block"});
+   $("#lineOff").css("display","block");
+   $(".login_box").css("display","block");
+   $(".menu_box").css("display","none");
+   $(".videoPage").css("display","none");
+   
+   var temp = setInterval(function(){
+   	num --;
+   	$("#lineOff_center").html("会议掉线:"+num+"秒后自动登陆");
+   	if(num == 0){
+   		clearInterval(temp);
+   		$("#lineOff").remove();
+		$("#box").css({"display":"none"});
+	   	login()
+	    $("#login_bnt").attr({"disabled":"disabled"}).css({background:"#ccc"})
+   	}
+   	
+   },1000)
+}
+$("#lineOff_yes").click(function(){
+	$("#lineOff").remove();
+	$("#box").css({"display":"none"});
+	location.href = "./index.html";
+	login()
+    $("#login_bnt").attr({"disabled":"disabled"}).css({background:"#ccc"})
+})
+$("#lineOff_no").click(function(){
+	$("#lineOff").remove();
+	$("#box").css({"display":"none"});
+	location.href = "./index.html";
+})
