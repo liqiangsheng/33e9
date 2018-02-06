@@ -311,6 +311,7 @@ CRVideo_VideoDevChanged.callback =function(userID){
 }
 //******************************************会议掉线*********************************************
 CRVideo_LineOff.callback=function(sdkErr){
+	location.href = "./index.html";
 	alert({
 	    title:'提示',
 	    content:'会议掉线:'+sdkErr,
