@@ -166,8 +166,11 @@ function enterRoom(){
     $(".videoPage_right_view_box").append(g_videoBObj.handler())
     
     //吊样式
-    layoutA()
-    updateVideo()
+    layoutA();
+    updateVideo();
+    
+    //背景色
+    bgc();
 }
 
 //*******************************点击了客户信息 基础信息*******************************
@@ -214,62 +217,39 @@ function showIdentityB(){
 //**************************playImg方法************************************************
 function playImg(){
 	
-	
-    if(g_single_video){
-	
-       layoutC();
-//  	g_mediaObj.width(375);
-//		g_mediaObj.height(210);
-//		g_mediaObj.hide();
-//		g_mediaObj.left(0);
-//		g_mediaObj.top(40);
-//		
-//		g_videoAObj.width(375);
-//		g_videoAObj.height(210);
-//		g_videoAObj.hide();
-//		g_videoAObj.left(375);
-//		g_videoAObj.top(40);
-//		updateVideo();
-    }else{
-    	
-//  	g_mediaObj.width(500);
-//		g_mediaObj.height(280);
-//		g_mediaObj.hide();
-//		g_mediaObj.left(0);
-//		g_mediaObj.top(0);
-//		
-//		g_videoAObj.width(250);
-//		g_videoAObj.height(140);
-//		g_videoAObj.hide();
-//		g_videoAObj.left(500);
-//		g_videoAObj.top(0);
-//		
-//		g_videoBObj.width(250);
-//		g_videoBObj.height(140);
-//		g_videoBObj.hide();
-//		g_videoBObj.left(500);
-//		g_videoBObj.top(140);
-//		updateVideo();
-     layoutB()
-    }
+        if(layout != 'layoutA'){
+                // 如果不是A布局则停止播放
+                CRVideo_StopPlayMedia();
+        }
+        g_playbacking = false;
+       $("#playImg").css("display","none");
+		$("#suspendImg").css("display","block");
+		$("#playImg1").css("display","none");
+		$("#stopImg").css("display","block");
+		$("#singleCamera").attr("disabled",false);
+		$("#doubleCamera").attr("disabled",false);
+
+        // 调用布局B
+        $(".videoPage_right_view_box").css('display','none');
+        if(g_single_video)
+              layoutC();
+         else if(!g_single_video)
+              layoutB()
+        //视频是否正在上传
+        if(g_uploading == false){
+                $(".videoPage_right_view_box").css('display','block');
+                //更新视频
+				updateVideo();
+        }
+        // 开始播放
+		CRVideo_StartPlayMedia(g_video_filename_list[0])
 
 	
 }
 //*******************************点击了playImg,suspendImg,playImg1,stopImg*******************************
 $("#playImg").click(function(){
-	g_nowTime_play_num = 1;
-	$("#playImg").css("display","none");
-	$("#suspendImg").css("display","block");
-	$("#playImg1").css("display","none");
-	$("#stopImg").css("display","block");
-	$("#singleCamera").attr("disabled",false);
-	$("#doubleCamera").attr("disabled",false);
-	g_playbacking = false;
 	playImg()
-	 
-   // 开始播放
-	CRVideo_StartPlayMedia(g_video_filename_list[0])
-})
+});
 
 $("#suspendImg").click(function(){
 	$("#playImg").css("display","none");
@@ -278,7 +258,7 @@ $("#suspendImg").click(function(){
 	$("#stopImg").css("display","block");
 	//暂停播放媒体
 	CRVideo_PausePlayMedia(true);
-})
+});
 
 $("#playImg1").click(function(){
 	$("#playImg").css("display","none");
@@ -287,7 +267,7 @@ $("#playImg1").click(function(){
 	$("#stopImg").css("display","block");
 	//恢复影音播放
 	CRVideo_PausePlayMedia(false);
-})
+});
 
 $("#stopImg").click(function(){
 	layoutA();
@@ -298,16 +278,15 @@ $("#stopImg").click(function(){
 	g_playbacking = false;
 	//停止媒体播放
 	CRVideo_StopPlayMedia();
-	
-
-})
+});
 //*******************************点击了设置*******************************
 $("#setUp").click(function(){
+	videoContainerShow();
 	$(".videoPage_right_view_box").empty();
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#full_page_div2").css({"display":"block"});
 	//
-	            $("input[name='meet_yx'][value="+ g_video_qp+"]").attr("checked",true);
+	        $("input[name='meet_yx'][value="+ g_video_qp+"]").attr("checked",true);
             $("#size_select").val(g_video_size_type)
             $("#frame_input").val(g_video_fps)
         //获取音频参数 {CRVideo_AudioCfg} 返回cfg对象
@@ -327,11 +306,7 @@ $("#setUp").click(function(){
 		}
 		micArrOptionsStr = "<option value=\"\" >默认设备</option>" + micArrOptionsStr
 		$(micArrOptionsStr).appendTo("#mic_select");
-    }
-    // 获取系统上的扬声器设备列表
-    // * @access public
-    // * @returns {string[]} 返回扬声器设备列表
-	
+   };
 	var spkerArr =CRVideo_GetAudioSpkNames();
 	var spkerArrOptionsStr = "";
 	if(g_first_set_video_and_med){
@@ -346,9 +321,9 @@ $("#setUp").click(function(){
 		$(spkerArrOptionsStr).appendTo("#spker_select")
     }
     // * 获取指定用户的默认摄像头
-    // * 如果用户没有摄像头，返回0； userID - 用户ID 还回摄像头ID
     var videoID = CRVideo_GetDefaultVideo(g_userID)
-    // 获取用户所有的摄像头信息 userID @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
+    
+    // 获取用户所有的摄像头信息 
 	var videoList = CRVideo_GetAllVideoInfo(g_userID);
 	var videoListOptionsStr = "";
 	if(g_first_set_video_and_med){
@@ -443,17 +418,9 @@ $("#closepage").click(function(){
         var recordWH = $("#recordWH").val(4);
     }
 
-	enterRoom()
+	videoContainerShow();
 })
-//
-$("#closepage1").click(function(){
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
-	$("#box").css({"display":"none"})
-	$("#list_container").css({"display":"none"});
 
-	enterRoom()
-})
 
 // - 
 $("#minpage").click(function(){
@@ -490,7 +457,7 @@ $("#minpage").click(function(){
         var recordWH = $("#recordWH").val(4);
     }
 
-	enterRoom()
+	videoContainerShow();
 })
 
 //取消
@@ -528,7 +495,7 @@ $(".full_page_cancle2").click(function(){
         var recordWH = $("#recordWH").val(4);
     }
     
-	enterRoom()
+	videoContainerShow();
 })
 
 //*******************************确定****************************
@@ -576,7 +543,7 @@ $(".full_page_submit2").click(function(){
         g_video_fps =  $("#frame_input").val();
         g_video_qp = $("input[name='meet_yx']:checked").val();
         updateVideoCfg(parseInt(g_video_size_type),parseInt(g_video_fps),parseInt(g_video_qp));
-	enterRoom()
+		videoContainerShow();
 })
 
 //**************************点击录制文件管理*************************************
@@ -584,10 +551,20 @@ $("#recordMrg").click(function(){
 	$(".videoPage_right_view_box").empty();
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#list_container").css({"display":"block"});
-	
+		
 	g_getAll_videfile_list = CRVideo_GetAllRecordFiles();    
     getAllVideoList(g_getAll_videfile_list);
 	updateVideo();
+	
+	if(layout == 'layoutA'){
+        layoutA();
+    }else if(layout == 'layoutB')
+    {
+        layoutB();
+    }else if(layout == 'layoutC')
+    {
+        layoutC();
+    }
 })
 //*************************点击单摄像头***************************************
 $("#singleCamera").click(function(){
@@ -598,14 +575,10 @@ $("#singleCamera").click(function(){
 					return;
 				};
 	            g_single_video = true;
-	            if(layout == 'layoutA') {
-	                layoutA();
-	            }
-	            else if(layout == 'layoutB') {
-	                layoutB();
-	            }
+	            videoContainerShow()
 	            // 跟新视频
 	            updateVideo();
+	           
 })
 //**************************创建单摄像头************************************************
 function layoutA(){
@@ -737,12 +710,10 @@ $("#doubleCamera").click(function(){
 				return
 			};
                 
-            g_single_video = false
-            if(layout == 'layoutA')
-                layoutA();
-            else if(layout == 'layoutB')
-                layoutB();
-                //跟新视频
+            g_single_video = false;
+            videoContainerShow();
+                
+            //跟新视频
             updateVideo();
 })
 
@@ -914,6 +885,8 @@ function layoutB(){
 }
 //*************************创建媒体播放器***************************************
 function layoutC(){
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
 	layout = "layoutC";
 	//主
 	g_mediaObj.width(534);
@@ -951,16 +924,7 @@ $("#startRecord").click(function(){
     CRVideo_StartRecordIng(g_location_dir+g_record,CRVideo_RECORD_AUDIO_TYPE.REC_AUDIO_TYPE_ALL,g_frameRate,g_recordWidth,g_recordHeight,g_bitRate,22,g_recDataType,g_isUploadOnRecording);
 	g_startRecord = true;
 	
-    if(layout == 'layoutA'){
-        layoutA();
-    }else if(layout == 'layoutB')
-    {
-        layoutB();
-    }else if(layout == 'layoutC')
-    {
-        layoutC();
-    }
-	
+    videoContainerShow();
 	
 })
 //*************************点击停止录制***************************************
@@ -974,32 +938,44 @@ $("#stopRecord").click(function(){
     g_startRecord = false
 	
 })
-//*************************点击回放***************************************
-$("#playback").click(function(){
-	
+//*************************回放的方法********************************************
+function playbackRecord(fileName){
 	$("#doubleCamera").attr("disabled","disabled");
 	$("#singleCamera").attr("disabled","disabled");
 	if(g_playbacking){
-		// 如果正在回放时点击回放则停止播放
-		CRVideo_StopPlayMedia();
-		
-	}else{
-		if(g_record == null){
-			
-			alertLayer("还没录制");
-			
-			return;
-		}
-		//该回放状态
-        g_playbacking = true;
-		layoutC();
-		$('#playback').css("display","none")
-		$('#playback1').css("display","block")
-		
-        g_mediaObj.keepAspectRatio(true);
-        //回放视频	
-        CRVideo_PlaybackRecordFile(g_record)
-	}
+            // 如果正在回放时点击回放则停止播放
+            CRVideo_StopPlayMedia(); 
+        }else{
+            // 如果文件没有
+            if(fileName == null){
+                   // 如果回放文件名为空则return
+					alertLayer("还没录制");
+					return;
+            }
+            if(layout != "layoutA"){
+                // 如果布局不为A则停止播放影音
+                CRVideo_StopPlayMedia();
+            }
+            //该回放状态
+            g_playbacking = true;
+            // 布局改为C布局
+            layoutC();
+            $('#playback').css("display","none")
+		    $('#playback1').css("display","block")
+            
+            //回放视频
+            g_mediaObj.keepAspectRatio(true);
+            //回放视频	
+            CRVideo_PlaybackRecordFile(fileName)
+        }
+}
+
+
+//*************************点击回放***************************************
+$("#playback").click(function(){
+	playbackRecord(g_record);
+	
+	videoContainerShow();
 	
 })
 //*************************点击停止回放***************************************
@@ -1016,6 +992,55 @@ $("#playback1").click(function(){
     // 跟新视频
     updateVideo();
 })
+
+//**********************************上传的方法**********************************************
+
+function upload(fileName){
+
+    $("#percent_item").css("width","0");
+    $("#upload_num_percert").html("0%");
+    if(fileName == null)
+    {
+        alertLayer("还没录制");
+        return;
+    }
+    //修改上传
+    g_uploading = true;
+    $(".full_page_div").css('display','block');
+    // /上传文件 
+    CRVideo_UploadRecordFile(fileName);
+
+}
+//***************************取消上传的方法**************************************************
+   //取消上传
+    function cancle_upload(fileName){
+
+        $(".full_page_div").css('display','none');
+        if($(".list_container").css("display") == "block"){
+           // 重新展示视频列表
+           g_getAll_videfile_list = CRVideo_GetAllRecordFiles();
+          //  调得到视频文件列表
+           getAllVideoList(g_getAll_videfile_list)
+        }else{
+        	
+            // 视频更新
+            updateVideo();
+        }
+        //是否在上传
+        if(g_uploading){
+            // 如果正在上传视频，则调用取消视频上传的方法
+            CRVideo_CancelUploadRecordFile(fileName);
+            g_uploading = false;
+        }
+        if($(".list_container").css("display") == "none"){
+
+            $("#box").css('display','none');
+        }else{
+
+            $("#box").css('display','block');
+        }
+        
+    }
 
 
 //*************************点击上传***************************************
@@ -1073,7 +1098,7 @@ $("#alert_name_delImg").click(function(){
 	$(".videoPage_right_view_list1").css("display","none");
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
-    enterRoom()
+    videoContainerShow()
 	
 })
 $(".alertr_page_commit").click(function(){
@@ -1083,7 +1108,7 @@ $(".alertr_page_commit").click(function(){
 	$(".videoPage_right_view_list1").css("display","none");
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
-	enterRoom()
+	videoContainerShow()
 	
 })
 
@@ -1108,156 +1133,122 @@ function updateVideo(){
        
 }
 
-//**********************************上传的方法**********************************************
+//******************************获取视频列表****************************************
+// 得到视频文件列表（传列表数组）
+function getAllVideoList(list){
+    $(".list_all_items").remove();
+    if(list && list != "" && list != null){
+        var str = "",str1="";
+        for(var i=0;i< list.length; i++){
+            var listState = "";
+            var listName = list[i].fileName;
+            var duration = list[i].duration;
+            if(list[i].state == 0){
+                listState = "未上传";
+                //str1 = "<span class=\"table_up_del_rec\" onclick=\"uploadFile("+ i +")\">上传</span>"
+            }else if(list[i].state == 1){
+                listState = "上传中";
+                //str1 = "";
+            }else if(list[i].state == 2){
+                listState = "已上传";
+                //str1 = "";
+            }
+            var fileSize = decimal((parseInt(list[i].size) / 1024 / 1024),1);
+            if(parseInt(fileSize) > 0 ){
+                fileSize = decimal((parseInt(list[i].size) / 1024 / 1024),1) + "M";
+            }else{
+                fileSize = decimal((parseInt(list[i].size) / 1024),1)  + "K";
+            }
+            str += "<tr id=\"list_item"+i+"\" class=\"list_all_items\">"
+                    +  "<td width=\"25%\"><div id=\"fileName"+ i +"\">"+ listName+ "</div></td>"
+                    +  "<td width='18%'><div class=\"list_item_size\">"+ fileSize + "</div></td>"
+                    +  "<td width=\"14%\"><div class=\"list_item_state\">"+ duration + "秒</div></td>"
+                    +  "<td width=\"10%\"><div class=\"list_item_state\">"+ listState + "</div></td>"
+                    +  "<td width=\"33%\">"
+                        + "<div class=\"table_done\">"
+                            //+ str1
+                            + "<span class=\"table_up_del_rec\" id='uploadFile'>上传</span>"
+                            + "<span class=\"table_up_del_rec\" id='deleteFile'>本地删除</span>"
+                            + "<span class=\"table_up_del_rec\" id='playbackList'>回放</span>"
+                            //+ "<div class='table_up_perc'></div>"
+                        +"</div>"
+                    +"</td>"
+                + "</tr>"
+        }
+        str += "<div style='height:0;clear:both;'></div>"
+        $("#table_list_container").append(str);
+        //点击了本地删除
+        $("#table_list_container #deleteFile").map(function(index){
+           $(this).click(function(){
+                deleteFile(index);
+            })
+        })
+        //点击了上传
+        $("#table_list_container #uploadFile").map(function(index){
+          $(this).click(function(){
+                uploadFile(index);
+            })
+        })
+         //点击了回放
+         $("#table_list_container #playbackList").map(function(index){
+           
+            $(this).click(function(){
+                playbackList(index);
+            })
+        })
 
-function upload(fileName){
-
-    $("#percent_item").css("width","0");
-    $("#upload_num_percert").html("0%");
-    if(fileName == null)
-    {
-        alertLayer("还没录制");
-        return;
     }
-    //修改上传
-    g_uploading = true;
-    $(".full_page_div").css('display','block');
-    // /上传文件 
-    CRVideo_UploadRecordFile(fileName);
 
 }
-//***************************取消上传的方法**************************************************
-   //取消上传
-    function cancle_upload(fileName){
 
-        var fileNameDetail = fileName;
-        $(".full_page_div").css('display','none');
-        if($(".list_container").css("display") == "block"){
-           // 重新展示视频列表
-           g_getAll_videfile_list = CRVideo_GetAllRecordFiles();//返回列表数组
-          //  调得到视频文件列表（传列表数组）
-           getAllVideoList(g_getAll_videfile_list)
-        }else{
-            // 视频更新
-            updateVideo();
-        }
-        //是否在上传
-        if(g_uploading){
-            // 如果正在上传视频，则调用取消视频上传的方法
-            CRVideo_CancelUploadRecordFile(fileName);
-            g_uploading = false;
-        }
-        if($(".list_container").css("display") == "none"){
-
-            $("#box").css('display','none');
-        }else{
-
-            $("#box").css('display','block');
-        }
-        
-    }
-//******************************获取视频列表****************************************
-        // 得到视频文件列表（传列表数组）
-        function getAllVideoList(list){
-            $(".list_all_items").remove();
-            if(list && list != "" && list != null){
-                var str = "",str1="";
-                for(var i=0;i< list.length; i++){
-                    var listState = "";
-                    var listName = list[i].fileName;
-                    var duration = list[i].duration;
-                    if(list[i].state == 0){
-                        listState = "未上传";
-                        //str1 = "<span class=\"table_up_del_rec\" onclick=\"uploadFile("+ i +")\">上传</span>"
-                    }else if(list[i].state == 1){
-                        listState = "上传中";
-                        //str1 = "";
-                    }else if(list[i].state == 2){
-                        listState = "已上传";
-                        //str1 = "";
-                    }
-                    var fileSize = decimal((parseInt(list[i].size) / 1024 / 1024),1);
-                    if(parseInt(fileSize) > 0 ){
-                        fileSize = decimal((parseInt(list[i].size) / 1024 / 1024),1) + "M";
-                    }else{
-                        fileSize = decimal((parseInt(list[i].size) / 1024),1)  + "K";
-                    }
-                    str += "<tr id=\"list_item"+i+"\" class=\"list_all_items\">"
-                            +  "<td width=\"25%\"><div id=\"fileName"+ i +"\">"+ listName+ "</div></td>"
-                            +  "<td width='18%'><div class=\"list_item_size\">"+ fileSize + "</div></td>"
-                            +  "<td width=\"14%\"><div class=\"list_item_state\">"+ duration + "秒</div></td>"
-                            +  "<td width=\"10%\"><div class=\"list_item_state\">"+ listState + "</div></td>"
-                            +  "<td width=\"33%\">"
-                                + "<div class=\"table_done\">"
-                                    //+ str1
-                                    + "<span class=\"table_up_del_rec\" id='uploadFile'>上传</span>"
-                                    + "<span class=\"table_up_del_rec\" id='deleteFile'>本地删除</span>"
-                                    + "<span class=\"table_up_del_rec\" id='playbackList'>回放</span>"
-                                    //+ "<div class='table_up_perc'></div>"
-                                +"</div>"
-                            +"</td>"
-                        + "</tr>"
-                }
-                str += "<div style='height:0;clear:both;'></div>"
-                $("#table_list_container").append(str);
-                //点击了本地删除
-                $("#table_list_container #deleteFile").map(function(index){
-                   $(this).click(function(){
-                        deleteFile(index);
-                    })
-                })
-                //点击了上传
-                $("#table_list_container #uploadFile").map(function(index){
-                  $(this).click(function(){
-                        uploadFile(index);
-                    })
-                })
-                 //点击了回放
-                 $("#table_list_container #playbackList").map(function(index){
-                   
-                    $(this).click(function(){
-                        playbackList(index);
-                    })
-                })
-
-            }
-
-        }
-//***************************************************************************
+//*****************************录制文件管理里面的X,回放,删除,上传**********************************************
+//X
+$("#closepage1").click(function(){
+	$("#doubleCamera").attr("disabled",false)
+	$("#singleCamera").attr("disabled",false)
+	$("#box").css({"display":"none"})
+	$("#list_container").css({"display":"none"});
+	
+	if(g_uploading == false) {  
+		        enterRoom()
+                //跟新视频
+                updateVideo();
+     }
+})
   
     function playbackList(i){
         // 弹出层隐藏 并开始回放
         var fileName = $("#fileName"+ i).text();
         console.log(fileName)
-//      $(".videoPage_right_view_box").empty();
-        $("#box").css({"display":"none"})
+        $("#doubleCamera").attr("disabled",false)
+		$("#singleCamera").attr("disabled",false)
+		$("#box").css({"display":"none"})
 		$("#list_container").css({"display":"none"});
 		
-		 if(g_playbacking){
-		// 如果正在回放时点击回放则停止播放
-		CRVideo_StopPlayMedia();
+		if(g_uploading == false) {  
+			        enterRoom()
+	                //跟新视频
+	                updateVideo();
+	     };
 		
-		}else{
-			
-			
-	      	if(layout == "layoutA"){
+		 if(g_playbacking){
+			// 如果正在回放时点击回放则停止播放
+			CRVideo_StopPlayMedia();
+		
+		}
+		 playbackRecord(fileName);
+		if(layout == "layoutA"){
 	          
 	          layoutA();
-	      	}else if(layout == "layoutB"){
+	     }else if(layout == "layoutB"){
 	         
 	          layoutB();
-	      	}else if(layout == "layoutC"){
+	    }else if(layout == "layoutC"){
 	          layoutC();
-	      	}
+	    }
 			  
-			$('#playback').css("display","none")
-			$('#playback1').css("display","block")
-			//该回放状态
-	        g_playbacking = true;
-	        g_mediaObj.keepAspectRatio(true);
-	        //回放视频	
-	        CRVideo_PlaybackRecordFile(fileName)
-		}
+		// 更新视频
+        updateVideo();
     }
     // 删除
     function deleteFile(i){
@@ -1292,16 +1283,31 @@ function decimal(num,v){
     return Math.round(num*vv)/vv;
 }
 
+//********************************改变背景色******************************************
+function bgc(){
+	
+	setInterval(function(){
+                if(g_bg_color != "#10132b"){
+                    $(".videoPage_right_view_box").css({"background-color":"#10132b"});
+                    g_bg_color = "#10132b";
+                }else{
+                    $(".videoPage_right_view_box").css({"background-color":"#10132a"});
+                    g_bg_color = "#10132a";
+                }
+            },100)
+	
+}
 
-// // 容器显示视频
-//  function videoContainerShow(){
-//      if(layout == "layoutA"){
-//          
-//          layoutA();
-//      }else if(layout == "layoutB"){
-//         
-//          layoutB();
-//      }else if(layout == "layoutC"){
-//          layoutC();
-//      }
-//  }
+
+//*********************************** 容器显示视频*****************************************
+function videoContainerShow(){
+    if(layout == "layoutA"){
+        
+        layoutA();
+    }else if(layout == "layoutB"){
+       
+        layoutB();
+    }else if(layout == "layoutC"){
+        layoutC();
+    }
+}

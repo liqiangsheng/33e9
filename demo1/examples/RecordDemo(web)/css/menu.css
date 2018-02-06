@@ -813,3 +813,7 @@ input::-ms-clear{display:none;}
 	cursor: pointer;
 }
 /*list文件列表 结束*/
+
+#mediaObj,#videoAObj,#videoBObj{
+	position: absolute;
+}

@@ -401,7 +401,7 @@ $(function(){
             g_mediaObj = CRVideo_CreatMediaObj();
             g_mediaObj.id("mediaObj");
             //媒体容器  插入到
-            $("#mediaContainer").append(g_mediaObj.handler());
+            $(".detail_right_video").append(g_mediaObj.handler());
             // 1、表示内容保持比例居中显示，0、表示内容拉伸
             g_mediaObj.keepAspectRatio(true)
             //    console.log(g_mediaObj)
@@ -409,12 +409,12 @@ $(function(){
             //    创建video对象A 和设置
             g_videoAObj = CRVideo_CreatVideoObj();
             g_videoAObj.id("videoAObj")
-            $("#videoAContainer").append(g_videoAObj.handler())
+            $(".detail_right_video").append(g_videoAObj.handler())
            
              //    创建video对象B 和设置
              g_videoBObj = CRVideo_CreatVideoObj();
              g_videoBObj.id("videoBObj")
-            $("#videoBContainer").append(g_videoBObj.handler())
+            $(".detail_right_video").append(g_videoBObj.handler())
 
             // A布局，两个视频文件的布局
             layoutA()
@@ -440,30 +440,41 @@ $(function(){
             g_layout = "layoutA";
             // console.log(g_videoAObj)
             //隐藏主播放页面
-            $("#mediaContainer").css({display:"none"});
+            // $("#mediaContainer").css({display:"none"});
+            g_mediaObj.show();
             //是否单摄像头
             if(g_single_video){
                 //隐藏主播放页面
-                $("#mediaContainer").css({display:"none"});
+                g_mediaObj.show();
                 //单摄像出现，展示位置
-                $("#videoAContainer").css({"display":"block","left":"124px","top":"0px","height":"300px"});
+                // $("#videoAContainer").css({"display":"block","left":"124px","top":"0px","height":"300px"});
                 //设置视频宽高
+                g_videoAObj.hide();
                 g_videoAObj.width(534);
                 g_videoAObj.height(300);
+                g_videoAObj.left(124);
+                g_videoAObj.top(0);
                 // 双摄的页面隐藏
-                $("#videoBContainer").css({display:"none"});
+                g_videoBObj.show();
             }else{ 
                  // 双摄像头
                 //隐藏主播放页面
-                $("#mediaContainer").css({display:"none"});
+                g_mediaObj.show();
+                // $("#mediaContainer").css({display:"none"});
                 // A摄像的大小
-				$("#videoAContainer").css({"display":"block","left":"0px","top":"40px","width":"375px","height":"210px"});
-				g_videoAObj.width(375);
+				// $("#videoAContainer").css({"display":"block","left":"0px","top":"40px","width":"375px","height":"210px"});
+                g_videoAObj.width(375);
                 g_videoAObj.height(210);
+                g_videoAObj.hide();
+                g_videoAObj.left(0);
+                g_videoAObj.top(40);
                 // B摄像的大小
-				$("#videoBContainer").css({"display":"block","left":"375px","top":"40px","width":"375px","height":"210px"});
-				g_videoBObj.width(375);
-				g_videoBObj.height(210);
+				// $("#videoBContainer").css({"display":"block","left":"375px","top":"40px","width":"375px","height":"210px"});
+                g_videoBObj.width(375);
+                g_videoBObj.height(210);
+                g_videoAObj.hide();
+				g_videoBObj.left(375);
+				g_videoBObj.top(40);
             }
             if(g_startRecord){// 如果是在回放状态
                 //录音内容
@@ -567,30 +578,46 @@ $(function(){
 
             if(g_single_video){//单摄像头
                 //主
-                $("#mediaContainer").css({display:"block",left:0,top:"40px",width:"375px",height:"210px"});
+                // $("#mediaContainer").css({display:"block",left:0,top:"40px",width:"375px",height:"210px"});
                 g_mediaObj.width(375);
                 g_mediaObj.height(210);
+                g_mediaObj.hide();
+                g_mediaObj.left(0);
+                g_mediaObj.top(40);
                 //A
-                $("#videoAContainer").css({display:"block",left:0,top:"40px",width:"375px",height:"210px"}) 
+                // $("#videoAContainer").css({display:"block",left:0,top:"40px",width:"375px",height:"210px"}) 
                 g_videoAObj.width(375);
                 g_videoAObj.height(210);
+                g_videoAObj.hide();
+                g_videoAObj.top(40);
+                g_videoAObj.left(0);
                 //B
-                $("#videoBContainer").css({display:none})
+                // $("#videoBContainer").css({display:none})
+                g_videoBObj.show();
 
                 //更新视频
                 updateVideo();
             }else{//双摄相头
-                $("#mediaContainer").css({display:"block",left:0,top:0,width:"500px",height:"280px"});
+                // $("#mediaContainer").css({display:"block",left:0,top:0,width:"500px",height:"280px"});
                 g_mediaObj.width(500);
                 g_mediaObj.height(280);
+                g_mediaObj.hide();
+                g_mediaObj.left(0);
+                g_mediaObj.top(0);
                 //A
-                $("#videoAContainer").css({display:"block",left:"500px",top:0,width:"250px",height:"140px"}) 
+                // $("#videoAContainer").css({display:"block",left:"500px",top:0,width:"250px",height:"140px"})
+                g_videoAObj.hide(); 
                 g_videoAObj.width(250);
                 g_videoAObj.height(140);
+                g_videoAObj.top(0);
+                g_videoAObj.left(500);
                  //B
-                $("#videoBContainer").css({display:"block",left:"500px",top:"140px",width:"250px",height:"140px"}) 
+                // $("#videoBContainer").css({display:"block",left:"500px",top:"140px",width:"250px",height:"140px"}) 
+                g_videoBObj.hide(); 
                 g_videoBObj.width(250);
                 g_videoBObj.height(140);
+                g_videoBObj.top(140);
+                g_videoBObj.left(500);
 
                 //更新视频
                 updateVideo()
@@ -719,11 +746,18 @@ $(function(){
         function layoutC(){
             // C布局，无论单双摄像头都只显示最大的 主 视频
             g_layout = "layoutC";
-            $("#mediaContainer").css({display:"block",left:"124px",top:0,height:"300px"})
+            // $("#mediaContainer").css({display:"block",left:"124px",top:0,height:"300px"})
+            g_mediaObj.hide();
             g_mediaObj.width(534);
             g_mediaObj.height(300);
-            $("#videoAContainer").css({display:"none"});
-            $("#videoBContainer").css({display:"none"})
+            g_mediaObj.left(124);
+            g_mediaObj.top(0);
+
+            g_videoBObj.show();
+            g_videoAObj.show();
+            
+            // $("#videoAContainer").css({display:"none"});
+            // $("#videoBContainer").css({display:"none"})
         }
 
       /**
@@ -891,9 +925,12 @@ $(function(){
        
         // C布局且比例为4:3
         if(g_layout =="layoutC" && width/height == 4/3){
-            $("#mediaContainer").css({"display":"block","top":"1px","left":"176px","height":"297px"})
+            // $("#mediaContainer").css({"display":"block","top":"1px","left":"176px","height":"297px"})
+            g_mediaObj.hide();
             g_mediaObj.width(396);
             g_mediaObj.height(297);
+            g_mediaObj.left(176);
+            g_mediaObj.top(1);
         }
     }
 

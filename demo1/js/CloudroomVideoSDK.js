@@ -58,7 +58,8 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 			   {
 					var div = document.createElement('div')
 					var objects=document.getElementsByTagName("object");
-					for(var i in CRVideo._containerList)
+					for(var i = 0;i < CRVideo._containerList.length;i++)
+					// for(var i in CRVideo._containerList)
 					{
 						var container = CRVideo._containerList[i]
 						var node = container.handler()
@@ -191,6 +192,55 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 			}
 		}
 	}
+	// Carter修改的******************************************************************
+
+	/**
+	 * 容器的左边距离
+	 */	
+	CRVideo.Container.prototype.left = function(value)
+	{
+		if(value === undefined)
+		{
+			return parseint(this._handler.style.left);
+		}else
+		{
+			this._handler.style.left = value+"px";
+		}
+		
+	}
+
+	/**
+	 * 容器的顶边距离
+	 */	
+	CRVideo.Container.prototype.top = function(value)
+	{
+		if(value === undefined)
+		{
+			return parseint(this._handler.style.top);
+		}else
+		{
+			this._handler.style.top = value+"px";
+		}
+		
+	}
+
+	/**
+	 * 容器的显示
+	 */	
+	CRVideo.Container.prototype.hide = function()
+	{	
+		this._handler.style.display = "block";	
+	}
+
+	/**
+	 * 容器的消失
+	 */	
+	CRVideo.Container.prototype.show = function()
+	{
+		this._handler.style.display = "none";
+		
+	}
+	//**********************************************************
 	CRVideo._containerList = [];
     /**
      * 影音播放的呈现容器
@@ -207,15 +257,7 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	{
 
 	}
-     /**
-	 * 工具条是否可用
-     * @param {number} bDisable -  0:可用; 非0:不可用;
-	 */	
-	CRVideo.MediaContainer.prototype.disableToolBar  = function(disable)
-	{
-		this._handler.disableToolBar(disable);
-	}
-     /**
+	 /**
 	 * 保存播放影音画面到图片文件
      * @param {string} pathFileName - 本地绝对路径文件名(支持格式：bmp, png, gif, jpg, jpeg)
      * @return {number} 0成功，非0失败
@@ -224,7 +266,7 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	{
 		return this._handler.savePicToFile(pathFileName);
 	}
-    /**
+	/**
 	 * 保存播放影音画面到图片文件
      * @param {string} format - 支持格式:bmp, png, gif, jpg, jpeg
      * @return {string} Base64字符串
@@ -233,7 +275,37 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	{
 		return this._handler.savePicToBase64(format);
 	}
-     /**
+	/**
+	 * 截图拍照
+	 * @access public
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {string} 图片数据的safe array，不成功返0长度的array
+	 */	
+	CRVideo.MediaContainer.prototype.savePicToArray = function(format)
+	{
+		return this._handler.savePicToArray(format);
+	}
+	/**
+	 * 获取图像时间戳
+	 * @access public
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {boolen} 当前图像数据对应的时间戳
+	 */	
+	CRVideo.MediaContainer.prototype.getPicFrameTime = function()
+	{
+		return this._handler.getPicFrameTime();
+	}
+	 /**
+	 * 显示隐藏播放工具条上的界面元素
+	 * @access public
+	 * @param {CRVideo_ToolBarUI} UIElement  -  界面元素
+     * @param {bool } isVisible   -  是否可见
+	 */	
+    CRVideo.MediaContainer.prototype.setToolBarUIElementVisible = function(UIElement,isVisible)
+	{
+        this._handler.setToolBarUIElementVisible(UIElement,isVisible);
+	}  
+	 /**
 	 * 绘制模式，是否拉伸绘制
      * @param {bool} value - true: 保持比例不拉伸， false:不保持比例进行拉伸
 	 */	
@@ -246,17 +318,15 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
         {
             this._handler.keepAspectRatio = value;
         }
-	}
-    /**
-	 * 显示隐藏播放工具条上的界面元素
-	 * @access public
-	 * @param {CRVideo_ToolBarUI} UIElement  -  界面元素
-     * @param {bool } isVisible   -  是否可见
+	}  
+     /**
+	 * 工具条是否可用
+     * @param {number} bDisable -  0:可用; 非0:不可用;
 	 */	
-    CRVideo.MediaContainer.prototype.setToolBarUIElementVisible = function(UIElement,isVisible)
+	CRVideo.MediaContainer.prototype.disableToolBar  = function(disable)
 	{
-        this._handler.setToolBarUIElementVisible(UIElement,isVisible);
-	}    
+		this._handler.disableToolBar(disable);
+	}
 
     /**
      * 视频的呈现容器
@@ -287,6 +357,15 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 		this._videoID = videoID;
 		this._handler.setVideo(usrID,videoID);
 	}
+	/**
+	 * 获取当前显示的用户
+	 * @access public
+	 * @return {string} 用户ID
+	 */	
+	CRVideo.VideoContainer.prototype.getUserID = function()
+	{
+		return this._handler.getUserID();
+	}
     /**
 	 * 获取当前显示的用户的视频设备
 	 * @access public
@@ -296,32 +375,15 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	{
 		return this._handler.getVideoID();
 	}
-    /**
-	 * 清理当前图像
+	/**
+	 * 拍照
 	 * @access public
+     * @param {string} pathFileName - 本地绝对路径文件名(支持格式：bmp, png, gif, jpg, jpeg)
+     * @return {bool} 0:成功； 非0：保存遇到的错误码；
 	 */	
-	CRVideo.VideoContainer.prototype.clear = function()
+	CRVideo.VideoContainer.prototype.savePic = function(pathFileName)
 	{
-		return this._handler.clear();
-	}
-     /**
-	 * 设置是否显示昵称
-	 * @access public
-     * @param {bool} value - 否显示昵称
-	 */	
-	CRVideo.VideoContainer.prototype.setVisibleNickName = function(value)
-	{
-		this._visibleNickName = value
-		this._handler.visibleNickName = value;
-	}
-    /**
-	 * 获取是否显示昵称
-	 * @access public
-     * @return {bool} 否显示昵称
-	 */	
-	CRVideo.VideoContainer.prototype.getVisibleNickName = function()
-	{
-		return this._handler.visibleNickName;
+		return this._handler.savePic(pathFileName);
 	}
     /**
 	 * 拍照
@@ -334,24 +396,34 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 		return this._handler.savePicToBase64(format);
 	}
 	/**
-	 * 拍照
+	 * 截图拍照
 	 * @access public
-     * @param {string} pathFileName - 本地绝对路径文件名(支持格式：bmp, png, gif, jpg, jpeg)
-     * @return {bool} 0:成功； 非0：保存遇到的错误码；
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {string} 图片数据的safe array，不成功返0长度的array
 	 */	
-	CRVideo.VideoContainer.prototype.savePic = function(pathFileName)
+	CRVideo.VideoContainer.prototype.savePicToArray = function(format)
 	{
-		return this._handler.savePic(pathFileName);
+		return this._handler.savePicToArray(format);
 	}
-     /**
-	 * 检查图像是否为空
-     * @return {bool} 图像是否为空
+	/**
+	 * 获取图像时间戳
+	 * @access public
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {boolen} 当前图像数据对应的时间戳
 	 */	
-	CRVideo.VideoContainer.prototype.isPicEmpty = function()
+	CRVideo.VideoContainer.prototype.getPicFrameTime = function()
 	{
-		return this._handler.isPicEmpty;
+		return this._handler.getPicFrameTime();
 	}
-     /**
+    /**
+	 * 清理当前图像
+	 * @access public
+	 */	
+	CRVideo.VideoContainer.prototype.clear = function()
+	{
+		return this._handler.clear();
+	}
+	 /**
 	 * 设置显示的视频画面是否保持比例
      * @param {bool} value - true: 保持比例不拉伸， false:不保持比例进行拉伸
 	 */	
@@ -379,6 +451,33 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
             this._handler.visibleNickName = value;
         }
 	}
+     /**
+	 * 设置是否显示昵称
+	 * @access public
+     * @param {bool} value - 否显示昵称
+	 */	
+	CRVideo.VideoContainer.prototype.setVisibleNickName = function(value)
+	{
+		this._visibleNickName = value
+		this._handler.visibleNickName = value;
+	}
+    /**
+	 * 获取是否显示昵称
+	 * @access public
+     * @return {bool} 否显示昵称
+	 */	
+	CRVideo.VideoContainer.prototype.getVisibleNickName = function()
+	{
+		return this._handler.visibleNickName;
+	}
+     /**
+	 * 检查图像是否为空
+     * @return {bool} 图像是否为空
+	 */	
+	CRVideo.VideoContainer.prototype.isPicEmpty = function()
+	{
+		return this._handler.isPicEmpty;
+	}
 	/**
 	 * 屏幕共享播放的呈现容器
 	 * @class
@@ -403,6 +502,36 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	CRVideo.ScreenShareContainer.prototype.savePic  = function(pathFileName)
 	{
 		return this._handler.savePic(pathFileName);
+	}
+	/**
+	 * 拍照
+	 * @access public
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {string} 以base64编码的图片数据，不成功返回空
+	 */	
+	CRVideo.ScreenShareContainer.prototype.savePicToBase64 = function(format)
+	{
+		return this._handler.savePicToBase64(format);
+	}
+	/**
+	 * 截图拍照
+	 * @access public
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {string} 图片数据的safe array，不成功返0长度的array
+	 */	
+	CRVideo.ScreenShareContainer.prototype.savePicToArray = function(format)
+	{
+		return this._handler.savePicToArray(format);
+	}
+	/**
+	 * 获取图像时间戳
+	 * @access public
+     * @param {string} format - 图片格式，支持bmp, png, gif, jpg, jpeg
+     * @return {boolen} 当前图像数据对应的时间戳
+	 */	
+	CRVideo.ScreenShareContainer.prototype.getPicFrameTime = function()
+	{
+		return this._handler.getPicFrameTime();
 	}
 	 /**
 	 * 清空缓存的图像
@@ -947,6 +1076,30 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	 */
 	var CRVideo_NotifyCallHungup = new CRVideo.CbProxy("CRVideo_NotifyCallHungup"); 
 	 /**
+	 * 邀请/取消邀请第三方结果
+	 * @callback CRVideo.CbProxy~CRVideo_CallMorePartyRslt
+	 * @param {string} callID - 呼叫全局标识
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - 自定义用户数据
+	 */
+	var CRVideo_CallMorePartyRslt = new CRVideo.CbProxy("CRVideo_CallMorePartyRslt");
+	 /**
+	 * 功能 取消第3方呼叫操作结果
+	 * @callback CRVideo.CbProxy~CRVideo_CancelCallMorePartyRslt
+	 * @param {string} callID - 呼叫全局标识
+	 * @param {number} sdkErr - 呼叫取消第三方操作的错误码,定义见cr/error
+	 * @param {string} cookie - 自定义用户数据
+	 */
+	var CRVideo_CancelCallMorePartyRslt = new CRVideo.CbProxy("CRVideo_CancelCallMorePartyRslt");
+	/**
+	 * 通知第3方呼叫状态改变
+	 * @callback CRVideo.CbProxy~CRVideo_CancelCallMorePartyRslt
+	 * @param {string} callID - 呼叫全局标识
+	 * @param {number} status - 状态，0振铃，1接通，2拒绝，3未应答，4挂断
+	 */
+	var CRVideo_NotifyCallMorePartyStatus = new CRVideo.CbProxy("CRVideo_NotifyCallMorePartyStatus");
+
+	 /**
 	 * 发送数据时，SDK通知发送结果
 	 * @callback CRVideo.CbProxy~CRVideo_SendCmdRlst
 	 * @param {string} taskID - 发送任务id
@@ -1371,11 +1524,6 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	 */
 	var CRVideo_GetNetDiskFileListRslt = new CRVideo.CbProxy("CRVideo_GetNetDiskFileListRslt");
 	 /**
-	 * SDK通知网盘空间已满，容量不足
-	 * @callback CRVideo.CbProxy~CRVideo_NotifyNetDiskIsFull
-	 */
-	var CRVideo_NotifyNetDiskIsFull = new CRVideo.CbProxy("CRVideo_NotifyNetDiskIsFull");
-	 /**
 	 * SDK通知删除网盘文件结果
 	 * @callback CRVideo.CbProxy~CRVideo_NotifyNetDiskFileDeleteRslt
 	 * @param {string} fileID - 网盘文件id
@@ -1431,14 +1579,14 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	 * @param {number} curPos  - 当前播放进度
 	 */
 	var CRVideo_NotifyMemberMediaData = new CRVideo.CbProxy("CRVideo_NotifyMemberMediaData");
-    /**
-	 * 第3方呼叫操作结果
-	 * @callback CRVideo.CbProxy~CRVideo_ClientInviteRslt
-	 * @param {string} inviteID   - 操作者的用户id
-	 * @param {number} sdkErr - 操作结果代码,定义见cr/error
-     * @param {string} cookie   - 自定义用户数据
-	 */
-	var CRVideo_ClientInviteRslt = new CRVideo.CbProxy("CRVideo_ClientInviteRslt");
+   /**
+	* 第3方呼叫操作结果
+	* @callback CRVideo.CbProxy~CRVideo_ClientInviteRslt
+	* @param {string} inviteID   - 操作者的用户id
+	* @param {number} sdkErr - 操作结果代码,定义见cr/error
+ 	* @param {string} cookie   - 自定义用户数据
+ 	*/
+	// var CRVideo_ClientInviteRslt = new CRVideo.CbProxy("CRVideo_ClientInviteRslt");
 	 /**
 	 * 取消第3方呼叫操作结果
 	 * @callback CRVideo.CbProxy~CRVideo_ClientCancelInviteRslt
@@ -1446,14 +1594,14 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	 * @param {number} sdkErr - 操作结果代码,定义见cr/errorsdkErr，CRVIDEOSDK_NOERR为成功操作
 	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
 	 */	
-	var CRVideo_ClientCancelInviteRslt = new CRVideo.CbProxy("CRVideo_ClientCancelInviteRslt");
+	// var CRVideo_ClientCancelInviteRslt = new CRVideo.CbProxy("CRVideo_ClientCancelInviteRslt");
 	 /**
 	 * SDK通知第3方呼叫状态改变
 	 * @callback CRVideo.CbProxy~CRVideo_NotifyInviteStatus
 	 * @param {string} inviteID  - 邀请标识码（邀请ID
 	 * @param {number} status - 第3方呼叫状态码,0-振铃 1-接通 2-拒绝 3-未应答 4-挂断
 	 */	
-	var CRVideo_NotifyInviteStatus = new CRVideo.CbProxy("CRVideo_NotifyInviteStatus");
+	// var CRVideo_NotifyInviteStatus = new CRVideo.CbProxy("CRVideo_NotifyInviteStatus");
 	
 	//------------------------------------------------------------------------
 	//	
@@ -1994,6 +2142,21 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 
 	 * @returns {number} 返回错误码（错误码为CRVideo_NOERR表示没有错误）
 	 */	
+	CRVideo_Init2 = function(sdkUsePath,statCallSer,statMediaSer,statHttp){
+		if(statCallSer === undefined)
+		{
+			statCallSer = 1
+		}
+		if(statMediaSer === undefined)
+		{
+			statMediaSer = 1
+		}
+		if(statHttp === undefined)
+		{
+			statHttp = 0
+		}
+		return CRVideo_Init("",sdkUsePath,statCallSer,statMediaSer,statHttp);
+	}
 	CRVideo_Init = function(oemID,sdkUsePath,statCallSer,statMediaSer,statHttp)
 	{
 		if(statCallSer === undefined)
@@ -2116,7 +2279,6 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 				return CRVideo_OCX_VERSION_NOTUPPORTED;
 			}
 
-
 			// 关联回调事件
 			if(!CRVideo.ie || CRVideo.v == 10.0)
 			{
@@ -2158,7 +2320,10 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallAccepted',CRVideo_NotifyCallAccepted);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallRejected',CRVideo_NotifyCallRejected);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallHungup',CRVideo_NotifyCallHungup);
-				
+				__crVideo_RegisterCallBack(CRVideo._crMgr, 'callMorePartyRslt',CRVideo_CallMorePartyRslt);
+				__crVideo_RegisterCallBack(CRVideo._crMgr, 'cancelCallMorePartyRslt',CRVideo_CancelCallMorePartyRslt);
+				__crVideo_RegisterCallBack(CRVideo._crMgr, 'notifyCallMorePartyStatus',CRVideo_NotifyCallMorePartyStatus);
+
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'sendCmdRlst',CRVideo_SendCmdRlst);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'sendBufferRlst',CRVideo_SendBufferRlst);
 				__crVideo_RegisterCallBack(CRVideo._crMgr, 'sendFileRlst',CRVideo_SendFileRlst);
@@ -2237,7 +2402,6 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMouseHotSpot',CRVideo_NotifyMouseHotSpot);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'getNetDiskSummaryRslt',CRVideo_GetNetDiskSummaryRslt);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'getNetDiskFileListRslt',CRVideo_GetNetDiskFileListRslt);
-				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyNetDiskIsFull',CRVideo_NotifyNetDiskIsFull);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyNetDiskFileDeleteRslt',CRVideo_NotifyNetDiskFileDeleteRslt);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyNetDiskTransforProgress',CRVideo_NotifyNetDiskTransforProgress);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMediaOpened',CRVideo_NotifyMediaOpened);
@@ -2246,9 +2410,6 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMediaPause',CRVideo_NotifyMediaPause);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyPlayPosSetted',CRVideo_NotifyPlayPosSetted);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyMemberMediaData',CRVideo_NotifyMemberMediaData);
-                __crVideo_RegisterCallBack(CRVideo._crMeet, 'clientInviteRslt',CRVideo_ClientInviteRslt);
-                __crVideo_RegisterCallBack(CRVideo._crMeet, 'clientCancelInviteRslt',CRVideo_ClientCancelInviteRslt);
-                __crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyInviteStatus',CRVideo_NotifyInviteStatus);
 				
 				
 				//-----------------------------
@@ -2293,10 +2454,11 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 			}
 			CRVideo._crSdk.setSDKParams(JSON.stringify(setSDKParams))
 			
-			
-
-
-			var r = CRVideo._crSdk.init(oemID,sdkUsePath);
+			if(oemID == ""){
+				var r = CRVideo._crSdk.init_2(sdkUsePath);
+			}else if(oemID === "CLOUDROOM"){
+				var r = CRVideo._crSdk.init(oemID,sdkUsePath);
+			}
 			if(r == 0)
 			{
 				CRVideo._isinit = true;
@@ -2683,6 +2845,47 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 			usrExtDat = "";
 		}
 		CRVideo._crMgr.hungupCall(callID,usrExtDat,cookie);
+	}
+	/**
+	 * 邀请/取消邀请第三方入会
+	 * 操作成功则回调callMorePartyRslt
+	 * @access public
+	 * @param {string} called  - 被叫用户的账户ID
+	 * @param {CRVideo_MeetInfoObj} meetObj 当前会议信息，json结构体请参见MeetInfoObj
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+	 */	
+	CRVideo_CallMoreParty = function(called,meetObj,usrExtDat,cookie)
+	{
+		if(cookie === undefined)
+		{
+			cookie = "";
+		}
+		if(usrExtDat === undefined)
+		{
+			usrExtDat = "";
+		}
+		return CRVideo._crMgr.callMoreParty(called,JSON.stringify(meetObj),usrExtDat,cookie);
+	}
+	/**
+	 * 功能 取消第3方呼叫
+	 * 操作成功则回调数 CRVideo_CancelCallMorePartyRslt
+	 * @access public
+	 * @param {string} inviteID  - 邀请标识码，邀请ID
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
+	 */	
+	CRVideo_CancelCallMoreParty= function(inviteID,usrExtDat,cookie)
+	{
+		if(cookie === undefined)
+		{
+			cookie = "";
+		}
+		if(usrExtDat === undefined)
+		{
+			usrExtDat = "";
+		}
+		CRVideo._crMgr.cancelCallMoreParty(inviteID,usrExtDat,cookie);
 	}
 	/**
 	 * 发送小块数据(一次性发送不会有进度通知,发送结果事件CRVideo_SendCmdRlst,CRVideo_SendCmd不能被CRVideo_CancelSend)
@@ -3374,13 +3577,15 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 		return JSON.parse(CRVideo._crMeet.getAllRecordFiles());	
 	}
 	/**
-	 * 第三方录制文件调用此接口后可进行本地回放和上传到服务器record下
 	 * @typedef {object} CRVideo_AddFileToRecordMgr - 添加本地文件到录制文件管理中
 	 * @property {string} fileName - 文件名，不含路径
 	 * @property {string} filePath - 文件路径，不含文件名
+	 */
+	/**
+	 * 第三方录制文件调用此接口后可进行本地回放和上传到服务器record下
 	 * @access public
 	 * @return {CRVideo_AddFileToRecordMgr[]} - -1：本地文件不存在，0：成功，1：文件已经被添加过
-	 */
+	 */	
 	CRVideo_AddFileToRecordMgr = function(fileName,filePath)
 	{
 		return JSON.parse(CRVideo._crMeet.addFileToRecordMgr(fileName,filePath));	
@@ -3409,7 +3614,7 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 		CRVideo._crMeet.setRecordUploadCfg(JSON.stringify(jsonCfg));
 	}												 
 	/**
-	 * 上传录像文件
+	 * 上传文件在默认位置
 	 * @access public			 
 	 * @param {string} filename - 文件名，全路径
 	 */	
@@ -3417,6 +3622,17 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	{
 		CRVideo._crMeet.uploadRecordFile(fileName);
 	}
+	/**
+	 * 上传文件到服务器指定位置
+	 * @access public			 
+	 * @param {string} filename - 文件名，全路径
+	 * @param {string} svrPathFileName - 服务器路径文件名
+	 */	
+	CRVideo_UploadRecordFile2 = function(fileName,svrPathFileName)
+	{
+		CRVideo._crMeet.uploadRecordFile2(fileName,svrPathFileName);
+	}
+
 	/**
 	 * 取消上传录像文件
 	 * @access public
@@ -3773,14 +3989,14 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
      * @return {string} - 本次邀请标识码（邀请ID）
 	 */	
 
-	CRVideo_ClientInvite  = function(called,meetObj,cookie)
-	{
-        if(cookie === undefined)
-		{
-			cookie = "";
-		}
-		return CRVideo._crMeet.clientInvite(called,JSON.stringify(meetObj),cookie);
-	}
+	// CRVideo_ClientInvite  = function(called,meetObj,cookie)
+	// {
+ //        if(cookie === undefined)
+	// 	{
+	// 		cookie = "";
+	// 	}
+	// 	return CRVideo._crMeet.clientInvite(called,JSON.stringify(meetObj),cookie);
+	// }
 	 /**
 	 * 取消第3方呼叫 结果事件clientCancelInviteRslt，根据sdkErr判断是否成功
 	 * @access public
@@ -3788,14 +4004,14 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
 	 */	
 
-	CRVideo_ClientCancelInvite  = function(inviteID,cookie)
-	{
-        if(cookie === undefined)
-		{
-			cookie = "";
-		}
-		CRVideo._crMeet.clientCancelInvite(inviteID,cookie);
-	}
+	// CRVideo_ClientCancelInvite  = function(inviteID,cookie)
+	// {
+ //        if(cookie === undefined)
+	// 	{
+	// 		cookie = "";
+	// 	}
+	// 	CRVideo._crMeet.clientCancelInvite(inviteID,cookie);
+	// }
 	/**
 	 * 设置当前哪个用户为主视频
 	 * @access public
@@ -3925,6 +4141,25 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 			cookie = "";
 		}
 		CRVideo._crQueue.startQueuing(queID,cookie);
+	}
+	/**
+	 * 客户开始排队
+	 * 操作完成回调CRVideo_StartQueuingRslt
+	 * @access public
+	 * @param {number} queID  - queID 队列ID
+	 * @param {string} usrExtDat - 自定义扩展参数
+	 * @param {string} cookie - cookie自定义数据 (在回调时，回传给调用者)
+	 */
+	CRVideo_StartQueuing2 = function(queID,usrExtDat,cookie)
+	{
+		if(cookie === undefined)
+		{
+			cookie = "";
+		}
+		if(usrExtDat === undefined){
+			usrExtDat = "";
+		}
+		CRVideo._crQueue.startQueuing2(queID,usrExtDat,cookie);
 	}
 	/**
 	 * 客户停止排队
