@@ -1216,11 +1216,10 @@ $("#closepage1").click(function(){
 	$("#box").css({"display":"none"})
 	$("#list_container").css({"display":"none"});
 	
-	if(g_uploading == false) {  
-		        $(".videoPage_right_view_box").css("display","block");
-                //跟新视频
-                updateVideo();
-    }
+	videoContainerShow();
+		  
+	// 更新视频
+    updateVideo();
 })
 //回放
 function playbackList(i){
@@ -1228,28 +1227,14 @@ function playbackList(i){
     var fileName = $("#fileName"+ i).text();
 	$("#box").css({"display":"none"})
 	$("#list_container").css({"display":"none"});
-	
-	if(g_uploading == false) {  
-		        $(".videoPage_right_view_box").css("display","block");
-                //跟新视频
-                updateVideo();
-     };
-	
+
 	 if(g_playbacking){
 		// 如果正在回放时点击回放则停止播放
 		CRVideo_StopPlayMedia();
 	
 	}
 	 playbackRecord(fileName);
-	if(layout == "layoutA"){
-          
-          layoutA();
-     }else if(layout == "layoutB"){
-         
-          layoutB();
-    }else if(layout == "layoutC"){
-          layoutC();
-    }
+	 videoContainerShow();
 		  
 	// 更新视频
     updateVideo();

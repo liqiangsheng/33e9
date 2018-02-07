@@ -375,7 +375,7 @@ a:hover, a:visited, a:link, a:active {
 	/*height: 750px;*/
 	position: relative;
 	left: 50%;
-	top:60px;
+	top:50px;
 	margin-left: -510px;
 	overflow: hidden;
 	border: 1px solid #eb5405;

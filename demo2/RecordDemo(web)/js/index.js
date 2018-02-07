@@ -48,6 +48,12 @@ $("body").keydown(function(e){
        $("#login_bnt").attr({"disabled":"disabled"}).css({background:"#ccc"})
     }
 });
+//*******************************根据屏幕设置视频页面的高度防止出现滚动条*************************************
+if($(document).height()<680){
+	$(".videoPage").css({"top":"0px","position":"fixed"})
+}else{
+	$(".videoPage").css({"top":"30px","position":"relative"})
+}
 
 //登陆
  //点击下拉 设置登录名
@@ -349,3 +355,5 @@ $("#lineOff_no").click(function(){
 	$("#box").css({"display":"none"});
 	location.href = "./index.html";
 })
+
+
