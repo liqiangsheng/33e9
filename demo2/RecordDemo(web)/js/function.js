@@ -149,7 +149,7 @@ function updateVideoCfg(sizeType,fps,qp){
 function enterRoom(){
 	g_video_filename_list = CRVideo_GetAllFilesInMediaPath();
 	console.log(g_video_filename_list)
-	$(".videoPage_right_view_box").empty();
+//	$(".videoPage_right_view_box").css("display","none");
 	$(".menu_box").css("display","none");
 	$(".login_box").css("display","none");
 	$(".videoPage").css("display","block");
@@ -228,15 +228,13 @@ function playImg(){
 		$("#suspendImg").css("display","block");
 		$("#playImg1").css("display","none");
 		$("#stopImg").css("display","block");
-		$("#singleCamera").attr("disabled",false);
-		$("#doubleCamera").attr("disabled",false);
 
         // 调用布局B
         $(".videoPage_right_view_box").css('display','none');
-        if(g_single_video)
-              layoutC();
-         else if(!g_single_video)
-              layoutB()
+//      if(g_single_video)
+//            layoutA();
+//       else if(!g_single_video)
+              layoutB();
         //视频是否正在上传
         if(g_uploading == false){
                 $(".videoPage_right_view_box").css('display','block');
@@ -283,8 +281,8 @@ $("#stopImg").click(function(){
 });
 //*******************************点击了设置*******************************
 $("#setUp").click(function(){
-	videoContainerShow();
-	$(".videoPage_right_view_box").empty();
+	
+	$(".videoPage_right_view_box").css("display","none");
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#full_page_div2").css({"display":"block"});
 	//
@@ -389,9 +387,11 @@ $("#closepage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
 	$("#list_container").css({"display":"none"});
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
-	
+	//视频容器显示
+	videoContainerShow();
+	//更新视频
+	updateVideo();
+
 	$("#fuRate").val(g_FURate/1024);
     $("#bitRate").val(g_bitRate/1000) ;
     $("#frameRate").val(g_frameRate);
@@ -419,8 +419,8 @@ $("#closepage").click(function(){
 
         var recordWH = $("#recordWH").val(4);
     }
-
-	videoContainerShow();
+  
+	
 })
 
 
@@ -428,9 +428,10 @@ $("#closepage").click(function(){
 $("#minpage").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
-	
+	//视频容器显示
+	videoContainerShow();
+	//更新视频
+	updateVideo();
 	$("#fuRate").val(g_FURate/1024);
     $("#bitRate").val(g_bitRate/1000) ;
     $("#frameRate").val(g_frameRate);
@@ -458,17 +459,16 @@ $("#minpage").click(function(){
 
         var recordWH = $("#recordWH").val(4);
     }
-
-	videoContainerShow();
 })
 
 //取消
 $(".full_page_cancle2").click(function(){
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
-	
+	//视频容器显示
+	videoContainerShow();
+	//更新视频
+	updateVideo();
 	$("#fuRate").val(g_FURate/1024);
     $("#bitRate").val(g_bitRate/1000) ;
     $("#frameRate").val(g_frameRate);
@@ -496,16 +496,16 @@ $(".full_page_cancle2").click(function(){
 
         var recordWH = $("#recordWH").val(4);
     }
-    
-	videoContainerShow();
 })
 
 //*******************************确定****************************
 $(".full_page_submit2").click(function(){ 
 	$("#box").css({"display":"none"})
 	$("#full_page_div2").css({"display":"none"});
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
+	//显示视频容器
+	videoContainerShow()
+	//更新视频
+	updateVideo();
 	
 	g_FURate = $("#fuRate").val()*1024;
     g_bitRate = $("#bitRate").val() * 1000;
@@ -545,12 +545,13 @@ $(".full_page_submit2").click(function(){
         g_video_fps =  $("#frame_input").val();
         g_video_qp = $("input[name='meet_yx']:checked").val();
         updateVideoCfg(parseInt(g_video_size_type),parseInt(g_video_fps),parseInt(g_video_qp));
-		videoContainerShow();
+        
+       
 })
 
 //**************************点击录制文件管理*************************************
 $("#recordMrg").click(function(){
-	$(".videoPage_right_view_box").empty();
+	$(".videoPage_right_view_box").css("display","none");
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	$("#list_container").css({"display":"block"});
 		
@@ -570,14 +571,15 @@ $("#recordMrg").click(function(){
 })
 //*************************点击单摄像头***************************************
 $("#singleCamera").click(function(){
-	    
-	    $("#singleCamera").attr("disabled","disabled")
-		$("#doubleCamera").attr("disabled",false)
 				if(g_single_video){
 					return;
 				};
 	            g_single_video = true;
-	            videoContainerShow()
+	            if(layout == 'layoutA') {
+                	layoutA();
+	            }else if(layout == 'layoutB') {
+	                layoutB();
+	            }
 	            // 跟新视频
 	            updateVideo();
 	           
@@ -705,15 +707,17 @@ function layoutA(){
 }
 //*************************点击双摄像头***************************************
 $("#doubleCamera").click(function(){
-
-	$("#singleCamera").attr("disabled",false)
-	$("#doubleCamera").attr("disabled","disabled")
 			if(!g_single_video){
 				return
 			};
                 
             g_single_video = false;
-            videoContainerShow();
+            if(layout == 'layoutA') {
+                layoutA();
+            }
+            else if(layout == 'layoutB') {
+                layoutB();
+            }
                 
             //跟新视频
             updateVideo();
@@ -734,7 +738,7 @@ function layoutB(){
 	    	g_videoAObj.width(375);
 			g_videoAObj.height(210);
 		    g_videoAObj.hide();
-		    g_videoAObj.left(0);
+		    g_videoAObj.left(375);
 			g_videoAObj.top(40);
 			//B
 			g_videoBObj.show();
@@ -887,8 +891,6 @@ function layoutB(){
 }
 //*************************创建媒体播放器***************************************
 function layoutC(){
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
 	layout = "layoutC";
 	//主
 	g_mediaObj.width(534);
@@ -906,8 +908,6 @@ function layoutC(){
 //*************************点击开始录制***************************************
 $("#startRecord").click(function(){
 	
-	$("#doubleCamera").attr("disabled",false)
-	$("#singleCamera").attr("disabled",false)
 	$(".videoPage_right_view_list").css("display","none");
 	$(".videoPage_right_view_list1").css("display","block");
 	if(g_playbacking){
@@ -927,6 +927,7 @@ $("#startRecord").click(function(){
 	g_startRecord = true;
 	
     videoContainerShow();
+    updateVideo();
 	
 })
 //*************************点击停止录制***************************************
@@ -944,13 +945,13 @@ $("#stopRecord").click(function(){
 function playbackRecord(fileName){
 	$("#doubleCamera").attr("disabled","disabled");
 	$("#singleCamera").attr("disabled","disabled");
+	
 	if(g_playbacking){
             // 如果正在回放时点击回放则停止播放
             CRVideo_StopPlayMedia(); 
         }else{
             // 如果文件没有
             if(fileName == null){
-                   // 如果回放文件名为空则return
 					alertLayer("还没录制");
 					return;
             }
@@ -977,8 +978,6 @@ function playbackRecord(fileName){
 $("#playback").click(function(){
 	playbackRecord(g_record);
 	
-	videoContainerShow();
-	
 })
 //*************************点击停止回放***************************************
 $("#playback1").click(function(){
@@ -990,7 +989,7 @@ $("#playback1").click(function(){
 	// 如果正在回放时点击回放则停止播放
     CRVideo_StopPlayMedia();
 	g_playbacking = false;
-	enterRoom()
+	videoContainerShow();
     // 跟新视频
     updateVideo();
 })
@@ -1047,7 +1046,7 @@ function upload(fileName){
 
 //*************************点击上传***************************************
 $("#upload").click(function(){
-	$(".videoPage_right_view_box").empty();
+	$(".videoPage_right_view_box").css("display","none");
 	$("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
 	upload(g_record)
 })
@@ -1059,7 +1058,9 @@ $("#name_del1Img,.full_page_cancle").click(function(){
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
 	cancle_upload(g_record);
-	enterRoom()
+	videoContainerShow();
+	// 跟新视频
+    updateVideo();
 	
 })
 //确定
@@ -1068,7 +1069,9 @@ $(".full_page_cancle1").click(function(){
 	$("#full_page_div").css("display","none");
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
-	enterRoom()
+	videoContainerShow();
+	// 跟新视频
+    updateVideo();
 })
 //取消上传
 $(".full_page_cancle3").click(function(){
@@ -1077,13 +1080,15 @@ $(".full_page_cancle3").click(function(){
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
 	cancle_upload(g_record);
-	enterRoom()
+	videoContainerShow();
+	// 跟新视频
+    updateVideo();;
 })
 //*****************************弹层（还没录制）********************************************
 
 function alertLayer(msg){
 	
-	$(".videoPage_right_view_box").empty();
+	$(".videoPage_right_view_box").css("display","none");
     $(".alert_label_detail").text(msg);
     $("#box").css({"width":$(document).width(),"height":$(document).height(),"display":"block"})
     $(".alert_palyer").css("display","block");
@@ -1096,9 +1101,9 @@ $("#alert_name_delImg").click(function(){
 	$("#alert_palyer").css("display","none");
 	$(".videoPage_right_view_list").css("display","block");
 	$(".videoPage_right_view_list1").css("display","none");
-	$("#doubleCamera").attr("disabled",false);
-	$("#singleCamera").attr("disabled",false);
     videoContainerShow()
+    // 跟新视频
+    updateVideo();
 	
 })
 $(".alertr_page_commit").click(function(){
@@ -1108,7 +1113,9 @@ $(".alertr_page_commit").click(function(){
 	$(".videoPage_right_view_list1").css("display","none");
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
-	videoContainerShow()
+	videoContainerShow();
+	// 跟新视频
+    updateVideo();;
 	
 })
 
@@ -1210,46 +1217,43 @@ $("#closepage1").click(function(){
 	$("#list_container").css({"display":"none"});
 	
 	if(g_uploading == false) {  
-		        enterRoom()
+		        $(".videoPage_right_view_box").css("display","block");
                 //跟新视频
                 updateVideo();
-     }
-})
-  
-    function playbackList(i){
-        // 弹出层隐藏 并开始回放
-        var fileName = $("#fileName"+ i).text();
-        console.log(fileName)
-        $("#doubleCamera").attr("disabled",false)
-		$("#singleCamera").attr("disabled",false)
-		$("#box").css({"display":"none"})
-		$("#list_container").css({"display":"none"});
-		
-		if(g_uploading == false) {  
-			        enterRoom()
-	                //跟新视频
-	                updateVideo();
-	     };
-		
-		 if(g_playbacking){
-			// 如果正在回放时点击回放则停止播放
-			CRVideo_StopPlayMedia();
-		
-		}
-		 playbackRecord(fileName);
-		if(layout == "layoutA"){
-	          
-	          layoutA();
-	     }else if(layout == "layoutB"){
-	         
-	          layoutB();
-	    }else if(layout == "layoutC"){
-	          layoutC();
-	    }
-			  
-		// 更新视频
-        updateVideo();
     }
+})
+//回放
+function playbackList(i){
+    // 弹出层隐藏 并开始回放
+    var fileName = $("#fileName"+ i).text();
+	$("#box").css({"display":"none"})
+	$("#list_container").css({"display":"none"});
+	
+	if(g_uploading == false) {  
+		        $(".videoPage_right_view_box").css("display","block");
+                //跟新视频
+                updateVideo();
+     };
+	
+	 if(g_playbacking){
+		// 如果正在回放时点击回放则停止播放
+		CRVideo_StopPlayMedia();
+	
+	}
+	 playbackRecord(fileName);
+	if(layout == "layoutA"){
+          
+          layoutA();
+     }else if(layout == "layoutB"){
+         
+          layoutB();
+    }else if(layout == "layoutC"){
+          layoutC();
+    }
+		  
+	// 更新视频
+    updateVideo();
+}
     // 删除
     function deleteFile(i){
         if(g_playbacking)
@@ -1302,12 +1306,13 @@ function bgc(){
 //*********************************** 容器显示视频*****************************************
 function videoContainerShow(){
     if(layout == "layoutA"){
-        
+         $(".videoPage_right_view_box").css('display','block');
         layoutA();
     }else if(layout == "layoutB"){
-       
+       $(".videoPage_right_view_box").css('display','block');
         layoutB();
     }else if(layout == "layoutC"){
+    	$(".videoPage_right_view_box").css('display','block');
         layoutC();
     }
 }

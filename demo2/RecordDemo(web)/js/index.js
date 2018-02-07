@@ -211,8 +211,6 @@ CRVideo_EnterMeetingRslt.callback = function(sdkEr){
 $(".menu_right_detail dl").map(function(index,item){
 	$(this).click(function(){
 	    enterRoom()
-		$("#doubleCamera").attr("disabled",false)
-	    $("#singleCamera").attr("disabled",false)
 	    })
 });
 //**********************通知打开影音文件    ********************************
@@ -233,17 +231,15 @@ CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
         g_playbacking = false;
         $("#playback").css("display","block");
         $("#playback1").css("display","none");
-        $("#singleCamera").attr("disabled",false);
-        $("#doubleCamera").attr("disabled",false);
         //吊A布局
         $(".videoPage_right_view_box").empty();
-        enterRoom()
+        
         $("#playImg").css("display","block");
 		$("#suspendImg").css("display","none");
 		$("#playImg1").css("display","none");
 		$("#stopImg").css("display","none");
         //更新摄像头
-        updateVideo()
+        enterRoom();
 
     }
 }
