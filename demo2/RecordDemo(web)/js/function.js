@@ -231,9 +231,7 @@ function playImg(){
 
         // 调用布局B
         $(".videoPage_right_view_box").css('display','none');
-//      if(g_single_video)
-//            layoutA();
-//       else if(!g_single_video)
+
               layoutB();
         //视频是否正在上传
         if(g_uploading == false){

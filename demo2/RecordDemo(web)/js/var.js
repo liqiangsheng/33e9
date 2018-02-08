@@ -1,4 +1,6 @@
 //
+    var flag = 0;
+    var flag1 = 0;
     var g_location_dir=location.href;//获取目录地址
     var g_logining=false; //登陆状态
     var cr_account; // 云屋授权账号

@@ -231,7 +231,8 @@ CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
 }
 //*****************************媒体停止通知****************************************
   CRVideo_NotifyMediaStop.callback=function(userid){
- 
+	     $("#doubleCamera").attr("disabled",false)
+		$("#singleCamera").attr("disabled",false)
         if(userid == g_userID){
             //是否回放
         g_playbacking = false;
