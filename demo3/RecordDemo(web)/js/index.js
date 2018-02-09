@@ -85,7 +85,7 @@ $(".inputLayer2").click(function(){
     $(".inputLayer2").css({display:"none"});
     $("#login_psd").val("").focus();
      if($("#login_psd").val()==""||$("#login_cpyname").val()==null){
-    	  alert({
+    	  BombBox({
         	  title:'提示',
 			  content:'密码不能为空',
 			  noText:'取消',
@@ -115,7 +115,7 @@ $("#login_bnt").click(function(){
     }
 //登录失败
 CRVideo_LoginFail.callback = function(sdkErr,cookie){
-      alert({
+      BombBox({
     	  title:'提示',
 		  content:'登陆失败'+sdkErr,
 		  noText:'取消',
@@ -144,7 +144,7 @@ CRVideo_CreateMeetingSuccess.callback = function(meetObj,cookie){
 }
 //创建会议失败响应	
 CRVideo_CreateMeetingFail.callback = function(sdkEr ,cookie){
-	alert({
+	BombBox({
 		  title:'提示',
 		  content:'创建会议失败'+sdkEr,
 		  noText:'取消',
@@ -182,7 +182,7 @@ CRVideo_EnterMeetingRslt.callback = function(sdkEr){
             $(".login_box").css({"display":"none"});
             $(".menu_box").css({"display":"block"});
         }else{
-        	alert({
+        	BombBox({
 				  title:'提示',
 				  content:'初始化会议房间失败'+sdkEr,
 				  noText:'取消',
@@ -196,7 +196,7 @@ CRVideo_EnterMeetingRslt.callback = function(sdkEr){
         console.log(g_video_qp)
         
 	}else{
-		alert({
+		BombBox({
 				  title:'提示',
 				  content:' 进入会议失败'+sdkEr,
 				  noText:'取消',
@@ -233,7 +233,7 @@ CRVideo_NotifyMediaOpened.callback=function(totalTime,width,height){
   CRVideo_NotifyMediaStop.callback=function(userid){
   	    $("#doubleCamera").attr("disabled",false);
 	    $("#singleCamera").attr("disabled",false);
- 
+        $("#recordMrg").attr("disabled",false);
         if(userid == g_userID){
             //是否回放
         g_playbacking = false;
@@ -316,7 +316,7 @@ CRVideo_VideoDevChanged.callback =function(userID){
 //******************************************会议掉线*********************************************
 CRVideo_LineOff.callback=function(sdkErr){
 	location.href = "./index.html";
-	alert({
+	BombBox({
 	    title:'提示',
 	    content:'会议掉线:'+sdkErr,
 	    noText:'取消',

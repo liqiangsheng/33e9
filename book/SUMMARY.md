@@ -9,7 +9,7 @@
     * [音视频通讯](Explain.md#communication)
 * [Demo说明](README.md)
    * [视频会议](README.md#Meeting)
-   * [金融合规双录](README.md#Double)
+   * [金融合规本地双录](README.md#Double)
    * [金融合规远程双录](README.md#RemoteDoubleRecord)
    * [视频呼叫](README.md#videocall)
 * [集成指南](IntegratedGuide.md)

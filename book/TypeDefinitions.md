@@ -63,7 +63,7 @@
 | 名称     | 参数类型         |   说明               |
 |:-------- |:-----------|:----------           |
 |userID|	string|	用户ID|
-|nickname	|string||	昵称|
+|nickname	|string|	昵称|
 |audioStatus|	[CRVideo_ASTATUS](Constant.md#ASTATUS)	|音频状态，数值参考麦克风状态|
 |videoStatus|	[CRVideo_VSTATUS](Constant.md#VSTATUS)|视频状态，数值参考视频状态定义|
 
@@ -127,7 +127,7 @@
 |top	|number	|上|
 |width	|number	|宽|
 |height|	number	|高|
-|param	|object|	附加参数<p>Properties</p><p>Name	Type	Description</p><p>type	[CRVideo_REC_VCONTENT_TYP】E](Constant.md#REC_VCONTENT_TYPE)	录制类型</p>|
+|param	|object|	附加参数<p>Properties</p><p>Name Type Description</p><p>type[CRVideo_REC_VCONTENT_TYPE](Constant.md#REC_VCONTENT_TYPE)	录制类型</p>|
 
 ### CRVideo_ScreenShareCfgObj {#CRVideo_ScreenShareCfgObj}
 
@@ -172,7 +172,7 @@
 |maxbps	|number|	视频码率（1~100*1000*1000）；未配置则使用内部默认值，请参见[VIDEO_SHOW_SIZE](Constant.md#SHOW_SIZE)|
 |qp_min	|number|	最佳质量（18~51, 越小质量越好）；（未配置则使用内部默认值25）|
 |qp_max	|number|	最差质量（18~51, 越大质量越差）；（未配置则使用内部默认值36）|
-|wh_rate	|number	|视频宽高比（0对应16：9，1对应4：3；2对应1：1)； （未配置则使用内部默认值0）|
+|wh_rate	|number	|视频宽高比（0对应16：9，1对应4：3；2对应1：1 ）； （未配置则使用内部默认值0）|
 |wh_rate | [CRVideo_VIDEO_WH_RATE](Constant.md#VIDEO_WH_RATE)|	视频宽高比例|
 
 ### CRVideo_VideoDeviceInfo {#CRVideo_VideoDeviceInfo}

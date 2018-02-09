@@ -1096,7 +1096,8 @@ function alertLayer(msg){
 //  点击弹出层的确定 x
 $("#alert_name_delImg").click(function(){
     $("#box").css({"display":"none"});
-	$("#alert_palyer").css("display","none");
+    $("#alert_palyer").css("display","none");
+    $(".list_container").css("display","none");
 	$(".videoPage_right_view_list").css("display","block");
 	$(".videoPage_right_view_list1").css("display","none");
     videoContainerShow()
@@ -1108,6 +1109,7 @@ $(".alertr_page_commit").click(function(){
    $("#box").css({"display":"none"});
 	$("#alert_palyer").css("display","none");
 	$(".videoPage_right_view_list").css("display","block");
+	$(".list_container").css("display","none");
 	$(".videoPage_right_view_list1").css("display","none");
 	$("#doubleCamera").attr("disabled",false)
 	$("#singleCamera").attr("disabled",false)
@@ -1198,6 +1200,7 @@ function getAllVideoList(list){
          $("#table_list_container #playbackList").map(function(index){
            
             $(this).click(function(){
+                $("#recordMrg").attr("disabled","disabled")
                 playbackList(index);
             })
         })
@@ -1226,16 +1229,10 @@ function playbackList(i){
 	$("#box").css({"display":"none"})
 	$("#list_container").css({"display":"none"});
 
-	 if(g_playbacking){
-		// 如果正在回放时点击回放则停止播放
-		CRVideo_StopPlayMedia();
 	
-	}
-	 playbackRecord(fileName);
-	 videoContainerShow();
-		  
-	// 更新视频
-    updateVideo();
+     playbackRecord(fileName);
+     $(".videoPage_right_view_box").css("display","block");
+
 }
     // 删除
     function deleteFile(i){

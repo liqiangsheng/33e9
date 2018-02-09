@@ -16,6 +16,10 @@
 - id() ------ <font color="red">id</font>
 - style() ------ <font color="red">容器的样式</font>
 - width() ------ <font color="red">容器的宽度</font>
+- top() ------ <font color="red">容器的头部位置</font>
+- left() ------ <font color="red">容器的左边位置</font>
+- show() ------ <font color="red">容器的消失</font>
+- hide() ------ <font color="red">容器的显示</font>
 
 ### 影音播放的呈现容器 {#MediaContainer}
 
@@ -28,6 +32,18 @@
 参数   |类型  |说明
 -------|----------|---------
  bDisable|	number|	0:可用; 非0:不可用;
+
+- show() ------ <font color="red">容器的消失</font>
+  + **继承**:[CRVideo.Container](#Container).show()
+
+- hide() ------ <font color="red">容器的显示</font>
+  + **继承**:[CRVideo.Container](#Container).hide()
+
+- left() ------ <font color="red">容器的左边位置</font>
+  + **继承**:[CRVideo.Container](#Container).left()
+
+- top() ------ <font color="red">容器的头部位置</font>
+  + **继承**:[CRVideo.Container](#Container).top()
 
 - handler() ------ <font color="red">object对象</font>
    + **继承**:[CRVideo.Container](#Container).handler()
@@ -196,6 +212,18 @@ value	|bool	|0: 可见， 1:不可见
 
 - width() ------ <font color="red">容器的宽度</font>
    + **继承**:[CRVideo.Container](#Container).width()
+
+- show() ------ <font color="red">容器的消失</font>
+  + **继承**:[CRVideo.Container](#Container).show()
+
+- hide() ------ <font color="red">容器的显示</font>
+  + **继承**:[CRVideo.Container](#Container).hide()
+
+- left() ------ <font color="red">容器的左边位置</font>
+  + **继承**:[CRVideo.Container](#Container).left()
+
+- top() ------ <font color="red">容器的头部位置</font>
+  + **继承**:[CRVideo.Container](#Container).top()
 
 
 
