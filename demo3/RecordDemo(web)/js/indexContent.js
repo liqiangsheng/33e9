@@ -148,7 +148,6 @@ function updateVideoCfg(sizeType,fps,qp){
 //*******************************进入房间***********************************************
 function enterRoom(){
 	g_video_filename_list = CRVideo_GetAllFilesInMediaPath();
-	console.log(g_video_filename_list)
 	$(".menu_box").css("display","none");
 	$(".login_box").css("display","none");
 	$(".videoPage").css("display","block");
@@ -212,7 +211,7 @@ function playImg(){
                 CRVideo_StopPlayMedia();
         }
         g_playbacking = false;
-       $("#playImg").css("display","none");
+       	$("#playImg").css("display","none");
 		$("#suspendImg").css("display","block");
 		$("#playImg1").css("display","none");
 		$("#stopImg").css("display","block");
@@ -236,6 +235,7 @@ function playImg(){
 $("#playImg").click(function(){
 	$("#doubleCamera").attr("disabled",false);
 	$("#singleCamera").attr("disabled",false);
+	g_play = true;
 	playImg()
 });
 
@@ -246,6 +246,7 @@ $("#suspendImg").click(function(){
 	$("#suspendImg").css("display","none");
 	$("#playImg1").css("display","block");
 	$("#stopImg").css("display","block");
+	g_play = true;
 	//暂停播放媒体
 	CRVideo_PausePlayMedia(true);
 });
@@ -257,6 +258,7 @@ $("#playImg1").click(function(){
 	$("#suspendImg").css("display","block");
 	$("#playImg1").css("display","none");
 	$("#stopImg").css("display","block");
+	g_play = true;
 	//恢复影音播放
 	CRVideo_PausePlayMedia(false);
 });
@@ -270,6 +272,7 @@ $("#stopImg").click(function(){
 	$("#playImg1").css("display","none");
 	$("#stopImg").css("display","none");
 	g_playbacking = false;
+	g_play = false;
 	//停止媒体播放
 	CRVideo_StopPlayMedia();
 });
@@ -1033,6 +1036,7 @@ function playbackRecord(fileName){
         }else{
             // 如果文件没有
             if(fileName == null){
+            	   $(".videoPage_right_view_box").css("display","none");
 					alertLayer("还没录制");
 					return;
             }
@@ -1040,8 +1044,16 @@ function playbackRecord(fileName){
                 // 如果布局不为A则停止播放影音
                 CRVideo_StopPlayMedia();
             }
+            if(g_play == true){
+                CRVideo_StopPlayMedia();
+                 $(".videoPage_right_view_box").empty();
+                $(".voice1_item_play").attr("display","block");
+				$(".voice1_item_stop").attr("display","none");
+				$(".voice1_item_pause").attr("display","none");
+            }
             //该回放状态
             g_playbacking = true;
+            g_play == false;
             // 布局改为C布局
             layoutC();
             $('#playback').css("display","none")
@@ -1060,7 +1072,9 @@ $("#playback").click(function(){
 	$(".videoPage_right_view_box").empty();
 	playbackRecord(g_record);
 	
-	
+	videoContainerShow();
+    // 跟新视频
+    updateVideo();
 })
 //*************************点击停止回放***************************************
 $("#playback1").click(function(){
@@ -1085,6 +1099,7 @@ function upload(fileName){
     $("#upload_num_percert").html("0%");
     if(fileName == null)
     {
+    	
         alertLayer("还没录制");
         return;
     }

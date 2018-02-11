@@ -191,9 +191,6 @@ CRVideo_EnterMeetingRslt.callback = function(sdkEr){
         }
         //视频更新配置
         updateVideoCfg(g_video_size_type,g_video_fps,g_video_qp);
-        console.log(g_video_size_type)
-        console.log(g_video_fps)
-        console.log(g_video_qp)
         
 	}else{
 		BombBox({
