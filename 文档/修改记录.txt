@@ -1,4 +1,14 @@
-
+     / **
+	 * 设置用户是否打开多摄像头
+	 * @access public
+	 * @param {string} userID - 登录成功后分配的userID
+	 * @param {bool} enable - 是否打开多摄像头
+	 */
+	CRVideo_SetEnableMutiVideo = function(userID,enable)
+	{
+		CRVideo._crMeet.setEnableMutiVideo(userID,enable);
+	}
+    下次记得把这个加到web文档上面。漏了
 
 
 

@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "" "">
+<html>
+<head>
+    <meta name="renderer" content="ie-stand">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <title>会议demo</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <meta name="description" content="cloudroom live demo"></meta>
+    <meta name="author" content="Jeffrey"/></meta>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*"></meta>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+	<!-- 加载层 -->
+	<div class="loadDiv"><img src="image/loading.gif"></div>
+
+    <!-- 选项面板start -->
+    <div class="videoSelect_panel" style="display: none;">
+        <div class="videoSelect_header">音视频设置</div>
+        <div class="videoSelect_content">
+            <div class="videoSelect_items">
+                <label class="videoSelect_lab">摄像头</label>
+                <div class="video_select_wrap">
+                    <select id="video_select"></select>
+                </div>
+                <input type="checkbox" id="mutiVideo" class="videoSelect_checkbox" value="0"/>
+                <label>启用多摄像头</label>
+            </div>
+            <div class="videoSelect_items">
+                <label class="videoSelect_lab">麦克风</label>
+                <div class="video_select_wrap">
+                    <select id="mic_select"></select>
+                </div>
+            </div>
+            <div class="videoSelect_items">
+                <label class="videoSelect_lab">扬声器</label>
+                <div class="video_select_wrap">
+                    <select id="spker_select"></select>
+                </div>
+            </div>
+            <div class="videoSelect_items">
+                <label class="videoSelect_lab">视频尺寸</label>
+                <div class="video_select_wrap">
+                    <select id="size_select">
+                        <option value="8">640*360</option>
+                        <option value="10">848*480</option>
+                        <option value="12">1280*720</option>
+                        <option value="13">1920*1080</option>
+                    </select>
+                </div>
+            </div>
+            <div class="videoSelect_items">
+                <label class="videoSelect_lab">视频帧率</label>
+                <div class="video_select_wrap">
+                    <input id="frame_ipt" class="videoSelect_ipt" type="text" name="frame_ipt" value="15">
+                </div>
+            </div>
+        </div>
+        <div class="videoSelect_items pl_40">
+            <input class="meet_set_radio" type="radio" name="meet_yx" value="0" checked="checked">
+            <label class="set_radio_label">视频画质优先</label>
+            <input class="meet_set_radio" type="radio" name="meet_yx" value="1">
+            <label class="set_radio_label">视频流畅优先</label>
+        </div>
+        <div class="videoSelect_items">
+            <label class="videoSelect_lab">画面比例：</label>
+            <input class="meet_set_radio" type="radio" name="meet_ratio" value="0" checked="checked">
+            <label class="set_radio_label">16:9</label>
+            <input class="meet_set_radio" type="radio" name="meet_ratio" value="1">
+            <label class="set_radio_label">4:3</label>
+            <input class="meet_set_radio" type="radio" name="meet_ratio" value="2">
+            <label class="set_radio_label">1:1</label>
+        </div>
+        <div class="videoSelect_btn_wrap">
+            <button id="setSureBtn" class="videoSelect_btn1" onclick="setSure()">确 定</button>
+            <button id="setCancelBtn" class="videoSelect_btn2" onclick="setCancel()">取 消</button>
+        </div>
+    </div>
+  <!-- 选项面板end -->
+
+	<div class="container" style="display: block;">
+		<div class="login_box" style="display: block;">
+			<div class="login_header"><img src="image/login_logo.png"></div>
+			<div class="login_input_form">
+				<div class="login_server">
+  				    <label>服务器</label>
+  				    <span class="login_input_line">
+                        <input type="text" name="login_serverName" id="login_serverName" value="www.cloudroom.com"/>
+                        <img class="remeber_server" src="image/pull_down.png"/>
+                        <div class="inputLayer1"></div>
+                    </span>
+                </div>
+  				<ul class="pull_down_server">
+	  				<li>10.8.8.220</li>
+	  				<li>www.cloudroom.com</li>
+	  			</ul>
+  			</div>
+            <div class="login_cpyname">
+                <label>用户名</label>
+                <span class="login_cpyname_line">
+                    <input type="text" name="login_cpyName" id="login_cpyName" value="demo@cloudroom.com"/>
+                    <div class="inputLayer4"></div>
+                </span>
+            </div>
+            <div class="login_psd">
+                <label>密码</label>
+                <span class="login_psd_line">
+                    <input type="password" name="login_psd" id="login_psd" value="123456"/>
+                    <div class="inputLayer5"></div>
+                </span>
+            </div>
+  			<div class="login_name">
+  				<label>昵称</label>
+  				<span class="login_name_line">
+                    <input type="text" name="login_nickName" id="login_nickName" value=""/>
+                    <div class="inputLayer2"></div>
+                </span>
+  			</div>
+            <div class="login_master">
+                <label>主持人</label>
+                <span class="login_input_line">
+                    <input type="text" name="login_master" id="login_master" value="是" disabled="true" />
+                    <img class="remeber_master" src="image/pull_down.png"/>
+                    <div class="inputLayer3"></div>
+                </span>
+                <ul class="pull_down_master">
+                  <li>是</li>
+                  <li>否</li>
+                </ul>
+            </div>
+			<div class="login_button">
+				<button id="loginBtn" onclick="login()">登录</button>
+			</div>
+		</div>
+
+		<div class="entermeet_box" style="display: none;">
+			<div class="entermeet_header">
+				<span class="entermeet_header_title">登录会议</span>
+			</div>
+			<div class="entermeet_slogan clearfix">
+				<span class="entermeet_username">欢迎 <span id="username"></span>...</span>
+				<span class="entermeet_logout" onclick="logout()">注销</span>
+			</div>
+			<div class="entermeet_input_form">
+				<ul class="entermeet_login_tab clearfix">
+					<li class="onentermeet">创建会议入会</li>
+					<li>会议号入会</li>
+					<!-- <li>文本数据传输</li>
+					<li>文本数据传送</li> -->
+				</ul>
+				<div class="entermeet_tab_items" style="display: block;">
+					<div class="entermeet_tab_ipt">
+						<label>会议主题：</label>
+						<input type="text" name="meeting_name" id="meeting_name">
+					</div>
+					<div class="entermeet_tab_btn">
+						<button id="createMeetBtn">创建并进入会议</button>
+					</div>
+				</div>
+				<div class="entermeet_tab_items" style="display: none;">
+					<div class="entermeet_tab_ipt">
+						<label>8位会议号：</label>
+						<input type="text" name="meeting_number" id="meeting_number">
+					</div>
+					<div class="entermeet_tab_btn">
+						<button id="nunEnterMeetBtn">进入会议</button>
+					</div>
+				</div>
+				<div class="entermeet_tab_items" style="display: none;margin-top: 50px;">
+					<div class="entermeet_tab_ipt">
+						<label>命令数据：</label>
+						<textarea></textarea>
+					</div>
+					<div class="entermeet_tab_ipt mt_20">
+						<label>接收人：</label>
+						<input type="text" name="meeting_name">
+					</div>
+					<div class="entermeet_tab_btn">
+						<button>发送</button>
+					</div>
+				</div>
+				<div class="entermeet_tab_items" style="display: none;">
+					<div class="entermeet_tab_ipt">
+						<label>文件：</label>
+						<input type="text" name="meeting_name">
+						<button class="entermeet_choosefile_btn">选择文件</button>
+					</div>
+					<div class="entermeet_tab_ipt mt_20">
+						<label>接收人：</label>
+						<input type="text" name="meeting_name">
+						<button class="entermeet_sendfile_btn">发送文件</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="meetingDetail_box clearfix" style="display: none;">
+            <div class="meetingDetail_left">
+                <div class="meetingDetail_header">
+                    <img src="image/icon_logo.png">
+                    <span>会议ID：<span id="meetingID">5665552</span></span>
+                </div>
+                <div class="meetingDetail_member">
+                    <div class="meetingDetail_member_title">会议成员列表</div>
+                      <!-- <div class="meetingDetail_member_main">
+                        <label>设置主视频</label>
+                        <select class="video_wall_setmainvideo"></select>
+                      </div> -->
+                    <ul id="meetMemberList" style="height: 274px;overflow-y: scroll;"></ul>
+                </div>
+                <div class="meetingDetail_chat">
+                    <div class="meetingDetail_chat_header">聊天</div>
+                    <div class="meetingDetail_chat_lists" id="chatsList"></div>
+                    <div class="meetingDetail_send_box">
+                        <textarea id="chatMsg" class="send_area" placeholder="说点什么吧..."></textarea>
+                        <p id="attentionMsg" class="attention_msg"></p>
+                        <div class="chats_btn_wrap">
+                            <button class="chats_send_btn" onclick="sendMsg()">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="meetingDetail_right">
+                <div class="meetingDetail_title_tab clearfix">
+                    <ul class="meetingDetail_tab_left">
+                        <li class="onmeetingDetail">视频墙</li>
+                        <li>屏幕共享</li>
+                        <!-- <li>文件中转站</li> -->
+                    </ul>
+                    <ul class="meetingDetail_tab_right">
+                    <!-- <li>邀请</li>
+                    <li>录制</li> -->
+                        <li id="exitMeetBtn">退出会议</li>
+                    </ul>
+                </div>
+                <div class="meetingDetail_content_tab">
+                    <!-- 视频墙 -->
+                    <div class="meetingDetail_tab_items video_wall_wrap" style="display: block;">
+                        <div class="video_wall_header clearfix">
+                            <div class="video_wall_header_left">
+                                <ul>
+                                    <li><span class="meetingDetail_radio_bg onradio" data-radio="0"></span><label for="two_screen">二分屏</label></li>
+                                    <li><span class="meetingDetail_radio_bg" data-radio="1"></span><label for="four_screen">四分屏</label></li>
+                                    <li><span class="meetingDetail_radio_bg" data-radio="2"></span><label for="six_screen">六分屏</label></li>
+                                </ul>
+                            </div>
+                            <div class="video_wall_header_right">
+                                <ul>
+                                    <li onclick="videoOptions()">选项</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="video_wall_content">
+                            <div class="videoContainer" style="position: absolute;"></div>
+                            <div class="videoContainer1" style="position: absolute;"></div>
+                            <div class="videoContainer2" style="position: absolute;"></div>
+                            <div class="videoContainer3" style="position: absolute;"></div>
+                            <div class="videoContainer4" style="position: absolute;"></div>
+                            <div class="videoContainer5" style="position: absolute;"></div>
+                        </div>
+                    </div>
+                    <!-- 屏幕共享 -->
+                    <div class="meetingDetail_tab_items screen_share_wrap" style="display: none;">
+                        <div class="screen_share_header">
+                            <button class="screen_share_btn">屏幕共享</button>
+                        </div>
+                        <div class="screen_share_content">
+                            <div id="screenShareContainer" style="position: absolute;display:none;"></div>
+                        </div>
+                    </div>
+                    <!-- 文件中转站 -->
+                    <div class="meetingDetail_tab_items white_board_wrap" style="display: none;">
+                        <div class="file_station_head">
+                            <span class="a1">已共享文件</span>
+                            <span id="refreshBtn" class="a2">刷新</span>
+                            <span class="a3">注意：文件中转站文件将会在会议结束时被删除</span>
+                            <span class="a4">剩余空间：<span id="freeSpace"></span>MB</span>
+                        </div>
+                        <div class="file_station_table">
+                            <table class="file_station_ul" width="100%" align="center" border="0">
+                                <thead>
+                                    <tr>
+                                        <th style="border-right: 1px solid #ccc;" width="35%">文件名</th>
+                                        <th style="border-right: 1px solid #ccc;" width="10%">共享人</th>
+                                        <th style="border-right: 1px solid #ccc;" width="20%">修改时间</th>
+                                        <th style="border-right: 1px solid #ccc;" width="10%">大小</th>
+                                        <th width="25%">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="fileStationList">
+                                </tbody>
+                             </table>
+                        </div>
+                        <div class="file_local_head">
+                            <span class="a1">本地操作</span>
+                            <input id="uploadFlile" name="uploadFlile" type="file" onchange="getImgURL(this)"/>
+                        </div>
+                        <div class="file_station_upload">
+                            <div class="file_station_upload_head">
+                                <table class="file_upload_ul" width="100%" align="center" border="0">
+                                    <thead>
+                                        <tr>
+                                            <th style="border-right: 1px solid #ccc;" width="30%">文件名</th>
+                                            <th style="border-right: 1px solid #ccc;" width="20%">大小</th>
+                                            <th style="border-right: 1px solid #ccc;" width="30%">状态</th>
+                                            <th style="border-right: 1px solid #ccc;" width="20%">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="fileUploadList">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+  	    </div>
+	</div>
+  <!--[if IE ]>
+    <object id="crVideoObj" classid="clsid:07EFD662-A1BB-4d8d-9BEE-F7E43E5FEBF5" width="1" height="1" ></object>
+    <object id="crMgrObj" classid="clsid:120AD2B0-68F2-46c6-88D8-52173F501C0F" width="1" height="1" ></object>
+    <object id="crMeetObj" classid="clsid:9E9DD983-A9F8-4dff-B694-B1AE1C708B1E" width="1" height="1" ></object>
+    <object id="crQueueObj" classid="clsid:9AAD199D-A02F-4513-875D-AA81091E44B9" width="1" height="1" ></object>
+    <object id="crHttpObj" classid="clsid:7E44F8C9-7C8D-4004-8F45-D9819D78663C" width="1" height="1" ></object> 
+    <script type="text/javascript" src="../js/CloudroomVideoSDK_iePatch.js"></script>
+  <![endif]-->
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/html5.js"></script>
+    <script src="js/md5.js"></script>
+	<script type="text/javascript" src="../js/CloudroomVideoSDK.js"></script>
+	<script type="text/javascript" src="layui/layui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+</body>
+</html>
+
+
+
