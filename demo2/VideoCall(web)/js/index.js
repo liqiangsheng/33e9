@@ -99,7 +99,15 @@ document.onkeydown = function (e) {
 	}
 };
 // 屏蔽右键
-window.document.oncontextmenu = function(){ return false; };
+window.document.oncontextmenu = function(){ return false;};
+
+//刷新队列
+function refresh_que(){
+	$("#queue_list li").remove();
+	setTimeout(function(){
+		CRVideo_InitQueueDat();//队列初始化
+	},1000);
+};
 
 /*******************************login 代码开始**************************************8*/
 
@@ -1004,8 +1012,6 @@ CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 		var queInfos_length = que_info.length;
 		for(var i = 0;i < queInfos_length;i++){
 			var item = que_info[i];
-			
-			
 			if(g_login_type == 2){
 				var status = CRVideo_GetQueueStatus(item.queID); //获取队列状态
 				var li = $("<li/>")
@@ -1037,15 +1043,11 @@ CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 				
 				var priority_span = $("<span>"+item.prio+"</span>")
 				li.append(priority_span);
-				
-				
+
 				g_que_dict[btn.attr("id")] = {"queId":item.queID,"expertNum_span":expertNum_span,"queNum_span":queNum_span,"srvNum_span":srvNum_span,"srvStatus_span":srvStatus_span};
 				
 				$('#start_server_list').append(li)
 
-				
-
-				
 				btn.click(function(e){
 					queData = g_que_dict[$(this).attr("id")];
 					var queID = queData["queId"];
@@ -1070,8 +1072,6 @@ CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 								+"</span>"
 								)
 				li.append(name_span);
-
-				
 				var queNum_span = $("<span class=\"queue_list_right\">"+status.wait_num+"人</span>")
 				li.append(queNum_span);
 				
@@ -1091,7 +1091,7 @@ CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 		}
 
 		if(g_login_type == 2){
-			setSrvDNDState(0)
+			setSrvDNDState(0)//设置列队是否免打扰
 			
 			$(".start_server_footer_right").click(function(e){
 				CRVideo_ReqAssignUser(); //请求分配客户操作结果
@@ -1099,9 +1099,130 @@ CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 			
 			$("#start_server_disturb").click(function(e){
 				var checkVal = $("input[type='checkbox']").is(':checked');
-				setSrvDNDState(checkVal)
+				setSrvDNDState(checkVal)//设置列队是否免打扰
 			})
 		}
 	}
-}
+};
+
+//开始排队响应
+CRVideo_StartQueuingRslt.callback = function(errCode,cookie){
+	if(errCode != 0){
+		removeUserQueLayer();
+	}
+};
+
+//停止排队响应
+CRVideo_StopQueuingRslt.callback = function(errCode,cookie){
+
+};
+
+//自己被呼叫
+CRVideo_NotifyCallIn.callback = function(callID ,meetObj,callerID,usrExtDat){
+	removeUserQueLayer();
+	CRVideo_AcceptCall(callID,meetObj)//接受对方发起的视频请求，开始进入视频会话
+	
+	g_meet_id = meetObj.ID;
+	g_meet_pwd = meetObj.pswd;
+	g_session_call_id = callID;
+	g_call_user_id = callerID;
+	popupLodingLayer();
+	CRVideo_EnterMeeting(meetObj.ID,meetObj.pswd,g_user_id,g_nick_name);//进入会议
+};
+
+//正在排队信息更新
+CRVideo_QueuingInfoChanged.callback = function(queuingInfo){
+	g_queuing_info = queuingInfo;
+};
+
+//列队状态改变
+CRVideo_QueueStatusChanged.callback = function(queStatus){
+	updateQue(queStatus);
+};
+
+//开启队列服务响应
+CRVideo_StartServiceRslt.callback = function(queID,sdkErr,cookie){
+	if(sdkErr == CRVideo_NOERR)	{//开始服务队列，更新该队列的状态信息
+		var status = CRVideo_GetQueueStatus(queID);
+		updateQue(status);
+	}	
+};
+
+//停止队列服务响应
+CRVideo_StopServiceRslt.callback = function(queID,sdkErr,cookie){
+
+};
+
+//系统自动安排客户	
+CRVideo_AutoAssignUser.callback = function(usr){
+	popupUserSrvLayer(usr);
+};
+
+//请求分配客户操作结果
+CRVideo_ReqAssignUserRslt.callback = function(errCode,usr,cookie){
+	if(errCode == CRVideo_NOERR){
+		popupUserSrvLayer(usr);
+	}else if(errCode == CRVideo_QUE_NOUSER){
+		popupTipLayer("目前没有需要服务的客户")
+	}else if(errCode == CRVideo_QUE_SERVICE_NOT_START){
+		popupTipLayer("未开启队列服务")
+	}
+};
+
+//系统取消自动安排客户
+CRVideo_CancelAssignUser.callback = function(queID,usrID){
+	removeUserSrvLayer();
+
+};
+
+//会议创建成功
+CRVideo_CreateMeetingSuccess.callback = function(meetObj,cookie){
+	CRVideo_Call(g_call_user_id,meetObj);//发起呼叫，邀请用户参加视频会话
+	CRVideo_AcceptAssignUser(g_call_user_que, g_call_user_id); //接受系统安排的客户
+
+};
+//会议创建失败
+CRVideo_CreateMeetingFail.callback = function(sdkErr,cookie){
+	removeLodingLayer();
+	popupTipLayer("创建会议失败")
+};
+
+//呼叫他人操作成功
+CRVideo_CallSuccess.callback = function(callID, cookie){
+
+};
+//呼叫他人操作失败
+CRVideo_CallFail.callback = function(callID, sdkErr,cookie){
+	popupTipLayer("呼叫失败");
+};
+
+//通知呼叫被对方接受
+CRVideo_NotifyCallAccepted.callback = function(callID,meetObj,usrExtDat){
+	g_meet_id = meetObj.ID;
+	g_meet_pwd = meetObj.pswd;
+	g_session_call_id = callID;
+	CRVideo_EnterMeeting(g_meet_id,g_meet_pwd,g_user_id,g_nick_name);//进入会议
+};
+//通知呼叫被对方拒绝
+CRVideo_NotifyCallRejected.callback = function(callID, sdkErr,usrExtDat){
+	popupTipLayer("呼叫被对方拒绝");
+};
+//点击注销
+$("#start_server_logout,#queue_logout").click(function(){
+	logout();
+});
+
+//注销
+function logout(){
+	CRVideo_Logout();
+	setTimeout(function()
+	{	
+		location.replace(location.href)
+	},200)//延迟刷新页面防止logout未执行完毕
+};
+//刷新
+$("#queue_uptate").click(function(){
+	refresh_que();
+})
+
 
