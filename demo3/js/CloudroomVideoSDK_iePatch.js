@@ -247,10 +247,23 @@ function crMeetObj::cancelUploadRecordFileErr()
 function crMeetObj::notifyRecordFileStateChanged()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyRecordFileStateChanged}, Array.prototype.slice.call(arguments));
-}function crMeetObj::notifyRecordFileUploadProgress()
+}
+function crMeetObj::notifyRecordFileUploadProgress()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyRecordFileUploadProgress}, Array.prototype.slice.call(arguments));
 }
+//function crMeetObj::svrRecordStateChanged()
+//{
+//	__crVideo_CallBack.apply({"proxy":CRVideo_SvrRecordStateChanged}, Array.prototype.slice.call(arguments));
+//}
+//function crMeetObj::getSvrRecordInfo()
+//{
+//	__crVideo_CallBack.apply({"proxy":CRVideo_GetSvrRecordInfo}, Array.prototype.slice.call(arguments));
+//}
+//function crMeetObj::getSvrRecordInfoEx()
+//{
+//	__crVideo_CallBack.apply({"proxy":CRVideo_GetSvrRecordInfoEx}, Array.prototype.slice.call(arguments));
+//}
 function crMeetObj::startScreenShareRslt()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_StartScreenShareRslt}, Array.prototype.slice.call(arguments));
@@ -258,7 +271,8 @@ function crMeetObj::startScreenShareRslt()
 function crMeetObj::stopScreenShareRslt()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_StopScreenShareRslt}, Array.prototype.slice.call(arguments));
-}function crMeetObj::notifyScreenShareStarted()
+}
+function crMeetObj::notifyScreenShareStarted()
 {
 	__crVideo_CallBack.apply({"proxy":CRVideo_NotifyScreenShareStarted}, Array.prototype.slice.call(arguments));
 }

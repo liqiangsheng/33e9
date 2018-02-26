@@ -873,6 +873,15 @@
 
 - **返回值**:获取视频参数（[CRVideo_VideoCfg](TypeDefinitions.md#CRVideo_VideoCfg)）
 
+####设置用户是否打开多摄像头 {#CRVideo_SetEnableMutiVideo}
+
+>CRVideo_SetEnableMutiVideo(userID,enable)
+
+| 参数    | 类型        | 含义      |
+|:-------- |:-----------|:----------|
+|userID	| string| 	登录成功后分配的userID| 
+| enable	| bool| 是否打开多摄像头| 
+
 ----
 
 ###视频回调函数 {#videoMrgCallback}

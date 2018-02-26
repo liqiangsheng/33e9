@@ -135,6 +135,7 @@
         * [添加图片资源](videoMrg.md#CRVideo_SetPicResource)
         * [创建screenShare/Video/media对象](videoMrg.md#CRVideo_CreatScreenShareObj)
         * [获取视频参数](videoMrg.md#CRVideo_GetVideoCfg)
+        * [设置用户是否打开多摄像头](videoMrg.md#CRVideo_SetEnableMutiVideo)
     * [视频管理回调](videoMrg.md#videoMrgCallback)
         * [进入/结束会议结果](videoMrg.md#CRVideo_EnterMeetingRslt)
         * [有人进入/离开会议通知 ](videoMrg.md#CRVideo_UserEnterMeeting)

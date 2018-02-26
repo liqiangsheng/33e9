@@ -636,6 +636,24 @@ $(".meet_file_name_right").click(function(){
 	}
 	CRVideo_SendCmd(g_call_user_id,$("#cmd_content").val());//发送小块数据
 });
+//发送小块数据回调
+CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){
+	if(sdkErr == CRVideo_NOERR){
+		$(".cmd_prompt").show(300);
+		$("#cmd_content").val("");
+		var cmd_prompt_num = 2;
+		var cmd_prompt_temp = setInterval(function(){
+			cmd_prompt_num--;
+			if(cmd_prompt_num == 0){
+				$(".cmd_prompt").hide(300);
+				
+				clearInterval(cmd_prompt_temp);
+			}
+		},1000)
+        
+	}
+}
+
 //收到小块数据
 CRVideo_NotifyCmdData.callback = function(sourceUserId,data){
 	popupTipLayer("收到"+sourceUserId+"的消息："+data);
@@ -1225,4 +1243,49 @@ $("#queue_uptate").click(function(){
 	refresh_que();
 })
 
+//****************************弹框***************************************
+var BombBox = function(param){
+	
+	var title = param.title,
+    content = param.content,
+    yesText = param.yesText || '确定',
+    noText = param.noText,
+    yesFn = param.yesFn,
+    noFn = param.noFn;
+    
+var htm = "";
+htm += '<div class="lacy-alert"><div class="bgd">';
+if (title) htm += '<header class="hd">' + title + '</header>';
+htm += '<div class="bd">' + content + '</div></div>';
+if (!noText){
+    htm += '<footer class="fd">' +
+    '<a href="#" class=" alert-btn alert-btn-lg" data-role="closeBtn" id="yes_long_btn">' + yesText + '</a>' +
+    '</footer>';
+    htm += '</div>';
+}
+else{
+    htm += '<footer class="fd">' +
+    '<a href="#" class=" alert-btn alert-btn-st" id="yes_btn">' + yesText + '</a>' +
+    '<a href="#" class=" alert-btn alert-btn-st" data-role="closeBtn">' + noText + '</a>' +
+    '</footer>';
+    htm += '</div>';
+}
+
+$("body").append(htm);
+
+ var al = $(".lacy-alert");
+ al.on("click", '[data-role="closeBtn"]', function() {
+     $(".lacy-alert").remove();
+ });
+
+ $("#yes_btn,#yes_long_btn").bind("click" , function () {
+     $(".lacy-alert").remove();
+     if(param.yesFn){
+         param.yesFn();
+     }
+     param = {};
+ });
+ 
+	
+}
 

@@ -295,7 +295,7 @@
 - **功能**：客获取所有用户在线状态成功响应
 
 + **参数**：
-    - userStatus{#userStatus} ----- 用户在线状态信息列表，userID:用户id，userStatus:用户的在线状态(0离线 ；1在线空闲 ；2在线忙碌；3在线会议中)，DNDType：用户免打扰状态（0代表关闭免打扰，其它值代表开启免打扰）
+    - userStatus ----- 用户在线状态信息列表，userID:用户id，userStatus:用户的在线状态(0离线 ；1在线空闲 ；2在线忙碌；3在线会议中)，DNDType：用户免打扰状态（0代表关闭免打扰，其它值代表开启免打扰）
     - cookie ----- 自定义用户数据
 
 ####获取所有用户在线状态失败 {#CRVideo_GetUserStatusFail}

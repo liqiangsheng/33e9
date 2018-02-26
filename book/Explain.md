@@ -16,7 +16,7 @@
    + scripts
    + styles
    + callback.js.html
-   + CloudroomVideoSDK for Web开发指南.docx<font color="#f77a0b">（web端开发指南）</font>
+   + CloudroomVideoSDK for Web开发指南.docx
    + CRMeet.CbProxy.html
    + CRVideo.CbProxy.html
    + CRVideo.Container.html
@@ -25,7 +25,7 @@
    + CRVideo.VideoContainer.html
    + error.js.html
    + global.html
-   + index.html<font color="#f77a0b">（入口文件）</font>
+   + index.html
    + init.js.html
    + live.js.html
    + module-cr_callback.html
@@ -37,10 +37,10 @@
    + RemoteRecordDemo(web)<font color="#f77a0b">（远程双录demo）</font>
    + VideoCall(web)<font color="#f77a0b">（视频会议demo）</font>
 
-> - js
-   + CloudroomVideoSDK.js<font color="#f77a0b">（js sdk文件）</font>
-   + CloudroomVideoSDK.min.js<font color="#f77a0b">（js sdk压缩文件）</font>
-   + CloudroomVideoSDK_iePatch.js<font color="#f77a0b">（ie8专用js sdk文件）</font>
+> - js<font color="#f77a0b">（sdk文件夹）</font>
+   + CloudroomVideoSDK.js<font color="#f77a0b">（sdk文件）</font>
+   + CloudroomVideoSDK.min.js<font color="#f77a0b">（sdk压缩文件）</font>
+   + CloudroomVideoSDK_iePatch.js<font color="#f77a0b">（ie8专用sdk文件）</font>
 
 > - CloudroomVideoSDK.exe<font color="#f77a0b">（客户端插件）</font>
 
@@ -58,15 +58,15 @@
 
 ![CloudroomVideoSDK.exe安装](./images/1.png)
 
- 选择安装
+- 选择安装
 
 ![CloudroomVideoSDK.exe安装](./images/2.png)
 
-插件会自动开始安装
+- 插件会自动开始安装
 
 ![CloudroomVideoSDK.exe安装](./images/3.png)
 
-完成安装
+- 完成安装
 
 ![CloudroomVideoSDK.exe安装](./images/4.png)
 
@@ -76,17 +76,20 @@
  
  ![CloudroomVideoSDK.exe安装](./images/5.png)
 
- 引用CloudroomVideoSDK.js
+- 引用CloudroomVideoSDK.js
 
- ![CloudroomVideoSDK.exe安装](./images/6.png) 
+```cs
 
- 如果是IE开发，还需要引用补丁文件
+<script type="text/javascript" src="../js/CloudroomVideoSDK.js"></script>
+
+```
+- 如果是IE开发，还需要引用补丁文件
 
  ![CloudroomVideoSDK.exe安装](./images/7.png) 
  
 #### <font color="#0099cc">浏览器版本的支持说明</font>
 
-- Cloudroom SDK支持chrome 44及以下版本（chrome45版本后不再支持npapi插件），chrome 42以上版本缺省不支持插件，需要手工打开，打开方式如下：
+> Cloudroom SDK支持chrome 44及以下版本（chrome45版本后不再支持npapi插件），chrome 42以上版本缺省不支持插件，需要手工打开，打开方式如下：
 
  **一：在chrome浏览器输入“chrome://flags”**
 
@@ -123,7 +126,7 @@
 * @param {number} statHttp -  是否启用http模块 0为不启用，1为启用,默认为0
 * @returns {number} 返回错误码（错误码为CRVideo_NOERR表示没有错误）
 */
-var result = CRVideo_Init2(oemID，sdkUsePath,statCallSer,statMediaSer,statHttp)
+var result = CRVideo_Init(oemID，sdkUsePath,statCallSer,statMediaSer,statHttp)
 
 ```
 
@@ -348,13 +351,11 @@ CRVideo_CloseMic(userID)
 
 ```cs
 /**
+*获取用户所有的摄像头信息
 * @typedef {object} CRVideo_VideoDeviceInfo - 视频设备信息
 * @property {string} userID - 用户ID
 * @property {string} videoID - 设备id
 * @property {string} videoName - 设备名称
-*/
-/**
-* 获取用户所有的摄像头信息
 * @access public
 * @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
 */
@@ -379,6 +380,7 @@ CRVideo_SetDefaultVideo(userID,videoID)
 
 ```cs
 /**
+*系统视频参数设置
 * @typedef {object} CRVideo_VideoCfg - 视频参数
 * @property {CRVideo_VIDEO_WH_RATE} sizeType - 视频尺寸
 * @property {number} fps - 帧率：视频帧率(5~30)
@@ -386,10 +388,7 @@ CRVideo_SetDefaultVideo(userID,videoID)
 * @property {number} qp_min - 最佳质量(18~51, 越小质量越好) (未配置则使用内部默认值25)
 * @property {number} qp_max - 最差质量(18~51, 越大质量越差) (未配置则使用内部默认值36)
 * @property {number} wh_rate - 视频宽高比(0对应16:9,1对应4:3,2对应1:1) (未配置则使用内部默认值0)
-  * @property {CRVideo_VIDEO_WH_RATE} wh_rate - 视频宽高比例
-*/
-/**
-* 系统视频参数设置
+* @property {CRVideo_VIDEO_WH_RATE} wh_rate - 视频宽高比例
 * @access public
 * @param {CRVideo_VideoCfg} cfg - 设置参数
 */
@@ -481,7 +480,5 @@ CRVideo_StopRecord()
 
 ## <font color="#0099cc">其他接口</font>
 
-更多的功能接口，请参考SDK目录的doc文件夹。如图所示，打开doc文件夹下的index.html。
-
-![其他接口](./images/qt1.png)
+更多的功能接口，请参考[云屋web sdk帮助文档](http://www.cloudroom.com/crdoc/sdk-web/#demo)。
 

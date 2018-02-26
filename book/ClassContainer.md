@@ -18,8 +18,8 @@
 - width() ------ <font color="red">容器的宽度</font>
 - top() ------ <font color="red">容器的头部位置</font>
 - left() ------ <font color="red">容器的左边位置</font>
-- show() ------ <font color="red">容器的消失</font>
-- hide() ------ <font color="red">容器的显示</font>
+- shows() ------ <font color="red">容器的显示</font>
+- hidden() ------ <font color="red">容器的消失</font>
 
 ### 影音播放的呈现容器 {#MediaContainer}
 
@@ -33,11 +33,11 @@
 -------|----------|---------
  bDisable|	number|	0:可用; 非0:不可用;
 
-- show() ------ <font color="red">容器的消失</font>
-  + **继承**:[CRVideo.Container](#Container).show()
+- shows() ------ <font color="red">容器的显示</font>
+  + **继承**:[CRVideo.Container](#Container).shows()
 
-- hide() ------ <font color="red">容器的显示</font>
-  + **继承**:[CRVideo.Container](#Container).hide()
+- hidden() ------ <font color="red">容器的消失</font>
+  + **继承**:[CRVideo.Container](#Container).hidden()
 
 - left() ------ <font color="red">容器的左边位置</font>
   + **继承**:[CRVideo.Container](#Container).left()
@@ -213,11 +213,11 @@ value	|bool	|0: 可见， 1:不可见
 - width() ------ <font color="red">容器的宽度</font>
    + **继承**:[CRVideo.Container](#Container).width()
 
-- show() ------ <font color="red">容器的消失</font>
-  + **继承**:[CRVideo.Container](#Container).show()
+- shows() ------ <font color="red">容器的显示</font>
+  + **继承**:[CRVideo.Container](#Container).shows()
 
-- hide() ------ <font color="red">容器的显示</font>
-  + **继承**:[CRVideo.Container](#Container).hide()
+- hidden() ------ <font color="red">容器的消失</font>
+  + **继承**:[CRVideo.Container](#Container).hidden()
 
 - left() ------ <font color="red">容器的左边位置</font>
   + **继承**:[CRVideo.Container](#Container).left()

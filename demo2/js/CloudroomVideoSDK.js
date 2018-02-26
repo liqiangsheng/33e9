@@ -227,17 +227,17 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	/**
 	 * 容器的显示
 	 */	
-	CRVideo.Container.prototype.hide = function()
+	CRVideo.Container.prototype.hidden = function()
 	{	
-		this._handler.style.display = "block";	
+		this._handler.style.display = "none";	
 	}
 
 	/**
 	 * 容器的消失
 	 */	
-	CRVideo.Container.prototype.show = function()
+	CRVideo.Container.prototype.shows = function()
 	{
-		this._handler.style.display = "none";
+		this._handler.style.display = "block";
 		
 	}
 	//**********************************************************
@@ -1334,6 +1334,29 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 	 * @param {number} percent - 进度0-100
 	 */
 	var CRVideo_NotifyRecordFileUploadProgress  = new CRVideo.CbProxy("CRVideo_NotifyRecordFileUploadProgress");
+	
+//	/**
+//	 * 
+//	 * 
+//	 * 
+//	 */
+//	var CRVideo_SvrRecordStateChanged  = new CRVideo.CbProxy("CRVideo_SvrRecordStateChanged");
+//	
+//	/**
+//	 * 
+//	 * 
+//	 * 
+//	 */
+//	var CRVideo_GetSvrRecordInfo = new CRVideo.CbProxy("CRVideo_GetSvrRecordInfo");
+//	
+//	/**
+//	 * 
+//	 * 
+//	 * 
+//	 */
+//	var CRVideo_GetSvrRecordInfoEx  = new CRVideo.CbProxy("CRVideo_GetSvrRecordInfoEx");
+	
+	
 	 /**
 	 * 开启屏幕共享的响应事件 
 	 * @callback CRVideo.CbProxy~CRVideo_StartScreenShareRslt
@@ -2367,6 +2390,10 @@ if(window["000a0180686911e78dd0a45d36bb8c5c"] === undefined)
 																												  
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyRecordFileStateChanged',CRVideo_NotifyRecordFileStateChanged);
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'notifyRecordFileUploadProgress',CRVideo_NotifyRecordFileUploadProgress);
+				
+//				__crVideo_RegisterCallBack(CRVideo._crMeet, 'svrRecordStateChanged',CRVideo_SvrRecordStateChanged)
+//				__crVideo_RegisterCallBack(CRVideo._crMeet, 'getSvrRecordInfo',CRVideo_GetSvrRecordInfo)
+//				__crVideo_RegisterCallBack(CRVideo._crMeet, 'getSvrRecordInfoEx',CRVideo_GetSvrRecordInfoEx)
 				
 				
 				__crVideo_RegisterCallBack(CRVideo._crMeet, 'startScreenShareRslt',CRVideo_StartScreenShareRslt);

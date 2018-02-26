@@ -107,11 +107,10 @@ CRVideo_LoginFail.callback = function(sdkErr,cookie){
 
 ```cs
 //创建会议
-    CRVideo_CreateMeeting("会议的的主题长度50字内")
+CRVideo_CreateMeeting("会议的的主题长度50字内")
 
 //创建会议成功
-CRVideo_CreateMeetingSuccess.callback=function(meetObj,cookie){
-    
+CRVideo_CreateMeetingSuccess.callback=function(meetObj,cookie){  
 
 }
 
@@ -144,12 +143,6 @@ CRVideo_EnterMeeting(会议id ,会议密码,用户id,用户昵称)
 //进入会议完成响应
 CRVideo_EnterMeetingRslt.callback=function(sdkErr){
 
-    // CRVideo_NOERR==没有错误 成功
-    if(sdkErr == CRVideo_NOERR){
-
-        // * 暂未定义  
-        CRVideo_SetPicResource(picID,jsonval)
-    }
 }
 ```
 
@@ -186,11 +179,10 @@ CRVideo_SetDefaultVideo(g_userID,$("#video_select").val())
 // 获取用户所有的摄像头信息 userID @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
 var videoList = CRVideo_GetAllVideoInfo(g_userID)
 
-
 // 系统视频参数设置 cfg - 设置参数
 CRVideo_SetVideoCfg(cfg);
 
-// 配置远程影音共享时，图像质量参数 jsonCfg - json格式的字符串，详见VideoCfgOjb说明
+// 配置远程影音共享时，图像质量参数 jsonCfg - json格式的字符串
 CRVideo_SetMediacfg(cfg);
 ```
 ```cs
@@ -201,19 +193,7 @@ CRVideo_OpenVideo(g_userID)
 // * @access public
 // * @param {string} userID - 用户ID
 // * @returns {CRVideo_VSTATUS} 麦克风摄像头状态
-var vStatus = CRVideo_GetVideoStatus(g_userID)
-if(vStatus == 0){
-    this.popup("没有可打开的视频设备")
-
-}else if(vStatus ==  2){
-    //打开用户的摄像头，以便本地、远端显示视频图像
-    CRVideo_OpenVideo(g_userID);
-    
-}else {
-    // 关闭用户的摄像头
-    CRVideo_CloseVideo(g_userID);
-
-}
+var vStatus = CRVideo_GetVideoStatus(g_userID){
 
 }
 ```
@@ -243,13 +223,11 @@ var meber = $.parseJSON(CRVideo_GetAllMembers());// 获取所有会员信息
 
 //用户进入会议  相当于第二方监听第三方加入会议
 CRVideo_UserEnterMeeting.callback = function(usrID){
-
 // 第三方进入的相关操作
 }
 
 // 通知某用户离开了会议exitMeeting
 CRVideo_UserLeftMeeting.callback = function(id){
-
 // 第三方离开的相关操作
 }
 ```
@@ -360,7 +338,7 @@ CRVideo_CloseMic(userid);
 * 连接状态变化委托
 *摄像头列表更新 通知用户的视频设备有变化
 */	
-    CRVideo_VideoDevChanged.callback =function(userID){
+CRVideo_VideoDevChanged.callback =function(userID){
     
 }
 ```
@@ -373,7 +351,7 @@ CRVideo_CloseMic(userid);
 CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
 
     if(g_userID == userID){
-        [视频状态](Constant.md#VSTATUS)/**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
+        /**视频处于打开状态（软开关）*/          /**向服务器发送打开消息中	*/
         if(newStatus !=CRVideo_VSTATUS.VOPEN && newStatus !=CRVideo_VSTATUS.VOPENING){
             CRVideo_OpenVideo(g_userID);
         }
@@ -385,7 +363,7 @@ CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
 
 * 相关API请参考 [麦克风音量](videoMrg.md#CRVideo_SetMicVolume),[扬声器音量](videoMrg.md#CRVideo_SetSpeakerVolume)
 
-````cs
+```cs
 /**
 * 设置麦克风音量大小
 * @access public
@@ -401,7 +379,7 @@ var SetMicVolume = CRVideo_SetMicVolume(level)
 * @returns {bool} 设置成功则返回true,否则返回false
 */
 var SetSpeakerVolume = CRVideo_SetSpeakerVolume(value)
-````
+```
 
 #### 4.监控麦克风声音变化 {#micEnergyUpdate}
 
@@ -441,7 +419,6 @@ CRVideo_MicEnergyUpdate.callback=function(userID ,oldLevel,newLevel){
 * 相关结构定义请参考 [录制内容配置](json.md#RecordVideosObj)
 
 ```cs
-
 /**
 * 开始录制
 * @access public
@@ -457,9 +434,7 @@ CRVideo_MicEnergyUpdate.callback=function(userID ,oldLevel,newLevel){
 * @param {number} isUploadOnRecording - 是否录制的同时上传 1为是，0为否
 */	
 
-CRVideo_StartRecordIng(recordPath,audioType,frameRate,recordWidth,recordHeight,bitRate,defaultQP,recDataType,isUploadOnRecording)
-
-   
+CRVideo_StartRecordIng(recordPath,audioType,frameRate,recordWidth,recordHeight,bitRate,defaultQP,recDataType,isUploadOnRecording) 
 ```
 
 #### 2.开始/停止录制 {#startRecording}
@@ -472,7 +447,6 @@ CRVideo_StartRecordIng(recordPath,audioType,frameRate,recordWidth,recordHeight,b
 * 相关结构定义请参考 [录制内容类型](Constant.md#REC_VCONTENT_TYPE)，[录制文件配置](json.md#RecordCfgObj)
 
 ```cs
-/
 //开始录制
 CRVideo_StartRecordIng(cfg)
 ```
@@ -501,20 +475,18 @@ var CRVideo_GetRecFileSize = CRVideo_GetRecFileSize()
 * @returns {number} 返回录制的文件时长（以秒为单位）
 */	
 var CRVideo_GetRecDuration =  CRVideo_GetRecDuration()
-
 ```
 ```cs
 //录制异常，录制将自动停止
 CRVideo_RecordErr.callback=function(sdkErr){
-//录制发生错误，代码： 见[错误码定义]
+
 }
 ```
 
 ```cs
 // sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
 CRVideo_NotifyRecordFileStateChanged.callback=function(fileName,state){
-//fileName, 文件名
-//state, 状态
+
 }
 ```
 
@@ -594,16 +566,14 @@ CRVideo_CancelUploadRecordFile(fileName);
 ```cs
 // 通知录制文件上传进度 fileName - 文件名 percent - 进度0-100
 CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){
-// 上传文件：fileName
-// 上传进度：percent
+
 }
 ```
 
 ```cs
 //sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
 CRVideo_NotifyRecordFileStateChanged.callback = function(fileName,state){
-    //fileName, 文件名
-//state， 状态
+
 }
 ```
 
@@ -635,13 +605,13 @@ CRVideo_PlaybackRecordFile(fileName)
 * 获取会议网盘的容量信息 说明：调用结果请见事件getNetDiskSummaryRslt
 * @access public
 */
-CRVideo_GetNetDiskSummary(public) ;
+CRVideo_GetNetDiskSummary()
 
 /**
 * 获取网盘用户共享文件列表，即使用makeNetDiskFileID中参数fileType为0的生成的fileID上传的文件
 * @access public
 */
-CRVideo_GetNetDiskFileList(public)
+CRVideo_GetNetDiskFileList()
 
 ```
 
@@ -829,7 +799,7 @@ CRVideo_NotifyScreenShareStarted.callback=function(){
 * 通知他人停止了屏幕共享
 * @callback CRVideo.CbProxy~CRVideo_NotifyScreenShareStopped
 */
-    CRVideo_NotifyScreenShareStopped.callback=function(){
+CRVideo_NotifyScreenShareStopped.callback=function(){
 
 }
 ```
@@ -882,7 +852,7 @@ CRVideo_NotifyReleaseCtrlRight.callback=function(operId,targetId){
 /**
 * 配置远程影音共享时，图像质量参数
 * @access public
-* @param {string} jsonCfg - json格式的字符串，详见VideoCfgOjb说明
+* @param {string} jsonCfg - json格式的字符串
 */
 CRVideo_SetMediacfg(jsonCfg)
 ```
@@ -961,15 +931,13 @@ var getmediainfo =  CRVideo_Getmediainfo(userID)
 ```
 
 ```cs
-//设置当前播放的影音声音
-var vol = 24;
 /**
 * 设置本地扬声器音量
 * @access public
 * @param {number} level - 音量等级（ 取值范围：0~255）
 * @returns {bool} 设置成功则返回true,否则返回false
 */
-CRVideo_SetSpeakerVolume(value) = vol;
+var SetSpeakeNum = CRVideo_SetSpeakerVolume(level)
 ```
 
 ### 聊天 {#IM}
@@ -1039,7 +1007,6 @@ var GetAllMembers = CRVideo_GetAllMembers()
 * @access public
 * @param {string} userID - 用户ID
 * @return {CRVideo_MemberInfo} info - 返回用户userID的成员信息
-
 */	
 var GetMemberInfo = CRVideo_GetMemberInfo(userID)
 ```
@@ -1090,8 +1057,7 @@ CRVideo_NotifySwitchToPage.callback = function(mainPage,pageID){
 * 相关API请参考 [初始化队列](queueMrg.md#CRVideo_InitQueueDat)，[初始化队列结果](queueMrg.md#CRVideo_InitQueueDatRslt)，[查询所有队列](queueMrg.md#CRVideo_GetAllQueueInfo)  
 * 相关结构定义请参考 [队列信息](TypeDefinitions.md#CRVideo_QueueInfo)
 
-```cs
-    
+```cs   
 /**
 * 初始化用户队列功能数据。//可在登录成功后初始化队列数据
 * 操作完成回调CRVideo_InitQueueDatRslt，初始化成功后才可获取队列队列相关信息。
@@ -1110,13 +1076,6 @@ CRVideo_InitQueueDat(cookie)
 */
 CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 
-    /**
-    * @typedef {object} CRVideo_QueStatus - 队列状态
-    * @property {number} queID - 队列id
-    * @property {number} agent_num - 坐席数量
-    * @property {number} wait_num - 排队客户数量
-    * @property {number} srv_num - 正在服务的客户数量
-
 }
         
 ```
@@ -1129,7 +1088,6 @@ CRVideo_InitQueueDatRslt.callback = function(sdkErr,cookie){
 * 相关结构定义请参考 [队列状态](TypeDefinitions.md#CRVideo_QueStatus)
 
 ```cs
-
 /**
 * 开始服务某个队列(可以多次调用，开启对多个队列的服务) //开始服务队列
 * 操作回调CRVideo_StartServiceRslt
@@ -1144,7 +1102,6 @@ CRVideo_StartService(queID,cookie)
 ```
 
 ```cs
-
 /**
 * 停止服务某个队列 //停止服务队列
 * 操作完成回调CRVideo_StopServiceRslt
@@ -1191,20 +1148,13 @@ CRVideo_StopServiceRslt.callback = function(queID,sdkErr,cookie){
 ```
 
 ```cs
-
 /**
 * 队列状态变化通知
 * @callback CRVideo.CbProxy~CRVideo_QueueStatusChanged
 * @param {CRVideo_QueStatus} queStatus  -队列状态
 */
-    CRVideo_QueueStatusChanged.callback=function(queStatus){
-    /**
-    * @typedef {object} CRVideo_QueInfo - 队列信息
-    * @property {number} queID - 队列id
-    * @property {number} name - 队列名称
-    * @property {string} desc - 队列描述
-    * @property {number} prio - 优先级，值越小优先级越高
-    */
+CRVideo_QueueStatusChanged.callback=function(queStatus){
+
 }
 ```
 
@@ -1263,8 +1213,7 @@ CRVideo_ReqAssignUserRslt.callback = function(sdkErr,user,cookie){
 */
 CRVideo_AutoAssignUser.callback = function(user){
 
-}
-        
+}     
 ```
 
 ```cs
@@ -1350,13 +1299,7 @@ CRVideo_StopQueuingRslt.callback = function(sdkErr,cookie){
 * @param {CRVideo_QueStatus} queStatus  -队列状态
 */
 CRVideo_QueueStatusChanged.callback = function(queStatus){
-        /**
-    * @typedef {object} CRVideo_QueInfo - 队列信息
-    * @property {number} queID - 队列id
-    * @property {number} name - 队列名称
-    * @property {string} desc - 队列描述
-    * @property {number} prio - 优先级，值越小优先级越高
-    */
+
 }
 ```
 
@@ -1367,13 +1310,8 @@ CRVideo_QueueStatusChanged.callback = function(queStatus){
 * @param {CRVideo_QueInfo} queuingInfo - 队列信息
 */
 CRVideo_QueuingInfoChanged.callback = function(queuingInfo){
-/**
-* 开始排队操作结果
-* @callback CRVideo.CbProxy~CRVideo_StartQueuingRslt
-* @param {number} sdkErr - 操作结果代码,定义见cr/error
-* @param {string} cookie - 自定义用户数据
-*/
- }
+
+}
 ```
 
 ### 呼叫他人 {#call}
@@ -1460,7 +1398,7 @@ CRVideo_NotifyCallAccepted.call = function(callID,meetObj,usrExtDat){
 * @param {number} sdkErr - 呼叫被对方拒绝的原因代码,定义见cr/error
 * @param {string} usrExtDat - 自定义扩展参数
 */
-    CRVideo_NotifyCallRejected.call = function(callID,sdkErr,usrExtDat){
+CRVideo_NotifyCallRejected.call = function(callID,sdkErr,usrExtDat){
 
 }
 ```
@@ -1516,8 +1454,6 @@ var sendCmdID = CRVideo_SendCmd(targetUserId,data);
 * @returns {string} 分配的任务ID
 */	
 var sendBufferID = CRVideo_SendBuffer(targetUserId,data)
-
-
 ```
 
 ```cs
@@ -1576,7 +1512,7 @@ CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){
 * @param {number} sdkErr - 操作失败代码,定义见cr/error
 * @param {string} cookie - 自定义用户数据
 */
-    CRVideo_SendBufferRlst.callback = function(taskID,sdkErr,cookie){
+CRVideo_SendBufferRlst.callback = function(taskID,sdkErr,cookie){
 
 }
 ```
@@ -1590,7 +1526,7 @@ CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){
 * @param {number} sdkErr - 操作失败代码,定义见cr/error
 * @param {string} cookie - 自定义用户数据
 */
-    CRVideo_SendFileRlst.callback = function(taskID,fileName,sdkErr,cookie){
+CRVideo_SendFileRlst.callback = function(taskID,fileName,sdkErr,cookie){
 
 }
 ```
@@ -1603,7 +1539,7 @@ CRVideo_SendCmdRlst.callback = function(taskID,sdkErr,cookie){
 * @param {number} sdkErr - 操作失败代码,定义见cr/error
 * @param {string} cookie - 自定义用户数据
 */
-    CRVideo_CancelSendRlst.callback = function(taskID,sdkErr,cookie){
+CRVideo_CancelSendRlst.callback = function(taskID,sdkErr,cookie){
 
 }
 ```

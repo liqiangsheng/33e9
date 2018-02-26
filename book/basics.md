@@ -31,6 +31,23 @@
 | isMediaSer| 	number| 	是否启用mediaSer模块。 0为不启用，1为启用，默认为1| 
 | isHttp	| number	| 是否启用http模块。0为不启用，1为启用，默认为0|
 
+<font color="#FF0000">CRVideo_Init等价于CRVideo_Init2，功能一致；CRVideo_Init为原来旧的接口，比CRVideo_Init2多了一个oemID参数。两个方法是完全兼容，新版本均使用init2方法</font>
+
+####  
+
+>CRVideo_Init2(sdkUsePath, isCallSer, isMediaSer, isHttp)
+
+- **返回值**:返回[错误码](Constant.md#CRVIDEOSDK_ERR_DEF)（错误码为CRVideo_NOERR表示没有错误）(number)
+
+| 参数    | 类型        | 含义      |
+|:-------- |:-----------|:----------|
+| sdkUsePath| 	string	| sdk配置、临时文件存放位置,可为空| 
+| isCallSer| 	number	| 是否启用callSer模块。 0为不启用，1为启用，默认为1| 
+| isMediaSer| 	number| 	是否启用mediaSer模块。 0为不启用，1为启用，默认为1| 
+| isHttp	| number	| 是否启用http模块。0为不启用，1为启用，默认为0|
+
+<font color="#FF0000">CRVideo_Init2等价于CRVideo_Init，功能一致；CRVideo_Init2为新增的接口，比CRVideo_Init少了一个oemID参数。两个方法是完全兼容，新版本均使用init2方法</font>
+
 ####SDK反初始化 {#CRVideo_Uninit}
 
 >CRVideo_Uninit()

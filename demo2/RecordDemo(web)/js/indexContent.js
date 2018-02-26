@@ -47,9 +47,6 @@ $("body").append(htm);
      param = {};
  });
  
-
- 
-	
 }
 
 //**********************************************************************
@@ -616,37 +613,37 @@ function layoutA(){
 	    $(".videoPage_right_view_box").append(g_videoBObj.handler())
 	    
 	    layout ="layoutA";
-	    g_mediaObj.show();
+	    g_mediaObj.hidden();
 		if(g_single_video){
 			flag = 1;
 			flag1 = 0;
 			//主
-			g_mediaObj.show();
+			g_mediaObj.hidden();
 			//a
 			g_videoAObj.width(534);
 			g_videoAObj.height(300);
-		    g_videoAObj.hide();
+		    g_videoAObj.shows();
 		    g_videoAObj.left(124);
 			g_videoAObj.top(10)
 			//b
-			g_videoBObj.show();
+			g_videoBObj.hidden();
 			
 			updateVideo();
 		}else{
 			flag = 0;
 			flag1 = 1;
 			//主
-			g_mediaObj.show();
+			g_mediaObj.hidden();
 			//a
 			g_videoAObj.width(375);
 			g_videoAObj.height(210);
-		    g_videoAObj.hide();
+		    g_videoAObj.shows();
 		    g_videoAObj.left(0);
 			g_videoAObj.top(40)
 			//b
 			g_videoBObj.width(375);
 			g_videoBObj.height(210);
-		    g_videoBObj.hide();
+		    g_videoBObj.shows();
 		    g_videoBObj.left(375);
 			g_videoBObj.top(40);
 			
@@ -794,17 +791,17 @@ function layoutB(){
 	    	flag1 = 0;
 	    	g_mediaObj.width(375);
             g_mediaObj.height(210);
-            g_mediaObj.hide();
+            g_mediaObj.shows();
 		    g_mediaObj.left(0);
 			g_mediaObj.top(40);
             //A
 	    	g_videoAObj.width(375);
 			g_videoAObj.height(210);
-		    g_videoAObj.hide();
+		    g_videoAObj.shows();
 		    g_videoAObj.left(375);
 			g_videoAObj.top(40);
 			//B
-			g_videoBObj.show();
+			g_videoBObj.hidden();
 			
 			updateVideo()
 	    	
@@ -814,19 +811,19 @@ function layoutB(){
 	    	//主
 	    	g_mediaObj.width(500);
             g_mediaObj.height(280);
-            g_mediaObj.hide();
+            g_mediaObj.shows();
 		    g_mediaObj.left(0);
 			g_mediaObj.top(0);
             //A
 	    	g_videoAObj.width(250);
 			g_videoAObj.height(140);
-		    g_videoAObj.hide();
+		    g_videoAObj.shows();
 		    g_videoAObj.left(500);
 			g_videoAObj.top(0);
 			//B
 			g_videoBObj.width(250);
 			g_videoBObj.height(140);
-		    g_videoBObj.hide();
+		    g_videoBObj.shows();
 		    g_videoBObj.left(500);
 			g_videoBObj.top(140);
 			
@@ -976,13 +973,13 @@ function layoutC(){
 	//主
 	g_mediaObj.width(534);
 	g_mediaObj.height(300);
-	g_mediaObj.hide();
+	g_mediaObj.shows();
 	g_mediaObj.left(124);
 	g_mediaObj.top(0);
 	//a
-	g_videoAObj.show();
+	g_videoAObj.hidden();
 	//b
-	g_videoBObj.show();
+	g_videoBObj.hidden();
 	
 	updateVideo();
 
