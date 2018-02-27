@@ -24,7 +24,7 @@
 
 ####删除传输记录及相关文件 {#CRVideo_RmTransferInfo}
 
->CRVideo_RmTransferInfo()
+>CRVideo_RmTransferInfo(fileName,bRemoveLocFile)
 
 - **返回值**:无
 
@@ -35,7 +35,7 @@
 
 ####获取本地上传、下载文件信息 {#CRVideo_GetTransferInfo}
 
->CRVideo_GetTransferInfo()
+>CRVideo_GetTransferInfo(filePathName)
 
 - **返回值**:fileinfo - 返回文件信息([CRVideo_FileInfo](TypeDefinitions.md#CRVideo_FileInfo))
 

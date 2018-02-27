@@ -79,9 +79,7 @@
 - 引用CloudroomVideoSDK.js
 
 ```cs
-
 <script type="text/javascript" src="../js/CloudroomVideoSDK.js"></script>
-
 ```
 - 如果是IE开发，还需要引用补丁文件
 
@@ -126,24 +124,22 @@
 * @param {number} statHttp -  是否启用http模块 0为不启用，1为启用,默认为0
 * @returns {number} 返回错误码（错误码为CRVideo_NOERR表示没有错误）
 */
-var result = CRVideo_Init(oemID，sdkUsePath,statCallSer,statMediaSer,statHttp)
-
+var result = CRVideo_Init2(sdkUsePath,statCallSer,statMediaSer,statHttp)
 ```
 
-其中oemID为向云屋科技申请的代理商ID，初始化失败会返回对应的错误码
+初始化失败会返回对应的错误码
  
 ```cs 
+if(result == CRVideo_WEB_OCX_NOTINSTALLED){//没有安装
 
-if(result == CRVideo_WEB_OCX_NOTINSTALLED)//没有安装
-{
-}else if(result == CRVideo_OCX_VERSION_NOTUPPORTED)//版本过低
-{
-}else if(result == CRVideo_WEB_BROWER_NOTUPPORTED)//不支持的浏览器
-{
+}else if(result == CRVideo_OCX_VERSION_NOTUPPORTED){//版本过低
+
+}else if(result == CRVideo_WEB_BROWER_NOTUPPORTED){//不支持的浏览器
+
 }else if(result != 0)//其它错误
-{
-}else
-{
+
+}else{
+  
 }
 ```
 
@@ -154,19 +150,19 @@ if(result == CRVideo_WEB_OCX_NOTINSTALLED)//没有安装
 * 没有错误
 * @static
 */
-if(result == CRVideo_NOERR) //成功操作
-{
+if(result == CRVideo_NOERR){ //成功操作
 
 }
-
 ```
  
 #### <font color="#0099cc">SDK反初始化</font>
  
 ```cs
-
+/**
+* SDK反初始化
+* @access public
+*/
 CRVideo_Uninit() 
-
 ```
 
 #### <font color="#0099cc">设置服务器地址</font>
@@ -178,7 +174,6 @@ CRVideo_Uninit()
 * @param {string} serverList -  服务器地址,多个服务器地址使用冒号隔开（如：www.cloudroom.com:8080;183.60.47.52:8080;）;
 */	
 CRVideo_SetServerAddr(serverList)
-
 ```
  
 支持单个服务器地址（如：www.cloudroom.com）或多个服务器地址串（如：www.cloudroom.com:8080；183.60.47.52:8080），此接口并不会对服务器地址的有效性进行验证，请保证地址准确。
@@ -198,7 +193,6 @@ CRVideo_SetServerAddr(serverList)
 * @param {string} cookie - 自定义数据 (在回调时，回传给调用者)
 */
 CRVideo_Login(authAcnt,authPswd,nickName,privAcnt,privAuthCode,cookie)	
-
 ```
  
 登录会有结果事件通知，成功事件CRVideo_LoginSuccess，失败事件CRVideo_LoginFail，失败事件的错误码参见CloudroomVideoSDK.js文件的详细描述。
@@ -206,9 +200,11 @@ CRVideo_Login(authAcnt,authPswd,nickName,privAcnt,privAuthCode,cookie)
 #### <font color="#0099cc">注销</font>
 
 ```cs
-
+/**
+* 注销本次登陆
+* @access public
+*/	
 CRVideo_Logout()
-
 ```
 
 退出程序时，必须注销本次登录，然后再进行SDK反初始化操作
@@ -282,7 +278,6 @@ C.离开会议是没有响应消息的（在网络不通时离开会议也不会
 * @return {CRVideo_MemberInfo[]} 返回含多个成员信息
 */	
 var meber = CRVideo_GetAllMembers()
-
 ```
 
 会议里可以通过接口CRVideo_GetMemberInfo获取指定成员的详细信息，接口如下所示：
@@ -295,7 +290,6 @@ var meber = CRVideo_GetAllMembers()
 * @return {CRVideo_MemberInfo} info - 返回用户userID的成员信息
 */	
 var meber = CRVideo_GetMemberInfo(userID)
-
 ```
 
 #### <font color="#0099cc">打开音频</font>
@@ -308,7 +302,6 @@ var meber = CRVideo_GetMemberInfo(userID)
 * @param {CRVideo_AudioCfg} cfg - 设置参数
 */
 CRVideo_SetAudioCfg(cfg)
-
 ```
 通过接口CRVideo_SetMicVolume设置麦克风的音量大小，接口如下所示：
 
@@ -320,7 +313,6 @@ CRVideo_SetAudioCfg(cfg)
 * @returns {bool} 设置成功则返回true,否则返回false
 */
 var MicVolume = CRVideo_SetMicVolume(level)
-
 ```
 通过接口CRVideo_OpenMic和CRVideo_CloseMic打开和关闭自已或他人的麦克风，接口如下所示：
 
@@ -340,7 +332,6 @@ CRVideo_OpenMic(userid)
 * @param {string} userID - 登录成功后分配的userID
 */
 CRVideo_CloseMic(userID)
-
 ```
 <font color="red">(取得用户麦克风是否开启或关闭，可通过接口CRVideo_GetMemberInfo获取)</font>
 
@@ -360,7 +351,6 @@ CRVideo_CloseMic(userID)
 * @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
 */
 var VideoInfoArr = CRVideo_GetAllVideoInfo(userID,videoID,videoName)
-
 ```
 
 通过接口CRVideo_SetDefaultVideo设置指定用户的默认摄像头，接口如下所示:
@@ -373,7 +363,6 @@ var VideoInfoArr = CRVideo_GetAllVideoInfo(userID,videoID,videoName)
 * @param {number} videoID - 摄像头ID
 */
 CRVideo_SetDefaultVideo(userID,videoID)
-
 ```
 
 通过接口CRVideo_SetVideoCfg配置视频的清晰度、帧率、码率等；
@@ -393,13 +382,11 @@ CRVideo_SetDefaultVideo(userID,videoID)
 * @param {CRVideo_VideoCfg} cfg - 设置参数
 */
 CRVideo_SetVideoCfg(cfg)
-
 ```
 
 通过接口CRVideo_OpenVideo和CRVideo_CloseVideo开启或关闭指定用户的摄像头，接口如下所示：
 
 ```cs
-
 /**
 * 打开用户的摄像头，以便本地、远端显示视频图像
 * @access public
@@ -413,7 +400,6 @@ CRVideo_OpenVideo(userID)
 * @param {string} userID - 用户ID
 */
 CRVideo_CloseVideo(userID)
-
 ```
 
 <font color="red">(取得用户摄像头是否开启或关闭，可通过接口CRVideo_GetMemberInfo获取)</font>
@@ -425,7 +411,6 @@ CRVideo_CloseVideo(userID)
 先通过接口CRVideo_StartRecordIng开启录制，参数说明请参考截图，接口如下所示：
 
 ```cs
-
 /**
 * 开始录制
 * @access public
@@ -441,7 +426,6 @@ CRVideo_CloseVideo(userID)
 * @param {number} isUploadOnRecording - 是否录制的同时上传 1为是，0为否
 */	
 CRVideo_StartRecordIng(recordPath,audioType,frameRate,recordWidth,recordHeight,bitRate,defaultQP,recDataType,isUploadOnRecording)
-
 ```
 
 再通过接口CRVideo_SetRecordVideos，配置录制的视频内容； 
@@ -469,16 +453,14 @@ CRVideo_SetRecordVideos(value)
 可以通过接口CRVideo_StopRecord停止录制，接口如下所示：
 
 ```cs
-
 /**
 * 停止录制
 * @access public
 */	
 CRVideo_StopRecord()
-
 ```
 
 ## <font color="#0099cc">其他接口</font>
 
-更多的功能接口，请参考[云屋web sdk帮助文档](http://www.cloudroom.com/crdoc/sdk-web/#demo)。
+更多的功能接口，请参考[云屋web sdk帮助文档](http://www.cloudroom.com/crdoc/sdk-web)。
 

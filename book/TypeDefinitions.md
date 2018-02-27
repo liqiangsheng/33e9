@@ -127,7 +127,7 @@
 |top	|number	|上|
 |width	|number	|宽|
 |height|	number	|高|
-|param	|object|	附加参数<p>Properties</p><p>Name Type Description</p><p>type[CRVideo_REC_VCONTENT_TYPE](Constant.md#REC_VCONTENT_TYPE)	录制类型</p>|
+|param	|object|	附加参数<p>Properties</p><p>Name Type Description</p>type [CRVideo_REC_VCONTENT_TYPE](Constant.md#REC_VCONTENT_TYPE)	录制类型
 
 ### CRVideo_ScreenShareCfgObj {#CRVideo_ScreenShareCfgObj}
 

@@ -229,7 +229,7 @@
 | 参数    | 类型        | 含义      |
 |:-------- |:-----------|:----------|
 |targetUserId	|string	|目标用户ID|
-|data|	string|	发送的数据|
+|fileName|	string|	需要发送的文件名|
 
 >进度通知事件[CRVideo_SendProgress](#CRVideo_SendProgress)，发送结果事件[CRVideo_SendFileRlst](#CRVideo_SendFileRlst)，取消发送[CRVideo_CancelSend](#CRVideo_CancelSend))
 
@@ -257,7 +257,7 @@
 
 + **参数**：
     - usrID ----- 用户账户
-    - usrID ----- 自定义用户数据 
+    - cookie ----- 自定义用户数据 
 
 ####登录失败 {#CRVideo_LoginFail}
 

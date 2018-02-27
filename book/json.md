@@ -10,7 +10,7 @@
 "subject":<font color="#ef8020">"test"</font>,
 "pubMeetUrl":<font color="#ef8020">"www.cloudroom.com/auzjie"</font>,
  "creator":<font color="#ef8020">"testuser"</font>,
-  "memberCount":<font color="#ef8020"4</font>}
+  "memberCount":<font color="#ef8020">4</font>}
   </p>
  
 属性        | 值

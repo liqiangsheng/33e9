@@ -24,7 +24,7 @@
 
 ### 1. 初始化SDK {#init}
 
-> 初始化是整个SDK的使用基础，通常在程序启动的时候进行初始化([CRVideo_Init](basics.md#CRVideo_Init))，退出的时候进行反初始化([CRVideo_Uninit](basics.md#CRVideo_Uninit))，整个程序的生命周期中只进行一次初始化和反初始化。
+> 初始化是整个SDK的使用基础，通常在程序启动的时候进行初始化([CRVideo_Init2](basics.md#CRVideo_Init))，退出的时候进行反初始化([CRVideo_Uninit](basics.md#CRVideo_Uninit))，整个程序的生命周期中只进行一次初始化和反初始化。
 >
 > 相关API参考请见 [初始化/反初始化](basics.md#CRVideo_Init)
 
@@ -33,27 +33,26 @@ SDK内部的组件多为单例组件，整个程序中只能有一个实例，�
 ```
 
 ```cs  
-//初始化
-//"CLOUDROOM"为向云屋科技申请的代理商ID
 
-var init = CRVideo_Init("CLOUDROOM", '路径');
+//初始化   
+var result = CRVideo_Init2(sdkUsePath,statCallSer,statMediaSer,statHttp);
 
 //初始化失败会返回对应的错误码
-if(init == CRVideo_WEB_OCX_NOTINSTALLED){
+if(result == CRVideo_WEB_OCX_NOTINSTALLED){
     
-    alertLayer("ocx未安装");
+    //("ocx未安装");
     
-}else if(init == CRVideo_OCX_VERSION_NOTUPPORTED){
+}else if(result == CRVideo_OCX_VERSION_NOTUPPORTED){
 
-    alertLayer("不支持的浏览器");
+    //("不支持的浏览器");
 
-}else if(init == CRVideo_WEB_BROWER_NOTUPPORTED){
+}else if(result == CRVideo_WEB_BROWER_NOTUPPORTED){
 
-    alertLayer("不支持的插件版本");
+    //("不支持的插件版本");
 
-}else if(init != 0){
+}else if(result != 0){
 
-    alertLayer("CRVideo_init sdkErr"+"出错了"+init);
+    //("CRVideo_init2 sdkErr"+"出错了"+result);
 }
 
 ```
@@ -86,16 +85,16 @@ CRVideo_SetServerAddr(g_serverName)
 //登录     
 CRVideo_Login(cr_account, cr_psw, g_nickname, g_userID, "")
 
-//登陆成功 操作成功则回调CRVideo_LoginSuccess,
+//登陆成功 
 CRVideo_LoginSuccess.callback = function(userID,cookie){
 
-    //登录成功，开始创建视频会话，见下一步
+   //登录成功，开始创建视频会话，见下一步
 }
 
-//登录失败 失败则回调CRVideo_LoginFail
+//登录失败 
 CRVideo_LoginFail.callback = function(sdkErr,cookie){
     
-    //登录出错，可以弹出错误提示，或调用登录接口再次重试登录
+   //登录出错，可以弹出错误提示，或调用登录接口再次重试登录
 }
 ```
 
@@ -138,7 +137,7 @@ CRVideo_LineOff.callback=function(sdkErr){
 
 ```cs  
 //进入会议
-CRVideo_EnterMeeting(会议id ,会议密码,用户id,用户昵称)
+CRVideo_EnterMeeting(meetID ,pswd,userID,nickName,cookie)
 
 //进入会议完成响应
 CRVideo_EnterMeetingRslt.callback=function(sdkErr){
@@ -154,21 +153,21 @@ CRVideo_EnterMeetingRslt.callback=function(sdkErr){
 > 相关结构定义请参考 [音频配置](json.md#AudioCfgObj)，[用户视频信息](json.md#VideoInfoObj)，[用户视频信息列表](json.md#VideoInfosObj)
 
 ```cs
-CRVideo_SetEnableMutiVideo(g_userID,true);   // 是否可以打开更多的摄像头 传用户ID，bool
-CRVideo_OpenMic(g_userID)  //打开麦克风 传用户ID
+// 是否可以打开更多的摄像头 传用户ID，bool
+CRVideo_SetEnableMutiVideo(g_userID,true); 
+//打开麦克风 传用户ID  
+CRVideo_OpenMic(g_userID)  
 
 //获取音频参数 {CRVideo_AudioCfg} 返回cfg对象
-var audioCfg = CRVideo_GetAudioCfg();
+var audioCfg = CRVideo_GetAudioCfg()
 
-// 获取系统上的麦克风设备列表// {string[]} 返回麦克风设备字符串列表
-var micArr = CRVideo_GetAudioMicNames();
+// 获取系统上的麦克风设备列表 返回麦克风设备字符串列表
+var micArr = CRVideo_GetAudioMicNames()
 
 // 获取系统上的扬声器设备列表
 // * @access public
 // * @returns {string[]} 返回扬声器设备列表
 var spkerArr =CRVideo_GetAudioSpkNames()
-
-
 
 // 设置默认的摄像头
 // * @access public
@@ -176,14 +175,14 @@ var spkerArr =CRVideo_GetAudioSpkNames()
 // * @param {number} videoID - 摄像头ID
 CRVideo_SetDefaultVideo(g_userID,$("#video_select").val())
 
-// 获取用户所有的摄像头信息 userID @returns {CRVideo_VideoDeviceInfo[]} 返回设备列表
+// 获取用户所有的摄像头信息 返回设备列表
 var videoList = CRVideo_GetAllVideoInfo(g_userID)
 
 // 系统视频参数设置 cfg - 设置参数
-CRVideo_SetVideoCfg(cfg);
+CRVideo_SetVideoCfg(cfg)
 
 // 配置远程影音共享时，图像质量参数 jsonCfg - json格式的字符串
-CRVideo_SetMediacfg(cfg);
+CRVideo_SetMediacfg(cfg)
 ```
 ```cs
 //打开用户的摄像头，以便本地、远端显示视频图像
@@ -346,7 +345,7 @@ CRVideo_VideoDevChanged.callback =function(userID){
 ```cs
 /**
 *摄像头状态改变
-*1会话中设备的所有者ID 2旧状态 3新状态
+*1会话中设备的所有者ID；2旧状态；3新状态
 */
 CRVideo_VideoStatusChanged.callback = function(userID,oldStatus,newStatus){
 
@@ -466,7 +465,7 @@ CRVideo_StopRecord();
 * 获取当前录制的文件大小（以字节为单位）
 * @access public
 * @returns {number} 返回录制文件大小（以字节为单位）
-*/	//获取当前录制的文件大小（以字节为单位）
+*/
 var CRVideo_GetRecFileSize = CRVideo_GetRecFileSize()
 
 /**
@@ -484,7 +483,7 @@ CRVideo_RecordErr.callback=function(sdkErr){
 ```
 
 ```cs
-// sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
+//sdk通知录制文件状态更改 fileName本地文件路径 state - 状态 0 未上传 1 上传中 2已上传
 CRVideo_NotifyRecordFileStateChanged.callback=function(fileName,state){
 
 }
@@ -554,17 +553,17 @@ CRVideo_RemoveFromFileMgr(filename)
 * 相关结构定义请参考 [录制文件列表](json.md#RecordFilesObj)
 
 ```cs
-// /上传文件 filename - 文件名，全路径
+//上传文件 filename - 文件名，全路径
 CRVideo_UploadRecordFile(fileName);
 
-// 取消视频上传的方法
+//取消视频上传的方法
 CRVideo_CancelUploadRecordFile(fileName);
 ```
 
 
 
 ```cs
-// 通知录制文件上传进度 fileName - 文件名 percent - 进度0-100
+//通知录制文件上传进度 fileName - 文件名 percent - 进度0-100
 CRVideo_NotifyRecordFileUploadProgress.callback = function(fileName,percent){
 
 }
@@ -705,7 +704,8 @@ CRVideo_Canclenetdiskfile(fileID)
 ```
 
 ```cs
-/* SDK通知删除网盘文件结果
+/**
+* SDK通知删除网盘文件结果
 * @callback CRVideo.CbProxy~CRVideo_NotifyNetDiskFileDeleteRslt
 * @param {string} fileID - 网盘文件id
 * @param {number} isSucceed - 是否成功 1 成功 0 失败
@@ -716,7 +716,8 @@ CRVideo_NotifyNetDiskFileDeleteRslt.callback=function(fileID,isSucceed){
 ```
 
 ```cs
-/* SDK通知网盘上传或下载进度
+/**
+* SDK通知网盘上传或下载进度
 * @callback CRVideo.CbProxy~CRVideo_NotifyNetDiskTransforProgress
 * @param {string} fileID - 网盘文件id
 * @param {number} percent - 进度0-100

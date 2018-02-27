@@ -393,7 +393,7 @@
 
 ####开始录制 {#CRVideo_StartRecordIng}
 
->CRVideo_StartRecordIng(recordPath, audioType, frameRate, recordWidth, recordHeight, bitRate, defaultQP, recDataType, recDataType, isUploadOnRecording)
+>CRVideo_StartRecordIng(recordPath, audioType, frameRate, recordWidth, recordHeight, bitRate, defaultQP, recDataType, isUploadOnRecording)
 
 - **返回值**:无
 
@@ -407,7 +407,6 @@
 | bitRate	| number| 	录制的最高码率，当图像变化小时，实际码率会低于此值。建议：640*360: 500000; (500kbps)，1280*720：1000000; （1mbps），1920*1080: 2000000; （2mbps）| 
 | defaultQP	| number	| 目标质量（推荐:36， 中:28， 高:22）| 
 | recDataType	| [CRVideo_REC_DATATYPE](Constant.md#CRVideo_REC_DATATYPE)| 	录制内容类型（视频+音频）| 
-| recDataType| 	number| 	录制内容类型（视频+音频）| 
 | isUploadOnRecording	| number| 	是否录制的同时上传 1为是，0为否| 
 
 ####停止录制 {#CRVideo_StopRecord}
@@ -444,7 +443,7 @@
 
 ####取消传输 {#CRVideo_CancelFileTransfer}
 
->CRVideo_CancelFileTransfer()
+>CRVideo_CancelFileTransfer(fileName)
 
 - **返回值**:无 
 
@@ -816,7 +815,7 @@
 
 ####停止获取语音pcm数据 {#CRVideo_StopGetAudioPCM}
 
->CRVideo_StopGetAudioPCM(aSide, 无返回值)
+>CRVideo_StopGetAudioPCM(aSide)
 
 - **返回值**:无
 
@@ -1290,6 +1289,9 @@
 >CRVideo_NotifyNetDiskIsFull.callback = function(fileList){}
 
 - **功能**：SDK通知网盘空间已满，容量不足
+
++ **参数**：
+    - fileList ----- 文件列表
 
 #### 通知录制文件状态更改 {#CRVideo_NotifyRecordFileStateChanged}
 
