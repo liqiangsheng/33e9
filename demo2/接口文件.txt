@@ -1,0 +1,227 @@
+接口
+	int init(const QString &oemID, const QString &sdkFilePath);
+	void uninit();
+	
+	void login(const QString &authAcnt, const QString &authPswd, const QString &nickName, const QString &privAcnt, const QString &privAuthCode, const QString &cookie);
+	void logout();
+	void setDNDStatus(int DNDStatus, const QString &cookie);
+
+	void createMeeting(const QString &meetSubject, const QString &cookie);
+	void enterMeeting(int meetID, const QString &pswd, const QString &cookie);
+	int isUserInMeeting(const QString &userID);
+	void stopMeeting();
+	void exitMeeting();
+
+	QString getAllMembers();
+	QString getMemberInfo(const QString &userID);
+	QString getMemberNickName(const QString &userID);
+	QString getAudioMicNames();
+	QString getAudioSpkNames();
+
+	QString getAudioCfg();
+	void setAudioCfg(const QString &jsonCfg);
+	int getMicEnergy(const QString &userID);
+	void openMic(const QString &userID);
+	void closeMic(const QString &userID);
+	int getAudioStatus(const QString &userID);
+	
+	int getVideoBitrate(int sizeType);
+	void setVideoBitrate(int sizeType, int newVal);
+	int getVideoStatus(const QString &userID);
+	void openVideo(const QString &userID);
+	void closeVideo(const QString &userID);
+	void setAllAudioClose();
+	QString getVideoImg(const QString &userID, int videoID);
+	void setDefaultVideo(const QString &userID, int videoID);
+	int getDefaultVideo(const QString &userID);
+	int getEnableMutiVideo(const QString &userID);
+	void setEnableMutiVideo(const QString &userID, int bEnable);
+	QString getAllVideoInfo(const QString &userID);
+	QString getWatchableVideos();
+
+	QString getScreenShareCfg();
+	void setScreenShareCfg(const QString &jsonCfg);
+	
+	void startScreenShare();
+	void stopScreenShare();
+	QString getShareScreenDecodeImg();
+	void setCustomizeScreenImg(int format, int width, int height, const QByteArray &dat);
+
+	void setRecordVideos(const QString &);
+	int startRecording(const QString &jsonCfg);
+	void stopRecording();
+	int getRecFileSize();
+	int getRecDuration();
+
+	//录制文件管理
+	QString getAllRecordFiles();
+	void removeFromFileMgr(const QString &fileName);
+	void uploadRecordFile(const QString &fileName);
+	void cancelUploadRecordFile(const QString &fileName);
+	void playbackRecordFile(const QString &fileName);
+
+	QString sendIMmsg(const QString &text, const QString &toUserID = "", const QString &cookie = "");
+
+	void giveCtrlRight(const QString &userID);
+	void releaseCtrlRight(const QString &userID);
+	void sendMouseCtrlMsg(int msgType, int mouseMsgType, int ptX, int ptY);
+	void sendKeyCtrlMsg(int keyMsgType, int vk, int bExtendedKey);
+
+	QString sendCmd(const QString &targetUserId, const QByteArray &data);
+	QString sendBuffer(const QString &targetUserId, const QByteArray &data);
+	void cancelSend(const QString &taskID);
+	QString sendFile(const QString &targetUserId, const QString &fileName);
+
+	void switchToPage(int mainPage, const QString &jsonSubPage);  
+	int getCurrentMainPage();  
+	QString getCurrentSubPage();  
+
+	void setVideoWallMode(int videoWallMode);
+
+	QString createBoard(const QString &title, int width, int height, const QString &imgFileID);
+	void closeBoard(const QString &jsonBoardID);
+
+	QString addBoardElement(const QString &jsonBoardID, const QByteArray &elementData);
+	void delBoardElement(const QString &jsonBoardID, const QString &jsonElementIDs);	
+	void setMouseHotSpot(const QString &jsonBoardID, int x, int y);
+
+	//会议网盘
+	void uploadNetDiskFile(const QString &fileID, const QString &localFilePath);
+	void downloadNetDiskFile(const QString &fileID, const QString &localFilePath);
+	void cancleNetDiskFile(const QString &fileID);
+	void deleteNetDiskFile(const QString &fileID);
+
+	// 影音
+	void startPlayMedia(const QString &filename);
+	void stopPlayMedia();
+	void pausePlayMedia(int bPause);
+	void setPlayPos(int pts);
+
+	// 本地媒体文件夹(仅支持mp4)
+	void setLocMediaPath(const QString &filePath);
+	QString getAllMediaFiles();
+	void startPlayMediaFromLoc(const QString &fileName);
+
+	QString getMediaInfo();
+	int getVDefinitionBySize(int w, int h);
+	QString getMediaImg(const QString &userID);
+
+	//水印图标
+	void setOverlayLogo(const QString &base64ImgFile);
+
+通知：
+	//会议
+	void loginSuccess(const QString &usrID, const QString &cookie);
+	void loginFail(int sdkErr, const QString &cookie);
+	void lineOff(int sdkErr);
+	void setDNDStatusSuccess(const QString &cookie);
+	void setDNDStatusFail(int sdkErr, const QString &cookie);
+
+	void enterMeetingRslt(int code);
+	void userEnterMeeting(const QString &userID);
+	void userLeftMeeting(const QString &userID);
+	void createMeetingSuccess(int meetID, const QString &password, const QString &cookie);
+	void createMeetingFail(int sdkErr, const QString &cookie);
+	void endMeetingRslt(int code);
+	void meetingStopped();
+
+	void meetingDropped();
+	void netStateChanged(int level);
+	void micEnergyUpdate(const QString& userID, int oldLevel, int newLevel);
+	void audioDevChanged();
+	void audioStatusChanged(const QString &userID, int oldStatus, int newStatus);
+	void videoStatusChanged(const QString &userID, int oldStatus, int newStatus);
+	void notifyVideoData(const QString &userID, int videoID, int frameTime);
+	void videoDevChanged(const QString &userID);
+	void defVideoChanged(const QString &userID, int videoID);
+	void recordErr(int err);
+	void recordStateChanged(int state);
+
+	void uploadRecordFileErr(int err);
+	void cancelUploadRecordFileErr(int err);
+	void uploadRecordFileFail(int err);
+
+	void startScreenShareRslt(int sdkErr);
+	void stopScreenShareRslt(int sdkErr);
+	void notifyScreenShareStarted();
+	void notifyScreenShareStopped();
+	void notifyScreenShareData(const QString &userID, const QString &changedRect);
+	void notifyCatchScreen();
+	void notifyGiveCtrlRight(const QString &operId, const QString &targetId);
+	void notifyReleaseCtrlRight(const QString &operId, const QString &targetId);
+
+	void sendIMmsgRlst(const QString &taskID, int sdkErr, const QString &cookie);
+	void notifyIMmsg(const QString &fromUserID, const QString &text);
+
+	void sendCmdRlst(const QString &sendId, int sdkErr, const QString &cookie);
+	void sendBufferRlst(const QString &sendId, int sdkErr, const QString &cookie);
+	void sendFileRlst(const QString &sendId, const QString &fileName, int sdkErr, const QString &cookie);
+	void sendProgress(const QString &sendId, int sendedLen, int totalLen, const QString &cookie);
+	void cancelSendRlst(const QString &sendId, int sdkErr, const QString &cookie);
+
+	void notifyCmdData(const QString &sourceUserId, const QByteArray &data);
+	void notifyBufferData(const QString &sourceUserId, const QByteArray &data);
+	void notifyFileData(const QString &sourceUserId, const QString &tmpFile, const QString &orgFileName);
+	void notifyCancelSend(const QString &sendId);
+
+	void notifySwitchToPage(int mainPage, const QString &jsonSub);
+	void notifyVideoWallMode(int);
+	void notifyMainVideo(const QString& userID);
+
+	void notifyInitBoards(const QString &jsonBoards);
+	void notifyInitBoardElements(const QString &jsonSubPage, const QStringList &elementDatas, const QString &bkImgID);
+	void notifyCreateBoard(const QString &jsonBoardID, const QString &title, int width, int height, const QString &operatorID);
+	void notifyCloseBoard(const QString &jsonBoardID, const QString &operatorID);
+	void notifyBoardBkImage(const QString &jsonBoardID, const QString &imgFileID, const QString &operatorID);
+
+	void notifyAddBoardElement(const QString &jsonBoardID, const QByteArray &elementData, const QString &operatorID);
+	void notifyDelBoardElement(const QString &jsonBoardID, const QString &jsonElementIDs, const QString &operatorID);
+	void notifyMouseHotSpot(const QString &jsonBoardID, int x, int y, const QString &operatorID);
+
+	void notifyNetDiskFileDeleteRslt(const QString &fileID, int isSucceed);
+	void notifyNetDiskTransforProgress(const QString &fileID, int percent, int isUpload); 
+
+	//录制文件上传
+	void notifyRecordFileStateChanged(const QString &fileName, int state);
+	void notifyRecordFileUploadProgress(const QString &fileName, int percent);
+
+	//影音
+	void notifyMediaOpened(int totalTime, int w, int h);
+	void notifyMediaStart(const QString &userid);
+	void notifyMediaStop(const QString &userid, int reason);
+	void notifyMediaPause(const QString &userid, int bPause);
+	void notifyPlayPosSetted(int setPTS);
+	void notifyMemberMediaData(const QString &userid);
+
+	//队列
+	void callSuccess(const QString& callID, int meetID, const QString& meetPswd, const QString &cookie);
+	void callFail(const QString& callID, int sdkErr, const QString &cookie);
+
+	void acceptCallSuccess(const QString& callID, const QString &cookie);
+	void acceptCallFail(const QString& callID, int sdkErr, const QString &cookie);
+
+	void rejectCallSuccess(const QString& callID, const QString &cookie);
+	void rejectCallFail(const QString& callID, int sdkErr, const QString &cookie);
+
+	void hangupCallSuccess(const QString& callID, const QString &cookie);
+	void hangupCallFail(const QString& callID, int sdkErr, const QString &cookie);
+
+	void notifyCallIn(const QString& callID, int meetID, const QString& meetPswd, const QString& callerID, const QString& usrExtDat);
+	void notifyCallAccepted(const QString& callID, int meetID, const QString& meetPswd);
+	void notifyCallRejected(const QString& callID, int reason);
+	void notifyCallHungup(const QString& callID);
+
+	void initQueueDatRslt(int errCode, const QString &cookie);
+	void queueStatusChanged(const QString &jsonQueStatus);
+	void queuingInfoChanged(const QString &queuingInfo);
+
+	void startQueuingRslt(int errCode, const QString &cookie);
+	void stopQueuingRslt(int errCode, const QString &cookie);
+
+	void startServiceRslt(int queID, int errCode, const QString &cookie);
+	void stopServiceRslt(int queID, int errCode, const QString &cookie);
+	void responseAssignUserRslt(int errCode, const QString &cookie);
+	void autoAssignUser(const QString &jsonUsr);
+	void reqAssignUserRslt(int errCode, const QString &jsonUsr, const QString &cookie);
+	void cancelAssignUser(int queID, const QString &usrID);
+

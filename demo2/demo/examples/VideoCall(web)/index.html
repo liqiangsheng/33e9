@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "" "">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+	<head>
+		<meta name="renderer" content="ie-stand">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+		<title>云屋VideoCall测试</title>
+
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" ></meta>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<meta name="description" content="cloudroom live demo"></meta>
+		<meta name="author" content="deva"/></meta>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*"></meta>
+		
+
+		<link rel="stylesheet" type="text/css" href="css/common.css">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<link rel="stylesheet" href="layui/css/layui.css">
+		<!--[if lt IE 10]>
+		<script type="text/javascript">
+			if(!window.console){
+				var console = {};
+			}
+			if(!console.log){
+				console.log = function(msg){};
+			}
+			if (!Function.prototype.bind) {
+			  Function.prototype.bind = function (oThis) {
+				if (typeof this !== "function") {
+				  // closest thing possible to the ECMAScript 5
+				  // internal IsCallable function
+				  throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
+				}
+
+				var aArgs = Array.prototype.slice.call(arguments, 1), 
+					fToBind = this, 
+					fNOP = function () {},
+					fBound = function () {
+					  return fToBind.apply(this instanceof fNOP
+											 ? this
+											 : oThis || this,
+										   aArgs.concat(Array.prototype.slice.call(arguments)));
+					};
+
+				fNOP.prototype = this.prototype;
+				fBound.prototype = new fNOP();
+
+				return fBound;
+			  };
+			}
+		</script>
+		
+	<![endif]-->
+
+		
+		<style type="text/css">
+
+
+			.business-Panel
+			{
+				max-width:600px;
+				background-color: #FFF;
+				padding:20px;
+				border: 1px solid #e1e1e8;
+				border-radius: 4px;
+				margin:0 auto;
+				margin-top:150px;
+				
+			}
+			.business-Panel .scroll
+			{
+				overflow:auto; 
+				max-height:300px;
+			}
+
+			
+
+		</style>
+		<!--[if lt IE 9]>
+			<style type="text/css">
+				.modal-sm
+				{
+					width:300px;
+					margin:0 auto;
+				}
+			</style>
+		<![endif]-->
+	</head>
+
+	<body >
+		<!--安装插件提示 -->
+		<div id="not_installed_tip" class="fixplugin_containt" style="display:none">
+			<div class="fixplugin_module">
+				<div class="fixplugin_header">插件安装提示</div>
+				<div class="fixplugin_conter">检测到您尚未安装插件，请打开目录文件夹下CloudroomVideoSDK.exe文件，点击并安装插件！</div>
+				<div class="fixplugin_download"><img src="image/pleaseset.png"/></div>
+				<div class="fixplugin_notice">提示：控件安装完成后，请重启浏览器!</div>
+			</div>
+		</div>
+		<!--安装插件提示 -->
+		<div id="version_low_tip" class="fixplugin_containt"  style="display:none">
+			<div class="fixplugin_module">
+				<div class="fixplugin_header">插件安装提示</div>
+				<div class="fixplugin_conter">检测到您的插件版本过低,请打开目录文件夹下CloudroomVideoSDK.exe文件，点击并安装插件!</div>
+				<div class="fixplugin_download"><img src="image/pleaseset.png"/></div>
+				<div class="fixplugin_notice">提示：控件安装完成后，请重启浏览器!</div>
+			</div>
+		</div>
+		<!--登录容器 -->	
+		<div class="login_containt">
+			<div class="login_module">
+				<div class="login_header">
+					<img src="image/icon_03.png">
+				</div>
+				<div class="login_header_name">
+					<span>视频呼叫</span>
+				</div>
+				<div id="login_server" class="login_form_box">
+					<div id="login_server_input" class="login_input">
+						<label>服务器：</label>
+						<input type="text" name="login_server" id="login_server_name" value="www.cloudroom.com">
+						<span id="login_server_img"><img class="remeber_server" src="image/icon_14.png"></span>
+						<div class="inputLayer1" id="login_server_player"></div>
+					</div>
+					<ul class="pull_down_name" id="login_server_pull">
+						<li>10.0.7.20</li>
+						<li>www.cloudroom.com</li>
+					</ul>
+				</div>
+				
+				<div id="login_name" class="login_form_box">
+					<div id="login_name_input" class="login_input">
+						<label>登录昵称：</label>
+						<input type="text" name="login_name" id="login_name_name" value="">
+						<div class="inputLayer2" id="login_name_player"></div>
+						<!--<span id="login_name_img"><img class="remeber_name" src="image/icon_14.png"></span>-->
+					</div>
+					<!--<ul class="pull_down_name" id="login_name_pull">
+						<li>deva</li>
+						<li>eva</li>
+						<li>bill</li>
+						<li>micheal</li>
+						<li>lisa</li>
+					</ul>-->
+				</div>
+				<div id="login_style" class="login_form_box">
+					<div id="login_style_input" class="login_input">
+						<label>登录身份：</label>
+						<input type="text" name="login_name" id="login_style_name" value="客户"  disabled="true" style="color: #222;">
+						<span id="login_style_img"><img class="remeber_name" src="image/icon_14.png"></span>
+					</div>
+					<ul class="pull_down_name" id="login_style_pull">
+						<li>客户</li>
+						<li>坐席</li>
+					</ul>
+				</div>
+				<div class="login_button">
+					<button>登录</button>
+				</div>
+			</div>
+			<!--<a href="doc/index.html" class="btn btn-link">接口文档</a>-->
+		</div>
+		
+		<div class="queue_containt" style="display:none">
+			<div class="queue_module">
+				<!-- 头部开始 -->
+				<div class="queue_header">
+					<span class="queue_username">欢迎ocean...</span>
+					<span class="queue_uptate" id="queue_uptate">刷新</span>
+					<span class="queue_logout" id="queue_logout">注销</span>
+				</div>
+				<!-- 头部结束 -->
+				<!-- 列表开始 -->
+				<ul id="queue_list">
+				</ul>
+				<!-- 列表结束 -->
+			</div>
+		</div>
+		<div class="start_server_containt" style="display:none">
+			<div class="start_server_module">
+				<!-- 头部开始 -->
+				<div class="start_server_header">
+					<span class="start_server_username">欢迎<span id="start_server_username">ocean...</span></span>
+					<span class="start_server_logout" id="start_server_logout">注销</span>
+				</div>
+				<!-- 头部结束 -->
+				<!-- 列表开始 -->
+				<ul id="start_server_list">
+					<li>
+						<span>窗口名称</span>
+						<span>专家人数</span>
+						<span>排队人数</span>
+						<span>正在进行的对话</span>
+						<span>服务状态</span>
+						<span>优先级</span>
+					</li>
+				</ul>
+				<div class="start_server_footer">
+					<span class="start_server_footer_left">
+						<input type="checkbox" name="start_server_disturb" id="start_server_disturb" value="0">
+						<span>免打扰（手动分配）</span>
+					</span>
+					<span class="start_server_footer_right">下一位客户</span>
+				</div>
+				<!-- 列表结束 -->
+			</div>
+		</div>
+		<div class="meeting_containt" style="display:none">
+			<div class="meeting_hdeader">
+				<div class="meeting_header_main">
+					<span class="meeting_header_main_left">
+						<span class="meeting_hdeader_logo"><img src="image/icon_24.png" ></span>
+						<span class="meeting_titile">您正在和【兔兔】视频会话中...</span>
+					</span>
+					
+					<span class="meeting_head_wifi"><img src="image/icon_13.png"></span>
+				</div>
+			</div>
+			<div class="meeting_media_box">
+				<div class="meeting_media_title">
+					<div class="meeting_media_button_left">
+						<span id="pic_btn"><img src="image/icon_30.png">截图</span>
+						<span>查看截图</span>
+					</div>
+					<div class="meeting_media_button_right">
+						 <p class="radio_contain">
+							<span class="radio_item">
+								<input type="radio" name="time_range" checked="checked" value="1"/>
+								<label class="radio_label ongray">
+									<span class="radio_icon"></span>
+									<span class="fs14_col48_verm_disib" style="color:#fff;">摄像头</span>
+								</label>
+							</span>
+						</p>
+						<span id="showRecordMsg" class="meet_start_record" style="width: 140px;"><img src="image/icon_38.png">开始录制</span>
+						<span class="meet_start_file" style="display: inline-block;width: 40px;"><img src="image/icon_28.png"/></span>
+						<!--<div class="meet_show_record">
+							<div class="meet_show_record_title">
+								<span class="meet_show_record_label">录制内容</span>
+								<span class="meet_show_record_img">
+									<img src="image/icon_28.png"/>
+									<img src="image/icon_27.png"/>
+								</span>
+							</div>
+							<div class="meet_show_record_radio">
+								 <p class="radio_contain">
+									<span class="radio_item">
+										<input type="radio" name="time_range" checked="checked" value="0"/>
+										<label class="radio_label ongray">
+											<span class="radio_icon"></span>
+											<span class="fs14_col48_verm_disib">屏幕</span>
+										</label>
+									</span>
+								</p>
+								 <p class="radio_contain">
+									<span class="radio_item">
+										<input type="radio" name="time_range" checked="checked" value="1"/>
+										<label class="radio_label ongray">
+											<span class="radio_icon"></span>
+											<span class="fs14_col48_verm_disib">摄像头</span>
+										</label>
+									</span>
+								</p>
+							</div>
+							<div class="meet_show_record_button">
+								<button>开始录制</button>
+							</div>
+						</div>-->
+					</div>
+				</div>
+				<!-- 视频区域 -->
+				<div class="meet_video_media">
+					<div class="meet_video_media_left">
+					</div>
+					<div class="meet_video_media_right">
+						<div class="meet_video_media_host">
+							
+						</div>
+						<div class="meet_video_media_reset">
+							<div id="meet_reset_camera" class="meet_video_reset" style="margin-top: 12px;">
+								<label class="meet_label">摄像头</label>
+								<select id="video_select">
+								</select>
+								<button id="video_operate_btn">关闭</button>
+							</div>
+							<div id="meet_reset_speaker" class="meet_video_reset">
+								<label class="meet_label">扬声器</label>
+								<select id="spker_select">
+								</select>
+								<!-- <input type="hidden" name="is_no_vioce" class="meet_checkbox">
+								<span class="checkbox_item" id="is_no_vioce">
+									<label id="is_no_vioce_label" class="check_label">
+										<span class="checkbox_icon"></span>
+										<span class="select_head_button_text">静音</span>
+									</label>
+								</span> -->
+							</div>
+							<div id="meet_reset_micraphone" class="meet_video_reset">
+								<label class="meet_label">麦克风</label>
+								<select id="mic_select">
+								</select>
+								<button id="mic_operate_btn">关闭</button>
+							</div>
+							<div id="meet_reset_video_size" class="meet_video_reset">
+								<label class="meet_label">视频尺寸</label>
+								<select id="size_select">
+									<option value="1">144*80</option>
+									<option value="2">224*128</option>
+									<option value="3">288*160</option>
+									<option value="4">336*192</option>
+									<option value="5">448*256</option>
+									<option value="6">512*288</option>
+									<option value="7">576*320</option>
+									<option value="8" selected="true">640*360</option>
+									<option value="9">720*400</option>
+									<option value="10">848*480</option>
+									<option value="11">1024*576</option>
+									<option value="12">1280*720</option>
+									<option value="13">1920*1080</option>
+								</select>
+							</div>
+							<div id="meet_reset_video_zl" class="meet_video_reset">
+								<label class="meet_label">视频帧率</label>
+								<input id="frame_input" type="text" name="meet_reset_video_zl" value="20">
+							</div>
+							<div id="meet_reset_video_yx" class="meet_video_reset">
+								 <p class="radio_contain">
+									<span class="radio_item">
+										<input type="radio" name="meet_yx" checked="checked" value="0"/>
+										<label class="radio_label ongray">
+											<span class="radio_icon"></span>
+											<span class="fs14_col48_verm_disib">视频质量优先</span>
+										</label>
+									</span>
+								</p>
+								 <p class="radio_contain">
+									<span class="radio_item">
+										<input type="radio" name="meet_yx" value="1"/>
+										<label class="radio_label">
+											<span class="radio_icon"></span>
+											<span class="fs14_col48_verm_disib">视频流畅优先</span>
+										</label>
+									</span>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="meet_send_file">
+				<!-- <div class="meet_sile_button">
+					<button class="meet_send_button onsend">发送文本数据</button>
+				</div> -->
+				<div class="meet_send_text_button">
+					<div class="meet_file_name_left">
+						<span class='cmd_prompt' style="display: none;position: absolute;">发送成功</span>
+						<textarea id="cmd_content">
+							
+						</textarea>
+						<div class="meet_file_name_right">
+							<button>发送文本</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="meet_close_window">
+				<button id="meet_colse_btn">结束会话</button>
+			</div>
+		</div>
+		<!--[if IE ]>
+			<object id="crVideoObj" classid="clsid:07EFD662-A1BB-4d8d-9BEE-F7E43E5FEBF5" width="1" height="1" ></object>
+			<object id="crMgrObj" classid="clsid:120AD2B0-68F2-46c6-88D8-52173F501C0F" width="1" height="1" ></object>
+			<object id="crMeetObj" classid="clsid:9E9DD983-A9F8-4dff-B694-B1AE1C708B1E" width="1" height="1" ></object>
+			<object id="crQueueObj" classid="clsid:9AAD199D-A02F-4513-875D-AA81091E44B9" width="1" height="1" ></object>
+			<object id="crHttpObj" classid="clsid:7E44F8C9-7C8D-4004-8F45-D9819D78663C" width="1" height="1" ></object>	
+            <object id="crScreenShareObj" classid="clsid:6FF142C5-8A36-49d7-B627-D60B803550FC" width="1" height="1" ></object> 
+			<script type="text/javascript" src="../../js/CloudroomVideoSDK_iePatch.js"></script>
+		<![endif]-->
+		<!--[if lt IE 10]>
+			<script type="text/javascript" src="js/html5.js"></script> 
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+		<script type="text/javascript" src="js/md5.js"></script>
+		<script type="text/javascript" src="layui/layui.js"></script>
+		<script type="text/javascript" src="../../js/CloudroomVideoSDK.js"></script>
+		<script type="text/javascript" src="js/variable.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		
+	</body>
+
+</html>

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/iconfont.ttf'); 
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* 外卖的icon */
+.icon-eleme:before{
+	content: "\e600";
+}
+.router-link-active .icon-eleme:before{
+	content: "\e600";
+}
+/* 发现的icon */
+.icon-discover:before{
+	content: "\e66f";
+}
+.router-link-active .icon-discover:before{
+	content: "\e60f";
+}
+/* 订单的icon */
+.icon-order:before{
+	content: "\e68d";
+}
+.router-link-active .icon-order:before{
+	content: "\e68e";
+}
+/* 我的的icon */
+.icon-me:before{
+	content: "\e60d";
+}
+.router-link-active .icon-me:before{
+	content: "\e65d";
+}
