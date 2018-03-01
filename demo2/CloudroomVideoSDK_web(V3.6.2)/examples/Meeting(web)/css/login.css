@@ -1,0 +1,151 @@
+@charset "utf-8";
+body {
+　　　　font: normal 100% Helvetica, Arial, sans-serif;
+　　}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body,html{margin:0;padding:0;}
+input::-ms-clear{display:none;}
+.container{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding:0;
+	overflow-y:scroll;
+	position: relative;
+}
+.login_box{
+	width: 600px;
+	height: 400px;
+	position: fixed;
+	top:50%;
+	left: 50%;
+	margin-left: -300px;
+	margin-top: -200px;
+	border: 1px solid #eb5405;
+}
+.login_header{
+	width: 100%;
+	height: 40px;
+	background-color: #eb5405;
+	color: #fff;
+	font-size: 14px;
+	line-height: 40px;
+}
+.login_header_title{
+	padding-left: 20px;
+}
+.login_close_window{
+	float: right;
+	padding-right: 20px;
+	cursor: pointer;
+}
+.login_input_form{
+	width: 100%;
+	height: 260px;
+	background-color: #f5f5f5;
+	padding-top: 100px;
+	position: relative;
+}
+.login_server{
+	width: 80%;
+	height: 60px;
+	padding-left: 10%;
+	position: relative;
+}
+.login_input_line,.login_name_line{
+	display: inline-block;
+	width: 290px;
+	height: 30px;
+	border: 1px solid #ccc;
+	padding-left: 10px;
+	border-radius: 4px;
+	background-color: #f5f5f5;
+}
+.login_name{
+	width: 80%;
+	height: 60px;
+	padding-left: 10%;
+	position: relative;
+}
+.login_name label,.login_server label{
+	text-align: right;
+	display: inline-block;
+	width: 100px;
+	font-size: 12px;
+}
+.login_name input,.login_server input{
+	width: 240px;
+	height: 26px;
+	padding-left: 10px;
+	border:0;
+	outline: none;
+	margin-top: 2px;
+	background-color: #f5f5f5;
+	margin-right: 10px;
+	
+}
+.login_input_line img,.login_name_line img{
+	cursor: pointer;
+}
+.pull_down_server,.pull_down_name{
+	position: absolute;
+	left:170px;
+	top:40px;
+	width: 280px;
+	height: 160px;
+	background-color: #fff;
+	z-index: 111;
+	border: 1px solid #ccc;
+	display: none;
+	overflow-y:scroll;
+}
+.pull_down_server li,.pull_down_name li{
+	list-style-type: none;
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background-color: #fff;
+	color: 12px;
+	text-align: left;
+	cursor: pointer;
+}
+.pull_down_server li.onserver,.pull_down_name li.onname{
+	background-color: #ccc;
+}
+.login_button{
+	width: 80%;
+	height: 60px;
+	padding-left: 10%;
+	text-align: center;
+	margin-top: 20px;
+}
+.login_button button{
+	display: inline-block;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	border:0;
+	outline: none;
+	background-color: #eb5405;
+	border-radius: 4px;
+}
+/*解决崩溃的问题*/
+.login_server .inputLayer1,.login_name .inputLayer2,.login_master .inputLayer3{
+	position: absolute;
+	height: 50px;
+	left:0;
+	top:0;
+	background-color:#fff;
+	-webkit-opacity: 0;  
+    -moz-opacity: 0;  
+    -khtml-opacity: 0;  
+    opacity: .0;  
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=0);
+}
+.login_server .inputLayer1,.login_master .inputLayer3{
+	width: 240px;
+}
+.login_name .inputLayer2{
+	width: 100%;
+}

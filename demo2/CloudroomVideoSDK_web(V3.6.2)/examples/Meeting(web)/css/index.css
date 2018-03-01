@@ -1,0 +1,673 @@
+@charset "utf-8";
+html,body {
+	width: 100%;
+	height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body,html{margin:0;padding:0;}
+input::-ms-clear{display:none;}
+body {
+	background: url("../image/bg.png") repeat;
+}
+.mt_20 { margin-top: 20px; }
+.pl_40 { padding-left: 40px; }
+.clearfix:after {
+	content: " ";
+	display: block;
+	clear: both;
+	height: 0;
+}
+.clearfix {
+	zoom: 1;
+}
+.loadDiv {
+	display: none;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-top: -27px;
+	margin-left: -27px;
+	z-index: 999;
+}
+.login_box{
+	width: 400px;
+	height: 460px;
+	position: fixed;
+	top:50%;
+	left: 50%;
+	margin-left: -200px;
+	margin-top: -230px;
+	border: 1px solid #3791e9;
+	background-color: #fff;
+}
+.login_header{
+	width: 100%;
+	padding: 10px 0;
+	text-align: center;
+}
+.login_input_form{
+	width: 100%;
+	position: relative;
+}
+.login_server, .login_master{
+	width: 320px;
+	height: 50px;
+	padding-left: 40px;
+	position: relative;
+}
+.login_input_line,.login_name_line,.login_psd_line,.login_cpyname_line{
+	display: inline-block;
+	width: 240px;
+	height: 30px;
+	border: 1px solid #ccc;
+	padding-left: 10px;
+	border-radius: 4px;
+}
+.login_name,.login_cpyname,.login_psd{
+	width: 320px;
+	height: 50px;
+	padding-left: 40px;
+	position: relative;
+}
+.login_name label,.login_server label,.login_master label,.login_cpyname label,.login_psd label{
+	text-align: right;
+	display: inline-block;
+	width: 50px;
+	font-size: 14px;
+	padding-right: 10px;
+}
+.login_name input,.login_server input,.login_master input,.login_psd_line input,.login_cpyname_line input{
+	width: 200px;
+	border:0;
+	outline: none;
+	margin-top: 8px;
+	margin-right: 10px;
+	
+}
+.login_input_line img,.login_name_line img{
+	cursor: pointer;
+}
+.pull_down_server,.pull_down_name,.pull_down_master{
+	position: absolute;
+	left:110px;
+	top:35px;
+	width: 240px;
+	height: 70px;
+	background-color: #fff;
+	z-index: 111;
+	border: 1px solid #ccc;
+	display: none;
+	overflow-y:scroll;
+}
+.pull_down_server li,.pull_down_name li,.pull_down_master li{
+	list-style-type: none;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 8px;
+	text-align: left;
+	cursor: pointer;
+}
+.pull_down_server li.onserver,.pull_down_name li.onname,.pull_down_master li.onmaster{
+	background-color: #ccc;
+}
+.login_button button{
+	display: inline-block;
+	width: 252px;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 105px;
+	border: 1px solid #3aabfb;
+	outline: none;
+	color: #fff;
+	background-color: #3aabfb;
+	border-radius: 4px;
+}
+/*进入会议*/
+.entermeet_box{
+	width: 620px;
+	height: 520px;
+	position: fixed;
+	top:50%;
+	left: 50%;
+	margin-left: -310px;
+	margin-top: -260px;
+	border: 1px solid #2b3d55;
+	background-color: #fff;
+}
+.entermeet_header {
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 40px;
+    background-color: #2b3d53;
+}
+.entermeet_header_title {
+	margin-left: 15px;
+}
+.entermeet_slogan {
+	padding: 20px 10px 20px 20px;
+}
+.entermeet_username {
+	float: left;
+	font-size: 20px;
+}
+.entermeet_logout {
+    float: right;
+	display: inline-block;
+    width: 50px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 4px;
+    color: #666;
+    border: 1px solid #666;
+    font-size: 14px;
+    cursor: pointer;
+}
+.entermeet_input_form {
+	padding: 0 20px;
+}
+.entermeet_login_tab {
+	border-bottom: 1px solid #d8d8d8;
+}
+.entermeet_login_tab li {
+	float: left;
+	width: 90px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	font-size: 14px;
+    color: #000;
+    padding: 0 5px;
+    margin-right: 8px;
+	border: 1px solid #d8d8d8;
+	border-bottom: none;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	cursor: pointer;
+}
+.entermeet_login_tab li.onentermeet {
+	color: #fff;
+	border: 1px solid #3aabfb;
+	background-color: #3aabfb;
+}
+.entermeet_tab_items {
+	margin-top: 120px;
+}
+.entermeet_tab_ipt {
+	margin-left: 50px;
+}
+.entermeet_tab_items .entermeet_tab_ipt label {
+	display: inline-block;
+	width: 80px;
+    font-size: 14px;
+    text-align: right;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+.entermeet_tab_items .entermeet_tab_ipt input {
+	width: 290px;
+    height: 50px;
+    padding: 0 0 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+.entermeet_tab_items .entermeet_tab_ipt textarea {
+	width: 290px;
+    height: 120px;
+    padding: 0 0 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.entermeet_tab_btn {
+	margin: 40px 0 0 0;
+}
+.entermeet_tab_btn button {
+	width: 302px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	margin-left: 135px;
+	color: #fff;
+	border: 1px solid #3aabfb;
+	border-radius: 4px;
+	background-color: #3aabfb;
+}
+.entermeet_choosefile_btn, .entermeet_sendfile_btn {
+	width: 100px;
+	height: 52px;
+	text-align: center;
+	line-height: 52px;
+	border: 1px solid #3aabfb;
+	color: #fff;
+	background-color: #3aabfb;
+	border-radius: 4px;
+}
+/*会议详情*/
+.meetingDetail_box {
+	width: 1280px;
+	height: 740px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -640px;
+	border: 1px solid #2b3d55;
+	background-color: #fff;
+}
+.meetingDetail_header {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	font-size: 14px;
+	background-color: #3aabfb;
+}
+.meetingDetail_left {
+	float: left;
+	width: 260px;
+}
+.meetingDetail_member {
+	height: 315px;
+}
+.meetingDetail_member_title {
+	padding: 5px;
+	font-size: 16px;
+	height: 28px;
+    line-height: 28px;
+    border-bottom: 1px solid #ccc;
+}
+.meetingDetail_member_main {
+	padding: 5px;
+	font-size: 14px;
+	height: 28px;
+    line-height: 28px;
+    border-bottom: 1px solid #ccc;
+}
+.meetingDetail_member ul li {
+	padding: 5px;
+	line-height: 28px;
+    border-bottom: 1px solid #ccc;
+}
+.meetingDetail_chat {
+	border: 1px solid #ccc;
+}
+.meetingDetail_chat_header {
+	padding: 5px;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	background-color: #abd9f5;
+}
+.meetingDetail_chat_lists {
+	height: 230px;
+	overflow: scroll;
+}
+.meetingDetail_send_box {
+	position: relative;
+}
+.send_area {
+	width: 100%;
+    border: none;
+    height: 40px;
+    background-color: #f7f7f4;
+}
+.attention_msg {
+	display: none;
+	position: absolute;
+	width: 120px;
+	text-align: center;
+	top: 10px;
+    left: 50%;
+    margin-left: -60px;
+	color: #ff0000;
+}
+.chats_btn_wrap {
+	padding: 5px;
+	text-align: right;
+}
+.chats_send_btn {
+	width: 80px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	color: #fff;
+	border: 1px solid #3aabfb;
+	background-color: #3aabfb;
+	border-radius: 4px;
+}
+.meetingDetail_right {
+	float: left;
+	width: 1020px;
+}
+.meetingDetail_title_tab {
+	padding: 0px 20px 20px 10px;
+}
+.meetingDetail_tab_left {
+	float: left;
+}
+.meetingDetail_tab_left li {
+	float: left;
+	margin-right: 10px;
+	width: 90px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	font-size: 14px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	cursor: pointer;
+	background-color: #d5e6f0;
+}
+.meetingDetail_tab_left li.onmeetingDetail,.video_wall_header_right ul li.onmeetingDetail {
+	color: #fff;
+	background-color: #3aabfb;
+}
+.meetingDetail_tab_right {
+	float: right;
+	margin-top: 10px;
+}
+.meetingDetail_tab_right li {
+	float: left;
+	margin-left: 10px;
+	padding: 5px;
+	text-align: center;
+	font-size: 14px;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #fff;
+	background-color: #3aabfb;
+}
+.video_wall_wrap, .screen_share_wrap {
+	padding: 0 20px;
+}
+.video_wall_header_left {
+	float: left;
+}
+.video_wall_header_left ul li {
+	float: left;
+	margin-right: 25px;
+	line-height: 22px;
+}
+.meetingDetail_radio_bg {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 8px;
+	vertical-align: middle;
+	position: relative;
+	background: url("../image/icon_default.png") no-repeat center center;
+	cursor: pointer;
+}
+.onradio {
+	background: url("../image/icon_select.png") no-repeat center center;
+}
+.video_wall_setmainvideo {
+	margin-left: 10px;
+}
+.video_wall_header_right {
+	float: right;
+}
+.video_wall_header_right ul li {
+	float: left;
+	margin-left: 10px;
+	padding: 5px 10px;
+	color: #fff;
+	background-color: #3aabfb;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.video_wall_content {
+	margin-top: 20px;
+	position: relative;
+	width: 980px;
+	height: 600px;
+	background-color: #10232b;
+}
+.videoContainer, .videoContainer1, .videoContainer2, .videoContainer3, .videoContainer4, .videoContainer5, .videoContainer6 {
+	background: url("../image/icon_camera.png") no-repeat center center;
+	background-color: #172a32;
+}
+/*选项面板*/
+.videoSelect_panel {
+	width: 640px;
+	height: 560px;
+	position: fixed;
+	top:50%;
+	left: 50%;
+	margin-left: -320px;
+	margin-top: -280px;
+	background-color: #fff;
+	z-index: 9;
+}
+.videoSelect_header {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #c5c5c5;
+}
+.videoSelect_content {
+	width: 550px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.videoSelect_items {
+	margin-bottom: 25px;
+}
+.videoSelect_lab {
+	display: inline-block;
+	width: 90px;
+	text-align: right;
+	margin-right: 10px;
+}
+.video_select_wrap {
+	display: inline-block;
+	width: 250px;
+    padding: 8px 5px;
+    border: 1px solid #ccc;
+}
+.videoSelect_items select, .videoSelect_ipt {
+	border: none;
+	width: 100%;
+}
+.videoSelect_checkbox {
+	width: 20px;
+	height: 20px;
+	margin-left: 20px;
+	vertical-align: middle;
+}
+.meet_set_radio {
+	vertical-align: middle;
+	width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.set_radio_label {
+	margin-right: 30px;
+}
+.videoSelect_btn_wrap {
+	text-align: center;
+}
+.videoSelect_btn1, .videoSelect_btn2 {
+	width: 120px;
+	height: 40px;
+	color: #fff;
+	border-radius: 4px;
+}
+.videoSelect_btn1:hover, .videoSelect_btn2:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.videoSelect_btn1 {
+	border: 1px solid #3aabfb;
+	background-color: #3aabfb;
+	margin-right: 20px;
+}
+.videoSelect_btn2 {
+	border: 1px solid #ccc;
+	background-color: #ccc;
+}
+.icon_video {
+	float: right;
+	display: inline-block;
+	width: 40px;
+	height: 30px;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	margin-right: 10px;
+}
+.icon_video img{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+.icon_mic {
+	float: right;
+	display: inline-block;
+	width: 40px;
+	height: 30px;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	margin-right: 10px;
+}
+.icon_mic img{
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+}
+.icon_shot {
+	float: right;
+	display: inline-block;
+	width: 18px;
+	height: 32px;
+	margin-left: 10px;
+	background: url("../image/screenshot.png") center center no-repeat;
+	cursor: pointer;
+	margin-right: 10px;
+}
+/*屏幕共享start*/
+.screen_share_header {
+	height: 32px;
+}
+.screen_share_btn {
+	width: 80px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	border: 1px solid #3aabfb;
+	border-radius: 4px;
+	color: #fff;
+	background-color: #3aabfb;
+}
+.screen_share_content {
+	width: 848px;
+	height: 540px;
+	margin-top: 20px;
+	position: relative;
+	background-color: aliceblue;
+}
+.screenShare_box {
+	width: 340px;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+.screen_share_item {
+	width: 320px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #ccc;
+	margin-bottom: 30px;
+}
+.screen_share_opt {
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+.screen_share_btn_wrap {
+	width: 340px;
+	text-align: center;
+}
+#screenShareSure {
+	width: 100px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	margin-right: 40px;
+	color: #fff;
+	border: 1px solid #3aabfb;
+	border-radius: 4px;
+	background-color: #3aabfb;
+}
+#screenShareCancel {
+	width: 100px;
+	height: 32px;
+	text-align: center;
+	line-height: 32px;
+	color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background-color: #ccc;
+}
+/*屏幕共享end*/
+
+
+/***************************************************  lisa 的模块代码   开始******************************************************************************/
+/*聊天功能开模块 开始*/
+.chats_item1 {padding-left: 5px;}
+.chats_item1_name {height: 30px;line-height: 30px;color: #a2d2f8;}
+.chats_item1_msg {word-wrap: break-word;word-break: break-all;overflow: hidden;color: #000;line-height: 24px;background-color: #cefdeb;}
+.chats_item1_msg span{background-color: #cefdeb;color: #000;padding:4px;}
+.chats_item2 {padding-right: 5px;}
+.chats_item2_name {height: 30px;line-height: 30px;color: #a2d2f8;text-align: right;}
+.chats_item2_msg {word-wrap: break-word;word-break: break-all;overflow: hidden;color: #000;line-height: 24px;background-color: #fdedce;}
+.chats_item2_msg span{background-color: #fdedce;color: #000;padding:4px;}
+/*::-webkit-scrollbar  {width: 0px;background-color: #fff;}*/
+/*聊天功能开模块 结束*/
+/*文件中中转站模块  开始*/
+.meetingDetail_tab_items.white_board_wrap{width: 100%;height: auto;}
+.file_station_head,.file_local_head{width: 100%;background-color: #eee;height: 50px;border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;}
+.file_station_head span,.file_local_head span{display: inline-block;}
+.file_station_head .a1,.file_local_head .a1{margin-left: 30px;line-height: 50px;color: 333;width: 8%;}
+.file_station_head .a2{height: 30px;line-height: 30px;margin-top: 10px;width: 8%;text-align: center;border:1px solid #ccc;border-radius: 4px;cursor: pointer;}
+.file_local_head .a2{height: 28px;line-height: 28px;margin-top: 10px;width: 8%;text-align: center;border:1px solid #ccc;border-radius: 4px;cursor: pointer;outline: none;}
+.file_station_head .a3{margin-left: 4px;height: 50px;line-height: 50px;width: 50%;text-align: center;}
+.file_station_head .a4{margin-left: 4px;height: 50px;line-height: 50px;text-align: center;}
+.file_station_table{width: 100%;height: 400px;overflow-y: scroll;}
+.file_station_upload{width: 100%;height: 160px;overflow:hidden;}
+.file_upload_ul,.file_station_ul{text-align: center;font-size: 14px;}
+.file_upload_ul thead tr,.file_station_ul thead tr{height: 40px;border-bottom: 1px solid #ccc;}
+.file_upload_ul thead tr th,.file_station_ul thead tr th{height: 40px;}
+.file_upload_ul tbody tr,.file_station_ul tbody tr{border-bottom: 1px solid #ccc;}
+.file_upload_ul tbody tr,.file_upload_ul tbody tr td,.file_station_ul tbody tr,.file_station_ul tbody tr td{height: 30px;line-height: 30px;}
+.file_station_td .b1,.file_upload_td .b1{color: #3aabfb;border-bottom: 1px solid #3aabfb;cursor: pointer;margin-right: 10px;}
+/*解决崩溃的问题*/
+.login_server .inputLayer1,.login_name .inputLayer2,.login_master .inputLayer3,.login_cpyname_line .inputLayer4,.login_psd_line .inputLayer5{
+	position: absolute;
+	height: 50px;
+	left:0;
+	top:0;
+	background-color:#fff;
+	-webkit-opacity: 0;  
+    -moz-opacity: 0;  
+    -khtml-opacity: 0;  
+    opacity: .0;  
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=0);
+}
+.login_server .inputLayer1,.login_master .inputLayer3{
+	width: 240px;
+}
+.login_name .inputLayer2,.login_cpyname_line .inputLayer4,.login_psd_line .inputLayer5{
+	width: 100%;
+}
+/*文件中中转站模块  结束*/
+
+/*多方独立录制模块   开始*/
+/*多方独立录制模块   结束*/
+/*单独录制语音模块   开始*/
+/*单独录制语音模块   结束*/
+/***************************************************  lisa 的模块代码   结束******************************************************************************/

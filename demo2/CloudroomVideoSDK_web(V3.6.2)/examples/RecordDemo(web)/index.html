@@ -1,0 +1,460 @@
+<!DOCTYPE html PUBLIC "" "">
+<html>
+<head>
+	<meta name="renderer" content="ie-stand">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+	<title>双录demo</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<meta name="description" content="cloudroom live demo"></meta>
+	<meta name="author" content="deva"/></meta>
+	<meta http-equiv="Access-Control-Allow-Origin" content="*"></meta>
+	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="css/function.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	
+	
+	</head>
+	<body>
+<div class="container">
+<!--*****************************************登陆*********************************************-->
+	<div class="login_box form-inline">
+		<div class="login_logo">
+			<img src="image/login_logo.png">
+		</div>
+		<div class="label_words">
+			<span>服务器</span>
+		</div>
+		<div class="login_name">
+			<div id="login_server_input" class="login_input">
+				<input class="normal" type="text" id="server_name" placeholder="请输入账号" value="www.cloudroom.com" />
+				<span id="login_server_img"><img class="remeber_server" src="image/icon_14.png"></span>
+				<div class="inputLayer"></div>
+			</div>
+			<ul class="pull_down_name" id="login_server_pull">
+				<li>10.8.8.220</li>
+				<li>www.cloudroom.com</li>
+			</ul>
+		</div>
+		<div class="login_cpyname">
+			<div id="login_cpyname_input" class="login_cpyname_input">
+				<input class="normal" type="text" id="login_cpyname" value="demo@cloudroom.com" />
+				<div class="inputLayer1"></div>
+			</div>
+		</div>
+		<div class="login_psd">
+			<div id="login_psd_input" class="login_psd_input">
+				<input class="normal" type="password" id="login_psd" value="123456" />
+				<div class="inputLayer2"></div>
+			</div>
+		</div>
+		<div class="login_button">
+			<button id="login_bnt">登录</button>
+		</div>
+	</div>
+<!--**************************************创建会议************************************************-->
+	<div class="menu_box" style="display:none">
+		<div class="menu_left">
+			<div class="meun_left_logo">
+				<span class="detail_header_logo"><img src="image/login_logo.png"/></span>
+				<span class="detail_header_logo">双录</span>
+			</div>
+			<ul class="menu_left_ul">
+				<li class="menu_left_li_item onmenu">
+					<a href="#">基金类</a>
+				</li>
+				<li class="menu_left_li_item">
+					<a href="#">期货类</a>
+				</li>
+				<li class="menu_left_li_item">
+					<a href="#">货币市场类</a>
+				</li>
+				<li class="menu_left_li_item">
+					<a href="#">固定收益类</a>
+				</li>
+				<li class="menu_left_li_item">
+					<a href="#">权益类</a>
+				</li>
+				<li class="menu_left_li_item">
+					<a href="#">另类投资类</a>
+				</li>
+			</ul>
+		</div>
+		<div class="menu_right">
+			<ul id="menu_right_content1" style="padding:20px;">
+				<div class="menu_right_title">
+					<span>基金类</span>
+				</div>
+				<div class="menu_right_detail">
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png" />
+		</dt>
+						<dd>财富宝货币市场基金 00034</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png"/>
+		</dt>
+						<dd>财富宝货币市场基金 00035</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png"/>
+		</dt>
+						<dd>财富宝货币市场基金 00036</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png" />
+		</dt>
+						<dd>财富宝货币市场基金 00037</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png" />
+		</dt>
+						<dd>财富宝货币市场基金 00038</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png"/>
+		</dt>
+						<dd>财富宝货币市场基金 00039</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png"/>
+		</dt>
+						<dd>财富宝货币市场基金 00040</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png" />
+		</dt>
+						<dd>财富宝货币市场基金 00041</dd>
+					</dl>
+					<dl>
+						<dt style="cursor:pointer">
+			<img src="image/pics.png" />
+		</dt>
+						<dd>财富宝货币市场基金 00042</dd>
+					</dl>
+					<div style="clear: both;"></div>
+				</div>
+		</div>
+	</div>
+<!--**************************会议页面*****************************************************************-->
+    <div class="videoPage">
+    	<div class="videoPage_top">
+    		<img class="videoPage_top_img" src="image/login_logo.png"/>
+			<span class="videoPage_top_logo">双录</span>
+    	</div>
+    	<div class="videoPage_left">
+    			<div class="videoPage_left_product">
+						<div class="videoPage_left_product_title">
+							<span>产品信息</span>
+						</div>
+						<ul class="videoPage_left_product_detail">
+							<li>
+								<span class="product_detail_title">产品名称：</span>
+								<span class="product_detail_main">财富宝货币市场基金</span>
+							</li>
+							<li>
+								<span class="product_detail_title">产品代码：</span>
+								<span class="product_detail_main">000397</span>
+							</li>
+							<li>
+								<span class="product_detail_title">产品类型：</span>
+								<span class="product_detail_main">货币市场基金</span>
+							</li>
+							<li>
+								<span class="product_detail_title">产品期限：</span>
+								<span class="product_detail_main">160天</span>
+							</li>
+							<li>
+								<span class="product_detail_title">风险级别：</span>
+								<span class="product_detail_main">较低</span>
+							</li>
+							<li>
+								<span class="product_detail_title">投资收益币种：</span>
+								<span class="product_detail_main">人民币</span>
+							</li>
+						</ul>
+					</div>
+					<div class="videoPage_left_product">
+						<div class="videoPage_left_product_title">
+							<span>客户信息</span>
+						</div>
+						<ul class="videoPage_left_product_tab">
+							<li id="baseinfoTab" class="on_tab1">
+								<button id="showBaseinfo">基础信息</button>
+							</li>
+							<li id="IdentityATab">
+								<button id="showIdentityA">ID正面</button>
+							</li>
+							<li id="IdentityBTab">
+								<button  id="showIdentityB">ID反面</button>
+							</li>
+						</ul>
+						<ul id="gereninfo" class="videoPage_left_product_detail">
+							<li>
+								<span class="product_detail_title">姓名：</span>
+								<span class="product_detail_main">王小明</span>
+							</li>
+							<li>
+								<span class="product_detail_title">性别：</span>
+								<span class="product_detail_main">男</span>
+							</li>
+							<li>
+								<span class="product_detail_title">出生：</span>
+								<span class="product_detail_main">1989年5月3日</span>
+							</li>
+							<li>
+								<span class="product_detail_title">地址：</span>
+								<span class="product_detail_main">广东省深圳市南山区科技北一路长远大厦17楼E</span>
+							</li>
+							<li>
+								<span class="product_detail_title">公民身份证号码</span>
+								<span class="product_detail_main">440303198905035361</span>
+							</li>
+						</ul>
+						<div id="sfzzm" style="display:none;padding-left: 20px;">
+							<img src="image/2.png" style="height:125px;width:200px;" />
+						</div>
+						<div id="sfzfm" style="display:none;padding-left: 20px;">
+							<img src="image/1.png" style="height:125px;width:200px;"/>
+						</div>
+					</div>
+    		
+    	</div>
+    	<div class="videoPage_right">
+    		<div class="videoPage_right_view">
+    			<div class="videoPage_right_view_box"></div>
+    			<ul class="videoPage_right_view_list">
+    				<li><button id="setUp">设置</button></li>
+    				<li><button id="startRecord">开始录制</button></li>
+    				<li><button id="playback" style="display: block;">回放</button><button id="playback1" style="display: none;">停止回放</button></li>
+    				<li><button id="upload">上传</button></li>
+    				<li><button id="recordMrg">录制文件管理</button></li>
+    				<li><button id="singleCamera">单摄像头</button></li>
+    				<li><button id="doubleCamera">双摄像头</button></li>
+    			</ul>
+    			<ul class="videoPage_right_view_list1">
+    				<li><button id="stopRecord">停止录制</button></li>
+    			</ul>
+    		</div>
+    		<div class="videoPage_right_act">
+    			风险提示：买入T+1日确认份额并产生收益，份额确认次日15:00前可查看收益
+    		</div>
+    		<div class="videoPage_right_voice">
+    			<div class="videoPage_right_voice_left">
+    				<div class="videoPage_right_voice_left_title">风险告知与提醒</div>
+    				<ul class="videoPage_right_voice_left_list">
+    					<li>
+    						<div class="videoPage_right_voice_left_list_box1">风险提示1.mp4</div>
+    						<div class="videoPage_right_voice_left_list_box2">
+    							<img id="playImg" src="image/icon_04.png"/>
+    							<img id="suspendImg" src="image/icon_02.png"/>
+    							<img id="playImg1" src="image/icon_04.png"/>
+    							<img id="stopImg" src="image/icon_03.png"/>
+    						</div>
+    					</li>
+    				</ul>
+    			</div>
+    			<div class="videoPage_right_voice_right">
+    				<div class="videoPage_right_voice_right_title">话术提示</div>
+    				<ul class="videoPage_right_voice_right_list">
+    					<li>1、开场白：您好，我是xx证券客户经理或投资顾问xxx</li>
+    					<li>2、目前有一只现金管理产品-汇添富收益快线货币市场基金已经正式上线</li>
+    					<li>3、该基金为国内首只T+0货币基金，既能满足您账户中闲置资金的理财需求</li>
+    				</ul>
+    			</div>
+    		</div>
+    	</div>
+    	
+    </div>
+</div>
+<!--********************************各种弹窗    遮罩层*******************************************************-->
+<div id="box" style="display: none;position: absolute;left: 0;top: 0;opacity: 0.3;filter:alpha(opacity=0.3);background: #222222;z-index: 1;">
+</div>
+<!--*************************************设置*************************************************************-->
+<div class="full_page_div2" id="full_page_div2">
+	<div class="full_page_header2">
+		<span class="name_label2" style="color: #fff;">设置</span>
+		<span class="name_min2" style="color: #fff;"><img id="closepage" src="image/closepage.png"/></span>
+		<span class="name_del2" style="color: #fff;"><img id="minpage" src="image/minpage.png"/></span>
+	</div>
+	<div class="full_page_tab">
+		<!--<span class="ontab" onclick="changeTab(1)" id="tab1" style="margin-left: 20px;">视频</span>-->
+		<span id="tab1"  class="ontab">录制设置</span>
+		<span id="tab2" >视频设置</span>
+	</div>
+	<div class="full_page_div4" id="full_page_div4">
+		<div class="full_page_msg3">
+			<span class="msg_label3">分辨率：</span>
+			<select id="recordWH">
+			  <option value ="1" checked="checked">360P(640*360)</option>
+			  <option value ="2">480P(848*480)</option>
+			  <option value="3">720P(1280*720)</option>
+			  <option value="4">1080P(1920*1080)</option>
+			  <option value ="5">480P(640*480)</option>
+			</select>
+		</div>
+		<div class="full_page_msg4">
+			<span class="msg_label4">码率(kbps)：</span>
+			<input id="bitRate" type="text" name="malv" value="350"/>
+		</div>
+		<div class="full_page_msg5">
+			<span class="msg_label5">录制内容类型：</span>
+			<input type="radio" name="recDataType" class="recDataType" value="7" checked="checked"/><label>音频+视频</label>
+			<input type="radio" name="recDataType" class="recDataType" value="3"/><label>纯音频</label>
+		</div>
+		<div class="full_page_msg6">
+			<span class="msg_label6">上传限制(KB/s)：</span>
+			<input id="fuRate" type="text" name="malv" value="100"/>
+		</div>
+		<div class="full_page_msg7">
+			<span class="msg_label7">帧率(取值6~20)：</span>
+			<input id="frameRate" type="text" name="frameRate" value="15"/>
+		</div>
+		<div class="full_page_msg8">
+			<span class="msg_label8">录制上传方式：</span>
+			<input type="radio" name="recUpType" class="recUpType" value="0" checked="checked" /><label>手动上传</label>
+			<input type="radio" name="recUpType" class="recUpType" value="1"  /><label>边录边传</label>
+		</div>
+	</div>
+	<div class="full_page_msg2" id="full_page_msg2">
+		<div id="meet_reset_camera" class="meet_video_reset" style="margin-top: 12px;">
+			<label class="meet_label">摄像头</label>
+			<select id="video_select"></select>
+			<!-- <button id="video_operate_btn">关闭</button> -->
+		</div>
+		<div id="meet_reset_speaker" class="meet_video_reset">
+			<label class="meet_label">扬声器</label>
+			<select id="spker_select"></select>
+		</div>
+		<div id="meet_reset_micraphone" class="meet_video_reset">
+			<label class="meet_label">麦克风</label>
+			<select id="mic_select"></select>
+			<!-- <button id="mic_operate_btn">关闭</button> -->
+		</div>
+		<div id="meet_reset_video_size" class="meet_video_reset">
+			<label class="meet_label">视频尺寸</label>
+			<select id="size_select">
+				<option value="8" selected="true">640*360</option>
+				<option value="10">848*480</option>
+				<option value="12">1280*720</option>
+				<option value="13">1920*1080</option>
+			</select>
+		</div>
+		<div id="meet_reset_video_zl" class="meet_video_reset">
+			<label class="meet_label">视频帧率</label>
+			<input id="frame_input" type="text" name="meet_reset_video_zl" value="20" />
+		</div>
+		<div id="meet_reset_video_yx" class="meet_video_reset">
+			<p class="radio_contain">
+				<input class="radio_label" type="radio" name="meet_yx" checked="checked" value="0" />
+				<span class="fs14_col48_verm_disib">视频质量优先</span>
+				<input class="radio_label" type="radio" name="meet_yx" value="1"/>
+				<span class="fs14_col48_verm_disib">视频流畅优先</span>
+			</p>
+		</div>
+	</div>
+	<div class="full_page_button" style="display: block;">
+		<button class="full_page_submit2">确定</button>
+		<button class="full_page_cancle2">取消</button>
+	</div>
+</div>
+<!--**********************************录制文件管理******************************************-->
+<div class="list_container" id="list_container" style="display: none;">
+		<div class="list_page_header">
+			<span class="list_name_label">录制文件管理</span>
+			<span class="list_name_del"><img id="closepage1" src="image/closepage.png"/></span>
+		</div>
+		<div class="table_list">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0" id="table_list_container">
+				<tr>
+					<td width="25%"><div class="tabel_list_head">文件名</div></td>
+					<td width="18%"><div class="tabel_list_head">文件大小</div></td>
+					<td width="14%"><div class="tabel_list_head">文件时长</div></td>
+					<td width="10%"><div class="tabel_list_head">上传状态</div></td>
+					<td width="33%">操作</td>
+				</tr>
+			</table>
+		</div>
+</div>
+<!--*******************************点击了上传*************************************************************-->
+<div class="full_page_div" id="full_page_div">
+	<div class="full_page_header">
+		<span class="name_label" style="font-size: 14px;color: #fff;">上传面板</span>
+		<span class="name_del1"  style="color: #fff;"><img id="name_del1Img" src="image/closepage.png"/></span>
+	</div>
+	<div class="full_page_msg">
+		<span class="msg_label">文件名称：</span>
+		<span class="name_label_detail" id="file_name">----</span>
+	</div>
+	<div class="full_page_msg">
+		<span class="msg_label">上传进度：</span>
+		<span class="name_label_detail" id="upload_num_percert">----</span>
+	</div>
+	<div class="full_page_msg" id="percent_container">
+		<div class="percent_box" id="percent_box">
+			<span class="percent_item" id="percent_item"></span>
+		</div>
+	</div>
+	<div class="full_page_msg">
+		<span class="msg_label">上传状态：</span>
+		<span class="name_label_detail"  id="upload_status">准备上传</span>
+	</div>
+	<div class="full_page_button" id="#full_page_button">
+		<button class="full_page_cancle1">确定</button>
+		<button class="full_page_cancle3">取消上传</button>
+		<a class="full_page_submit" style="display: none;" id="catSerRecBtn" target="_blank" href="http://www.cloudroom.com/login.html">查看服务端录像</a>
+	</div>
+</div>
+<!--*******************************弹出层样式（还没录制）*****************************************************-->
+<div class="alert_palyer" id="alert_palyer" style="display: none;">
+		<div class="alert_page_header">
+			<span class="alert_name_label" style="font-size: 20px;color: #fff;">提示</span>
+			<span class="alert_name_del" style="color: #fff;"><img id="alert_name_delImg" src="image/closepage.png"/></span>
+		</div>
+		<div class="alert_page_msg" id="alert_page_msg">
+			<p class="alert_label_detail"></p>
+		</div>
+		<div class="alert_page_button">
+			<button class="alertr_page_commit">确定</button>
+		</div>
+</div>
+<!--***********************************掉线弹窗*********************************************************************-->
+<div id="lineOff">
+   <div id="lineOff_header">提示</div>
+  <div id="lineOff_center">你已经掉线请重登</div>
+  <div id="lineOff_bnt">
+  	<button id="lineOff_yes">立即重登</button>
+  	<button id="lineOff_no">取消</button>
+  </div>
+</div>
+	<!--[if IE]>
+		<object id="crVideoObj" classid="clsid:07EFD662-A1BB-4d8d-9BEE-F7E43E5FEBF5" width="1" height="1" ></object>
+		<object id="crMgrObj" classid="clsid:120AD2B0-68F2-46c6-88D8-52173F501C0F" width="1" height="1" ></object>
+		<object id="crMeetObj" classid="clsid:9E9DD983-A9F8-4dff-B694-B1AE1C708B1E" width="1" height="1" ></object>
+		<object id="crQueueObj" classid="clsid:9AAD199D-A02F-4513-875D-AA81091E44B9" width="1" height="1" ></object>
+		<object id="crHttpObj" classid="clsid:7E44F8C9-7C8D-4004-8F45-D9819D78663C" width="1" height="1" ></object>	
+        <object id="crScreenShareObj" classid="clsid:6FF142C5-8A36-49d7-B627-D60B803550FC" width="1" height="1" ></object> 
+		<script type="text/javascript" src="../../js/CloudroomVideoSDK_iePatch.js"></script>
+	<![endif]-->
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/html5.js"></script> 
+	<script type="text/javascript" src="js/uuid.js"></script>
+	<script type="text/javascript" src="js/variable.js"></script>
+	<script type="text/javascript" src="../../js/CloudroomVideoSDK.js"></script>
+	
+	<script type="text/javascript" src="js/indexContent.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	
+	</body>
+</html>
