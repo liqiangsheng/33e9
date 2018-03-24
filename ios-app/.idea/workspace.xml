@@ -1,0 +1,823 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" readonly="true" id="6f9eabd5-ec05-490e-b5de-ec2783967ff3" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="serviceList.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceList.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="766" column="46" lean-forward="true" selection-start-line="766" selection-start-column="46" selection-end-line="766" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/App.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.vue.mine" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/App.vue.mine">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="c_work_order.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/common/c_work_order.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="93" column="53" lean-forward="false" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order_home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/store/order/order_home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="89" column="22" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>callback</find>
+      <find>initdata</find>
+      <find>home</find>
+      <find>sshou_ye_ding_dan</find>
+      <find>shou_ye_ding_dan</find>
+      <find>getMas</find>
+      <find>service_price_list</find>
+      <find>_this.service_price_list</find>
+      <find>单个订单信息</find>
+      <find>work_order</find>
+      <find>dian_ji_gong_dan</find>
+      <find>router</find>
+      <find>components_son/serviceList/serviceList</find>
+      <find>serviceList</find>
+      <find>click_single_order</find>
+      <find>repair_value</find>
+      <find>repair_value_text</find>
+      <find>map</find>
+      <find>main_show_click</find>
+      <find>maintenance_click</find>
+      <find>aliginDate1</find>
+      <find>service_list_click</find>
+      <find>service_high_total_price_arr_id</find>
+      <find>repair_show</find>
+      <find>Accessories_fee_value_text</find>
+      <find>parts_show_click</find>
+      <find>order_service_list.services</find>
+      <find>_this.service_total_price_arr</find>
+      <find>_this.service_list</find>
+      <find>alginData1</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/userList/personalData.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/d_my.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/login/login.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceaBill.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/orderDetails/orderDetails.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/store/order/order_home.js" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/common/c_work_order.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/assets/js/common.js" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/App.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/d_plate.vue" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/router/index.js" />
+        <option value="$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceList.vue" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/vue-dd-mobile/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="addrouter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="components_father" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="components_son" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="components_son" type="462c0819:PsiDirectoryNode" />
+              <item name="d_main_menu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="components_son" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="components_son" type="462c0819:PsiDirectoryNode" />
+              <item name="serviceList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="router" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ios-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ios-app" type="462c0819:PsiDirectoryNode" />
+              <item name="vue-dd-mobile" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\Administrator\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f9eabd5-ec05-490e-b5de-ec2783967ff3" name="Default" comment="" />
+      <created>1521687982186</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1521687982186</updated>
+      <workItem from="1521687984945" duration="95000" />
+      <workItem from="1521703512339" duration="10372000" />
+      <workItem from="1521766487998" duration="27362000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="37829000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18809272" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/vue-dd-mobile/node_modules/karma/config.tpl.js" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/orderDetails/orderDetails.vue</url>
+          <line>139</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/assets/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3630">
+          <caret line="123" column="62" lean-forward="false" selection-start-line="123" selection-start-column="62" selection-end-line="123" selection-end-column="62" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/d_plate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10500">
+          <caret line="352" column="48" lean-forward="false" selection-start-line="352" selection-start-column="36" selection-end-line="352" selection-end-column="48" />
+          <folding>
+            <marker date="1521773208397" expanded="true" signature="2726:17220" ph="{...}" />
+            <marker date="1521773208397" expanded="true" signature="3103:3105" ph="{...}" />
+            <marker date="1521773208397" expanded="true" signature="8776:10667" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/common/c_work_order.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2730">
+          <caret line="91" column="63" lean-forward="false" selection-start-line="91" selection-start-column="63" selection-end-line="91" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/store/order/order_home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceaBill.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3480">
+          <caret line="116" column="68" lean-forward="false" selection-start-line="116" selection-start-column="68" selection-end-line="116" selection-end-column="68" />
+          <folding>
+            <marker date="1521773508391" expanded="true" signature="2737:5742" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="3148:3657" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="3322:3657" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="3608:3657" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5126" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5138" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5147" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5738" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4967:5114" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5178:5236" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5261:5644" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5421:5636" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5671:5732" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5778:9420" ph="..." />
+            <marker date="1521773508391" expanded="true" signature="5789:5835" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5857:5880" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5896:5971" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5991:6043" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6068:6325" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6346:6374" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6416:6901" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6441:6618" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6641:6746" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6769:6897" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6924:7641" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6972:7091" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7114:7352" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7176:7275" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7286:7346" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7375:7637" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7435:7631" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7663:9412" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7719:8181" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7882:8175" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7894:8167" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8208:9408" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8233:8568" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8421:8457" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8485:8560" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8599:8992" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8700:8801" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8823:8984" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9021:9402" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9105:9141" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9170:9237" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9259:9394" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10410">
+          <caret line="348" column="83" lean-forward="true" selection-start-line="348" selection-start-column="83" selection-end-line="348" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/assets/js/urlAjax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/login/login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3750">
+          <caret line="126" column="9" lean-forward="true" selection-start-line="125" selection-start-column="12" selection-end-line="126" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/server/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/d_my.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/userList/personalData.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="57" column="23" lean-forward="false" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/userList/commonProblemSon/commonProblemSon.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2700">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/util/mock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/store/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/store/serviceCity/serviceCity.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/serviceRecharge/serviceRecharge.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1710">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/systemNews/systemNews.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceSuccess/serviceSuccess.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceArea/servicearea.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/login/teacher_management.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/addrouter/addrouter.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1440">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_father/MainMenu.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/addService.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/assets/js/urlAjax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1800">
+          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_father/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/login/login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="62" column="7" lean-forward="true" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceaBill.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="79" column="13" lean-forward="false" selection-start-line="79" selection-start-column="13" selection-end-line="79" selection-end-column="13" />
+          <folding>
+            <marker date="1521773508391" expanded="true" signature="2737:5742" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="3148:3657" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="3322:3657" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="3608:3657" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5126" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5138" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5147" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4927:5738" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="4967:5114" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5178:5236" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5261:5644" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5421:5636" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5671:5732" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5778:9420" ph="..." />
+            <marker date="1521773508391" expanded="true" signature="5789:5835" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5857:5880" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5896:5971" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="5991:6043" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6068:6325" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6346:6374" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6416:6901" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6441:6618" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6641:6746" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6769:6897" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6924:7641" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="6972:7091" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7114:7352" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7176:7275" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7286:7346" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7375:7637" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7435:7631" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7663:9412" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7719:8181" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7882:8175" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="7894:8167" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8208:9408" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8233:8568" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8421:8457" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8485:8560" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8599:8992" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8700:8801" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="8823:8984" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9021:9402" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9105:9141" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9170:9237" ph="{...}" />
+            <marker date="1521773508391" expanded="true" signature="9259:9394" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/assets/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3716">
+          <caret line="352" column="33" lean-forward="false" selection-start-line="352" selection-start-column="33" selection-end-line="352" selection-end-column="33" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/orderDetails/orderDetails.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="137" column="39" lean-forward="false" selection-start-line="137" selection-start-column="39" selection-end-line="137" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/App.vue.r656">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceList.vue.r655">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-14490">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/d_main_menu/d_plate.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11970">
+          <caret line="104" column="25" lean-forward="true" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
+          <folding>
+            <marker date="1521773208397" expanded="true" signature="2726:17220" ph="{...}" />
+            <marker date="1521773208397" expanded="true" signature="3103:3105" ph="{...}" />
+            <marker date="1521773208397" expanded="true" signature="8776:10667" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceList.vue.mine">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="258" column="11" lean-forward="true" selection-start-line="258" selection-start-column="11" selection-end-line="258" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="127" column="65" lean-forward="true" selection-start-line="127" selection-start-column="65" selection-end-line="127" selection-end-column="65" />
+          <folding>
+            <element signature="e#0#21#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/common/c_work_order.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="93" column="53" lean-forward="false" selection-start-line="93" selection-start-column="35" selection-end-line="93" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/store/order/order_home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="89" column="22" lean-forward="false" selection-start-line="89" selection-start-column="4" selection-end-line="89" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/components/components_son/serviceList/serviceList.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="766" column="46" lean-forward="true" selection-start-line="766" selection-start-column="46" selection-end-line="766" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue-dd-mobile/src/App.vue.mine">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
